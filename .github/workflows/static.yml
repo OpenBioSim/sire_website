@@ -36,11 +36,12 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.9
+          activate-environment: sire_build
           miniforge-version: latest
           miniforge-variant: Mambaforge
           use-mamba: true
       - name: Install Sire
-        run: mamba install -c michellab sire
+        run: mamba install -y -c michellab sire
       - name: Checkout sire branch
         uses: actions/checkout@v3
         with:
