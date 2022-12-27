@@ -60,13 +60,13 @@ jobs:
         with:
           repository: "michellab/sire"
           github-server-url: "https://github.com"
-          path: sire
+          path: project
       - name: Debug sire
         run: ls -l sire
       - name: Build Website
-        run: python actions/build_docs.py sire/doc
+        run: python actions/build_docs.py project
       - name: Assemble Website
-        run: python actions/assemble_website.py sire/doc
+        run: python actions/assemble_website.py project
       - name: Deduplicate Website
         run: python actions/deduplicate_website.py
       - name: Git update Website

@@ -5,7 +5,7 @@ from distutils import dir_util
 import glob
 import json
 
-doc_dir = sys.argv[1]
+doc_dir = f"{sys.argv[1]}/doc"
 
 branch = project.__branch__
 release = project.__version__

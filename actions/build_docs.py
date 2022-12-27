@@ -57,7 +57,7 @@ def run_command(cmd, dry=False):
         sys.exit(-1)
 
 # install doc dependencies
-reqs = " ".join([line.lstrip().rstrip() for line in open("requirements.txt", "r").readlines()])
+reqs = " ".join([line.lstrip().rstrip() for line in open(f"{doc_dir}/requirements.txt", "r").readlines()])
 
 print(f"Installing doc requirements: {reqs}")
 
@@ -65,5 +65,5 @@ run_command(f"mamba install {reqs}")
 
 # make the documentation
 print(f"Changing into {doc_dir} and building the website...")
-os.chdir(doc_dir)
+os.chdir(f"{doc_dir}/doc")
 run_command("make")
