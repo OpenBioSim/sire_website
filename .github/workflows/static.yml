@@ -62,7 +62,7 @@ jobs:
           github-server-url: "https://github.com"
           path: project
       - name: Debug sire
-        run: ls -l sire
+        run: ls -l project
       - name: Build Website
         run: python actions/build_docs.py project
       - name: Assemble Website
