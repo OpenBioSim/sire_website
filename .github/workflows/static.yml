@@ -11,8 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
-  pages: write
+  contents: write
   id-token: write
 
 # Allow one concurrent deployment
@@ -22,21 +21,36 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v2
         with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          ref: gh-pages
+          path: gh-pages
+      - name: Install Python
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: 3.9
+          miniforge-version: latest
+          miniforge-variant: Mambaforge
+          use-mamba: true
+      - name: Install Sire
+        run: mamba install -c michellab sire
+      - name: Checkout sire branch
+        uses: actions/checkout@v3
+        with:
+          repository: "michellab/sire"
+          github-server-url: "https://github.com"
+      - name: Build Website
+        run: python actions/build_docs.py sire/doc
+      - name: Assemble Website
+        run: python actions/assemble_website.py sire/doc
+      - name: Deduplicate Website
+        run: python actions/deduplicate_website.py
+      - name: Git update Website
+        run: python actions/gitupdate_website.py

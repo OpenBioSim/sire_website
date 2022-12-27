@@ -5,6 +5,8 @@ import os
 import subprocess
 import shlex
 
+doc_dir = sys.argv[1]
+
 branch = project.__branch__
 release = project.__version__
 version = project.__version__.split("+")[0]
@@ -62,4 +64,6 @@ print(f"Installing doc requirements: {reqs}")
 run_command(f"mamba install {reqs}")
 
 # make the documentation
+print(f"Changing into {doc_dir} and building the website...")
+os.chdir(doc_dir)
 run_command("make")

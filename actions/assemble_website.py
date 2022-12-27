@@ -5,6 +5,8 @@ from distutils import dir_util
 import glob
 import json
 
+doc_dir = sys.argv[1]
+
 branch = project.__branch__
 release = project.__version__
 version = project.__version__.split("+")[0]
@@ -47,17 +49,17 @@ if not os.path.exists("./gh-pages"):
 # directory of the website, and also to the 'versions/version' directory
 if is_tagged_release or (branch == "main"):
     print(f"Copying main docs to gh-pages")
-    dir_util.copy_tree("build/html/", "gh-pages/")
+    dir_util.copy_tree(f"{doc_dir}/build/html/", "gh-pages/")
 
     if is_tagged_release:
         print(f"Copying main docs to gh-pages/versions/{version}")
-        dir_util.copy_tree("build/html/", f"gh-pages/versions/{version}/")
+        dir_util.copy_tree(f"{doc_dir}/build/html/", f"gh-pages/versions/{version}/")
 
 elif branch == "devel":
-    dir_util.copy_tree("build/html/", "gh-pages/versions/devel/")
+    dir_util.copy_tree(f"{doc_dir}/build/html/", "gh-pages/versions/devel/")
 
 else:
-    dir_util.copy_tree("build/html/", f"gh-pages/versions/{branch}/")
+    dir_util.copy_tree(f"{doc_dir}/build/html/", f"gh-pages/versions/{branch}/")
 
 
 # now write the versions.json file
