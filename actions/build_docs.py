@@ -57,7 +57,7 @@ def run_command(cmd, dry=False):
         sys.exit(-1)
 
 # install doc dependencies
-reqs = " ".join([line.lstrip().rstrip() for line in open(f"{doc_dir}/requirements.txt", "r").readlines()])
+reqs = " ".join([line.lstrip().rstrip() for line in open(f"{doc_dir}/doc/requirements.txt", "r").readlines()])
 
 print(f"Installing doc requirements: {reqs}")
 
