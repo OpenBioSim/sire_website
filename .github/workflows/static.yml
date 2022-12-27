@@ -23,6 +23,11 @@ jobs:
   # Single deploy job since we're just deploying
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: sire-build
+    defaults:
+      run:
+        shell: "bash -l {0}"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
