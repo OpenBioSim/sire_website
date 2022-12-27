@@ -68,8 +68,8 @@ for root, dirs, files in os.walk("gh-pages", onerror=None, followlinks=False):
             with open(fullpath, "rb") as FILE:
                 data = FILE.read()
 
-            # only care about files that are larger than 512K
-            if len(data) < 256*1024:
+            # only care about files that are larger than 32K
+            if len(data) < 32*1024:
                 continue
 
             # md5 plus filesize should be unique enough
