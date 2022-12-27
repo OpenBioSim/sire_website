@@ -32,26 +32,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: gh-pages
           path: gh-pages
-      - name: Install Python
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          auto-update-conda: true
-          python-version: 3.9
-          activate-environment: sire_build
-          miniforge-version: latest
-          miniforge-variant: Mambaforge
-          use-mamba: true
-      - name: Install Sire
-        run: mamba install -y -c michellab sire
-      - name: Checkout sire branch
-        uses: actions/checkout@v3
-        with:
-          repository: "michellab/sire"
-          github-server-url: "https://github.com"
+      - name: Debug directories
+        run: ls -l
+      - name: Debug pages
+        run: ls -l gh-pages
+      #- name: Install Python
+      #  uses: conda-incubator/setup-miniconda@v2
+      #  with:
+      #    auto-update-conda: true
+      #    python-version: 3.9
+      #    activate-environment: sire_build
+      #    miniforge-version: latest
+      #    miniforge-variant: Mambaforge
+      #    use-mamba: true
+      #- name: Install Sire
+      #  run: mamba install -y -c michellab sire
+      #- name: Checkout sire branch
+      #  uses: actions/checkout@v3
+      #  with:
+      #    repository: "michellab/sire"
+      #    github-server-url: "https://github.com"
       - name: Build Website
         run: python actions/build_docs.py sire/doc
       - name: Assemble Website
