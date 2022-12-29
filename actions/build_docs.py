@@ -22,7 +22,10 @@ print(f"Build docs for branch {branch} version {version}")
 # we will only build docs for the main and devel branches
 # (as these are moved into special locations)
 
-force_build_docs = os.environ["FORCE_BUILD_DOCS"]
+try:
+    force_build_docs = os.environ["FORCE_BUILD_DOCS"]
+except Exception:
+    force_build_docs = False
 
 if branch not in ["main", "devel"]:
     if branch.find(version) != -1:
