@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.cas" href="index_cas.html" /><link rel="prev" title="sire.base" href="index_base.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -353,6 +358,140 @@
         <article role="main">
           <section id="module-sire.base">
 <span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.base" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.base.PropertyMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">PropertyMap</span></span><a class="headerlink" href="#sire.base.PropertyMap" title="Permalink to this definition">#</a></dt>
+<dd><p>This is the class that holds the collection of user-supplied
+optional properties and their locations to functions.</p>
+<p>This class allows the following code to be written;</p>
+<p>cljff.add( mol, Property::set(charges,chgs) +
+Property::set(ljs,ljparams) );</p>
+<p>The PropertyMapPropertyName classes provide a kwargs
+like interface for the C++ classes - indeed the python
+wrappers should allow code to be written like;</p>
+<p>cljff.add( mol, {charges : chgs, ljs : ljparams} )</p>
+<p>or</p>
+<p>cljff.add( mol, charges=charges, ljs=ljparams )</p>
+<p>Author: Christopher Woods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.assign" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PropertyMap {lvalue} assign(SireBase::PropertyMap {lvalue},SireBase::PropertyMap)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.clone" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PropertyMap clone(SireBase::PropertyMap)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.is_default">
+<span class="sig-name descname"><span class="pre">is_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.is_default" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>isDefault( (PropertyMap)arg1) -&gt; bool :</dt><dd><p>Return whether or not this map is default - if it is,
+then it doesnt specify any properties</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isDefault(SireBase::PropertyMap {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.merge" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return a PropertyMap that is the combination of this and other.</dt><dd><p>Keys set in other take precedence over keys in this.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireBase::PropertyMap merge(SireBase::PropertyMap {lvalue},SireBase::PropertyMap)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.specified">
+<span class="sig-name descname"><span class="pre">specified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(str)name</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.specified" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>Return whether or not this map specifies the source or value</dt><dd><p>of the property called name</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool specified(SireBase::PropertyMap {lvalue},char const*)</p>
+</dd>
+</dl>
+</dd>
+<dt>specified( (PropertyMap)arg1, (object)name) -&gt; bool :</dt><dd><p>Return whether or not this map specifies the source or value
+of the property called name</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool specified(SireBase::PropertyMap {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+<dt>specified( (PropertyMap)arg1, (PropertyName)name) -&gt; bool :</dt><dd><p>Return whether or not this map specifies the source or value
+of the property called name</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool specified(SireBase::PropertyMap {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.to_dict" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>toDict( (PropertyMap)arg1) -&gt; object :</dt><dd><p>Return the raw underlying dictionary of the map</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QHash&lt;QString, SireBase::PropertyName&gt; toDict(SireBase::PropertyMap {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.to_string" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>toString( (PropertyMap)arg1) -&gt; object :</dt><dd><p>Return a string representation of this PropertyMap</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireBase::PropertyMap {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.typename" title="Permalink to this definition">#</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.what" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireBase::PropertyMap {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.base.create_map">
 <span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">create_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/base.html#create_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.base.create_map" title="Permalink to this definition">#</a></dt>
@@ -432,7 +571,7 @@ automatically.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             
@@ -454,6 +593,18 @@ automatically.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Public API</a><ul>
+<li><a class="reference internal" href="#sire.base.PropertyMap"><code class="docutils literal notranslate"><span class="pre">PropertyMap</span></code></a><ul>
+<li><a class="reference internal" href="#sire.base.PropertyMap.assign"><code class="docutils literal notranslate"><span class="pre">PropertyMap.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.clone"><code class="docutils literal notranslate"><span class="pre">PropertyMap.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.is_default"><code class="docutils literal notranslate"><span class="pre">PropertyMap.is_default()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.merge"><code class="docutils literal notranslate"><span class="pre">PropertyMap.merge()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.specified"><code class="docutils literal notranslate"><span class="pre">PropertyMap.specified()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.to_dict"><code class="docutils literal notranslate"><span class="pre">PropertyMap.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.to_string"><code class="docutils literal notranslate"><span class="pre">PropertyMap.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.typename"><code class="docutils literal notranslate"><span class="pre">PropertyMap.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.what"><code class="docutils literal notranslate"><span class="pre">PropertyMap.what()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#sire.base.create_map"><code class="docutils literal notranslate"><span class="pre">create_map()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.wrap"><code class="docutils literal notranslate"><span class="pre">wrap()</span></code></a></li>
 </ul>

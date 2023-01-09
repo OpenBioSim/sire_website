@@ -305,11 +305,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
@@ -350,14 +355,13 @@
         </div>
         <article role="main">
           <h1>Source code for sire.utils._profiler</h1><div class="highlight"><pre>
-<span></span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Profiler&quot;</span><span class="p">,</span> <span class="s2">&quot;NullProfiler&quot;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="NullProfiler"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.NullProfiler">[docs]</a><span class="k">class</span> <span class="nc">NullProfiler</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;This is a null profiler that does nothing&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a null profiler that does nothing&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">pass</span>
@@ -376,9 +380,9 @@
 
 
 <div class="viewcode-block" id="Profiler"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.Profiler">[docs]</a><span class="k">class</span> <span class="nc">Profiler</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;This is a simple profiling class that supports manual</span>
-<span class="sd">       instrumenting of the code. It is used for sub-function</span>
-<span class="sd">       profiling.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a simple profiling class that supports manual</span>
+<span class="sd">    instrumenting of the code. It is used for sub-function</span>
+<span class="sd">    profiling.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -389,11 +393,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_end</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="Profiler.is_null"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.Profiler.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Return whether this is a null profiler&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether this is a null profiler&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">False</span></div>
 
     <span class="k">def</span> <span class="nf">_to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Used to write the results of profiling as a report&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Used to write the results of profiling as a report&quot;&quot;&quot;</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">()</span>
@@ -429,15 +433,15 @@
         <span class="k">return</span> <span class="n">lines</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the results of profiling as a report&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the results of profiling as a report&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_string</span><span class="p">())</span>
 
 <div class="viewcode-block" id="Profiler.name"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.Profiler.name">[docs]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Return the name of this profiler&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the name of this profiler&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span></div>
 
 <div class="viewcode-block" id="Profiler.child_total"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.Profiler.child_total">[docs]</a>    <span class="k">def</span> <span class="nf">child_total</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Return the sum of time spent in the child profilers&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the sum of time spent in the child profilers&quot;&quot;&quot;</span>
         <span class="nb">sum</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="p">:</span>
@@ -452,30 +456,30 @@
         <span class="k">return</span> <span class="nb">sum</span></div>
 
 <div class="viewcode-block" id="Profiler.total"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.Profiler.total">[docs]</a>    <span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Return the amount of time that was recorded for this</span>
-<span class="sd">           profiler in milliseconds (accurate to ~nanoseconds)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the amount of time that was recorded for this</span>
+<span class="sd">        profiler in milliseconds (accurate to ~nanoseconds)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># this is the top-level profiler - just return the child total</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_total</span><span class="p">()</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_end</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.000001</span>    <span class="c1"># ns to ms</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.000001</span>  <span class="c1"># ns to ms</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
 <div class="viewcode-block" id="Profiler.start"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.Profiler.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Start profiling the section called &#39;name&#39;. This</span>
-<span class="sd">           returns the updated profiler, e.g.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Start profiling the section called &#39;name&#39;. This</span>
+<span class="sd">        returns the updated profiler, e.g.</span>
 
-<span class="sd">           p = Profiler()</span>
+<span class="sd">        p = Profiler()</span>
 
-<span class="sd">           p = p.start(&quot;long_loop&quot;)</span>
+<span class="sd">        p = p.start(&quot;long_loop&quot;)</span>
 
-<span class="sd">           # run some code</span>
+<span class="sd">        # run some code</span>
 
-<span class="sd">           p = p.end()</span>
+<span class="sd">        p = p.end()</span>
 
-<span class="sd">           print(p)</span>
+<span class="sd">        print(p)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">Profiler</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
@@ -484,20 +488,25 @@
         <span class="k">return</span> <span class="n">p</span></div>
 
 <div class="viewcode-block" id="Profiler.stop"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.Profiler.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Stop profiling. This records the end time</span>
-<span class="sd">           and returns the parent profiler (if we have one)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Stop profiling. This records the end time</span>
+<span class="sd">        and returns the parent profiler (if we have one)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time_ns</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">._console</span> <span class="kn">import</span> <span class="n">Console</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You cannot stop profiler </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2"> as &quot;</span>
-                            <span class="sa">f</span><span class="s2">&quot;it has not been started!&quot;</span><span class="p">)</span>
+
+            <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;You cannot stop profiler </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2"> as &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;it has not been started!&quot;</span>
+            <span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">._console</span> <span class="kn">import</span> <span class="n">Console</span>
+
             <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;WARNING: You cannot stop profiler </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2"> as &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;it has already been stopped!&quot;</span><span class="p">)</span>
+                <span class="sa">f</span><span class="s2">&quot;it has already been stopped!&quot;</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_end</span> <span class="o">=</span> <span class="n">end</span>
 
@@ -520,7 +529,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

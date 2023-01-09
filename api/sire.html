@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Sub-modules" href="sire_modules.html" /><link rel="prev" title="Documentation" href="index.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -417,7 +422,7 @@ in the other <a class="reference internal" href="#module-sire" title="sire"><cod
 <dd><p>Permanently disable thumbs up. This will write a file
 into your home directory called ‘.sire_no_thumbs_up.txt’.
 If this file exists, then thumbs up are denied and
-no data will be sent to siremol.org.</p>
+no data will be sent to sire.openbiosim.org.</p>
 <p>The only way to re-enable thumbs up is to remove
 the $HOME/.sire_no_thumbs_up.txt file.</p>
 </dd></dl>
@@ -435,8 +440,8 @@ with the base.</p></li>
 <li><p><strong>suffix</strong> (<em>str</em>) – A suffix to attach to all files, e.g. “.bz2”</p></li>
 <li><p><strong>Returns</strong> – list[str]:
 The list of expanded filenames or URLs</p></li>
-<li><p><strong>Examples</strong> – <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expand</span><span class="p">(</span><span class="s2">&quot;https://siremol.org/m&quot;</span><span class="p">,</span> <span class="s2">&quot;urea.gro&quot;</span><span class="p">,</span> <span class="s2">&quot;urea.top&quot;</span><span class="p">)</span>
-<span class="go">[&quot;https://siremol.org/m/urea.gro&quot;, &quot;https://siremol.org/n/urea.top&quot;]</span>
+<li><p><strong>Examples</strong> – <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expand</span><span class="p">(</span><span class="s2">&quot;https://sire.openbiosim.org/m&quot;</span><span class="p">,</span> <span class="s2">&quot;urea.gro&quot;</span><span class="p">,</span> <span class="s2">&quot;urea.top&quot;</span><span class="p">)</span>
+<span class="go">[&quot;https://sire.openbiosim.org/m/urea.gro&quot;, &quot;https://sire.openbiosim.org/n/urea.top&quot;]</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expand</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">])</span>
@@ -452,7 +457,7 @@ The list of expanded filenames or URLs</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.get_thumbs_up_info">
 <span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">get_thumbs_up_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_thumbsup.html#get_thumbs_up_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.get_thumbs_up_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the info that will be sent to siremol.org if you call
+<dd><p>Return the info that will be sent to sire.openbiosim.org if you call
 the thumbs_up() function. This will return nothing if you
 have disabled thumbs up using the ‘disable_thumbs_up()’ function.</p>
 </dd></dl>
@@ -532,6 +537,63 @@ will automatically add on the tutorial URL and compression suffix</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.measure">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">measure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">improper_angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_space</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_measure.html#measure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.measure" title="Permalink to this definition">#</a></dt>
+<dd><p>Measure and return the distance, angle, torsion angle or improper
+angle for the passed items. The items can be points in space,
+atoms, residues or any molecule view.</p>
+<p>If one item is passed, then it should be Bond, Angle, Dihedral
+or Improper. In this case, the <code class="docutils literal notranslate"><span class="pre">measure()</span></code> function of that
+item will be returned.</p>
+<p>If two items are passed, then the distance between them
+is returned.</p>
+<p>If three items are passed, then the angle between then
+is returned.</p>
+<p>If four items are passed, then the torsion angle between
+them is returned if <code class="docutils literal notranslate"><span class="pre">improper_angle</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> (the default).
+If <code class="docutils literal notranslate"><span class="pre">improper_angle</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then the improper angle
+is returned.</p>
+<p>Note that this will take into account any periodic boundary
+conditions. The first-found space will be used to map all
+points into a minimum-image-convention box, and the measurements
+will be made from these. Set ‘ignore_space=True’ if you want
+to ignore the space and perform measurements without
+periodic boundary conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>item0</strong> – Any sire object that be converted to coordinates. This
+is either sire.maths.Vector, or if this is a molecule view,
+then it is the result of calling view.coordinates()</p></li>
+<li><p><strong>item1</strong> – Any sire object that be converted to coordinates. This
+is either sire.maths.Vector, or if this is a molecule view,
+then it is the result of calling view.coordinates()</p></li>
+<li><p><strong>item2</strong> – Any sire object that be converted to coordinates. This
+is either sire.maths.Vector, or if this is a molecule view,
+then it is the result of calling view.coordinates()</p></li>
+<li><p><strong>item3</strong> – Any sire object that be converted to coordinates. This
+is either sire.maths.Vector, or if this is a molecule view,
+then it is the result of calling view.coordinates()</p></li>
+<li><p><strong>improper_angle</strong> – bool. Whether or not the improper angle should
+be returned (default False, as the torsion angle
+is calculated by default between four items)</p></li>
+<li><p><strong>ignore_space</strong> – <dl class="simple">
+<dt>bool. Whether or not to ignore any space found</dt><dd><p>in the passed sire objects that instead to perform
+the measurements in an infinite cartesian space.</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>measurement<span class="classifier">Either a distance or an angle depending on the</span></dt><dd><p>number of items passed.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.molid">
 <span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">molid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_sensitive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire.html#molid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.molid" title="Permalink to this definition">#</a></dt>
 <dd><dl class="simple">
@@ -563,13 +625,29 @@ will automatically add on the tutorial URL and compression suffix</p>
 is not specified, then the format will be guessed from the
 filename. If the format is specified, and is a list, then multiple
 files will be written, one for each specified format.</p>
+<dl>
+<dt>:param molecules <a class="reference internal" href="system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.system.System</span></code></a>:       <a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.Molecule</span></code></a>,</dt><dd><blockquote>
+<div><p>List[<a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.Molecule</span></code></a>] etc.)</p>
+</div></blockquote>
+<p>The molecule (or molecules) that should be written to the file.
+This can be anything that can be converted to a
+<a class="reference internal" href="system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.system.System</span></code></a>, i.e. a single
+<a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a> (or <code class="xref py py-class docutils literal notranslate"><span class="pre">MoleculeView</span></code>),
+or a list of Molecules (or MoleculeViews)</p>
+</dd>
+<dt>:param<span class="classifier"><a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.Molecule</span></code></a>,</span></dt><dd><blockquote>
+<div><p>List[<a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.Molecule</span></code></a>] etc.)</p>
+</div></blockquote>
+<p>The molecule (or molecules) that should be written to the file.
+This can be anything that can be converted to a
+<a class="reference internal" href="system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.system.System</span></code></a>, i.e. a single
+<a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a> (or <code class="xref py py-class docutils literal notranslate"><span class="pre">MoleculeView</span></code>),
+or a list of Molecules (or MoleculeViews)</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>molecules</strong> (<a class="reference internal" href="system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.system.System</span></code></a>, <a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.Molecule</span></code></a>, List[<a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.Molecule</span></code></a>] etc.) – The molecule (or molecules) that should be written to the file.
-This can be anything that can be converted to a <a class="reference internal" href="system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.system.System</span></code></a>,
-i.e. a single <a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a> (or <code class="xref py py-class docutils literal notranslate"><span class="pre">MoleculeView</span></code>), or a list of
-Molecules (or MoleculeViews)</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – The name of the file to which to write the file. Extensions
 will be automatically added if they are needed to match
 the formats of the file (or files) that are written.</p></li>
@@ -658,23 +736,50 @@ that are supported by Sire</p>
 <dt class="sig sig-object py" id="sire.thumbs_up">
 <span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">thumbs_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_thumbsup.html#thumbs_up"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.thumbs_up" title="Permalink to this definition">#</a></dt>
 <dd><p>Give Sire a thumbs up! This will send a small amount of data
-to siremol.org to let us know that you like Sire, and what
+to sire.openbiosim.org to let us know that you like Sire, and what
 operating system and version of Sire you are using.</p>
 <dl class="simple">
 <dt>(you can see all of the information that would be sent</dt><dd><p>by calling “get_thumbs_up_info()”)</p>
 </dd>
 </dl>
 <p>You can get more information about what is sent and why
-this is useful to us by visiting <a class="reference external" href="https://siremol.org/thumbs_up">https://siremol.org/thumbs_up</a></p>
+this is useful to us by visiting <a class="reference external" href="https://sire.openbiosim.org/thumbs_up">https://sire.openbiosim.org/thumbs_up</a></p>
 <p>You can permanently disable thumbs_up() on your computer by
 calling “disable_thumbs_up()”. This will write a small
 file to your home directory that will tell Sire to not
 allow any more thumbs_up data to be sent.</p>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.use_mixed_api">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">use_mixed_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support_old_module_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_pythonize.html#use_mixed_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.use_mixed_api" title="Permalink to this definition">#</a></dt>
+<dd><p>Load Sire using both the new (python-style) and old APIs. This
+is useful for migrating old scripts as a temporary porting option.
+You can start writing functions using the new API, safe in the
+knowledge that the old API functions will still work.</p>
+<p>Do aim to finish your port though, else you will forever have
+a duplicated API (e.g. have both X.nAtoms() and X.num_atoms() etc.)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.use_new_api">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">use_new_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_pythonize.html#use_new_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.use_new_api" title="Permalink to this definition">#</a></dt>
+<dd><p>Load Sire using the new (python-style) API. This will be called
+automatically when you load any of the new Python modules, so you
+shouldn’t need to call this yourself.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.use_old_api">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">use_old_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_pythonize.html#use_old_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.use_old_api" title="Permalink to this definition">#</a></dt>
+<dd><p>Load Sire using the old (C++-style) API. This is for
+compatibility reasons for old code only. This should
+not be used with new code</p>
+</dd></dl>
+
 <dl class="py data">
 <dt class="sig sig-object py" id="sire.tutorial_url">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">tutorial_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">https://siremol.org/m</span></em><a class="headerlink" href="#sire.tutorial_url" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">tutorial_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">https://sire.openbiosim.org/m</span></em><a class="headerlink" href="#sire.tutorial_url" title="Permalink to this definition">#</a></dt>
 <dd><p>The base URL for all molecule files used in the tutorial.</p>
 </dd></dl>
 
@@ -712,7 +817,7 @@ allow any more thumbs_up data to be sent.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             
@@ -742,12 +847,16 @@ allow any more thumbs_up data to be sent.</p>
 <li><a class="reference internal" href="#sire.get_thumbs_up_info"><code class="docutils literal notranslate"><span class="pre">get_thumbs_up_info()</span></code></a></li>
 <li><a class="reference internal" href="#sire.load"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
 <li><a class="reference internal" href="#sire.load_test_files"><code class="docutils literal notranslate"><span class="pre">load_test_files()</span></code></a></li>
+<li><a class="reference internal" href="#sire.measure"><code class="docutils literal notranslate"><span class="pre">measure()</span></code></a></li>
 <li><a class="reference internal" href="#sire.molid"><code class="docutils literal notranslate"><span class="pre">molid()</span></code></a></li>
 <li><a class="reference internal" href="#sire.save"><code class="docutils literal notranslate"><span class="pre">save()</span></code></a></li>
 <li><a class="reference internal" href="#sire.save_to_string"><code class="docutils literal notranslate"><span class="pre">save_to_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.segid"><code class="docutils literal notranslate"><span class="pre">segid()</span></code></a></li>
 <li><a class="reference internal" href="#sire.supported_formats"><code class="docutils literal notranslate"><span class="pre">supported_formats()</span></code></a></li>
 <li><a class="reference internal" href="#sire.thumbs_up"><code class="docutils literal notranslate"><span class="pre">thumbs_up()</span></code></a></li>
+<li><a class="reference internal" href="#sire.use_mixed_api"><code class="docutils literal notranslate"><span class="pre">use_mixed_api()</span></code></a></li>
+<li><a class="reference internal" href="#sire.use_new_api"><code class="docutils literal notranslate"><span class="pre">use_new_api()</span></code></a></li>
+<li><a class="reference internal" href="#sire.use_old_api"><code class="docutils literal notranslate"><span class="pre">use_old_api()</span></code></a></li>
 <li><a class="reference internal" href="#sire.tutorial_url"><code class="docutils literal notranslate"><span class="pre">tutorial_url</span></code></a></li>
 </ul>
 </li>

@@ -2,8 +2,8 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Packaging releases" href="packaging.html" /><link rel="prev" title="Contributing" href="index.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Coding Style" href="codestyle.html" /><link rel="prev" title="Contributing" href="index.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Developer’s guide - openbiosim - sire</title>
@@ -306,11 +306,16 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Contributing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -353,72 +358,91 @@
         <article role="main">
           <section id="developer-s-guide">
 <h1>Developer’s guide<a class="headerlink" href="#developer-s-guide" title="Permalink to this heading">#</a></h1>
-<p>The source code for Sire is available on
-<a class="reference external" href="https://github.com/michellab/Sire">GitHub</a>.</p>
+<p>The source code for <code class="xref py py-mod docutils literal notranslate"><span class="pre">sire`</span></code> is available on
+<a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 <section id="setting-up-your-computer">
 <h2>Setting up your computer<a class="headerlink" href="#setting-up-your-computer" title="Permalink to this heading">#</a></h2>
-<p>Sire will install everything it needs when you run the
-<em class="xref py py-obj">compile_sire.sh</em> script in the top-level Sire directory.</p>
-<p>This will automatically download miniconda, and then use that
-to install all of Sire’s dependencies (including all of
-BioSimSpace’s dependencies). These include compilers that are
-packaged with miniconda. The script will then call cmake
-to first compile the core library (corelib), and then all
-of the python wrappers. Compilation can take a very long time!</p>
+<p>You first need to create an anaconda, miniconda or
+mambaforce environment as described in
+the <a class="reference internal" href="../install.html"><span class="doc">installation page</span></a>.</p>
+<p>We recommend using mambaforge, as this sets the right
+priority for the conda-forge channel, and it bundles
+mamba, which we find to be much faster than conda.</p>
 <section id="virtual-environments">
 <h3>Virtual environments<a class="headerlink" href="#virtual-environments" title="Permalink to this heading">#</a></h3>
-<p>It is recommended that you develop Sire in the miniconda environment
-that the <em class="xref py py-obj">compile_sire.sh</em> script creates automatically. This will,
-by default, be in <em class="xref py py-obj">$HOME/sire.app</em>.</p>
+<p>We recommend that you develop <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> in its own
+conda environment. For example, you could call this
+environment <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
 <p>It is worth activating this environment during development and testing,
 e.g. via</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> <span class="nv">$HOME</span>/sire.app/bin/activate
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>/path/to/environment/bin/activate
 </pre></div>
 </div>
+<p>(where <code class="docutils literal notranslate"><span class="pre">/path/to/environment</span></code> is the file path to your environment)</p>
+<p>or by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>environment_name
+</pre></div>
+</div>
+<p>(where <code class="docutils literal notranslate"><span class="pre">environment_name</span></code> should be replaced by the name
+of your environment - e.g. <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>).</p>
 <p>This will update your shell so that all python commands (such as
-<code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span></code> etc.) will use the virtual environment. You can
+<code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">mamba</span></code> etc.) will use the virtual environment. You can
 deactivate the environment and return to the “standard” Python using;</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda deactivate
-</pre></div>
-</div>
-<p>If you no longer want the environment then you can remove it using</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -rf <span class="nv">$HOME</span>/sire.app
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>deactivate
 </pre></div>
 </div>
 </section>
 </section>
-<section id="coding-style">
-<h2>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this heading">#</a></h2>
+<section id="python-coding-style">
+<h2>Python Coding Style<a class="headerlink" href="#python-coding-style" title="Permalink to this heading">#</a></h2>
 <p>Sire is written predominantly in C++. This was for speed and memory
 efficiency. The Sire C++ objects are wrapped into Python using Py++.</p>
+<p>The legacy API was very C++, and thus not very pythonic in nature.</p>
+<p>We have engaged in a modernisation program, and now (nearly?) all
+Python-exposed or Python-native code in the public API is written
+in a Pythonic style. We aim to be fully
+<a class="reference external" href="https://pep8.org">PEP8-compliant</a> and ask that all new
+Python code contributed to <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is written to be
+<a class="reference external" href="https://pep8.org">PEP8-compliant</a>. We plan to move to
+enforcing this by asking contributers to use a PEP8
+autoformatter
+(e.g. <a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>)
+and will add a linting test to our CI/CD pipeline.</p>
+</section>
+<section id="c-coding-style">
+<h2>C++ Coding Style<a class="headerlink" href="#c-coding-style" title="Permalink to this heading">#</a></h2>
 <p>C++ code style is used for names, with the code written to be strictly
 C++ 2014 conformant (although we welcome requests to move to a newer
 C++ standard, if this is justifiable). The code is very portable and
 should remain so. We ourselves are running production code on X86-64
-and ARM64 processors, on Linux and MacOS. We know of people who have
-used Sire on PowerPC and Windows. We are keen to add first-party
-support for a Windows Sire build (when we have time!).</p>
-<p>We are in the process of (slowly) improving the ease of use of Sire
-by adding a direct Python layer. We aim as much as possible
-in this Python layer to follow a
-<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> python coding style and
-recommend that developers install and use
-a linter such as <a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a>.</p>
+and ARM64 processors, on Linux, MacOS and Windows.
+We know of people who compile and use <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> on PowerPC.</p>
+<p>We have a strict C++ coding style, which is
+<a class="reference internal" href="codestyle.html"><span class="doc">described here</span></a>.</p>
 <p>For ease of installation and support, we require that dependencies are
-available in stock Anaconda Python, or on conda-forge. As a last resort,
-we will bundle dependencies, although this does make our conda build
-more complex.</p>
-<p>With this in mind, we use the following coding conventions:</p>
-<section id="naming">
-<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this heading">#</a></h3>
-<p>We follow a Python style naming convention.</p>
+available in <a class="reference external" href="https://conda-forge.org">conda-forge</a>.
+As a last resort, we will vendor dependencies,
+but this does introduce a significant extra support burden.</p>
+</section>
+<section id="guidelines">
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this heading">#</a></h2>
+<p>With this in mind, we use the following conventions:</p>
 <ul class="simple">
-<li><p>Packages: Uppercase, singleword (note we are exploring moving to a lowercase style)</p></li>
+<li><p>Packages: Lowercase, singleword</p></li>
 <li><p>Classes: CamelCase</p></li>
 <li><p>Methods: snake_case for pure Python, lowerCamelCase for C++</p></li>
 <li><p>Functions: snake_case for pure Python, lowerCamelCase for C++</p></li>
-<li><p>Variables: snake_case for pure Python, should not be used in C++ (variables should be private)</p></li>
+<li><p>Variables: snake_case for pure Python, should not be used in C++ (variables should be private).
+But public Python variables are discouraged. Private variables should
+be preferred, named using a leading underscore.</p></li>
 <li><p>Source Files: snake_case with a leading underscore for pure Python, lowerclassname.cpp / lowerclassname.h for C++</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__all__</span></code> should be used in Python to expose the public API of
+a file or module. This is used to control what is seen using
+tab completion in ipython / notebooks, and what is extracted
+by sphinx to form the API documentation on the website.</p></li>
+<li><p>Documentation - use doxygen style comments for C++ and
+numpy-style documentation for Python. All functions / classes
+in the public API should be documented.</p></li>
 </ul>
 <p>Functions or variables in Python that are private should be named with a leading
 underscore. This prevents them from being prominantly visible in Python’s
@@ -426,18 +450,17 @@ help and tab completion. Any C++ code should only use private variables,
 and should use private or protected as much as possible to reduce the API
 of C++ classes.</p>
 </section>
-</section>
 <section id="workflow">
 <h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">#</a></h2>
 <section id="feature-branches">
 <h3>Feature branches<a class="headerlink" href="#feature-branches" title="Permalink to this heading">#</a></h3>
-<p>First make sure that you are on the development branch of Sire:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout devel
+<p>First make sure that you are on the development branch of <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>devel
 </pre></div>
 </div>
 <p>Now create and switch to a feature branch. This should be prefixed with
-<em>feat</em>, e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b feat-process
+<code class="docutils literal notranslate"><span class="pre">feat</span></code>, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feat-process
 </pre></div>
 </div>
 </section>
@@ -446,11 +469,13 @@ of C++ classes.</p>
 <h2>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h2>
 <p>When working on your feature it is important to write tests to ensure that it
 does what is expected and doesn’t break any existing functionality. Tests
-should be placed inside the separate <a class="reference external" href="https://github.com/michellab/SireUnitTests">SireUnitTests</a>
-repository, creating an appropriately
-named sub-directory for any new modules. Add the tests together with
-a guard so that they can detect if your new code is available, and will
-be skipped if run on an older version of Sire.</p>
+should be placed inside the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory, and should be designed
+to be run using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>. Note that you should not place any input
+files or structure files in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory. Instead, they
+should be placed on the web, and downloaded using <a class="reference internal" href="../api/sire.html#sire.load" title="sire.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.load()</span></code></a>
+via their URL. When we accept your pull request we will move your
+input files onto the main website and will update your test to
+download the files from there.</p>
 <p>The test suite is intended to be run using
 <a class="reference external" href="https://docs.pytest.org/en/latest/contents.html">pytest</a>.
 When run, <code class="docutils literal notranslate"><span class="pre">pytest</span></code> searches for tests in all directories and files
@@ -474,37 +499,44 @@ or end with <em>test</em>, e.g.:</p>
 <p>We use the convention of <code class="docutils literal notranslate"><span class="pre">test_*</span></code> when naming files and functions.</p>
 <section id="running-tests">
 <h3>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this heading">#</a></h3>
-<p>To run the full test suite, go to the <em class="xref py py-obj">SireUnitTests/unittest</em>
-directory and type:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest .
+<p>To run the full test suite, simply run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> pointing to
+the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>tests
 </pre></div>
 </div>
-<p>To run tests for a specific sub-module, e.g. SireMol:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest SireMol
+<p>Tests for each module are in a directory named after
+that module.</p>
+<p>To run tests for a specific sub-module, e.g. <a class="reference internal" href="../api/mol.html#module-sire.mol" title="sire.mol"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.mol</span></code></a>
+type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>tests/mol
 </pre></div>
 </div>
-<p>To only run the unit tests in a particular file, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest SireMol/test_atomselection.py
+<p>To only run the unit tests in a particular file,
+e.g. <code class="docutils literal notranslate"><span class="pre">tests/mol/test_atomprops.py</span></code>, you can type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>tests/mol/test_atomprops.py
 </pre></div>
 </div>
 <p>To get more detailed information about each test, run pytests using the
 <em>verbose</em> flag, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest -v
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>-v<span class="w"> </span>tests
 </pre></div>
 </div>
 <p>More details regarding how to invoke <code class="docutils literal notranslate"><span class="pre">pytest</span></code> can be
 found <a class="reference external" href="https://docs.pytest.org/en/latest/usage.html">here</a>.</p>
+</section>
+</section>
 <section id="writing-tests">
-<h4>Writing tests<a class="headerlink" href="#writing-tests" title="Permalink to this heading">#</a></h4>
+<h2>Writing tests<a class="headerlink" href="#writing-tests" title="Permalink to this heading">#</a></h2>
 <section id="basics">
-<h5>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h5>
-<p>Try to keep individual unit tests short and clear. Aim to test one thing, and
-test it well. Where possible, try to minimise the use of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements
-within a unit test. Since the test will return on the first failed assertion,
-additional contextual information may be lost.</p>
+<h3>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h3>
+<p>Try to keep individual unit tests clear and fast. The aim is that they
+should test a single part of the code, and should complete in seconds
+(if not quicker). Use fixtures to re-use files that have been
+downloaded and parsed as much as possible. These are all defined
+in the file <a class="reference external" href="https://github.com/OpenBioSim/sire/blob/devel/tests/conftest.py">tests/conftests.py</a>.</p>
 </section>
 <section id="floating-point-comparisons">
-<h5>Floating point comparisons<a class="headerlink" href="#floating-point-comparisons" title="Permalink to this heading">#</a></h5>
+<h3>Floating point comparisons<a class="headerlink" href="#floating-point-comparisons" title="Permalink to this heading">#</a></h3>
 <p>Make use of the
 <a class="reference external" href="https://docs.pytest.org/en/latest/builtin.html#comparing-floating-point-numbers">approx</a>
 function from the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> package for performing floating
@@ -522,7 +554,7 @@ argument to the function, e.g:</p>
 </div>
 </section>
 <section id="skipping-tests">
-<h5>Skipping tests<a class="headerlink" href="#skipping-tests" title="Permalink to this heading">#</a></h5>
+<h3>Skipping tests<a class="headerlink" href="#skipping-tests" title="Permalink to this heading">#</a></h3>
 <p>If you are using
 <a class="reference external" href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a>
 it might be desirable to write your tests before implementing the functionality,
@@ -538,7 +570,7 @@ to flag that a unit test should be skipped, e.g.:</p>
 </div>
 </section>
 <section id="parametrizing-tests">
-<h5>Parametrizing tests<a class="headerlink" href="#parametrizing-tests" title="Permalink to this heading">#</a></h5>
+<h3>Parametrizing tests<a class="headerlink" href="#parametrizing-tests" title="Permalink to this heading">#</a></h3>
 <p>Often it is desirable to run a test for a range of different input parameters.
 This can be achieved using the <code class="docutils literal notranslate"><span class="pre">parametrize</span></code> decorator, e.g.:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
@@ -547,7 +579,7 @@ This can be achieved using the <code class="docutils literal notranslate"><span 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">test_mul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Test the mul function. &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Test the mul function. &quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="n">mul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="n">mul</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -562,7 +594,7 @@ parameter pairs <code class="docutils literal notranslate"><span class="pre">(x,
                          <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">),</span>
                          <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="o">-</span><span class="mi">37</span><span class="p">)])</span>
 <span class="k">def</span> <span class="nf">test_sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Test the sub function. &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Test the sub function. &quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="n">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="n">sub</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
 </pre></div>
 </div>
@@ -570,11 +602,11 @@ parameter pairs <code class="docutils literal notranslate"><span class="pre">(x,
 of the parameters matched against the arguments of the test function.</p>
 </section>
 <section id="testing-exceptions">
-<h5>Testing exceptions<a class="headerlink" href="#testing-exceptions" title="Permalink to this heading">#</a></h5>
+<h3>Testing exceptions<a class="headerlink" href="#testing-exceptions" title="Permalink to this heading">#</a></h3>
 <p>Pytest provides a way of testing your code for known exceptions. For example,
 suppose we had a function that raises an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">indexError</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; A function that raises an IndexError. &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; A function that raises an IndexError. &quot;&quot;&quot;</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
@@ -587,37 +619,41 @@ suppose we had a function that raises an <code class="docutils literal notransla
 </div>
 </section>
 <section id="custom-attributes">
-<h5>Custom attributes<a class="headerlink" href="#custom-attributes" title="Permalink to this heading">#</a></h5>
+<h3>Custom attributes<a class="headerlink" href="#custom-attributes" title="Permalink to this heading">#</a></h3>
 <p>It’s possible to mark test functions with any attribute you like. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">slow</span>
 <span class="k">def</span> <span class="nf">test_slow_function</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; A unit test that takes a really long time. &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; A unit test that takes a really long time. &quot;&quot;&quot;</span>
     <span class="o">...</span>
 </pre></div>
 </div>
 <p>Here we have marked the test function with the attribute <code class="docutils literal notranslate"><span class="pre">slow</span></code> in order to
 indicate that it takes a while to run. From the command line it is possible
 to run or skip tests with a particular mark.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest mypkg -m <span class="s2">&quot;slow&quot;</span>        <span class="c1"># only run the slow tests</span>
-pytest mypkg -m <span class="s2">&quot;not slow&quot;</span>    <span class="c1"># skip the slow tests</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>mypkg<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;slow&quot;</span><span class="w">        </span><span class="c1"># only run the slow tests</span>
+pytest<span class="w"> </span>mypkg<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;not slow&quot;</span><span class="w">    </span><span class="c1"># skip the slow tests</span>
 </pre></div>
 </div>
 <p>The custom attribute can just be a label, as in this case, or could be your
 own function decorator.</p>
-</section>
-</section>
+<p>Please do use <code class="docutils literal notranslate"><span class="pre">slow</span></code> to mark tests that take more than 3 seconds
+to run, and use <code class="docutils literal notranslate"><span class="pre">veryslow</span></code> for tests that take more than 10 seconds
+to run.</p>
 </section>
 <section id="continuous-integration-and-delivery">
 <h3>Continuous integration and delivery<a class="headerlink" href="#continuous-integration-and-delivery" title="Permalink to this heading">#</a></h3>
 <p>We use GitHub Actions to run a full continuous integration (CI)
-on all pull requests to devel and
-main, and all pushes to devel and main. We will not merge a pull
-request until all tests pass. We only accept pull requests to devel.
-We only allow pull requests from devel to main. In addition to CI,
+on all pull requests to <code class="docutils literal notranslate"><span class="pre">devel</span></code> and
+<code class="docutils literal notranslate"><span class="pre">main</span></code>, and all pushes to <code class="docutils literal notranslate"><span class="pre">devel</span></code> and <code class="docutils literal notranslate"><span class="pre">main</span></code>. We will not merge a pull
+request until all tests pass. We only accept pull requests to <code class="docutils literal notranslate"><span class="pre">devel</span></code>.
+Only the release managers and accept pull requests to <code class="docutils literal notranslate"><span class="pre">devel</span></code>.</p>
+<p>Only the release managers can make and accept pull requests
+from <code class="docutils literal notranslate"><span class="pre">devel</span></code> to <code class="docutils literal notranslate"><span class="pre">main</span></code>, and only as part of creating a new
+release of <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. In addition to CI,
 we also perform a build of the website on pushes to devel and tags
-to main. Finally, we have set up
-continuous delivery (CD) on pushes to main and devel, which
-build the conda packages and website.</p>
+to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Finally, we have set up
+continuous delivery (CD) on pushes to <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">devel</span></code>, which
+build and upload the conda packages.</p>
 </section>
 </section>
 <section id="documentation">
@@ -627,15 +663,15 @@ build the conda packages and website.</p>
 <a class="reference external" href="https://numpy.org">NumPy</a> style docstrings.
 See <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">here</a>
 for details. The documentation is automatically built using
-<a class="reference external" href="http://sphinx-doc.org">Sphinx</a> whenever a commit is pushed to devel
-that contains the tag “SOMETHING”.</p>
+<a class="reference external" href="http://sphinx-doc.org">Sphinx</a>.</p>
 <p>To build the documentation locally you will first need to install some
-additional packages.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install sphinx sphinx_issues sphinx_rtd_theme
+additional packages as described in the
+<a class="reference external" href="https://github.com/OpenBioSim/sire/blob/devel/doc/requirements.txt">requirements.txt</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>sphinxcontrib-programoutput<span class="w"> </span>sphinx_issues<span class="w"> </span>furo
 </pre></div>
 </div>
 <p>Then move to the <code class="docutils literal notranslate"><span class="pre">doc</span></code> directory and run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make html
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
 </pre></div>
 </div>
 <p>When finished, point your browser to <code class="docutils literal notranslate"><span class="pre">build/html/index.html</span></code>.</p>
@@ -643,36 +679,36 @@ additional packages.</p>
 <section id="committing">
 <h2>Committing<a class="headerlink" href="#committing" title="Permalink to this heading">#</a></h2>
 <p>If you create new tests, please make sure that they pass locally before
-commiting. When happy, commit your changes, e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -a -m <span class="s2">&quot;Implementation and test for new feature.&quot;</span>
+commiting. Please also check that all your Python code is formatted
+to be <a class="reference external" href="https://pep8.org">PEP8-compliant</a>. This will be easier
+if you use an autoformatter such as <a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>.</p>
+<p>When happy, commit your changes, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implementation and test for new feature.&quot;</span>
 </pre></div>
 </div>
 <p>Remember that it is better to make small changes and commit frequently.</p>
-<p>If your edits don’t change the Sire source code, or documentation,
+<p>Next, make sure that you have no conflicts with the <code class="docutils literal notranslate"><span class="pre">devel</span></code>
+branch. Pull this branch via;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>devel
+</pre></div>
+</div>
+<p>and resolve any conflicts that appear (ideally by modifying
+your code). Please feel free to get in touch if there are many
+conflicts or you need to modify lots of other code in <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>.</p>
+<p>Remember to then recompile your code and check that all
+of the unit tests (including your new tests) pass.</p>
+<p>If your edits don’t change the <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> source code, or documentation,
 e.g. fixing typos, then please add <code class="docutils literal notranslate"><span class="pre">ci</span> <span class="pre">skip</span></code> to your commit message, e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -a -m <span class="s2">&quot;Updating docs [ci skip]&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Updating docs [ci skip]&quot;</span>
 </pre></div>
 </div>
 <p>This will avoid unnecessarily running the
-<a class="reference external" href="https://github.com/metawards/MetaWards/actions">GitHub Actions</a>, e.g.
-building a new Sire package, updating the website, etc.
+<a class="reference external" href="https://github.com/OpenBioSim/sire/actions">GitHub Actions</a>, e.g.
+building a new <code class="xref py py-mod docutils literal notranslate"><span class="pre">sire`</span></code> package, updating the website, etc.
 (the GitHub actions are configured in the file
-<code class="docutils literal notranslate"><span class="pre">.github/workflows/main.yaml</span></code>). To this end, we
-have provided a git hook that will append <code class="docutils literal notranslate"><span class="pre">[ci</span> <span class="pre">skip]</span></code> if the commit only
-modifies files in a blacklist that is specified in the file <code class="docutils literal notranslate"><span class="pre">.ciignore</span></code>
-(analagous to the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> used to ignore untracked files). To enable
-the hook, simply copy it into the <code class="docutils literal notranslate"><span class="pre">.git/hooks</span></code> directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp git_hooks/commit-msg .git/hooks
-</pre></div>
-</div>
-<p>Any additional files or paths that shouldn’t trigger a re-build can be added
-to the <code class="docutils literal notranslate"><span class="pre">.ciignore</span></code> file.</p>
+<code class="docutils literal notranslate"><span class="pre">.github/workflows/main.yaml</span></code>).</p>
 <p>Next, push your changes to the remote server, e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Push to the feature branch on the main MetaWards repo, if you have access.</span>
-git push origin feature
-
-<span class="c1"># Push to the feature branch your own fork.</span>
-git push fork feature
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
 </pre></div>
 </div>
 <p>When the feature is complete, create a <em>pull request</em> on GitHub so that the
@@ -682,13 +718,13 @@ For information, see the documentation
 </section>
 <section id="thanks">
 <h2>Thanks<a class="headerlink" href="#thanks" title="Permalink to this heading">#</a></h2>
-<p>First, thanks to you for your interest in Sire and for reading this
+<p>First, thanks to you for your interest in <code class="xref py py-mod docutils literal notranslate"><span class="pre">sire`</span></code> and for reading this
 far. We hope you enjoy having a play with the code and having a go
 at adding new functionality, fixing bugs, writing docs etc.</p>
 <p>We would also like to thank Lester Hedges and the
 <a class="reference external" href="https://biosimspace.org">BioSimSpace</a> team who provided great advice
 to set up the above, and from whose
-<a class="reference external" href="https://github.com/michellab/biosimspace">GitHub repo</a>
+<a class="reference external" href="https://github.com/openbiosim/biosimspace">GitHub repo</a>
 most of the procedures, scripts and documentation above is derived.</p>
 </section>
 </section>
@@ -698,12 +734,12 @@ most of the procedures, scripts and documentation above is derived.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="packaging.html">
+          <a class="next-page" href="codestyle.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Packaging releases</div>
+                <div class="title">Coding Style</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -724,7 +760,7 @@ most of the procedures, scripts and documentation above is derived.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             
@@ -750,16 +786,17 @@ most of the procedures, scripts and documentation above is derived.</p>
 <li><a class="reference internal" href="#virtual-environments">Virtual environments</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#coding-style">Coding Style</a><ul>
-<li><a class="reference internal" href="#naming">Naming</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#python-coding-style">Python Coding Style</a></li>
+<li><a class="reference internal" href="#c-coding-style">C++ Coding Style</a></li>
+<li><a class="reference internal" href="#guidelines">Guidelines</a></li>
 <li><a class="reference internal" href="#workflow">Workflow</a><ul>
 <li><a class="reference internal" href="#feature-branches">Feature branches</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#testing">Testing</a><ul>
-<li><a class="reference internal" href="#running-tests">Running tests</a><ul>
+<li><a class="reference internal" href="#running-tests">Running tests</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#writing-tests">Writing tests</a><ul>
 <li><a class="reference internal" href="#basics">Basics</a></li>
 <li><a class="reference internal" href="#floating-point-comparisons">Floating point comparisons</a></li>
@@ -767,10 +804,6 @@ most of the procedures, scripts and documentation above is derived.</p>
 <li><a class="reference internal" href="#parametrizing-tests">Parametrizing tests</a></li>
 <li><a class="reference internal" href="#testing-exceptions">Testing exceptions</a></li>
 <li><a class="reference internal" href="#custom-attributes">Custom attributes</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li><a class="reference internal" href="#continuous-integration-and-delivery">Continuous integration and delivery</a></li>
 </ul>
 </li>

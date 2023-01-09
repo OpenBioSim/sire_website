@@ -305,11 +305,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -350,19 +355,52 @@
         </div>
         <article role="main">
           <h1>Source code for sire</h1><div class="highlight"><pre>
-<span></span>
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;atomid&quot;</span><span class="p">,</span> <span class="s2">&quot;chainid&quot;</span><span class="p">,</span> <span class="s2">&quot;disable_thumbs_up&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;expand&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;get_thumbs_up_info&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="s2">&quot;load_test_files&quot;</span><span class="p">,</span> <span class="s2">&quot;molid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;save&quot;</span><span class="p">,</span> <span class="s2">&quot;save_to_string&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;segid&quot;</span><span class="p">,</span> <span class="s2">&quot;supported_formats&quot;</span><span class="p">,</span> <span class="s2">&quot;thumbs_up&quot;</span><span class="p">,</span> <span class="s2">&quot;tutorial_url&quot;</span>
-          <span class="p">]</span>
+<span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">config</span>
+
+<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
+
+<span class="kn">from</span> <span class="nn">._pythonize</span> <span class="kn">import</span> <span class="n">use_mixed_api</span><span class="p">,</span> <span class="n">use_new_api</span><span class="p">,</span> <span class="n">use_old_api</span>
+<span class="kn">from</span> <span class="nn">._load</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">load</span><span class="p">,</span>
+    <span class="n">save</span><span class="p">,</span>
+    <span class="n">save_to_string</span><span class="p">,</span>
+    <span class="n">expand</span><span class="p">,</span>
+    <span class="n">tutorial_url</span><span class="p">,</span>
+    <span class="n">load_test_files</span><span class="p">,</span>
+    <span class="n">supported_formats</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">._thumbsup</span> <span class="kn">import</span> <span class="n">thumbs_up</span><span class="p">,</span> <span class="n">get_thumbs_up_info</span><span class="p">,</span> <span class="n">disable_thumbs_up</span>
+<span class="kn">from</span> <span class="nn">._measure</span> <span class="kn">import</span> <span class="n">measure</span>
+<span class="kn">from</span> <span class="nn">._colname</span> <span class="kn">import</span> <span class="n">colname</span><span class="p">,</span> <span class="n">colnames</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;atomid&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;chainid&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;colname&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;colnames&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;disable_thumbs_up&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expand&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;get_thumbs_up_info&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;load&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;load_test_files&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;measure&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;molid&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;save&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;save_to_string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;segid&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;supported_formats&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;thumbs_up&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tutorial_url&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;use_mixed_api&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;use_new_api&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;use_old_api&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">_fix_openmm_path</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;We need to fix the OpenMM path on Windows, because the DLL</span>
-<span class="sd">       is not where we would expect it to be</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;We need to fix the OpenMM path on Windows, because the DLL</span>
+<span class="sd">    is not where we would expect it to be</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -403,9 +441,13 @@
                     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">binfile</span><span class="p">):</span>
                         <span class="c1"># copy the file into the right place</span>
                         <span class="kn">import</span> <span class="nn">shutil</span>
+
                         <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">binfile</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not resolve OpenMM library location. This may cause issues later.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="s2">&quot;Could not resolve OpenMM library location. &quot;</span>
+                    <span class="s2">&quot;This may cause issues later.&quot;</span>
+                <span class="p">)</span>
 
         <span class="c1"># also add it manually here</span>
         <span class="k">try</span><span class="p">:</span>
@@ -418,9 +460,13 @@
 <span class="n">_fix_openmm_path</span><span class="p">()</span>
 
 
-<div class="viewcode-block" id="molid"><a class="viewcode-back" href="../api/sire.html#sire.molid">[docs]</a><span class="k">def</span> <span class="nf">molid</span><span class="p">(</span><span class="n">num</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-          <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifer for a Molecule from the passed</span>
+<div class="viewcode-block" id="molid"><a class="viewcode-back" href="../api/sire.html#sire.molid">[docs]</a><span class="k">def</span> <span class="nf">molid</span><span class="p">(</span>
+    <span class="n">num</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifer for a Molecule from the passed</span>
 <span class="sd">       name, number and index.</span>
 
 <span class="sd">    Args:</span>
@@ -449,9 +495,11 @@
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
         <span class="n">ID</span> <span class="o">=</span> <span class="n">MolName</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
@@ -474,9 +522,10 @@
         <span class="k">return</span> <span class="n">ID</span></div>
 
 
-<div class="viewcode-block" id="atomid"><a class="viewcode-back" href="../api/sire.html#sire.atomid">[docs]</a><span class="k">def</span> <span class="nf">atomid</span><span class="p">(</span><span class="n">num</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-           <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifer for an Atom from the passed</span>
+<div class="viewcode-block" id="atomid"><a class="viewcode-back" href="../api/sire.html#sire.atomid">[docs]</a><span class="k">def</span> <span class="nf">atomid</span><span class="p">(</span>
+    <span class="n">num</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifer for an Atom from the passed</span>
 <span class="sd">       name, number and index.</span>
 
 <span class="sd">    Args:</span>
@@ -505,9 +554,11 @@
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
         <span class="n">ID</span> <span class="o">=</span> <span class="n">AtomName</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
@@ -530,9 +581,10 @@
         <span class="k">return</span> <span class="n">ID</span></div>
 
 
-<div class="viewcode-block" id="resid"><a class="viewcode-back" href="../api/generated/sire.resid.html#sire.resid">[docs]</a><span class="k">def</span> <span class="nf">resid</span><span class="p">(</span><span class="n">num</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-          <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifer for a Residue from the passed</span>
+<span class="k">def</span> <span class="nf">resid</span><span class="p">(</span>
+    <span class="n">num</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifer for a Residue from the passed</span>
 <span class="sd">       name, number and index.</span>
 
 <span class="sd">    Args:</span>
@@ -561,9 +613,11 @@
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
         <span class="n">ID</span> <span class="o">=</span> <span class="n">ResName</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
@@ -583,12 +637,11 @@
     <span class="k">if</span> <span class="n">ID</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">ResIdx</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ID</span></div>
+        <span class="k">return</span> <span class="n">ID</span>
 
 
-<div class="viewcode-block" id="chainid"><a class="viewcode-back" href="../api/sire.html#sire.chainid">[docs]</a><span class="k">def</span> <span class="nf">chainid</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="n">case_sensitive</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifer for a Chain from the passed</span>
+<div class="viewcode-block" id="chainid"><a class="viewcode-back" href="../api/sire.html#sire.chainid">[docs]</a><span class="k">def</span> <span class="nf">chainid</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifer for a Chain from the passed</span>
 <span class="sd">       name and index.</span>
 
 <span class="sd">    Args:</span>
@@ -616,9 +669,11 @@
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
         <span class="n">ID</span> <span class="o">=</span> <span class="n">ChainName</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
@@ -635,9 +690,8 @@
         <span class="k">return</span> <span class="n">ID</span></div>
 
 
-<div class="viewcode-block" id="segid"><a class="viewcode-back" href="../api/sire.html#sire.segid">[docs]</a><span class="k">def</span> <span class="nf">segid</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-          <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifer for a Segment from the passed</span>
+<div class="viewcode-block" id="segid"><a class="viewcode-back" href="../api/sire.html#sire.segid">[docs]</a><span class="k">def</span> <span class="nf">segid</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifer for a Segment from the passed</span>
 <span class="sd">       name and index.</span>
 
 <span class="sd">    Args:</span>
@@ -665,9 +719,11 @@
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
             <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
         <span class="n">ID</span> <span class="o">=</span> <span class="n">SegName</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
@@ -685,7 +741,7 @@
 
 
 <span class="k">def</span> <span class="nf">bondid</span><span class="p">(</span><span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifier for a Bond from the passed</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifier for a Bond from the passed</span>
 <span class="sd">       identifiers for the two atoms.</span>
 
 <span class="sd">       The atom identifiers can be:</span>
@@ -706,16 +762,20 @@
     <span class="k">def</span> <span class="nf">_convert</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomIdx</span>
+
             <span class="k">return</span> <span class="n">AtomIdx</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
                 <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
                 <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomName</span>
+
             <span class="k">return</span> <span class="n">AtomName</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomID</span>
@@ -726,11 +786,12 @@
                 <span class="k">return</span> <span class="n">atomid</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 
     <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">BondID</span>
+
     <span class="k">return</span> <span class="n">BondID</span><span class="p">(</span><span class="n">_convert</span><span class="p">(</span><span class="n">atom0</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom1</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">angleid</span><span class="p">(</span><span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span><span class="p">,</span> <span class="n">atom2</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifier for a Angle from the passed</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifier for a Angle from the passed</span>
 <span class="sd">       identifiers for the three atoms.</span>
 
 <span class="sd">       The atom identifiers can be:</span>
@@ -752,16 +813,20 @@
     <span class="k">def</span> <span class="nf">_convert</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomIdx</span>
+
             <span class="k">return</span> <span class="n">AtomIdx</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
                 <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
                 <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomName</span>
+
             <span class="k">return</span> <span class="n">AtomName</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomID</span>
@@ -772,11 +837,12 @@
                 <span class="k">return</span> <span class="n">atomid</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 
     <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AngleID</span>
+
     <span class="k">return</span> <span class="n">AngleID</span><span class="p">(</span><span class="n">_convert</span><span class="p">(</span><span class="n">atom0</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom1</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom2</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">dihedralid</span><span class="p">(</span><span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span><span class="p">,</span> <span class="n">atom2</span><span class="p">,</span> <span class="n">atom3</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifier for a Dihedral from the passed</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifier for a Dihedral from the passed</span>
 <span class="sd">       identifiers for the four atoms.</span>
 
 <span class="sd">       The atom identifiers can be:</span>
@@ -799,16 +865,20 @@
     <span class="k">def</span> <span class="nf">_convert</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomIdx</span>
+
             <span class="k">return</span> <span class="n">AtomIdx</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
                 <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
                 <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomName</span>
+
             <span class="k">return</span> <span class="n">AtomName</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomID</span>
@@ -819,12 +889,14 @@
                 <span class="k">return</span> <span class="n">atomid</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 
     <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">DihedralID</span>
-    <span class="k">return</span> <span class="n">DihedralID</span><span class="p">(</span><span class="n">_convert</span><span class="p">(</span><span class="n">atom0</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom1</span><span class="p">),</span>
-                      <span class="n">_convert</span><span class="p">(</span><span class="n">atom2</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom3</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">DihedralID</span><span class="p">(</span>
+        <span class="n">_convert</span><span class="p">(</span><span class="n">atom0</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom1</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom2</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom3</span><span class="p">)</span>
+    <span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">improperid</span><span class="p">(</span><span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span><span class="p">,</span> <span class="n">atom2</span><span class="p">,</span> <span class="n">atom3</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct an identifier for an Improper from the passed</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct an identifier for an Improper from the passed</span>
 <span class="sd">       identifiers for the four atoms.</span>
 
 <span class="sd">       The atom identifiers can be:</span>
@@ -847,16 +919,20 @@
     <span class="k">def</span> <span class="nf">_convert</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomIdx</span>
+
             <span class="k">return</span> <span class="n">AtomIdx</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">case_sensitive</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseSensitive</span>
+
                 <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseSensitive</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">.id</span> <span class="kn">import</span> <span class="n">CaseInsensitive</span>
+
                 <span class="n">cs</span> <span class="o">=</span> <span class="n">CaseInsensitive</span>
 
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomName</span>
+
             <span class="k">return</span> <span class="n">AtomName</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">AtomID</span>
@@ -867,11 +943,11 @@
                 <span class="k">return</span> <span class="n">atomid</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 
     <span class="kn">from</span> <span class="nn">.mol</span> <span class="kn">import</span> <span class="n">ImproperID</span>
-    <span class="k">return</span> <span class="n">ImproperID</span><span class="p">(</span><span class="n">_convert</span><span class="p">(</span><span class="n">atom0</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom1</span><span class="p">),</span>
-                      <span class="n">_convert</span><span class="p">(</span><span class="n">atom2</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom3</span><span class="p">))</span>
 
+    <span class="k">return</span> <span class="n">ImproperID</span><span class="p">(</span>
+        <span class="n">_convert</span><span class="p">(</span><span class="n">atom0</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom1</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom2</span><span class="p">),</span> <span class="n">_convert</span><span class="p">(</span><span class="n">atom3</span><span class="p">)</span>
+    <span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">config</span>
 
 <span class="n">__version__</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">__version__</span>
 
@@ -881,16 +957,16 @@
 
 <span class="n">_can_lazy_import</span> <span class="o">=</span> <span class="kc">False</span>
 
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-
 <span class="k">if</span> <span class="s2">&quot;SIRE_NO_LAZY_IMPORT&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">lazy_import</span> <span class="k">as</span> <span class="nn">_lazy_import</span>
+
         <span class="n">_lazy_import</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">disable</span><span class="p">(</span><span class="n">_lazy_import</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
         <span class="c1"># ignore warnings, as a lot are printed from the frozenlib</span>
         <span class="kn">import</span> <span class="nn">warnings</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+        <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
         <span class="n">_can_lazy_import</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -922,29 +998,29 @@
     <span class="n">utils</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.utils&quot;</span><span class="p">)</span>
     <span class="n">vol</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.vol&quot;</span><span class="p">)</span>
 
+
 <span class="k">def</span> <span class="nf">_version_string</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Return a nicely formatted string that describes the current Sire version&quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">get_release_version</span><span class="p">,</span> <span class="n">get_repository_branch</span><span class="p">,</span> \
-        <span class="n">get_repository_version_is_clean</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a nicely formatted string that describes</span>
+<span class="sd">    the current Sire version</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">get_release_version</span><span class="p">,</span>
+        <span class="n">get_repository_branch</span><span class="p">,</span>
+        <span class="n">get_repository_version_is_clean</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">sire_repository_version</span>
 
-    <span class="k">return</span> <span class="s2">&quot;&quot;&quot;Sire </span><span class="si">%s</span><span class="s2"> [</span><span class="si">%s</span><span class="s2">|</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">]&quot;&quot;&quot;</span> <span class="o">%</span> \
-              <span class="p">(</span><span class="n">get_release_version</span><span class="p">(),</span>
-               <span class="n">get_repository_branch</span><span class="p">(),</span>
-               <span class="n">sire_repository_version</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span>
-               <span class="p">[</span><span class="s2">&quot;unclean&quot;</span><span class="p">,</span> <span class="s2">&quot;clean&quot;</span><span class="p">][</span><span class="n">get_repository_version_is_clean</span><span class="p">()])</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;&quot;Sire </span><span class="si">%s</span><span class="s2"> [</span><span class="si">%s</span><span class="s2">|</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">]&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span>
+        <span class="n">get_release_version</span><span class="p">(),</span>
+        <span class="n">get_repository_branch</span><span class="p">(),</span>
+        <span class="n">sire_repository_version</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;unclean&quot;</span><span class="p">,</span> <span class="s2">&quot;clean&quot;</span><span class="p">][</span><span class="n">get_repository_version_is_clean</span><span class="p">()],</span>
+    <span class="p">)</span>
+
 
 <span class="n">config</span><span class="o">.</span><span class="n">version_string</span> <span class="o">=</span> <span class="n">_version_string</span>
-
-<span class="c1">### Here are the functions and other data that form the public API</span>
-<span class="c1">### of Sire</span>
-
-<span class="kn">from</span> <span class="nn">._pythonize</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">._load</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">._thumbsup</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">._measure</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">._colname</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
         </article>
       </div>
@@ -959,7 +1035,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

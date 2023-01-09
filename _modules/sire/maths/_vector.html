@@ -305,11 +305,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
@@ -350,13 +355,13 @@
         </div>
         <article role="main">
           <h1>Source code for sire.maths._vector</h1><div class="highlight"><pre>
-<span></span>
-<span class="kn">from</span> <span class="nn">..legacy.Maths</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">_Vector</span>
+<span></span><span class="kn">from</span> <span class="nn">..legacy.Maths</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">_Vector</span>
+
 
 <span class="k">def</span> <span class="nf">_fix_vector</span><span class="p">():</span>
-
     <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old__x</span><span class="p">()</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="n">_Vector</span><span class="o">.</span><span class="n">__old__x</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="n">x</span>
@@ -364,6 +369,7 @@
 
     <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old__y</span><span class="p">()</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="n">_Vector</span><span class="o">.</span><span class="n">__old__y</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="n">y</span>
@@ -371,6 +377,7 @@
 
     <span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old__z</span><span class="p">()</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="n">_Vector</span><span class="o">.</span><span class="n">__old__z</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="n">z</span>
@@ -378,6 +385,7 @@
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old__getitem__</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="n">_Vector</span><span class="o">.</span><span class="n">__old__getitem__</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="fm">__getitem__</span>
@@ -385,6 +393,7 @@
 
     <span class="k">def</span> <span class="nf">at</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old__at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="n">_Vector</span><span class="o">.</span><span class="n">__old_at</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="n">at</span>
@@ -392,6 +401,7 @@
 
     <span class="k">def</span> <span class="nf">getitem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old__getitem</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="n">_Vector</span><span class="o">.</span><span class="n">__old_getitem</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="n">getitem</span>
@@ -399,6 +409,7 @@
 
     <span class="k">def</span> <span class="nf">manhattan_length</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old_manhattan_length</span><span class="p">()</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="k">try</span><span class="p">:</span>
@@ -411,6 +422,7 @@
 
     <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old_length</span><span class="p">()</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="n">_Vector</span><span class="o">.</span><span class="n">__old_length</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="n">length</span>
@@ -418,6 +430,7 @@
 
     <span class="k">def</span> <span class="nf">length2</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old_length2</span><span class="p">()</span> <span class="o">*</span> <span class="n">angstrom</span> <span class="o">*</span> <span class="n">angstrom</span>
 
     <span class="n">_Vector</span><span class="o">.</span><span class="n">__old_length2</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="n">length2</span>
@@ -425,6 +438,7 @@
 
     <span class="k">def</span> <span class="nf">inv_length</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old_inv_length</span><span class="p">()</span> <span class="o">/</span> <span class="n">angstrom</span>
 
     <span class="k">try</span><span class="p">:</span>
@@ -437,7 +451,8 @@
 
     <span class="k">def</span> <span class="nf">inv_length2</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
-        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old_inv_length2</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">angstrom</span><span class="o">*</span><span class="n">angstrom</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__old_inv_length2</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">angstrom</span> <span class="o">*</span> <span class="n">angstrom</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">_Vector</span><span class="o">.</span><span class="n">__old_inv_length2</span> <span class="o">=</span> <span class="n">_Vector</span><span class="o">.</span><span class="n">inv_length2</span>
@@ -449,6 +464,7 @@
 
     <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">to_vector</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
         <span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">to_vector</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
 
@@ -459,6 +475,7 @@
 
     <span class="k">def</span> <span class="nf">distance2</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">to_vector</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
         <span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">to_vector</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
 
@@ -469,6 +486,7 @@
 
     <span class="k">def</span> <span class="nf">inv_distance</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">to_vector</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
         <span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">to_vector</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
 
@@ -484,6 +502,7 @@
 
     <span class="k">def</span> <span class="nf">inv_distance2</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+
         <span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">to_vector</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
         <span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">to_vector</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
 
@@ -560,31 +579,32 @@
 
 
 <div class="viewcode-block" id="Vector"><a class="viewcode-back" href="../../../api/maths.html#sire.maths.Vector">[docs]</a><span class="k">class</span> <span class="nc">Vector</span><span class="p">(</span><span class="n">_Vector</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A 3D point in space, or a 3D vector in space. This is a simple</span>
 <span class="sd">    class containing 3 double precision values. These values</span>
 <span class="sd">    represent points in units of Angstroms.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
 
         <span class="c1"># get the default unit of length</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+        <span class="n">length_unit</span> <span class="o">=</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
 
         <span class="k">def</span> <span class="nf">_is_number</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
             <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
 
-        <span class="c1"># mix of doubles and lengths?</span>
+        <span class="c1"># mix of doubles and lengths?</span>
         <span class="n">new_args</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)):</span>
             <span class="k">if</span> <span class="n">_is_number</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
-                <span class="n">new_args</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">l</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">angstrom</span><span class="p">))</span>
+                <span class="n">new_args</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">length_unit</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">angstrom</span><span class="p">))</span>
             <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;__len__&quot;</span><span class="p">):</span>
                 <span class="n">new_arg</span> <span class="o">=</span> <span class="p">[]</span>
                 <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
                     <span class="k">if</span> <span class="n">_is_number</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-                        <span class="n">new_arg</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">arg</span><span class="o">*</span><span class="n">l</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">angstrom</span><span class="p">))</span>
+                        <span class="n">new_arg</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">arg</span> <span class="o">*</span> <span class="n">length_unit</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">angstrom</span><span class="p">))</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="n">new_arg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">angstrom</span><span class="p">))</span>
                 <span class="n">new_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_arg</span><span class="p">)</span>
@@ -593,7 +613,7 @@
 
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">_is_number</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]):</span>
-                <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">*</span> <span class="n">l</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">angstrom</span><span class="p">)</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">*</span> <span class="n">length_unit</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">angstrom</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">angstrom</span><span class="p">)</span>
 
@@ -633,7 +653,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

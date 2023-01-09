@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Supported file formats" href="06_supported_file_formats.html" /><link rel="prev" title="Saving a molecule" href="04_saving_a_molecule.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
@@ -357,11 +362,11 @@
 multiple files, e.g. a separate topology and coordinate file.</p>
 <p>You load from multiple files simply by passing multiple filenames and/or
 URLs to <a class="reference internal" href="../../api/sire.html#sire.load" title="sire.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.load()</span></code></a>.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;https://siremol.org/m/ala.top&quot;</span><span class="p">,</span>
-<span class="gp">... </span>               <span class="s2">&quot;https://siremol.org/m/ala.crd&quot;</span><span class="p">)</span>
-<span class="go">Downloading from &#39;https://siremol.org/m/ala.top&#39;...</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;https://sire.openbiosim.org/m/ala.top&quot;</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="s2">&quot;https://sire.openbiosim.org/m/ala.crd&quot;</span><span class="p">)</span>
+<span class="go">Downloading from &#39;https://sire.openbiosim.org/m/ala.top&#39;...</span>
 <span class="go">Unzipping &#39;./ala.top.bz2&#39;...</span>
-<span class="go">Downloading from &#39;https://siremol.org/m/ala.crd&#39;...</span>
+<span class="go">Downloading from &#39;https://sire.openbiosim.org/m/ala.crd&#39;...</span>
 <span class="go">Unzipping &#39;./ala.crd.bz2&#39;...</span>
 </pre></div>
 </div>
@@ -371,13 +376,13 @@ URLs to <a class="reference internal" href="../../api/sire.html#sire.load" title
 </div>
 <p>You can pass in the filenames as multiple arguments or as a list,
 whichever you find easiest.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">([</span><span class="s2">&quot;https://siremol.org/m/ala.top&quot;</span><span class="p">,</span>
-<span class="gp">... </span>                <span class="s2">&quot;https://siremol.org/m/ala.crd&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">([</span><span class="s2">&quot;https://sire.openbiosim.org/m/ala.top&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                <span class="s2">&quot;https://sire.openbiosim.org/m/ala.crd&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>If the files or URLs have a common base, then you can save some typing
 by using <a class="reference internal" href="../../api/sire.html#sire.expand" title="sire.expand"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.expand()</span></code></a>, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="s2">&quot;https://siremol.org/m&quot;</span><span class="p">,</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="s2">&quot;https://sire.openbiosim.org/m&quot;</span><span class="p">,</span>
 <span class="gp">... </span>                         <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -389,7 +394,7 @@ by using <a class="reference internal" href="../../api/sire.html#sire.expand" ti
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">sr.tutorial_url</span></code> expands to the base URL for tutorial files
-(<a class="reference external" href="https://siremol.org/m">https://siremol.org/m</a>). It is worth using this variable for
+(<a class="reference external" href="https://sire.openbiosim.org/m">https://sire.openbiosim.org/m</a>). It is worth using this variable for
 the tutorial as it auto-completes and will reduce errors.</p>
 </div>
 <p>If you are loading files, you can also make use of glob expressions
@@ -446,7 +451,7 @@ use <code class="docutils literal notranslate"><span class="pre">sr.load(&quot;a
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

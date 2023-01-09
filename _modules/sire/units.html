@@ -305,11 +305,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
@@ -350,34 +355,72 @@
         </div>
         <article role="main">
           <h1>Source code for sire.units</h1><div class="highlight"><pre>
-<span></span>
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-           <span class="s2">&quot;angle&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;length&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;set_energy_unit&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;set_internal_units&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;set_length_unit&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;set_mass_unit&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;set_quantity_unit&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;set_si_units&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;set_time_unit&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;angstrom&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;femtosecond&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;g_per_mol&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;kcal_per_mol&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;kj_per_mol&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;nanometer&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;nanosecond&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;picometer&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;picosecond&quot;</span><span class="p">,</span>
-          <span class="p">]</span>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;angle&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;convert&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;length&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_energy_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_internal_units&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_length_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_mass_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_quantity_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_si_units&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_time_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angstrom&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;celsius&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;degrees&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fahrenheit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;farad&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;femtosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;g_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kcal_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kJ_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mod_electron&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;meter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nanometer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nanometer2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nanosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picometer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;radians&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
 
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
-<span class="n">_use_new_api</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">..legacy.Units</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">..legacy.Units</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">angstrom</span><span class="p">,</span>
+    <span class="n">cal</span><span class="p">,</span>
+    <span class="n">celsius</span><span class="p">,</span>
+    <span class="n">convert</span><span class="p">,</span>
+    <span class="n">degrees</span><span class="p">,</span>
+    <span class="n">fahrenheit</span><span class="p">,</span>
+    <span class="n">farad</span><span class="p">,</span>
+    <span class="n">femtosecond</span><span class="p">,</span>
+    <span class="n">g_per_mol</span><span class="p">,</span>
+    <span class="n">gram</span><span class="p">,</span>
+    <span class="n">joule</span><span class="p">,</span>
+    <span class="n">mod_electron</span><span class="p">,</span>
+    <span class="n">meter</span><span class="p">,</span>
+    <span class="n">int_cal</span><span class="p">,</span>
+    <span class="n">int_kcal</span><span class="p">,</span>
+    <span class="n">kcal</span><span class="p">,</span>
+    <span class="n">kcal_per_mol</span><span class="p">,</span>
+    <span class="n">kilogram</span><span class="p">,</span>
+    <span class="n">kilojoule</span><span class="p">,</span>
+    <span class="n">kJ_per_mol</span><span class="p">,</span>
+    <span class="n">mole</span><span class="p">,</span>
+    <span class="n">nanometer</span><span class="p">,</span>
+    <span class="n">nanometer2</span><span class="p">,</span>
+    <span class="n">nanosecond</span><span class="p">,</span>
+    <span class="n">picometer</span><span class="p">,</span>
+    <span class="n">picosecond</span><span class="p">,</span>
+    <span class="n">radians</span><span class="p">,</span>
+    <span class="n">GeneralUnit</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">_use_new_api</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">_fix_generalunit</span><span class="p">():</span>
@@ -396,22 +439,23 @@
         <span class="c1"># make sure that the units are the same</span>
         <span class="k">if</span> <span class="n">u</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
             <span class="kn">from</span> <span class="nn">..search</span> <span class="kn">import</span> <span class="n">approx_equal</span>
+
             <span class="k">return</span> <span class="n">approx_equal</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">v</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">_generalunit_to_default</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a floating point value that represents</span>
-<span class="sd">           this value in default units for this dimension</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a floating point value that represents</span>
+<span class="sd">        this value in default units for this dimension</span>
 
-<span class="sd">           Example</span>
-<span class="sd">           -------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 
-<span class="sd">           &gt;&gt;&gt; import sire as sr</span>
-<span class="sd">           &gt;&gt;&gt; l = 5 * sr.units.angstrom</span>
-<span class="sd">           &gt;&gt;&gt; sr.units.set_length_unit(sr.units.picometer)</span>
-<span class="sd">           &gt;&gt;&gt; print(l.to_default())</span>
-<span class="sd">               500.0</span>
+<span class="sd">        &gt;&gt;&gt; import sire as sr</span>
+<span class="sd">        &gt;&gt;&gt; l = 5 * sr.units.angstrom</span>
+<span class="sd">        &gt;&gt;&gt; sr.units.set_length_unit(sr.units.picometer)</span>
+<span class="sd">        &gt;&gt;&gt; print(l.to_default())</span>
+<span class="sd">            500.0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">/</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 
@@ -434,7 +478,8 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_dimensionless</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;You cannot convert the dimensioned value </span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2"> &quot;</span>
-                 <span class="s2">&quot;to a dimensionless floating point number.&quot;</span><span class="p">)</span>
+                <span class="s2">&quot;to a dimensionless floating point number.&quot;</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 
@@ -442,7 +487,8 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_dimensionless</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;You cannot convert the dimensioned value </span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2"> &quot;</span>
-                 <span class="s2">&quot;to a dimensionless whole number integer.&quot;</span><span class="p">)</span>
+                <span class="s2">&quot;to a dimensionless whole number integer.&quot;</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
 
@@ -457,27 +503,28 @@
 
 <span class="n">_names</span> <span class="o">=</span> <span class="kc">None</span>
 
+
 <span class="k">def</span> <span class="nf">_get_unit_name</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
 
     <span class="k">global</span> <span class="n">_names</span>
 
     <span class="k">if</span> <span class="n">_names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">_names</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">mole</span><span class="p">:</span> <span class="s2">&quot;mol&quot;</span><span class="p">,</span>
-        <span class="n">cal</span><span class="p">:</span> <span class="s2">&quot;cal&quot;</span><span class="p">,</span>
-        <span class="n">joule</span><span class="p">:</span> <span class="s2">&quot;joule&quot;</span><span class="p">,</span>
-        <span class="n">int_cal</span><span class="p">:</span> <span class="s2">&quot;int_cal&quot;</span><span class="p">,</span>
-        <span class="n">kcal</span><span class="p">:</span> <span class="s2">&quot;kcal&quot;</span><span class="p">,</span>
-        <span class="n">kilojoule</span><span class="p">:</span> <span class="s2">&quot;kJ&quot;</span><span class="p">,</span>
-        <span class="n">int_kcal</span><span class="p">:</span> <span class="s2">&quot;int_kcal&quot;</span><span class="p">,</span>
-        <span class="n">angstrom</span><span class="p">:</span> <span class="s2">&quot;Å&quot;</span><span class="p">,</span>
-        <span class="n">picometer</span><span class="p">:</span> <span class="s2">&quot;pm&quot;</span><span class="p">,</span>
-        <span class="n">nanometer</span><span class="p">:</span> <span class="s2">&quot;nm&quot;</span><span class="p">,</span>
-        <span class="n">gram</span><span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
-        <span class="n">kilogram</span><span class="p">:</span> <span class="s2">&quot;kg&quot;</span><span class="p">,</span>
-        <span class="n">picosecond</span><span class="p">:</span> <span class="s2">&quot;ps&quot;</span><span class="p">,</span>
-        <span class="n">nanosecond</span><span class="p">:</span> <span class="s2">&quot;ns&quot;</span><span class="p">,</span>
-        <span class="n">femtosecond</span><span class="p">:</span> <span class="s2">&quot;fs&quot;</span>
+            <span class="n">mole</span><span class="p">:</span> <span class="s2">&quot;mol&quot;</span><span class="p">,</span>
+            <span class="n">cal</span><span class="p">:</span> <span class="s2">&quot;cal&quot;</span><span class="p">,</span>
+            <span class="n">joule</span><span class="p">:</span> <span class="s2">&quot;joule&quot;</span><span class="p">,</span>
+            <span class="n">int_cal</span><span class="p">:</span> <span class="s2">&quot;int_cal&quot;</span><span class="p">,</span>
+            <span class="n">kcal</span><span class="p">:</span> <span class="s2">&quot;kcal&quot;</span><span class="p">,</span>
+            <span class="n">kilojoule</span><span class="p">:</span> <span class="s2">&quot;kJ&quot;</span><span class="p">,</span>
+            <span class="n">int_kcal</span><span class="p">:</span> <span class="s2">&quot;int_kcal&quot;</span><span class="p">,</span>
+            <span class="n">angstrom</span><span class="p">:</span> <span class="s2">&quot;Å&quot;</span><span class="p">,</span>
+            <span class="n">picometer</span><span class="p">:</span> <span class="s2">&quot;pm&quot;</span><span class="p">,</span>
+            <span class="n">nanometer</span><span class="p">:</span> <span class="s2">&quot;nm&quot;</span><span class="p">,</span>
+            <span class="n">gram</span><span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
+            <span class="n">kilogram</span><span class="p">:</span> <span class="s2">&quot;kg&quot;</span><span class="p">,</span>
+            <span class="n">picosecond</span><span class="p">:</span> <span class="s2">&quot;ps&quot;</span><span class="p">,</span>
+            <span class="n">nanosecond</span><span class="p">:</span> <span class="s2">&quot;ns&quot;</span><span class="p">,</span>
+            <span class="n">femtosecond</span><span class="p">:</span> <span class="s2">&quot;fs&quot;</span><span class="p">,</span>
         <span class="p">}</span>
 
     <span class="k">try</span><span class="p">:</span>
@@ -488,16 +535,16 @@
     <span class="k">return</span> <span class="n">unit</span><span class="o">.</span><span class="n">_to_cpp_type</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">_incompatible_units</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">typ</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_incompatible_units</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">typ</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;Unit </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span><span class="si">}</span><span class="s2"> is not a </span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">, and so is &quot;</span>
         <span class="sa">f</span><span class="s2">&quot;incompatible with </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
     <span class="p">)</span>
 
 
-<div class="viewcode-block" id="set_quantity_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_quantity_unit">[docs]</a><span class="k">def</span> <span class="nf">set_quantity_unit</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set the default quantity unit to be used for</span>
-<span class="sd">       output and default conversions</span>
+<div class="viewcode-block" id="set_quantity_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_quantity_unit">[docs]</a><span class="k">def</span> <span class="nf">set_quantity_unit</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default quantity unit to be used for</span>
+<span class="sd">    output and default conversions</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">mole</span><span class="p">):</span>
@@ -513,11 +560,11 @@
 
     <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
 
-    <span class="n">l</span> <span class="o">=</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
-    <span class="n">lname</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">lname</span> <span class="o">=</span> <span class="n">length</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
 
-    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">l</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1 </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">l</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1 </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1 </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">*</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1 </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
 
     <span class="n">g</span> <span class="o">=</span> <span class="n">gram</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
     <span class="n">gname</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
@@ -525,9 +572,9 @@
     <span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="set_energy_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_energy_unit">[docs]</a><span class="k">def</span> <span class="nf">set_energy_unit</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set the default energy unit to be used for</span>
-<span class="sd">       output and default conversions</span>
+<div class="viewcode-block" id="set_energy_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_energy_unit">[docs]</a><span class="k">def</span> <span class="nf">set_energy_unit</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default energy unit to be used for</span>
+<span class="sd">    output and default conversions</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">energy</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">kcal</span><span class="p">):</span>
@@ -543,9 +590,9 @@
     <span class="p">(</span><span class="n">energy</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">qname</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="set_length_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_length_unit">[docs]</a><span class="k">def</span> <span class="nf">set_length_unit</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set the default length unit to be used for</span>
-<span class="sd">       output and default conversions</span>
+<div class="viewcode-block" id="set_length_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_length_unit">[docs]</a><span class="k">def</span> <span class="nf">set_length_unit</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default length unit to be used for</span>
+<span class="sd">    output and default conversions</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">length</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">angstrom</span><span class="p">):</span>
@@ -555,23 +602,23 @@
         <span class="n">name</span> <span class="o">=</span> <span class="n">_get_unit_name</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
 
     <span class="n">length</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">length</span><span class="o">*</span><span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">^2&quot;</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">length</span><span class="o">*</span><span class="n">length</span><span class="o">*</span><span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">^3&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">^2&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">^3&quot;</span><span class="p">)</span>
 
     <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
-    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span><span class="o">*</span><span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
-    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span><span class="o">*</span><span class="n">length</span><span class="o">*</span><span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-3&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-3&quot;</span><span class="p">)</span>
 
     <span class="n">e</span> <span class="o">=</span> <span class="n">kcal_per_mol</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
     <span class="n">ename</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
 
     <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span><span class="o">*</span><span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span></div>
+    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="set_mass_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_mass_unit">[docs]</a><span class="k">def</span> <span class="nf">set_mass_unit</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set the default mass unit to be used for</span>
-<span class="sd">       output and default conversions</span>
+<div class="viewcode-block" id="set_mass_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_mass_unit">[docs]</a><span class="k">def</span> <span class="nf">set_mass_unit</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default mass unit to be used for</span>
+<span class="sd">    output and default conversions</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">mass</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">gram</span><span class="p">):</span>
@@ -588,9 +635,9 @@
     <span class="p">(</span><span class="n">mass</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">qname</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="set_time_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_time_unit">[docs]</a><span class="k">def</span> <span class="nf">set_time_unit</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set the default time unit to be used for</span>
-<span class="sd">       output and default conversions</span>
+<div class="viewcode-block" id="set_time_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_time_unit">[docs]</a><span class="k">def</span> <span class="nf">set_time_unit</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default time unit to be used for</span>
+<span class="sd">    output and default conversions</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">time</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">picosecond</span><span class="p">):</span>
@@ -602,17 +649,17 @@
     <span class="n">time</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
     <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
-    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">time</span><span class="o">*</span><span class="n">time</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="n">time</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
 
-    <span class="n">l</span> <span class="o">=</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
-    <span class="n">lname</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">lname</span> <span class="o">=</span> <span class="n">length</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
 
-    <span class="p">(</span><span class="n">l</span> <span class="o">/</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">l</span> <span class="o">/</span> <span class="p">(</span><span class="n">time</span><span class="o">*</span><span class="n">time</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span></div>
+    <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="n">time</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="set_si_units"><a class="viewcode-back" href="../../api/units.html#sire.units.set_si_units">[docs]</a><span class="k">def</span> <span class="nf">set_si_units</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Switch over to using SI units for output and default conversions</span>
 
 <span class="sd">    This uses:</span>
@@ -632,7 +679,7 @@
 
 
 <div class="viewcode-block" id="set_internal_units"><a class="viewcode-back" href="../../api/units.html#sire.units.set_internal_units">[docs]</a><span class="k">def</span> <span class="nf">set_internal_units</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Switch over to using default (AKMA-style) units for output</span>
 <span class="sd">    and default conversions.</span>
 
@@ -653,11 +700,11 @@
 
 
 <div class="viewcode-block" id="length"><a class="viewcode-back" href="../../api/units.html#sire.units.length">[docs]</a><span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert the passed argument into a length. This will</span>
-<span class="sd">       return `length` if it is already a length, or it will</span>
-<span class="sd">       convert it into a length with default units if this</span>
-<span class="sd">       is a float or something that can be converted to</span>
-<span class="sd">       a float</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the passed argument into a length. This will</span>
+<span class="sd">    return `length` if it is already a length, or it will</span>
+<span class="sd">    convert it into a length with default units if this</span>
+<span class="sd">    is a float or something that can be converted to</span>
+<span class="sd">    a float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">*</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
@@ -667,17 +714,18 @@
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">angstrom</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;The value &#39;</span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">&#39; of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">length</span><span class="p">)</span><span class="si">}</span><span class="s2"> is &quot;</span>
-            <span class="s2">&quot;not a type that is compatible with a GeneralUnit Length&quot;</span><span class="p">)</span>
+            <span class="s2">&quot;not a type that is compatible with a GeneralUnit Length&quot;</span>
+        <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">length</span></div>
 
 
 <div class="viewcode-block" id="angle"><a class="viewcode-back" href="../../api/units.html#sire.units.angle">[docs]</a><span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert the passed argument into an angle. This will</span>
-<span class="sd">       return &#39;angle&#39; if it is already an angle, or will</span>
-<span class="sd">       convert it into an angle with default units if this</span>
-<span class="sd">       is a float or something that can be converted to</span>
-<span class="sd">       a float</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the passed argument into an angle. This will</span>
+<span class="sd">    return &#39;angle&#39; if it is already an angle, or will</span>
+<span class="sd">    convert it into an angle with default units if this</span>
+<span class="sd">    is a float or something that can be converted to</span>
+<span class="sd">    a float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="n">degrees</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
@@ -687,7 +735,8 @@
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">degrees</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;The value &#39;</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">&#39; of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="si">}</span><span class="s2"> is &quot;</span>
-            <span class="s2">&quot;not a type that is compatible with a GeneralUnit angle&quot;</span><span class="p">)</span>
+            <span class="s2">&quot;not a type that is compatible with a GeneralUnit angle&quot;</span>
+        <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">angle</span></div>
 </pre></div>
@@ -704,7 +753,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

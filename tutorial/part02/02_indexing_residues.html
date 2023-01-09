@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Indexing Chains" href="03_indexing_chains.html" /><link rel="prev" title="Indexing Atoms" href="01_indexing_atoms.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
@@ -663,7 +668,7 @@ index of the residue in an arbitrary molecular container.</p>
 <p>Another way to index residues is to use the residue indexing types, i.e.
 <a class="reference internal" href="../../api/mol.html#sire.mol.ResIdx" title="sire.mol.ResIdx"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResIdx</span></code></a>, <a class="reference internal" href="../../api/mol.html#sire.mol.ResName" title="sire.mol.ResName"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResName</span></code></a> and
 <a class="reference internal" href="../../api/mol.html#sire.mol.ResNum" title="sire.mol.ResNum"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResNum</span></code></a>. The easiest way to create these is
-by using the function <a class="reference internal" href="../../api/generated/sire.resid.html#sire.resid" title="sire.resid"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.resid()</span></code></a>.</p>
+by using the function <code class="xref py py-func docutils literal notranslate"><span class="pre">sire.resid()</span></code>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="n">sr</span><span class="o">.</span><span class="n">resid</span><span class="p">(</span><span class="s2">&quot;ALA&quot;</span><span class="p">)])</span>
 <span class="go">Selector&lt;SireMol::Residue&gt;( size=155</span>
 <span class="go">0:  Residue( ALA:23  num_atoms=5 )</span>
@@ -848,7 +853,7 @@ ligands or cofactors that are bound to the molecule.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

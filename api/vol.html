@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="How to ask for help" href="../support.html" /><link rel="prev" title="sire.vol" href="index_vol.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -731,13 +736,17 @@ groups</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.vol.Cartesian.maximum_cutoff">
 <span class="sig-name descname"><span class="pre">maximum_cutoff</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.Cartesian.maximum_cutoff" title="Permalink to this definition">#</a></dt>
-<dd><p>maximumCutoff( (Space)arg1) -&gt; object :</p>
-<blockquote>
-<div><dl class="simple">
+<dd><dl>
+<dt>maximumCutoff( (Space)arg1) -&gt; object :</dt><dd><p>Return the maximum cutoff that can be used in this space
+so that calculations obey the minimum image convention.
+This is the largest possible double for non-periodic spaces,
+and half the smallest box side for periodic spaces</p>
+<dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 1, 0, 0, 0, 0, 0&gt; maximumCutoff(SireVol::Space {lvalue})</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1345,7 +1354,7 @@ the same location, to achieve this volume</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Measuring Energies" href="03_energies.html" /><link rel="prev" title="Measuring Distances and Angles" href="01_measure.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
@@ -401,7 +406,7 @@ e.g.</p>
 <section id="iterating-over-trajectories">
 <h2>Iterating over trajectories<a class="headerlink" href="#iterating-over-trajectories" title="Permalink to this heading">#</a></h2>
 <p>You iterate over the frames in a trajectory using a
-<code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.TrajectoryIterator</span></code> that is returned by the
+<a class="reference internal" href="../../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.TrajectoryIterator</span></code></a> that is returned by the
 <code class="docutils literal notranslate"><span class="pre">.trajectory()</span></code> function.</p>
 <p>For example, here we will iterate over all 500 frames and just print
 out the first atom of the molecule.</p>
@@ -446,7 +451,7 @@ its center of mass coordinates;</p>
 <span class="go">etc.</span>
 </pre></div>
 </div>
-<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code> is itself indexable. This allows
+<p>The <a class="reference internal" href="../../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a> is itself indexable. This allows
 you to slice the frames that are iterated over. Here, we will iterate
 over just the first 5 frames of the trajectory</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">res_frame</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">residue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span>
@@ -541,7 +546,7 @@ be printed to the screen.</p>
 <section id="creating-tables-of-measurements-using-pandas">
 <h2>Creating tables of measurements using pandas<a class="headerlink" href="#creating-tables-of-measurements-using-pandas" title="Permalink to this heading">#</a></h2>
 <p>To make things easier, the <code class="docutils literal notranslate"><span class="pre">.measures()</span></code> function on the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code> will calculate all of the measures
+<a class="reference internal" href="../../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a> will calculate all of the measures
 across all of its frames, and will return the result as a dictionary.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">measurements</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">bonds</span><span class="p">(</span><span class="s2">&quot;element S&quot;</span><span class="p">,</span> <span class="s2">&quot;element S&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()</span><span class="o">.</span><span class="n">measures</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
@@ -998,7 +1003,7 @@ molecule.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

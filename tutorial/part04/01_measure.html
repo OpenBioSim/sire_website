@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Measuring Trajectories" href="02_trajectory.html" /><link rel="prev" title="Part 4 - Measurement, Trajectories and Movement" href="../index_part04.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
@@ -404,7 +409,7 @@ actual class:<a class="reference internal" href="../../api/mm.html#sire.mm.Bond"
 or <a class="reference internal" href="../../api/mm.html#sire.mm.Improper" title="sire.mm.Improper"><code class="xref py py-class docutils literal notranslate"><span class="pre">Improper</span></code></a> objects.</p>
 <p>There are many cases where you want to measure the distance or angles
 between arbitrary atoms.</p>
-<p>To do this, you use the <code class="xref py py-func docutils literal notranslate"><span class="pre">sire.measure()</span></code> function. For example,
+<p>To do this, you use the <a class="reference internal" href="../../api/sire.html#sire.measure" title="sire.measure"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.measure()</span></code></a> function. For example,
 we could measure the distance between the oxygen atoms of the first
 two water molecules using;</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">oxygens</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="s2">&quot;water and element O&quot;</span><span class="p">]</span>
@@ -413,7 +418,7 @@ two water molecules using;</p>
 </pre></div>
 </div>
 <p>The measurement returned depends on the number of items passed to the
-<code class="xref py py-func docutils literal notranslate"><span class="pre">measure()</span></code> function. Passing two items, as above, will measure
+<a class="reference internal" href="../../api/sire.html#sire.measure" title="sire.measure"><code class="xref py py-func docutils literal notranslate"><span class="pre">measure()</span></code></a> function. Passing two items, as above, will measure
 and return the distance. Passing three items will measure and return
 the angle, so</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">oxygens</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">oxygens</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">oxygens</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
@@ -450,7 +455,7 @@ or <a class="reference internal" href="../../api/mm.html#sire.mm.Improper" title
 </section>
 <section id="making-measurements-between-arbitray-views">
 <h2>Making measurements between arbitray views<a class="headerlink" href="#making-measurements-between-arbitray-views" title="Permalink to this heading">#</a></h2>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">measure()</span></code> function calls the <code class="docutils literal notranslate"><span class="pre">.coordinates()</span></code> function
+<p>The <a class="reference internal" href="../../api/sire.html#sire.measure" title="sire.measure"><code class="xref py py-func docutils literal notranslate"><span class="pre">measure()</span></code></a> function calls the <code class="docutils literal notranslate"><span class="pre">.coordinates()</span></code> function
 on the items that are passed. This means that you can pass in any
 object that has a <code class="docutils literal notranslate"><span class="pre">.coordinates()</span></code> function. For example, you can
 calculate the distance between the first two water molecules using</p>
@@ -626,7 +631,7 @@ the x axis</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

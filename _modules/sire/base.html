@@ -305,11 +305,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
@@ -350,26 +355,26 @@
         </div>
         <article role="main">
           <h1>Source code for sire.base</h1><div class="highlight"><pre>
-<span></span>
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;create_map&quot;</span><span class="p">,</span> <span class="s2">&quot;wrap&quot;</span><span class="p">]</span>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;create_map&quot;</span><span class="p">,</span> <span class="s2">&quot;wrap&quot;</span><span class="p">,</span> <span class="s2">&quot;PropertyMap&quot;</span><span class="p">]</span>
 
 <span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_Base</span>
 
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
-<span class="n">_use_new_api</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">..legacy.Base</span> <span class="kn">import</span> <span class="n">Property</span><span class="p">,</span> <span class="n">PropertyMap</span><span class="p">,</span> <span class="n">Properties</span><span class="p">,</span> <span class="n">PropertyList</span><span class="p">,</span> \
-                          <span class="n">BooleanProperty</span><span class="p">,</span> <span class="n">NumberProperty</span><span class="p">,</span> <span class="n">StringProperty</span>
+<span class="kn">from</span> <span class="nn">..legacy.Base</span> <span class="kn">import</span> <span class="n">PropertyMap</span>
+
+<span class="n">_use_new_api</span><span class="p">()</span>
 
 <span class="n">wrap</span> <span class="o">=</span> <span class="n">_Base</span><span class="o">.</span><span class="n">wrap</span>
 
 
 <span class="k">def</span> <span class="nf">_fix_wrapped_property_base_type</span><span class="p">(</span><span class="n">CLASS</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Private function that adds in all of the operators so that,</span>
-<span class="sd">       as much as possible, the base type PropertyWrappers (e.g.</span>
-<span class="sd">       NumberProperty, StringProperty) behave like numbers or</span>
-<span class="sd">       strings, and can auto-convert to those types as needed.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Private function that adds in all of the operators so that,</span>
+<span class="sd">    as much as possible, the base type PropertyWrappers (e.g.</span>
+<span class="sd">    NumberProperty, StringProperty) behave like numbers or</span>
+<span class="sd">    strings, and can auto-convert to those types as needed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="nf">__value</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
@@ -445,9 +450,9 @@
     <span class="n">CLASS</span><span class="o">.</span><span class="fm">__str__</span> <span class="o">=</span> <span class="fm">__str__</span>
 
 
-<span class="n">_fix_wrapped_property_base_type</span><span class="p">(</span><span class="n">BooleanProperty</span><span class="p">)</span>
-<span class="n">_fix_wrapped_property_base_type</span><span class="p">(</span><span class="n">NumberProperty</span><span class="p">)</span>
-<span class="n">_fix_wrapped_property_base_type</span><span class="p">(</span><span class="n">StringProperty</span><span class="p">)</span>
+<span class="n">_fix_wrapped_property_base_type</span><span class="p">(</span><span class="n">_Base</span><span class="o">.</span><span class="n">BooleanProperty</span><span class="p">)</span>
+<span class="n">_fix_wrapped_property_base_type</span><span class="p">(</span><span class="n">_Base</span><span class="o">.</span><span class="n">NumberProperty</span><span class="p">)</span>
+<span class="n">_fix_wrapped_property_base_type</span><span class="p">(</span><span class="n">_Base</span><span class="o">.</span><span class="n">StringProperty</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">PropertyMap</span><span class="p">,</span> <span class="s2">&quot;__orig__set&quot;</span><span class="p">):</span>
@@ -457,12 +462,12 @@
     <span class="k">def</span> <span class="nf">__propertymap_set</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">obj</span><span class="o">.</span><span class="n">__orig__set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="k">pass</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">obj</span><span class="o">.</span><span class="n">__orig__set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">_Base</span><span class="o">.</span><span class="n">PropertyName</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
-        <span class="k">except</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="k">pass</span>
 
         <span class="n">obj</span><span class="o">.</span><span class="n">__orig__set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">_Base</span><span class="o">.</span><span class="n">PropertyName</span><span class="p">(</span><span class="n">wrap</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
@@ -472,45 +477,45 @@
 
 
 <div class="viewcode-block" id="create_map"><a class="viewcode-back" href="../../api/base.html#sire.base.create_map">[docs]</a><span class="k">def</span> <span class="nf">create_map</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Construct a PropertyMap from the</span>
-<span class="sd">       passed values. A PropertyMap is a class that lets you either provide</span>
-<span class="sd">       extra options to some of the C++ functions, or to</span>
-<span class="sd">       map the default keys used to find properties to</span>
-<span class="sd">       your own keys</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct a PropertyMap from the</span>
+<span class="sd">    passed values. A PropertyMap is a class that lets you either provide</span>
+<span class="sd">    extra options to some of the C++ functions, or to</span>
+<span class="sd">    map the default keys used to find properties to</span>
+<span class="sd">    your own keys</span>
 
-<span class="sd">       You normally wouldn&#39;t use the class yourself.</span>
-<span class="sd">       Instead, objects of this class will be created automatically</span>
-<span class="sd">       from dictionaries, e.g.</span>
+<span class="sd">    You normally wouldn&#39;t use the class yourself.</span>
+<span class="sd">    Instead, objects of this class will be created automatically</span>
+<span class="sd">    from dictionaries, e.g.</span>
 
-<span class="sd">       &gt;&gt;&gt; mol.energy(map={&quot;cutoff&quot;: 5*angstrom})</span>
+<span class="sd">    &gt;&gt;&gt; mol.energy(map={&quot;cutoff&quot;: 5*angstrom})</span>
 
-<span class="sd">       would automatically create a PropertyMap, and is</span>
-<span class="sd">       equivalent to writing</span>
+<span class="sd">    would automatically create a PropertyMap, and is</span>
+<span class="sd">    equivalent to writing</span>
 
-<span class="sd">       &gt;&gt;&gt; mol.energy(map=create_map({&quot;cutoff&quot;: 5*angstrom}))</span>
+<span class="sd">    &gt;&gt;&gt; mol.energy(map=create_map({&quot;cutoff&quot;: 5*angstrom}))</span>
 
-<span class="sd">       In the above case you are providing an extra &quot;cutoff&quot;</span>
-<span class="sd">       option, and are passing the value &quot;5*angstrom&quot;.</span>
+<span class="sd">    In the above case you are providing an extra &quot;cutoff&quot;</span>
+<span class="sd">    option, and are passing the value &quot;5*angstrom&quot;.</span>
 
-<span class="sd">       You can also use the map to change the keys used to</span>
-<span class="sd">       find properties, e.g.</span>
+<span class="sd">    You can also use the map to change the keys used to</span>
+<span class="sd">    find properties, e.g.</span>
 
-<span class="sd">       &gt;&gt;&gt; mol.energy(map={&quot;coordinates&quot;: &quot;my_coords&quot;})</span>
+<span class="sd">    &gt;&gt;&gt; mol.energy(map={&quot;coordinates&quot;: &quot;my_coords&quot;})</span>
 
-<span class="sd">       would map the default &quot;coordinates&quot; property to your</span>
-<span class="sd">       &quot;my_coords&quot; property. This means that the coordinates</span>
-<span class="sd">       for the energy would be found at &quot;my_coords&quot; rather</span>
-<span class="sd">       than &quot;coordinates&quot;.</span>
+<span class="sd">    would map the default &quot;coordinates&quot; property to your</span>
+<span class="sd">    &quot;my_coords&quot; property. This means that the coordinates</span>
+<span class="sd">    for the energy would be found at &quot;my_coords&quot; rather</span>
+<span class="sd">    than &quot;coordinates&quot;.</span>
 
-<span class="sd">       You can map as many properties, and provide as many</span>
-<span class="sd">       extra options as you want.</span>
+<span class="sd">    You can map as many properties, and provide as many</span>
+<span class="sd">    extra options as you want.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">PropertyMap</span><span class="p">()</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">PropertyMap</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="n">wrapped_values</span> <span class="o">=</span> <span class="p">{}</span>
@@ -536,7 +541,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

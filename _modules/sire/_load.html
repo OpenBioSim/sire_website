@@ -305,11 +305,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
@@ -350,18 +355,26 @@
         </div>
         <article role="main">
           <h1>Source code for sire._load</h1><div class="highlight"><pre>
-<span></span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span> <span class="k">as</span> <span class="n">_Union</span>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span> <span class="k">as</span> <span class="n">_Union</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="s2">&quot;save&quot;</span><span class="p">,</span> <span class="s2">&quot;save_to_string&quot;</span><span class="p">,</span> <span class="s2">&quot;expand&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;tutorial_url&quot;</span><span class="p">,</span> <span class="s2">&quot;load_test_files&quot;</span><span class="p">,</span> <span class="s2">&quot;supported_formats&quot;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;load&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;save&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;save_to_string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expand&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tutorial_url&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;load_test_files&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;supported_formats&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 
 <span class="k">class</span> <span class="nc">_tutorial_url</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="s2">&quot;The base URL for all molecule files used in the tutorial.&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;The base URL for all molecule files used in the tutorial.&quot;</span>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
@@ -372,14 +385,15 @@
     <span class="k">def</span> <span class="nf">startswith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
-<span class="n">tutorial_url</span> <span class="o">=</span> <span class="n">_tutorial_url</span><span class="p">(</span><span class="s2">&quot;https://siremol.org/m&quot;</span><span class="p">)</span>
+
+<span class="n">tutorial_url</span> <span class="o">=</span> <span class="n">_tutorial_url</span><span class="p">(</span><span class="s2">&quot;https://sire.openbiosim.org/m&quot;</span><span class="p">)</span>
 
 <span class="n">_range</span> <span class="o">=</span> <span class="nb">range</span>
 
 
 <div class="viewcode-block" id="supported_formats"><a class="viewcode-back" href="../../api/sire.html#sire.supported_formats">[docs]</a><span class="k">def</span> <span class="nf">supported_formats</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Return a string that describes all of the molecular file formats</span>
-<span class="sd">       that are supported by Sire</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a string that describes all of the molecular file formats</span>
+<span class="sd">    that are supported by Sire</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
 
@@ -420,8 +434,10 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">gromacs_tbz2</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">urllib.request</span>
-            <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tutorial_url</span><span class="si">}</span><span class="s2">/gromacs.tar.bz2&quot;</span><span class="p">,</span>
-                                       <span class="n">gromacs_tbz2</span><span class="p">)</span>
+
+            <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tutorial_url</span><span class="si">}</span><span class="s2">/gromacs.tar.bz2&quot;</span><span class="p">,</span> <span class="n">gromacs_tbz2</span>
+            <span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="c1"># we cannot download - just give up</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -431,6 +447,7 @@
 
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">tarfile</span>
+
         <span class="n">t</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gromacs_tbz2</span><span class="p">,</span> <span class="s2">&quot;r|bz2&quot;</span><span class="p">)</span>
         <span class="n">t</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">share_directory</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
@@ -467,8 +484,9 @@
 
             <span class="kn">import</span> <span class="nn">gzip</span>
             <span class="kn">import</span> <span class="nn">shutil</span>
-            <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+
+            <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
                     <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
@@ -494,8 +512,9 @@
 
             <span class="kn">import</span> <span class="nn">bz2</span>
             <span class="kn">import</span> <span class="nn">shutil</span>
-            <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+
+            <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
                     <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
@@ -512,11 +531,14 @@
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using cached download of &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
-                <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span>
+                    <span class="n">filename</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="n">silent</span>
+                <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;Cannot overwrite </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> as it is an &quot;</span>
-                    <span class="s2">&quot;existing directory!&quot;</span><span class="p">)</span>
+                    <span class="s2">&quot;existing directory!&quot;</span>
+                <span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading from &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
@@ -525,10 +547,11 @@
             <span class="c1"># try the bz2 file first</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="kn">import</span> <span class="nn">urllib.request</span>
+
                 <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.bz2&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.bz2&quot;</span><span class="p">)</span>
                 <span class="n">have_downloaded_file</span> <span class="o">=</span> <span class="kc">True</span>
                 <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.bz2&quot;</span>
-            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                 <span class="n">have_downloaded_file</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">have_downloaded_file</span> <span class="o">=</span> <span class="kc">False</span>
@@ -536,6 +559,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">have_downloaded_file</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="kn">import</span> <span class="nn">urllib.request</span>
+
                 <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to download &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -556,14 +580,20 @@
         <span class="k">if</span> <span class="n">is_code</span><span class="p">:</span>
             <span class="n">code</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
             <span class="c1"># https://files.rcsb.org/download/4hhb.pdb.gz</span>
-            <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://files.rcsb.org/download/</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.pdb.gz&quot;</span><span class="p">,</span>
-                                    <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;https://files.rcsb.org/download/</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.pdb.gz&quot;</span><span class="p">,</span>
+                <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+                <span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">,</span>
+            <span class="p">)</span>
     <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;alphafold:&quot;</span><span class="p">):</span>
         <span class="c1"># alphafold code</span>
         <span class="n">code</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span>
         <span class="c1"># https://alphafold.ebi.ac.uk/files/AF-&quot; + pdbid + &quot;-F1-model_v1.pdb</span>
-        <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://alphafold.ebi.ac.uk/files/AF-</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">-F1-model_v3.pdb&quot;</span><span class="p">,</span>
-                                    <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;https://alphafold.ebi.ac.uk/files/AF-</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">-F1-model_v3.pdb&quot;</span><span class="p">,</span>
+            <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+            <span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="c1"># this may be a globbed path</span>
     <span class="kn">import</span> <span class="nn">glob</span>
@@ -581,29 +611,29 @@
 
 
 <div class="viewcode-block" id="expand"><a class="viewcode-back" href="../../api/sire.html#sire.expand">[docs]</a><span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Expand the set of paths with the supplied base.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Expand the set of paths with the supplied base.</span>
 
-<span class="sd">       Args:</span>
-<span class="sd">        base (str):</span>
-<span class="sd">            The base to be prepended to all paths</span>
+<span class="sd">    Args:</span>
+<span class="sd">     base (str):</span>
+<span class="sd">         The base to be prepended to all paths</span>
 
-<span class="sd">        path (str or list[str]):</span>
-<span class="sd">            The filename (or names) that will be prepended</span>
-<span class="sd">            with the base.</span>
+<span class="sd">     path (str or list[str]):</span>
+<span class="sd">         The filename (or names) that will be prepended</span>
+<span class="sd">         with the base.</span>
 
-<span class="sd">        suffix (str):</span>
-<span class="sd">            A suffix to attach to all files, e.g. &quot;.bz2&quot;</span>
+<span class="sd">     suffix (str):</span>
+<span class="sd">         A suffix to attach to all files, e.g. &quot;.bz2&quot;</span>
 
-<span class="sd">        Returns:</span>
-<span class="sd">            list[str]:</span>
-<span class="sd">            The list of expanded filenames or URLs</span>
+<span class="sd">     Returns:</span>
+<span class="sd">         list[str]:</span>
+<span class="sd">         The list of expanded filenames or URLs</span>
 
-<span class="sd">        Examples:</span>
-<span class="sd">            &gt;&gt;&gt; expand(&quot;https://siremol.org/m&quot;, &quot;urea.gro&quot;, &quot;urea.top&quot;)</span>
-<span class="sd">            [&quot;https://siremol.org/m/urea.gro&quot;, &quot;https://siremol.org/n/urea.top&quot;]</span>
+<span class="sd">     Examples:</span>
+<span class="sd">         &gt;&gt;&gt; expand(&quot;https://sire.openbiosim.org/m&quot;, &quot;urea.gro&quot;, &quot;urea.top&quot;)</span>
+<span class="sd">         [&quot;https://sire.openbiosim.org/m/urea.gro&quot;, &quot;https://sire.openbiosim.org/n/urea.top&quot;]</span>
 
-<span class="sd">            &gt;&gt;&gt; expand(&quot;input&quot;, [&quot;ala.top&quot;, &quot;ala.crd&quot;])</span>
-<span class="sd">            [&quot;input/ala.top&quot;, &quot;input/ala.crd&quot;]</span>
+<span class="sd">         &gt;&gt;&gt; expand(&quot;input&quot;, [&quot;ala.top&quot;, &quot;ala.crd&quot;])</span>
+<span class="sd">         [&quot;input/ala.top&quot;, &quot;input/ala.crd&quot;]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="s2">&quot;suffix&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
         <span class="n">suffix</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;suffix&quot;</span><span class="p">]</span>
@@ -621,9 +651,13 @@
     <span class="n">expanded</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">if</span> <span class="n">base</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
-        <span class="n">join</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span>
+
     <span class="k">else</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">os</span>
+
         <span class="n">join</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span>
 
     <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
@@ -636,46 +670,46 @@
 
 
 <div class="viewcode-block" id="load"><a class="viewcode-back" href="../../api/sire.html#sire.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Load the molecular system at &#39;path&#39;. This can be a filename</span>
-<span class="sd">       of a URL. If it is a URL, then the file will be downloaded</span>
-<span class="sd">       to the current directory and loaded from there.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load the molecular system at &#39;path&#39;. This can be a filename</span>
+<span class="sd">    of a URL. If it is a URL, then the file will be downloaded</span>
+<span class="sd">    to the current directory and loaded from there.</span>
 
-<span class="sd">       Args:</span>
-<span class="sd">        path (str or list[str]):</span>
-<span class="sd">            The filename (or names) or the URL or URLS of the molecular</span>
-<span class="sd">            system to load. This allows multiple paths to be input</span>
-<span class="sd">            as some molecular file formats split molecular information</span>
-<span class="sd">            across multiple files. Multiple paths can also be passed</span>
-<span class="sd">            as multiple arguments to this function.</span>
+<span class="sd">    Args:</span>
+<span class="sd">     path (str or list[str]):</span>
+<span class="sd">         The filename (or names) or the URL or URLS of the molecular</span>
+<span class="sd">         system to load. This allows multiple paths to be input</span>
+<span class="sd">         as some molecular file formats split molecular information</span>
+<span class="sd">         across multiple files. Multiple paths can also be passed</span>
+<span class="sd">         as multiple arguments to this function.</span>
 
-<span class="sd">        log (dict):</span>
-<span class="sd">            Optional dictionary that you can pass in that will be populated</span>
-<span class="sd">            with any error messages or warnings from the parsers as they</span>
-<span class="sd">            attempt to load in the molecular data. This can be helpful</span>
-<span class="sd">            in diagnosing why your file wasn&#39;t loaded.</span>
+<span class="sd">     log (dict):</span>
+<span class="sd">         Optional dictionary that you can pass in that will be populated</span>
+<span class="sd">         with any error messages or warnings from the parsers as they</span>
+<span class="sd">         attempt to load in the molecular data. This can be helpful</span>
+<span class="sd">         in diagnosing why your file wasn&#39;t loaded.</span>
 
-<span class="sd">        directory (str):</span>
-<span class="sd">            Optional directory which will be used when creating any</span>
-<span class="sd">            files (e.g. as a download from a URL or which unzipping files)</span>
+<span class="sd">     directory (str):</span>
+<span class="sd">         Optional directory which will be used when creating any</span>
+<span class="sd">         files (e.g. as a download from a URL or which unzipping files)</span>
 
-<span class="sd">       Returns:</span>
-<span class="sd">            sire.system.System:</span>
-<span class="sd">            The molecules that have been loaded are returned as</span>
-<span class="sd">            a sire.system.System</span>
+<span class="sd">    Returns:</span>
+<span class="sd">         sire.system.System:</span>
+<span class="sd">         The molecules that have been loaded are returned as</span>
+<span class="sd">         a sire.system.System</span>
 
-<span class="sd">       Examples:</span>
-<span class="sd">            &gt;&gt;&gt; mols = load(&quot;caffeine.pdb&quot;)</span>
+<span class="sd">    Examples:</span>
+<span class="sd">         &gt;&gt;&gt; mols = load(&quot;caffeine.pdb&quot;)</span>
 
-<span class="sd">            &gt;&gt;&gt; mols = load([&quot;ala.crd&quot;, &quot;ala.top&quot;])</span>
+<span class="sd">         &gt;&gt;&gt; mols = load([&quot;ala.crd&quot;, &quot;ala.top&quot;])</span>
 
-<span class="sd">            &gt;&gt;&gt; mols = load(&quot;ala.crd&quot;, &quot;ala.top&quot;)</span>
+<span class="sd">         &gt;&gt;&gt; mols = load(&quot;ala.crd&quot;, &quot;ala.top&quot;)</span>
 
-<span class="sd">            &gt;&gt;&gt; mols = load(&quot;https://something&quot;)</span>
+<span class="sd">         &gt;&gt;&gt; mols = load(&quot;https://something&quot;)</span>
 
-<span class="sd">            &gt;&gt;&gt; log = []</span>
-<span class="sd">            &gt;&gt;&gt; mols = load(&quot;caffeine.pdb&quot;, log=log)</span>
-<span class="sd">            Exception</span>
-<span class="sd">            (look at &#39;log&#39; to find out what went wrong in detail)</span>
+<span class="sd">         &gt;&gt;&gt; log = []</span>
+<span class="sd">         &gt;&gt;&gt; mols = load(&quot;caffeine.pdb&quot;, log=log)</span>
+<span class="sd">         Exception</span>
+<span class="sd">         (look at &#39;log&#39; to find out what went wrong in detail)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
         <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">]</span>
@@ -714,17 +748,14 @@
     <span class="kn">from</span> <span class="nn">.io</span> <span class="kn">import</span> <span class="n">load_molecules</span>
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
 
-    <span class="nb">map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;GROMACS_PATH&quot;</span><span class="p">:</span> <span class="n">_get_gromacs_dir</span><span class="p">(),</span>
-            <span class="s2">&quot;show_warnings&quot;</span><span class="p">:</span> <span class="n">show_warnings</span>
-    <span class="p">}</span>
+    <span class="nb">map</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;GROMACS_PATH&quot;</span><span class="p">:</span> <span class="n">_get_gromacs_dir</span><span class="p">(),</span> <span class="s2">&quot;show_warnings&quot;</span><span class="p">:</span> <span class="n">show_warnings</span><span class="p">}</span>
 
     <span class="k">return</span> <span class="n">load_molecules</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span></div>
 
 
 <span class="k">def</span> <span class="nf">_to_legacy_system</span><span class="p">(</span><span class="n">molecules</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Internal function to convert the passed set of molecule views</span>
-<span class="sd">       into a sire.legacy.System.System</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Internal function to convert the passed set of molecule views</span>
+<span class="sd">    into a sire.legacy.System.System</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.legacy.System</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">LegacySystem</span>
 
@@ -742,6 +773,7 @@
         <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecules</span><span class="o">.</span><span class="n">to_molecule_group</span><span class="p">())</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="kn">from</span> <span class="nn">.legacy.Mol</span> <span class="kn">import</span> <span class="n">MoleculeGroup</span>
+
         <span class="n">m</span> <span class="o">=</span> <span class="n">MoleculeGroup</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
         <span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
         <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
@@ -750,12 +782,12 @@
 
 
 <div class="viewcode-block" id="save_to_string"><a class="viewcode-back" href="../../api/sire.html#sire.save_to_string">[docs]</a><span class="k">def</span> <span class="nf">save_to_string</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="p">{},</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Save the passed molecules to an in-memory list of lines.</span>
-<span class="sd">       This will write the molecule(s) in the format specified</span>
-<span class="sd">       to memory, thereby avoiding writing any data to a text file</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the passed molecules to an in-memory list of lines.</span>
+<span class="sd">    This will write the molecule(s) in the format specified</span>
+<span class="sd">    to memory, thereby avoiding writing any data to a text file</span>
 
-<span class="sd">       Note that you must pass in the format, and only a single</span>
-<span class="sd">       &quot;file&quot; can be written at a time.</span>
+<span class="sd">    Note that you must pass in the format, and only a single</span>
+<span class="sd">    &quot;file&quot; can be written at a time.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
@@ -765,57 +797,65 @@
     <span class="k">return</span> <span class="n">MoleculeParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="save"><a class="viewcode-back" href="../../api/sire.html#sire.save">[docs]</a><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-         <span class="n">log</span><span class="o">=</span><span class="p">{},</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Save the passed molecules to a file called &#39;filename&#39;. If the format</span>
-<span class="sd">       is not specified, then the format will be guessed from the</span>
-<span class="sd">       filename. If the format is specified, and is a list, then multiple</span>
-<span class="sd">       files will be written, one for each specified format.</span>
+<div class="viewcode-block" id="save"><a class="viewcode-back" href="../../api/sire.html#sire.save">[docs]</a><span class="k">def</span> <span class="nf">save</span><span class="p">(</span>
+    <span class="n">molecules</span><span class="p">,</span>
+    <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">log</span><span class="o">=</span><span class="p">{},</span>
+    <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the passed molecules to a file called &#39;filename&#39;. If the format</span>
+<span class="sd">    is not specified, then the format will be guessed from the</span>
+<span class="sd">    filename. If the format is specified, and is a list, then multiple</span>
+<span class="sd">    files will be written, one for each specified format.</span>
 
-<span class="sd">       Args:</span>
-<span class="sd">        molecules (:class:`sire.system.System`, :class:`sire.mol.Molecule`, List[:class:`sire.mol.Molecule`] etc.)</span>
-<span class="sd">            The molecule (or molecules) that should be written to the file.</span>
-<span class="sd">            This can be anything that can be converted to a :class:`sire.system.System`,</span>
-<span class="sd">            i.e. a single :class:`~sire.mol.Molecule` (or :class:`~sire.mol.MoleculeView`), or a list of</span>
-<span class="sd">            Molecules (or MoleculeViews)</span>
+<span class="sd">    Args:</span>
+<span class="sd">     molecules :class:`sire.system.System`,</span>
+<span class="sd">               :class:`sire.mol.Molecule`,</span>
+<span class="sd">               List[:class:`sire.mol.Molecule`] etc.)</span>
+<span class="sd">         The molecule (or molecules) that should be written to the file.</span>
+<span class="sd">         This can be anything that can be converted to a</span>
+<span class="sd">         :class:`sire.system.System`, i.e. a single</span>
+<span class="sd">         :class:`~sire.mol.Molecule` (or :class:`~sire.mol.MoleculeView`),</span>
+<span class="sd">         or a list of Molecules (or MoleculeViews)</span>
 
-<span class="sd">        filename (str):</span>
-<span class="sd">            The name of the file to which to write the file. Extensions</span>
-<span class="sd">            will be automatically added if they are needed to match</span>
-<span class="sd">            the formats of the file (or files) that are written.</span>
+<span class="sd">     filename (str):</span>
+<span class="sd">         The name of the file to which to write the file. Extensions</span>
+<span class="sd">         will be automatically added if they are needed to match</span>
+<span class="sd">         the formats of the file (or files) that are written.</span>
 
-<span class="sd">        format (str or list(str)):</span>
-<span class="sd">            The format (or formats) that should be used to write the</span>
-<span class="sd">            file (or files). If the format isn&#39;t specified, then it</span>
-<span class="sd">            will be guessed from the extension used for `filename`.</span>
-<span class="sd">            If this doesn&#39;t have an extension, then it will be guessed</span>
-<span class="sd">            based on the formats used to load the molecule originally.</span>
-<span class="sd">            If it still isn&#39;t available, then PDB will be used.</span>
+<span class="sd">     format (str or list(str)):</span>
+<span class="sd">         The format (or formats) that should be used to write the</span>
+<span class="sd">         file (or files). If the format isn&#39;t specified, then it</span>
+<span class="sd">         will be guessed from the extension used for `filename`.</span>
+<span class="sd">         If this doesn&#39;t have an extension, then it will be guessed</span>
+<span class="sd">         based on the formats used to load the molecule originally.</span>
+<span class="sd">         If it still isn&#39;t available, then PDB will be used.</span>
 
-<span class="sd">        log (dict):</span>
-<span class="sd">            Optional dictionary that you can pass in that will be populated</span>
-<span class="sd">            with any error messages or warnings from the parsers as they</span>
-<span class="sd">            attempt to write the molecular data. This can be helpful</span>
-<span class="sd">            in diagnosing why your file wasn&#39;t saved.</span>
+<span class="sd">     log (dict):</span>
+<span class="sd">         Optional dictionary that you can pass in that will be populated</span>
+<span class="sd">         with any error messages or warnings from the parsers as they</span>
+<span class="sd">         attempt to write the molecular data. This can be helpful</span>
+<span class="sd">         in diagnosing why your file wasn&#39;t saved.</span>
 
-<span class="sd">       Returns:</span>
-<span class="sd">            list[str]:</span>
-<span class="sd">            The absolute paths/name(s) of the files that have been written.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">         list[str]:</span>
+<span class="sd">         The absolute paths/name(s) of the files that have been written.</span>
 
-<span class="sd">       Examples:</span>
-<span class="sd">            &gt;&gt;&gt; save(molecules, &quot;molecules.pdb&quot;)</span>
-<span class="sd">            [&quot;/path/to/molecules.pdb&quot;]</span>
+<span class="sd">    Examples:</span>
+<span class="sd">         &gt;&gt;&gt; save(molecules, &quot;molecules.pdb&quot;)</span>
+<span class="sd">         [&quot;/path/to/molecules.pdb&quot;]</span>
 
-<span class="sd">            &gt;&gt;&gt; save([mol1, mol2, mol3], &quot;molecules.sdf&quot;)</span>
-<span class="sd">            [&quot;/path/to/molecules.sdf&quot;]</span>
+<span class="sd">         &gt;&gt;&gt; save([mol1, mol2, mol3], &quot;molecules.sdf&quot;)</span>
+<span class="sd">         [&quot;/path/to/molecules.sdf&quot;]</span>
 
-<span class="sd">            &gt;&gt;&gt; save(mols, &quot;ala&quot;, format=[&quot;top&quot;, &quot;crd&quot;])</span>
-<span class="sd">            [&quot;/path/to/ala.top&quot;, &quot;/path/to/ala.crd&quot;]</span>
+<span class="sd">         &gt;&gt;&gt; save(mols, &quot;ala&quot;, format=[&quot;top&quot;, &quot;crd&quot;])</span>
+<span class="sd">         [&quot;/path/to/ala.top&quot;, &quot;/path/to/ala.crd&quot;]</span>
 
-<span class="sd">            &gt;&gt;&gt; log = {}</span>
-<span class="sd">            &gt;&gt;&gt; save(mols, &quot;broken.top&quot;, log=log)</span>
-<span class="sd">            Exception</span>
-<span class="sd">            (look at `log` to find in detail what went wrong)</span>
+<span class="sd">         &gt;&gt;&gt; log = {}</span>
+<span class="sd">         &gt;&gt;&gt; save(mols, &quot;broken.top&quot;, log=log)</span>
+<span class="sd">         Exception</span>
+<span class="sd">         (look at `log` to find in detail what went wrong)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
@@ -834,20 +874,20 @@
 
 
 <div class="viewcode-block" id="load_test_files"><a class="viewcode-back" href="../../api/sire.html#sire.load_test_files">[docs]</a><span class="k">def</span> <span class="nf">load_test_files</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Load the passed files that are part of the unit testing</span>
-<span class="sd">       and return the resulting molecules. This will cache the files</span>
-<span class="sd">       into a directory called &quot;../cache&quot; so that downloads can be shared</span>
-<span class="sd">       between tests. You should only need this function if you</span>
-<span class="sd">       are writing unit tests.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load the passed files that are part of the unit testing</span>
+<span class="sd">    and return the resulting molecules. This will cache the files</span>
+<span class="sd">    into a directory called &quot;../cache&quot; so that downloads can be shared</span>
+<span class="sd">    between tests. You should only need this function if you</span>
+<span class="sd">    are writing unit tests.</span>
 
-<span class="sd">       Args:</span>
-<span class="sd">        files (str or list[str])</span>
-<span class="sd">            The list of files to load from the tutorial website. This</span>
-<span class="sd">            will automatically add on the tutorial URL and compression suffix</span>
+<span class="sd">    Args:</span>
+<span class="sd">     files (str or list[str])</span>
+<span class="sd">         The list of files to load from the tutorial website. This</span>
+<span class="sd">         will automatically add on the tutorial URL and compression suffix</span>
 
-<span class="sd">       Returns:</span>
-<span class="sd">        sire.system.System</span>
-<span class="sd">            The loaded molecules</span>
+<span class="sd">    Returns:</span>
+<span class="sd">     sire.system.System</span>
+<span class="sd">         The loaded molecules</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
         <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">files</span><span class="p">]</span>
@@ -856,9 +896,10 @@
         <span class="n">files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 
     <span class="kn">import</span> <span class="nn">os</span>
+
     <span class="n">d</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;tests&quot;</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;tests&quot;</span><span class="p">):</span>
         <span class="c1"># we are running in the tests directory, so cache downloads here</span>
         <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&quot;cache&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -885,7 +926,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

@@ -305,11 +305,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
@@ -350,63 +355,62 @@
         </div>
         <article role="main">
           <h1>Source code for sire.maths</h1><div class="highlight"><pre>
-<span></span>
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;create_quaternion&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;Matrix&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;pi&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;Sphere&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;Torsion&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;Triangle&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;Vector&quot;</span>
-          <span class="p">]</span>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;create_quaternion&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Matrix&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Sphere&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Torsion&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Triangle&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Vector&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Maths</span> <span class="k">as</span> <span class="n">_Maths</span>
-
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
-<span class="n">_use_new_api</span><span class="p">()</span>
-
 <span class="kn">from</span> <span class="nn">..legacy.Maths</span> <span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">,</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">Torsion</span><span class="p">,</span> <span class="n">pi</span>
 
 <span class="kn">from</span> <span class="nn">._vector</span> <span class="kn">import</span> <span class="n">Vector</span>
 <span class="kn">from</span> <span class="nn">._sphere</span> <span class="kn">import</span> <span class="n">Sphere</span>
 
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
 
-<div class="viewcode-block" id="create_quaternion"><a class="viewcode-back" href="../../api/maths.html#sire.maths.create_quaternion">[docs]</a><span class="k">def</span> <span class="nf">create_quaternion</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                      <span class="n">matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quaternion</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create a quaternion from the passed angle and axis</span>
-<span class="sd">       of the passed rotation matrix. If a rotation</span>
-<span class="sd">       matrix is passed then this will ignore the</span>
-<span class="sd">       passed angle and axis. If a quaternion is passed</span>
-<span class="sd">       then this will ignore the matrix, angle and axis</span>
-<span class="sd">       arguments.</span>
+<span class="n">_use_new_api</span><span class="p">()</span>
 
-<span class="sd">        angle: (float or angle)</span>
-<span class="sd">            The angle to rotate by - this is interpreted as</span>
-<span class="sd">            degrees if you pass in a float. Otherwise use</span>
-<span class="sd">            sire.units.degrees or sire.units.radians to specify</span>
-<span class="sd">            the angle unit. This is superseded by the</span>
-<span class="sd">            matrix and quaternion arguments.</span>
 
-<span class="sd">        axis: sire.maths.Vector (or anything that can convert to a Vector)</span>
-<span class="sd">            The vector about which to rotate. If this is not</span>
-<span class="sd">            specified, and no other rotation specification is</span>
-<span class="sd">            used, then the rotation is about the z axis.</span>
-<span class="sd">            This is superseded by the matrix and</span>
-<span class="sd">            quaternion arguments.</span>
+<div class="viewcode-block" id="create_quaternion"><a class="viewcode-back" href="../../api/maths.html#sire.maths.create_quaternion">[docs]</a><span class="k">def</span> <span class="nf">create_quaternion</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quaternion</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a quaternion from the passed angle and axis</span>
+<span class="sd">    of the passed rotation matrix. If a rotation</span>
+<span class="sd">    matrix is passed then this will ignore the</span>
+<span class="sd">    passed angle and axis. If a quaternion is passed</span>
+<span class="sd">    then this will ignore the matrix, angle and axis</span>
+<span class="sd">    arguments.</span>
 
-<span class="sd">        quaternion: sire.maths.Quaternion</span>
-<span class="sd">            The Quaternion description of the rotation. Note that,</span>
-<span class="sd">            if you pass this, then the angle, axis and matrix</span>
-<span class="sd">            arguments will be ignored.</span>
+<span class="sd">     angle: (float or angle)</span>
+<span class="sd">         The angle to rotate by - this is interpreted as</span>
+<span class="sd">         degrees if you pass in a float. Otherwise use</span>
+<span class="sd">         sire.units.degrees or sire.units.radians to specify</span>
+<span class="sd">         the angle unit. This is superseded by the</span>
+<span class="sd">         matrix and quaternion arguments.</span>
 
-<span class="sd">        matrix: sire.maths.Matrix</span>
-<span class="sd">            The 3x3 rotation matrix that describes the rotation.</span>
-<span class="sd">            Note that, if you pass this, then the angle and axis</span>
-<span class="sd">            arguments will be ignored. This is superseded by</span>
-<span class="sd">            the quaternion argument.</span>
+<span class="sd">     axis: sire.maths.Vector (or anything that can convert to a Vector)</span>
+<span class="sd">         The vector about which to rotate. If this is not</span>
+<span class="sd">         specified, and no other rotation specification is</span>
+<span class="sd">         used, then the rotation is about the z axis.</span>
+<span class="sd">         This is superseded by the matrix and</span>
+<span class="sd">         quaternion arguments.</span>
 
-<span class="sd">        Returns: sire.maths.Quaternion</span>
-<span class="sd">            The quaternion that represents the rotation</span>
+<span class="sd">     quaternion: sire.maths.Quaternion</span>
+<span class="sd">         The Quaternion description of the rotation. Note that,</span>
+<span class="sd">         if you pass this, then the angle, axis and matrix</span>
+<span class="sd">         arguments will be ignored.</span>
+
+<span class="sd">     matrix: sire.maths.Matrix</span>
+<span class="sd">         The 3x3 rotation matrix that describes the rotation.</span>
+<span class="sd">         Note that, if you pass this, then the angle and axis</span>
+<span class="sd">         arguments will be ignored. This is superseded by</span>
+<span class="sd">         the quaternion argument.</span>
+
+<span class="sd">     Returns: sire.maths.Quaternion</span>
+<span class="sd">         The quaternion that represents the rotation</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">quaternion</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="ow">is</span> <span class="n">Quaternion</span><span class="p">:</span>
@@ -423,7 +427,8 @@
             <span class="k">if</span> <span class="n">angle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                     <span class="s2">&quot;You must specify either the angle, rotation matrix &quot;</span>
-                    <span class="s2">&quot;or quaternion used to rotate the molecule.&quot;</span><span class="p">)</span>
+                    <span class="s2">&quot;or quaternion used to rotate the molecule.&quot;</span>
+                <span class="p">)</span>
 
             <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">degrees</span>
 
@@ -451,9 +456,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">angle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
                 <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
                     <span class="s2">&quot;The angle and/or axis of rotation will be ignored &quot;</span>
-                    <span class="s2">&quot;because you have passed in a rotation matrix.&quot;</span><span class="p">)</span>
+                    <span class="s2">&quot;because you have passed in a rotation matrix.&quot;</span>
+                <span class="p">)</span>
 
             <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Matrix</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
@@ -466,15 +473,19 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
             <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
                 <span class="s2">&quot;The rotation matrix will be ignored &quot;</span>
-                <span class="s2">&quot;because you have passed in a quaternion.&quot;</span><span class="p">)</span>
+                <span class="s2">&quot;because you have passed in a quaternion.&quot;</span>
+            <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">angle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
             <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
                 <span class="s2">&quot;The angle and/or axis of rotation will be ignored &quot;</span>
-                <span class="s2">&quot;because you have passed in a quaternion.&quot;</span><span class="p">)</span>
+                <span class="s2">&quot;because you have passed in a quaternion.&quot;</span>
+            <span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">quaternion</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Quaternion</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
@@ -498,7 +509,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

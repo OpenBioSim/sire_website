@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Quick Start Guide" href="quickstart/index.html" /><link rel="prev" title="Features" href="features.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -421,7 +426,7 @@ the full path to your anaconda or miniconda installation.</p>
 packages (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">-h</span></code> will print out help on how to use the
 <code class="docutils literal notranslate"><span class="pre">conda</span></code> command). We highly recommend that you use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> as a
 drop-in replacement for <code class="docutils literal notranslate"><span class="pre">conda</span></code>, so first install <code class="docutils literal notranslate"><span class="pre">mamba</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge mamba
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
 </pre></div>
 </div>
 <p>This should install mamba. If this fails, then your anaconda or miniconda
@@ -437,11 +442,11 @@ on how to use the <code class="docutils literal notranslate"><span class="pre">m
 This minimises the risk of failures caused by incompatible dependencies.</p>
 <p>Sire is currently packaged for Python 3.8 and Python 3.9. We will start
 by creating a Python 3.9 environment that we will call <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mamba create -n openbiosim <span class="nv">python</span><span class="o">==</span><span class="m">3</span>.9
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="nv">python</span><span class="o">==</span><span class="m">3</span>.9
 </pre></div>
 </div>
 <p>We can now install <code class="docutils literal notranslate"><span class="pre">sire</span></code> into that environment by typing</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mamba install -n openbiosim -c openbiosim sire
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>openbiosim<span class="w"> </span>sire
 </pre></div>
 </div>
 <div class="admonition note">
@@ -453,12 +458,12 @@ conda channel.</p>
 </div>
 <p>You may (optionally) want to install additional tools such as
 <code class="docutils literal notranslate"><span class="pre">ipython</span></code> and <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>. To do this, type</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mamba install -n openbiosim ipython jupyterlab
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>ipython<span class="w"> </span>jupyterlab
 </pre></div>
 </div>
 <p>To run <code class="docutils literal notranslate"><span class="pre">sire</span></code>, you must now activate the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment.
 You can do this by typing</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate openbiosim
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>openbiosim
 </pre></div>
 </div>
 <p>You can now start a Python session (e.g. running <code class="docutils literal notranslate"><span class="pre">python</span></code>, or
@@ -479,11 +484,11 @@ pre-built containers. These can be run via
 <a class="reference external" href="https://www.docker.com">docker</a> (on Linux, MacOS and Windows)
 or via <a class="reference external" href="https://podman.io">podman</a> (on Linux).</p>
 <p>To run via <a class="reference external" href="https://www.docker.com">docker</a>, simply type;</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run -p <span class="m">8888</span>:8888 -it openbiosim/sire:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>-it<span class="w"> </span>openbiosim/sire:latest
 </pre></div>
 </div>
 <p>or, via <a class="reference external" href="https://podman.io">podman</a>, type;</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ podman run -p <span class="m">8888</span>:8888 -it openbiosim/sire:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>podman<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>-it<span class="w"> </span>openbiosim/sire:latest
 </pre></div>
 </div>
 <p>This will download the container from
@@ -533,7 +538,7 @@ then creating and activating Python 3.9 environment called
 <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
 <p>Next, download the source code. You could download the latest development
 version of <code class="docutils literal notranslate"><span class="pre">sire</span></code> by typing;</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/openbiosim/sire
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/openbiosim/sire
 </pre></div>
 </div>
 <p>This will download into a directory called <code class="docutils literal notranslate"><span class="pre">sire</span></code>. Navigate into
@@ -546,37 +551,45 @@ run <code class="docutils literal notranslate"><span class="pre">mamba</span> <s
 </div>
 <p>You can change to a different branch using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">BRANCH</span></code>
 command, e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>main
 </pre></div>
 </div>
 <p>will check out the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of <code class="docutils literal notranslate"><span class="pre">sire</span></code>. This always corresponds
 to the last released version of <code class="docutils literal notranslate"><span class="pre">sire</span></code>. Or, you can check out a
 feature branch using</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout feat_name
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>feat_name
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">feat_name</span></code> should be replaced by the name of the feature
 branch you want to compile.</p>
 <p>Compilation and installation of <code class="docutils literal notranslate"><span class="pre">sire</span></code> is managed via the
-<a class="reference external" href="https://github.com/michellab/Sire/blob/devel/setup.py">setup.py</a>
+<a class="reference external" href="https://github.com/openbiosim/sire/blob/devel/setup.py">setup.py</a>
 script.</p>
 <p>Run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python setup.py --help
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>to get a help on all of the options.</p>
 <p>Typically, you just want to compile and install <code class="docutils literal notranslate"><span class="pre">sire</span></code>. To do this,
 type</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python setup.py install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>install
 </pre></div>
 </div>
 <p>This will download and install all of the dependencies via <code class="docutils literal notranslate"><span class="pre">mamba</span></code>
 (or <code class="docutils literal notranslate"><span class="pre">conda</span></code> if you haven’t installed <code class="docutils literal notranslate"><span class="pre">mamba</span></code>). It will then compile
 the <code class="docutils literal notranslate"><span class="pre">sire</span></code> C++ libraries, and then the Python wrappers. Be patient,
 as compilation can take quite a while!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to have Visual Studio 2017 C++ compiler installed to compile on Windows.
+The easiest way to do this is to <a class="reference external" href="https://chocolatey.org/install">install chocolatey</a>
+and then install the compilers using the command
+<code class="docutils literal notranslate"><span class="pre">choco</span> <span class="pre">install</span> <span class="pre">visualstudio2017-workload-vctools</span></code>. This is all free, but
+you will need admin access to install chocolatey.</p>
+</div>
 <p>If you plan to install <a class="reference external" href="https://biosimspace.org">BioSimSpace</a> on
 top of <code class="docutils literal notranslate"><span class="pre">sire</span></code>, then you should install using;</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python --install-bss-deps install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>--install-bss-deps<span class="w"> </span>install
 </pre></div>
 </div>
 <p>This will use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> (or <code class="docutils literal notranslate"><span class="pre">conda</span></code>) to download and install all of
@@ -624,7 +637,7 @@ to learn how to use <code class="docutils literal notranslate"><span class="pre"
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

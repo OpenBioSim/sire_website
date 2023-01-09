@@ -305,11 +305,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
@@ -350,17 +355,16 @@
         </div>
         <article role="main">
           <h1>Source code for sire.utils._try_import</h1><div class="highlight"><pre>
-<span></span>
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;try_import&quot;</span><span class="p">,</span> <span class="s2">&quot;try_import_from&quot;</span><span class="p">]</span>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;try_import&quot;</span><span class="p">,</span> <span class="s2">&quot;try_import_from&quot;</span><span class="p">]</span>
 
 <span class="n">_module_to_package</span> <span class="o">=</span> <span class="p">{}</span>
 
 
 <span class="k">def</span> <span class="nf">_install_package</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package_registry</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Internal function used to install the module</span>
-<span class="sd">       called &#39;name&#39;, using the passed &#39;package_registry&#39;</span>
-<span class="sd">       to find the package that contains the package</span>
-<span class="sd">       that contains this module&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Internal function used to install the module</span>
+<span class="sd">    called &#39;name&#39;, using the passed &#39;package_registry&#39;</span>
+<span class="sd">    to find the package that contains the package</span>
+<span class="sd">    that contains this module&quot;&quot;&quot;</span>
 
     <span class="c1"># get the directory containing the python executable,</span>
     <span class="c1"># we will assume this will also contain &#39;conda&#39;, &#39;pip&#39;</span>
@@ -369,85 +373,93 @@
     <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">system</span>
     <span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">executable</span>
 
-    <span class="n">binpath</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span> <span class="n">realpath</span><span class="p">(</span><span class="n">executable</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">binpath</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">realpath</span><span class="p">(</span><span class="n">executable</span><span class="p">))</span>
 
     <span class="c1"># ensure that we have the root package name</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">package</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="n">package</span> <span class="o">=</span> <span class="n">name</span>
 
     <span class="k">if</span> <span class="n">package</span> <span class="ow">in</span> <span class="n">package_registry</span><span class="p">:</span>
         <span class="n">package</span> <span class="o">=</span> <span class="n">package_registry</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Trying to install </span><span class="si">%s</span><span class="s2"> from package </span><span class="si">%s</span><span class="s2"> using </span><span class="si">%s</span><span class="s2">/conda...</span><span class="se">\n</span><span class="s2">&quot;</span> \
-                  <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">package</span><span class="p">,</span><span class="n">binpath</span><span class="p">))</span>
-        <span class="n">ok</span> <span class="o">=</span> <span class="n">system</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/conda install </span><span class="si">%s</span><span class="s2"> -y&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">binpath</span><span class="p">,</span><span class="n">package</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Trying to install </span><span class="si">%s</span><span class="s2"> from package </span><span class="si">%s</span><span class="s2"> using </span><span class="si">%s</span><span class="s2">/conda...</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package</span><span class="p">,</span> <span class="n">binpath</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="n">system</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/conda install </span><span class="si">%s</span><span class="s2"> -y&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">binpath</span><span class="p">,</span> <span class="n">package</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="n">ok</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="c1"># installed ok</span>
             <span class="k">return</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Trying to install </span><span class="si">%s</span><span class="s2"> from package </span><span class="si">%s</span><span class="s2"> using </span><span class="si">%s</span><span class="s2">/pip...</span><span class="se">\n</span><span class="s2">&quot;</span> \
-                  <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">package</span><span class="p">,</span><span class="n">binpath</span><span class="p">))</span>
-        <span class="n">ok</span> <span class="o">=</span> <span class="n">system</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/pip install </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">binpath</span><span class="p">,</span><span class="n">package</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Trying to install </span><span class="si">%s</span><span class="s2"> from package </span><span class="si">%s</span><span class="s2"> using </span><span class="si">%s</span><span class="s2">/pip...</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package</span><span class="p">,</span> <span class="n">binpath</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="n">system</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/pip install </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">binpath</span><span class="p">,</span> <span class="n">package</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="n">ok</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="c1"># installed ok</span>
             <span class="k">return</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Trying to install </span><span class="si">%s</span><span class="s2"> from package </span><span class="si">%s</span><span class="s2"> using </span><span class="si">%s</span><span class="s2">/easy_install...</span><span class="se">\n</span><span class="s2">&quot;</span> \
-                  <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">package</span><span class="p">,</span><span class="n">binpath</span><span class="p">))</span>
-        <span class="n">ok</span> <span class="o">=</span> <span class="n">system</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/easy_install </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">binpath</span><span class="p">,</span><span class="n">package</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Trying to install </span><span class="si">%s</span><span class="s2"> from package </span><span class="si">%s</span><span class="s2"> using </span><span class="si">%s</span><span class="s2">/easy_install...</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package</span><span class="p">,</span> <span class="n">binpath</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="n">system</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/easy_install </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">binpath</span><span class="p">,</span> <span class="n">package</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="n">ok</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="c1"># installed ok</span>
             <span class="k">return</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">pass</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">WARNING: Unable to install &#39;</span><span class="si">%s</span><span class="s2">&#39; from package &#39;</span><span class="si">%s</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">&quot;</span> \
-               <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">package</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">WARNING: Unable to install &#39;</span><span class="si">%s</span><span class="s2">&#39; from package &#39;</span><span class="si">%s</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package</span><span class="p">)</span>
+    <span class="p">)</span>
 
     <span class="k">return</span>
 
 
 <div class="viewcode-block" id="try_import"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.try_import">[docs]</a><span class="k">def</span> <span class="nf">try_import</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package_registry</span><span class="o">=</span><span class="n">_module_to_package</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Try to import the module called &#39;name&#39;, returning</span>
-<span class="sd">       the loaded module as an argument. If the module</span>
-<span class="sd">       is not available, then it looks up the name of</span>
-<span class="sd">       the package to install using &quot;package_registry&quot;</span>
-<span class="sd">       (or if this is not available, using just the name</span>
-<span class="sd">       of the module). This will then be installed using</span>
-<span class="sd">       &quot;conda&quot;, then &quot;pip&quot; then &quot;easy_install&quot; (first one</span>
-<span class="sd">       that works will return).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Try to import the module called &#39;name&#39;, returning</span>
+<span class="sd">    the loaded module as an argument. If the module</span>
+<span class="sd">    is not available, then it looks up the name of</span>
+<span class="sd">    the package to install using &quot;package_registry&quot;</span>
+<span class="sd">    (or if this is not available, using just the name</span>
+<span class="sd">    of the module). This will then be installed using</span>
+<span class="sd">    &quot;conda&quot;, then &quot;pip&quot; then &quot;easy_install&quot; (first one</span>
+<span class="sd">    that works will return).</span>
 
-<span class="sd">       For example, use this via</span>
+<span class="sd">    For example, use this via</span>
 
-<span class="sd">       sys = try_import(&quot;sys&quot;)</span>
-<span class="sd">       mdtraj = try_import(&quot;mdtraj&quot;)</span>
+<span class="sd">    sys = try_import(&quot;sys&quot;)</span>
+<span class="sd">    mdtraj = try_import(&quot;mdtraj&quot;)</span>
 
-<span class="sd">       Note that you can also rename modules, e.g. by using</span>
+<span class="sd">    Note that you can also rename modules, e.g. by using</span>
 
-<span class="sd">       md = try_import(&quot;mdtraj&quot;)</span>
+<span class="sd">    md = try_import(&quot;mdtraj&quot;)</span>
 
-<span class="sd">       Note that you should use try_import_from if you</span>
-<span class="sd">       want only specific symbols, e.g.</span>
+<span class="sd">    Note that you should use try_import_from if you</span>
+<span class="sd">    want only specific symbols, e.g.</span>
 
-<span class="sd">       (argv, stdout) = try_import_from(&quot;sys&quot;, [&quot;argv&quot;,&quot;stdout&quot;])</span>
+<span class="sd">    (argv, stdout) = try_import_from(&quot;sys&quot;, [&quot;argv&quot;,&quot;stdout&quot;])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mod</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">package_registry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
@@ -458,22 +470,22 @@
 
 
 <div class="viewcode-block" id="try_import_from"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.try_import_from">[docs]</a><span class="k">def</span> <span class="nf">try_import_from</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fromlist</span><span class="p">,</span> <span class="n">package_registry</span><span class="o">=</span><span class="n">_module_to_package</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Try to import from the module called &#39;name&#39; the passed symbol</span>
-<span class="sd">       (or list of symbols) contained in &#39;fromlist&#39;, returning</span>
-<span class="sd">       the symbol (or list of symbols).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Try to import from the module called &#39;name&#39; the passed symbol</span>
+<span class="sd">    (or list of symbols) contained in &#39;fromlist&#39;, returning</span>
+<span class="sd">    the symbol (or list of symbols).</span>
 
-<span class="sd">       If the module cannot be loaded, then the package containing</span>
-<span class="sd">       the module is looked up in &#39;module_to_package&#39; (or just guessed</span>
-<span class="sd">       from the name if it does not exist in &#39;module_to_package&#39;.</span>
-<span class="sd">       An attempt is made to load the package, using first conda,</span>
-<span class="sd">       then pip, then easy_install.</span>
+<span class="sd">    If the module cannot be loaded, then the package containing</span>
+<span class="sd">    the module is looked up in &#39;module_to_package&#39; (or just guessed</span>
+<span class="sd">    from the name if it does not exist in &#39;module_to_package&#39;.</span>
+<span class="sd">    An attempt is made to load the package, using first conda,</span>
+<span class="sd">    then pip, then easy_install.</span>
 
-<span class="sd">       Example usage:</span>
+<span class="sd">    Example usage:</span>
 
-<span class="sd">       Mol = try_import_from(&quot;Sire&quot;, &quot;Mol&quot;)</span>
-<span class="sd">       (argv,stdout = try_import_from(&quot;sys&quot;, [&quot;argv&quot;, &quot;stdout&quot;])</span>
-<span class="sd">       mapReduce = try_import_from(&quot;scoop.Futures&quot;, &quot;mapReduce&quot;)</span>
-<span class="sd">       ut = try_import_from(&quot;mdtraj&quot;, &quot;utils&quot;)</span>
+<span class="sd">    Mol = try_import_from(&quot;Sire&quot;, &quot;Mol&quot;)</span>
+<span class="sd">    (argv,stdout = try_import_from(&quot;sys&quot;, [&quot;argv&quot;, &quot;stdout&quot;])</span>
+<span class="sd">    mapReduce = try_import_from(&quot;scoop.Futures&quot;, &quot;mapReduce&quot;)</span>
+<span class="sd">    ut = try_import_from(&quot;mdtraj&quot;, &quot;utils&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fromlist</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -483,7 +495,7 @@
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">nsyms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fromlist</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">try_import</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package_registry</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">nsyms</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -495,7 +507,7 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">locals</span><span class="p">(),</span> <span class="n">fromlist</span><span class="p">)</span>
         <span class="n">is_loaded</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="n">is_loaded</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_loaded</span><span class="p">:</span>
@@ -508,22 +520,26 @@
     <span class="k">if</span> <span class="n">nsyms</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">fromlist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Cannot find the symbol &#39;</span><span class="si">%s</span><span class="s2">&#39; in module &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> \
-                     <span class="o">%</span> <span class="p">(</span><span class="n">fromlist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">name</span><span class="p">)</span> <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+                <span class="s2">&quot;Cannot find the symbol &#39;</span><span class="si">%s</span><span class="s2">&#39; in module &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                <span class="o">%</span> <span class="p">(</span><span class="n">fromlist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">name</span><span class="p">)</span>
+            <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">missing_symbols</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">sym</span> <span class="ow">in</span> <span class="n">fromlist</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">sym</span><span class="p">)</span> <span class="p">)</span>
-            <span class="k">except</span><span class="p">:</span>
+                <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">sym</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                 <span class="n">missing_symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">missing_symbols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Cannot find the following symbols in module &#39;</span><span class="si">%s</span><span class="s2">&#39; : [ </span><span class="si">%s</span><span class="s2"> ]&quot;</span> \
-                      <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing_symbols</span><span class="p">)))</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+                <span class="s2">&quot;Cannot find the following symbols in module &#39;</span><span class="si">%s</span><span class="s2">&#39; : [ </span><span class="si">%s</span><span class="s2"> ]&quot;</span>
+                <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing_symbols</span><span class="p">))</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">ret</span></div>
 </pre></div>
@@ -540,7 +556,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

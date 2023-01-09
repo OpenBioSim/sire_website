@@ -304,11 +304,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -439,6 +444,8 @@
           <li><a href="api/mol.html#sire.mol.CursorsM.apply">(sire.mol.CursorsM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.SelectorMol.apply">(sire.mol.SelectorMol method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.TrajectoryIterator.apply">(sire.mol.TrajectoryIterator method)</a>
 </li>
           <li><a href="api/system.html#sire.system.System.apply">(sire.system.System method)</a>
 </li>
@@ -583,9 +590,11 @@
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api/cas.html#sire.cas.Expression.assign">assign() (sire.cas.Expression method)</a>
+        <li><a href="api/base.html#sire.base.PropertyMap.assign">assign() (sire.base.PropertyMap method)</a>
 
         <ul>
+          <li><a href="api/cas.html#sire.cas.Expression.assign">(sire.cas.Expression method)</a>
+</li>
           <li><a href="api/cas.html#sire.cas.Symbol.assign">(sire.cas.Symbol method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Matrix.assign">(sire.maths.Matrix method)</a>
@@ -735,7 +744,7 @@
           <li><a href="api/mol.html#sire.mol.Segment.atom_idxs">(sire.mol.Segment method)</a>
 </li>
         </ul></li>
-        <li><a href="api/generated/sire.atomid.html#sire.atomid">atomid() (in module sire)</a>, <a href="api/sire.html#sire.atomid">[1]</a>
+        <li><a href="api/sire.html#sire.atomid">atomid() (in module sire)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.AtomIdx">AtomIdx (class in sire.mol)</a>
 </li>
@@ -913,7 +922,7 @@
           <li><a href="api/system.html#sire.system.System.chain">(sire.system.System method)</a>
 </li>
         </ul></li>
-        <li><a href="api/generated/sire.chainid.html#sire.chainid">chainid() (in module sire)</a>, <a href="api/sire.html#sire.chainid">[1]</a>
+        <li><a href="api/sire.html#sire.chainid">chainid() (in module sire)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.ChainIdx">ChainIdx (class in sire.mol)</a>
 </li>
@@ -973,9 +982,11 @@
           <li><a href="api/cas.html#sire.cas.Symbol.children">(sire.cas.Symbol method)</a>
 </li>
         </ul></li>
-        <li><a href="api/cas.html#sire.cas.Expression.clone">clone() (sire.cas.Expression method)</a>
+        <li><a href="api/base.html#sire.base.PropertyMap.clone">clone() (sire.base.PropertyMap method)</a>
 
         <ul>
+          <li><a href="api/cas.html#sire.cas.Expression.clone">(sire.cas.Expression method)</a>
+</li>
           <li><a href="api/cas.html#sire.cas.Symbol.clone">(sire.cas.Symbol method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Matrix.clone">(sire.maths.Matrix method)</a>
@@ -1061,10 +1072,10 @@
         </ul></li>
         <li><a href="api/mol.html#sire.mol.Element.color">color() (sire.mol.Element method)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/mol.html#sire.mol.Element.color_name">color_name() (sire.mol.Element method)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/maths.html#sire.maths.Matrix.column0">column0() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.column1">column1() (sire.maths.Matrix method)</a>
@@ -1117,6 +1128,8 @@
           <li><a href="api/mol.html#sire.mol.SelectorMol.contains">(sire.mol.SelectorMol method)</a>
 </li>
         </ul></li>
+        <li><a href="api/units.html#sire.units.convert">convert() (in module sire.units)</a>
+</li>
         <li><a href="api/system.html#sire.system.System.coordinates">coordinates() (sire.system.System method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Torsion.count">count() (sire.maths.Torsion method)</a>
@@ -1172,6 +1185,8 @@
         <li><a href="api/maths.html#sire.maths.create_quaternion">create_quaternion() (in module sire.maths)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.cubed">cubed() (sire.cas.Expression method)</a>
+</li>
+        <li><a href="api/mol.html#sire.mol.TrajectoryIterator.current">current() (sire.mol.TrajectoryIterator method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor">Cursor (class in sire.mol)</a>
 </li>
@@ -1381,7 +1396,7 @@
         </ul></li>
         <li><a href="api/vol.html#sire.vol.PeriodicBox.dimensions">dimensions() (sire.vol.PeriodicBox method)</a>
 </li>
-        <li><a href="api/generated/sire.disable_thumbs_up.html#sire.disable_thumbs_up">disable_thumbs_up() (in module sire)</a>, <a href="api/sire.html#sire.disable_thumbs_up">[1]</a>
+        <li><a href="api/sire.html#sire.disable_thumbs_up">disable_thumbs_up() (in module sire)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.divide">divide() (sire.cas.Expression method)</a>
 </li>
@@ -1533,6 +1548,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/cas.html#sire.cas.Expression.factor">factor() (sire.cas.Expression method)</a>
 </li>
+        <li><a href="api/mol.html#sire.mol.TrajectoryIterator.first">first() (sire.mol.TrajectoryIterator method)</a>
+</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/cas.html#sire.cas.Expression.functions">functions() (sire.cas.Expression method)</a>
@@ -1605,7 +1622,7 @@
           <li><a href="api/vol.html#sire.vol.PeriodicBox.get_random_point">(sire.vol.PeriodicBox method)</a>
 </li>
         </ul></li>
-        <li><a href="api/generated/sire.get_thumbs_up_info.html#sire.get_thumbs_up_info">get_thumbs_up_info() (in module sire)</a>, <a href="api/sire.html#sire.get_thumbs_up_info">[1]</a>
+        <li><a href="api/sire.html#sire.get_thumbs_up_info">get_thumbs_up_info() (in module sire)</a>
 </li>
         <li><a href="api/search.html#sire.search.get_token">get_token() (in module sire.search)</a>
 </li>
@@ -1925,6 +1942,8 @@
           <li><a href="api/cas.html#sire.cas.Symbol.is_constant">(sire.cas.Symbol method)</a>
 </li>
         </ul></li>
+        <li><a href="api/base.html#sire.base.PropertyMap.is_default">is_default() (sire.base.PropertyMap method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.BondType.is_defined">is_defined() (sire.mol.BondType method)</a>
 
         <ul>
@@ -2187,7 +2206,7 @@
 </li>
         <li><a href="api/maths.html#sire.maths.Triangle.line2">line2() (sire.maths.Triangle method)</a>
 </li>
-        <li><a href="api/generated/sire.load.html#sire.load">load() (in module sire)</a>, <a href="api/sire.html#sire.load">[1]</a>
+        <li><a href="api/sire.html#sire.load">load() (in module sire)</a>
 </li>
         <li><a href="api/mm.html#sire.mm.Angle.load_frame">load_frame() (sire.mm.Angle method)</a>
 
@@ -2289,9 +2308,11 @@
           <li><a href="api/vol.html#sire.vol.PeriodicBox.maximum_cutoff">(sire.vol.PeriodicBox method)</a>
 </li>
         </ul></li>
-        <li><a href="api/mm.html#sire.mm.Angle.measure">measure() (sire.mm.Angle method)</a>
+        <li><a href="api/sire.html#sire.measure">measure() (in module sire)</a>
 
         <ul>
+          <li><a href="api/mm.html#sire.mm.Angle.measure">(sire.mm.Angle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.measure">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.measure">(sire.mm.Dihedral method)</a>
@@ -2317,6 +2338,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.measures">(sire.mm.SelectorMImproper method)</a>
 </li>
         </ul></li>
+        <li><a href="api/base.html#sire.base.PropertyMap.merge">merge() (sire.base.PropertyMap method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Molecule.metadata">metadata() (sire.mol.Molecule method)</a>
 </li>
         <li><a href="api/mm.html#sire.mm.Angle.metadata_keys">metadata_keys() (sire.mm.Angle method)</a>
@@ -2468,7 +2491,7 @@
           <li><a href="api/system.html#sire.system.System.molecules">(sire.system.System method)</a>
 </li>
         </ul></li>
-        <li><a href="api/generated/sire.molid.html#sire.molid">molid() (in module sire)</a>, <a href="api/sire.html#sire.molid">[1]</a>
+        <li><a href="api/sire.html#sire.molid">molid() (in module sire)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.MolIdx">MolIdx (class in sire.mol)</a>
 </li>
@@ -3044,6 +3067,8 @@
           <li><a href="api/mol.html#sire.mol.Molecule.property_type">(sire.mol.Molecule method)</a>
 </li>
         </ul></li>
+        <li><a href="api/base.html#sire.base.PropertyMap">PropertyMap (class in sire.base)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -3059,8 +3084,6 @@
         <li><a href="api/utils.html#sire.utils.Console.redirect_output">redirect_output() (sire.utils.Console static method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Chain.res_idxs">res_idxs() (sire.mol.Chain method)</a>
-</li>
-        <li><a href="api/generated/sire.resid.html#sire.resid">resid() (in module sire)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Residue">Residue (class in sire.mol)</a>
 </li>
@@ -3156,7 +3179,7 @@
   <h2>S</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api/generated/sire.save.html#sire.save">save() (in module sire)</a>, <a href="api/sire.html#sire.save">[1]</a>
+        <li><a href="api/sire.html#sire.save">save() (in module sire)</a>
 
         <ul>
           <li><a href="api/utils.html#sire.utils.Console.save">(sire.utils.Console static method)</a>
@@ -3224,7 +3247,7 @@
           <li><a href="api/mol.html#sire.mol.SelectorMol.search">(sire.mol.SelectorMol method)</a>
 </li>
         </ul></li>
-        <li><a href="api/generated/sire.segid.html#sire.segid">segid() (in module sire)</a>, <a href="api/sire.html#sire.segid">[1]</a>
+        <li><a href="api/sire.html#sire.segid">segid() (in module sire)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.SegIdx">SegIdx (class in sire.mol)</a>
 </li>
@@ -3733,6 +3756,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.sizes">(sire.mm.SelectorMImproper method)</a>
 </li>
         </ul></li>
+        <li><a href="api/base.html#sire.base.PropertyMap.specified">specified() (sire.base.PropertyMap method)</a>
+</li>
         <li><a href="api/maths.html#sire.maths.Sphere">Sphere (class in sire.maths)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.squared">squared() (sire.cas.Expression method)</a>
@@ -3781,7 +3806,9 @@
 </li>
         <li><a href="api/mm.html#sire.mm.Improper.theta">theta() (sire.mm.Improper method)</a>
 </li>
-        <li><a href="api/generated/sire.thumbs_up.html#sire.thumbs_up">thumbs_up() (in module sire)</a>, <a href="api/sire.html#sire.thumbs_up">[1]</a>
+        <li><a href="api/sire.html#sire.thumbs_up">thumbs_up() (in module sire)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PropertyMap.to_dict">to_dict() (sire.base.PropertyMap method)</a>
 </li>
         <li><a href="api/mm.html#sire.mm.Angle.to_list">to_list() (sire.mm.Angle method)</a>
 
@@ -3907,9 +3934,11 @@
           <li><a href="api/mol.html#sire.mol.Segment.to_selector">(sire.mol.Segment method)</a>
 </li>
         </ul></li>
-        <li><a href="api/cas.html#sire.cas.Expression.to_string">to_string() (sire.cas.Expression method)</a>
+        <li><a href="api/base.html#sire.base.PropertyMap.to_string">to_string() (sire.base.PropertyMap method)</a>
 
         <ul>
+          <li><a href="api/cas.html#sire.cas.Expression.to_string">(sire.cas.Expression method)</a>
+</li>
           <li><a href="api/cas.html#sire.cas.Symbol.to_string">(sire.cas.Symbol method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Matrix.to_string">(sire.maths.Matrix method)</a>
@@ -4003,6 +4032,8 @@
 </li>
         <li><a href="api/system.html#sire.system.System.trajectory">trajectory() (sire.system.System method)</a>
 </li>
+        <li><a href="api/mol.html#sire.mol.TrajectoryIterator">TrajectoryIterator (class in sire.mol)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Element.transition_metal">transition_metal() (sire.mol.Element method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.translate">translate() (sire.mol.Cursor method)</a>
@@ -4031,9 +4062,11 @@
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.type">type() (sire.mol.Cursor method)</a>
 </li>
-        <li><a href="api/cas.html#sire.cas.Expression.typename">typename() (sire.cas.Expression method)</a>
+        <li><a href="api/base.html#sire.base.PropertyMap.typename">typename() (sire.base.PropertyMap method)</a>
 
         <ul>
+          <li><a href="api/cas.html#sire.cas.Expression.typename">(sire.cas.Expression method)</a>
+</li>
           <li><a href="api/cas.html#sire.cas.Symbol.typename">(sire.cas.Symbol method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Matrix.typename">(sire.maths.Matrix method)</a>
@@ -4154,6 +4187,14 @@
 </li>
         </ul></li>
     </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/sire.html#sire.use_mixed_api">use_mixed_api() (in module sire)</a>
+</li>
+        <li><a href="api/sire.html#sire.use_new_api">use_new_api() (in module sire)</a>
+</li>
+        <li><a href="api/sire.html#sire.use_old_api">use_old_api() (in module sire)</a>
+</li>
+    </ul></td>
   </tr></table>
 </section>
 
@@ -4231,9 +4272,11 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/utils.html#sire.utils.Console.warning">warning() (sire.utils.Console static method)</a>
 </li>
-        <li><a href="api/cas.html#sire.cas.Expression.what">what() (sire.cas.Expression method)</a>
+        <li><a href="api/base.html#sire.base.PropertyMap.what">what() (sire.base.PropertyMap method)</a>
 
         <ul>
+          <li><a href="api/cas.html#sire.cas.Expression.what">(sire.cas.Expression method)</a>
+</li>
           <li><a href="api/cas.html#sire.cas.Symbol.what">(sire.cas.Symbol method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Matrix.what">(sire.maths.Matrix method)</a>
@@ -4365,7 +4408,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             

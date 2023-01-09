@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.utils" href="index_utils.html" /><link rel="prev" title="sire.units" href="index_units.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -361,6 +366,45 @@ return ‘angle’ if it is already an angle, or will
 convert it into an angle with default units if this
 is a float or something that can be converted to
 a float</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.units.convert">
+<span class="sig-prename descclassname"><span class="pre">sire.units.</span></span><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(float)val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(TempBase)from_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(TempBase)to_units</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.units.convert" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double convert(double,SireUnits::Dimension::TempBase,SireUnits::Dimension::TempBase)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>convert( (float)val, (Unit)from_units, (TempBase)to_units) -&gt; float :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double convert(double,SireUnits::Dimension::Unit,SireUnits::Dimension::TempBase)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>convert( (float)val, (Unit)from_units, (Unit)to_units) -&gt; float :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double convert(double,SireUnits::Dimension::Unit,SireUnits::Dimension::Unit)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>convert( (float)val, (TempBase)to_units) -&gt; float :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double convert(double,SireUnits::Dimension::TempBase)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>convert( (float)val, (Unit)to_units) -&gt; float :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double convert(double,SireUnits::Dimension::Unit)</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py function">
@@ -482,7 +526,7 @@ output and default conversions</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             
@@ -505,6 +549,7 @@ output and default conversions</p>
             <ul>
 <li><a class="reference internal" href="#">Public API</a><ul>
 <li><a class="reference internal" href="#sire.units.angle"><code class="docutils literal notranslate"><span class="pre">angle()</span></code></a></li>
+<li><a class="reference internal" href="#sire.units.convert"><code class="docutils literal notranslate"><span class="pre">convert()</span></code></a></li>
 <li><a class="reference internal" href="#sire.units.length"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
 <li><a class="reference internal" href="#sire.units.set_energy_unit"><code class="docutils literal notranslate"><span class="pre">set_energy_unit()</span></code></a></li>
 <li><a class="reference internal" href="#sire.units.set_internal_units"><code class="docutils literal notranslate"><span class="pre">set_internal_units()</span></code></a></li>

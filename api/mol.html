@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.search" href="index_search.html" /><link rel="prev" title="sire.mol" href="index_mol.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -306,11 +306,16 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -3954,8 +3959,9 @@ view that match ‘id’</p>
 <dd><p>Apply the passed function (with optional position and keyword
 arguments) to all of the cursors in this list of Cursors
 (i.e. everything except the parent). As the function is intended to use
-the Cursor to edit molecules, only this Cursors object will be returned.
-This lets you run <em class="xref py py-obj">apply(…).commit()</em> as a single line.</p>
+the Cursor to edit molecules, only this Cursors object will be
+returned.</p>
+<p>This lets you run <em class="xref py py-obj">apply(…).commit()</em> as a single line.</p>
 <p>The function can be either;</p>
 <ol class="arabic simple">
 <li><p>a string containing the name of the function to call, or</p></li>
@@ -4253,8 +4259,9 @@ view that match ‘id’</p>
 <dd><p>Apply the passed function (with optional position and keyword
 arguments) to all of the cursors in this list of Cursors.
 As the function is intended to use
-the Cursor to edit molecules, only this Cursors object will be returned.
-This lets you run <em class="xref py py-obj">apply(…).commit()</em> as a single line.</p>
+the Cursor to edit molecules, only this Cursors object will be
+returned.</p>
+<p>This lets you run <em class="xref py py-obj">apply(…).commit()</em> as a single line.</p>
 <p>The function can be either;</p>
 <ol class="arabic simple">
 <li><p>a string containing the name of the function to call, or</p></li>
@@ -9177,6 +9184,56 @@ to be viewed.</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.mol.TrajectoryIterator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.mol.</span></span><span class="sig-name descname"><span class="pre">TrajectoryIterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_trajectory.html#TrajectoryIterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.TrajectoryIterator" title="Permalink to this definition">#</a></dt>
+<dd><p>An iterator that can be used to control which frames of a trajectory
+are accessed or processed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.TrajectoryIterator.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_trajectory.html#TrajectoryIterator.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.TrajectoryIterator.apply" title="Permalink to this definition">#</a></dt>
+<dd><p>Call the passed function on all frames of the trajectory,
+appending the result to a list of results, which
+is returned.</p>
+<p>The function can be either;</p>
+<ol class="arabic simple">
+<li><p>a string containing the name of the function to call, or</p></li>
+<li><p>an actual function (either a normal function or a lambda expression)</p></li>
+</ol>
+<p>You can optionally pass in positional and keyword arguments
+here that will be passed to the function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>str</em><em> or </em><em>function</em>) – The function to be called, or the name
+of the function to be called.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of the results, with one result per</dt><dd><p>frame in the trajectory</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.TrajectoryIterator.current">
+<span class="sig-name descname"><span class="pre">current</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_trajectory.html#TrajectoryIterator.current"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.TrajectoryIterator.current" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the current frame in the trajectory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.TrajectoryIterator.first">
+<span class="sig-name descname"><span class="pre">first</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_trajectory.html#TrajectoryIterator.first"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.TrajectoryIterator.first" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the first frame in the trajectory</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -9210,7 +9267,7 @@ to be viewed.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 31, 2022</div>
+              Last updated on Jan 09, 2023</div>
           </div>
           <div class="right-details">
             
@@ -9909,6 +9966,12 @@ to be viewed.</p>
 <li><a class="reference internal" href="#sire.mol.Stereoscopy.undefined"><code class="docutils literal notranslate"><span class="pre">Stereoscopy.undefined()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Stereoscopy.up"><code class="docutils literal notranslate"><span class="pre">Stereoscopy.up()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Stereoscopy.value"><code class="docutils literal notranslate"><span class="pre">Stereoscopy.value()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.mol.TrajectoryIterator"><code class="docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a><ul>
+<li><a class="reference internal" href="#sire.mol.TrajectoryIterator.apply"><code class="docutils literal notranslate"><span class="pre">TrajectoryIterator.apply()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.TrajectoryIterator.current"><code class="docutils literal notranslate"><span class="pre">TrajectoryIterator.current()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.TrajectoryIterator.first"><code class="docutils literal notranslate"><span class="pre">TrajectoryIterator.first()</span></code></a></li>
 </ul>
 </li>
 </ul>
