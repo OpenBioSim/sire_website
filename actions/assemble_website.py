@@ -34,6 +34,18 @@ try:
 except Exception:
     force_overwrite_main = False
 
+try:
+    force_overwrite_devel = os.environ["FORCE_OVERWRITE_DEVEL"]
+    force_build_docs = True
+except Exception:
+    force_overwrite_devel = False
+
+if force_overwrite_devel:
+    branch = "devel"
+
+if force_overwrite_main:
+    branch = "main"
+
 if branch not in ["main", "devel"]:
     if branch.find(version) != -1:
         print(f"Building the docs for tag {version}")
@@ -43,6 +55,8 @@ if branch not in ["main", "devel"]:
     else:
         print(f"We don't build the docs for branch {branch}")
         sys.exit(0)
+else:
+    print(f"Buiding the docs for branch {branch}")
 
 os.environ["PROJECT_VERSION"] = version
 os.environ["PROJECT_BRANCH"] = branch
@@ -56,7 +70,7 @@ if not os.path.exists("./gh-pages"):
 
 # if this is the main branch, then copy the docs to both the root
 # directory of the website, and also to the 'versions/version' directory
-if force_overwrite_main or is_tagged_release or (branch == "main"):
+if is_tagged_release or (branch == "main"):
     print(f"Copying main docs to gh-pages")
     dir_util.copy_tree(f"{doc_dir}/build/html/", "gh-pages/")
 

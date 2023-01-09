@@ -24,21 +24,6 @@ print(f"Build docs for branch {branch} version {version}")
 # (as these are moved into special locations)
 is_tagged_release = False
 
-try:
-    force_build_docs = os.environ["FORCE_BUILD_DOCS"]
-except Exception:
-    force_build_docs = False
-
-if branch not in ["main", "devel"]:
-    if branch.find(version) != -1:
-        print(f"Building the docs for tag {version}")
-        is_tagged_release = True
-    elif force_build_docs:
-        print(f"Force-building docs for branch {branch}")
-    else:
-        print(f"We don't build the docs for branch {branch}")
-        sys.exit(0)
-
 os.environ["PROJECT_VERSION"] = version
 os.environ["PROJECT_BRANCH"] = branch
 os.environ["PROJECT_RELEASE"] = release

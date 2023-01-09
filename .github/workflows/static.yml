@@ -54,11 +54,11 @@ jobs:
           miniforge-variant: Mambaforge
           use-mamba: true
       - name: Install Sire
-        run: mamba install -y -c michellab sire
+        run: mamba install -y -c openbiosim sire
       - name: Checkout sire branch
         uses: actions/checkout@v3
         with:
-          repository: "michellab/sire"
+          repository: "openbiosim/sire"
           github-server-url: "https://github.com"
           path: project
       - name: Debug sire
