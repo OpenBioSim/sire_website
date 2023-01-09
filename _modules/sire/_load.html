@@ -308,7 +308,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
@@ -669,33 +668,39 @@
     <span class="k">return</span> <span class="n">expanded</span></div>
 
 
-<div class="viewcode-block" id="load"><a class="viewcode-back" href="../../api/sire.html#sire.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load the molecular system at &#39;path&#39;. This can be a filename</span>
+<div class="viewcode-block" id="load"><a class="viewcode-back" href="../../api/sire.html#sire.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load the molecular system at &#39;path&#39;. This can be a filename</span>
 <span class="sd">    of a URL. If it is a URL, then the file will be downloaded</span>
 <span class="sd">    to the current directory and loaded from there.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">     path (str or list[str]):</span>
-<span class="sd">         The filename (or names) or the URL or URLS of the molecular</span>
-<span class="sd">         system to load. This allows multiple paths to be input</span>
-<span class="sd">         as some molecular file formats split molecular information</span>
-<span class="sd">         across multiple files. Multiple paths can also be passed</span>
-<span class="sd">         as multiple arguments to this function.</span>
+<span class="sd">        The filename (or names) or the URL or URLS of the molecular</span>
+<span class="sd">        system to load. This allows multiple paths to be input</span>
+<span class="sd">        as some molecular file formats split molecular information</span>
+<span class="sd">        across multiple files. Multiple paths can also be passed</span>
+<span class="sd">        as multiple arguments to this function.</span>
 
 <span class="sd">     log (dict):</span>
-<span class="sd">         Optional dictionary that you can pass in that will be populated</span>
-<span class="sd">         with any error messages or warnings from the parsers as they</span>
-<span class="sd">         attempt to load in the molecular data. This can be helpful</span>
-<span class="sd">         in diagnosing why your file wasn&#39;t loaded.</span>
+<span class="sd">        Optional dictionary that you can pass in that will be populated</span>
+<span class="sd">        with any error messages or warnings from the parsers as they</span>
+<span class="sd">        attempt to load in the molecular data. This can be helpful</span>
+<span class="sd">        in diagnosing why your file wasn&#39;t loaded.</span>
+
+<span class="sd">     show_warnings (bool):</span>
+<span class="sd">        Whether or not to print out any warnings that are encountered</span>
+<span class="sd">        when loading your file(s). This is default True, and may lead</span>
+<span class="sd">        to noisy output. Set `show_warnings=False` to silence this output.</span>
 
 <span class="sd">     directory (str):</span>
-<span class="sd">         Optional directory which will be used when creating any</span>
-<span class="sd">         files (e.g. as a download from a URL or which unzipping files)</span>
+<span class="sd">        Optional directory which will be used when creating any</span>
+<span class="sd">        files (e.g. as a download from a URL or which unzipping files)</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">         sire.system.System:</span>
-<span class="sd">         The molecules that have been loaded are returned as</span>
-<span class="sd">         a sire.system.System</span>
+<span class="sd">        sire.system.System:</span>
+<span class="sd">        The molecules that have been loaded are returned as</span>
+<span class="sd">        a sire.system.System</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">         &gt;&gt;&gt; mols = load(&quot;caffeine.pdb&quot;)</span>

@@ -309,7 +309,6 @@
 <li class="toctree-l2"><a class="reference internal" href="codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
@@ -358,7 +357,7 @@
         <article role="main">
           <section id="developer-s-guide">
 <h1>Developer’s guide<a class="headerlink" href="#developer-s-guide" title="Permalink to this heading">#</a></h1>
-<p>The source code for <code class="xref py py-mod docutils literal notranslate"><span class="pre">sire`</span></code> is available on
+<p>The source code for <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is available on
 <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 <section id="setting-up-your-computer">
 <h2>Setting up your computer<a class="headerlink" href="#setting-up-your-computer" title="Permalink to this heading">#</a></h2>
@@ -403,11 +402,15 @@ Python-exposed or Python-native code in the public API is written
 in a Pythonic style. We aim to be fully
 <a class="reference external" href="https://pep8.org">PEP8-compliant</a> and ask that all new
 Python code contributed to <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is written to be
-<a class="reference external" href="https://pep8.org">PEP8-compliant</a>. We plan to move to
-enforcing this by asking contributers to use a PEP8
-autoformatter
-(e.g. <a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>)
-and will add a linting test to our CI/CD pipeline.</p>
+<a class="reference external" href="https://pep8.org">PEP8-compliant</a>. We code using
+<a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> as a linter, and use
+<a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a> as a code
+autoformatter (format on save). We encourage all developers to
+use <a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a>
+and <a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>. These
+are easy to configure and use via your IDE (i.e. we run them
+automatically in <a class="reference external" href="https://code.visualstudio.com">VSCode</a>).
+The will help ensure we have a consistent code style.</p>
 </section>
 <section id="c-coding-style">
 <h2>C++ Coding Style<a class="headerlink" href="#c-coding-style" title="Permalink to this heading">#</a></h2>
@@ -718,7 +721,7 @@ For information, see the documentation
 </section>
 <section id="thanks">
 <h2>Thanks<a class="headerlink" href="#thanks" title="Permalink to this heading">#</a></h2>
-<p>First, thanks to you for your interest in <code class="xref py py-mod docutils literal notranslate"><span class="pre">sire`</span></code> and for reading this
+<p>First, thanks to you for your interest in <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> and for reading this
 far. We hope you enjoy having a play with the code and having a go
 at adding new functionality, fixing bugs, writing docs etc.</p>
 <p>We would also like to thank Lester Hedges and the

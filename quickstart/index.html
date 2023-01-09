@@ -309,7 +309,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
@@ -371,7 +370,7 @@
 <p><a class="reference internal" href="../api/sire.html#sire.tutorial_url" title="sire.tutorial_url"><code class="xref py py-data docutils literal notranslate"><span class="pre">sire.tutorial_url</span></code></a> expands to the base URL that contains
 all tutorial files.</p>
 </div>
-<p>View molecules using <code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code>.</p>
+<p>View molecules using <a class="reference internal" href="../api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code></a>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -466,23 +465,23 @@ you can get the number of frames using</p>
 </div>
 <p>and can view the movie using</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
-<span class="go">NEED PICTURE</span>
 </pre></div>
 </div>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code> function can be called on any
+<img alt="View of the aladip movie" src="../_images/qs02.jpg" />
+<p>The <a class="reference internal" href="../api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code></a> function can be called on any
 selection, so you can view the movie of the first molecule using</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
-<span class="go">NEED PICTURE</span>
 </pre></div>
 </div>
+<img alt="View of first molecule in the aladip movie" src="../_images/qs03.jpg" />
 <p>You can extract a subset of trajectory frames by indexing, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[</span><span class="mi">0</span><span class="p">::</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
-<span class="go">NEED PICTURE</span>
 </pre></div>
 </div>
+<img alt="View of first molecule the subset of the aladip movie" src="../_images/qs04.jpg" />
 <p>views every 100 frames of the trajectory.</p>
 <p>If the molecule was loaded with forcefield parameters, then you can
-calculate its energy using the <code class="xref py py-func docutils literal notranslate"><span class="pre">energy()</span></code>
+calculate its energy using the <a class="reference internal" href="../api/mol.html#sire.mol.SelectorMol.energy" title="sire.mol.SelectorMol.energy"><code class="xref py py-func docutils literal notranslate"><span class="pre">energy()</span></code></a>
 function.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span>
 <span class="go">23.6917 kcal mol-1</span>
@@ -503,20 +502,22 @@ function.</p>
 <p>You can calculate the energy across a trajectory, with the results
 returned as a pandas dataframe!</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span>
-<span class="go">        frame   time    1-4_LJ      1-4_coulomb angle   bond    dihedral        improper        intra_LJ        intra_coulomb   total</span>
-<span class="go">0       0       0.200000        3.509838        44.810452       7.570059        4.224970        9.800343        0.485545        -1.311255       -45.398214      23.691738</span>
-<span class="go">1       1       0.400000        2.700506        47.698455       12.470519       2.785874        11.776295       1.131481        -1.617496       -48.137253      28.808383</span>
-<span class="go">2       2       0.600000        2.801076        43.486411       11.607753       2.023439        11.614774       0.124729        -1.103966       -44.458051      26.096165</span>
-<span class="go">3       3       0.800000        3.365638        47.483966       6.524609        0.663454        11.383852       0.339333        -0.983872       -48.191509      20.585472</span>
-<span class="go">4       4       1.000000        3.534830        48.596027       6.517530        2.190370        10.214994       0.255331        -1.699613       -48.393881      21.215588</span>
-<span class="gp">... </span>    <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>     <span class="o">...</span>
-<span class="go">495     495     99.199997       2.665994        42.866319       11.339087       4.172684        9.875872        0.356887        -1.584093       -44.220004      25.472747</span>
-<span class="go">496     496     99.400002       3.062467        44.852774       9.268408        1.878366        10.548897       0.327064        -1.814718       -44.419100      23.704159</span>
-<span class="go">497     497     99.599998       3.530233        44.908117       10.487378       4.454670        10.223964       1.006034        -0.692972       -44.902055      29.015369</span>
-<span class="go">498     498     99.800003       3.511116        42.976288       9.017446        0.809064        10.841436       0.518190        -1.862433       -43.205035      22.606072</span>
-<span class="go">499     499     100.000000      3.768998        41.625135       13.629923       1.089916        11.889372       0.846805        -1.897328       -44.306434      26.646387</span>
+<span class="go">     frame        time    1-4_LJ  1-4_coulomb      angle      bond   dihedral  improper  intra_LJ  intra_coulomb      total</span>
+<span class="go">0        0    0.200000  3.509838    44.810452   7.570059  4.224970   9.800343  0.485545 -1.311255     -45.398213  23.691740</span>
+<span class="go">1        1    0.400000  2.700506    47.698455  12.470519  2.785874  11.776295  1.131481 -1.617496     -48.137252  28.808384</span>
+<span class="go">2        2    0.600000  2.801076    43.486411  11.607753  2.023439  11.614774  0.124729 -1.103966     -44.458051  26.096165</span>
+<span class="go">3        3    0.800000  3.365638    47.483966   6.524609  0.663454  11.383852  0.339333 -0.983872     -48.191512  20.585469</span>
+<span class="go">4        4    1.000000  3.534830    48.596027   6.517530  2.190370  10.214994  0.255331 -1.699613     -48.393889  21.215580</span>
+<span class="go">..     ...         ...       ...          ...        ...       ...        ...       ...       ...            ...        ...</span>
+<span class="go">495    495   99.199997  2.665994    42.866319  11.339087  4.172684   9.875872  0.356887 -1.584092     -44.220005  25.472747</span>
+<span class="go">496    496   99.400002  3.062467    44.852774   9.268408  1.878366  10.548897  0.327064 -1.814718     -44.419100  23.704158</span>
+<span class="go">497    497   99.599998  3.530233    44.908117  10.487378  4.454670  10.223964  1.006034 -0.692972     -44.902056  29.015369</span>
+<span class="go">498    498   99.800003  3.511116    42.976288   9.017446  0.809064  10.841436  0.518190 -1.862433     -43.205034  22.606073</span>
+<span class="go">499    499  100.000000  3.768998    41.625135  13.629923  1.089916  11.889372  0.846805 -1.897328     -44.306437  26.646384</span>
 </pre></div>
 </div>
+<p>This is just the beginning of what <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> can do! To learn more,
+please take a look at <a class="reference internal" href="../tutorial/index.html"><span class="doc">the tutorial</span></a>.</p>
 </section>
 
         </article>

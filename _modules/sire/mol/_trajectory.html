@@ -308,7 +308,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributors.html">Contributors</a></li>
@@ -356,6 +355,9 @@
         <article role="main">
           <h1>Source code for sire.mol._trajectory</h1><div class="highlight"><pre>
 <span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;TrajectoryIterator&quot;</span><span class="p">]</span>
+
+<span class="c1"># make sure that GeneralUnit has been modernised</span>
+<span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">GeneralUnit</span> <span class="k">as</span> <span class="n">_GeneralUnit</span>
 
 
 <div class="viewcode-block" id="TrajectoryIterator"><a class="viewcode-back" href="../../../api/mol.html#sire.mol.TrajectoryIterator">[docs]</a><span class="k">class</span> <span class="nc">TrajectoryIterator</span><span class="p">:</span>

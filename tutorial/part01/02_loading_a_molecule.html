@@ -309,7 +309,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
@@ -374,7 +373,7 @@ PDB code as the argument to <a class="reference internal" href="../../api/sire.h
 </pre></div>
 </div>
 <p>If you are running in a Jupyter Notebook (or similar) you can view
-the molecule by calling the <code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code> function,
+the molecule by calling the <a class="reference internal" href="../../api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code></a> function,
 e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
 </pre></div>
@@ -401,7 +400,8 @@ search on the <a class="reference external" href="https://www.alphafold.ebi.ac.u
 <span class="go">System( name=AF-A0A538R8Y3-F1-model_v3 num_molecules=1 num_residues=1190 num_atoms=9417 )</span>
 </pre></div>
 </div>
-<p>Again, you can use <code class="docutils literal notranslate"><span class="pre">mols.view()</span></code> to view the molecules.</p>
+<p>Again, you can use <a class="reference internal" href="../../api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">mols.view()</span></code></a> to view
+the molecules.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -430,8 +430,8 @@ file on your disk, or the URL of the file on the internet.</p>
 <section id="accessing-the-molecules">
 <h2>Accessing the molecules<a class="headerlink" href="#accessing-the-molecules" title="Permalink to this heading">#</a></h2>
 <p>Molecules are loaded into a <a class="reference internal" href="../../api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>. You can see how
-many molecules have been loaded using the <code class="xref py py-func docutils literal notranslate"><span class="pre">num_molecules()</span></code>
-function;</p>
+many molecules have been loaded using the
+<a class="reference internal" href="../../api/mol.html#sire.mol.SelectorMol.num_molecules" title="sire.mol.SelectorMol.num_molecules"><code class="xref py py-func docutils literal notranslate"><span class="pre">num_molecules()</span></code></a> function;</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">num_molecules</span><span class="p">())</span>
 <span class="go">1</span>
 </pre></div>

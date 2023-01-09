@@ -309,7 +309,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
@@ -368,7 +367,7 @@ At a minimum, a <a class="reference internal" href="../../api/mol.html#sire.mol.
 is no requirement for this atom to be placed into a residue, chain
 or segment, and so it is possible for a molecule to have zero
 residues, chains or segments.</p>
-<p>There are several classes in <code class="docutils literal notranslate"><span class="pre">sire</span></code> that can act as molecular containers
+<p>There are several classes in <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> that can act as molecular containers
 for molecule objects. You have already encountered one, which is the
 <a class="reference internal" href="../../api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> class, into which the molecules were first
 loaded.</p>
@@ -702,11 +701,11 @@ or for a ligand molecule in a system. In these cases, you could look for
 <section id="uniquely-identifying-a-molecule">
 <h2>Uniquely identifying a molecule<a class="headerlink" href="#uniquely-identifying-a-molecule" title="Permalink to this heading">#</a></h2>
 <p>Molecules are uniquely identified by their molecule number. This is a number
-that <code class="docutils literal notranslate"><span class="pre">sire</span></code> assigns to molecules when they are loaded. <code class="docutils literal notranslate"><span class="pre">sire</span></code> ensures
+that <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> assigns to molecules when they are loaded. <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> ensures
 that each molecule that it loads will have its own unique number. You have
 no control over the number, and should not assume that the number will be
 the same every time you run your script. The number is the count of the
-molecules that have been loaded during a <code class="docutils literal notranslate"><span class="pre">sire</span></code> session, e.g. molecule
+molecules that have been loaded during a <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> session, e.g. molecule
 number 2 refers to the second molecule that has been loaded. You can assume
 that the first molecule loaded from a file will have the smallest molecule
 number.</p>
@@ -719,7 +718,7 @@ number.</p>
 <p class="admonition-title">Note</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">mols.names()</span></code> to get all of the molecule names.</p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">sire</span></code> uses the molecule number as it is the only identifier that can
+<p><a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> uses the molecule number as it is the only identifier that can
 be guaranteed to be unique in the program. Molecules can be moved and copied
 into multiple containers, and its index will depend on its container.
 Molecule names are assigned from the file, and multiple molecules can

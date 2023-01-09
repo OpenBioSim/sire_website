@@ -309,7 +309,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
@@ -363,7 +362,7 @@
 <span class="go">[&#39;/path/to/cholesterol.pdb&#39;]</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">sire</span></code> will automatically try to guess the file format from the file
+<p><a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> will automatically try to guess the file format from the file
 extension. In this case, the molecule is saved in PDB format.</p>
 <p>You can specify the format using the <code class="docutils literal notranslate"><span class="pre">format</span></code> argument.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s2">&quot;cholesterol&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;mol2&quot;</span><span class="p">)</span>

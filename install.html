@@ -309,7 +309,6 @@
 <li class="toctree-l2"><a class="reference internal" href="contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
@@ -358,8 +357,9 @@
         <article role="main">
           <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h1>
-<p>Binary packages for sire are available on MacOS, Linux and Windows.
-Sire can be compiled on any UNIX or Windows-compatible operating system
+<p>Binary packages for <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> are available on MacOS, Linux and Windows
+running on Intel (X86-64) or ARM64 processors.</p>
+<p><a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> can be compiled on any UNIX or Windows-compatible operating system
 running on X86-64, ARM64 or PowerPC processors.</p>
 <p>You have a range of options for installing the software.</p>
 <section id="no-installation-run-in-a-web-browser">
@@ -372,15 +372,16 @@ used to log into the server.</p>
 <p>Simply go to <a class="reference external" href="https://try.openbiosim.org">try.openbiosim.org</a> in your
 web browser, and log in using your <a class="reference external" href="https://github.com">GitHub account</a>.
 This will start a Jupyter Lab instance. In here you can start a terminal,
-and then use <code class="docutils literal notranslate"><span class="pre">sire</span></code> directly via <code class="docutils literal notranslate"><span class="pre">ipython</span></code>. Or you can start a Jupyter
-notebook and use <code class="docutils literal notranslate"><span class="pre">sire</span></code> there.</p>
-<p>To import <code class="docutils literal notranslate"><span class="pre">sire</span></code>, at a Python prompt type</p>
+and then use <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> directly via <code class="docutils literal notranslate"><span class="pre">ipython</span></code>. Or you can start a Jupyter
+notebook and use <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> there.</p>
+<p>To import <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>, at a Python prompt type</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
 </pre></div>
 </div>
 <p>If this imports without errors, then everything is working.
 We encourage you to take a look at <a class="reference internal" href="tutorial/index.html"><span class="doc">the tutorial</span></a>
-to learn how to use <code class="docutils literal notranslate"><span class="pre">sire</span></code>.</p>
+to learn how to use <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> or the
+<a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This free JupyterHub server is limited. You only have up to 2 GB of
@@ -388,13 +389,13 @@ memory and at most 1 processor core. Disk storage is temporary,
 and any data will be lost when you log out. Because it only
 supports a limited number of concurrent users, inactive sessions will be
 automatically stopped and logged out after 20 minutes. Please only
-use this service to explore and learn <code class="docutils literal notranslate"><span class="pre">sire</span></code>.
+use this service to explore and learn <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>.
 Do not use it for production work.</p>
 </div>
 </section>
 <section id="easy-installation-run-in-a-conda-environment">
 <h2>Easy installation - Run in a conda environment<a class="headerlink" href="#easy-installation-run-in-a-conda-environment" title="Permalink to this heading">#</a></h2>
-<p>The easiest way to install <code class="docutils literal notranslate"><span class="pre">sire</span></code> is in a new
+<p>The easiest way to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is in a new
 <a class="reference external" href="https://anaconda.org">conda environment</a>.</p>
 <p>You can use any conda environment or installation. We recommend using
 <a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a>,
@@ -438,51 +439,62 @@ on how to use the <code class="docutils literal notranslate"><span class="pre">m
 </section>
 <section id="installing-sire-into-a-new-environment">
 <h3>Installing sire into a new environment<a class="headerlink" href="#installing-sire-into-a-new-environment" title="Permalink to this heading">#</a></h3>
-<p>We recommend that <code class="docutils literal notranslate"><span class="pre">sire</span></code> is installed into a new (clean) environment.
+<p>We recommend that <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is installed into a new (clean) environment.
 This minimises the risk of failures caused by incompatible dependencies.</p>
 <p>Sire is currently packaged for Python 3.8 and Python 3.9. We will start
 by creating a Python 3.9 environment that we will call <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="nv">python</span><span class="o">==</span><span class="m">3</span>.9
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="s2">&quot;python&lt;3.10&quot;</span>
 </pre></div>
 </div>
-<p>We can now install <code class="docutils literal notranslate"><span class="pre">sire</span></code> into that environment by typing</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">python&lt;3.10</span></code> as this will install the most recent 3.9
+release of python.</p>
+</div>
+<p>We can now install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> into that environment by typing</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>openbiosim<span class="w"> </span>sire
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The option <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">openbiosim</span></code> tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <code class="docutils literal notranslate"><span class="pre">sire</span></code>
+<p>The option <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">openbiosim</span></code> tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
 into the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment. The option <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">openbiosim</span></code>
-tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <code class="docutils literal notranslate"><span class="pre">sire</span></code> from the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>
+tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> from the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>
 conda channel.</p>
+</div>
+<p>If you want the latest development release, then install by typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;openbiosim/label/dev&quot;</span><span class="w"> </span>sire
+</pre></div>
 </div>
 <p>You may (optionally) want to install additional tools such as
 <code class="docutils literal notranslate"><span class="pre">ipython</span></code> and <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>. To do this, type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>ipython<span class="w"> </span>jupyterlab
 </pre></div>
 </div>
-<p>To run <code class="docutils literal notranslate"><span class="pre">sire</span></code>, you must now activate the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment.
+<p>To run <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>, you must now activate the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment.
 You can do this by typing</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>openbiosim
 </pre></div>
 </div>
 <p>You can now start a Python session (e.g. running <code class="docutils literal notranslate"><span class="pre">python</span></code>, or
 <code class="docutils literal notranslate"><span class="pre">ipython</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> if you installed those). At the
-Python prompt you can import <code class="docutils literal notranslate"><span class="pre">sire</span></code> by typing</p>
+Python prompt you can import <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> by typing</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
 </pre></div>
 </div>
 <p>If this imports without errors, then everything is working.
 We encourage you to take a look at <a class="reference internal" href="tutorial/index.html"><span class="doc">the tutorial</span></a>
-to learn how to use <code class="docutils literal notranslate"><span class="pre">sire</span></code>.</p>
+to learn how to use <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> or the
+<a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
 </section>
 </section>
 <section id="also-easy-installation-run-in-a-container">
 <h2>Also easy installation - Run in a container<a class="headerlink" href="#also-easy-installation-run-in-a-container" title="Permalink to this heading">#</a></h2>
-<p>Another route to install <code class="docutils literal notranslate"><span class="pre">sire</span></code> is to download and run our
+<p>Another route to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is to download and run our
 pre-built containers. These can be run via
 <a class="reference external" href="https://www.docker.com">docker</a> (on Linux, MacOS and Windows)
-or via <a class="reference external" href="https://podman.io">podman</a> (on Linux).</p>
+or via <a class="reference external" href="https://podman.io">podman</a> (on Linux) on Intel (X86-64)
+or ARM64 processors.</p>
 <p>To run via <a class="reference external" href="https://www.docker.com">docker</a>, simply type;</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>-it<span class="w"> </span>openbiosim/sire:latest
 </pre></div>
@@ -492,7 +504,7 @@ or via <a class="reference external" href="https://podman.io">podman</a> (on Lin
 </pre></div>
 </div>
 <p>This will download the container from
-<a class="reference external" href="https://hub.docker.com/r/openbiosim/sire">hub.docker.com</a> and
+<a class="reference external" href="https://anaconda.org/openbiosim/sire">hub.docker.com</a> and
 will start a command prompt in that container.</p>
 <p>You can now type <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">ipython</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>
 to start a python, ipython or jupyter lab session.</p>
@@ -511,37 +523,38 @@ You can drop this option if you don’t want to use
 by using the <code class="docutils literal notranslate"><span class="pre">-v</span></code> option. For example,
 <code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">$HOME/input:/home/openbiosim/input</span></code> would map your
 <code class="docutils literal notranslate"><span class="pre">input</span></code> folder in your home directory to the <code class="docutils literal notranslate"><span class="pre">input</span></code> folder
-in the home directory of the container. This will let <code class="docutils literal notranslate"><span class="pre">sire</span></code>
+in the home directory of the container. This will let <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
 read and write files on your computer.</p>
 </div>
 <p>You can now start a Python session (e.g. running <code class="docutils literal notranslate"><span class="pre">python</span></code>, or
 <code class="docutils literal notranslate"><span class="pre">ipython</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> if you installed those). At the
-Python prompt you can import <code class="docutils literal notranslate"><span class="pre">sire</span></code> by typing</p>
+Python prompt you can import <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> by typing</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
 </pre></div>
 </div>
 <p>If this imports without errors, then everything is working.
 We encourage you to take a look at <a class="reference internal" href="tutorial/index.html"><span class="doc">the tutorial</span></a>
-to learn how to use <code class="docutils literal notranslate"><span class="pre">sire</span></code>.</p>
+to learn how to use <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> or the
+<a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
 </section>
 <section id="harder-installation-compile-from-source">
 <h2>Harder installation - Compile from source<a class="headerlink" href="#harder-installation-compile-from-source" title="Permalink to this heading">#</a></h2>
-<p>Sometimes you will want to compile and run <code class="docutils literal notranslate"><span class="pre">sire</span></code> from source.
+<p>Sometimes you will want to compile and run <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> from source.
 This could be because we don’t distribute a binary package for your
 operating system, or because you want to use a newer version
 (e.g. code from the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch, or from your own feature
 branch if you are a developer).</p>
-<p>You compile <code class="docutils literal notranslate"><span class="pre">sire</span></code> into an existing anaconda / miniconda environment.
+<p>You compile <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> into an existing anaconda / miniconda environment.
 Please create and activate an environment, e.g. by following
 the “Option 1” instructions to install a fresh <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code> and
 then creating and activating Python 3.9 environment called
 <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
 <p>Next, download the source code. You could download the latest development
-version of <code class="docutils literal notranslate"><span class="pre">sire</span></code> by typing;</p>
+version of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> by typing;</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/openbiosim/sire
 </pre></div>
 </div>
-<p>This will download into a directory called <code class="docutils literal notranslate"><span class="pre">sire</span></code>. Navigate into
+<p>This will download into a directory called <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. Navigate into
 this directory (e.g. <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">sire</span></code>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -554,15 +567,15 @@ command, e.g.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>main
 </pre></div>
 </div>
-<p>will check out the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of <code class="docutils literal notranslate"><span class="pre">sire</span></code>. This always corresponds
-to the last released version of <code class="docutils literal notranslate"><span class="pre">sire</span></code>. Or, you can check out a
+<p>will check out the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. This always corresponds
+to the last released version of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. Or, you can check out a
 feature branch using</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>feat_name
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">feat_name</span></code> should be replaced by the name of the feature
 branch you want to compile.</p>
-<p>Compilation and installation of <code class="docutils literal notranslate"><span class="pre">sire</span></code> is managed via the
+<p>Compilation and installation of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is managed via the
 <a class="reference external" href="https://github.com/openbiosim/sire/blob/devel/setup.py">setup.py</a>
 script.</p>
 <p>Run</p>
@@ -570,14 +583,14 @@ script.</p>
 </pre></div>
 </div>
 <p>to get a help on all of the options.</p>
-<p>Typically, you just want to compile and install <code class="docutils literal notranslate"><span class="pre">sire</span></code>. To do this,
+<p>Typically, you just want to compile and install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. To do this,
 type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>install
 </pre></div>
 </div>
 <p>This will download and install all of the dependencies via <code class="docutils literal notranslate"><span class="pre">mamba</span></code>
 (or <code class="docutils literal notranslate"><span class="pre">conda</span></code> if you haven’t installed <code class="docutils literal notranslate"><span class="pre">mamba</span></code>). It will then compile
-the <code class="docutils literal notranslate"><span class="pre">sire</span></code> C++ libraries, and then the Python wrappers. Be patient,
+the <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> C++ libraries, and then the Python wrappers. Be patient,
 as compilation can take quite a while!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -585,24 +598,34 @@ as compilation can take quite a while!</p>
 The easiest way to do this is to <a class="reference external" href="https://chocolatey.org/install">install chocolatey</a>
 and then install the compilers using the command
 <code class="docutils literal notranslate"><span class="pre">choco</span> <span class="pre">install</span> <span class="pre">visualstudio2017-workload-vctools</span></code>. This is all free, but
-you will need admin access to install chocolatey.</p>
+you will need admin access to install chocolatey. If this doesn’t work, then
+go to <a class="reference external" href="https://visualstudio.microsoft.com/vs/older-downloads">this page</a>
+and download the “Build Tools for Visual Studio 2017”. Use the installer
+to select and install only the build tools. You will need a free Microsoft
+developer account to access this page. If this doesn’t work, then
+follow the <a class="reference external" href="https://beenje.github.io/blog/posts/how-to-setup-a-windows-vm-to-build-conda-packages/">excellent guidance here</a>
+to set up your Windows computer for compiling conda packages.</p>
 </div>
 <p>If you plan to install <a class="reference external" href="https://biosimspace.org">BioSimSpace</a> on
-top of <code class="docutils literal notranslate"><span class="pre">sire</span></code>, then you should install using;</p>
+top of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>, then you should install using;</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>--install-bss-deps<span class="w"> </span>install
 </pre></div>
 </div>
 <p>This will use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> (or <code class="docutils literal notranslate"><span class="pre">conda</span></code>) to download and install all of
 BioSimSpace’s dependencies as well. This ensures that incompatible versions
 of shared dependencies are not accidentally installed.</p>
-<p>Once <code class="docutils literal notranslate"><span class="pre">sire</span></code> has installed, you can import it in a <code class="docutils literal notranslate"><span class="pre">python</span></code>,
+<p>Once <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> has installed, you can import it in a <code class="docutils literal notranslate"><span class="pre">python</span></code>,
 <code class="docutils literal notranslate"><span class="pre">ipython</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> session by typing</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
 </pre></div>
 </div>
 <p>If this imports without errors, then everything is working.
 We encourage you to take a look at <a class="reference internal" href="tutorial/index.html"><span class="doc">the tutorial</span></a>
-to learn how to use <code class="docutils literal notranslate"><span class="pre">sire</span></code>.</p>
+to learn how to use <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> or the
+<a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
+<p>Please take a look at our <a class="reference internal" href="contributing/development.html"><span class="doc">developer guide</span></a>
+for more information on how to develop and contribute new code
+to <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>.</p>
 </section>
 </section>
 

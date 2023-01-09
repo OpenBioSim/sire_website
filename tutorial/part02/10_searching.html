@@ -309,7 +309,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
@@ -403,10 +402,10 @@ properties.</p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>(and you could do the same for <em class="xref py py-obj">residues</em>, <em class="xref py py-obj">chains</em>, <em class="xref py py-obj">segments</em> or
-<em class="xref py py-obj">molecules</em>).</p>
+<p>(and you could do the same for <code class="docutils literal notranslate"><span class="pre">residues</span></code>, <code class="docutils literal notranslate"><span class="pre">chains</span></code>, <code class="docutils literal notranslate"><span class="pre">segments</span></code> or
+<code class="docutils literal notranslate"><span class="pre">molecules</span></code>).</p>
 <p>You can search for things that match specified numbers of atoms, residues
-etc using <em class="xref py py-obj">count( X )</em>. This counts the number of things within the
+etc using <code class="docutils literal notranslate"><span class="pre">count(</span> <span class="pre">X</span> <span class="pre">)</span></code>. This counts the number of things within the
 contained search, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;count(atoms) == 3&quot;</span><span class="p">])</span>
 <span class="go">SireMol::SelectorM&lt;SireMol::Atom&gt;( size=10797</span>
@@ -508,7 +507,7 @@ their properties. Currently supported properties are mass, coordinates and charg
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>will find all atoms that have a mass of less than <em class="xref py py-obj">2 g mol-1</em>. You can
+<p>will find all atoms that have a mass of less than <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">g</span> <span class="pre">mol-1</span></code>. You can
 add the units, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;mass &lt; 2 g_per_mol&quot;</span><span class="p">])</span>
 <span class="go">SireMol::SelectorM&lt;SireMol::Atom&gt;( size=7370</span>
@@ -544,7 +543,7 @@ add the units, e.g.</p>
 </pre></div>
 </div>
 <p>and also search for larger units by mass, e.g. finding all residues
-that are greater than <em class="xref py py-obj">100 g_per_mol</em></p>
+that are greater than <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">g_per_mol</span></code></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;residue mass &gt; 50 g_per_mol&quot;</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Residue&gt;( size=18</span>
 <span class="go">0:  Residue( LYS:1   num_atoms=24 )</span>
@@ -561,7 +560,7 @@ that are greater than <em class="xref py py-obj">100 g_per_mol</em></p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>or molecules that are less than <em class="xref py py-obj">20 g_per_mol</em></p>
+<p>or molecules that are less than <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">g_per_mol</span></code></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;molecule mass &lt; 20 g_per_mol&quot;</span><span class="p">])</span>
 <span class="go">SelectorMol( size=3599</span>
 <span class="go">0: Molecule( SOL:7   num_atoms=3 num_residues=1 )</span>
@@ -630,7 +629,7 @@ that are greater than <em class="xref py py-obj">100 g_per_mol</em></p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>where <em class="xref py py-obj">=~</em> means “approximately equal to”. The
+<p>where <code class="docutils literal notranslate"><span class="pre">=~</span></code> means “approximately equal to”. The
 <a class="reference external" href="https://docs.pytest.org/en/latest/reference/reference.html#pytest-approx">pytest algorithm</a>
 is used for approximate comparison. You can get the epsilon for
 comparison via</p>
@@ -697,7 +696,7 @@ comparison via</p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>You can also use the same <em class="xref py py-obj">residue</em>, <em class="xref py py-obj">molecule</em> etc terms to search
+<p>You can also use the same <code class="docutils literal notranslate"><span class="pre">residue</span></code>, <code class="docutils literal notranslate"><span class="pre">molecule</span></code> etc terms to search
 based on the total charge on a residue, molecule etc.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;residue charge 0&quot;</span><span class="p">])</span>
 <span class="go">SireMol::SelectorM&lt;SireMol::Residue&gt;( size=3612</span>
@@ -727,7 +726,7 @@ based on the total charge on a residue, molecule etc.</p>
 </pre></div>
 </div>
 <p>finds all of the bonds where the total charge on the two atoms is
-less than <em class="xref py py-obj">-0.5 e</em>.</p>
+less than <code class="docutils literal notranslate"><span class="pre">-0.5</span> <span class="pre">e</span></code>.</p>
 </section>
 <section id="searching-by-coordinates">
 <h2>Searching by coordinates<a class="headerlink" href="#searching-by-coordinates" title="Permalink to this heading">#</a></h2>
@@ -749,7 +748,7 @@ specified distances of points or other atoms. For example,</p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>finds all atoms that are within <em class="xref py py-obj">2 angstrom</em> of any carbon atom.
+<p>finds all atoms that are within <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">angstrom</span></code> of any carbon atom.
 The default unit of distance is angstrom, so you could also write</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;atoms within 2 of element C&quot;</span><span class="p">])</span>
 <span class="go">SireMol::SelectorM&lt;SireMol::Atom&gt;( size=268</span>
@@ -769,9 +768,9 @@ The default unit of distance is angstrom, so you could also write</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note that we used <em class="xref py py-obj">atoms</em> in this search rather than <em class="xref py py-obj">atom</em>. Both are
+<p>Note that we used <code class="docutils literal notranslate"><span class="pre">atoms</span></code> in this search rather than <code class="docutils literal notranslate"><span class="pre">atom</span></code>. Both are
 equivalent and can be used interchangeably. In this case, it feels better
-to write <em class="xref py py-obj">atoms within</em> rather than <em class="xref py py-obj">atom within</em>, but both will
+to write <code class="docutils literal notranslate"><span class="pre">atoms</span> <span class="pre">within</span></code> rather than <code class="docutils literal notranslate"><span class="pre">atom</span> <span class="pre">within</span></code>, but both will
 do the same thing.</p>
 </div>
 <p>You can also search by residue or other units, such as</p>
@@ -792,7 +791,7 @@ do the same thing.</p>
 </pre></div>
 </div>
 <p>returns all residues where any atom in that residue is within
-<em class="xref py py-obj">3 angstrom</em> of any atom in the residue with <em class="xref py py-obj">resnum 1</em>.</p>
+<code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">angstrom</span></code> of any atom in the residue with <code class="docutils literal notranslate"><span class="pre">resnum</span> <span class="pre">1</span></code>.</p>
 <p>You can also search for atoms within a point in space, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;atoms within 5.0 of (0, 0, 0)&quot;</span><span class="p">])</span>
 <span class="go">SireMol::SelectorM&lt;SireMol::Atom&gt;( size=9</span>
@@ -808,7 +807,7 @@ do the same thing.</p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>finds all atoms within <em class="xref py py-obj">5 angstroms</em> of the point <em class="xref py py-obj">(0, 0, 0)</em>, while</p>
+<p>finds all atoms within <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">angstroms</span></code> of the point <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, while</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;molecules within 5.0 of (0, 0, 0)&quot;</span><span class="p">])</span>
 <span class="go">SelectorMol( size=3</span>
 <span class="go">0: Molecule( SOL:82  num_atoms=3 num_residues=1 )</span>
@@ -817,8 +816,8 @@ do the same thing.</p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>finds all molecules which have any atom that is within <em class="xref py py-obj">5 angstroms</em>
-of the point <em class="xref py py-obj">(0, 0, 0)</em>.</p>
+<p>finds all molecules which have any atom that is within <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">angstroms</span></code>
+of the point <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>.</p>
 </section>
 <section id="searching-by-molecule-type">
 <h2>Searching by molecule type<a class="headerlink" href="#searching-by-molecule-type" title="Permalink to this heading">#</a></h2>
@@ -875,7 +874,7 @@ names that are in a set of protein residue names.</p>
 <span class="go"> &#39;leu&#39;, &#39;glu&#39;, &#39;hid&#39;, &#39;hie&#39;, &#39;cyx&#39;, &#39;gly&#39;, &#39;val&#39;, &#39;thr&#39;]</span>
 </pre></div>
 </div>
-<p>Names are matched ignoring case, so <em class="xref py py-obj">ALA</em> will be identified as a
+<p>Names are matched ignoring case, so <code class="docutils literal notranslate"><span class="pre">ALA</span></code> will be identified as a
 protein residue. You can set protein residue names using</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">search</span><span class="o">.</span><span class="n">set_protein_residue_names</span><span class="p">([</span><span class="s2">&quot;ala&quot;</span><span class="p">,</span> <span class="s2">&quot;ash&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">search</span><span class="o">.</span><span class="n">get_protein_residue_names</span><span class="p">())</span>
@@ -903,8 +902,8 @@ using</p>
 <section id="searching-by-custom-tokens">
 <h2>Searching by custom tokens<a class="headerlink" href="#searching-by-custom-tokens" title="Permalink to this heading">#</a></h2>
 <p>It is common when searching that you will have a term that you will
-want to repeat. For example, you can match proteins using <em class="xref py py-obj">protein</em>,
-and water molecules using <em class="xref py py-obj">water</em>. You could thus match all
+want to repeat. For example, you can match proteins using <code class="docutils literal notranslate"><span class="pre">protein</span></code>,
+and water molecules using <code class="docutils literal notranslate"><span class="pre">water</span></code>. You could thus match all
 other molecules using</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;not (protein or water)&quot;</span><span class="p">])</span>
 <span class="go">SelectorMol( size=21</span>
@@ -927,8 +926,8 @@ using <a class="reference internal" href="../../api/search.html#sire.search.set_
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">search</span><span class="o">.</span><span class="n">set_token</span><span class="p">(</span><span class="s2">&quot;other&quot;</span><span class="p">,</span> <span class="s2">&quot;not (protein or water)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This creates the token <em class="xref py py-obj">other</em> that represents the search
-<em class="xref py py-obj">not (protein or water)</em>. You can now use <em class="xref py py-obj">other</em> as a search term, e.g.</p>
+<p>This creates the token <code class="docutils literal notranslate"><span class="pre">other</span></code> that represents the search
+<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(protein</span> <span class="pre">or</span> <span class="pre">water)</span></code>. You can now use <code class="docutils literal notranslate"><span class="pre">other</span></code> as a search term, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">])</span>
 <span class="go">SelectorMol( size=21</span>
 <span class="go">0: Molecule( NA:3606 num_atoms=1 num_residues=1 )</span>
@@ -979,14 +978,14 @@ e.g.</p>
 <span class="go">({ other =&gt; not ((protein or water)) } and charge &gt; 0 |e|)</span>
 </pre></div>
 </div>
-<p>Note how the <em class="xref py py-obj">other</em> token has been expanded into its parts.
+<p>Note how the <code class="docutils literal notranslate"><span class="pre">other</span></code> token has been expanded into its parts.
 This is because the token is expanded when it is created.
 This means that the token is unaffected by what you do to
-the <em class="xref py py-obj">other</em> token, e.g. deleting it via</p>
+the <code class="docutils literal notranslate"><span class="pre">other</span></code> token, e.g. deleting it via</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">search</span><span class="o">.</span><span class="n">delete_token</span><span class="p">(</span><span class="s2">&quot;other&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>will not affect <em class="xref py py-obj">positive_ions</em></p>
+<p>will not affect <code class="docutils literal notranslate"><span class="pre">positive_ions</span></code></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;positive_ions&quot;</span><span class="p">])</span>
 <span class="go">SelectorMol( size=7</span>
 <span class="go">0: Molecule( NA:3606 num_atoms=1 num_residues=1 )</span>
@@ -1004,20 +1003,20 @@ the <em class="xref py py-obj">other</em> token, e.g. deleting it via</p>
 <h2>Indexing within searches<a class="headerlink" href="#indexing-within-searches" title="Permalink to this heading">#</a></h2>
 <p>It is often the case that multiple items will match your search. You
 can request only a sub-set by indexing your search, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">{positive_ions}</span><span class="s2">[0]&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;positive_ions[0]&quot;</span><span class="p">])</span>
 <span class="go">Molecule( NA:3606 num_atoms=1 num_residues=1 )</span>
 </pre></div>
 </div>
-<p>returns the first item that matched the custom <em class="xref py py-obj">positive_ions</em> token
+<p>returns the first item that matched the custom <code class="docutils literal notranslate"><span class="pre">positive_ions</span></code> token
 you created above.</p>
 <p>Indexing can be used with any search term. The general format is
-<em class="xref py py-obj">{search_term}[index]</em>. The index behaves like a python index, so can
+<code class="docutils literal notranslate"><span class="pre">search_term[index]</span></code>. The index behaves like a python index, so can
 be negative indexed or sliced, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">{positive_ions}</span><span class="s2">[-1]&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;positive_ions[-1]&quot;</span><span class="p">])</span>
 <span class="go">Molecule( NA:3612 num_atoms=1 num_residues=1 )</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">{positive_ions}</span><span class="s2">[0:6:2]&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;positive_ions[0:6:2]&quot;</span><span class="p">])</span>
 <span class="go">SelectorMol( size=3</span>
 <span class="go">0: Molecule( NA:3606 num_atoms=1 num_residues=1 )</span>
 <span class="go">1: Molecule( NA:3608 num_atoms=1 num_residues=1 )</span>
@@ -1025,6 +1024,9 @@ be negative indexed or sliced, e.g.</p>
 <span class="go">)</span>
 </pre></div>
 </div>
+<p>Please take a look at the
+<a class="reference internal" href="../../cheatsheet/search.html"><span class="doc">detailed guide to search</span></a> for more
+information and the syntax of the search engine built into <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>.</p>
 </section>
 </section>
 

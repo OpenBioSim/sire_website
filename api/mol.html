@@ -309,7 +309,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/snaglist.html">Snag list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
@@ -358,6 +357,7 @@
         <article role="main">
           <section id="module-sire.mol">
 <span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.mol" title="Permalink to this heading">#</a></h1>
+<p><a class="reference internal" href="index_mol.html"><span class="doc">View Module Index</span></a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.mol.Atom">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.mol.</span></span><span class="sig-name descname"><span class="pre">Atom</span></span><a class="headerlink" href="#sire.mol.Atom" title="Permalink to this definition">#</a></dt>
@@ -743,6 +743,31 @@ Throw: SireMol::missing_cutgroup</p>
 <dd><p>Return an editor that can be used to edit this atom</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMol::AtomEditor edit(SireMol::Atom {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Atom.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.Atom.energy" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate the total energy of the molecule view(s) in this
+collection.</p>
+<dl class="simple">
+<dt>other: (view or views, optional)</dt><dd><p>An optional second view (or collection of views).
+If this is passed, then the energy between the
+views in this collections and others will be calculated.</p>
+</dd>
+<dt>map: (dictionary, optional)</dt><dd><p>An optional property map that will be used to find
+or map the properties used for this energy calculation.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns an energy, with attached components for the
+sub-components (if any) for this energy.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sire.units.GeneralUnit (energy per quantity)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2506,6 +2531,31 @@ Throw: SireMol::missing_cutgroup</p>
 <dd><p>Return an editor that can edit this chain</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMol::ChainEditor edit(SireMol::Chain {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Chain.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.Chain.energy" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate the total energy of the molecule view(s) in this
+collection.</p>
+<dl class="simple">
+<dt>other: (view or views, optional)</dt><dd><p>An optional second view (or collection of views).
+If this is passed, then the energy between the
+views in this collections and others will be calculated.</p>
+</dd>
+<dt>map: (dictionary, optional)</dt><dd><p>An optional property map that will be used to find
+or map the properties used for this energy calculation.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns an energy, with attached components for the
+sub-components (if any) for this energy.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sire.units.GeneralUnit (energy per quantity)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5677,6 +5727,31 @@ Throw: SireMol::missing_cutgroup</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Molecule.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.Molecule.energy" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate the total energy of the molecule view(s) in this
+collection.</p>
+<dl class="simple">
+<dt>other: (view or views, optional)</dt><dd><p>An optional second view (or collection of views).
+If this is passed, then the energy between the
+views in this collections and others will be calculated.</p>
+</dd>
+<dt>map: (dictionary, optional)</dt><dd><p>An optional property map that will be used to find
+or map the properties used for this energy calculation.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns an energy, with attached components for the
+sub-components (if any) for this energy.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sire.units.GeneralUnit (energy per quantity)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Molecule.evaluate">
 <span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Molecule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Evaluator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Molecule.evaluate" title="Permalink to this definition">#</a></dt>
 <dd><p>Return an Evaluator that evaluates values using
@@ -7055,6 +7130,31 @@ atoms of this residue</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Residue.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.Residue.energy" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate the total energy of the molecule view(s) in this
+collection.</p>
+<dl class="simple">
+<dt>other: (view or views, optional)</dt><dd><p>An optional second view (or collection of views).
+If this is passed, then the energy between the
+views in this collections and others will be calculated.</p>
+</dd>
+<dt>map: (dictionary, optional)</dt><dd><p>An optional property map that will be used to find
+or map the properties used for this energy calculation.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns an energy, with attached components for the
+sub-components (if any) for this energy.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sire.units.GeneralUnit (energy per quantity)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Residue.evaluate">
 <span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Residue)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Evaluator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Residue.evaluate" title="Permalink to this definition">#</a></dt>
 <dd><p>Return an Evaluator that evaluates values using all of
@@ -7893,6 +7993,31 @@ of this view</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Segment.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.Segment.energy" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate the total energy of the molecule view(s) in this
+collection.</p>
+<dl class="simple">
+<dt>other: (view or views, optional)</dt><dd><p>An optional second view (or collection of views).
+If this is passed, then the energy between the
+views in this collections and others will be calculated.</p>
+</dd>
+<dt>map: (dictionary, optional)</dt><dd><p>An optional property map that will be used to find
+or map the properties used for this energy calculation.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns an energy, with attached components for the
+sub-components (if any) for this energy.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sire.units.GeneralUnit (energy per quantity)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Segment.evaluate">
 <span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Segment)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Evaluator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Segment.evaluate" title="Permalink to this definition">#</a></dt>
 <dd><p>Return an evaluator that can evaluate properties
@@ -8543,6 +8668,56 @@ is operator.add by default.</p></li>
 </dd>
 </dl>
 </div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.SelectorMol.energies">
+<span class="sig-name descname"><span class="pre">energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.energies" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate the total energy of the molecule view(s) in this
+collection.</p>
+<dl class="simple">
+<dt>other: (view or views, optional)</dt><dd><p>An optional second view (or collection of views).
+If this is passed, then the energy between the
+views in this collections and others will be calculated.</p>
+</dd>
+<dt>map: (dictionary, optional)</dt><dd><p>An optional property map that will be used to find
+or map the properties used for this energy calculation.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns an energy, with attached components for the
+sub-components (if any) for this energy.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sire.units.GeneralUnit (energy per quantity)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.SelectorMol.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.energy" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate the total energy of the molecule view(s) in this
+collection.</p>
+<dl class="simple">
+<dt>other: (view or views, optional)</dt><dd><p>An optional second view (or collection of views).
+If this is passed, then the energy between the
+views in this collections and others will be calculated.</p>
+</dd>
+<dt>map: (dictionary, optional)</dt><dd><p>An optional property map that will be used to find
+or map the properties used for this energy calculation.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns an energy, with attached components for the
+sub-components (if any) for this energy.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sire.units.GeneralUnit (energy per quantity)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -9309,6 +9484,7 @@ of the function to be called.</p>
 <li><a class="reference internal" href="#sire.mol.Atom.cutgroups"><code class="docutils literal notranslate"><span class="pre">Atom.cutgroups()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.delete_frame"><code class="docutils literal notranslate"><span class="pre">Atom.delete_frame()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.edit"><code class="docutils literal notranslate"><span class="pre">Atom.edit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Atom.energy"><code class="docutils literal notranslate"><span class="pre">Atom.energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.evaluate"><code class="docutils literal notranslate"><span class="pre">Atom.evaluate()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.has_metadata"><code class="docutils literal notranslate"><span class="pre">Atom.has_metadata()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.has_property"><code class="docutils literal notranslate"><span class="pre">Atom.has_property()</span></code></a></li>
@@ -9435,6 +9611,7 @@ of the function to be called.</p>
 <li><a class="reference internal" href="#sire.mol.Chain.cutgroups"><code class="docutils literal notranslate"><span class="pre">Chain.cutgroups()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.delete_frame"><code class="docutils literal notranslate"><span class="pre">Chain.delete_frame()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.edit"><code class="docutils literal notranslate"><span class="pre">Chain.edit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Chain.energy"><code class="docutils literal notranslate"><span class="pre">Chain.energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.evaluate"><code class="docutils literal notranslate"><span class="pre">Chain.evaluate()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.has_metadata"><code class="docutils literal notranslate"><span class="pre">Chain.has_metadata()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.has_property"><code class="docutils literal notranslate"><span class="pre">Chain.has_property()</span></code></a></li>
@@ -9720,6 +9897,7 @@ of the function to be called.</p>
 <li><a class="reference internal" href="#sire.mol.Molecule.cutgroups"><code class="docutils literal notranslate"><span class="pre">Molecule.cutgroups()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.delete_frame"><code class="docutils literal notranslate"><span class="pre">Molecule.delete_frame()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.edit"><code class="docutils literal notranslate"><span class="pre">Molecule.edit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Molecule.energy"><code class="docutils literal notranslate"><span class="pre">Molecule.energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.evaluate"><code class="docutils literal notranslate"><span class="pre">Molecule.evaluate()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.has_metadata"><code class="docutils literal notranslate"><span class="pre">Molecule.has_metadata()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.has_property"><code class="docutils literal notranslate"><span class="pre">Molecule.has_property()</span></code></a></li>
@@ -9816,6 +9994,7 @@ of the function to be called.</p>
 <li><a class="reference internal" href="#sire.mol.Residue.count"><code class="docutils literal notranslate"><span class="pre">Residue.count()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.cursor"><code class="docutils literal notranslate"><span class="pre">Residue.cursor()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.edit"><code class="docutils literal notranslate"><span class="pre">Residue.edit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Residue.energy"><code class="docutils literal notranslate"><span class="pre">Residue.energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.evaluate"><code class="docutils literal notranslate"><span class="pre">Residue.evaluate()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.has_metadata"><code class="docutils literal notranslate"><span class="pre">Residue.has_metadata()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.has_property"><code class="docutils literal notranslate"><span class="pre">Residue.has_property()</span></code></a></li>
@@ -9879,6 +10058,7 @@ of the function to be called.</p>
 <li><a class="reference internal" href="#sire.mol.Segment.count"><code class="docutils literal notranslate"><span class="pre">Segment.count()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.cursor"><code class="docutils literal notranslate"><span class="pre">Segment.cursor()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.edit"><code class="docutils literal notranslate"><span class="pre">Segment.edit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Segment.energy"><code class="docutils literal notranslate"><span class="pre">Segment.energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.evaluate"><code class="docutils literal notranslate"><span class="pre">Segment.evaluate()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.has_metadata"><code class="docutils literal notranslate"><span class="pre">Segment.has_metadata()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.has_property"><code class="docutils literal notranslate"><span class="pre">Segment.has_property()</span></code></a></li>
@@ -9918,6 +10098,8 @@ of the function to be called.</p>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.cutgroup"><code class="docutils literal notranslate"><span class="pre">SelectorMol.cutgroup()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.cutgroups"><code class="docutils literal notranslate"><span class="pre">SelectorMol.cutgroups()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.delete_frame"><code class="docutils literal notranslate"><span class="pre">SelectorMol.delete_frame()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.SelectorMol.energies"><code class="docutils literal notranslate"><span class="pre">SelectorMol.energies()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.SelectorMol.energy"><code class="docutils literal notranslate"><span class="pre">SelectorMol.energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.evaluate"><code class="docutils literal notranslate"><span class="pre">SelectorMol.evaluate()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.ids"><code class="docutils literal notranslate"><span class="pre">SelectorMol.ids()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.indexes"><code class="docutils literal notranslate"><span class="pre">SelectorMol.indexes()</span></code></a></li>
