@@ -662,7 +662,7 @@ as the result. This can be summarised as a table.</p>
 <td><p>chains in molecule</p></td>
 </tr>
 <tr class="row-even"><td><p>Segment</p></td>
-<td><p>segments with atomv</p></td>
+<td><p>segments with atoms</p></td>
 <td><p>segments with bond</p></td>
 <td><p>segments with residue</p></td>
 <td><p>segments with chain</p></td>
@@ -853,7 +853,7 @@ more than two carbon atoms</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">atoms</span> <span class="pre">in</span> <span class="pre">residues</span> <span class="pre">with</span> <span class="pre">count(atomname</span> <span class="pre">CA)</span> <span class="pre">==</span> <span class="pre">1</span></code> - match all atoms
 in residues that contain a single atom called <code class="docutils literal notranslate"><span class="pre">CA</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">(molecules</span> <span class="pre">with</span> <span class="pre">count(element</span> <span class="pre">O)</span> <span class="pre">==</span> <span class="pre">1)</span> <span class="pre">and</span> <span class="pre">(molecules</span> <span class="pre">with</span> <span class="pre">count(element</span> <span class="pre">H)</span> <span class="pre">==</span> <span class="pre">2)</span> <span class="pre">and</span> <span class="pre">(molecules</span> <span class="pre">with</span> <span class="pre">count(atoms)</span> <span class="pre">==</span> <span class="pre">3)</span></code> -
-match all molecules that contain there atoms, and that have one oxygen atom
+match all molecules that contain three atoms, and that have one oxygen atom
 and have two hydrogen atoms (i.e. are water molecules).</p></li>
 </ul>
 </section>
@@ -902,11 +902,11 @@ imprecision issues experienced when searching for views by charge.</p>
 <p>The approximate comparison operators are;</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">=~</span></code> - approximate equal to. <a class="reference internal" href="../api/search.html#sire.search.approx_equal" title="sire.search.approx_equal"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_equal()</span></code></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">!~</span></code> - not approximates equal to. <code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search_approx_not_equal()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;~</span></code> - greater than (but not approximately equal to). <code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_greater()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;~</span></code> - less than (but not approximately equal to). <code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_less()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=~</span></code> - greater than or approximately equal to. <code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_greater_equal()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=~</span></code> - less than or approximatley equal to. <code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_less_equal()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!~</span></code> - not approximates equal to. <a class="reference internal" href="../api/search.html#sire.search.approx_not_equal" title="sire.search.approx_not_equal"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_not_equal()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;~</span></code> - greater than (but not approximately equal to). <a class="reference internal" href="../api/search.html#sire.search.approx_greater" title="sire.search.approx_greater"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_greater()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;~</span></code> - less than (but not approximately equal to). <a class="reference internal" href="../api/search.html#sire.search.approx_less" title="sire.search.approx_less"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_less()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=~</span></code> - greater than or approximately equal to. <a class="reference internal" href="../api/search.html#sire.search.approx_greater_equal" title="sire.search.approx_greater_equal"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_greater_equal()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=~</span></code> - less than or approximatley equal to. <a class="reference internal" href="../api/search.html#sire.search.approx_less_equal" title="sire.search.approx_less_equal"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.search.approx_less_equal()</span></code></a></p></li>
 </ul>
 <p>These operators are logically consistent. They are built from
 the approximately equal to operator (<code class="docutils literal notranslate"><span class="pre">=~</span></code>). This returns <code class="docutils literal notranslate"><span class="pre">True</span></code>
@@ -1134,7 +1134,7 @@ tokens that used it, e.g.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 09, 2023</div>
+              Last updated on Jan 11, 2023</div>
           </div>
           <div class="right-details">
             

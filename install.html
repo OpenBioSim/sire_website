@@ -358,12 +358,12 @@
           <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h1>
 <p>Binary packages for <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> are available on MacOS, Linux and Windows
-running on Intel (X86-64) or ARM64 processors.</p>
+running on Intel/AMD (X86-64) or ARM64 processors.</p>
 <p><a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> can be compiled on any UNIX or Windows-compatible operating system
 running on X86-64, ARM64 or PowerPC processors.</p>
 <p>You have a range of options for installing the software.</p>
 <section id="no-installation-run-in-a-web-browser">
-<h2>No-installation - Run in a Web Browser<a class="headerlink" href="#no-installation-run-in-a-web-browser" title="Permalink to this heading">#</a></h2>
+<h2>1. No-installation - Run in a Web Browser<a class="headerlink" href="#no-installation-run-in-a-web-browser" title="Permalink to this heading">#</a></h2>
 <p>We run a completely free <a class="reference external" href="https://try.openbiosim.org">JupyterHub</a> on
 which we have sire installed.</p>
 <p>This is at <a class="reference external" href="https://try.openbiosim.org">try.openbiosim.org</a>.
@@ -394,7 +394,7 @@ Do not use it for production work.</p>
 </div>
 </section>
 <section id="easy-installation-run-in-a-conda-environment">
-<h2>Easy installation - Run in a conda environment<a class="headerlink" href="#easy-installation-run-in-a-conda-environment" title="Permalink to this heading">#</a></h2>
+<h2>2. Easy installation - Run in a conda environment<a class="headerlink" href="#easy-installation-run-in-a-conda-environment" title="Permalink to this heading">#</a></h2>
 <p>The easiest way to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is in a new
 <a class="reference external" href="https://anaconda.org">conda environment</a>.</p>
 <p>You can use any conda environment or installation. We recommend using
@@ -402,8 +402,8 @@ Do not use it for production work.</p>
 as this is pre-configured to use <a class="reference external" href="https://conda-forge.org">conda-forge</a>,
 and bundles <a class="reference external" href="https://mamba.readthedocs.io/en/latest/">mamba</a>, which
 is a fast drop-in replacement for <a class="reference external" href="https://conda.io">conda</a>.</p>
-<section id="option-1-installing-a-new-copy-of-mambaforge">
-<h3>Option 1. Installing a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code><a class="headerlink" href="#option-1-installing-a-new-copy-of-mambaforge" title="Permalink to this heading">#</a></h3>
+<section id="either-install-a-new-copy-of-mambaforge">
+<span id="install-mambaforge"></span><h3>Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code><a class="headerlink" href="#either-install-a-new-copy-of-mambaforge" title="Permalink to this heading">#</a></h3>
 <p>To install a new copy of
 <a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a>,
 first download a <code class="docutils literal notranslate"><span class="pre">Mambaforge</span></code> from
@@ -415,8 +415,8 @@ matches your operating system and processor.</p>
 install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">-h</span></code> will print out help on
 how to use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command).</p>
 </section>
-<section id="option-2-using-an-existing-anaconda-miniconda-install">
-<h3>Option 2. Using an existing anaconda/miniconda install<a class="headerlink" href="#option-2-using-an-existing-anaconda-miniconda-install" title="Permalink to this heading">#</a></h3>
+<section id="or-use-an-existing-anaconda-miniconda-install">
+<h3>Or… Use an existing anaconda/miniconda install<a class="headerlink" href="#or-use-an-existing-anaconda-miniconda-install" title="Permalink to this heading">#</a></h3>
 <p>If you want to use an existing anaconda or miniconda installation,
 then first open a terminal with that distribution activated.
 For example, open a terminal via anaconda navigator, or
@@ -432,13 +432,14 @@ drop-in replacement for <code class="docutils literal notranslate"><span class="
 </div>
 <p>This should install mamba. If this fails, then your anaconda or miniconda
 environment is likely quite full, or else it is outdated. We recommend
-going back to Option 1 and installing a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code>.</p>
+going back and following <em class="xref py py-obj">the instructions</em>
+to install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code>.</p>
 <p>If this works, then you should now be able to run the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command
 to install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">-h</span></code> will print out help
 on how to use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command).</p>
 </section>
-<section id="installing-sire-into-a-new-environment">
-<h3>Installing sire into a new environment<a class="headerlink" href="#installing-sire-into-a-new-environment" title="Permalink to this heading">#</a></h3>
+<section id="and-then-install-sire-into-a-new-environment">
+<h3>And then… Install sire into a new environment<a class="headerlink" href="#and-then-install-sire-into-a-new-environment" title="Permalink to this heading">#</a></h3>
 <p>We recommend that <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is installed into a new (clean) environment.
 This minimises the risk of failures caused by incompatible dependencies.</p>
 <p>Sire is currently packaged for Python 3.8 and Python 3.9. We will start
@@ -489,7 +490,7 @@ to learn how to use <a class="reference internal" href="api/sire.html#module-sir
 </section>
 </section>
 <section id="also-easy-installation-run-in-a-container">
-<h2>Also easy installation - Run in a container<a class="headerlink" href="#also-easy-installation-run-in-a-container" title="Permalink to this heading">#</a></h2>
+<h2>3. Also easy installation - Run in a container<a class="headerlink" href="#also-easy-installation-run-in-a-container" title="Permalink to this heading">#</a></h2>
 <p>Another route to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is to download and run our
 pre-built containers. These can be run via
 <a class="reference external" href="https://www.docker.com">docker</a> (on Linux, MacOS and Windows)
@@ -538,7 +539,7 @@ to learn how to use <a class="reference internal" href="api/sire.html#module-sir
 <a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
 </section>
 <section id="harder-installation-compile-from-source">
-<h2>Harder installation - Compile from source<a class="headerlink" href="#harder-installation-compile-from-source" title="Permalink to this heading">#</a></h2>
+<h2>4. Harder installation - Compile from source<a class="headerlink" href="#harder-installation-compile-from-source" title="Permalink to this heading">#</a></h2>
 <p>Sometimes you will want to compile and run <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> from source.
 This could be because we don’t distribute a binary package for your
 operating system, or because you want to use a newer version
@@ -546,7 +547,7 @@ operating system, or because you want to use a newer version
 branch if you are a developer).</p>
 <p>You compile <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> into an existing anaconda / miniconda environment.
 Please create and activate an environment, e.g. by following
-the “Option 1” instructions to install a fresh <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code> and
+<em class="xref py py-obj">the instructions</em> to install a fresh <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code> and
 then creating and activating Python 3.9 environment called
 <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
 <p>Next, download the source code. You could download the latest development
@@ -660,7 +661,7 @@ to <a class="reference internal" href="api/sire.html#module-sire" title="sire"><
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 09, 2023</div>
+              Last updated on Jan 11, 2023</div>
           </div>
           <div class="right-details">
             
@@ -682,15 +683,15 @@ to <a class="reference internal" href="api/sire.html#module-sire" title="sire"><
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Installation</a><ul>
-<li><a class="reference internal" href="#no-installation-run-in-a-web-browser">No-installation - Run in a Web Browser</a></li>
-<li><a class="reference internal" href="#easy-installation-run-in-a-conda-environment">Easy installation - Run in a conda environment</a><ul>
-<li><a class="reference internal" href="#option-1-installing-a-new-copy-of-mambaforge">Option 1. Installing a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code></a></li>
-<li><a class="reference internal" href="#option-2-using-an-existing-anaconda-miniconda-install">Option 2. Using an existing anaconda/miniconda install</a></li>
-<li><a class="reference internal" href="#installing-sire-into-a-new-environment">Installing sire into a new environment</a></li>
+<li><a class="reference internal" href="#no-installation-run-in-a-web-browser">1. No-installation - Run in a Web Browser</a></li>
+<li><a class="reference internal" href="#easy-installation-run-in-a-conda-environment">2. Easy installation - Run in a conda environment</a><ul>
+<li><a class="reference internal" href="#either-install-a-new-copy-of-mambaforge">Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code></a></li>
+<li><a class="reference internal" href="#or-use-an-existing-anaconda-miniconda-install">Or… Use an existing anaconda/miniconda install</a></li>
+<li><a class="reference internal" href="#and-then-install-sire-into-a-new-environment">And then… Install sire into a new environment</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#also-easy-installation-run-in-a-container">Also easy installation - Run in a container</a></li>
-<li><a class="reference internal" href="#harder-installation-compile-from-source">Harder installation - Compile from source</a></li>
+<li><a class="reference internal" href="#also-easy-installation-run-in-a-container">3. Also easy installation - Run in a container</a></li>
+<li><a class="reference internal" href="#harder-installation-compile-from-source">4. Harder installation - Compile from source</a></li>
 </ul>
 </li>
 </ul>
