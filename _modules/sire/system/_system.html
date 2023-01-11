@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>sire.system._system - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -440,6 +440,10 @@
 <div class="viewcode-block" id="System.num_molecules"><a class="viewcode-back" href="../../../api/system.html#sire.system.System.num_molecules">[docs]</a>    <span class="k">def</span> <span class="nf">num_molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of molecules in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">num_molecules</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="System.find"><a class="viewcode-back" href="../../../api/system.html#sire.system.System.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">views</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the index(es) of the molecule(s) that are in `views`&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">views</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="System.names"><a class="viewcode-back" href="../../../api/system.html#sire.system.System.names">[docs]</a>    <span class="k">def</span> <span class="nf">names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the names of all of the molecules in this System&quot;&quot;&quot;</span>

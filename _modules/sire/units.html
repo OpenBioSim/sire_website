@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>sire.units - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -365,23 +365,147 @@
     <span class="s2">&quot;set_quantity_unit&quot;</span><span class="p">,</span>
     <span class="s2">&quot;set_si_units&quot;</span><span class="p">,</span>
     <span class="s2">&quot;set_time_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GeneralUnit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;akma_time&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;akma_velocity&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;amp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angle_minute&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angle_minutes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angle_second&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angle_seconds&quot;</span><span class="p">,</span>
     <span class="s2">&quot;angstrom&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angstroms&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angstrom2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angstrom3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angstroms_per_fs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;atm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;atomic_mass_constant&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bohr_radii&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cal&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cal_per_mol&quot;</span><span class="p">,</span>
     <span class="s2">&quot;celsius&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;centimeter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;centimeters&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;circumference&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;convert&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;coulomb&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;coulomb_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;day&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;degree&quot;</span><span class="p">,</span>
     <span class="s2">&quot;degrees&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;e_charge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;electron_mass&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;epsilon0&quot;</span><span class="p">,</span>
     <span class="s2">&quot;fahrenheit&quot;</span><span class="p">,</span>
     <span class="s2">&quot;farad&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;faraday&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;feet&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;femtogram&quot;</span><span class="p">,</span>
     <span class="s2">&quot;femtosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fg_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fortnight&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;four_pi_eps0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;g_accel&quot;</span><span class="p">,</span>
     <span class="s2">&quot;g_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gasr&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;grad&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gradian&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gradians&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gram&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gon&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G_newton&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;h_planck&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;h_slash&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hartree&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hour&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hundredweight&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inch&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;int_cal&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;int_cal_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;int_kcal&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;int_kcal_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;joule&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;J_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;k_boltz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kcal&quot;</span><span class="p">,</span>
     <span class="s2">&quot;kcal_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kelvin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kilogram&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kilojoule&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kilometer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kilometers&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kilometers_per_hour&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kg_per_mol&quot;</span><span class="p">,</span>
     <span class="s2">&quot;kJ_per_mol&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;mod_electron&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kph&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;megajoule&quot;</span><span class="p">,</span>
     <span class="s2">&quot;meter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;meter2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;meter3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;meters&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;meters_per_second&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mg_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;microgram&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;micrometer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;microsecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;miles&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;miles_per_hour&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;milligram&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;millimeter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;millimeters&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;millisecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;minute&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mmHg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mod_electron&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;molar_volume&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mole&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mph&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mu0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MJ_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nanogram&quot;</span><span class="p">,</span>
     <span class="s2">&quot;nanometer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nanometers&quot;</span><span class="p">,</span>
     <span class="s2">&quot;nanometer2&quot;</span><span class="p">,</span>
     <span class="s2">&quot;nanosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;neutron_mass&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;newton&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ng_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;octant&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;octants&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;one_over_four_pi_eps0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ounce&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pascal&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pg_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picogram&quot;</span><span class="p">,</span>
     <span class="s2">&quot;picometer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picometers&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picometer2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picometer3&quot;</span><span class="p">,</span>
     <span class="s2">&quot;picosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pound&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;proton_mass&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;psi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;quadrant&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;quadrants&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;radian&quot;</span><span class="p">,</span>
     <span class="s2">&quot;radians&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;revolution&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;revolutions&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;revs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;second&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sextant&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sextants&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;stone&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tonne&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tonne_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ug_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;volt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;watt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;watt_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;week&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;yards&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
@@ -389,33 +513,146 @@
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
 
 <span class="kn">from</span> <span class="nn">..legacy.Units</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">akma_time</span><span class="p">,</span>
+    <span class="n">akma_velocity</span><span class="p">,</span>
+    <span class="n">amp</span><span class="p">,</span>
+    <span class="n">angle_minute</span><span class="p">,</span>
+    <span class="n">angle_minutes</span><span class="p">,</span>
+    <span class="n">angle_second</span><span class="p">,</span>
+    <span class="n">angle_seconds</span><span class="p">,</span>
     <span class="n">angstrom</span><span class="p">,</span>
+    <span class="n">angstroms</span><span class="p">,</span>
+    <span class="n">angstrom2</span><span class="p">,</span>
+    <span class="n">angstrom3</span><span class="p">,</span>
+    <span class="n">angstroms_per_fs</span><span class="p">,</span>
+    <span class="n">atm</span><span class="p">,</span>
+    <span class="n">atomic_mass_constant</span><span class="p">,</span>
+    <span class="n">bar</span><span class="p">,</span>
+    <span class="n">bohr_radii</span><span class="p">,</span>
+    <span class="n">c</span><span class="p">,</span>
     <span class="n">cal</span><span class="p">,</span>
+    <span class="n">cal_per_mol</span><span class="p">,</span>
     <span class="n">celsius</span><span class="p">,</span>
+    <span class="n">centimeter</span><span class="p">,</span>
+    <span class="n">centimeters</span><span class="p">,</span>
+    <span class="n">circumference</span><span class="p">,</span>
     <span class="n">convert</span><span class="p">,</span>
+    <span class="n">coulomb</span><span class="p">,</span>
+    <span class="n">coulomb_per_mol</span><span class="p">,</span>
+    <span class="n">day</span><span class="p">,</span>
+    <span class="n">degree</span><span class="p">,</span>
     <span class="n">degrees</span><span class="p">,</span>
+    <span class="n">e_charge</span><span class="p">,</span>
+    <span class="n">electron_mass</span><span class="p">,</span>
+    <span class="n">epsilon0</span><span class="p">,</span>
     <span class="n">fahrenheit</span><span class="p">,</span>
     <span class="n">farad</span><span class="p">,</span>
+    <span class="n">faraday</span><span class="p">,</span>
+    <span class="n">feet</span><span class="p">,</span>
+    <span class="n">femtogram</span><span class="p">,</span>
     <span class="n">femtosecond</span><span class="p">,</span>
+    <span class="n">fg_per_mol</span><span class="p">,</span>
+    <span class="n">fortnight</span><span class="p">,</span>
+    <span class="n">four_pi_eps0</span><span class="p">,</span>
+    <span class="n">g_accel</span><span class="p">,</span>
     <span class="n">g_per_mol</span><span class="p">,</span>
+    <span class="n">gasr</span><span class="p">,</span>
+    <span class="n">grad</span><span class="p">,</span>
+    <span class="n">gradian</span><span class="p">,</span>
+    <span class="n">gradians</span><span class="p">,</span>
     <span class="n">gram</span><span class="p">,</span>
-    <span class="n">joule</span><span class="p">,</span>
-    <span class="n">mod_electron</span><span class="p">,</span>
-    <span class="n">meter</span><span class="p">,</span>
+    <span class="n">gon</span><span class="p">,</span>
+    <span class="n">G_newton</span><span class="p">,</span>
+    <span class="n">h_planck</span><span class="p">,</span>
+    <span class="n">h_slash</span><span class="p">,</span>
+    <span class="n">hartree</span><span class="p">,</span>
+    <span class="n">hour</span><span class="p">,</span>
+    <span class="n">hundredweight</span><span class="p">,</span>
+    <span class="n">inch</span><span class="p">,</span>
     <span class="n">int_cal</span><span class="p">,</span>
+    <span class="n">int_cal_per_mol</span><span class="p">,</span>
     <span class="n">int_kcal</span><span class="p">,</span>
+    <span class="n">int_kcal_per_mol</span><span class="p">,</span>
+    <span class="n">joule</span><span class="p">,</span>
+    <span class="n">J_per_mol</span><span class="p">,</span>
+    <span class="n">k_boltz</span><span class="p">,</span>
     <span class="n">kcal</span><span class="p">,</span>
     <span class="n">kcal_per_mol</span><span class="p">,</span>
+    <span class="n">kelvin</span><span class="p">,</span>
     <span class="n">kilogram</span><span class="p">,</span>
     <span class="n">kilojoule</span><span class="p">,</span>
+    <span class="n">kilometer</span><span class="p">,</span>
+    <span class="n">kilometers</span><span class="p">,</span>
+    <span class="n">kilometers_per_hour</span><span class="p">,</span>
+    <span class="n">kg_per_mol</span><span class="p">,</span>
     <span class="n">kJ_per_mol</span><span class="p">,</span>
+    <span class="n">kph</span><span class="p">,</span>
+    <span class="n">megajoule</span><span class="p">,</span>
+    <span class="n">meter</span><span class="p">,</span>
+    <span class="n">meter2</span><span class="p">,</span>
+    <span class="n">meter3</span><span class="p">,</span>
+    <span class="n">meters</span><span class="p">,</span>
+    <span class="n">meters_per_second</span><span class="p">,</span>
+    <span class="n">mg_per_mol</span><span class="p">,</span>
+    <span class="n">microgram</span><span class="p">,</span>
+    <span class="n">micrometer</span><span class="p">,</span>
+    <span class="n">microsecond</span><span class="p">,</span>
+    <span class="n">miles</span><span class="p">,</span>
+    <span class="n">miles_per_hour</span><span class="p">,</span>
+    <span class="n">milligram</span><span class="p">,</span>
+    <span class="n">millimeter</span><span class="p">,</span>
+    <span class="n">millimeters</span><span class="p">,</span>
+    <span class="n">millisecond</span><span class="p">,</span>
+    <span class="n">minute</span><span class="p">,</span>
+    <span class="n">mmHg</span><span class="p">,</span>
+    <span class="n">mod_electron</span><span class="p">,</span>
+    <span class="n">molar_volume</span><span class="p">,</span>
     <span class="n">mole</span><span class="p">,</span>
+    <span class="n">mph</span><span class="p">,</span>
+    <span class="n">mu0</span><span class="p">,</span>
+    <span class="n">MJ_per_mol</span><span class="p">,</span>
+    <span class="n">nanogram</span><span class="p">,</span>
     <span class="n">nanometer</span><span class="p">,</span>
+    <span class="n">nanometers</span><span class="p">,</span>
     <span class="n">nanometer2</span><span class="p">,</span>
     <span class="n">nanosecond</span><span class="p">,</span>
+    <span class="n">neutron_mass</span><span class="p">,</span>
+    <span class="n">newton</span><span class="p">,</span>
+    <span class="n">ng_per_mol</span><span class="p">,</span>
+    <span class="n">octant</span><span class="p">,</span>
+    <span class="n">octants</span><span class="p">,</span>
+    <span class="n">one_over_four_pi_eps0</span><span class="p">,</span>
+    <span class="n">ounce</span><span class="p">,</span>
+    <span class="n">pascal</span><span class="p">,</span>
+    <span class="n">pg_per_mol</span><span class="p">,</span>
+    <span class="n">picogram</span><span class="p">,</span>
     <span class="n">picometer</span><span class="p">,</span>
+    <span class="n">picometers</span><span class="p">,</span>
+    <span class="n">picometer2</span><span class="p">,</span>
+    <span class="n">picometer3</span><span class="p">,</span>
     <span class="n">picosecond</span><span class="p">,</span>
+    <span class="n">pound</span><span class="p">,</span>
+    <span class="n">proton_mass</span><span class="p">,</span>
+    <span class="n">psi</span><span class="p">,</span>
+    <span class="n">quadrant</span><span class="p">,</span>
+    <span class="n">quadrants</span><span class="p">,</span>
+    <span class="n">radian</span><span class="p">,</span>
     <span class="n">radians</span><span class="p">,</span>
+    <span class="n">revolution</span><span class="p">,</span>
+    <span class="n">revolutions</span><span class="p">,</span>
+    <span class="n">revs</span><span class="p">,</span>
+    <span class="n">second</span><span class="p">,</span>
+    <span class="n">sextant</span><span class="p">,</span>
+    <span class="n">sextants</span><span class="p">,</span>
+    <span class="n">stone</span><span class="p">,</span>
+    <span class="n">tonne</span><span class="p">,</span>
+    <span class="n">tonne_per_mol</span><span class="p">,</span>
+    <span class="n">ug_per_mol</span><span class="p">,</span>
+    <span class="n">volt</span><span class="p">,</span>
+    <span class="n">watt</span><span class="p">,</span>
+    <span class="n">watt_per_mol</span><span class="p">,</span>
+    <span class="n">week</span><span class="p">,</span>
+    <span class="n">yards</span><span class="p">,</span>
     <span class="n">GeneralUnit</span><span class="p">,</span>
 <span class="p">)</span>
 

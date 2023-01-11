@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.search" href="index_search.html" /><link rel="prev" title="sire.mol" href="index_mol.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -8730,6 +8730,17 @@ sub-components (if any) for this energy.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.SelectorMol.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">views</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.find" title="Permalink to this definition">#</a></dt>
+<dd><p>Find the index(es) of the passed view(s) in this container.
+This returns a single index if a single view is passed,
+or a list of indexes if multiple views are passed
+(in the same order as the passed views).</p>
+<p>This raises an IndexError if any of the views are
+not in this container.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.SelectorMol.ids">
 <span class="sig-name descname"><span class="pre">ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.ids" title="Permalink to this definition">#</a></dt>
 <dd><p>IDs( (SelectorMol)arg1) -&gt; object :</p>
@@ -10101,6 +10112,7 @@ of the function to be called.</p>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.energies"><code class="docutils literal notranslate"><span class="pre">SelectorMol.energies()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.energy"><code class="docutils literal notranslate"><span class="pre">SelectorMol.energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.evaluate"><code class="docutils literal notranslate"><span class="pre">SelectorMol.evaluate()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.SelectorMol.find"><code class="docutils literal notranslate"><span class="pre">SelectorMol.find()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.ids"><code class="docutils literal notranslate"><span class="pre">SelectorMol.ids()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.indexes"><code class="docutils literal notranslate"><span class="pre">SelectorMol.indexes()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.is_empty"><code class="docutils literal notranslate"><span class="pre">SelectorMol.is_empty()</span></code></a></li>
