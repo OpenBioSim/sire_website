@@ -369,7 +369,141 @@ organisation on <a class="reference external" href="https://github.com/openbiosi
 <h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#january-2023" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Initial release of the OpenBioSim version of sire. The code has been completely
-refurbished using a tutorial-driven development process.</p></li>
+refurbished using a tutorial-driven development process and has a new
+public API. This is now <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>, rather than <code class="docutils literal notranslate"><span class="pre">Sire</span></code>. The new
+API is activated when you import from this module. You can still use the
+old API by calling <a class="reference internal" href="api/sire.html#sire.use_old_api" title="sire.use_old_api"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.use_old_api()</span></code></a> or <a class="reference internal" href="api/sire.html#sire.use_mixed_api" title="sire.use_mixed_api"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.use_mixed_api()</span></code></a>.
+The new API is pythonic in style, with our aim to be fully PEP8 compliant.
+Functions are named in snake_case, with classes in CapitalCase. Modules
+are all in lowercase. Only a portion of the legacy Sire API has been
+exposed publicly. You can access unexposed classes / functions via
+<code class="docutils literal notranslate"><span class="pre">sire.legacy.Module</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">sire.legacy.Mol.Connectivity</span></code> will
+get access to the <code class="docutils literal notranslate"><span class="pre">Sire.Mol.Connectivity</span></code> class.</p></li>
+<li><p>We have
+a <a class="reference external" href="https://sire.openbiosim.org">new website</a> with easy
+<a class="reference external" href="https://sire.openbiosim.org/install">install instructions</a>, a
+<a class="reference external" href="https://sire.openbiosim.org/quickstart">quickstart guide</a> and
+a <a class="reference external" href="https://sire.openbiosim.org/tutorial">comprehensive tutorial</a>.
+This is built using sphinx from the files in the <code class="docutils literal notranslate"><span class="pre">doc</span></code> directory.</p></li>
+<li><p>Migrated from <a class="reference external" href="https://github.com/michelllab/sire">michellab/sire</a>
+to <a class="reference external" href="https://github.com/openbiosim/sire">openbiosim/sire</a>. The new
+repo has had old large files removed, and so is much smaller,
+and so quicker and easier to clone.</p></li>
+<li><p>Added a <a class="reference internal" href="api/mol.html#sire.mol.SelectorMol.find" title="sire.mol.SelectorMol.find"><code class="xref py py-func docutils literal notranslate"><span class="pre">find()</span></code></a> function to all of the
+molecule view containers. This returns the index of the view(s)
+within the container. This can be used to quickly get the index
+of, e.g. atoms in a system via <code class="docutils literal notranslate"><span class="pre">mols.atoms().find(atom)</span></code>.</p></li>
+<li><p>Made sure that all units and constants were exposed to the
+new public API, and that the constants were exposed with units, e.g.
+now <code class="docutils literal notranslate"><span class="pre">sire.units.k_boltz</span> <span class="pre">*</span> <span class="pre">(25</span> <span class="pre">*</span> <span class="pre">sire.units.celsius)</span></code> gives
+<code class="docutils literal notranslate"><span class="pre">0.592486</span> <span class="pre">kcal</span> <span class="pre">mol-1</span></code> (be careful to put brackets around the
+temperature, or it will be <code class="docutils literal notranslate"><span class="pre">25*k_boltz</span></code> multiplied by <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">celsius</span></code>).</p></li>
+<li><p>Made sure that the Rich console is initialised at module import
+time if the new API is used.</p></li>
+<li><p>Moved <code class="docutils literal notranslate"><span class="pre">show_warnings</span></code> to default <code class="docutils literal notranslate"><span class="pre">True</span></code> when loading files. This
+now prints out the method to silence warnings. This is better for, e.g.
+loading gromacs topologies, which were too noisy when <code class="docutils literal notranslate"><span class="pre">show_warning</span></code>
+was <code class="docutils literal notranslate"><span class="pre">False</span></code> and a message told you how to turn them on…</p></li>
+<li><p>Added <a class="reference external" href="https://github.com/DLTcollab/sse2neon">sse2neon</a> so
+that we can use the manually vectorised code
+on ARM64 systems. This fixed issues with Linux/ARM64. This is as fast,
+if not faster, than relying on openmp::simd as we did before.</p></li>
+<li><p>Cleaned up the new sire API
+via use of <em class="xref py py-obj">__all__</em> in all of the new modules. The public API is
+very limited at the moment, but will grow as we port in more classes.
+However, the aim is that users will mostly not create classes directly,
+but will instead implicitly create them as they load molecular systems
+and call functions on those systems.</p></li>
+<li><p>Fully updated the search functionality, making it more robust, more consistent
+and more powerful. Added a
+<a class="reference external" href="https://sire.openbiosim.org/cheatsheet/search.html">detailed guide</a>
+on the search grammar to the new website.</p></li>
+<li><p>Added a set of <a class="reference internal" href="api/mol.html#sire.mol.Cursor" title="sire.mol.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a> classes for editing, and made these
+work consistently with most of the property types. Getting and
+setting properties should now be easier, with auto-wrapping and
+expanding of properties.</p></li>
+<li><p>Made the AtomProperty classes behave more like standard python containers.
+This makes them easier to work with, and is the first step to hiding
+them completely (they will eventually be auto-converted to/from standard
+Python containers or NumPy arrays).</p></li>
+<li><p>Added <a class="reference internal" href="api/mol.html#sire.mol.SelectorMol.apply" title="sire.mol.SelectorMol.apply"><code class="xref py py-func docutils literal notranslate"><span class="pre">apply()</span></code></a> and
+<a class="reference internal" href="api/mol.html#sire.mol.SelectorMol.apply_reduce" title="sire.mol.SelectorMol.apply_reduce"><code class="xref py py-func docutils literal notranslate"><span class="pre">apply_reduce()</span></code></a> functions that let you map
+functions across all objects in a molecular container.</p></li>
+<li><p>Cleaned up the handling of units - now everything maps into
+<code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnitProperty</span></code>, which are auto-converted when
+exposed to Python.
+Added Python wrapping and monkey-patching to
+<a class="reference internal" href="api/maths.html#sire.maths.Vector" title="sire.maths.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a> so that it
+has length units. Improved the printing of units to the screen (using
+the correct unicode). Added functions that empower the user to choose
+their own default units, e.g. changing angstroms to picometers, or
+switching to full SI units. This only impacts the Python layer when
+rendering the unit, or auto-converting numbers to units, so does
+not break or change the C++ layer. Any view can now be assigned a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code> property.</p></li>
+<li><p>Added <a class="reference internal" href="api/mm.html#sire.mm.Bond" title="sire.mm.Bond"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bond</span></code></a>, <a class="reference internal" href="api/mm.html#sire.mm.Angle" title="sire.mm.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a>,
+<a class="reference internal" href="api/mm.html#sire.mm.Dihedral" title="sire.mm.Dihedral"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dihedral</span></code></a>, <a class="reference internal" href="api/mm.html#sire.mm.Improper" title="sire.mm.Improper"><code class="xref py py-class docutils literal notranslate"><span class="pre">Improper</span></code></a> and their related
+molecule view container
+classes (e.g. <a class="reference internal" href="api/mm.html#sire.mm.SelectorBond" title="sire.mm.SelectorBond"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorBond</span></code></a>,
+<a class="reference internal" href="api/mm.html#sire.mm.SelectorMBond" title="sire.mm.SelectorMBond"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMBond</span></code></a> etc). This allows you to have
+molecule views that represent bonds, angles and dihedrals (or collections
+of these). Added measurement functions so that you can easily get their
+lengths or sizes.</p></li>
+<li><p>Added <a class="reference internal" href="api/mol.html#sire.mol.SelectorMol.energy" title="sire.mol.SelectorMol.energy"><code class="xref py py-func docutils literal notranslate"><span class="pre">energy()</span></code></a> to let you calculate
+energies of views (or views with views).
+This uses the parameters / forcefield loaded with the molecule(s). You can
+get energies of any views of sub-views. Also created an proper return type
+for energies that embeds the energy components. Now
+<code class="docutils literal notranslate"><span class="pre">view.energy().components()</span></code>
+works as you would expect.</p></li>
+<li><p>Added <a class="reference internal" href="api/mol.html#sire.mol.SelectorMol.energies" title="sire.mol.SelectorMol.energies"><code class="xref py py-func docutils literal notranslate"><span class="pre">energies()</span></code></a> to molecule containers so that
+you can get the energies
+of each view in the container. Added support for progress bars using Rich so
+that the user has an indication of progress.</p></li>
+<li><p>Added initial support for trajectories. Reworked the molecular parser so that
+multiple “frame” types files will load multiple frames of a trajectory
+(e.g. so that a trajectory can be loaded from multiple PDB files, or
+from multiple DCD or traj files). Added a
+<a class="reference internal" href="api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a> class that
+lets you easily iterate over and query trajectories. Fully documented this
+in the tutorial. You can now do cool things like measure bonds over
+trajectories, or evaluate energies.</p></li>
+<li><p>Added a <a class="reference internal" href="api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code></a> function based on
+NGLView that lets you easily see any
+molecule view (or collection of molecule views). Added a
+<a class="reference internal" href="api/sire.html#sire.save_to_string" title="sire.save_to_string"><code class="xref py py-func docutils literal notranslate"><span class="pre">save_to_string()</span></code></a> function
+that writes a text-based molecule file to an in-memory string rather than
+a file (so that you don’t have to use temporary files with NGLView). Added
+support for viewing trajectories, so that trajectories that are loaded in
+sire are also playable in NGLView.</p></li>
+<li><p>Added movement functions to the Cursor classes so that you can more easily
+move molecules (or molecule views). Documented this in
+<a class="reference internal" href="tutorial/part04/05_movement.html"><span class="doc">the tutorial</span></a>. Re-worked
+the way PropertyMap is passed via Python. Now have a
+<a class="reference internal" href="api/base.html#sire.base.create_map" title="sire.base.create_map"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_map()</span></code></a> function
+that can create a PropertyMap from anything that is passed. This has some
+examples in its documentation that show how is can be used. Made sure that
+all of the new functionality can use PropertyMap and uses
+<a class="reference internal" href="api/base.html#sire.base.create_map" title="sire.base.create_map"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_map()</span></code></a>
+to support function calls like
+<code class="docutils literal notranslate"><span class="pre">cursor.translate(</span> <span class="pre">(1,2,3),</span> <span class="pre">map={&quot;coordinates&quot;:&quot;coords2&quot;}</span> <span class="pre">)</span></code>.</p></li>
+<li><p>Speaking of which, also updated <a class="reference internal" href="api/maths.html#sire.maths.Vector" title="sire.maths.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>
+adding in functions that
+allow auto-conversion of list-like python objects to
+<a class="reference internal" href="api/maths.html#sire.maths.Vector" title="sire.maths.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>.
+It should almost be the case that a user will not have to use this class
+directly themselves, as things should just auto-convert. Added support for
+creating Vectors from plain numbers or length units, using the default length
+unit if plain numbers are used.</p></li>
+<li><p>Removed lots of unnecessary files. Moved some files into the website docs
+so that there is a single source of truth. Updated paths
+and links to point to the new locations in OpenBioSim. Fixed CI build issues
+on Windows by building in the right directory. Updated the pythonizing framework
+so that we only pythonize the C++ layer, and avoid the circular dependencies
+that were causing random import errors (particularly on Windows).</p></li>
+<li><p>Fixed lots of bugs and expanded the unit test suite to test the above
+functionality.</p></li>
 </ul>
 </section>
 <section id="github-michellab-june-22nd-2015-january-2023">
@@ -764,7 +898,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 11, 2023</div>
+              Last updated on Jan 13, 2023</div>
           </div>
           <div class="right-details">
             
