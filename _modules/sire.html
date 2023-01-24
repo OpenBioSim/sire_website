@@ -357,6 +357,7 @@
 <span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">config</span>
 
 <span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
+<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
 
 <span class="kn">from</span> <span class="nn">._pythonize</span> <span class="kn">import</span> <span class="n">use_mixed_api</span><span class="p">,</span> <span class="n">use_new_api</span><span class="p">,</span> <span class="n">use_old_api</span>
 <span class="kn">from</span> <span class="nn">._load</span> <span class="kn">import</span> <span class="p">(</span>
@@ -395,6 +396,10 @@
     <span class="s2">&quot;use_new_api&quot;</span><span class="p">,</span>
     <span class="s2">&quot;use_old_api&quot;</span><span class="p">,</span>
 <span class="p">]</span>
+
+
+<span class="c1"># filter out annoying double-wrapped warnings</span>
+<span class="n">_warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="s2">&quot;to-Python converter for&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_fix_openmm_path</span><span class="p">():</span>
@@ -1034,7 +1039,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 13, 2023</div>
+              Last updated on Jan 24, 2023</div>
           </div>
           <div class="right-details">
             

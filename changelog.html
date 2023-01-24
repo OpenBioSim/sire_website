@@ -366,7 +366,38 @@ since the project started in 2005.</p>
 organisation on <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 </section>
 <section id="january-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#january-2023" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.0...2023.1.1">2023.1.1</a> - January 2023<a class="headerlink" href="#january-2023" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix incompatibility between the updated code and the Boresch restraint code.</p></li>
+<li><p>Fixes try_import so that it works within a conda environment, and so that
+it only uses <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install dependencies.</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values of <code class="docutils literal notranslate"><span class="pre">r0</span></code> for null amber bonds and angles. Now the
+value of <code class="docutils literal notranslate"><span class="pre">r0</span></code> is taken from the current bond length, or else the
+options <code class="docutils literal notranslate"><span class="pre">keep_null_bonds=False</span></code> or <code class="docutils literal notranslate"><span class="pre">keep_null_angles=False</span></code> can be
+passed via a <code class="docutils literal notranslate"><span class="pre">map</span></code> to prevent the writing of null bonds and angles
+to amber parameter files.</p></li>
+<li><p>Fixed a bug in <a class="reference internal" href="api/sire.html#sire.save" title="sire.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.save()</span></code></a> that meant that the save directory was
+ignored when the format was specified. Files will now save into the correct
+directory.</p></li>
+<li><p>Updated the instructions for <a class="reference internal" href="contributing/development.html"><span class="doc">writing unit tests</span></a>
+to say how to use fixtures to load files, and how to use <code class="docutils literal notranslate"><span class="pre">tmpdir</span></code> to write
+files to a temporary directory during a test.</p></li>
+<li><p>Addition of lots of files, e.g. issue templates, pull request templates,
+security file etc to improve community engagement via GitHub.</p></li>
+<li><p>Created <a class="reference external" href="https://github.com/openbiosim/sire_bigtests">sire_bigtests</a> from
+<a class="reference external" href="https://github.com/michellab/SireUnitTests">SireUnitTests</a> and created
+an integration testing pipeline based on these tests. Now the latest <code class="docutils literal notranslate"><span class="pre">devel</span></code>
+release can be tested via <a class="reference external" href="https://github.com/openbiosim/sire_bigtests">sire_bigtests</a>
+as an extra validation check before creating a release. This release has
+been checked this way :-)</p></li>
+<li><p>Lots of minor bugfixes related to those checks, e.g. mostly relating
+to fixing paths on Windows. Now all the integration tests pass on Windows
+(something not before attained, as running the tests on Windows was
+not easy).</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Initial release of the OpenBioSim version of sire. The code has been completely
 refurbished using a tutorial-driven development process and has a new
@@ -898,7 +929,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 13, 2023</div>
+              Last updated on Jan 24, 2023</div>
           </div>
           <div class="right-details">
             
@@ -921,7 +952,8 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#github-openbiosim-january-2023-current">GitHub (OpenBioSim): January 2023 - current</a></li>
-<li><a class="reference internal" href="#january-2023">2023.1.0 - January 2023</a></li>
+<li><a class="reference internal" href="#january-2023">2023.1.1 - January 2023</a></li>
+<li><a class="reference internal" href="#id1">2023.1.0 - January 2023</a></li>
 <li><a class="reference internal" href="#github-michellab-june-22nd-2015-january-2023">GitHub (michellab): June 22nd 2015 - January 2023</a></li>
 <li><a class="reference internal" href="#google-code-august-7th-2006-april-1st-2015">Google Code: August 7th 2006 - April 1st 2015</a></li>
 <li><a class="reference internal" href="#local-subversion-february-5th-2005-july-25th-2006">Local Subversion: February 5th 2005 - July 25th 2006</a></li>

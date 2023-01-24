@@ -1,0 +1,1 @@
+../devel/searchindex.js
