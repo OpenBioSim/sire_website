@@ -729,6 +729,34 @@ to memory, thereby avoiding writing any data to a text file</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.smiles">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_hydrogens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#smiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.smiles" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a molecule that has been generated using the passed
+smiles string. This uses rdkit to create the molecule,
+so it must be installed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smiles_string</strong> – str
+The smiles string to interpret</p></li>
+<li><p><strong>add_hydrogens</strong> – bool (default True)
+Whether or not to automatically add hydrogens</p></li>
+<li><p><strong>generate_coordinates</strong> – bool (default True)
+Whether or not to automatically generate 3D coordinates.
+Note that generating the coordinates will automatically
+switch on addition of hydrogens</p></li>
+<li><p><strong>map</strong> – Property map if you want to put the molecule properties
+into different places</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns: sire.mol.Molecule</dt><dd><p>The actual molecule</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.supported_formats">
 <span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">supported_formats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#supported_formats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.supported_formats" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a string that describes all of the molecular file formats
@@ -821,7 +849,7 @@ not be used with new code</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 24, 2023</div>
+              Last updated on Feb 09, 2023</div>
           </div>
           <div class="right-details">
             
@@ -856,6 +884,7 @@ not be used with new code</p>
 <li><a class="reference internal" href="#sire.save"><code class="docutils literal notranslate"><span class="pre">save()</span></code></a></li>
 <li><a class="reference internal" href="#sire.save_to_string"><code class="docutils literal notranslate"><span class="pre">save_to_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.segid"><code class="docutils literal notranslate"><span class="pre">segid()</span></code></a></li>
+<li><a class="reference internal" href="#sire.smiles"><code class="docutils literal notranslate"><span class="pre">smiles()</span></code></a></li>
 <li><a class="reference internal" href="#sire.supported_formats"><code class="docutils literal notranslate"><span class="pre">supported_formats()</span></code></a></li>
 <li><a class="reference internal" href="#sire.thumbs_up"><code class="docutils literal notranslate"><span class="pre">thumbs_up()</span></code></a></li>
 <li><a class="reference internal" href="#sire.use_mixed_api"><code class="docutils literal notranslate"><span class="pre">use_mixed_api()</span></code></a></li>

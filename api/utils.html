@@ -542,6 +542,21 @@ style and wrapping</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.utils.assert_imported">
+<span class="sig-prename descclassname"><span class="pre">sire.utils.</span></span><span class="sig-name descname"><span class="pre">assert_imported</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/utils/_try_import.html#assert_imported"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.utils.assert_imported" title="Permalink to this definition">#</a></dt>
+<dd><p>Assert that the passed module has indeed been imported.
+This will raise a ModuleNotFoundError if the module
+has not been imported, and has instead been stubbed.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.utils.have_imported">
+<span class="sig-prename descclassname"><span class="pre">sire.utils.</span></span><span class="sig-name descname"><span class="pre">have_imported</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/sire/utils/_try_import.html#have_imported"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.utils.have_imported" title="Permalink to this definition">#</a></dt>
+<dd><p>Return whether or not the passed module has indeed
+been imported (and thus is not stubbed).</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.utils.try_import">
 <span class="sig-prename descclassname"><span class="pre">sire.utils.</span></span><span class="sig-name descname"><span class="pre">try_import</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">package_registry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/utils/_try_import.html#try_import"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.utils.try_import" title="Permalink to this definition">#</a></dt>
 <dd><p>Try to import the module called ‘name’, returning
@@ -550,8 +565,7 @@ is not available, then it looks up the name of
 the package to install using “package_registry”
 (or if this is not available, using just the name
 of the module). This will then be installed using
-“conda”, then “pip” then “easy_install” (first one
-that works will return).</p>
+“mamba”, then “conda” (first one that works will return).</p>
 <p>For example, use this via</p>
 <p>sys = try_import(“sys”)
 mdtraj = try_import(“mdtraj”)</p>
@@ -560,6 +574,9 @@ mdtraj = try_import(“mdtraj”)</p>
 <p>Note that you should use try_import_from if you
 want only specific symbols, e.g.</p>
 <p>(argv, stdout) = try_import_from(“sys”, [“argv”,”stdout”])</p>
+<p>This will return a _ModuleStub if this package cannot
+be imported. The _ModuleStub will raise a ModuleNotFoundError
+if any functonality from the module is used.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -612,7 +629,7 @@ ut = try_import_from(“mdtraj”, “utils”)</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 24, 2023</div>
+              Last updated on Feb 09, 2023</div>
           </div>
           <div class="right-details">
             
@@ -667,6 +684,8 @@ ut = try_import_from(“mdtraj”, “utils”)</p>
 <li><a class="reference internal" href="#sire.utils.Table.to_string"><code class="docutils literal notranslate"><span class="pre">Table.to_string()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#sire.utils.assert_imported"><code class="docutils literal notranslate"><span class="pre">assert_imported()</span></code></a></li>
+<li><a class="reference internal" href="#sire.utils.have_imported"><code class="docutils literal notranslate"><span class="pre">have_imported()</span></code></a></li>
 <li><a class="reference internal" href="#sire.utils.try_import"><code class="docutils literal notranslate"><span class="pre">try_import()</span></code></a></li>
 <li><a class="reference internal" href="#sire.utils.try_import_from"><code class="docutils literal notranslate"><span class="pre">try_import_from()</span></code></a></li>
 </ul>

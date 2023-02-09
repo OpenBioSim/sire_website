@@ -365,6 +365,7 @@
     <span class="s2">&quot;tutorial_url&quot;</span><span class="p">,</span>
     <span class="s2">&quot;load_test_files&quot;</span><span class="p">,</span>
     <span class="s2">&quot;supported_formats&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;smiles&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 
@@ -926,6 +927,100 @@
 
     <span class="n">files</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.bz2&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">load</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="smiles"><a class="viewcode-back" href="../../api/sire.html#sire.smiles">[docs]</a><span class="k">def</span> <span class="nf">smiles</span><span class="p">(</span>
+    <span class="n">smiles_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">add_hydrogens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">generate_coordinates</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a molecule that has been generated using the passed</span>
+<span class="sd">    smiles string. This uses rdkit to create the molecule,</span>
+<span class="sd">    so it must be installed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        smiles_string: str</span>
+<span class="sd">            The smiles string to interpret</span>
+<span class="sd">        add_hydrogens: bool (default True)</span>
+<span class="sd">            Whether or not to automatically add hydrogens</span>
+<span class="sd">        generate_coordinates: bool (default True)</span>
+<span class="sd">            Whether or not to automatically generate 3D coordinates.</span>
+<span class="sd">            Note that generating the coordinates will automatically</span>
+<span class="sd">            switch on addition of hydrogens</span>
+<span class="sd">        map:</span>
+<span class="sd">            Property map if you want to put the molecule properties</span>
+<span class="sd">            into different places</span>
+
+<span class="sd">    Returns: sire.mol.Molecule</span>
+<span class="sd">        The actual molecule</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+        <span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">AllChem</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span>
+            <span class="s2">&quot;Could not generate a molecule from a smiles string because &quot;</span>
+            <span class="s2">&quot;rdkit could not be loaded. Please install rdkit, e.g. &quot;</span>
+            <span class="s2">&quot;by running &#39;mamba install -c conda-forge rdkit&#39;&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">smiles_string</span><span class="p">,</span> <span class="s2">&quot;to_csv&quot;</span><span class="p">):</span>
+        <span class="c1"># convert to tsv from a dataframe</span>
+        <span class="n">smiles_col</span> <span class="o">=</span> <span class="s2">&quot;smiles&quot;</span>
+        <span class="n">name_col</span> <span class="o">=</span> <span class="s2">&quot;name&quot;</span>
+        <span class="n">smiles_string</span> <span class="o">=</span> <span class="n">smiles_string</span><span class="p">[[</span><span class="n">smiles_col</span><span class="p">,</span> <span class="n">name_col</span><span class="p">]]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">smiles_string</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="n">smiles_string</span> <span class="o">=</span> <span class="p">[</span><span class="n">smiles_string</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">smiles_string</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="c1"># now convert the list to a tsv string so this can be parsed</span>
+        <span class="c1"># by the supplier</span>
+        <span class="n">smiles_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles_string</span><span class="p">])</span>
+
+    <span class="n">supplier</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SmilesMolSupplierFromText</span><span class="p">(</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">smiles_string</span><span class="p">,</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">smilesColumn</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">nameColumn</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">titleLine</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">sanitize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">mols</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">supplier</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">mol</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Failed to generate from smiles string</span><span class="se">\n</span><span class="si">{</span><span class="n">smiles_string</span><span class="si">}</span><span class="se">\n</span><span class="s2">. &quot;</span>
+                <span class="s2">&quot;Please check that this is valid and try again.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">add_hydrogens</span> <span class="ow">or</span> <span class="n">generate_coordinates</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+                <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not add hydrogens: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">generate_coordinates</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="n">generate_coordinates</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">AllChem</span><span class="o">.</span><span class="n">EmbedMolecule</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+                <span class="n">AllChem</span><span class="o">.</span><span class="n">UFFOptimizeMolecule</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+                <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not generate coordinates: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">mols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="kn">from</span> <span class="nn">.convert</span> <span class="kn">import</span> <span class="n">rdkit_to_sire</span>
+
+    <span class="k">return</span> <span class="n">rdkit_to_sire</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span></div>
 </pre></div>
         </article>
       </div>
@@ -940,7 +1035,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 24, 2023</div>
+              Last updated on Feb 09, 2023</div>
           </div>
           <div class="right-details">
             

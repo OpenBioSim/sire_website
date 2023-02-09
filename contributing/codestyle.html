@@ -368,6 +368,14 @@ that it meets these styles).</p>
 <p>Python code should be written to be <a class="reference external" href="https://pep8.org">PEP8-compliant</a>,
 ideally autoformatted using a tool such as
 <a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The developers use <a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>
+and will autoformat all python code with this tool to maintain
+a consistent style. Please use <a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>
+if you can, as this will make diffs, pull requests and other changes
+smaller and easier for everyone to review. Thanks :-)</p>
+</div>
 </section>
 <section id="c">
 <h2>C++<a class="headerlink" href="#c" title="Permalink to this heading">#</a></h2>
@@ -520,6 +528,19 @@ possible to quickly comment out blocks of text using <code class="docutils liter
 <p>This document will continue to evolve. If you would like to debate
 an existing rule or propose a new rule then please
 <a class="reference external" href="https://github.com/OpenBioSim/sire/issues">raise an issue on GitHub</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The developers use the C++ autoformatting tool built into the C++
+extension of VSCode (e.g. as <a class="reference external" href="https://dev.to/thiagoow/format-ccpp-files-automatically-on-vs-code-ad7">described here</a>).
+This is based on (and formats identically to <a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">clang-format</a>
+using the <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span></code> theme - roughly equivalent to
+<code class="docutils literal notranslate"><span class="pre">clang-format</span> <span class="pre">-style=&quot;{</span> <span class="pre">BasedOnStyle:</span> <span class="pre">LLVM,</span> <span class="pre">UseTab:</span> <span class="pre">Never,</span> <span class="pre">IndentWidth:</span> <span class="pre">4,</span> <span class="pre">TabWidth:</span> <span class="pre">4,</span> <span class="pre">BreakBeforeBraces:</span> <span class="pre">Allman,</span> <span class="pre">AllowShortIfStatementsOnASingleLine:</span> <span class="pre">false,</span> <span class="pre">IndentCaseLabels:</span> <span class="pre">false,</span> <span class="pre">ColumnLimit:</span> <span class="pre">0,</span> <span class="pre">AccessModifierOffset:</span> <span class="pre">-4,</span> <span class="pre">NamespaceIndentation:</span> <span class="pre">All,</span> <span class="pre">FixNamespaceComments:</span> <span class="pre">false</span> <span class="pre">})&quot;</span></code>,
+and so can be installed on any IDE (or run from the command line).
+Please use the VSCode autoformatter, or
+<a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">clang-format</a> if you
+can, as this will make diffs, pull requests and other changes
+smaller and easier for everyone to review. Thanks :-)</p>
+</div>
 </section>
 </section>
 </section>
@@ -555,7 +576,7 @@ an existing rule or propose a new rule then please
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 24, 2023</div>
+              Last updated on Feb 09, 2023</div>
           </div>
           <div class="right-details">
             

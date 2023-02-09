@@ -354,9 +354,10 @@
         </div>
         <article role="main">
           <h1>Source code for sire.utils._try_import</h1><div class="highlight"><pre>
-<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;try_import&quot;</span><span class="p">,</span> <span class="s2">&quot;try_import_from&quot;</span><span class="p">]</span>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;try_import&quot;</span><span class="p">,</span> <span class="s2">&quot;try_import_from&quot;</span><span class="p">,</span> <span class="s2">&quot;assert_imported&quot;</span><span class="p">,</span> <span class="s2">&quot;have_imported&quot;</span><span class="p">]</span>
 
 <span class="n">_module_to_package</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">_failed_modules</span> <span class="o">=</span> <span class="p">{}</span>
 
 
 <span class="k">def</span> <span class="nf">_find_conda</span><span class="p">():</span>
@@ -451,15 +452,38 @@
     <span class="p">)</span>
 
 
+<span class="k">class</span> <span class="nc">_ModuleStub</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">install_command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="k">if</span> <span class="n">install_command</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_install_command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;mamba install </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_install_command</span> <span class="o">=</span> <span class="n">install_command</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;stubmodule &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">&#39; from /could/not/be/imported&gt;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Cannot continue as the module &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">&#39; &quot;</span>
+            <span class="s2">&quot;has not been installed. To continue, you &quot;</span>
+            <span class="s2">&quot;should install the module using the command &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_install_command</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+
 <div class="viewcode-block" id="try_import"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.try_import">[docs]</a><span class="k">def</span> <span class="nf">try_import</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package_registry</span><span class="o">=</span><span class="n">_module_to_package</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Try to import the module called &#39;name&#39;, returning</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Try to import the module called &#39;name&#39;, returning</span>
 <span class="sd">    the loaded module as an argument. If the module</span>
 <span class="sd">    is not available, then it looks up the name of</span>
 <span class="sd">    the package to install using &quot;package_registry&quot;</span>
 <span class="sd">    (or if this is not available, using just the name</span>
 <span class="sd">    of the module). This will then be installed using</span>
-<span class="sd">    &quot;conda&quot;, then &quot;pip&quot; then &quot;easy_install&quot; (first one</span>
-<span class="sd">    that works will return).</span>
+<span class="sd">    &quot;mamba&quot;, then &quot;conda&quot; (first one that works will return).</span>
 
 <span class="sd">    For example, use this via</span>
 
@@ -474,19 +498,30 @@
 <span class="sd">    want only specific symbols, e.g.</span>
 
 <span class="sd">    (argv, stdout) = try_import_from(&quot;sys&quot;, [&quot;argv&quot;,&quot;stdout&quot;])</span>
+
+<span class="sd">    This will return a _ModuleStub if this package cannot</span>
+<span class="sd">    be imported. The _ModuleStub will raise a ModuleNotFoundError</span>
+<span class="sd">    if any functonality from the module is used.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_failed_modules</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_ModuleStub</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="n">error_string</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mod</span>
-    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-        <span class="k">pass</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">error_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">package_registry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
         <span class="n">_install_package</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package_registry</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">try_import</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package_registry</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-    <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Failed to install module </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span></div>
+    <span class="n">_failed_modules</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">error_string</span>
+
+    <span class="k">return</span> <span class="n">_ModuleStub</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="try_import_from"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.try_import_from">[docs]</a><span class="k">def</span> <span class="nf">try_import_from</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fromlist</span><span class="p">,</span> <span class="n">package_registry</span><span class="o">=</span><span class="n">_module_to_package</span><span class="p">):</span>
@@ -534,7 +569,8 @@
             <span class="n">_install_package</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">package_registry</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">try_import_from</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fromlist</span><span class="p">,</span> <span class="n">package_registry</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Failed to install module &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fromlist</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">_ModuleStub</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;mamba install </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">nsyms</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -561,6 +597,24 @@
             <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="assert_imported"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.assert_imported">[docs]</a><span class="k">def</span> <span class="nf">assert_imported</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assert that the passed module has indeed been imported.</span>
+<span class="sd">    This will raise a ModuleNotFoundError if the module</span>
+<span class="sd">    has not been imported, and has instead been stubbed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="o">==</span> <span class="n">_ModuleStub</span><span class="p">:</span>
+        <span class="n">module</span><span class="o">.</span><span class="n">this_will_break</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="have_imported"><a class="viewcode-back" href="../../../api/utils.html#sire.utils.have_imported">[docs]</a><span class="k">def</span> <span class="nf">have_imported</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return whether or not the passed module has indeed</span>
+<span class="sd">    been imported (and thus is not stubbed).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="o">!=</span> <span class="n">_ModuleStub</span></div>
 </pre></div>
         </article>
       </div>
@@ -575,7 +629,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 24, 2023</div>
+              Last updated on Feb 09, 2023</div>
           </div>
           <div class="right-details">
             

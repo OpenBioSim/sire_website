@@ -357,11 +357,11 @@
         <article role="main">
           <section id="packaging-releases">
 <h1>Packaging releases<a class="headerlink" href="#packaging-releases" title="Permalink to this heading">#</a></h1>
-<p>Sire is now fully tested and deployed using GitHub actions.
+<p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is now (almost) fully tested and deployed using GitHub actions.
 The development process should be;</p>
 <ul class="simple">
-<li><p>New features are developed on feature branches, called <code class="docutils literal notranslate"><span class="pre">feature-{feature}</span></code>,
-either in the <a class="reference external" href="https://github.com/openbiosim/sire">main Sire repository</a>
+<li><p>New features are developed on forks or feature branches, called <code class="docutils literal notranslate"><span class="pre">feature-{feature}</span></code>,
+either in the <a class="reference external" href="https://github.com/openbiosim/sire">main sire repository</a>
 for authorised developers, or in personal forks for
 new developers.</p></li>
 <li><p>Bug fixes or issue fixes are developed on fix branches, called
@@ -373,14 +373,17 @@ DEVELOPERS CAN ACCEPT THE PULL REQUEST. Authorised developers will
 review the pull request as quickly as they can. They will be greatly
 helped if the feature is accompanied with tests, examples and/or tutorial
 instructions.</p></li>
+<li><p>Note that we encourage that new functionality in a pull request is
+documented, e.g. by adding to the tutorials or writing a detailed
+description for the website.</p></li>
 </ul>
-<p>The result of this is that “devel” should contain the fully-working and
-tested, and most up-to-date version of <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. However, this
-version should not be used for production runs.</p>
+<p>The result of this is that <code class="docutils literal notranslate"><span class="pre">devel</span></code> should contain the fully-working,
+documented and tested code, and most up-to-date version of <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>.
+However, this version should not be used for production runs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The group of developers authorised to have access to the
-<a class="reference external" href="https://github.com/openbiosim/sire">main Sire repository</a>
+<a class="reference external" href="https://github.com/openbiosim/sire">main sire repository</a>
 and to accept pull requests is not fixed,
 and will evolve over time. If you wish to join this group then
 please complete the tutorial and then demostrate your commitment
@@ -399,7 +402,8 @@ compatible and capable of being used for production runs, at least for
 the functionality that is fully described in the tutorial.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is the job of the release manager (currently
+<p>It is the job of the release managers (currently
+<a class="reference external" href="https://github.com/chryswoods">chryswoods</a> and
 <a class="reference external" href="https://github.com/lohedges">lohedges</a>) to decide when it is time
 to create a new release. If you are interested in helping join the release
 management group then please feel free to get in touch.</p>
@@ -407,14 +411,98 @@ management group then please feel free to get in touch.</p>
 </section>
 <section id="creating-a-release">
 <h2>Creating a release<a class="headerlink" href="#creating-a-release" title="Permalink to this heading">#</a></h2>
-<p>To create a release accept a pull request from devel into main. This
-will automatically trigger the GitHub Action to build the conda packages
-for the platforms and python versions that we currently support.
-These will be pushed automatically to conda-forge.</p>
-<p>Please remember to update the <a class="reference internal" href="../changelog.html"><span class="doc">Changelog</span></a> with details about this
-release. This should include the link at the top of the release that shows the
-commit differences between versions. This can be easily copied from a previous
-release and updated.</p>
+<p>There are a number of stages to go through to create a release:</p>
+<ol class="arabic simple">
+<li><p>Make sure that all changes have been merged into the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch,
+and the GitHub Action has run fully, building <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> on all
+supported platforms, running all the unit tests correctly, and
+building and uploading the conda packages to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> channel
+on <a class="reference external" href="https://anaconda.org/openbiosim/sire/files">anaconda.org</a>.</p></li>
+<li><p>Next, you should run the full suite of integration tests. These
+can be found in the
+<a class="reference external" href="https://github.com/openbiosim/sire_bigtests">sire_bigtests repo</a>.
+Push a change to this repo, which will trigger a run of all of
+the integration tests across all supported platforms on GitHub
+Actions. Make sure that these all pass. If they don’t, then
+fix any problems and go back to step 1.</p></li>
+<li><p>On your computer, checkout the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and then pull in the
+changes from <code class="docutils literal notranslate"><span class="pre">devel</span></code>, e.g. using the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>.
+There shouldn’t be any conflicts. If there are, resolve them so that
+<code class="docutils literal notranslate"><span class="pre">main</span></code> is identical to <code class="docutils literal notranslate"><span class="pre">devel</span></code>.</p></li>
+<li><p>Now update <code class="docutils literal notranslate"><span class="pre">version.txt</span></code> so that it contains the version number
+for this release. <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> uses a date-based numbering scheme.
+The version should be <code class="docutils literal notranslate"><span class="pre">YEAR.MAJOR.MINOR</span></code> where <code class="docutils literal notranslate"><span class="pre">YEAR</span></code> is the
+current year, <code class="docutils literal notranslate"><span class="pre">MAJOR</span></code> is the number of major release in this year
+(e.g. <code class="docutils literal notranslate"><span class="pre">2023.3</span></code> would be the third major release in <code class="docutils literal notranslate"><span class="pre">2023</span></code>)
+and <code class="docutils literal notranslate"><span class="pre">MINOR</span></code> is the patch release for the major release
+(e.g. <code class="docutils literal notranslate"><span class="pre">2023.3.0</span></code> would be the first version of the third major
+release in <code class="docutils literal notranslate"><span class="pre">2023</span></code>, while <code class="docutils literal notranslate"><span class="pre">2023.3.1</span></code> would be the first
+patch release). Minor releases should be used to fix bugs or minor
+issues with the code. Major releases should be used for new
+functionality.</p></li>
+<li><p>Now update <code class="docutils literal notranslate"><span class="pre">doc/source/changelog.rst</span></code> with the changelog since
+the last release. Start the entry with a title that (will) link
+to the changes on GitHub, e.g.
+<a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.0...2023.1.1">https://github.com/openbiosim/sire/compare/2023.1.0…2023.1.1</a>
+links to the changes between the <code class="docutils literal notranslate"><span class="pre">2023.1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">2023.1.1</span></code> releases.
+You can change the version numbers in this URL to look at the
+difference for your versions. Follow a similar format for changes
+as already exist in this file. Try to link to tutorials that
+describe new functionality if available.</p></li>
+<li><p>You can now commit your changes and push them to GitHub
+(e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></code> then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>). GitHub Actions will
+only be triggered on pushes to <code class="docutils literal notranslate"><span class="pre">devel</span></code>, so this won’t do anything (yet).</p></li>
+<li><p>Now create a git tag for this release. You can use the command with
+the format <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-a</span> <span class="pre">{VERSION}</span> <span class="pre">-m</span> <span class="pre">&quot;{VERSION}</span> <span class="pre">release&quot;</span></code>, e.g.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-a</span> <span class="pre">2023.1.1</span> <span class="pre">-m</span> <span class="pre">&quot;2023.1.1</span> <span class="pre">release&quot;</span></code> would be the
+tag for the <code class="docutils literal notranslate"><span class="pre">2023.1.1</span></code> release.</p></li>
+<li><p>Push this tag to GitHub, e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code>.</p></li>
+<li><p>Now we are finally ready to build the packages. Do this by checking
+out the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">devel</span></code>) and then pulling
+the changes from <code class="docutils literal notranslate"><span class="pre">main</span></code> into <code class="docutils literal notranslate"><span class="pre">devel</span></code> (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>).
+This will create a merge commit. Accept the commit and then
+push this back up to GitHub (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>). This will trigger the
+GitHub actions that will automatically build and upload all(*)
+the conda packages.</p></li>
+<li><p>(*) GitHub Actions don’t currently build the ARM64/aarch64 packages.
+These have to be built and uploaded manually. On a MacOS/M1 or
+Linux/aarch64 computer you should create build environments for
+the Python versions that <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> should support. Activate
+this environment, and then checkout the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, run
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">actions/update_recipe.py</span></code> and then run <code class="docutils literal notranslate"><span class="pre">conda-build</span></code>
+via the command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">mambabuild</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">openbiosim/label/dev</span> <span class="pre">recipes/sire</span></code>.
+This will result in a conda package in the <code class="docutils literal notranslate"><span class="pre">conda-bld</span></code> directory
+in the root directory of your conda environment. You then need
+to upload these packages to anaconda.org, e.g. via the command
+<code class="docutils literal notranslate"><span class="pre">anaconda</span> <span class="pre">--token</span> <span class="pre">{PASSWORD}</span> <span class="pre">upload</span> <span class="pre">--user</span> <span class="pre">openbiosim</span> <span class="pre">--label</span> <span class="pre">main</span> <span class="pre">--label</span> <span class="pre">dev</span> <span class="pre">--force</span> <span class="pre">{/path/to/sire-packages}</span></code>
+(modified as appropriate to include the anaconda password and the
+path to the built conda package).</p></li>
+<li><p>On GitHub, you can now create a release by using the
+<a class="reference external" href="https://github.com/OpenBioSim/sire/releases/new">Draft a New Release</a>
+link. Choose the version number for your release from the
+tag you created earlier. The text should be simple,
+e.g. titled <code class="docutils literal notranslate"><span class="pre">sire</span> <span class="pre">{VERSION}</span></code>, with the body
+<code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">{VERSION}</span> <span class="pre">release</span> <span class="pre">of</span> <span class="pre">sire.</span></code>.</p></li>
+<li><p>Next you should build the docker images for this release.
+Do this by following the instructions in the
+<a class="reference external" href="https://github.com/OpenBioSim/containers/blob/main/sire/README.md">containers repository</a>.
+You should make sure to run the extra command listed there
+to tag the container with the version number you used earlier.</p></li>
+<li><p>Finally(!) you can now update the website. To do this, follow the
+instructions in the <a class="reference external" href="https://github.com/OpenBioSim/sire_website/blob/main/README.md">website repository</a>.</p></li>
+<li><p>Bonus! If you are also creating a release of
+<a class="reference external" href="https://biosimspace.org">BioSimSpace</a> then you should also
+follow the instructions in the
+<a class="reference external" href="https://github.com/OpenBioSim/containers">containers repository</a>
+to build the notebook container image and instruct
+<a class="reference external" href="https://try.openbiosim.org">try.openbiosim.org</a> to update
+and use that image.</p></li>
+<li><p>Super-bonus! If you have time, please write a short news item piece
+that can be added to the <a class="reference external" href="https://openbiosim.org">openbiosim website</a>
+to announce this new release.</p></li>
+</ol>
+<p>(we are in the process of automating many of the above steps, so hope
+that this process will become much easier in the future)</p>
 </section>
 </section>
 
@@ -449,7 +537,7 @@ release and updated.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 24, 2023</div>
+              Last updated on Feb 09, 2023</div>
           </div>
           <div class="right-details">
             

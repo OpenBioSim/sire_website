@@ -8423,6 +8423,24 @@ Throw: SireError::incompatible_error</p>
 <dd><p>This class provides a Selector&lt;T&gt;-type interface to a
 collection of molecules.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.SelectorMol.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SelectorMol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Molecule)mol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.SelectorMol.append" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void append(SireMol::SelectorMol {lvalue},SireMol::Molecule)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>append( (SelectorMol)arg1, (SelectorMol)mols) -&gt; None :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void append(SireMol::SelectorMol {lvalue},SireMol::SelectorMol)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.SelectorMol.apply">
 <span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.apply" title="Permalink to this definition">#</a></dt>
 <dd><p>Call the passed function on all views in the container,
@@ -9453,7 +9471,7 @@ of the function to be called.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 24, 2023</div>
+              Last updated on Feb 09, 2023</div>
           </div>
           <div class="right-details">
             
@@ -10098,6 +10116,7 @@ of the function to be called.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol"><code class="docutils literal notranslate"><span class="pre">SelectorMol</span></code></a><ul>
+<li><a class="reference internal" href="#sire.mol.SelectorMol.append"><code class="docutils literal notranslate"><span class="pre">SelectorMol.append()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.apply"><code class="docutils literal notranslate"><span class="pre">SelectorMol.apply()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.apply_reduce"><code class="docutils literal notranslate"><span class="pre">SelectorMol.apply_reduce()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.assign"><code class="docutils literal notranslate"><span class="pre">SelectorMol.assign()</span></code></a></li>
