@@ -3,12 +3,12 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Creating Molecules from Smiles Strings" href="part05/01_smiles.html" /><link rel="prev" title="Moving Bonds, Angles and Dihedrals" href="part04/06_move_internals.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Converting Molecules" href="part05/01_convert.html" /><link rel="prev" title="Moving Bonds, Angles and Dihedrals" href="part04/06_move_internals.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
-        <title>Part 5 - Creating and Editing Molecules - openbiosim - sire</title>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+        <title>Part 5 - Interconverting with other Packages - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css" />
@@ -166,7 +166,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../_static/logo.svg" alt="Logo"/>
@@ -234,8 +234,11 @@
 <li class="toctree-l3"><a class="reference internal" href="part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Part 5 - Creating and Editing Molecules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="part05/01_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Part 5 - Interconverting with other Packages</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -244,6 +247,8 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/openmm.html">OpenMM Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -259,43 +264,47 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/cas.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/io.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/vol.html">Public API</a></li>
 </ul>
 </li>
@@ -308,7 +317,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
@@ -343,9 +352,7 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -359,24 +366,25 @@
           </label>
         </div>
         <article role="main">
-          <section id="part-5-creating-and-editing-molecules">
-<h1>Part 5 - Creating and Editing Molecules<a class="headerlink" href="#part-5-creating-and-editing-molecules" title="Permalink to this heading">#</a></h1>
-<p>Another powerful feature of <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is the ability to create and
-edit molecules. For example, you can add or remove atoms, bonds etc
-from existing molecules, or you can create molecules from, e.g.
-<a class="reference external" href="https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system">smiles strings</a>,
-or assemble molecules from fragments.</p>
+          <section id="part-5-interconverting-with-other-packages">
+<h1>Part 5 - Interconverting with other Packages<a class="headerlink" href="#part-5-interconverting-with-other-packages" title="Permalink to this heading">#</a></h1>
+<p>Another powerful feature of <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is the ability to interconvert
+and work with other molecular modelling python packages.</p>
 <p>You can also convert molecules between the <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> format and
 the format of other popular molecular packages, e.g.
 <a class="reference external" href="https://www.rdkit.org">rdkit</a>, <a class="reference external" href="https://openmm.org">openmm</a> and
-<a class="reference external" href="https://biosimspace.openbiosim.org">BioSimSpace</a>, and can use
-the functions in those packages for molecular editing.</p>
-<p>This chapter will teach you how to do all of the above, starting from the
-simplest point, of creating a molecule from a
-<a class="reference external" href="https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system">smiles string</a>.</p>
+<a class="reference external" href="https://biosimspace.openbiosim.org">BioSimSpace</a>.</p>
+<p>This chapter will teach you how to do the conversion, and also how
+this conversion is used in <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> to add functionality such as creation
+of molecules from smiles strings, rendering two-dimensional structure
+views of molecules, performing molecular dynamics and minimisation,
+and parameterising and solvating molecules.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="part05/01_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </div>
 </section>
@@ -386,17 +394,17 @@ simplest point, of creating a molecule from a
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="part05/01_smiles.html">
+          <a class="next-page" href="part05/01_convert.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Creating Molecules from Smiles Strings</div>
+                <div class="title">Converting Molecules</div>
               </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="part04/06_move_internals.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -412,10 +420,12 @@ simplest point, of creating a molecule from a
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 27, 2023</div>
+              Last updated on Mar 25, 2023</div>
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              
+            </div>
           </div>
         </div>
         
@@ -428,9 +438,6 @@ simplest point, of creating a molecule from a
     </aside>
   </div>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
