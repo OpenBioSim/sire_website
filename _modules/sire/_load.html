@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
         <title>sire._load - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
@@ -165,7 +165,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
@@ -233,8 +233,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part05.html">Part 5 - Creating and Editing Molecules</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/01_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -243,6 +246,8 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/openmm.html">OpenMM Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -258,43 +263,47 @@
 <li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
 </ul>
 </li>
@@ -307,7 +316,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
@@ -342,8 +351,7 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -362,14 +370,14 @@
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;load&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;save&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;save_to_string&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;expand&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;tutorial_url&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;load_test_files&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;supported_formats&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;smiles&quot;</span><span class="p">,</span>
+    <span class="s2">"load"</span><span class="p">,</span>
+    <span class="s2">"save"</span><span class="p">,</span>
+    <span class="s2">"save_to_string"</span><span class="p">,</span>
+    <span class="s2">"expand"</span><span class="p">,</span>
+    <span class="s2">"tutorial_url"</span><span class="p">,</span>
+    <span class="s2">"load_test_files"</span><span class="p">,</span>
+    <span class="s2">"supported_formats"</span><span class="p">,</span>
+    <span class="s2">"smiles"</span><span class="p">,</span>
 <span class="p">]</span>
 
 
@@ -377,7 +385,7 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
         <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="s2">&quot;The base URL for all molecule files used in the tutorial.&quot;</span>
+            <span class="s2">"The base URL for all molecule files used in the tutorial."</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -390,15 +398,15 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
 
-<span class="n">tutorial_url</span> <span class="o">=</span> <span class="n">_tutorial_url</span><span class="p">(</span><span class="s2">&quot;https://sire.openbiosim.org/m&quot;</span><span class="p">)</span>
+<span class="n">tutorial_url</span> <span class="o">=</span> <span class="n">_tutorial_url</span><span class="p">(</span><span class="s2">"https://sire.openbiosim.org/m"</span><span class="p">)</span>
 
 <span class="n">_range</span> <span class="o">=</span> <span class="nb">range</span>
 
 
 <div class="viewcode-block" id="supported_formats"><a class="viewcode-back" href="../../api/sire.html#sire.supported_formats">[docs]</a><span class="k">def</span> <span class="nf">supported_formats</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a string that describes all of the molecular file formats</span>
+<span class="w">    </span><span class="sd">"""Return a string that describes all of the molecular file formats</span>
 <span class="sd">    that are supported by Sire</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
 
     <span class="k">try</span><span class="p">:</span>
@@ -414,33 +422,33 @@
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2"> is not a directory!&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2"> is not a directory!"</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_get_gromacs_dir</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">os</span>
 
-    <span class="k">if</span> <span class="s2">&quot;GROMACS_HOME&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-        <span class="n">gromacs_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;GROMACS_HOME&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s2">"GROMACS_HOME"</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="n">gromacs_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"GROMACS_HOME"</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">gromacs_dir</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">gromacs_dir</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">gromacs_dir</span>
 
     <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">share_directory</span>
 
-    <span class="n">gromacs_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">share_directory</span><span class="p">,</span> <span class="s2">&quot;gromacs&quot;</span><span class="p">)</span>
+    <span class="n">gromacs_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">share_directory</span><span class="p">,</span> <span class="s2">"gromacs"</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">gromacs_dir</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">gromacs_dir</span>
 
-    <span class="c1"># it doesn&#39;t exist, so we need to download it</span>
-    <span class="n">gromacs_tbz2</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">share_directory</span><span class="p">,</span> <span class="s2">&quot;gromacs.tar.bz2&quot;</span><span class="p">)</span>
+    <span class="c1"># it doesn't exist, so we need to download it</span>
+    <span class="n">gromacs_tbz2</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">share_directory</span><span class="p">,</span> <span class="s2">"gromacs.tar.bz2"</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">gromacs_tbz2</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">urllib.request</span>
 
             <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tutorial_url</span><span class="si">}</span><span class="s2">/gromacs.tar.bz2&quot;</span><span class="p">,</span> <span class="n">gromacs_tbz2</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">tutorial_url</span><span class="si">}</span><span class="s2">/gromacs.tar.bz2"</span><span class="p">,</span> <span class="n">gromacs_tbz2</span>
             <span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="c1"># we cannot download - just give up</span>
@@ -452,7 +460,7 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">tarfile</span>
 
-        <span class="n">t</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gromacs_tbz2</span><span class="p">,</span> <span class="s2">&quot;r|bz2&quot;</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gromacs_tbz2</span><span class="p">,</span> <span class="s2">"r|bz2"</span><span class="p">)</span>
         <span class="n">t</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">share_directory</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
@@ -466,65 +474,65 @@
 <span class="k">def</span> <span class="nf">_resolve_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">os</span>
 
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;strpath&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"strpath"</span><span class="p">):</span>
         <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">strpath</span>
 
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;strpath&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">"strpath"</span><span class="p">):</span>
         <span class="n">directory</span> <span class="o">=</span> <span class="n">directory</span><span class="o">.</span><span class="n">strpath</span>
 
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.gz&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".gz"</span><span class="p">):</span>
             <span class="c1"># unzip the file first</span>
             <span class="n">unzipped</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">unzipped</span><span class="p">):</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using cached unzipped file &#39;</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using cached unzipped file '</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
                 <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
 
             <span class="n">_create_dir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
             <span class="n">unzipped</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">unzipped</span><span class="p">):</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using cached unzipped file &#39;</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using cached unzipped file '</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
                 <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
 
             <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unzipping &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unzipping '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
 
             <span class="kn">import</span> <span class="nn">gzip</span>
             <span class="kn">import</span> <span class="nn">shutil</span>
 
-            <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
                     <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
 
-        <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.bz2&quot;</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".bz2"</span><span class="p">):</span>
             <span class="c1"># unzip the file first</span>
             <span class="n">unzipped</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">unzipped</span><span class="p">):</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using cached unzipped file &#39;</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using cached unzipped file '</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
                 <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
 
             <span class="n">_create_dir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
             <span class="n">unzipped</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">unzipped</span><span class="p">):</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using cached unzipped file &#39;</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using cached unzipped file '</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
                 <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
 
             <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unzipping &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unzipping '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
 
             <span class="kn">import</span> <span class="nn">bz2</span>
             <span class="kn">import</span> <span class="nn">shutil</span>
 
-            <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
                     <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
@@ -532,35 +540,35 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)]</span>
 
-    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"http"</span><span class="p">):</span>
         <span class="c1"># try to download this from the internet</span>
         <span class="n">_create_dir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
-        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using cached download of &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using cached download of '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span>
                     <span class="n">filename</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="n">silent</span>
                 <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Cannot overwrite </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> as it is an &quot;</span>
-                    <span class="s2">&quot;existing directory!&quot;</span>
+                    <span class="sa">f</span><span class="s2">"Cannot overwrite </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> as it is an "</span>
+                    <span class="s2">"existing directory!"</span>
                 <span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading from &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Downloading from '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.bz2&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".bz2"</span><span class="p">):</span>
             <span class="c1"># try the bz2 file first</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="kn">import</span> <span class="nn">urllib.request</span>
 
-                <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.bz2&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.bz2&quot;</span><span class="p">)</span>
+                <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.bz2"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.bz2"</span><span class="p">)</span>
                 <span class="n">have_downloaded_file</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.bz2&quot;</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.bz2"</span>
             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                 <span class="n">have_downloaded_file</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">else</span><span class="p">:</span>
@@ -572,12 +580,12 @@
 
                 <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to download &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unable to download '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">': </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloaded file does not exist? </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Downloaded file does not exist? </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
         <span class="c1"># the first character should be a number</span>
@@ -591,16 +599,16 @@
             <span class="n">code</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
             <span class="c1"># https://files.rcsb.org/download/4hhb.pdb.gz</span>
             <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;https://files.rcsb.org/download/</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.pdb.gz&quot;</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">"https://files.rcsb.org/download/</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.pdb.gz"</span><span class="p">,</span>
                 <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
                 <span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">,</span>
             <span class="p">)</span>
-    <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;alphafold:&quot;</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"alphafold:"</span><span class="p">):</span>
         <span class="c1"># alphafold code</span>
         <span class="n">code</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span>
-        <span class="c1"># https://alphafold.ebi.ac.uk/files/AF-&quot; + pdbid + &quot;-F1-model_v1.pdb</span>
+        <span class="c1"># https://alphafold.ebi.ac.uk/files/AF-" + pdbid + "-F1-model_v1.pdb</span>
         <span class="k">return</span> <span class="n">_resolve_path</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;https://alphafold.ebi.ac.uk/files/AF-</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">-F1-model_v3.pdb&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">"https://alphafold.ebi.ac.uk/files/AF-</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">-F1-model_v3.pdb"</span><span class="p">,</span>
             <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
             <span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">,</span>
         <span class="p">)</span>
@@ -617,11 +625,11 @@
 
         <span class="k">return</span> <span class="n">paths</span>
 
-    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot find file &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cannot find file '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="expand"><a class="viewcode-back" href="../../api/sire.html#sire.expand">[docs]</a><span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Expand the set of paths with the supplied base.</span>
+<span class="w">    </span><span class="sd">"""Expand the set of paths with the supplied base.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">     base (str):</span>
@@ -632,21 +640,21 @@
 <span class="sd">         with the base.</span>
 
 <span class="sd">     suffix (str):</span>
-<span class="sd">         A suffix to attach to all files, e.g. &quot;.bz2&quot;</span>
+<span class="sd">         A suffix to attach to all files, e.g. ".bz2"</span>
 
 <span class="sd">     Returns:</span>
 <span class="sd">         list[str]:</span>
 <span class="sd">         The list of expanded filenames or URLs</span>
 
 <span class="sd">     Examples:</span>
-<span class="sd">         &gt;&gt;&gt; expand(&quot;https://sire.openbiosim.org/m&quot;, &quot;urea.gro&quot;, &quot;urea.top&quot;)</span>
-<span class="sd">         [&quot;https://sire.openbiosim.org/m/urea.gro&quot;, &quot;https://sire.openbiosim.org/n/urea.top&quot;]</span>
+<span class="sd">         &gt;&gt;&gt; expand("https://sire.openbiosim.org/m", "urea.gro", "urea.top")</span>
+<span class="sd">         ["https://sire.openbiosim.org/m/urea.gro", "https://sire.openbiosim.org/n/urea.top"]</span>
 
-<span class="sd">         &gt;&gt;&gt; expand(&quot;input&quot;, [&quot;ala.top&quot;, &quot;ala.crd&quot;])</span>
-<span class="sd">         [&quot;input/ala.top&quot;, &quot;input/ala.crd&quot;]</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="s2">&quot;suffix&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">suffix</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;suffix&quot;</span><span class="p">]</span>
+<span class="sd">         &gt;&gt;&gt; expand("input", ["ala.top", "ala.crd"])</span>
+<span class="sd">         ["input/ala.top", "input/ala.crd"]</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="s2">"suffix"</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">"suffix"</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">suffix</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -660,10 +668,10 @@
 
     <span class="n">expanded</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">if</span> <span class="n">base</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">base</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"http"</span><span class="p">):</span>
 
         <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span>
 
     <span class="k">else</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">os</span>
@@ -674,14 +682,14 @@
         <span class="k">if</span> <span class="n">suffix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">expanded</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">expanded</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}{</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+            <span class="n">expanded</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">path</span><span class="si">}{</span><span class="n">suffix</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">expanded</span></div>
 
 
 <div class="viewcode-block" id="load"><a class="viewcode-back" href="../../api/sire.html#sire.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Load the molecular system at &#39;path&#39;. This can be a filename</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Load the molecular system at 'path'. This can be a filename</span>
 <span class="sd">    of a URL. If it is a URL, then the file will be downloaded</span>
 <span class="sd">    to the current directory and loaded from there.</span>
 
@@ -697,7 +705,7 @@
 <span class="sd">        Optional dictionary that you can pass in that will be populated</span>
 <span class="sd">        with any error messages or warnings from the parsers as they</span>
 <span class="sd">        attempt to load in the molecular data. This can be helpful</span>
-<span class="sd">        in diagnosing why your file wasn&#39;t loaded.</span>
+<span class="sd">        in diagnosing why your file wasn't loaded.</span>
 
 <span class="sd">     show_warnings (bool):</span>
 <span class="sd">        Whether or not to print out any warnings that are encountered</span>
@@ -714,19 +722,19 @@
 <span class="sd">        a sire.system.System</span>
 
 <span class="sd">    Examples:</span>
-<span class="sd">         &gt;&gt;&gt; mols = load(&quot;caffeine.pdb&quot;)</span>
+<span class="sd">         &gt;&gt;&gt; mols = load("caffeine.pdb")</span>
 
-<span class="sd">         &gt;&gt;&gt; mols = load([&quot;ala.crd&quot;, &quot;ala.top&quot;])</span>
+<span class="sd">         &gt;&gt;&gt; mols = load(["ala.crd", "ala.top"])</span>
 
-<span class="sd">         &gt;&gt;&gt; mols = load(&quot;ala.crd&quot;, &quot;ala.top&quot;)</span>
+<span class="sd">         &gt;&gt;&gt; mols = load("ala.crd", "ala.top")</span>
 
-<span class="sd">         &gt;&gt;&gt; mols = load(&quot;https://something&quot;)</span>
+<span class="sd">         &gt;&gt;&gt; mols = load("https://something")</span>
 
 <span class="sd">         &gt;&gt;&gt; log = []</span>
-<span class="sd">         &gt;&gt;&gt; mols = load(&quot;caffeine.pdb&quot;, log=log)</span>
+<span class="sd">         &gt;&gt;&gt; mols = load("caffeine.pdb", log=log)</span>
 <span class="sd">         Exception</span>
-<span class="sd">         (look at &#39;log&#39; to find out what went wrong in detail)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">         (look at 'log' to find out what went wrong in detail)</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
         <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
@@ -735,18 +743,18 @@
     <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
         <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="s2">&quot;log&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">log</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;log&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s2">"log"</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">"log"</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">log</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">if</span> <span class="s2">&quot;directory&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">directory</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;directory&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s2">"directory"</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">directory</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">"directory"</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span>
+        <span class="n">directory</span> <span class="o">=</span> <span class="s2">"."</span>
 
-    <span class="k">if</span> <span class="s2">&quot;silent&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">silent</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;silent&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s2">"silent"</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">silent</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">"silent"</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">silent</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -759,20 +767,20 @@
     <span class="n">paths</span> <span class="o">=</span> <span class="n">p</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;No valid files specified. Nothing to load?&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">"No valid files specified. Nothing to load?"</span><span class="p">)</span>
 
     <span class="kn">from</span> <span class="nn">.io</span> <span class="kn">import</span> <span class="n">load_molecules</span>
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
 
-    <span class="nb">map</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;GROMACS_PATH&quot;</span><span class="p">:</span> <span class="n">_get_gromacs_dir</span><span class="p">(),</span> <span class="s2">&quot;show_warnings&quot;</span><span class="p">:</span> <span class="n">show_warnings</span><span class="p">}</span>
+    <span class="nb">map</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"GROMACS_PATH"</span><span class="p">:</span> <span class="n">_get_gromacs_dir</span><span class="p">(),</span> <span class="s2">"show_warnings"</span><span class="p">:</span> <span class="n">show_warnings</span><span class="p">}</span>
 
     <span class="k">return</span> <span class="n">load_molecules</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span></div>
 
 
 <span class="k">def</span> <span class="nf">_to_legacy_system</span><span class="p">(</span><span class="n">molecules</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Internal function to convert the passed set of molecule views</span>
+<span class="w">    </span><span class="sd">"""Internal function to convert the passed set of molecule views</span>
 <span class="sd">    into a sire.legacy.System.System</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">.legacy.System</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">LegacySystem</span>
 
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span> <span class="ow">is</span> <span class="n">LegacySystem</span><span class="p">:</span>
@@ -785,12 +793,12 @@
 
     <span class="n">s</span> <span class="o">=</span> <span class="n">LegacySystem</span><span class="p">()</span>
 
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="s2">&quot;to_molecule_group&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="s2">"to_molecule_group"</span><span class="p">):</span>
         <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecules</span><span class="o">.</span><span class="n">to_molecule_group</span><span class="p">())</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="kn">from</span> <span class="nn">.legacy.Mol</span> <span class="kn">import</span> <span class="n">MoleculeGroup</span>
 
-        <span class="n">m</span> <span class="o">=</span> <span class="n">MoleculeGroup</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">MoleculeGroup</span><span class="p">(</span><span class="s2">"all"</span><span class="p">)</span>
         <span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
         <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 
@@ -798,13 +806,13 @@
 
 
 <div class="viewcode-block" id="save_to_string"><a class="viewcode-back" href="../../api/sire.html#sire.save_to_string">[docs]</a><span class="k">def</span> <span class="nf">save_to_string</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="p">{},</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the passed molecules to an in-memory list of lines.</span>
+<span class="w">    </span><span class="sd">"""Save the passed molecules to an in-memory list of lines.</span>
 <span class="sd">    This will write the molecule(s) in the format specified</span>
 <span class="sd">    to memory, thereby avoiding writing any data to a text file</span>
 
 <span class="sd">    Note that you must pass in the format, and only a single</span>
-<span class="sd">    &quot;file&quot; can be written at a time.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    "file" can be written at a time.</span>
+<span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
 
@@ -820,7 +828,7 @@
     <span class="n">log</span><span class="o">=</span><span class="p">{},</span>
     <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the passed molecules to a file called &#39;filename&#39;. If the format</span>
+<span class="w">    </span><span class="sd">"""Save the passed molecules to a file called 'filename'. If the format</span>
 <span class="sd">    is not specified, then the format will be guessed from the</span>
 <span class="sd">    filename. If the format is specified, and is a list, then multiple</span>
 <span class="sd">    files will be written, one for each specified format.</span>
@@ -842,50 +850,50 @@
 
 <span class="sd">     format (str or list(str)):</span>
 <span class="sd">         The format (or formats) that should be used to write the</span>
-<span class="sd">         file (or files). If the format isn&#39;t specified, then it</span>
+<span class="sd">         file (or files). If the format isn't specified, then it</span>
 <span class="sd">         will be guessed from the extension used for `filename`.</span>
-<span class="sd">         If this doesn&#39;t have an extension, then it will be guessed</span>
+<span class="sd">         If this doesn't have an extension, then it will be guessed</span>
 <span class="sd">         based on the formats used to load the molecule originally.</span>
-<span class="sd">         If it still isn&#39;t available, then PDB will be used.</span>
+<span class="sd">         If it still isn't available, then PDB will be used.</span>
 
 <span class="sd">     log (dict):</span>
 <span class="sd">         Optional dictionary that you can pass in that will be populated</span>
 <span class="sd">         with any error messages or warnings from the parsers as they</span>
 <span class="sd">         attempt to write the molecular data. This can be helpful</span>
-<span class="sd">         in diagnosing why your file wasn&#39;t saved.</span>
+<span class="sd">         in diagnosing why your file wasn't saved.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">         list[str]:</span>
 <span class="sd">         The absolute paths/name(s) of the files that have been written.</span>
 
 <span class="sd">    Examples:</span>
-<span class="sd">         &gt;&gt;&gt; save(molecules, &quot;molecules.pdb&quot;)</span>
-<span class="sd">         [&quot;/path/to/molecules.pdb&quot;]</span>
+<span class="sd">         &gt;&gt;&gt; save(molecules, "molecules.pdb")</span>
+<span class="sd">         ["/path/to/molecules.pdb"]</span>
 
-<span class="sd">         &gt;&gt;&gt; save([mol1, mol2, mol3], &quot;molecules.sdf&quot;)</span>
-<span class="sd">         [&quot;/path/to/molecules.sdf&quot;]</span>
+<span class="sd">         &gt;&gt;&gt; save([mol1, mol2, mol3], "molecules.sdf")</span>
+<span class="sd">         ["/path/to/molecules.sdf"]</span>
 
-<span class="sd">         &gt;&gt;&gt; save(mols, &quot;ala&quot;, format=[&quot;top&quot;, &quot;crd&quot;])</span>
-<span class="sd">         [&quot;/path/to/ala.top&quot;, &quot;/path/to/ala.crd&quot;]</span>
+<span class="sd">         &gt;&gt;&gt; save(mols, "ala", format=["top", "crd"])</span>
+<span class="sd">         ["/path/to/ala.top", "/path/to/ala.crd"]</span>
 
 <span class="sd">         &gt;&gt;&gt; log = {}</span>
-<span class="sd">         &gt;&gt;&gt; save(mols, &quot;broken.top&quot;, log=log)</span>
+<span class="sd">         &gt;&gt;&gt; save(mols, "broken.top", log=log)</span>
 <span class="sd">         Exception</span>
 <span class="sd">         (look at `log` to find in detail what went wrong)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;strpath&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"strpath"</span><span class="p">):</span>
         <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">strpath</span>
 
     <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
             <span class="nb">format</span> <span class="o">=</span> <span class="p">[</span><span class="nb">format</span><span class="p">]</span>
 
-        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;fileformat&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">format</span><span class="p">))</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"fileformat"</span><span class="p">,</span> <span class="s2">","</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">format</span><span class="p">))</span>
 
     <span class="n">molecules</span> <span class="o">=</span> <span class="n">_to_legacy_system</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
 
@@ -893,9 +901,9 @@
 
 
 <div class="viewcode-block" id="load_test_files"><a class="viewcode-back" href="../../api/sire.html#sire.load_test_files">[docs]</a><span class="k">def</span> <span class="nf">load_test_files</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load the passed files that are part of the unit testing</span>
+<span class="w">    </span><span class="sd">"""Load the passed files that are part of the unit testing</span>
 <span class="sd">    and return the resulting molecules. This will cache the files</span>
-<span class="sd">    into a directory called &quot;../cache&quot; so that downloads can be shared</span>
+<span class="sd">    into a directory called "../cache" so that downloads can be shared</span>
 <span class="sd">    between tests. You should only need this function if you</span>
 <span class="sd">    are writing unit tests.</span>
 
@@ -907,7 +915,7 @@
 <span class="sd">    Returns:</span>
 <span class="sd">     sire.system.System</span>
 <span class="sd">         The loaded molecules</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
         <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">files</span><span class="p">]</span>
 
@@ -918,32 +926,32 @@
 
     <span class="n">d</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;tests&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"tests"</span><span class="p">):</span>
         <span class="c1"># we are running in the tests directory, so cache downloads here</span>
-        <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&quot;cache&quot;</span><span class="p">)</span>
+        <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">"cache"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">d2</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">d</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">d2</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;tests&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">d2</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"tests"</span><span class="p">):</span>
             <span class="c1"># we are a subdirectory of the parent directory</span>
-            <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="s2">&quot;cache&quot;</span><span class="p">)</span>
+            <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="s2">"cache"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&quot;cache&quot;</span><span class="p">)</span>
+            <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">"cache"</span><span class="p">)</span>
 
-    <span class="n">files</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.bz2&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">load</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">".bz2"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">load</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="smiles"><a class="viewcode-back" href="../../api/sire.html#sire.smiles">[docs]</a><span class="k">def</span> <span class="nf">smiles</span><span class="p">(</span>
     <span class="n">smiles</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">labels</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">smiles_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;smiles&quot;</span><span class="p">,</span>
-    <span class="n">labels_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;labels&quot;</span><span class="p">,</span>
+    <span class="n">smiles_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"smiles"</span><span class="p">,</span>
+    <span class="n">labels_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"labels"</span><span class="p">,</span>
     <span class="n">add_hydrogens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">generate_coordinates</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Return a molecule that has been generated using the passed</span>
 <span class="sd">    smiles string. This uses rdkit to create the molecule,</span>
 <span class="sd">    so it must be installed.</span>
@@ -961,30 +969,32 @@
 <span class="sd">        labels: str or list[str]</span>
 <span class="sd">            The label (name) for the molecule that will be created.</span>
 <span class="sd">            This should be a single string or a list of strings depending</span>
-<span class="sd">            on &#39;smiles&#39;. Note that this will be ignored if a</span>
+<span class="sd">            on 'smiles'. Note that this will be ignored if a</span>
 <span class="sd">            Dataframe is passed in. Note that if this is not passed in</span>
 <span class="sd">            then the label will be taken from the smiles string</span>
 <span class="sd">        smiles_column: str</span>
-<span class="sd">            The name of the smiles column in the Dataframe (default &#39;smiles&#39;)</span>
+<span class="sd">            The name of the smiles column in the Dataframe (default 'smiles')</span>
 <span class="sd">        labels_column: str</span>
-<span class="sd">            The name of the labels column in the Dataframe (default &#39;labels&#39;)</span>
+<span class="sd">            The name of the labels column in the Dataframe (default 'labels')</span>
 <span class="sd">        add_hydrogens: bool (default True)</span>
-<span class="sd">            Whether or not to automatically add hydrogens</span>
+<span class="sd">            Whether or not to automatically add hydrogens. Note that</span>
+<span class="sd">            not adding hydrogens will automatically disable the</span>
+<span class="sd">            generation of coordinates.</span>
 <span class="sd">        generate_coordinates: bool (default True)</span>
 <span class="sd">            Whether or not to automatically generate 3D coordinates.</span>
-<span class="sd">            Note that generating the coordinates will automatically</span>
-<span class="sd">            switch on addition of hydrogens</span>
+<span class="sd">            Note that generating coordinates requires that</span>
+<span class="sd">            hydrogens are automatically added.</span>
 <span class="sd">        map:</span>
 <span class="sd">            Property map if you want to put the molecule properties</span>
 <span class="sd">            into different places</span>
 
 <span class="sd">    Returns: sire.mol.Molecule</span>
 <span class="sd">        The actual molecule</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">.convert</span> <span class="kn">import</span> <span class="n">rdkit_to_sire</span>
     <span class="kn">from</span> <span class="nn">.legacy.Convert</span> <span class="kn">import</span> <span class="n">smiles_to_rdkit</span>
 
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="s2">&quot;to_csv&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="s2">"to_csv"</span><span class="p">):</span>
         <span class="c1"># convert to a pair of lists from the dataframe</span>
         <span class="n">labels</span> <span class="o">=</span> <span class="n">smiles</span><span class="p">[[</span><span class="n">labels_column</span><span class="p">]]</span>
         <span class="n">smiles</span> <span class="o">=</span> <span class="n">smiles</span><span class="p">[[</span><span class="n">smiles_column</span><span class="p">]]</span>
@@ -1003,8 +1013,8 @@
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;The number of smiles strings </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span><span class="si">}</span><span class="s2"> must match the &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;number of labels (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+                <span class="sa">f</span><span class="s2">"The number of smiles strings </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span><span class="si">}</span><span class="s2"> must match the "</span>
+                <span class="sa">f</span><span class="s2">"number of labels (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
             <span class="p">)</span>
 
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
@@ -1012,8 +1022,8 @@
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span>
         <span class="nb">map</span><span class="p">,</span>
         <span class="p">{</span>
-            <span class="s2">&quot;add_hydrogens&quot;</span><span class="p">:</span> <span class="n">add_hydrogens</span><span class="p">,</span>
-            <span class="s2">&quot;generate_coordinates&quot;</span><span class="p">:</span> <span class="n">generate_coordinates</span><span class="p">,</span>
+            <span class="s2">"add_hydrogens"</span><span class="p">:</span> <span class="n">add_hydrogens</span><span class="p">,</span>
+            <span class="s2">"generate_coordinates"</span><span class="p">:</span> <span class="n">generate_coordinates</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">)</span>
 
@@ -1034,10 +1044,12 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 27, 2023</div>
+              Last updated on Mar 27, 2023</div>
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              
+            </div>
           </div>
         </div>
         
@@ -1050,9 +1062,6 @@
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>

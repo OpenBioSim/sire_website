@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Acknowledgements" href="acknowledgements.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
         <title>Changelog - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_style.css" />
@@ -166,7 +166,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo.svg" alt="Logo"/>
@@ -234,8 +234,11 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/index_part05.html">Part 5 - Creating and Editing Molecules</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorial/part05/01_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -244,6 +247,8 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet/openmm.html">OpenMM Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -259,43 +264,47 @@
 <li class="toctree-l4"><a class="reference internal" href="api/cas.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/io.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/vol.html">Public API</a></li>
 </ul>
 </li>
@@ -308,7 +317,7 @@
 <li class="toctree-l1"><a class="reference internal" href="support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/packaging.html">Packaging releases</a></li>
@@ -343,9 +352,7 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -369,10 +376,92 @@ since the project started in 2005.</p>
 <a class="reference external" href="https://github.com/openbiosim">OpenBioSim</a>
 organisation on <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 </section>
+<section id="march-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.3...2023.2.0">2023.2.0</a> - March 2023<a class="headerlink" href="#march-2023" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Completed the <a class="reference internal" href="api/convert.html#module-sire.convert" title="sire.convert"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.convert</span></code></a> framework for interconverting <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
+objects with <a class="reference external" href="https://biosimspace.openbiosim.org">BioSimSpace</a>,
+<a class="reference external" href="https://rdkit.org">RDKit</a> and <a class="reference external" href="https://openmm.org">OpenMM</a>.
+This is now <a class="reference internal" href="tutorial/part05/01_convert.html"><span class="doc">fully documented in a tutorial</span></a>.</p></li>
+<li><p>Added support for creating molecules from smiles strings, or generating
+smiles strings from molecules, based on the RDKit integration. Have
+also added a <code class="xref py py-func docutils literal notranslate"><span class="pre">view2d()</span></code> function that generates
+two-dimensional structure views of molecules. These have infered bond orders,
+formal charges and stereochemistries. This is documented in
+<a class="reference internal" href="tutorial/part05/02_view.html"><span class="doc">two</span></a> <a class="reference internal" href="tutorial/part05/03_smiles.html"><span class="doc">tutorials</span></a>.</p></li>
+<li><p>Added new support to the 3D view code to give control over the representation
+used to view the molecule (e.g. licorice, spacefill, cartoon etc). This is
+documented in full (together with more detail about 2D views) in
+a <a class="reference internal" href="cheatsheet/view.html"><span class="doc">detailed guide</span></a>.</p></li>
+<li><p>Added support for performing minimisation and molecular dynamics simulations
+based on the OpenMM integration. This is documented in full via both
+<a class="reference internal" href="tutorial/part05/04_dynamics.html"><span class="doc">a tutorial</span></a> and a
+<a class="reference internal" href="cheatsheet/openmm.html"><span class="doc">detailed guide</span></a>.</p></li>
+<li><p>Fixed the Amber PRMTOP <a class="reference external" href="https://github.com/OpenBioSim/sire/commit/397271f4229f3cbed6a4c3b425e4baaf4aae4ec5">dihedral ring bug</a>.</p></li>
+<li><p>Fixed the bug regarding preservation of water properties when
+<a class="reference external" href="https://github.com/michellab/BioSimSpace/issues/247">changing topology</a>.</p></li>
+<li><p>Fixed the bug that caused simulation restarts from short <code class="docutils literal notranslate"><span class="pre">waterswap</span></code>
+jobs <a class="reference external" href="https://github.com/OpenBioSim/sire/issues/11">to fail</a>.</p></li>
+<li><p>Added versioned package support to <a class="reference internal" href="api/utils.html#sire.utils.try_import" title="sire.utils.try_import"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.utils.try_import()</span></code></a>. Now the version
+of the package to be installed can be specified.</p></li>
+<li><p>Moved <code class="docutils literal notranslate"><span class="pre">pymbar</span></code> from a <code class="docutils literal notranslate"><span class="pre">run</span></code> to <code class="docutils literal notranslate"><span class="pre">host</span></code> dependency, and switched
+<code class="docutils literal notranslate"><span class="pre">analyse_freenrg</span></code> to use <a class="reference internal" href="api/utils.html#sire.utils.try_import" title="sire.utils.try_import"><code class="xref py py-func docutils literal notranslate"><span class="pre">try_import()</span></code></a> to import
+the module. <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> now doesn’t depend on <code class="docutils literal notranslate"><span class="pre">pymbar&lt;4</span></code>. Instead,
+<code class="docutils literal notranslate"><span class="pre">pymbar</span></code> will be installed at run-time if <code class="docutils literal notranslate"><span class="pre">analyse_freenrg</span></code> is
+used in <code class="docutils literal notranslate"><span class="pre">mbar</span></code> mode.</p></li>
+<li><p>Updated the list of build, run and host dependencies to reduce the number
+of pinned dependencies for <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. This included fixing the way we
+specify <code class="docutils literal notranslate"><span class="pre">blas</span></code> so that we don’t force a pin to <code class="docutils literal notranslate"><span class="pre">openblas</span></code>,
+removing the requirement for <code class="docutils literal notranslate"><span class="pre">watchdog</span></code> as it is not used any more,
+removing <code class="docutils literal notranslate"><span class="pre">pypdb</span></code> from the BioSimSpace run requirements,
+and switching to <code class="docutils literal notranslate"><span class="pre">qt-main</span></code> rather than the entire <code class="docutils literal notranslate"><span class="pre">qt</span></code> package. Our run
+dependencies are now just <code class="docutils literal notranslate"><span class="pre">boost</span></code>, <code class="docutils literal notranslate"><span class="pre">gsl</span></code>, <code class="docutils literal notranslate"><span class="pre">lazy_import</span></code>,
+<code class="docutils literal notranslate"><span class="pre">libnetcdf</span></code>, <code class="docutils literal notranslate"><span class="pre">openmm</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">qt-main</span></code>, <code class="docutils literal notranslate"><span class="pre">rich</span></code> and <code class="docutils literal notranslate"><span class="pre">tbb</span></code>.</p></li>
+<li><p>Updated the name of the <a class="reference external" href="https://github.com/OpenBioSim/sire/commit/60cb5827635de0abc7f88419b596586c0e8c185f">TIP4P template</a>
+to match convention.</p></li>
+<li><p>Added a utility function used by BioSimSpace to remove specified named
+properties from all molecules in a collection.</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/OpenBioSim/sire/issues/21">the bug in the Gro87 parser</a>
+whereby garbage velocities were written for molecules that didn’t have
+a velocity property. These will now be given a default velocity of zero.</p></li>
+<li><p>Added an option that can be used to fix an
+<a class="reference external" href="https://github.com/OpenBioSim/sire/issues/23">atom numbering issue</a> when
+writing PDB files that involve <code class="docutils literal notranslate"><span class="pre">TER</span></code> records and multiple molecules.</p></li>
+<li><p>Added a fix to <a class="reference external" href="https://github.com/OpenBioSim/sire/commit/6cb7df19721799ff771f235606350bba96bd6e4b">replace spaces</a>
+in GROMACS molecular topology names with underscores, so that topology files
+written by <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> can be read by GROMACS.</p></li>
+<li><p>Added the <a class="reference internal" href="api/system.html#sire.system.ForceFieldInfo" title="sire.system.ForceFieldInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.system.ForceFieldInfo</span></code></a> class to hold and report
+metadata related to the forcefields used to calculate energies and
+perform molecular dynamics. This is now used to parse and interpret
+this metadata, giving consistency between the new OpenMM-based
+dynamics code and the energy functions that used the
+in-built molecular mechanics engine.</p></li>
+<li><p>Added <a class="reference external" href="https://github.com/OpenBioSim/sire/commit/71fcf9a0345f9e07b3ec9f56fe4f33b1aada6d4b">a fix</a>
+for better handling of <code class="xref py py-class docutils literal notranslate"><span class="pre">AtomRadii</span></code>-based properties.  This
+helps ensure that radii will be given lengths by default, even if they
+are initialised with zero values.</p></li>
+<li><p>Removed the global warnings filter as this was no longer needed.
+<a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> will now not automatically filter out all warnings.</p></li>
+<li><p>Updated <a class="reference internal" href="api/utils.html#sire.utils.Console" title="sire.utils.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">Console</span></code></a> to use the in-built spinner from
+<a class="reference external" href="https://rich.readthedocs.io">rich</a> rather than one based on <code class="docutils literal notranslate"><span class="pre">yaspin</span></code>.
+This removes a dependency and also better integrates the spinner code.</p></li>
+<li><p>Added Python 3.10 support and now build Python 3.10 packages. This is now
+the default version of Python for <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>, and the version we
+recommend for new workflows. Note that we will drop automatic building
+of Python 3.8 packages later this year (likely Q3 or Q4). This will be
+timed to co-incide with when we add Python 3.11 support, and when
+(we anticipate) conda-forge will drop Python 3.8. Our aim is to only
+build packages for a maximum of 3 Python versions at a time.</p></li>
+<li><p>Added the <code class="docutils literal notranslate"><span class="pre">future</span></code> branch for feature branches that are accepted,
+but not yet ready for the next release. Adopting a more
+<a class="reference internal" href="contributing/roadmap.html"><span class="doc">regular release and bugfix process</span></a>
+based on a quarterly release cycle.</p></li>
+</ul>
+</section>
 <section id="february-2023">
 <h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.2...2023.1.3">2023.1.3</a> - February 2023<a class="headerlink" href="#february-2023" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Added the beginnings of the new <code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.convert</span></code> framework for converting
+<li><p>Added the beginnings of the new <a class="reference internal" href="api/convert.html#module-sire.convert" title="sire.convert"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.convert</span></code></a> framework for converting
 between different molecule object formats. Created initial converters for RDKit,
 so that we can convert sire molecules to RDKit molecules. This is still considered
 experimental. It will be cleaned up fully for 2023.2.0. It has been added now
@@ -567,7 +656,7 @@ examples in its documentation that show how is can be used. Made sure that
 all of the new functionality can use PropertyMap and uses
 <a class="reference internal" href="api/base.html#sire.base.create_map" title="sire.base.create_map"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_map()</span></code></a>
 to support function calls like
-<code class="docutils literal notranslate"><span class="pre">cursor.translate(</span> <span class="pre">(1,2,3),</span> <span class="pre">map={&quot;coordinates&quot;:&quot;coords2&quot;}</span> <span class="pre">)</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">cursor.translate(</span> <span class="pre">(1,2,3),</span> <span class="pre">map={"coordinates":"coords2"}</span> <span class="pre">)</span></code>.</p></li>
 <li><p>Speaking of which, also updated <a class="reference internal" href="api/maths.html#sire.maths.Vector" title="sire.maths.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>
 adding in functions that
 allow auto-conversion of list-like python objects to
@@ -588,23 +677,23 @@ functionality.</p></li>
 </section>
 <section id="github-michellab-june-22nd-2015-january-2023">
 <h2>GitHub (michellab): June 22nd 2015 - January 2023<a class="headerlink" href="#github-michellab-june-22nd-2015-january-2023" title="Permalink to this heading">#</a></h2>
-<p>Thanks to <a class="reference external" href="https://github.com/ppxasjsm">&#64;ppxasjsm</a> and
-<a class="reference external" href="https://github.com/jmichel80">&#64;jmichel80</a> development
+<p>Thanks to <a class="reference external" href="https://github.com/ppxasjsm">@ppxasjsm</a> and
+<a class="reference external" href="https://github.com/jmichel80">@jmichel80</a> development
 was migrated into the <a class="reference external" href="https://github.com/michellab">michellab</a>
 organisation on <a class="reference external" href="https://github.com/michellab/sire">GitHub</a>.</p>
 <p>This comprised 2495 commits, from developers
-<a class="reference external" href="https://github.com/lohedges">&#64;lohedges</a>,
-<a class="reference external" href="https://github.com/chryswoods">&#64;chryswoods</a>,
-<a class="reference external" href="https://github.com/ppxasjsm">&#64;ppxasjsm</a>,
-<a class="reference external" href="https://github.com/halx">&#64;halx</a>,
-<a class="reference external" href="https://github.com/jmichel80">&#64;jmichel80</a>,
-<a class="reference external" href="https://github.com/ptosco">&#64;ptosco</a>,
-<a class="reference external" href="https://github.com/SofiaBariami">&#64;SofiaBariami</a>,
-<a class="reference external" href="https://github.com/fjclark">&#64;fjclark</a>,
-<a class="reference external" href="https://github.com/Steboss">&#64;Steboss</a>,
-<a class="reference external" href="https://github.com/nigel-palmer">&#64;nigel-palmer</a>,
-<a class="reference external" href="https://github.com/msuruzhon">&#64;msuruzon</a> and
-<a class="reference external" href="https://github.com/kexul">&#64;kexul</a>.</p>
+<a class="reference external" href="https://github.com/lohedges">@lohedges</a>,
+<a class="reference external" href="https://github.com/chryswoods">@chryswoods</a>,
+<a class="reference external" href="https://github.com/ppxasjsm">@ppxasjsm</a>,
+<a class="reference external" href="https://github.com/halx">@halx</a>,
+<a class="reference external" href="https://github.com/jmichel80">@jmichel80</a>,
+<a class="reference external" href="https://github.com/ptosco">@ptosco</a>,
+<a class="reference external" href="https://github.com/SofiaBariami">@SofiaBariami</a>,
+<a class="reference external" href="https://github.com/fjclark">@fjclark</a>,
+<a class="reference external" href="https://github.com/Steboss">@Steboss</a>,
+<a class="reference external" href="https://github.com/nigel-palmer">@nigel-palmer</a>,
+<a class="reference external" href="https://github.com/msuruzhon">@msuruzon</a> and
+<a class="reference external" href="https://github.com/kexul">@kexul</a>.</p>
 <p>Here is the changelog for this stage of development.</p>
 <blockquote>
 <div><dl>
@@ -691,14 +780,14 @@ right directory. Updated the pythonizing framework so that we
 only pythonize the C++ layer, and avoid the circular dependencies
 that were causing random import errors (particularly on Windows).</p>
 </dd>
-<dt>[2023.0.2] December 2023: Fix multiple distance restraint bug in SOMD</dt><dd><p>(&#64;fjclark). Add support for PME FEP with SOMD and fix
-associated bugs (&#64;halx, &#64;jmichel80). Fix CI issues so that
+<dt>[2023.0.2] December 2023: Fix multiple distance restraint bug in SOMD</dt><dd><p>(@fjclark). Add support for PME FEP with SOMD and fix
+associated bugs (@halx, @jmichel80). Fix CI issues so that
 PRs use the correct URL when triggered by external forks.
 Exclude dummy atoms when repartitioning hydrogen masses.
 Deprecate py37.</p>
 </dd>
 <dt>[2023.0.1] November 2023: Improve handling of HETATM and TER records in</dt><dd><p>PDB files. Fix SOMD selection issues following update to the
-2023 API. Fix writing of steps to SOMD simfile.dat (&#64;fjclark).
+2023 API. Fix writing of steps to SOMD simfile.dat (@fjclark).
 Throw exception when CHAMBER format AMBER topology files are
 detected. Expose toVector() method for the velocity property.
 Match against inverted dihedral records of for A-B-C-A when
@@ -728,7 +817,7 @@ support MacOS M1 and Windows. The conda recipe has been
 updated to use these scripts. Conda packages are now built
 and supported across Linux, MacOS and Windows.</p>
 </dd>
-<dt>[2022.3.0] June 2022 - Added support for parsing SDF files (&#64;chryswoods).</dt><dd><p>Move conda build process to Miniforge and mambdabuild (boa) to
+<dt>[2022.3.0] June 2022 - Added support for parsing SDF files (@chryswoods).</dt><dd><p>Move conda build process to Miniforge and mambdabuild (boa) to
 avoid timeouts and memory issues. Update GroTop parser to ensure
 new atom types are created when names match but parameters
 differ. Added additional BioSimSpace wrapper to update
@@ -743,7 +832,7 @@ operators to Sire.Unit.GeneralUnit.</p>
 <dt>[2022.2.0] March 2022 - Fixed formatting of SOLVENT_POINTERS flag in</dt><dd><p>AmberPrm7 parser. Removed duplicate definition of sigma_av
 in OpenMMFreEnergySt.cpp. Fixed SOMD issues related to
 assumption that perturbable molecule always has MolIdx(1)
-(&#64;fjclark). Fixed wrappers and added significant performance
+(@fjclark). Fixed wrappers and added significant performance
 enhancements to the SireIO::updateCoordinatesAndVelocities
 function. This significantly (200x) speeds up the remapping
 of coordinates/velocities from SOMD trajectory frames, which
@@ -754,23 +843,23 @@ routine called by SireMaths::align.</p>
 </dd>
 <dt>[2022.1.0] Jan 2022 - Fixed counting of protons to account for dummy atoms</dt><dd><p>when swapping water topology and ensure that original molecular
 properties are preserved. Added a fallback to the BGFS solver
-to improve robustness of FEP analysis (&#64;kexul). Fixed a bug
+to improve robustness of FEP analysis (@kexul). Fixed a bug
 that caused distance restraints to be skipped if the ligand
-wasn’t the first molecule in the FEP topology (&#64;jmichel80,
-&#64;fjclark). Improved atomic element inference in AMBER parsers.
+wasn’t the first molecule in the FEP topology (@jmichel80,
+@fjclark). Improved atomic element inference in AMBER parsers.
 Update Sire build to latest versions of dependencies on macOS
 and Linux. This required substantial mini-changes across the
 entire codebase due to changes in APIs and deprecations. This
 includes moving away from qAlgorithm, using the new Qt
 container constructors, moving to OneAPI, switching to the
-conda-forge OpenMM and switching to the new C++ ABI (&#64;chryswoods).
+conda-forge OpenMM and switching to the new C++ ABI (@chryswoods).
 Simplified Sire wrapper generation using a minimal Docker
-container with the latest Py++ (&#64;chryswoods). Add support for
-native Python pickling of Sire objects (&#64;chryswoods.) Switch
+container with the latest Py++ (@chryswoods). Add support for
+native Python pickling of Sire objects (@chryswoods.) Switch
 to GitHub actions for CI. This uses a conda-forge compliant
 conda build, with packages then uploaded to the Anaconda cloud.</p>
 </dd>
-<dt>[2021.1.0] Aug 2021 - Added support for multiple combining rules in SOMD</dt><dd><p>(&#64;SofiaBariami). Added support for triclinic simulation boxes.
+<dt>[2021.1.0] Aug 2021 - Added support for multiple combining rules in SOMD</dt><dd><p>(@SofiaBariami). Added support for triclinic simulation boxes.
 Convert Ryckaert-Bellememans form dihedral functions from
 GROMACS to Fourier series to allow conversion to AMBER format.
 Updated search functionality to enable searching for objects
@@ -796,13 +885,13 @@ seed for each cycle of the simulation.</p>
 </dd>
 <dt>[2020.1.0] July 2020 - Fixed bug in WaterView program to ensure that a</dt><dd><p>molecule is extracted from the returned list. Stable sorting
 of dihedrals and other potential terms to allow reproducible
-writing of input files for SOMD (&#64;ptosco). Updated the
+writing of input files for SOMD (@ptosco). Updated the
 FreeEnergyAnalysis script to support different versions of the
 pymbar API. Significant performance improvement to the GroTop
 parser by looping over cut-groups during non-bonded matrix
 evaluation. Updated Miniconda and conda dependencies to latest
 cross-compatible versions. Fixed minor copiler and runtime
-issues (&#64;nigel-cresset).</p>
+issues (@nigel-cresset).</p>
 </dd>
 <dt>[2019.3.0] November 2019 - Added functionality to restrict the search space</dt><dd><p>when finding paths between atoms or searching for rings. Fixed
 performance issue in GroTop parser caused by an N^2 loop over
@@ -818,7 +907,7 @@ Azure Pipeline build process and how to create a new release.</p>
 <dt>[2019.2.0] September 2019 - Updated the Gromacs topology writer to support</dt><dd><p>perturbable molecules containing a variable number of bonds.
 Created a Docker container for building wrappers and updated
 to using CastXML. Added support for running background
-processes on Windows (&#64;ptosco). Updated SOMD Python wrapper
+processes on Windows (@ptosco). Updated SOMD Python wrapper
 to write restart files every cycle to simplify system monitoring
 in BioSimSpace. Fixed macOS build issue by not linking against
 libpython. Made sure that Conda dependencies are pinned
@@ -923,9 +1012,9 @@ Added nautilus scripts</p>
 by Google Code. Here is an
 <a class="reference external" href="https://code.google.com/p/sire">archive of the repository</a>.</p>
 <p>This comprised 2775 commits, from developers
-<a class="reference external" href="https://github.com/chryswoods">&#64;chryswoods</a>,
-<a class="reference external" href="https://github.com/jmichel80">&#64;jmichel80</a> and
-<a class="reference external" href="mailto:nividic73&#37;&#52;&#48;googlemail&#46;com"><span>&#64;</span>nividic73</a>.</p>
+<a class="reference external" href="https://github.com/chryswoods">@chryswoods</a>,
+<a class="reference external" href="https://github.com/jmichel80">@jmichel80</a> and
+<a class="reference external" href="mailto:nividic73%40googlemail.com"><span>@</span>nividic73</a>.</p>
 </section>
 <section id="local-subversion-february-5th-2005-july-25th-2006">
 <h2>Local Subversion: February 5th 2005 - July 25th 2006<a class="headerlink" href="#local-subversion-february-5th-2005-july-25th-2006" title="Permalink to this heading">#</a></h2>
@@ -933,12 +1022,12 @@ by Google Code. Here is an
 Here is a
 <a class="reference external" href="https://sire.openbiosim.org/f/orig_sire_repository.dump.bz2">svndump of the original repository</a>,
 and all of the <a class="reference external" href="https://sire.openbiosim.org/f/original_repository_comments.txt">commit history</a>.</p>
-<p>This comprised 831 commits from developer <a class="reference external" href="https://github.com/chryswoods">&#64;chryswoods</a>.</p>
+<p>This comprised 831 commits from developer <a class="reference external" href="https://github.com/chryswoods">@chryswoods</a>.</p>
 <p>Sire started as <code class="docutils literal notranslate"><span class="pre">ProtoMS</span> <span class="pre">3</span></code>, a complete C++ rewrite of
 <a class="reference external" href="https://code.google.com/archive/p/protoms/source/default/commits">ProtoMS 2</a>,
 developed originally as a Fortran program
-by <a class="reference external" href="https://github.com/chryswoods">&#64;chryswoods</a> and
-<a class="reference external" href="https://github.com/jmichel80">&#64;jmichel80</a>. ProtoMS has since continued
+by <a class="reference external" href="https://github.com/chryswoods">@chryswoods</a> and
+<a class="reference external" href="https://github.com/jmichel80">@jmichel80</a>. ProtoMS has since continued
 to be developed by the
 <a class="reference external" href="https://www.essexgroup.soton.ac.uk">Essex Group</a> and is
 itself now available as <a class="reference external" href="https://protoms.org">ProtoMS 3.4</a>.</p>
@@ -959,10 +1048,10 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
                 </div>
                 <div class="title">Acknowledgements</div>
               </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="code_of_conduct.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -978,10 +1067,12 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 27, 2023</div>
+              Last updated on Mar 27, 2023</div>
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              
+            </div>
           </div>
         </div>
         
@@ -993,7 +1084,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            On this page
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1001,6 +1092,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#github-openbiosim-january-2023-current">GitHub (OpenBioSim): January 2023 - current</a></li>
+<li><a class="reference internal" href="#march-2023">2023.2.0 - March 2023</a></li>
 <li><a class="reference internal" href="#february-2023">2023.1.3 - February 2023</a></li>
 <li><a class="reference internal" href="#id1">2023.1.2 - February 2023</a></li>
 <li><a class="reference internal" href="#january-2023">2023.1.1 - January 2023</a></li>
@@ -1020,9 +1112,6 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>

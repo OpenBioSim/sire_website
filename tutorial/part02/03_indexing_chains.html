@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Indexing Segments" href="04_indexing_segments.html" /><link rel="prev" title="Indexing Residues" href="02_indexing_residues.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
         <title>Indexing Chains - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
@@ -166,7 +166,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
@@ -234,8 +234,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part05.html">Part 5 - Creating and Editing Molecules</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../part05/01_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -244,6 +247,8 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/openmm.html">OpenMM Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -259,43 +264,47 @@
 <li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
 </ul>
 </li>
@@ -308,7 +317,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
@@ -343,9 +352,7 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -374,7 +381,7 @@ which are available on all of the molecular container types.</p>
 </pre></div>
 </div>
 <p>gives the chain at index 0, while</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="s2">"B"</span><span class="p">))</span>
 <span class="go">Chain( B num_residues=638 num_atoms=4881)</span>
 </pre></div>
 </div>
@@ -414,11 +421,11 @@ so both</p>
 <h2>Search for chains<a class="headerlink" href="#search-for-chains" title="Permalink to this heading">#</a></h2>
 <p>You can also search for chains, using their name (<code class="docutils literal notranslate"><span class="pre">chainname</span></code>),
 and/or their index in their parent molecule (<code class="docutils literal notranslate"><span class="pre">chainidx</span></code>).</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="s2">&quot;chainname A&quot;</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="s2">"chainname A"</span><span class="p">))</span>
 <span class="go">Chain( A num_residues=123 num_atoms=985)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="s2">&quot;chainidx 1&quot;</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="s2">"chainidx 1"</span><span class="p">))</span>
 <span class="go">Chain( B num_residues=638 num_atoms=4881)</span>
 </pre></div>
 </div>
@@ -430,12 +437,12 @@ their name</p>
 </div>
 <p>You can use the chain search string in a molecular container’s index
 operator too!</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A"</span><span class="p">])</span>
 <span class="go">Chain( A num_residues=123 num_atoms=985)</span>
 </pre></div>
 </div>
 <p>and you can combine it with residue and/or atom identifiers, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A and resname ALA&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A and resname ALA"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Residue&gt;( size=11</span>
 <span class="go">0:  Residue( ALA:23  num_atoms=5 )</span>
 <span class="go">1:  Residue( ALA:30  num_atoms=5 )</span>
@@ -451,7 +458,7 @@ operator too!</p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A and element O&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A and element O"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Atom&gt;( size=197</span>
 <span class="go">0:  Atom( O:4     [ -57.04,    9.73,   41.82] )</span>
 <span class="go">1:  Atom( O:12    [ -57.27,    6.71,   41.66] )</span>
@@ -468,7 +475,7 @@ operator too!</p>
 </pre></div>
 </div>
 <p>You can also search for multiple chain names</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A, B&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A, B"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Chain&gt;( size=2</span>
 <span class="go">0:  Chain( A num_residues=123 num_atoms=985)</span>
 <span class="go">1:  Chain( B num_residues=638 num_atoms=4881)</span>
@@ -476,7 +483,7 @@ operator too!</p>
 </pre></div>
 </div>
 <p>Wildcard (glob) searching is also supported for chain names</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname /[cd]/i&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname /[cd]/i"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Chain&gt;( size=2</span>
 <span class="go">0:  Chain( C num_residues=126 num_atoms=1000)</span>
 <span class="go">1:  Chain( D num_residues=631 num_atoms=4862)</span>
@@ -490,13 +497,13 @@ operator too!</p>
 are molecular containers, they also have their own
 <code class="xref py py-func docutils literal notranslate"><span class="pre">residue()</span></code> and <a class="reference internal" href="../../api/mol.html#sire.mol.Residue.residues" title="sire.mol.Residue.residues"><code class="xref py py-func docutils literal notranslate"><span class="pre">residues()</span></code></a> functions,
 which behave as you would expect.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">residue</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">resid</span><span class="p">(</span><span class="s2">&quot;ALA&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">)))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A"</span><span class="p">]</span><span class="o">.</span><span class="n">residue</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">resid</span><span class="p">(</span><span class="s2">"ALA"</span><span class="p">,</span> <span class="mi">23</span><span class="p">)))</span>
 <span class="go">Residue( ALA:23  num_atoms=5 )</span>
 </pre></div>
 </div>
 <p>You can get all of the residues in a chain by calling the
 <a class="reference internal" href="../../api/mol.html#sire.mol.Chain.residues" title="sire.mol.Chain.residues"><code class="xref py py-func docutils literal notranslate"><span class="pre">residues()</span></code></a> function without any arguments,</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">residues</span><span class="p">())</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A"</span><span class="p">]</span><span class="o">.</span><span class="n">residues</span><span class="p">())</span>
 <span class="go">Selector&lt;SireMol::Residue&gt;( size=123</span>
 <span class="go">0:  Residue( ILE:6   num_atoms=8 )</span>
 <span class="go">1:  Residue( VAL:7   num_atoms=7 )</span>
@@ -514,12 +521,12 @@ which behave as you would expect.</p>
 </div>
 <p>In addition, the index operator for chains searches by default for residues,
 not for atoms. Thus</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A"</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 <span class="go">Residue( ILE:6   num_atoms=8 )</span>
 </pre></div>
 </div>
 <p>gives the first <em>residue</em> in chain “A”, not the first atom. Similarly</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A&quot;</span><span class="p">][</span><span class="s2">&quot;ALA&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A"</span><span class="p">][</span><span class="s2">"ALA"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Residue&gt;( size=11</span>
 <span class="go">0:  Residue( ALA:23  num_atoms=5 )</span>
 <span class="go">1:  Residue( ALA:30  num_atoms=5 )</span>
@@ -538,7 +545,7 @@ not for atoms. Thus</p>
 <p>searches for the <em>residues</em> called “ALA”, not the atoms called “ALA”.
 This is because chains are containers for residues, not containers for atoms.</p>
 <p>Another route is to use <code class="docutils literal notranslate"><span class="pre">residues</span> <span class="pre">in</span></code> in the search string.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;residues in chainname B&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"residues in chainname B"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Residue&gt;( size=123</span>
 <span class="go">0:  Residue( ILE:6   num_atoms=8 )</span>
 <span class="go">1:  Residue( VAL:7   num_atoms=7 )</span>
@@ -555,7 +562,7 @@ This is because chains are containers for residues, not containers for atoms.</p
 </pre></div>
 </div>
 <p>or, go from residues to chains using <code class="docutils literal notranslate"><span class="pre">chains</span> <span class="pre">with</span></code></p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chains with resname ALA&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chains with resname ALA"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Chain&gt;( size=4</span>
 <span class="go">0:  Chain( A num_residues=123 num_atoms=985)</span>
 <span class="go">1:  Chain( B num_residues=638 num_atoms=4881)</span>
@@ -569,7 +576,7 @@ This is because chains are containers for residues, not containers for atoms.</p
 <h2>Finding the atoms in a chain<a class="headerlink" href="#finding-the-atoms-in-a-chain" title="Permalink to this heading">#</a></h2>
 <p>You can still get the atoms in a chain by calling the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code> and <a class="reference internal" href="../../api/mol.html#sire.mol.Chain.atoms" title="sire.mol.Chain.atoms"><code class="xref py py-func docutils literal notranslate"><span class="pre">atoms()</span></code></a> functions.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainidx 0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;CA&quot;</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainidx 0"</span><span class="p">]</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">"CA"</span><span class="p">))</span>
 <span class="go">Selector&lt;SireMol::Atom&gt;( size=122</span>
 <span class="go">0:  Atom( CA:2    [ -55.43,   11.35,   42.54] )</span>
 <span class="go">1:  Atom( CA:10   [ -56.02,    7.64,   43.47] )</span>
@@ -585,13 +592,13 @@ This is because chains are containers for residues, not containers for atoms.</p
 <span class="go">)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname B&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname B"</span><span class="p">]</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 <span class="go">Atom( N:980   [ -31.52,  -13.85,   36.51] )</span>
 </pre></div>
 </div>
 <p>Calling the <a class="reference internal" href="../../api/mol.html#sire.mol.Chain.atoms" title="sire.mol.Chain.atoms"><code class="xref py py-func docutils literal notranslate"><span class="pre">atoms()</span></code></a> function without any arguments
 returns all of the atoms in the chain.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname C&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">atoms</span><span class="p">())</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chainname C"</span><span class="p">]</span><span class="o">.</span><span class="n">atoms</span><span class="p">())</span>
 <span class="go">Selector&lt;SireMol::Atom&gt;( size=1000</span>
 <span class="go">0:  Atom( N:5824  [ -29.76,   20.54,   63.08] )</span>
 <span class="go">1:  Atom( CA:5825 [ -30.98,   21.16,   63.60] )</span>
@@ -608,7 +615,7 @@ returns all of the atoms in the chain.</p>
 </pre></div>
 </div>
 <p>Another route is to use the <code class="docutils literal notranslate"><span class="pre">atoms</span> <span class="pre">in</span></code> phrase in the search string,</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;atoms in chainname B&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"atoms in chainname B"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Atom&gt;( size=4881</span>
 <span class="go">0:  Atom( N:980   [ -31.52,  -13.85,   36.51] )</span>
 <span class="go">1:  Atom( CA:981  [ -32.98,  -13.85,   36.21] )</span>
@@ -625,7 +632,7 @@ returns all of the atoms in the chain.</p>
 </pre></div>
 </div>
 <p>and to use <code class="docutils literal notranslate"><span class="pre">chains</span> <span class="pre">with</span></code> to go from atoms to chains.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chains with atomname CA&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">"chains with atomname CA"</span><span class="p">])</span>
 <span class="go">Selector&lt;SireMol::Chain&gt;( size=4</span>
 <span class="go">0:  Chain( A num_residues=123 num_atoms=985)</span>
 <span class="go">1:  Chain( B num_residues=638 num_atoms=4881)</span>
@@ -658,9 +665,9 @@ index of the chain in an arbitrary molecular container.</p>
 easiest way to create these is by using the function
 <a class="reference internal" href="../../api/sire.html#sire.chainid" title="sire.chainid"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.chainid()</span></code></a>.</p>
 <p>Use strings to create <a class="reference internal" href="../../api/mol.html#sire.mol.ChainName" title="sire.mol.ChainName"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainName</span></code></a> objects,</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">chainid</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">))</span>
-<span class="go">ChainName(&#39;A&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="n">sr</span><span class="o">.</span><span class="n">chainid</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">chainid</span><span class="p">(</span><span class="s2">"A"</span><span class="p">))</span>
+<span class="go">ChainName('A')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="n">sr</span><span class="o">.</span><span class="n">chainid</span><span class="p">(</span><span class="s2">"A"</span><span class="p">)])</span>
 <span class="go">Chain( A num_residues=123 num_atoms=985)</span>
 </pre></div>
 </div>
@@ -672,9 +679,9 @@ easiest way to create these is by using the function
 </pre></div>
 </div>
 <p>You can set both a name and an index by passing in two arguments.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="n">sr</span><span class="o">.</span><span class="n">chainid</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="n">sr</span><span class="o">.</span><span class="n">chainid</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
 <span class="go">Chain( A num_residues=123 num_atoms=985)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="n">sr</span><span class="o">.</span><span class="n">chainid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="n">sr</span><span class="o">.</span><span class="n">chainid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"A"</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">)])</span>
 <span class="go">Chain( A num_residues=123 num_atoms=985)</span>
 </pre></div>
 </div>
@@ -709,8 +716,8 @@ residues and/or atoms in the residues.</p>
 <span class="go">Chain( D num_residues=631 num_atoms=4862) Residue( HOH:906 num_atoms=1 )</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">chain</span> <span class="ow">in</span> <span class="n">mol</span><span class="p">[</span><span class="s2">&quot;chainname A, B&quot;</span><span class="p">]:</span>
-<span class="gp">... </span>    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">[</span><span class="s2">&quot;element C&quot;</span><span class="p">]:</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">chain</span> <span class="ow">in</span> <span class="n">mol</span><span class="p">[</span><span class="s2">"chainname A, B"</span><span class="p">]:</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">[</span><span class="s2">"element C"</span><span class="p">]:</span>
 <span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">chain</span><span class="p">,</span> <span class="n">atom</span><span class="o">.</span><span class="n">residue</span><span class="p">(),</span> <span class="n">atom</span><span class="p">)</span>
 <span class="go">Chain( A num_residues=123 num_atoms=985) Residue( ILE:6   num_atoms=8 ) Atom( CA:2    [ -55.43,   11.35,   42.54] )</span>
 <span class="go">Chain( A num_residues=123 num_atoms=985) Residue( ILE:6   num_atoms=8 ) Atom( C:3     [ -56.06,    9.95,   42.55] )</span>
@@ -730,7 +737,7 @@ residues and/or atoms in the residues.</p>
 <p>You can find the names of all chains using the <code class="xref py py-class docutils literal notranslate"><span class="pre">names</span></code>
 function.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">chains</span><span class="p">()</span><span class="o">.</span><span class="n">names</span><span class="p">())</span>
-<span class="go">[ChainName(&#39;A&#39;), ChainName(&#39;B&#39;), ChainName(&#39;C&#39;), ChainName(&#39;D&#39;)]</span>
+<span class="go">[ChainName('A'), ChainName('B'), ChainName('C'), ChainName('D')]</span>
 </pre></div>
 </div>
 </section>
@@ -748,10 +755,10 @@ function.</p>
                 </div>
                 <div class="title">Indexing Segments</div>
               </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="02_indexing_residues.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -767,10 +774,12 @@ function.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 27, 2023</div>
+              Last updated on Mar 27, 2023</div>
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              
+            </div>
           </div>
         </div>
         
@@ -782,7 +791,7 @@ function.</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            On this page
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -808,9 +817,6 @@ function.</p>
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>

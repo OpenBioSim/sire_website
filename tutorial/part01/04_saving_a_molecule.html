@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Loading from multiple files" href="05_loading_from_multiple_files.html" /><link rel="prev" title="Simple indexing" href="03_simple_indexing.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
         <title>Saving a molecule - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
@@ -166,7 +166,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
@@ -234,8 +234,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part05.html">Part 5 - Creating and Editing Molecules</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../part05/01_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -244,6 +247,8 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/openmm.html">OpenMM Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -259,43 +264,47 @@
 <li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
 </ul>
 </li>
@@ -308,7 +317,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
@@ -343,9 +352,7 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -362,28 +369,28 @@
           <section id="saving-a-molecule">
 <h1>Saving a molecule<a class="headerlink" href="#saving-a-molecule" title="Permalink to this heading">#</a></h1>
 <p>You save molecules using the <a class="reference internal" href="../../api/sire.html#sire.save" title="sire.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.save()</span></code></a> function;</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s2">&quot;cholesterol.pdb&quot;</span><span class="p">)</span>
-<span class="go">[&#39;/path/to/cholesterol.pdb&#39;]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s2">"cholesterol.pdb"</span><span class="p">)</span>
+<span class="go">['/path/to/cholesterol.pdb']</span>
 </pre></div>
 </div>
 <p><a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> will automatically try to guess the file format from the file
 extension. In this case, the molecule is saved in PDB format.</p>
 <p>You can specify the format using the <code class="docutils literal notranslate"><span class="pre">format</span></code> argument.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s2">&quot;cholesterol&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;mol2&quot;</span><span class="p">)</span>
-<span class="go">[&#39;/path/to/cholesterol.mol2&#39;]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s2">"cholesterol"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"mol2"</span><span class="p">)</span>
+<span class="go">['/path/to/cholesterol.mol2']</span>
 </pre></div>
 </div>
 <p>Note how the file format extension has been added automatically, and
 that the full path to the file that was written is returned.</p>
 <p>You can specify multiple file formats, and thus write to multiple
 files, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s2">&quot;cholesterol&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mol2&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb&quot;</span><span class="p">])</span>
-<span class="go">[&#39;/path/to/cholesterol.mol2&#39;, &#39;/path/to/cholesterol.pdb&#39;]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s2">"cholesterol"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">"mol2"</span><span class="p">,</span> <span class="s2">"pdb"</span><span class="p">])</span>
+<span class="go">['/path/to/cholesterol.mol2', '/path/to/cholesterol.pdb']</span>
 </pre></div>
 </div>
 <p>or you can specify the filenames directly, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;chol.pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;chol.mol2&quot;</span><span class="p">])</span>
-<span class="go">[&#39;/path/to/chol.pdb&#39;, &#39;/path/to/chol.mol2&#39;]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="p">[</span><span class="s2">"chol.pdb"</span><span class="p">,</span> <span class="s2">"chol.mol2"</span><span class="p">])</span>
+<span class="go">['/path/to/chol.pdb', '/path/to/chol.mol2']</span>
 </pre></div>
 </div>
 <section id="saving-to-strings">
@@ -393,35 +400,35 @@ files, e.g.</p>
 to memory, returning the lines of the file as a Python list.</p>
 <p>You need to specify the format you want to use, e.g.
 <code class="docutils literal notranslate"><span class="pre">pdb</span></code> for PDB, <code class="docutils literal notranslate"><span class="pre">gro</span></code> for Gro87 etc.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save_to_string</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;pdb&quot;</span><span class="p">)</span>
-<span class="go">[&#39;MODEL     1&#39;,</span>
-<span class="go"> &#39;ATOM      1  C   MOL     1      -0.019   1.525   0.010  1.00  0.00           C&#39;,</span>
-<span class="go"> &#39;ATOM      2  C   MOL     1       0.002  -0.004   0.002  1.00  0.00           C&#39;,</span>
-<span class="go"> &#39;ATOM      3  C   MOL     1       0.658  -0.518   1.285  1.00  0.00           C&#39;,</span>
-<span class="go"> &#39;ATOM      4  C   MOL     1       1.418   2.055  -0.000  1.00  0.00           C&#39;,</span>
-<span class="go"> &#39;ATOM      5  C   MOL     1       2.164   1.442   1.173  1.00  0.00           C&#39;,</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save_to_string</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"pdb"</span><span class="p">)</span>
+<span class="go">['MODEL     1',</span>
+<span class="go"> 'ATOM      1  C   MOL     1      -0.019   1.525   0.010  1.00  0.00           C',</span>
+<span class="go"> 'ATOM      2  C   MOL     1       0.002  -0.004   0.002  1.00  0.00           C',</span>
+<span class="go"> 'ATOM      3  C   MOL     1       0.658  -0.518   1.285  1.00  0.00           C',</span>
+<span class="go"> 'ATOM      4  C   MOL     1       1.418   2.055  -0.000  1.00  0.00           C',</span>
+<span class="go"> 'ATOM      5  C   MOL     1       2.164   1.442   1.173  1.00  0.00           C',</span>
 <span class="go"> ...</span>
-<span class="go"> &#39;ATOM     72  H   MOL     1       3.900  -0.359   0.167  1.00  0.00           H&#39;,</span>
-<span class="go"> &#39;ATOM     73  H   MOL     1       2.811  -1.766   0.235  1.00  0.00           H&#39;,</span>
-<span class="go"> &#39;ATOM     74  H   MOL     1      -0.762   2.962  -1.208  1.00  0.00           H&#39;,</span>
-<span class="go"> &#39;ENDMDL&#39;,</span>
-<span class="go"> &#39;END&#39;]</span>
+<span class="go"> 'ATOM     72  H   MOL     1       3.900  -0.359   0.167  1.00  0.00           H',</span>
+<span class="go"> 'ATOM     73  H   MOL     1       2.811  -1.766   0.235  1.00  0.00           H',</span>
+<span class="go"> 'ATOM     74  H   MOL     1      -0.762   2.962  -1.208  1.00  0.00           H',</span>
+<span class="go"> 'ENDMDL',</span>
+<span class="go"> 'END']</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save_to_string</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;gro&quot;</span><span class="p">)</span>
-<span class="go">&#39;cholesterol&#39;,</span>
-<span class="go"> &#39;   74&#39;,</span>
-<span class="go"> &#39;    1MOL      C    1  -0.001870   0.152540   0.001040&#39;,</span>
-<span class="go"> &#39;    1MOL      C    2   0.000210  -0.000410   0.000200&#39;,</span>
-<span class="go"> &#39;    1MOL      C    3   0.065850  -0.051780   0.128510&#39;,</span>
-<span class="go"> &#39;    1MOL      C    4   0.141830   0.205520  -0.000040&#39;,</span>
-<span class="go"> &#39;    1MOL      C    5   0.216410   0.144230   0.117300&#39;,</span>
-<span class="go"> &#39;    1MOL      C    6   0.280940   0.223720   0.197530&#39;,</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save_to_string</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"gro"</span><span class="p">)</span>
+<span class="go">'cholesterol',</span>
+<span class="go"> '   74',</span>
+<span class="go"> '    1MOL      C    1  -0.001870   0.152540   0.001040',</span>
+<span class="go"> '    1MOL      C    2   0.000210  -0.000410   0.000200',</span>
+<span class="go"> '    1MOL      C    3   0.065850  -0.051780   0.128510',</span>
+<span class="go"> '    1MOL      C    4   0.141830   0.205520  -0.000040',</span>
+<span class="go"> '    1MOL      C    5   0.216410   0.144230   0.117300',</span>
+<span class="go"> '    1MOL      C    6   0.280940   0.223720   0.197530',</span>
 <span class="gp">...</span>
-<span class="go"> &#39;    1MOL      H   72   0.389970  -0.035920   0.016740&#39;,</span>
-<span class="go"> &#39;    1MOL      H   73   0.281060  -0.176550   0.023460&#39;,</span>
-<span class="go"> &#39;    1MOL      H   74  -0.076160   0.296250  -0.120770&#39;,</span>
-<span class="go"> &#39;   0.00000   0.00000   0.00000&#39;]</span>
+<span class="go"> '    1MOL      H   72   0.389970  -0.035920   0.016740',</span>
+<span class="go"> '    1MOL      H   73   0.281060  -0.176550   0.023460',</span>
+<span class="go"> '    1MOL      H   74  -0.076160   0.296250  -0.120770',</span>
+<span class="go"> '   0.00000   0.00000   0.00000']</span>
 </pre></div>
 </div>
 </section>
@@ -439,10 +446,10 @@ to memory, returning the lines of the file as a Python list.</p>
                 </div>
                 <div class="title">Loading from multiple files</div>
               </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="03_simple_indexing.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -458,10 +465,12 @@ to memory, returning the lines of the file as a Python list.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 27, 2023</div>
+              Last updated on Mar 27, 2023</div>
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              
+            </div>
           </div>
         </div>
         
@@ -473,7 +482,7 @@ to memory, returning the lines of the file as a Python list.</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            On this page
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -493,9 +502,6 @@ to memory, returning the lines of the file as a Python list.</p>
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
