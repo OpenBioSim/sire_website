@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire module" href="sire.html" /><link rel="prev" title="OpenMM Integration" href="../cheatsheet/openmm.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire module" href="sire.html" /><link rel="prev" title="Units" href="../cheatsheet/units.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Documentation - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -426,9 +431,8 @@ are Python-only, and don’t fit neatly into any of the other sub-modules.</p></
 <li class="toctree-l2"><a class="reference internal" href="sire.html#module-sire">Public API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.atomid"><code class="docutils literal notranslate"><span class="pre">atomid()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.chainid"><code class="docutils literal notranslate"><span class="pre">chainid()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="sire.html#sire.disable_thumbs_up"><code class="docutils literal notranslate"><span class="pre">disable_thumbs_up()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.expand"><code class="docutils literal notranslate"><span class="pre">expand()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="sire.html#sire.get_thumbs_up_info"><code class="docutils literal notranslate"><span class="pre">get_thumbs_up_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sire.html#sire.get_max_num_threads"><code class="docutils literal notranslate"><span class="pre">get_max_num_threads()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.load"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.load_test_files"><code class="docutils literal notranslate"><span class="pre">load_test_files()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.measure"><code class="docutils literal notranslate"><span class="pre">measure()</span></code></a></li>
@@ -436,9 +440,12 @@ are Python-only, and don’t fit neatly into any of the other sub-modules.</p></
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.save"><code class="docutils literal notranslate"><span class="pre">save()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.save_to_string"><code class="docutils literal notranslate"><span class="pre">save_to_string()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.segid"><code class="docutils literal notranslate"><span class="pre">segid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sire.html#sire.set_default_num_threads"><code class="docutils literal notranslate"><span class="pre">set_default_num_threads()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sire.html#sire.set_max_num_threads"><code class="docutils literal notranslate"><span class="pre">set_max_num_threads()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sire.html#sire.smarts"><code class="docutils literal notranslate"><span class="pre">smarts()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.smiles"><code class="docutils literal notranslate"><span class="pre">smiles()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.supported_formats"><code class="docutils literal notranslate"><span class="pre">supported_formats()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="sire.html#sire.thumbs_up"><code class="docutils literal notranslate"><span class="pre">thumbs_up()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sire.html#sire.u"><code class="docutils literal notranslate"><span class="pre">u()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.use_mixed_api"><code class="docutils literal notranslate"><span class="pre">use_mixed_api()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.use_new_api"><code class="docutils literal notranslate"><span class="pre">use_new_api()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sire.html#sire.use_old_api"><code class="docutils literal notranslate"><span class="pre">use_old_api()</span></code></a></li>
@@ -489,14 +496,14 @@ are Python-only, and don’t fit neatly into any of the other sub-modules.</p></
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../cheatsheet/openmm.html">
+          <a class="prev-page" href="../cheatsheet/units.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">OpenMM Integration</div>
+                <div class="title">Units</div>
                 
               </div>
             </a>
@@ -506,7 +513,7 @@ are Python-only, and don’t fit neatly into any of the other sub-modules.</p></
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/><title>Index - openbiosim - sire</title>
+    <link rel="shortcut icon" href="_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/><title>Index - openbiosim - sire</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -196,7 +196,8 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -236,7 +237,8 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -245,8 +247,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -268,6 +272,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -367,12 +372,14 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a> | <a href="#X"><strong>X</strong></a> | <a href="#Y"><strong>Y</strong></a> | <a href="#Z"><strong>Z</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#K"><strong>K</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a> | <a href="#X"><strong>X</strong></a> | <a href="#Y"><strong>Y</strong></a> | <a href="#Z"><strong>Z</strong></a></div>
 </section>
 <section id="A" class="genindex-section">
   <h2>A</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/mm.html#sire.mm.LJParameter.a">a() (sire.mm.LJParameter method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Element.actinide">actinide() (sire.mol.Element method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.add">add() (sire.cas.Expression method)</a>
@@ -394,11 +401,21 @@
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.add">(sire.mm.SelectorMImproper method)</a>
 </li>
+          <li><a href="api/system.html#sire.system.System.add">(sire.system.System method)</a>
+</li>
         </ul></li>
         <li><a href="api/utils.html#sire.utils.Table.add_column">add_column() (sire.utils.Table method)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Table.add_row">add_row() (sire.utils.Table method)</a>
 </li>
+        <li><a href="api/system.html#sire.system.System.add_shared_property">add_shared_property() (sire.system.System method)</a>
+</li>
+        <li><a href="api/maths.html#sire.maths.align">align() (in module sire.maths)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.TrajectoryIterator.align">(sire.mol.TrajectoryIterator method)</a>
+</li>
+        </ul></li>
         <li><a href="api/mol.html#sire.mol.Element.alkali_earth_metal">alkali_earth_metal() (sire.mol.Element method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Element.alkali_metal">alkali_metal() (sire.mol.Element method)</a>
@@ -441,9 +458,11 @@
 </li>
         <li><a href="api/mol.html#sire.mol.SelectorMol.append">append() (sire.mol.SelectorMol method)</a>
 </li>
-        <li><a href="api/mm.html#sire.mm.SelectorMAngle.apply">apply() (sire.mm.SelectorMAngle method)</a>
+        <li><a href="api/maths.html#sire.maths.Transform.apply">apply() (sire.maths.Transform method)</a>
 
         <ul>
+          <li><a href="api/mm.html#sire.mm.SelectorMAngle.apply">(sire.mm.SelectorMAngle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.SelectorMBond.apply">(sire.mm.SelectorMBond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMDihedral.apply">(sire.mm.SelectorMDihedral method)</a>
@@ -510,6 +529,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.assert_contains">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.assert_contains">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.assert_contains">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.assert_contains">(sire.mol.Molecule method)</a>
@@ -558,6 +579,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.assert_has_metadata">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.assert_has_metadata">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.assert_has_metadata">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.assert_has_metadata">(sire.mol.Molecule method)</a>
@@ -581,6 +604,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorImproper.assert_has_property">(sire.mm.SelectorImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.assert_has_property">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.assert_has_property">(sire.mol.AtomMatch method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.assert_has_property">(sire.mol.Chain method)</a>
 </li>
@@ -608,6 +633,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.assert_same_molecule">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.assert_same_molecule">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.assert_same_molecule">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.assert_same_molecule">(sire.mol.Molecule method)</a>
@@ -622,7 +649,17 @@
 </li>
           <li><a href="api/cas.html#sire.cas.Symbol.assign">(sire.cas.Symbol method)</a>
 </li>
+          <li><a href="api/io_parser.html#sire.io.parser.DCD.assign">(sire.io.parser.DCD method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.assign">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.assign">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.assign">(sire.io.parser.XTC method)</a>
+</li>
           <li><a href="api/maths.html#sire.maths.Matrix.assign">(sire.maths.Matrix method)</a>
+</li>
+          <li><a href="api/maths.html#sire.maths.Transform.assign">(sire.maths.Transform method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.assign">(sire.mm.Angle method)</a>
 </li>
@@ -651,6 +688,10 @@
           <li><a href="api/mol.html#sire.mol.Atom.assign">(sire.mol.Atom method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomIdx.assign">(sire.mol.AtomIdx method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.assign">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.assign">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomName.assign">(sire.mol.AtomName method)</a>
 </li>
@@ -716,6 +757,8 @@
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.atom">(sire.mm.SelectorMImproper method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.atom">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Cursor.atom">(sire.mol.Cursor method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursors.atom">(sire.mol.Cursors method)</a>
@@ -773,6 +816,10 @@
 </li>
         <li><a href="api/mol.html#sire.mol.AtomIdx">AtomIdx (class in sire.mol)</a>
 </li>
+        <li><a href="api/mol.html#sire.mol.AtomMatch">AtomMatch (class in sire.mol)</a>
+</li>
+        <li><a href="api/mol.html#sire.mol.AtomMatchM">AtomMatchM (class in sire.mol)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.AtomName">AtomName (class in sire.mol)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.AtomNum">AtomNum (class in sire.mol)</a>
@@ -795,6 +842,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorImproper.atoms">(sire.mm.SelectorImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.atoms">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.atoms">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.atoms">(sire.mol.Chain method)</a>
 </li>
@@ -821,6 +870,8 @@
   <h2>B</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/mm.html#sire.mm.LJParameter.b">b() (sire.mm.LJParameter method)</a>
+</li>
         <li><a href="api/cas.html#sire.cas.Expression.base">base() (sire.cas.Expression method)</a>
 </li>
         <li><a href="api/vol.html#sire.vol.Cartesian.beyond">beyond() (sire.vol.Cartesian method)</a>
@@ -863,6 +914,12 @@
           <li><a href="api/mol.html#sire.mol.CursorsM.bonds">(sire.mol.CursorsM method)</a>
 </li>
           <li><a href="api/system.html#sire.system.System.bonds">(sire.system.System method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/vol.html#sire.vol.Cartesian.box_matrix">box_matrix() (sire.vol.Cartesian method)</a>
+
+        <ul>
+          <li><a href="api/vol.html#sire.vol.PeriodicBox.box_matrix">(sire.vol.PeriodicBox method)</a>
 </li>
         </ul></li>
     </ul></td>
@@ -938,6 +995,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.chain">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.chain">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Cursor.chain">(sire.mol.Cursor method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursors.chain">(sire.mol.Cursors method)</a>
@@ -974,6 +1033,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.chains">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.chains">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.chains">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursor.chains">(sire.mol.Cursor method)</a>
@@ -1009,6 +1070,8 @@
           <li><a href="api/cas.html#sire.cas.Symbol.children">(sire.cas.Symbol method)</a>
 </li>
         </ul></li>
+        <li><a href="api/units.html#sire.units.clear_default_units">clear_default_units() (in module sire.units)</a>
+</li>
         <li><a href="api/base.html#sire.base.PropertyMap.clone">clone() (sire.base.PropertyMap method)</a>
 
         <ul>
@@ -1016,9 +1079,19 @@
 </li>
           <li><a href="api/cas.html#sire.cas.Symbol.clone">(sire.cas.Symbol method)</a>
 </li>
+          <li><a href="api/io_parser.html#sire.io.parser.DCD.clone">(sire.io.parser.DCD method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.clone">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.clone">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.clone">(sire.io.parser.XTC method)</a>
+</li>
           <li><a href="api/maths.html#sire.maths.Matrix.clone">(sire.maths.Matrix method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Torsion.clone">(sire.maths.Torsion method)</a>
+</li>
+          <li><a href="api/maths.html#sire.maths.Transform.clone">(sire.maths.Transform method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Triangle.clone">(sire.maths.Triangle method)</a>
 </li>
@@ -1029,6 +1102,8 @@
           <li><a href="api/mm.html#sire.mm.Dihedral.clone">(sire.mm.Dihedral method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.clone">(sire.mm.Improper method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.LJParameter.clone">(sire.mm.LJParameter method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorAngle.clone">(sire.mm.SelectorAngle method)</a>
 </li>
@@ -1049,6 +1124,10 @@
           <li><a href="api/mol.html#sire.mol.Atom.clone">(sire.mol.Atom method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomIdx.clone">(sire.mol.AtomIdx method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.clone">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.clone">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomName.clone">(sire.mol.AtomName method)</a>
 </li>
@@ -1107,6 +1186,14 @@
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.column2">column2() (sire.maths.Matrix method)</a>
 </li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.combine">combine() (sire.mm.LJParameter method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.combine_arithmetic">combine_arithmetic() (sire.mm.LJParameter method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.combine_geometric">combine_geometric() (sire.mm.LJParameter method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.combining_rules">combining_rules (sire.mm.LJParameter attribute)</a>
+</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/mol.html#sire.mol.Cursor.commit">commit() (sire.mol.Cursor method)</a>
@@ -1140,6 +1227,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.const_data">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.const_data">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.const_data">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.const_data">(sire.mol.Molecule method)</a>
@@ -1147,9 +1236,21 @@
         </ul></li>
         <li><a href="api/mol.html#sire.mol.Dynamics.constraint">constraint() (sire.mol.Dynamics method)</a>
 </li>
-        <li><a href="api/mol.html#sire.mol.Chain.contains">contains() (sire.mol.Chain method)</a>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.construct">construct() (sire.io.parser.DCD method)</a>
 
         <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.construct">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.construct">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.construct">(sire.io.parser.XTC method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/mol.html#sire.mol.AtomMatchM.contains">contains() (sire.mol.AtomMatchM method)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.Chain.contains">(sire.mol.Chain method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Residue.contains">(sire.mol.Residue method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Segment.contains">(sire.mol.Segment method)</a>
@@ -1161,9 +1262,15 @@
 </li>
         <li><a href="api/system.html#sire.system.System.coordinates">coordinates() (sire.system.System method)</a>
 </li>
-        <li><a href="api/maths.html#sire.maths.Torsion.count">count() (sire.maths.Torsion method)</a>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.count">count() (sire.io.parser.DCD method)</a>
 
         <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.count">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.count">(sire.io.parser.XTC method)</a>
+</li>
+          <li><a href="api/maths.html#sire.maths.Torsion.count">(sire.maths.Torsion method)</a>
+</li>
           <li><a href="api/maths.html#sire.maths.Triangle.count">(sire.maths.Triangle method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.count">(sire.mm.Angle method)</a>
@@ -1191,6 +1298,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.count">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.count">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.count">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.count">(sire.mol.Chain method)</a>
 </li>
@@ -1292,6 +1401,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.cutgroup">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.cutgroup">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.cutgroup">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.cutgroup">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.cutgroup">(sire.mol.Molecule method)</a>
@@ -1326,6 +1439,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.cutgroups">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.cutgroups">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.cutgroups">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.cutgroups">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.cutgroups">(sire.mol.Molecule method)</a>
@@ -1341,6 +1458,8 @@
   <h2>D</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD">DCD (class in sire.io.parser)</a>
+</li>
         <li><a href="api/utils.html#sire.utils.Console.debug">debug() (sire.utils.Console static method)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Console.debugging_enabled">debugging_enabled() (sire.utils.Console static method)</a>
@@ -1351,6 +1470,46 @@
           <li><a href="api/mol.html#sire.mol.Cursors.delete">(sire.mol.Cursors method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.CursorsM.delete">(sire.mol.CursorsM method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/mm.html#sire.mm.Angle.delete_all_frames">delete_all_frames() (sire.mm.Angle method)</a>
+
+        <ul>
+          <li><a href="api/mm.html#sire.mm.Bond.delete_all_frames">(sire.mm.Bond method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.Dihedral.delete_all_frames">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.Improper.delete_all_frames">(sire.mm.Improper method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorAngle.delete_all_frames">(sire.mm.SelectorAngle method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorBond.delete_all_frames">(sire.mm.SelectorBond method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorDihedral.delete_all_frames">(sire.mm.SelectorDihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorImproper.delete_all_frames">(sire.mm.SelectorImproper method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMAngle.delete_all_frames">(sire.mm.SelectorMAngle method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMBond.delete_all_frames">(sire.mm.SelectorMBond method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMDihedral.delete_all_frames">(sire.mm.SelectorMDihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMImproper.delete_all_frames">(sire.mm.SelectorMImproper method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.Atom.delete_all_frames">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.delete_all_frames">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.delete_all_frames">(sire.mol.AtomMatchM method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.Chain.delete_all_frames">(sire.mol.Chain method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.Molecule.delete_all_frames">(sire.mol.Molecule method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.SelectorMol.delete_all_frames">(sire.mol.SelectorMol method)</a>
+</li>
+          <li><a href="api/system.html#sire.system.System.delete_all_frames">(sire.system.System method)</a>
 </li>
         </ul></li>
         <li><a href="api/search.html#sire.search.delete_all_tokens">delete_all_tokens() (in module sire.search)</a>
@@ -1382,6 +1541,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.delete_frame">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.delete_frame">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.delete_frame">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.delete_frame">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursor.delete_frame">(sire.mol.Cursor method)</a>
@@ -1402,6 +1565,8 @@
         <li><a href="api/search.html#sire.search.delete_token">delete_token() (in module sire.search)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.determinant">determinant() (sire.maths.Matrix method)</a>
+</li>
+        <li><a href="api/maths.html#sire.maths.Matrix.diagonal">diagonal() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.diagonalise">diagonalise() (sire.maths.Matrix method)</a>
 </li>
@@ -1437,13 +1602,15 @@
         </ul></li>
         <li><a href="api/vol.html#sire.vol.PeriodicBox.dimensions">dimensions() (sire.vol.PeriodicBox method)</a>
 </li>
-        <li><a href="api/sire.html#sire.disable_thumbs_up">disable_thumbs_up() (in module sire)</a>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.disable_parallel">disable_parallel() (sire.io.parser.DCD method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.divide">divide() (sire.cas.Expression method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.BondOrder.double_bond">double_bond() (sire.mol.BondOrder method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Stereochemistry.down">down() (sire.mol.Stereochemistry static method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.dummy">dummy() (sire.mm.LJParameter static method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Dynamics">Dynamics (class in sire.mol)</a>
 </li>
@@ -1486,6 +1653,8 @@
         <li><a href="api/mol.html#sire.mol.Element">Element (class in sire.mol)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Element.element_with_mass">element_with_mass() (sire.mol.Element method)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.enable_parallel">enable_parallel() (sire.io.parser.DCD method)</a>
 </li>
         <li><a href="api/mm.html#sire.mm.SelectorAngle.energies">energies() (sire.mm.SelectorAngle method)</a>
 
@@ -1555,7 +1724,11 @@
 </li>
         <li><a href="api/mol.html#sire.mol.Dynamics.ensemble">ensemble() (sire.mol.Dynamics method)</a>
 </li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.epsilon">epsilon() (sire.mm.LJParameter method)</a>
+</li>
         <li><a href="api/utils.html#sire.utils.Console.error">error() (sire.utils.Console static method)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.error_report">error_report() (sire.io.parser.DCD method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.evaluate">evaluate() (sire.cas.Expression method)</a>
 
@@ -1587,6 +1760,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.evaluate">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.evaluate">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.evaluate">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.evaluate">(sire.mol.Chain method)</a>
 </li>
@@ -1622,6 +1797,8 @@
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.extract">(sire.mm.SelectorMImproper method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.extract">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.SelectorMol.extract">(sire.mol.SelectorMol method)</a>
 </li>
         </ul></li>
@@ -1635,9 +1812,11 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/cas.html#sire.cas.Expression.factor">factor() (sire.cas.Expression method)</a>
 </li>
-        <li><a href="api/mol.html#sire.mol.SelectorMol.find">find() (sire.mol.SelectorMol method)</a>
+        <li><a href="api/mol.html#sire.mol.AtomMatchM.find">find() (sire.mol.AtomMatchM method)</a>
 
         <ul>
+          <li><a href="api/mol.html#sire.mol.SelectorMol.find">(sire.mol.SelectorMol method)</a>
+</li>
           <li><a href="api/system.html#sire.system.System.find">(sire.system.System method)</a>
 </li>
         </ul></li>
@@ -1645,8 +1824,44 @@
 </li>
         <li><a href="api/system.html#sire.system.ForceFieldInfo">ForceFieldInfo (class in sire.system)</a>
 </li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.format_description">format_description() (sire.io.parser.DCD method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.format_description">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.format_description">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.format_description">(sire.io.parser.XTC method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.format_name">format_name() (sire.io.parser.DCD method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.format_name">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.format_name">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.format_name">(sire.io.parser.XTC method)</a>
+</li>
+        </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.format_suffix">format_suffix() (sire.io.parser.DCD method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.format_suffix">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.format_suffix">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.format_suffix">(sire.io.parser.XTC method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/mol.html#sire.mol.TrajectoryIterator.frame_indexes">frame_indexes() (sire.mol.TrajectoryIterator method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.from_and_b">from_and_b() (sire.mm.LJParameter method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.from_r_min_and_epsilon">from_r_min_and_epsilon() (sire.mm.LJParameter method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.BondOrder.from_rdkit">from_rdkit() (sire.mol.BondOrder method)</a>
 
         <ul>
@@ -1659,6 +1874,8 @@
           <li><a href="api/mol.html#sire.mol.Stereochemistry.from_s_d_f">(sire.mol.Stereochemistry method)</a>
 </li>
         </ul></li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.from_sigma_and_epsilon">from_sigma_and_epsilon() (sire.mm.LJParameter method)</a>
+</li>
         <li><a href="api/cas.html#sire.cas.Expression.functions">functions() (sire.cas.Expression method)</a>
 
         <ul>
@@ -1673,12 +1890,20 @@
   <h2>G</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/io_parser.html#sire.io.parser.G87">G87 (in module sire.io.parser)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Cursor.get">get() (sire.mol.Cursor method)</a>
 
         <ul>
           <li><a href="api/mol.html#sire.mol.Cursors.get">(sire.mol.Cursors method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.CursorsM.get">(sire.mol.CursorsM method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/maths.html#sire.maths.get_alignment">get_alignment() (in module sire.maths)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.get_alignment">(in module sire.mol)</a>
 </li>
         </ul></li>
         <li><a href="api/search.html#sire.search.get_approx_epsilon">get_approx_epsilon() (in module sire.search)</a>
@@ -1697,18 +1922,34 @@
           <li><a href="api/vol.html#sire.vol.PeriodicBox.get_copies_within">(sire.vol.PeriodicBox method)</a>
 </li>
         </ul></li>
+        <li><a href="api/stream.html#sire.stream.get_data_header">get_data_header() (in module sire.stream)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.get_frame">get_frame() (sire.io.parser.DCD method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.get_frame">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.get_frame">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.get_frame">(sire.io.parser.XTC method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/stream.html#sire.stream.get_header_property">get_header_property() (in module sire.stream)</a>
+</li>
         <li><a href="api/vol.html#sire.vol.Cartesian.get_images_within">get_images_within() (sire.vol.Cartesian method)</a>
 
         <ul>
           <li><a href="api/vol.html#sire.vol.PeriodicBox.get_images_within">(sire.vol.PeriodicBox method)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/mol.html#sire.mol.Cursor.get_index">get_index() (sire.mol.Cursor method)</a>
+</li>
+        <li><a href="api/sire.html#sire.get_max_num_threads">get_max_num_threads() (in module sire)</a>
 </li>
         <li><a href="api/search.html#sire.search.get_min_protein_residues">get_min_protein_residues() (in module sire.search)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/vol.html#sire.vol.Cartesian.get_minimum_image">get_minimum_image() (sire.vol.Cartesian method)</a>
 
         <ul>
@@ -1729,15 +1970,27 @@
           <li><a href="api/vol.html#sire.vol.PeriodicBox.get_random_point">(sire.vol.PeriodicBox method)</a>
 </li>
         </ul></li>
-        <li><a href="api/sire.html#sire.get_thumbs_up_info">get_thumbs_up_info() (in module sire)</a>
-</li>
         <li><a href="api/search.html#sire.search.get_token">get_token() (in module sire.search)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.MolNum.get_unique_number">get_unique_number() (sire.mol.MolNum method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Element.green">green() (sire.mol.Element method)</a>
 </li>
-        <li><a href="api/mol.html#sire.mol.Element.group">group() (sire.mol.Element method)</a>
+        <li><a href="api/mol.html#sire.mol.AtomMatch.group">group() (sire.mol.AtomMatch method)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.group">(sire.mol.AtomMatchM method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.Element.group">(sire.mol.Element method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/mol.html#sire.mol.AtomMatch.groups">groups() (sire.mol.AtomMatch method)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.groups">(sire.mol.AtomMatchM method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/io_parser.html#sire.io.parser.GTOP">GTOP (in module sire.io.parser)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1776,6 +2029,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.has_metadata">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.has_metadata">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.has_metadata">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.has_metadata">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.has_metadata">(sire.mol.Molecule method)</a>
@@ -1812,6 +2069,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.has_property">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.has_property">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.has_property">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.has_property">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.has_property">(sire.mol.Molecule method)</a>
@@ -1820,10 +2081,14 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Segment.has_property">(sire.mol.Segment method)</a>
 </li>
+          <li><a href="api/system.html#sire.system.System.has_property">(sire.system.System method)</a>
+</li>
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/search.html#sire.search.has_token">has_token() (in module sire.search)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.has_warnings">has_warnings() (sire.io.parser.DCD method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.hash">hash() (sire.cas.Expression method)</a>
 
@@ -1902,6 +2167,8 @@
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.ids">(sire.mm.SelectorMImproper method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.ids">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.SelectorMol.ids">(sire.mol.SelectorMol method)</a>
 </li>
         </ul></li>
@@ -1941,8 +2208,12 @@
           <li><a href="api/mol.html#sire.mol.Segment.index">(sire.mol.Segment method)</a>
 </li>
         </ul></li>
-        <li><a href="api/mol.html#sire.mol.SelectorMol.indexes">indexes() (sire.mol.SelectorMol method)</a>
+        <li><a href="api/mol.html#sire.mol.AtomMatchM.indexes">indexes() (sire.mol.AtomMatchM method)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.SelectorMol.indexes">(sire.mol.SelectorMol method)</a>
 </li>
+        </ul></li>
         <li><a href="api/mol.html#sire.mol.Dynamics.info">info() (sire.mol.Dynamics method)</a>
 
         <ul>
@@ -1976,17 +2247,25 @@
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.intersection">(sire.mm.SelectorMImproper method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.intersection">(sire.mol.AtomMatchM method)</a>
+</li>
         </ul></li>
-        <li><a href="api/mol.html#sire.mol.Chain.intersects">intersects() (sire.mol.Chain method)</a>
+        <li><a href="api/mol.html#sire.mol.AtomMatchM.intersects">intersects() (sire.mol.AtomMatchM method)</a>
 
         <ul>
+          <li><a href="api/mol.html#sire.mol.Chain.intersects">(sire.mol.Chain method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Residue.intersects">(sire.mol.Residue method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Segment.intersects">(sire.mol.Segment method)</a>
 </li>
         </ul></li>
         <li><a href="api/maths.html#sire.maths.Matrix.inverse">inverse() (sire.maths.Matrix method)</a>
+
+        <ul>
+          <li><a href="api/maths.html#sire.maths.Transform.inverse">(sire.maths.Transform method)</a>
 </li>
+        </ul></li>
         <li><a href="api/cas.html#sire.cas.Expression.invert">invert() (sire.cas.Expression method)</a>
 
         <ul>
@@ -2016,6 +2295,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.invert">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.invert">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.invert">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursors.invert">(sire.mol.Cursors method)</a>
@@ -2033,7 +2314,11 @@
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.is_atom">is_atom() (sire.mol.Cursor method)</a>
 </li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.is_binary_file">is_binary_file() (sire.io.parser.DCD method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Cursor.is_bond">is_bond() (sire.mol.Cursor method)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.is_broken">is_broken() (sire.io.parser.DCD method)</a>
 </li>
         <li><a href="api/vol.html#sire.vol.Cartesian.is_cartesian">is_cartesian() (sire.vol.Cartesian method)</a>
 
@@ -2061,15 +2346,21 @@
           <li><a href="api/mol.html#sire.mol.Stereochemistry.is_defined">(sire.mol.Stereochemistry method)</a>
 </li>
         </ul></li>
+        <li><a href="api/maths.html#sire.maths.Matrix.is_diagonal">is_diagonal() (sire.maths.Matrix method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Cursor.is_dihedral">is_dihedral() (sire.mol.Cursor method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.BondOrder.is_double">is_double() (sire.mol.BondOrder method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Stereochemistry.is_down">is_down() (sire.mol.Stereochemistry method)</a>
 </li>
-        <li><a href="api/mm.html#sire.mm.Angle.is_empty">is_empty() (sire.mm.Angle method)</a>
+        <li><a href="api/mm.html#sire.mm.LJParameter.is_dummy">is_dummy() (sire.mm.LJParameter method)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.is_empty">is_empty() (sire.io.parser.DCD method)</a>
 
         <ul>
+          <li><a href="api/mm.html#sire.mm.Angle.is_empty">(sire.mm.Angle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.is_empty">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.is_empty">(sire.mm.Dihedral method)</a>
@@ -2094,6 +2385,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.is_empty">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.is_empty">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.is_empty">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.is_empty">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.is_empty">(sire.mol.Molecule method)</a>
@@ -2107,6 +2402,16 @@
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.is_frame">is_frame() (sire.io.parser.DCD method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.is_frame">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.is_frame">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.is_frame">(sire.io.parser.XTC method)</a>
+</li>
+        </ul></li>
         <li><a href="api/cas.html#sire.cas.Expression.is_function">is_function() (sire.cas.Expression method)</a>
 
         <ul>
@@ -2126,6 +2431,8 @@
         <li><a href="api/cas.html#sire.cas.Symbol.is_null">is_null() (sire.cas.Symbol method)</a>
 
         <ul>
+          <li><a href="api/maths.html#sire.maths.Transform.is_null">(sire.maths.Transform method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Angle.is_null">(sire.mm.Angle method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Bond.is_null">(sire.mm.Bond method)</a>
@@ -2145,6 +2452,8 @@
           <li><a href="api/mol.html#sire.mol.Atom.is_null">(sire.mol.Atom method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomIdx.is_null">(sire.mol.AtomIdx method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.is_null">(sire.mol.AtomMatch method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomName.is_null">(sire.mol.AtomName method)</a>
 </li>
@@ -2210,6 +2519,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.is_same_molecule">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.is_same_molecule">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.is_same_molecule">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.is_same_molecule">(sire.mol.Molecule method)</a>
@@ -2244,6 +2555,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.is_selector">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.is_selector">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.is_selector">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.is_selector">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.is_selector">(sire.mol.Molecule method)</a>
@@ -2253,13 +2568,31 @@
         </ul></li>
         <li><a href="api/mol.html#sire.mol.BondOrder.is_single">is_single() (sire.mol.BondOrder method)</a>
 </li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.is_supplementary">is_supplementary() (sire.io.parser.DCD method)</a>
+</li>
         <li><a href="api/maths.html#sire.maths.Matrix.is_symmetric">is_symmetric() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/system.html#sire.system.System.is_system">is_system() (sire.system.System static method)</a>
 </li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.is_text_file">is_text_file() (sire.io.parser.DCD method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.is_text_file">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.is_text_file">(sire.io.parser.XTC method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.is_topology">is_topology() (sire.io.parser.DCD method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.is_topology">(sire.io.parser.SDF method)</a>
+</li>
+        </ul></li>
         <li><a href="api/mol.html#sire.mol.BondOrder.is_triple">is_triple() (sire.mol.BondOrder method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Stereochemistry.is_up">is_up() (sire.mol.Stereochemistry method)</a>
+</li>
+        <li><a href="api/mol.html#sire.mol.is_water">is_water() (in module sire.mol)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Atom.is_within_chain">is_within_chain() (sire.mol.Atom method)</a>
 
@@ -2272,7 +2605,13 @@
         <li><a href="api/mol.html#sire.mol.Atom.is_within_segment">is_within_segment() (sire.mol.Atom method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.is_zero">is_zero() (sire.cas.Expression method)</a>
+
+        <ul>
+          <li><a href="api/maths.html#sire.maths.Matrix.is_zero">(sire.maths.Matrix method)</a>
 </li>
+          <li><a href="api/maths.html#sire.maths.Transform.is_zero">(sire.maths.Transform method)</a>
+</li>
+        </ul></li>
         <li><a href="api/mol.html#sire.mol.BondOrder.isromatic">isromatic() (sire.mol.BondOrder method)</a>
 </li>
     </ul></td>
@@ -2284,6 +2623,20 @@
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/mol.html#sire.mol.Molecule.join">join() (sire.mol.Molecule static method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="K" class="genindex-section">
+  <h2>K</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/maths.html#sire.maths.kabasch">kabasch() (in module sire.maths)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/maths.html#sire.maths.kabasch_fit">kabasch_fit() (in module sire.maths)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -2319,8 +2672,14 @@
 </li>
         <li><a href="api/maths.html#sire.maths.Triangle.line2">line2() (sire.maths.Triangle method)</a>
 </li>
-        <li><a href="api/sire.html#sire.load">load() (in module sire)</a>
+        <li><a href="api/mm.html#sire.mm.LJParameter">LJParameter (class in sire.mm)</a>
 </li>
+        <li><a href="api/sire.html#sire.load">load() (in module sire)</a>
+
+        <ul>
+          <li><a href="api/stream.html#sire.stream.load">(in module sire.stream)</a>
+</li>
+        </ul></li>
         <li><a href="api/mm.html#sire.mm.Angle.load_frame">load_frame() (sire.mm.Angle method)</a>
 
         <ul>
@@ -2347,6 +2706,10 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.load_frame">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.load_frame">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.load_frame">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.load_frame">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.load_frame">(sire.mol.Chain method)</a>
 </li>
@@ -2375,6 +2738,20 @@
   <h2>M</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/mol.html#sire.mol.Cursor.make_whole">make_whole() (sire.mol.Cursor method)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.Cursors.make_whole">(sire.mol.Cursors method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.CursorsM.make_whole">(sire.mol.CursorsM method)</a>
+</li>
+          <li><a href="api/system.html#sire.system.System.make_whole">(sire.system.System method)</a>
+</li>
+          <li><a href="api/vol.html#sire.vol.Cartesian.make_whole">(sire.vol.Cartesian method)</a>
+</li>
+          <li><a href="api/vol.html#sire.vol.PeriodicBox.make_whole">(sire.vol.PeriodicBox method)</a>
+</li>
+        </ul></li>
         <li><a href="api/mol.html#sire.mol.AtomIdx.map">map() (sire.mol.AtomIdx method)</a>
 
         <ul>
@@ -2482,6 +2859,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.metadata_keys">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.metadata_keys">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.metadata_keys">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.metadata_keys">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.metadata_keys">(sire.mol.Molecule method)</a>
@@ -2510,15 +2891,17 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.metadata_type">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.metadata_type">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.metadata_type">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.metadata_type">(sire.mol.Molecule method)</a>
 </li>
         </ul></li>
-        <li><a href="api/vol.html#sire.vol.PeriodicBox.min_coords">min_coords() (sire.vol.PeriodicBox method)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/vol.html#sire.vol.PeriodicBox.min_coords">min_coords() (sire.vol.PeriodicBox method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Minimisation">Minimisation (class in sire.mol)</a>
 </li>
         <li><a href="api/mm.html#sire.mm.SelectorMAngle.minimisation">minimisation() (sire.mm.SelectorMAngle method)</a>
@@ -2555,6 +2938,8 @@
 </li>
           <li><a href="api/io.html#module-sire.io">sire.io</a>
 </li>
+          <li><a href="api/io_parser.html#module-sire.io.parser">sire.io.parser</a>
+</li>
           <li><a href="api/maths.html#module-sire.maths">sire.maths</a>
 </li>
           <li><a href="api/mm.html#module-sire.mm">sire.mm</a>
@@ -2574,6 +2959,8 @@
           <li><a href="api/vol.html#module-sire.vol">sire.vol</a>
 </li>
         </ul></li>
+        <li><a href="api/io_parser.html#sire.io.parser.MOL2">MOL2 (in module sire.io.parser)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.SelectorMol.mol_nums">mol_nums() (sire.mol.SelectorMol method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Molecule">Molecule (class in sire.mol)</a>
@@ -2588,6 +2975,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.molecule">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.molecule">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.molecule">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursor.molecule">(sire.mol.Cursor method)</a>
 </li>
@@ -2616,6 +3005,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorDihedral.molecules">(sire.mm.SelectorDihedral method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorImproper.molecules">(sire.mm.SelectorImproper method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.molecules">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.CursorsM.molecules">(sire.mol.CursorsM method)</a>
 </li>
@@ -2686,9 +3077,11 @@
           <li><a href="api/utils.html#sire.utils.Profiler.name">(sire.utils.Profiler method)</a>
 </li>
         </ul></li>
-        <li><a href="api/mol.html#sire.mol.SelectorMol.names">names() (sire.mol.SelectorMol method)</a>
+        <li><a href="api/mol.html#sire.mol.AtomMatchM.names">names() (sire.mol.AtomMatchM method)</a>
 
         <ul>
+          <li><a href="api/mol.html#sire.mol.SelectorMol.names">(sire.mol.SelectorMol method)</a>
+</li>
           <li><a href="api/system.html#sire.system.System.names">(sire.system.System method)</a>
 </li>
         </ul></li>
@@ -2712,9 +3105,17 @@
         </ul></li>
         <li><a href="api/utils.html#sire.utils.NullProfiler">NullProfiler (class in sire.utils)</a>
 </li>
-        <li><a href="api/mm.html#sire.mm.Angle.num_atoms">num_atoms() (sire.mm.Angle method)</a>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.num_atoms">num_atoms() (sire.io.parser.DCD method)</a>
 
         <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.num_atoms">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.num_atoms">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.num_atoms">(sire.io.parser.XTC method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.Angle.num_atoms">(sire.mm.Angle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.num_atoms">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.num_atoms">(sire.mm.Dihedral method)</a>
@@ -2738,6 +3139,10 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.num_atoms">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.num_atoms">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.num_atoms">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.num_atoms">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.num_atoms">(sire.mol.Chain method)</a>
 </li>
@@ -2779,6 +3184,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.num_chains">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.num_chains">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.num_chains">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.num_chains">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.num_chains">(sire.mol.Molecule method)</a>
@@ -2815,6 +3224,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.num_cutgroups">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.num_cutgroups">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.num_cutgroups">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.num_cutgroups">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.num_cutgroups">(sire.mol.Molecule method)</a>
@@ -2822,9 +3235,17 @@
           <li><a href="api/mol.html#sire.mol.SelectorMol.num_cutgroups">(sire.mol.SelectorMol method)</a>
 </li>
         </ul></li>
-        <li><a href="api/mm.html#sire.mm.Angle.num_frames">num_frames() (sire.mm.Angle method)</a>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.num_frames">num_frames() (sire.io.parser.DCD method)</a>
 
         <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.num_frames">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.num_frames">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.num_frames">(sire.io.parser.XTC method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.Angle.num_frames">(sire.mm.Angle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.num_frames">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.num_frames">(sire.mm.Dihedral method)</a>
@@ -2849,6 +3270,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.num_frames">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.num_frames">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.num_frames">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.num_frames">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursor.num_frames">(sire.mol.Cursor method)</a>
@@ -2866,14 +3291,24 @@
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api/mm.html#sire.mm.SelectorMAngle.num_molecules">num_molecules() (sire.mm.SelectorMAngle method)</a>
+        <li><a href="api/mol.html#sire.mol.AtomMatch.num_groups">num_groups() (sire.mol.AtomMatch method)</a>
 
         <ul>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.num_groups">(sire.mol.AtomMatchM method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/io_parser.html#sire.io.parser.SDF.num_molecules">num_molecules() (sire.io.parser.SDF method)</a>
+
+        <ul>
+          <li><a href="api/mm.html#sire.mm.SelectorMAngle.num_molecules">(sire.mm.SelectorMAngle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.SelectorMBond.num_molecules">(sire.mm.SelectorMBond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMDihedral.num_molecules">(sire.mm.SelectorMDihedral method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.num_molecules">(sire.mm.SelectorMImproper method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.num_molecules">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.SelectorMol.num_molecules">(sire.mol.SelectorMol method)</a>
 </li>
@@ -2908,6 +3343,10 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.num_residues">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.num_residues">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.num_residues">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.num_residues">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.num_residues">(sire.mol.Chain method)</a>
 </li>
@@ -2945,6 +3384,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.num_segments">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.num_segments">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.num_segments">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.num_segments">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.num_segments">(sire.mol.Molecule method)</a>
@@ -2973,6 +3416,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.num_views">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.num_views">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.num_views">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.num_views">(sire.mol.Molecule method)</a>
@@ -2992,9 +3437,11 @@
           <li><a href="api/mol.html#sire.mol.Segment.number">(sire.mol.Segment method)</a>
 </li>
         </ul></li>
-        <li><a href="api/mol.html#sire.mol.SelectorMol.numbers">numbers() (sire.mol.SelectorMol method)</a>
+        <li><a href="api/mol.html#sire.mol.AtomMatchM.numbers">numbers() (sire.mol.AtomMatchM method)</a>
 
         <ul>
+          <li><a href="api/mol.html#sire.mol.SelectorMol.numbers">(sire.mol.SelectorMol method)</a>
+</li>
           <li><a href="api/system.html#sire.system.System.numbers">(sire.system.System method)</a>
 </li>
         </ul></li>
@@ -3028,6 +3475,18 @@
           <li><a href="api/mol.html#sire.mol.Cursors.parent">(sire.mol.Cursors method)</a>
 </li>
         </ul></li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.parse">parse() (sire.io.parser.DCD static method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.parse">(sire.io.parser.TRR static method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.parse">(sire.io.parser.XTC static method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/io_parser.html#sire.io.parser.SDF.parse_warnings">parse_warnings() (sire.io.parser.SDF method)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.PDB">PDB (in module sire.io.parser)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Element.period">period() (sire.mol.Element method)</a>
 </li>
         <li><a href="api/vol.html#sire.vol.PeriodicBox">PeriodicBox (class in sire.vol)</a>
@@ -3037,6 +3496,8 @@
         <li><a href="api/maths.html#sire.maths.pi">pi (in module sire.maths)</a>
 </li>
         <li><a href="api/units.html#sire.units.picometer">picometer (in module sire.units)</a>
+</li>
+        <li><a href="api/mol.html#sire.mol.Dynamics.platform">platform() (sire.mol.Dynamics method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Torsion.point">point() (sire.maths.Torsion method)</a>
 
@@ -3077,6 +3538,8 @@
         <li><a href="api/utils.html#sire.utils.Console.print">print() (sire.utils.Console static method)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Console.print_exception">print_exception() (sire.utils.Console static method)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.PRM">PRM (in module sire.io.parser)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Profiler">Profiler (class in sire.utils)</a>
 </li>
@@ -3167,6 +3630,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.property_keys">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.property_keys">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.property_keys">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.property_keys">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.property_keys">(sire.mol.Molecule method)</a>
@@ -3197,12 +3664,16 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.property_type">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.property_type">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.property_type">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.property_type">(sire.mol.Molecule method)</a>
 </li>
         </ul></li>
         <li><a href="api/base.html#sire.base.PropertyMap">PropertyMap (class in sire.base)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.PSF">PSF (in module sire.io.parser)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -3220,6 +3691,14 @@
 </li>
         <li><a href="api/utils.html#sire.utils.Console.redirect_output">redirect_output() (sire.utils.Console static method)</a>
 </li>
+        <li><a href="api/system.html#sire.system.System.remove">remove() (sire.system.System method)</a>
+</li>
+        <li><a href="api/system.html#sire.system.System.remove_all_shared_properties">remove_all_shared_properties() (sire.system.System method)</a>
+</li>
+        <li><a href="api/system.html#sire.system.System.remove_shared_property">remove_shared_property() (sire.system.System method)</a>
+</li>
+        <li><a href="api/mol.html#sire.mol.Cursor.renumber">renumber() (sire.mol.Cursor method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Chain.res_idxs">res_idxs() (sire.mol.Chain method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Residue">Residue (class in sire.mol)</a>
@@ -3234,6 +3713,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.residue">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.residue">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.residue">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursor.residue">(sire.mol.Cursor method)</a>
 </li>
@@ -3265,6 +3746,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.residues">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.residues">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.residues">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursor.residues">(sire.mol.Cursor method)</a>
@@ -3290,6 +3773,12 @@
 </li>
         <li><a href="api/mol.html#sire.mol.ResNum">ResNum (class in sire.mol)</a>
 </li>
+        <li><a href="api/io.html#sire.io.resolve_path">resolve_path() (in module sire.io)</a>
+</li>
+        <li><a href="api/maths.html#sire.maths.Transform.reverse">reverse() (sire.maths.Transform method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.rmin">rmin() (sire.mm.LJParameter method)</a>
+</li>
         <li><a href="api/cas.html#sire.cas.Expression.root">root() (sire.cas.Expression method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.rotate">rotate() (sire.mol.Cursor method)</a>
@@ -3300,11 +3789,21 @@
           <li><a href="api/mol.html#sire.mol.CursorsM.rotate">(sire.mol.CursorsM method)</a>
 </li>
         </ul></li>
+        <li><a href="api/maths.html#sire.maths.Transform.rotation_center">rotation_center() (sire.maths.Transform method)</a>
+</li>
+        <li><a href="api/maths.html#sire.maths.Transform.rotation_matrix">rotation_matrix() (sire.maths.Transform method)</a>
+</li>
+        <li><a href="api/maths.html#sire.maths.Transform.rotation_quaternion">rotation_quaternion() (sire.maths.Transform method)</a>
+</li>
         <li><a href="api/maths.html#sire.maths.Matrix.row0">row0() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.row1">row1() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.row2">row2() (sire.maths.Matrix method)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.RST">RST (in module sire.io.parser)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.RST7">RST7 (in module sire.io.parser)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Console.rule">rule() (sire.utils.Console static method)</a>
 </li>
@@ -3325,6 +3824,8 @@
         <li><a href="api/sire.html#sire.save">save() (in module sire)</a>
 
         <ul>
+          <li><a href="api/stream.html#sire.stream.save">(in module sire.stream)</a>
+</li>
           <li><a href="api/utils.html#sire.utils.Console.save">(sire.utils.Console static method)</a>
 </li>
         </ul></li>
@@ -3355,6 +3856,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.save_frame">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.save_frame">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.save_frame">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.save_frame">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursor.save_frame">(sire.mol.Cursor method)</a>
@@ -3372,6 +3877,8 @@
         </ul></li>
         <li><a href="api/sire.html#sire.save_to_string">save_to_string() (in module sire)</a>
 </li>
+        <li><a href="api/io_parser.html#sire.io.parser.SDF">SDF (class in sire.io.parser)</a>
+</li>
         <li><a href="api/mm.html#sire.mm.SelectorMAngle.search">search() (sire.mm.SelectorMAngle method)</a>
 
         <ul>
@@ -3380,6 +3887,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMDihedral.search">(sire.mm.SelectorMDihedral method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.search">(sire.mm.SelectorMImproper method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.search">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.SelectorMol.search">(sire.mol.SelectorMol method)</a>
 </li>
@@ -3400,6 +3909,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.segment">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.segment">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.segment">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Cursor.segment">(sire.mol.Cursor method)</a>
 </li>
@@ -3430,6 +3941,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorImproper.segments">(sire.mm.SelectorImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.segments">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.segments">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.segments">(sire.mol.Chain method)</a>
 </li>
@@ -3469,6 +3982,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.select_all">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.select_all">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.select_all">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.select_all">(sire.mol.Molecule method)</a>
@@ -3492,6 +4007,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorImproper.select_all_atoms">(sire.mm.SelectorImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.select_all_atoms">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.select_all_atoms">(sire.mol.AtomMatch method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.select_all_atoms">(sire.mol.Chain method)</a>
 </li>
@@ -3517,6 +4034,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.select_all_chains">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.select_all_chains">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.select_all_chains">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.select_all_chains">(sire.mol.Molecule method)</a>
@@ -3540,6 +4059,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorImproper.select_all_cutgroups">(sire.mm.SelectorImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.select_all_cutgroups">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.select_all_cutgroups">(sire.mol.AtomMatch method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.select_all_cutgroups">(sire.mol.Chain method)</a>
 </li>
@@ -3565,6 +4086,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.select_all_residues">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.select_all_residues">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.select_all_residues">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.select_all_residues">(sire.mol.Molecule method)</a>
@@ -3589,6 +4112,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.select_all_segments">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.select_all_segments">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.select_all_segments">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.select_all_segments">(sire.mol.Molecule method)</a>
@@ -3612,6 +4137,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorImproper.selected_all">(sire.mm.SelectorImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.selected_all">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.selected_all">(sire.mol.AtomMatch method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.selected_all">(sire.mol.Chain method)</a>
 </li>
@@ -3704,15 +4231,25 @@
 </li>
         <li><a href="api/utils.html#sire.utils.Console.set_debugging_enabled">set_debugging_enabled() (sire.utils.Console static method)</a>
 </li>
+        <li><a href="api/sire.html#sire.set_default_num_threads">set_default_num_threads() (in module sire)</a>
+</li>
+        <li><a href="api/units.html#sire.units.set_default_unit">set_default_unit() (in module sire.units)</a>
+</li>
+        <li><a href="api/units.html#sire.units.set_default_units">set_default_units() (in module sire.units)</a>
+</li>
         <li><a href="api/vol.html#sire.vol.PeriodicBox.set_dimensions">set_dimensions() (sire.vol.PeriodicBox method)</a>
 </li>
         <li><a href="api/units.html#sire.units.set_energy_unit">set_energy_unit() (in module sire.units)</a>
+</li>
+        <li><a href="api/stream.html#sire.stream.set_header_property">set_header_property() (in module sire.stream)</a>
 </li>
         <li><a href="api/units.html#sire.units.set_internal_units">set_internal_units() (in module sire.units)</a>
 </li>
         <li><a href="api/units.html#sire.units.set_length_unit">set_length_unit() (in module sire.units)</a>
 </li>
         <li><a href="api/units.html#sire.units.set_mass_unit">set_mass_unit() (in module sire.units)</a>
+</li>
+        <li><a href="api/sire.html#sire.set_max_num_threads">set_max_num_threads() (in module sire)</a>
 </li>
         <li><a href="api/search.html#sire.search.set_min_protein_residues">set_min_protein_residues() (in module sire.search)</a>
 </li>
@@ -3726,9 +4263,15 @@
 </li>
         <li><a href="api/units.html#sire.units.set_quantity_unit">set_quantity_unit() (in module sire.units)</a>
 </li>
+        <li><a href="api/system.html#sire.system.System.set_shared_property">set_shared_property() (sire.system.System method)</a>
+</li>
         <li><a href="api/units.html#sire.units.set_si_units">set_si_units() (in module sire.units)</a>
 </li>
+        <li><a href="api/system.html#sire.system.System.set_space">set_space() (sire.system.System method)</a>
+</li>
         <li><a href="api/utils.html#sire.utils.Console.set_theme">set_theme() (sire.utils.Console static method)</a>
+</li>
+        <li><a href="api/system.html#sire.system.System.set_time">set_time() (sire.system.System method)</a>
 </li>
         <li><a href="api/units.html#sire.units.set_time_unit">set_time_unit() (in module sire.units)</a>
 </li>
@@ -3736,12 +4279,18 @@
 </li>
         <li><a href="api/search.html#sire.search.set_token">set_token() (in module sire.search)</a>
 </li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.set_use_parallel">set_use_parallel() (sire.io.parser.DCD method)</a>
+</li>
         <li><a href="api/vol.html#sire.vol.Cartesian.set_volume">set_volume() (sire.vol.Cartesian method)</a>
 
         <ul>
           <li><a href="api/vol.html#sire.vol.PeriodicBox.set_volume">(sire.vol.PeriodicBox method)</a>
 </li>
         </ul></li>
+        <li><a href="api/system.html#sire.system.System.shared_properties">shared_properties() (sire.system.System method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.sigma">sigma() (sire.mm.LJParameter method)</a>
+</li>
         <li><a href="api/cas.html#sire.cas.Expression.simplify">simplify() (sire.cas.Expression method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.BondOrder.single_bond">single_bond() (sire.mol.BondOrder method)</a>
@@ -3781,6 +4330,13 @@
 
         <ul>
           <li><a href="api/io.html#module-sire.io">module</a>
+</li>
+        </ul></li>
+        <li>
+    sire.io.parser
+
+        <ul>
+          <li><a href="api/io_parser.html#module-sire.io.parser">module</a>
 </li>
         </ul></li>
         <li>
@@ -3852,9 +4408,15 @@
 </li>
         <li><a href="api/convert.html#sire.convert.sire_to_rdkit">sire_to_rdkit() (in module sire.convert)</a>
 </li>
-        <li><a href="api/mm.html#sire.mm.Angle.size">size() (sire.mm.Angle method)</a>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.size">size() (sire.io.parser.DCD method)</a>
 
         <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.size">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.size">(sire.io.parser.XTC method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.Angle.size">(sire.mm.Angle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.size">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.size">(sire.mm.Dihedral method)</a>
@@ -3878,6 +4440,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.size">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.size">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.size">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.size">(sire.mol.Chain method)</a>
 </li>
@@ -3906,6 +4470,22 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.sizes">(sire.mm.SelectorMImproper method)</a>
 </li>
         </ul></li>
+        <li><a href="api/sire.html#sire.smarts">smarts() (in module sire)</a>
+
+        <ul>
+          <li><a href="api/mm.html#sire.mm.SelectorMAngle.smarts">(sire.mm.SelectorMAngle method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMBond.smarts">(sire.mm.SelectorMBond method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMDihedral.smarts">(sire.mm.SelectorMDihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMImproper.smarts">(sire.mm.SelectorMImproper method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.SelectorMol.smarts">(sire.mol.SelectorMol method)</a>
+</li>
+          <li><a href="api/system.html#sire.system.System.smarts">(sire.system.System method)</a>
+</li>
+        </ul></li>
         <li><a href="api/sire.html#sire.smiles">smiles() (in module sire)</a>
 
         <ul>
@@ -3922,9 +4502,17 @@
           <li><a href="api/system.html#sire.system.System.smiles">(sire.system.System method)</a>
 </li>
         </ul></li>
+        <li><a href="api/mol.html#sire.mol.TrajectoryIterator.smooth">smooth() (sire.mol.TrajectoryIterator method)</a>
+</li>
+        <li><a href="api/system.html#sire.system.System.space">space() (sire.system.System method)</a>
+</li>
         <li><a href="api/base.html#sire.base.PropertyMap.specified">specified() (sire.base.PropertyMap method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Sphere">Sphere (class in sire.maths)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.sqrt_epsilon">sqrt_epsilon() (sire.mm.LJParameter method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.LJParameter.sqrt_sigma">sqrt_sigma() (sire.mm.LJParameter method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.squared">squared() (sire.cas.Expression method)</a>
 </li>
@@ -3948,6 +4536,8 @@
 
         <ul>
           <li><a href="api/convert.html#sire.convert.supported_formats">(in module sire.convert)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.DCD.supported_formats">(sire.io.parser.DCD method)</a>
 </li>
         </ul></li>
         <li><a href="api/utils.html#sire.utils.Console.supports_emojis">supports_emojis() (sire.utils.Console static method)</a>
@@ -3978,7 +4568,7 @@
 </li>
         <li><a href="api/mm.html#sire.mm.Improper.theta">theta() (sire.mm.Improper method)</a>
 </li>
-        <li><a href="api/sire.html#sire.thumbs_up">thumbs_up() (in module sire)</a>
+        <li><a href="api/system.html#sire.system.System.time">time() (sire.system.System method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Dynamics.time_speed">time_speed() (sire.mol.Dynamics method)</a>
 </li>
@@ -4017,6 +4607,10 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.to_list">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.to_list">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.to_list">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.to_list">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.to_list">(sire.mol.Molecule method)</a>
@@ -4032,6 +4626,8 @@
           <li><a href="api/mm.html#sire.mm.SelectorMDihedral.to_molecule_group">(sire.mm.SelectorMDihedral method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.to_molecule_group">(sire.mm.SelectorMImproper method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.to_molecule_group">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.SelectorMol.to_molecule_group">(sire.mol.SelectorMol method)</a>
 </li>
@@ -4064,6 +4660,10 @@
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.to_molecules">(sire.mm.SelectorMImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.to_molecules">(sire.mol.Atom method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.to_molecules">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.to_molecules">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Chain.to_molecules">(sire.mol.Chain method)</a>
 </li>
@@ -4099,6 +4699,8 @@
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.to_select_result">(sire.mm.SelectorMImproper method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.to_select_result">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.SelectorMol.to_select_result">(sire.mol.SelectorMol method)</a>
 </li>
         </ul></li>
@@ -4121,6 +4723,8 @@
 </li>
           <li><a href="api/mol.html#sire.mol.Atom.to_selector">(sire.mol.Atom method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.to_selector">(sire.mol.AtomMatch method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.to_selector">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.Molecule.to_selector">(sire.mol.Molecule method)</a>
@@ -4139,9 +4743,19 @@
 </li>
           <li><a href="api/cas.html#sire.cas.Symbol.to_string">(sire.cas.Symbol method)</a>
 </li>
+          <li><a href="api/io_parser.html#sire.io.parser.DCD.to_string">(sire.io.parser.DCD method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.to_string">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.to_string">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.to_string">(sire.io.parser.XTC method)</a>
+</li>
           <li><a href="api/maths.html#sire.maths.Matrix.to_string">(sire.maths.Matrix method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Torsion.to_string">(sire.maths.Torsion method)</a>
+</li>
+          <li><a href="api/maths.html#sire.maths.Transform.to_string">(sire.maths.Transform method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Triangle.to_string">(sire.maths.Triangle method)</a>
 </li>
@@ -4152,6 +4766,8 @@
           <li><a href="api/mm.html#sire.mm.Dihedral.to_string">(sire.mm.Dihedral method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.to_string">(sire.mm.Improper method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.LJParameter.to_string">(sire.mm.LJParameter method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorAngle.to_string">(sire.mm.SelectorAngle method)</a>
 </li>
@@ -4172,6 +4788,10 @@
           <li><a href="api/mol.html#sire.mol.Atom.to_string">(sire.mol.Atom method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomIdx.to_string">(sire.mol.AtomIdx method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.to_string">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.to_string">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomName.to_string">(sire.mol.AtomName method)</a>
 </li>
@@ -4222,16 +4842,44 @@
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.to_system">to_system() (sire.io.parser.DCD method)</a>
+</li>
+        <li><a href="api/mol.html#sire.mol.AtomMatch.to_unit">to_unit() (sire.mol.AtomMatch method)</a>
+</li>
         <li><a href="api/maths.html#sire.maths.Torsion">Torsion (class in sire.maths)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Profiler.total">total() (sire.utils.Profiler method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.trace">trace() (sire.maths.Matrix method)</a>
 </li>
-        <li><a href="api/system.html#sire.system.System.trajectory">trajectory() (sire.system.System method)</a>
+        <li><a href="api/io_parser.html#sire.io.parser.TRAJ">TRAJ (in module sire.io.parser)</a>
 </li>
+        <li><a href="api/mm.html#sire.mm.SelectorMAngle.trajectory">trajectory() (sire.mm.SelectorMAngle method)</a>
+
+        <ul>
+          <li><a href="api/mm.html#sire.mm.SelectorMBond.trajectory">(sire.mm.SelectorMBond method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMDihedral.trajectory">(sire.mm.SelectorMDihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.SelectorMImproper.trajectory">(sire.mm.SelectorMImproper method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.SelectorMol.trajectory">(sire.mol.SelectorMol method)</a>
+</li>
+          <li><a href="api/system.html#sire.system.System.trajectory">(sire.system.System method)</a>
+</li>
+        </ul></li>
         <li><a href="api/mol.html#sire.mol.TrajectoryIterator">TrajectoryIterator (class in sire.mol)</a>
 </li>
+        <li><a href="api/maths.html#sire.maths.Transform">Transform (class in sire.maths)</a>
+</li>
+        <li><a href="api/mol.html#sire.mol.Cursor.transform">transform() (sire.mol.Cursor method)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.Cursors.transform">(sire.mol.Cursors method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.CursorsM.transform">(sire.mol.CursorsM method)</a>
+</li>
+        </ul></li>
         <li><a href="api/mol.html#sire.mol.Element.transition_metal">transition_metal() (sire.mol.Element method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.translate">translate() (sire.mol.Cursor method)</a>
@@ -4242,6 +4890,8 @@
           <li><a href="api/mol.html#sire.mol.CursorsM.translate">(sire.mol.CursorsM method)</a>
 </li>
         </ul></li>
+        <li><a href="api/maths.html#sire.maths.Transform.translation_delta">translation_delta() (sire.maths.Transform method)</a>
+</li>
         <li><a href="api/maths.html#sire.maths.Matrix.transpose">transpose() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Triangle">Triangle (class in sire.maths)</a>
@@ -4251,6 +4901,8 @@
         <li><a href="api/maths.html#sire.maths.Torsion.triangle2">triangle2() (sire.maths.Torsion method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.BondOrder.triple_bond">triple_bond() (sire.mol.BondOrder method)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.TRR">TRR (class in sire.io.parser)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.try_import">try_import() (in module sire.utils)</a>
 </li>
@@ -4267,9 +4919,19 @@
 </li>
           <li><a href="api/cas.html#sire.cas.Symbol.typename">(sire.cas.Symbol method)</a>
 </li>
+          <li><a href="api/io_parser.html#sire.io.parser.DCD.typename">(sire.io.parser.DCD method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.typename">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.typename">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.typename">(sire.io.parser.XTC method)</a>
+</li>
           <li><a href="api/maths.html#sire.maths.Matrix.typename">(sire.maths.Matrix method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Torsion.typename">(sire.maths.Torsion method)</a>
+</li>
+          <li><a href="api/maths.html#sire.maths.Transform.typename">(sire.maths.Transform method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Triangle.typename">(sire.maths.Triangle method)</a>
 </li>
@@ -4280,6 +4942,8 @@
           <li><a href="api/mm.html#sire.mm.Dihedral.typename">(sire.mm.Dihedral method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.typename">(sire.mm.Improper method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.LJParameter.typename">(sire.mm.LJParameter method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorAngle.typename">(sire.mm.SelectorAngle method)</a>
 </li>
@@ -4300,6 +4964,10 @@
           <li><a href="api/mol.html#sire.mol.Atom.typename">(sire.mol.Atom method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomIdx.typename">(sire.mol.AtomIdx method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.typename">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.typename">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomName.typename">(sire.mol.AtomName method)</a>
 </li>
@@ -4354,6 +5022,8 @@
   <h2>U</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/sire.html#sire.u">u() (in module sire)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Stereochemistry.undefined">undefined() (sire.mol.Stereochemistry static method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.BondOrder.undefined_bond">undefined_bond() (sire.mol.BondOrder method)</a>
@@ -4369,6 +5039,8 @@
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorMImproper.update">(sire.mm.SelectorMImproper method)</a>
 </li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.update">(sire.mol.AtomMatchM method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Chain.update">(sire.mol.Chain method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.SelectorMol.update">(sire.mol.SelectorMol method)</a>
@@ -4383,6 +5055,8 @@
         <li><a href="api/sire.html#sire.use_new_api">use_new_api() (in module sire)</a>
 </li>
         <li><a href="api/sire.html#sire.use_old_api">use_old_api() (in module sire)</a>
+</li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.uses_parallel">uses_parallel() (sire.io.parser.DCD method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -4475,9 +5149,19 @@
 </li>
           <li><a href="api/cas.html#sire.cas.Symbol.what">(sire.cas.Symbol method)</a>
 </li>
+          <li><a href="api/io_parser.html#sire.io.parser.DCD.what">(sire.io.parser.DCD method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.SDF.what">(sire.io.parser.SDF method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.what">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.what">(sire.io.parser.XTC method)</a>
+</li>
           <li><a href="api/maths.html#sire.maths.Matrix.what">(sire.maths.Matrix method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Torsion.what">(sire.maths.Torsion method)</a>
+</li>
+          <li><a href="api/maths.html#sire.maths.Transform.what">(sire.maths.Transform method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Triangle.what">(sire.maths.Triangle method)</a>
 </li>
@@ -4489,6 +5173,8 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.what">(sire.mm.Improper method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.LJParameter.what">(sire.mm.LJParameter method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.SelectorAngle.what">(sire.mm.SelectorAngle method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorBond.what">(sire.mm.SelectorBond method)</a>
@@ -4498,6 +5184,10 @@
           <li><a href="api/mm.html#sire.mm.SelectorImproper.what">(sire.mm.SelectorImproper method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomIdx.what">(sire.mol.AtomIdx method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatch.what">(sire.mol.AtomMatch method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.AtomMatchM.what">(sire.mol.AtomMatchM method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.AtomName.what">(sire.mol.AtomName method)</a>
 </li>
@@ -4531,7 +5221,19 @@
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/base.html#sire.base.wrap">wrap() (in module sire.base)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.TrajectoryIterator.wrap">(sire.mol.TrajectoryIterator method)</a>
 </li>
+        </ul></li>
+        <li><a href="api/io_parser.html#sire.io.parser.DCD.write_to_file">write_to_file() (sire.io.parser.DCD method)</a>
+
+        <ul>
+          <li><a href="api/io_parser.html#sire.io.parser.TRR.write_to_file">(sire.io.parser.TRR method)</a>
+</li>
+          <li><a href="api/io_parser.html#sire.io.parser.XTC.write_to_file">(sire.io.parser.XTC method)</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -4542,10 +5244,12 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/cas.html#sire.cas.x">x (in module sire.cas)</a>
 </li>
-        <li><a href="api/maths.html#sire.maths.Matrix.xx">xx() (sire.maths.Matrix method)</a>
+        <li><a href="api/io_parser.html#sire.io.parser.XTC">XTC (class in sire.io.parser)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/maths.html#sire.maths.Matrix.xx">xx() (sire.maths.Matrix method)</a>
+</li>
         <li><a href="api/maths.html#sire.maths.Matrix.xy">xy() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.xz">xz() (sire.maths.Matrix method)</a>
@@ -4578,10 +5282,12 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/maths.html#sire.maths.Matrix.zero">zero() (sire.maths.Matrix static method)</a>
 </li>
-        <li><a href="api/maths.html#sire.maths.Matrix.zx">zx() (sire.maths.Matrix method)</a>
+        <li><a href="api/mm.html#sire.mm.LJParameter.zero_l_j">zero_l_j() (sire.mm.LJParameter method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/maths.html#sire.maths.Matrix.zx">zx() (sire.maths.Matrix method)</a>
+</li>
         <li><a href="api/maths.html#sire.maths.Matrix.zy">zy() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.zz">zz() (sire.maths.Matrix method)</a>
@@ -4604,7 +5310,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">

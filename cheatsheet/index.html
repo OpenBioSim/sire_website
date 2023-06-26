@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Searching" href="search.html" /><link rel="prev" title="Molecular Dynamics and Minimisation" href="../tutorial/part05/04_dynamics.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Searching" href="search.html" /><link rel="prev" title="Molecular Dynamics and Minimisation" href="../tutorial/part05/05_dynamics.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Detailed Guides - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul class="current">
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Detailed Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -391,18 +396,56 @@ use and understand various parts of sire.</p>
 <li class="toctree-l2"><a class="reference internal" href="search.html#searching-by-property">Searching by Property</a></li>
 <li class="toctree-l2"><a class="reference internal" href="search.html#finding-the-nth-view-that-matches">Finding the Nth View that Matches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="search.html#searching-by-distance">Searching by Distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search.html#searching-using-smiles-or-smarts-strings">Searching using Smiles or Smarts Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="search.html#searching-for-water-or-protein-molecules">Searching for Water or Protein Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="search.html#creating-custom-search-tokens">Creating Custom Search Tokens</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trajectory.html">Trajectories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#supported-file-formats">Supported file formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#loading-trajectories">Loading trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#loading-and-joining-multiple-trajectories">Loading and joining multiple trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#saving-trajectories">Saving trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#saving-trajectory-for-subsets-of-molecules">Saving trajectory for subsets of molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#saving-to-multiple-files-in-parallel">Saving to multiple files in parallel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#saving-to-file-trajectories">Saving to file trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#visualising-trajectories">Visualising trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#smoothing-and-aligning-frames">Smoothing and aligning frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html#calculating-energies-across-frames">Calculating energies across frames</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="view.html">Viewing Molecules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="view.html#d-views">2D Views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view.html#id1">3D Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#choosing-the-3d-representation">Choosing the 3D representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#choosing-colors-and-opacities">Choosing colors and opacities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#centering-the-view">Centering the view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#viewing-trajectories">Viewing trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#wrapping-molecules-into-the-current-box">Wrapping molecules into the current box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#trajectory-alignment">Trajectory Alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#trajectory-smoothing">Trajectory Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#integration-with-trajectories">Integration with trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#closer-integration-with-nglview">Closer integration with NGLView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html#saving-3d-views-to-files">Saving 3D views to files</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="openmm.html">OpenMM Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="openmm.html#choosing-options">Choosing options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openmm.html#higher-level-api">Higher level API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="units.html#converting-to-other-units">Converting to other units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#supported-units">Supported units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#si-prefixes">SI prefixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#raising-units-to-a-power">Raising units to a power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#combining-units">Combining units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#changing-default-units">Changing default units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#conversion-from-pint">Conversion from <code class="docutils literal notranslate"><span class="pre">pint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#conversion-from-biosimspace">Conversion from <code class="docutils literal notranslate"><span class="pre">BioSimSpace</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#conversion-from-other-packages">Conversion from other packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#under-the-hood-generalunit">Under the hood - <code class="docutils literal notranslate"><span class="pre">GeneralUnit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#under-the-hood-python-to-c">Under the hood - Python to C++</a></li>
 </ul>
 </li>
 </ul>
@@ -423,7 +466,7 @@ use and understand various parts of sire.</p>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../tutorial/part05/04_dynamics.html">
+          <a class="prev-page" href="../tutorial/part05/05_dynamics.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
@@ -440,7 +483,7 @@ use and understand various parts of sire.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">

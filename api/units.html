@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.utils" href="index_utils.html" /><link rel="prev" title="sire.units" href="index_units.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -379,6 +384,12 @@ is a float or something that can be converted to
 a float</p>
 </dd></dl>
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.units.clear_default_units">
+<span class="sig-prename descclassname"><span class="pre">sire.units.</span></span><span class="sig-name descname"><span class="pre">clear_default_units</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/units.html#clear_default_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.units.clear_default_units" title="Permalink to this definition">#</a></dt>
+<dd><p>Clear the current set of default units. Note that you will need
+to set some units, or else the code will complain.</p>
+</dd></dl>
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.units.convert">
 <span class="sig-prename descclassname"><span class="pre">sire.units.</span></span><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(float)val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(TempBase)from_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(TempBase)to_units</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.units.convert" title="Permalink to this definition">#</a></dt>
 <dd><blockquote>
@@ -426,6 +437,35 @@ is a float or something that can be converted to
 a float</p>
 </dd></dl>
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.units.set_default_unit">
+<span class="sig-prename descclassname"><span class="pre">sire.units.</span></span><span class="sig-name descname"><span class="pre">set_default_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/units.html#set_default_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.units.set_default_unit" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the default unit name for the unit named in the passed
+string.</p>
+<p>For example, set_default_unit(“m”) would set the default length
+unit to “meters”, and will print it out using “m” as the string.</p>
+<p>Calling set_default_unit(“kcal.mol-1”) would set the default
+molar energy unit to kcal_per_mol, and will print it out
+using “kcal.mol-1”</p>
+<p>The string must be something that can be parsed by
+the units grammar in GeneralUnit, and should be units only -
+they cannot contain values.</p>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.units.set_default_units">
+<span class="sig-prename descclassname"><span class="pre">sire.units.</span></span><span class="sig-name descname"><span class="pre">set_default_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">units</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/units.html#set_default_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.units.set_default_units" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the default unit names for the units named in the passed
+list of strings.</p>
+<p>For example, set_default_units([“m”]) would set the default length
+unit to “meters”, and will print it out using “m” as the string.</p>
+<p>Calling set_default_unit([“kcal”, “kcal.mol-1”]) would set the default
+molar energy unit to kcal_per_mol, and will print it out
+using “kcal.mol-1”, and the default energy unit to “kcal”, printed
+out using “kcal”.</p>
+<p>All of the strings must be something that can be parsed by
+the units grammar in GeneralUnit, and should be units only -
+they cannot contain values.</p>
+</dd></dl>
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.units.set_energy_unit">
 <span class="sig-prename descclassname"><span class="pre">sire.units.</span></span><span class="sig-name descname"><span class="pre">set_energy_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/units.html#set_energy_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.units.set_energy_unit" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the default energy unit to be used for
@@ -466,16 +506,31 @@ output and default conversions</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.units.set_si_units">
-<span class="sig-prename descclassname"><span class="pre">sire.units.</span></span><span class="sig-name descname"><span class="pre">set_si_units</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/units.html#set_si_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.units.set_si_units" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.units.</span></span><span class="sig-name descname"><span class="pre">set_si_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scaled</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/units.html#set_si_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.units.set_si_units" title="Permalink to this definition">#</a></dt>
 <dd><p>Switch over to using SI units for output and default conversions</p>
-<p>This uses:</p>
+<p>If ‘scaled’ is true, then units scaled appropriately
+for atomic-level simulations are chosen.</p>
+<p>In this case, we would use</p>
 <blockquote>
-<div><p>mass:     gram (g)
-energy:   kilojoule (kJ)
-length:   nanometer
-time:     picosecond
-quantity: mole
-charge:   mod_electron charges</p>
+<div><p>mass:        gram (g)
+energy:      kilojoule (J)
+length:      nanometer
+time:        picosecond
+quantity:    mole
+charge:      coulomb (C)
+angle:       radian
+temperature: kelvin (K)</p>
+</div></blockquote>
+<p>Unscaled, we would use</p>
+<blockquote>
+<div><p>mass:        kilogram (g)
+energy:      joule (J)
+length:      meter
+time:        second
+quantity:    mole
+charge:      coulomb (C)
+angle:       radian
+temperature: kelvin (K)</p>
 </div></blockquote>
 </dd></dl>
 <dl class="py function">
@@ -525,7 +580,7 @@ output and default conversions</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -550,8 +605,11 @@ output and default conversions</p>
             <ul>
 <li><a class="reference internal" href="#">Public API</a><ul>
 <li><a class="reference internal" href="#sire.units.angle"><code class="docutils literal notranslate"><span class="pre">angle()</span></code></a></li>
+<li><a class="reference internal" href="#sire.units.clear_default_units"><code class="docutils literal notranslate"><span class="pre">clear_default_units()</span></code></a></li>
 <li><a class="reference internal" href="#sire.units.convert"><code class="docutils literal notranslate"><span class="pre">convert()</span></code></a></li>
 <li><a class="reference internal" href="#sire.units.length"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
+<li><a class="reference internal" href="#sire.units.set_default_unit"><code class="docutils literal notranslate"><span class="pre">set_default_unit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.units.set_default_units"><code class="docutils literal notranslate"><span class="pre">set_default_units()</span></code></a></li>
 <li><a class="reference internal" href="#sire.units.set_energy_unit"><code class="docutils literal notranslate"><span class="pre">set_energy_unit()</span></code></a></li>
 <li><a class="reference internal" href="#sire.units.set_internal_units"><code class="docutils literal notranslate"><span class="pre">set_internal_units()</span></code></a></li>
 <li><a class="reference internal" href="#sire.units.set_length_unit"><code class="docutils literal notranslate"><span class="pre">set_length_unit()</span></code></a></li>

@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Indexing Angles" href="07_indexing_angles.html" /><link rel="prev" title="Indexing Molecules" href="05_indexing_molecules.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Indexing Bonds - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part02.html">Part 2 - Indexing and Searching</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -388,7 +393,7 @@ function.</p>
 <span class="go">2: Bond( CH3:2 =&gt; HH32:3 )</span>
 <span class="go">3: Bond( CH3:2 =&gt; HH33:4 )</span>
 <span class="go">4: Bond( C:5 =&gt; O:6 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">16: Bond( N:17 =&gt; H:18 )</span>
 <span class="go">17: Bond( N:17 =&gt; CH3:19 )</span>
 <span class="go">18: Bond( CH3:19 =&gt; HH32:21 )</span>
@@ -531,7 +536,7 @@ that involve that atom (or atoms).</p>
 <span class="go">2: Bond( HH31:1 =&gt; CH3:2 )</span>
 <span class="go">3: Bond( CH3:2 =&gt; HH32:3 )</span>
 <span class="go">4: Bond( C:5 =&gt; O:6 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">14: Bond( C:15 =&gt; N:17 )</span>
 <span class="go">15: Bond( CH3:19 =&gt; HH31:20 )</span>
 <span class="go">16: Bond( CH3:19 =&gt; HH32:21 )</span>
@@ -549,7 +554,7 @@ that involve that atom (or atoms).</p>
 <span class="go">2: Bond( CH3:2 =&gt; HH33:4 )</span>
 <span class="go">3: Bond( CH3:2 =&gt; C:5 )</span>
 <span class="go">4: Bond( C:5 =&gt; O:6 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">14: Bond( C:15 =&gt; N:17 )</span>
 <span class="go">15: Bond( N:17 =&gt; CH3:19 )</span>
 <span class="go">16: Bond( CH3:19 =&gt; HH31:20 )</span>
@@ -659,7 +664,7 @@ from this residue to another residue.</p>
 <span class="go">2: Bond( CH3:2 =&gt; HH32:3 )</span>
 <span class="go">3: Bond( CH3:2 =&gt; HH33:4 )</span>
 <span class="go">4: Bond( C:5 =&gt; O:6 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">14: Bond( C:15 =&gt; N:17 )</span>
 <span class="go">15: Bond( N:17 =&gt; CH3:19 )</span>
 <span class="go">16: Bond( CH3:19 =&gt; HH31:20 )</span>
@@ -691,7 +696,7 @@ from this residue to another residue.</p>
 <span class="go">2: Bond( CH3:2 =&gt; HH33:4 )</span>
 <span class="go">3: Bond( C:5 =&gt; O:6 )</span>
 <span class="go">4: Bond( C:5 =&gt; N:7 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">11: Bond( C:15 =&gt; N:17 )</span>
 <span class="go">12: Bond( N:17 =&gt; CH3:19 )</span>
 <span class="go">13: Bond( CH3:19 =&gt; HH31:20 )</span>
@@ -737,7 +742,7 @@ container across any number of molecules, e.g.</p>
 <span class="go">2: MolNum(4) Bond( O:26 =&gt; H1:27 )</span>
 <span class="go">3: MolNum(4) Bond( O:26 =&gt; H2:28 )</span>
 <span class="go">4: MolNum(5) Bond( O:29 =&gt; H1:30 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">1255: MolNum(630) Bond( O:1904 =&gt; H2:1906 )</span>
 <span class="go">1256: MolNum(631) Bond( O:1907 =&gt; H1:1908 )</span>
 <span class="go">1257: MolNum(631) Bond( O:1907 =&gt; H2:1909 )</span>
@@ -789,7 +794,7 @@ any other identifier class.</p>
 <span class="go">2: MolNum(5) Bond( O:29 =&gt; H1:30 )</span>
 <span class="go">3: MolNum(6) Bond( O:32 =&gt; H1:33 )</span>
 <span class="go">4: MolNum(7) Bond( O:35 =&gt; H1:36 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">625: MolNum(628) Bond( O:1898 =&gt; H1:1899 )</span>
 <span class="go">626: MolNum(629) Bond( O:1901 =&gt; H1:1902 )</span>
 <span class="go">627: MolNum(630) Bond( O:1904 =&gt; H1:1905 )</span>
@@ -812,7 +817,7 @@ all molecules, while</p>
 <span class="go">2: MolNum(4) Bond( O:26 =&gt; H1:27 )</span>
 <span class="go">3: MolNum(5) Bond( O:29 =&gt; H1:30 )</span>
 <span class="go">4: MolNum(6) Bond( O:32 =&gt; H1:33 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">626: MolNum(628) Bond( O:1898 =&gt; H1:1899 )</span>
 <span class="go">627: MolNum(629) Bond( O:1901 =&gt; H1:1902 )</span>
 <span class="go">628: MolNum(630) Bond( O:1904 =&gt; H1:1905 )</span>
@@ -856,7 +861,7 @@ all molecules, while</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">

@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="OpenMM Integration" href="openmm.html" /><link rel="prev" title="Searching" href="search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="OpenMM Integration" href="openmm.html" /><link rel="prev" title="Trajectories" href="trajectory.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Viewing Molecules - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Detailed Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html">Trajectories</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -502,20 +507,30 @@ view by passing <code class="docutils literal notranslate"><span class="pre">ort
 </pre></div>
 </div>
 <img alt="3D perspective view of aladip" src="../_images/view_09.jpg"/>
+</section>
+<section id="choosing-the-3d-representation">
+<h2>Choosing the 3D representation<a class="headerlink" href="#choosing-the-3d-representation" title="Permalink to this heading">#</a></h2>
 <p>You can control the representation used for the view via the additional
 arguments of the function.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">protein</span></code> - set the representation used for protein molecules</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">water</span></code> - set the representation used for water molecules</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ion</span></code> - set the representation used for single-atom ions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rest</span></code> - set the representation used for all other molecules (e.g. ligands)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> or <code class="docutils literal notranslate"><span class="pre">rest</span></code> - set the representation used for all other molecules (e.g. ligands)</p></li>
 </ul>
 <p>You can also force all molecules to use the same representation by
 setting the <code class="docutils literal notranslate"><span class="pre">all</span></code> option.</p>
-<p>There are several representations that you can use. These are:</p>
+<p>Setting any of the above to <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code> or the string <code class="docutils literal notranslate"><span class="pre">none</span></code> will
+switch off that view. Setting <code class="docutils literal notranslate"><span class="pre">default</span></code> to <code class="docutils literal notranslate"><span class="pre">None</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, or
+setting <code class="docutils literal notranslate"><span class="pre">no_default</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code> will disable all default views.</p>
+<p>NGLView provides
+<a class="reference external" href="https://nglviewer.org/ngl/api/manual/usage/molecular-representations.html">several representations that you can use</a>.
+These are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ball_and_stick</span></code> - a ball and stick view</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code> - simplified DNA/RNA base view</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cartoon</span></code> - traditional “cartoon” view of a protein</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hyperball</span></code> - smoothly-connected ball and stick view</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">licorice</span></code> - prettier line view</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">line</span></code> - simple line view</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">point</span></code> - simple point for each atom</p></li>
@@ -532,14 +547,26 @@ setting the <code class="docutils literal notranslate"><span class="pre">all</sp
 all atoms using a <code class="docutils literal notranslate"><span class="pre">spacefill</span></code> representation etc.</p>
 <p>The following default representations will be used:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">protein</span></code> - <code class="docutils literal notranslate"><span class="pre">cartoon</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">water</span></code> - <code class="docutils literal notranslate"><span class="pre">line</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">protein</span></code> - <code class="docutils literal notranslate"><span class="pre">cartoon:sstruc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">water</span></code> - <code class="docutils literal notranslate"><span class="pre">line:0.5</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ion</span></code> - <code class="docutils literal notranslate"><span class="pre">spacefill</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rest</span></code> - <code class="docutils literal notranslate"><span class="pre">licorice</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> - <code class="docutils literal notranslate"><span class="pre">hyperball</span></code></p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sstruc</span></code> and <code class="docutils literal notranslate"><span class="pre">0.5</span></code> values refer to colors, which are described
+in the next section.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">default</span></code> to refer to any other molecule, e.g. typically
+ligands.</p>
+</div>
 <p>You can switch off the default representations by passing
 <code class="docutils literal notranslate"><span class="pre">no_default=True</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">mols.view(no_default=True,</span> <span class="pre">protein="surface")</span></code>
-would show only the surface view of a protein.</p>
+would show only the surface view of a protein. You can also switch off
+all default representations by passing <code class="docutils literal notranslate"><span class="pre">default=False</span></code>, <code class="docutils literal notranslate"><span class="pre">default=None</span></code>,
+<code class="docutils literal notranslate"><span class="pre">all=False</span></code> or <code class="docutils literal notranslate"><span class="pre">all=None</span></code>.</p>
 <p>You can also pass multiple representations per view by passing in a
 list of representations, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"3NSS"</span><span class="p">)</span>
@@ -581,12 +608,192 @@ boundaries of the system. Note also that you can mix representation
 based views (e.g. <code class="docutils literal notranslate"><span class="pre">surface="molidx</span> <span class="pre">0"</span></code>) with search based views
 (e.g. <code class="docutils literal notranslate"><span class="pre">rest="line"</span></code>).</p>
 </div>
-<p>Currently there isn’t an ability to control the colour or opacity
-(transparency) of the different views. This is something that we would
-like to add. Please get in touch if you have a good idea of how this
-could be expressed in the API, or if you would like to have a go at
-implementing this functionality.</p>
-<p>Also, we don’t yet properly expose the
+</section>
+<section id="choosing-colors-and-opacities">
+<h2>Choosing colors and opacities<a class="headerlink" href="#choosing-colors-and-opacities" title="Permalink to this heading">#</a></h2>
+<p>You can set the color and opacity used for a particular representation
+by passing these as additional terms to the representation or search
+term, separated by colons. For example, to set the color of a
+representation to <code class="docutils literal notranslate"><span class="pre">blue</span></code> we could pass this as an addition <code class="docutils literal notranslate"><span class="pre">:blue</span></code>
+to the representation or search term argument.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">"licorice:blue"</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="Blue licorice view of aladip" src="../_images/view_14.jpg"/>
+<p>Here all of the atoms are rendered in blue licorice. Or…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">"licorice:blue"</span><span class="p">,</span> <span class="n">ball_and_stick</span><span class="o">=</span><span class="s2">"element C:red"</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="Blue licorice inside red ball and stick" src="../_images/view_15.jpg"/>
+<p>all of the atoms are rendered in blue licorice, but the carbon atoms are
+represented as red balls and sticks.</p>
+<p>You can use any color name supported by NGLView. These include named
+colors (e.g. <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code>, <code class="docutils literal notranslate"><span class="pre">yellow</span></code>, including any
+<a class="reference external" href="https://www.w3schools.com/cssref/css_colors.php">CSS named color</a> supported
+by your browser, e.g. <code class="docutils literal notranslate"><span class="pre">orchid</span></code>, <code class="docutils literal notranslate"><span class="pre">sienna</span></code>, <code class="docutils literal notranslate"><span class="pre">wheat</span></code> etc.), colors
+specified as a red-green-blue hex values (e.g. <code class="docutils literal notranslate"><span class="pre">#FF0000</span></code>, <code class="docutils literal notranslate"><span class="pre">#00FF00</span></code>,
+<code class="docutils literal notranslate"><span class="pre">#0000FF</span></code> etc.), colors specified as red-green-blue triples
+(e.g. <code class="docutils literal notranslate"><span class="pre">rgb(255,0,0)</span></code>, <code class="docutils literal notranslate"><span class="pre">rgb(0,255,0)</span></code>, <code class="docutils literal notranslate"><span class="pre">rgb(0,0,255)</span></code> etc.) or any of the
+<a class="reference external" href="https://nglviewer.org/ngl/api/manual/usage/coloring.html">coloring schemes supported by NGLView</a>
+(e.g. <code class="docutils literal notranslate"><span class="pre">atomindex</span></code>, <code class="docutils literal notranslate"><span class="pre">bfactor</span></code>, <code class="docutils literal notranslate"><span class="pre">electrostatic</span></code>, <code class="docutils literal notranslate"><span class="pre">element</span></code>,
+<code class="docutils literal notranslate"><span class="pre">hydrophobicity</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code> or <code class="docutils literal notranslate"><span class="pre">sstruc</span></code>).</p>
+<p>You also specify the opacity (transparency) of the representation
+by adding a number between 0 (fully transparent) and 1 (fully opaque).
+You can use any order of color and opacity, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="p">[</span><span class="s2">"licorice"</span><span class="p">,</span> <span class="s2">"spacefill:0.8"</span><span class="p">,</span> <span class="s2">"surface:red:0.2"</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="licorice in transparent spacefill in transparent red surface" src="../_images/view_16.jpg"/>
+<p>has rendered the molecule using three representations; a licorice in
+default colors (colored by element), spacefill in default colors,
+but with opacity 0.8, and a red-colored surface with opacity 0.2.</p>
+<p>Or…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="p">[</span><span class="s2">"ball_and_stick"</span><span class="p">,</span> <span class="s2">"surface:0.9:electrostatic"</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="Ball and stick inside transparent electrostatic surface" src="../_images/view_17.jpg"/>
+<p>has rendered the molecule with two representations; a ball and stick with
+default colors and a surface colored using electrostatic potential, with
+opacity 0.9.</p>
+</section>
+<section id="centering-the-view">
+<h2>Centering the view<a class="headerlink" href="#centering-the-view" title="Permalink to this heading">#</a></h2>
+<p>You can center the view on any selection using the <code class="docutils literal notranslate"><span class="pre">center</span></code> option, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="s2">"molidx 0"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would center the view on the first molecule, or,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="s2">"not (water or protein"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would center the view on all none (water, protein) molecules, i.e.
+likely any ligands or ions. Remember that you can create your own
+<a class="reference internal" href="search.html"><span class="doc">custom selections</span></a> to set search terms that refer to
+ligands or ions more specifically.</p>
+</section>
+<section id="viewing-trajectories">
+<h2>Viewing trajectories<a class="headerlink" href="#viewing-trajectories" title="Permalink to this heading">#</a></h2>
+<p>If the molecules being viewed have a trajectory, then you will also see
+play controls in the bottom left. These will let you play, pause and
+scroll through the trajectory. Click the play button multiple times to
+speed up playback.</p>
+<p>You can choose a subset of frames to play, e.g. here we will play a movie
+of the first 10 frames of the trajectory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">"ala.top"</span><span class="p">,</span> <span class="s2">"ala.traj"</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Or here we can view every 25 frames of the trajectory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[</span><span class="mi">0</span><span class="p">::</span><span class="mi">25</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Or here we can view all of the frames in reverse order</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="wrapping-molecules-into-the-current-box">
+<h2>Wrapping molecules into the current box<a class="headerlink" href="#wrapping-molecules-into-the-current-box" title="Permalink to this heading">#</a></h2>
+<p>You can control whether or not molecules are wrapped into the same
+periodic box using the <code class="docutils literal notranslate"><span class="pre">wrap</span></code> option. If this is <code class="docutils literal notranslate"><span class="pre">True</span></code> (the default),
+then the molecules are wrapped into the same box. If this is <code class="docutils literal notranslate"><span class="pre">False</span></code>
+then the wrapping will be whatever was loaded from the trajectory
+file (or generated via the simulation). For example, the trajectory
+is not wrapped, and so the water molecules will gradually drift out
+into neighboring boxes. You can see this by passing in <code class="docutils literal notranslate"><span class="pre">wrap=False</span></code>,
+e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">wrap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="Unwrapped view of the trajectory." src="../_images/view_18.jpg"/>
+<p>This compares to</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">wrap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="View of the trajectory with all molecules wrapped into the same box" src="../_images/view_19.jpg"/>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are viewing the last frame here, as this is the one that shows
+the maximum amount of drift from the central box.</p>
+</div>
+</section>
+<section id="trajectory-alignment">
+<h2>Trajectory Alignment<a class="headerlink" href="#trajectory-alignment" title="Permalink to this heading">#</a></h2>
+<p>You can align the frames in a trajectory by passing in a search string
+via the <code class="docutils literal notranslate"><span class="pre">align</span></code> keyword. For example, here we could align every frame
+against all of the carbon atoms.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">"element C"</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="View of the trajectory with all molecules wrapped into the same box" src="../_images/view_19.jpg"/>
+<p>If <code class="docutils literal notranslate"><span class="pre">wrap</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> (as is the default) then all molecules will be wrapped
+such that the aligned atoms are at the center of the box.</p>
+<p>You can use any search string to find the atoms to align. If you pass
+<code class="docutils literal notranslate"><span class="pre">align=True</span></code> then this will align against all atoms. This can be useful
+when you are viewing individual molecules, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="trajectory-smoothing">
+<h2>Trajectory Smoothing<a class="headerlink" href="#trajectory-smoothing" title="Permalink to this heading">#</a></h2>
+<p>Molecular dynamics trajectories can be difficult to view because there is a
+lot of high frequency random motion that can obscure the low frequency
+conformational changes that are often of more interest. One way to view
+these events is to average the coordinates of atoms over several frames.
+You can do this using the <code class="docutils literal notranslate"><span class="pre">smooth</span></code> option, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">"element C"</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Would align the trajectory using all carbon atoms, and would average
+the coordinates of each atom over 50 neighboring frames.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The smoothing number, <code class="docutils literal notranslate"><span class="pre">s</span></code> is divided by two, with each frame being
+averaged over the previous <code class="docutils literal notranslate"><span class="pre">(s/2)-1</span></code> preceeding frames and <code class="docutils literal notranslate"><span class="pre">(s/2)+x</span></code>
+following frames (where <code class="docutils literal notranslate"><span class="pre">x</span></code> is zero if <code class="docutils literal notranslate"><span class="pre">s</span></code> is even, and one
+otherwise).</p>
+</div>
+</section>
+<section id="integration-with-trajectories">
+<h2>Integration with trajectories<a class="headerlink" href="#integration-with-trajectories" title="Permalink to this heading">#</a></h2>
+<p>Note that all of the above options can be passed to the
+<code class="xref py py-func docutils literal notranslate"><span class="pre">trajectory()</span></code> function, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">"element C"</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>would give the same view as</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">"element C"</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is because <code class="docutils literal notranslate"><span class="pre">mols.view(...)</span></code> is creating its own
+<code class="docutils literal notranslate"><span class="pre">mols.trajectory(...)</span></code> with those options, and is viewing those.</p>
+<p>While you can do this, and it is useful for, e.g. saving trajectories,
+there are lots of edge cases that could trip you up. We recommend that
+you pass the options to the <code class="docutils literal notranslate"><span class="pre">view</span></code> function and don’t pass them to
+the <code class="docutils literal notranslate"><span class="pre">trajectory</span></code> function when you want to view.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The options passed to <code class="docutils literal notranslate"><span class="pre">view</span></code> will override those passed to
+<code class="docutils literal notranslate"><span class="pre">trajectory</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">mols.trajectory(smooth=10).view(smooth=50)</span></code>
+will use a <code class="docutils literal notranslate"><span class="pre">smooth</span></code> value of <code class="docutils literal notranslate"><span class="pre">50</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">wrap</span></code> in the <code class="docutils literal notranslate"><span class="pre">view</span></code> function defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+This means that <code class="docutils literal notranslate"><span class="pre">mols.trajectory(wrap=False).view()</span></code> will wrap
+the coordinates, as the value of <code class="docutils literal notranslate"><span class="pre">wrap</span></code> in the <code class="docutils literal notranslate"><span class="pre">view</span></code> function
+defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code> and overrides the value in <code class="docutils literal notranslate"><span class="pre">trajectory</span></code>.
+To show unwrapped, you would need to use
+<code class="docutils literal notranslate"><span class="pre">mols.trajectory(wrap=False).view(wrap=False)</span></code>, or the much easier
+<code class="docutils literal notranslate"><span class="pre">mols.trajectory().view(wrap=False)</span></code>, or the easiest
+<code class="docutils literal notranslate"><span class="pre">mols.view(wrap=False)</span></code>.</p>
+</div>
+</section>
+<section id="closer-integration-with-nglview">
+<h2>Closer integration with NGLView<a class="headerlink" href="#closer-integration-with-nglview" title="Permalink to this heading">#</a></h2>
+<p>We don’t yet properly expose the
 <a class="reference external" href="https://github.com/nglviewer/nglview/blob/master/README.md#properties">NGLView stage parameters</a>.
 Currently you can pass in a dictionary of parameters via the
 <code class="docutils literal notranslate"><span class="pre">stage_parameters</span></code> argument, which are straight passed to the
@@ -604,6 +811,44 @@ which you can manipulate as if you had created it yourself, e.g.</p>
 </div>
 <img alt="Customised view created by manipulating NGLView directly" src="../_images/view_13.jpg"/>
 </section>
+<section id="saving-3d-views-to-files">
+<h2>Saving 3D views to files<a class="headerlink" href="#saving-3d-views-to-files" title="Permalink to this heading">#</a></h2>
+<p>NGLView is not really designed to render frames via a script. Instead, it
+needs to be run within a Jupyter notebook so that it has access to the
+WebGL view in the web browser to perform the rendering.
+<a class="reference external" href="https://github.com/nglviewer/nglview/blob/master/docs/FAQ.md#how-to-make-nglview-view-object-write-png-file">This FAQ answer</a>
+shows how you could automate rendering images to files. Note that you need
+to get the handle to the <a class="reference external" href="https://nglviewer.org/nglview/latest/api.html#nglview.NGLWidget">NGLView.NGLWidget</a>,
+as above, and then call <code class="docutils literal notranslate"><span class="pre">render_image</span></code> to get the image. You will need
+to actually view the object in a code cell, and will need to wait for the
+image to render, e.g. in one code cell</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+</pre></div>
+</div>
+<p>Then in the next</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="kn">import</span> <span class="nn">time</span>
+<span class="gp">... </span>   <span class="n">image</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
+<span class="gp">...</span>
+<span class="gp">... </span>   <span class="k">while</span> <span class="ow">not</span> <span class="n">image</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+<span class="gp">... </span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">... </span>   <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>       <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and then finally, to call this function in a background thread…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">threading</span>
+<span class="gp">... </span><span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">target</span><span class="o">=</span><span class="n">render</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">"image.png"</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">thread</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -620,14 +865,14 @@ which you can manipulate as if you had created it yourself, e.g.</p>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="search.html">
+          <a class="prev-page" href="trajectory.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Searching</div>
+                <div class="title">Trajectories</div>
                 
               </div>
             </a>
@@ -637,7 +882,7 @@ which you can manipulate as if you had created it yourself, e.g.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -663,6 +908,16 @@ which you can manipulate as if you had created it yourself, e.g.</p>
 <li><a class="reference internal" href="#">Viewing Molecules</a><ul>
 <li><a class="reference internal" href="#d-views">2D Views</a></li>
 <li><a class="reference internal" href="#id1">3D Views</a></li>
+<li><a class="reference internal" href="#choosing-the-3d-representation">Choosing the 3D representation</a></li>
+<li><a class="reference internal" href="#choosing-colors-and-opacities">Choosing colors and opacities</a></li>
+<li><a class="reference internal" href="#centering-the-view">Centering the view</a></li>
+<li><a class="reference internal" href="#viewing-trajectories">Viewing trajectories</a></li>
+<li><a class="reference internal" href="#wrapping-molecules-into-the-current-box">Wrapping molecules into the current box</a></li>
+<li><a class="reference internal" href="#trajectory-alignment">Trajectory Alignment</a></li>
+<li><a class="reference internal" href="#trajectory-smoothing">Trajectory Smoothing</a></li>
+<li><a class="reference internal" href="#integration-with-trajectories">Integration with trajectories</a></li>
+<li><a class="reference internal" href="#closer-integration-with-nglview">Closer integration with NGLView</a></li>
+<li><a class="reference internal" href="#saving-3d-views-to-files">Saving 3D views to files</a></li>
 </ul>
 </li>
 </ul>

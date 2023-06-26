@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>sire._load - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -197,7 +197,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -237,7 +238,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -246,8 +248,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -269,6 +273,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -378,6 +383,7 @@
     <span class="s2">"load_test_files"</span><span class="p">,</span>
     <span class="s2">"supported_formats"</span><span class="p">,</span>
     <span class="s2">"smiles"</span><span class="p">,</span>
+    <span class="s2">"smarts"</span><span class="p">,</span>
 <span class="p">]</span>
 
 
@@ -404,7 +410,8 @@
 
 
 <div class="viewcode-block" id="supported_formats"><a class="viewcode-back" href="../../api/sire.html#sire.supported_formats">[docs]</a><span class="k">def</span> <span class="nf">supported_formats</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""Return a string that describes all of the molecular file formats</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Return a string that describes all of the molecular file formats</span>
 <span class="sd">    that are supported by Sire</span>
 <span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
@@ -471,7 +478,7 @@
         <span class="k">return</span> <span class="kc">None</span>
 
 
-<span class="k">def</span> <span class="nf">_resolve_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_resolve_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s2">"."</span><span class="p">,</span> <span class="n">auto_unzip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">os</span>
 
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"strpath"</span><span class="p">):</span>
@@ -480,7 +487,12 @@
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">"strpath"</span><span class="p">):</span>
         <span class="n">directory</span> <span class="o">=</span> <span class="n">directory</span><span class="o">.</span><span class="n">strpath</span>
 
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="c1"># we need to process this as a trajectory directory - return</span>
+        <span class="c1"># this as a directory</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">path</span><span class="p">]</span>
+
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".gz"</span><span class="p">):</span>
             <span class="c1"># unzip the file first</span>
             <span class="n">unzipped</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
@@ -497,17 +509,20 @@
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using cached unzipped file '</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
                 <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
 
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unzipping '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">auto_unzip</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unzipping '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
 
-            <span class="kn">import</span> <span class="nn">gzip</span>
-            <span class="kn">import</span> <span class="nn">shutil</span>
+                <span class="kn">import</span> <span class="nn">gzip</span>
+                <span class="kn">import</span> <span class="nn">shutil</span>
 
-            <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
-                    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
+                <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)]</span>
 
         <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".bz2"</span><span class="p">):</span>
             <span class="c1"># unzip the file first</span>
@@ -525,17 +540,20 @@
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using cached unzipped file '</span><span class="si">{</span><span class="n">unzipped</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
                 <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
 
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unzipping '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">auto_unzip</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unzipping '</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">'..."</span><span class="p">)</span>
 
-            <span class="kn">import</span> <span class="nn">bz2</span>
-            <span class="kn">import</span> <span class="nn">shutil</span>
+                <span class="kn">import</span> <span class="nn">bz2</span>
+                <span class="kn">import</span> <span class="nn">shutil</span>
 
-            <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
-                    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
+                <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">unzipped</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)]</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)]</span>
@@ -687,7 +705,18 @@
     <span class="k">return</span> <span class="n">expanded</span></div>
 
 
-<div class="viewcode-block" id="load"><a class="viewcode-back" href="../../api/sire.html#sire.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="load"><a class="viewcode-back" href="../../api/sire.html#sire.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span>
+    <span class="n">path</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+    <span class="n">show_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">silent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"."</span><span class="p">,</span>
+    <span class="n">ignore_topology_frame</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">gromacs_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Load the molecular system at 'path'. This can be a filename</span>
 <span class="sd">    of a URL. If it is a URL, then the file will be downloaded</span>
@@ -701,20 +730,34 @@
 <span class="sd">        across multiple files. Multiple paths can also be passed</span>
 <span class="sd">        as multiple arguments to this function.</span>
 
-<span class="sd">     log (dict):</span>
-<span class="sd">        Optional dictionary that you can pass in that will be populated</span>
-<span class="sd">        with any error messages or warnings from the parsers as they</span>
-<span class="sd">        attempt to load in the molecular data. This can be helpful</span>
-<span class="sd">        in diagnosing why your file wasn't loaded.</span>
-
 <span class="sd">     show_warnings (bool):</span>
 <span class="sd">        Whether or not to print out any warnings that are encountered</span>
 <span class="sd">        when loading your file(s). This is default True, and may lead</span>
 <span class="sd">        to noisy output. Set `show_warnings=False` to silence this output.</span>
 
+<span class="sd">     silent (bool):</span>
+<span class="sd">        Whether or not to silence all output (including any warnings)</span>
+
 <span class="sd">     directory (str):</span>
 <span class="sd">        Optional directory which will be used when creating any</span>
-<span class="sd">        files (e.g. as a download from a URL or which unzipping files)</span>
+<span class="sd">        files (e.g. as a download from a URL or when unzipping files)</span>
+
+<span class="sd">     ignore_topology_frame (bool):</span>
+<span class="sd">        Ignore any coordinate / frame data coming from the topology file.</span>
+<span class="sd">        By default, frame data from topology files will be included.</span>
+<span class="sd">        Setting this to True will ignore that data, meaning that frame</span>
+<span class="sd">        data will only come from the trajectory files that are loaded.</span>
+
+<span class="sd">     gromacs_path (str):</span>
+<span class="sd">        Path to the directory containing gromacs parameters. If this</span>
+<span class="sd">        is not set then the gromacs parameters installed with</span>
+<span class="sd">        sire will be used.</span>
+
+<span class="sd">     parallel (bool):</span>
+<span class="sd">        Whether or not to load files in parallel (using multiple cores).</span>
+<span class="sd">        You normally do want to do this. Only switch this to False</span>
+<span class="sd">        if debugging or if you don't want to use all the cores</span>
+<span class="sd">        in your computer.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        sire.system.System:</span>
@@ -729,11 +772,6 @@
 <span class="sd">         &gt;&gt;&gt; mols = load("ala.crd", "ala.top")</span>
 
 <span class="sd">         &gt;&gt;&gt; mols = load("https://something")</span>
-
-<span class="sd">         &gt;&gt;&gt; log = []</span>
-<span class="sd">         &gt;&gt;&gt; mols = load("caffeine.pdb", log=log)</span>
-<span class="sd">         Exception</span>
-<span class="sd">         (look at 'log' to find out what went wrong in detail)</span>
 <span class="sd">    """</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
         <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">]</span>
@@ -743,20 +781,8 @@
     <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
         <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="s2">"log"</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">log</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">"log"</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">log</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="k">if</span> <span class="s2">"directory"</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">directory</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">"directory"</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">directory</span> <span class="o">=</span> <span class="s2">"."</span>
-
-    <span class="k">if</span> <span class="s2">"silent"</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">silent</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">"silent"</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">silent</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">silent</span><span class="p">:</span>
+        <span class="n">show_warnings</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -772,24 +798,35 @@
     <span class="kn">from</span> <span class="nn">.io</span> <span class="kn">import</span> <span class="n">load_molecules</span>
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
 
-    <span class="nb">map</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"GROMACS_PATH"</span><span class="p">:</span> <span class="n">_get_gromacs_dir</span><span class="p">(),</span> <span class="s2">"show_warnings"</span><span class="p">:</span> <span class="n">show_warnings</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">gromacs_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">gromacs_path</span> <span class="o">=</span> <span class="n">_get_gromacs_dir</span><span class="p">()</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"GROMACS_PATH"</span><span class="p">:</span> <span class="n">_get_gromacs_dir</span><span class="p">(),</span>
+        <span class="s2">"show_warnings"</span><span class="p">:</span> <span class="n">show_warnings</span><span class="p">,</span>
+        <span class="s2">"parallel"</span><span class="p">:</span> <span class="n">parallel</span><span class="p">,</span>
+        <span class="s2">"ignore_topology_frame"</span><span class="p">:</span> <span class="n">ignore_topology_frame</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
+
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">load_molecules</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span></div>
 
 
 <span class="k">def</span> <span class="nf">_to_legacy_system</span><span class="p">(</span><span class="n">molecules</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Internal function to convert the passed set of molecule views</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Internal function to convert the passed set of molecule views</span>
 <span class="sd">    into a sire.legacy.System.System</span>
 <span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="s2">"_to_legacy_system"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">molecules</span><span class="o">.</span><span class="n">_to_legacy_system</span><span class="p">()</span>
+
     <span class="kn">from</span> <span class="nn">.legacy.System</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">LegacySystem</span>
-
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span> <span class="ow">is</span> <span class="n">LegacySystem</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">molecules</span>
-
-    <span class="kn">from</span> <span class="nn">.system</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">NewSystem</span>
-
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span> <span class="ow">is</span> <span class="n">NewSystem</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">molecules</span><span class="o">.</span><span class="n">_system</span>
 
     <span class="n">s</span> <span class="o">=</span> <span class="n">LegacySystem</span><span class="p">()</span>
 
@@ -799,14 +836,29 @@
         <span class="kn">from</span> <span class="nn">.legacy.Mol</span> <span class="kn">import</span> <span class="n">MoleculeGroup</span>
 
         <span class="n">m</span> <span class="o">=</span> <span class="n">MoleculeGroup</span><span class="p">(</span><span class="s2">"all"</span><span class="p">)</span>
-        <span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">molecule</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
+                <span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecule</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
+
         <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">s</span>
 
 
-<div class="viewcode-block" id="save_to_string"><a class="viewcode-back" href="../../api/sire.html#sire.save_to_string">[docs]</a><span class="k">def</span> <span class="nf">save_to_string</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="p">{},</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">"""Save the passed molecules to an in-memory list of lines.</span>
+<div class="viewcode-block" id="save_to_string"><a class="viewcode-back" href="../../api/sire.html#sire.save_to_string">[docs]</a><span class="k">def</span> <span class="nf">save_to_string</span><span class="p">(</span>
+    <span class="n">molecules</span><span class="p">,</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">show_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">silent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Save the passed molecules to an in-memory list of lines.</span>
 <span class="sd">    This will write the molecule(s) in the format specified</span>
 <span class="sd">    to memory, thereby avoiding writing any data to a text file</span>
 
@@ -816,17 +868,31 @@
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
 
+    <span class="k">if</span> <span class="n">silent</span><span class="p">:</span>
+        <span class="n">show_warnings</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"parallel"</span><span class="p">:</span> <span class="n">parallel</span><span class="p">,</span> <span class="s2">"show_warnings"</span><span class="p">:</span> <span class="n">show_warnings</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
     <span class="n">molecules</span> <span class="o">=</span> <span class="n">_to_legacy_system</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">MoleculeParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span></div>
+    <span class="k">return</span> <span class="n">MoleculeParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="save"><a class="viewcode-back" href="../../api/sire.html#sire.save">[docs]</a><span class="k">def</span> <span class="nf">save</span><span class="p">(</span>
     <span class="n">molecules</span><span class="p">,</span>
     <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="nb">format</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">log</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">show_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">silent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"."</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">"""Save the passed molecules to a file called 'filename'. If the format</span>
 <span class="sd">    is not specified, then the format will be guessed from the</span>
@@ -856,11 +922,19 @@
 <span class="sd">         based on the formats used to load the molecule originally.</span>
 <span class="sd">         If it still isn't available, then PDB will be used.</span>
 
-<span class="sd">     log (dict):</span>
-<span class="sd">         Optional dictionary that you can pass in that will be populated</span>
-<span class="sd">         with any error messages or warnings from the parsers as they</span>
-<span class="sd">         attempt to write the molecular data. This can be helpful</span>
-<span class="sd">         in diagnosing why your file wasn't saved.</span>
+<span class="sd">      show_warnings (bool):</span>
+<span class="sd">         Whether or not to write out any warnings that occur during save</span>
+
+<span class="sd">      silent (bool):</span>
+<span class="sd">         Whether or not to silence all output during the save</span>
+
+<span class="sd">      directory (str):</span>
+<span class="sd">         If supplied, the directory in which to save the files.</span>
+
+<span class="sd">      parallel (bool):</span>
+<span class="sd">         Whether or not to save in parallel (using multiple cores).</span>
+<span class="sd">         You normally want this switched on, unless you are debugging</span>
+<span class="sd">         or want to restrict sire to a single core.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">         list[str]:</span>
@@ -875,19 +949,33 @@
 
 <span class="sd">         &gt;&gt;&gt; save(mols, "ala", format=["top", "crd"])</span>
 <span class="sd">         ["/path/to/ala.top", "/path/to/ala.crd"]</span>
-
-<span class="sd">         &gt;&gt;&gt; log = {}</span>
-<span class="sd">         &gt;&gt;&gt; save(mols, "broken.top", log=log)</span>
-<span class="sd">         Exception</span>
-<span class="sd">         (look at `log` to find in detail what went wrong)</span>
 <span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">.legacy.IO</span> <span class="kn">import</span> <span class="n">MoleculeParser</span>
     <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
 
-    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">silent</span><span class="p">:</span>
+        <span class="n">show_warnings</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"parallel"</span><span class="p">:</span> <span class="n">parallel</span><span class="p">,</span> <span class="s2">"show_warnings"</span><span class="p">:</span> <span class="n">show_warnings</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"strpath"</span><span class="p">):</span>
         <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">strpath</span>
+
+    <span class="k">if</span> <span class="n">directory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">"strpath"</span><span class="p">):</span>
+            <span class="n">directory</span> <span class="o">=</span> <span class="n">directory</span><span class="o">.</span><span class="n">strpath</span>
+
+        <span class="kn">import</span> <span class="nn">os</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
@@ -895,12 +983,21 @@
 
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"fileformat"</span><span class="p">,</span> <span class="s2">","</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">format</span><span class="p">))</span>
 
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="s2">"_is_trajectory_iterator"</span><span class="p">):</span>
+        <span class="c1"># Doing it this way rather that using type(molecules)</span>
+        <span class="c1"># as type(molecules) randomly fails, and because</span>
+        <span class="c1"># this way is more pythonic</span>
+        <span class="k">if</span> <span class="n">molecules</span><span class="o">.</span><span class="n">_is_trajectory_iterator</span><span class="p">():</span>
+            <span class="c1"># we are saving a trajectory - not just the molecules</span>
+            <span class="nb">map</span> <span class="o">=</span> <span class="n">molecules</span><span class="o">.</span><span class="n">_populate_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+            <span class="n">molecules</span> <span class="o">=</span> <span class="n">molecules</span><span class="o">.</span><span class="n">current</span><span class="p">()</span>
+
     <span class="n">molecules</span> <span class="o">=</span> <span class="n">_to_legacy_system</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">MoleculeParser</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">molecules</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="load_test_files"><a class="viewcode-back" href="../../api/sire.html#sire.load_test_files">[docs]</a><span class="k">def</span> <span class="nf">load_test_files</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="load_test_files"><a class="viewcode-back" href="../../api/sire.html#sire.load_test_files">[docs]</a><span class="k">def</span> <span class="nf">load_test_files</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Load the passed files that are part of the unit testing</span>
 <span class="sd">    and return the resulting molecules. This will cache the files</span>
 <span class="sd">    into a directory called "../cache" so that downloads can be shared</span>
@@ -938,7 +1035,9 @@
             <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">"cache"</span><span class="p">)</span>
 
     <span class="n">files</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">".bz2"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">load</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">load</span><span class="p">(</span>
+        <span class="n">files</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span>
+    <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="smiles"><a class="viewcode-back" href="../../api/sire.html#sire.smiles">[docs]</a><span class="k">def</span> <span class="nf">smiles</span><span class="p">(</span>
@@ -949,6 +1048,7 @@
     <span class="n">labels_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"labels"</span><span class="p">,</span>
     <span class="n">add_hydrogens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">generate_coordinates</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">must_sanitize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
@@ -984,6 +1084,13 @@
 <span class="sd">            Whether or not to automatically generate 3D coordinates.</span>
 <span class="sd">            Note that generating coordinates requires that</span>
 <span class="sd">            hydrogens are automatically added.</span>
+<span class="sd">        must_sanitize: bool (default True)</span>
+<span class="sd">            Whether or not all sanity checks must pass when creating</span>
+<span class="sd">            the molecule. This will ensure that all sanity checks pass,</span>
+<span class="sd">            and if they don't, then an exception will be raised.</span>
+<span class="sd">            If this is not True, then sanity checks that failed are</span>
+<span class="sd">            skipped and silently ignored. It is possible, in this case,</span>
+<span class="sd">            that a null or malformed molecule may be returned.</span>
 <span class="sd">        map:</span>
 <span class="sd">            Property map if you want to put the molecule properties</span>
 <span class="sd">            into different places</span>
@@ -1024,12 +1131,141 @@
         <span class="p">{</span>
             <span class="s2">"add_hydrogens"</span><span class="p">:</span> <span class="n">add_hydrogens</span><span class="p">,</span>
             <span class="s2">"generate_coordinates"</span><span class="p">:</span> <span class="n">generate_coordinates</span><span class="p">,</span>
+            <span class="s2">"must_sanitize"</span><span class="p">:</span> <span class="n">must_sanitize</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">)</span>
 
     <span class="n">rdkit_mols</span> <span class="o">=</span> <span class="n">smiles_to_rdkit</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="nb">map</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">rdkit_to_sire</span><span class="p">(</span><span class="n">rdkit_mols</span><span class="p">)</span></div>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">rdkit_to_sire</span><span class="p">(</span><span class="n">rdkit_mols</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">must_sanitize</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span>
+            <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">"Failed to generate a molecule from the smiles string "</span>
+                    <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">smiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">'. Re-run this function setting "</span>
+                    <span class="s2">"'must_sanitize' to False if you want to try again, "</span>
+                    <span class="s2">"ignoring the sanitization steps that failed."</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">empty_mols</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mols</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">empty_mols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smiles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">empty_mols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">empty_mols</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">empty_mols</span><span class="p">)</span>
+
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">"Failed to generate some molecules from smiles strings. "</span>
+                    <span class="sa">f</span><span class="s2">"Failed conversions were: [</span><span class="si">{</span><span class="n">empty_mols</span><span class="si">}</span><span class="s2">]. Re-run setting "</span>
+                    <span class="s2">"'must_sanitize' to False to try to generate the molecule "</span>
+                    <span class="s2">"ignoring the errors."</span>
+                <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
+
+
+<div class="viewcode-block" id="smarts"><a class="viewcode-back" href="../../api/sire.html#sire.smarts">[docs]</a><span class="k">def</span> <span class="nf">smarts</span><span class="p">(</span>
+    <span class="n">smarts</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">labels</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">smarts_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"smarts"</span><span class="p">,</span>
+    <span class="n">labels_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"labels"</span><span class="p">,</span>
+    <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Return a molecule that has been generated using the passed</span>
+<span class="sd">    smiles string. This uses rdkit to create the molecule,</span>
+<span class="sd">    so it must be installed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        smiles: str or list[str] or pandas.Dataframe</span>
+<span class="sd">            The smiles string to interpret. This can be a single smiles string,</span>
+<span class="sd">            a list of smiles strings, or a pandas Dataframe containing</span>
+<span class="sd">            a smiles column and a label column (either called this, or</span>
+<span class="sd">            use options below to name them yourself)</span>
+<span class="sd">        label: str</span>
+<span class="sd">            The label for the molecule being created. This can only</span>
+<span class="sd">            be a single string. If it is set, then `labels` will be</span>
+<span class="sd">            ignored.</span>
+<span class="sd">        labels: str or list[str]</span>
+<span class="sd">            The label (name) for the molecule that will be created.</span>
+<span class="sd">            This should be a single string or a list of strings depending</span>
+<span class="sd">            on 'smiles'. Note that this will be ignored if a</span>
+<span class="sd">            Dataframe is passed in. Note that if this is not passed in</span>
+<span class="sd">            then the label will be taken from the smiles string</span>
+<span class="sd">        smiles_column: str</span>
+<span class="sd">            The name of the smiles column in the Dataframe (default 'smiles')</span>
+<span class="sd">        labels_column: str</span>
+<span class="sd">            The name of the labels column in the Dataframe (default 'labels')</span>
+<span class="sd">        map:</span>
+<span class="sd">            Property map if you want to put the molecule properties</span>
+<span class="sd">            into different places</span>
+
+<span class="sd">    Returns: sire.mol.Molecule</span>
+<span class="sd">        The actual molecule</span>
+<span class="sd">    """</span>
+    <span class="kn">from</span> <span class="nn">.convert</span> <span class="kn">import</span> <span class="n">rdkit_to_sire</span>
+    <span class="kn">from</span> <span class="nn">.legacy.Convert</span> <span class="kn">import</span> <span class="n">smarts_to_rdkit</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">smarts</span><span class="p">,</span> <span class="s2">"to_csv"</span><span class="p">):</span>
+        <span class="c1"># convert to a pair of lists from the dataframe</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">smiles</span><span class="p">[[</span><span class="n">labels_column</span><span class="p">]]</span>
+        <span class="n">smarts</span> <span class="o">=</span> <span class="n">smiles</span><span class="p">[[</span><span class="n">smarts_column</span><span class="p">]]</span>
+
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">smarts</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="n">smarts</span> <span class="o">=</span> <span class="p">[</span><span class="n">smarts</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">smarts</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">label</span>
+
+        <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">smarts</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">labels</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">smarts</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"The number of smarts strings </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">smarts</span><span class="p">)</span><span class="si">}</span><span class="s2"> must match the "</span>
+                <span class="sa">f</span><span class="s2">"number of labels (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
+            <span class="p">)</span>
+
+    <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
+
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+    <span class="n">rdkit_mols</span> <span class="o">=</span> <span class="n">smarts_to_rdkit</span><span class="p">(</span><span class="n">smarts</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="nb">map</span><span class="p">)</span>
+
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">rdkit_to_sire</span><span class="p">(</span><span class="n">rdkit_mols</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">smarts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span>
+        <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">"Failed to generate a molecule from the smarts string "</span>
+                <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">smarts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">'."</span>
+            <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">empty_mols</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mols</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">empty_mols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smarts</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">empty_mols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">empty_mols</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">empty_mols</span><span class="p">)</span>
+
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">"Failed to generate some molecules from smarts strings. "</span>
+                <span class="sa">f</span><span class="s2">"Failed conversions were: [</span><span class="si">{</span><span class="n">empty_mols</span><span class="si">}</span><span class="s2">]."</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
 </pre></div>
         </article>
       </div>
@@ -1044,7 +1280,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">

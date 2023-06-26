@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Sub-modules" href="sire_modules.html" /><link rel="prev" title="Documentation" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>sire module - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -426,16 +431,6 @@ in the other <a class="reference internal" href="#module-sire" title="sire"><cod
 </dl>
 </dd></dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="sire.disable_thumbs_up">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">disable_thumbs_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_thumbsup.html#disable_thumbs_up"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.disable_thumbs_up" title="Permalink to this definition">#</a></dt>
-<dd><p>Permanently disable thumbs up. This will write a file
-into your home directory called ‘.sire_no_thumbs_up.txt’.
-If this file exists, then thumbs up are denied and
-no data will be sent to sire.openbiosim.org.</p>
-<p>The only way to re-enable thumbs up is to remove
-the $HOME/.sire_no_thumbs_up.txt file.</p>
-</dd></dl>
-<dl class="py function">
 <dt class="sig sig-object py" id="sire.expand">
 <span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.expand" title="Permalink to this definition">#</a></dt>
 <dd><p>Expand the set of paths with the supplied base.</p>
@@ -462,15 +457,17 @@ The list of expanded filenames or URLs</p></li>
 </dl>
 </dd></dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="sire.get_thumbs_up_info">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">get_thumbs_up_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_thumbsup.html#get_thumbs_up_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.get_thumbs_up_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the info that will be sent to sire.openbiosim.org if you call
-the thumbs_up() function. This will return nothing if you
-have disabled thumbs up using the ‘disable_thumbs_up()’ function.</p>
+<dt class="sig sig-object py" id="sire.get_max_num_threads">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">get_max_num_threads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_parallel.html#get_max_num_threads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.get_max_num_threads" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the maximum number of C++ threads that will be allowed
+for computation. Note that this is the maximum number of compute
+threads managed via Intel’s Threading Building blocks. Sire
+additionally uses a small number of lightweight background
+threads for management, which are unaffected by this setting.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.load">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.load" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_topology_frame</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gromacs_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.load" title="Permalink to this definition">#</a></dt>
 <dd><p>Load the molecular system at ‘path’. This can be a filename
 of a URL. If it is a URL, then the file will be downloaded
 to the current directory and loaded from there.</p>
@@ -482,15 +479,23 @@ system to load. This allows multiple paths to be input
 as some molecular file formats split molecular information
 across multiple files. Multiple paths can also be passed
 as multiple arguments to this function.</p></li>
-<li><p><strong>log</strong> (<em>dict</em>) – Optional dictionary that you can pass in that will be populated
-with any error messages or warnings from the parsers as they
-attempt to load in the molecular data. This can be helpful
-in diagnosing why your file wasn’t loaded.</p></li>
 <li><p><strong>show_warnings</strong> (<em>bool</em>) – Whether or not to print out any warnings that are encountered
 when loading your file(s). This is default True, and may lead
 to noisy output. Set <em class="xref py py-obj">show_warnings=False</em> to silence this output.</p></li>
+<li><p><strong>silent</strong> (<em>bool</em>) – Whether or not to silence all output (including any warnings)</p></li>
 <li><p><strong>directory</strong> (<em>str</em>) – Optional directory which will be used when creating any
-files (e.g. as a download from a URL or which unzipping files)</p></li>
+files (e.g. as a download from a URL or when unzipping files)</p></li>
+<li><p><strong>ignore_topology_frame</strong> (<em>bool</em>) – Ignore any coordinate / frame data coming from the topology file.
+By default, frame data from topology files will be included.
+Setting this to True will ignore that data, meaning that frame
+data will only come from the trajectory files that are loaded.</p></li>
+<li><p><strong>gromacs_path</strong> (<em>str</em>) – Path to the directory containing gromacs parameters. If this
+is not set then the gromacs parameters installed with
+sire will be used.</p></li>
+<li><p><strong>parallel</strong> (<em>bool</em>) – Whether or not to load files in parallel (using multiple cores).
+You normally do want to do this. Only switch this to False
+if debugging or if you don’t want to use all the cores
+in your computer.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -514,16 +519,10 @@ a sire.system.System</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s2">"https://something"</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">log</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s2">"caffeine.pdb"</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span>
-<span class="go">Exception</span>
-<span class="go">(look at 'log' to find out what went wrong in detail)</span>
-</pre></div>
-</div>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.load_test_files">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">load_test_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#load_test_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.load_test_files" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">load_test_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#load_test_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.load_test_files" title="Permalink to this definition">#</a></dt>
 <dd><p>Load the passed files that are part of the unit testing
 and return the resulting molecules. This will cache the files
 into a directory called “../cache” so that downloads can be shared
@@ -625,7 +624,7 @@ the measurements in an infinite cartesian space.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.save">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/sire/_load.html#save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.save" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/sire/_load.html#save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.save" title="Permalink to this definition">#</a></dt>
 <dd><p>Save the passed molecules to a file called ‘filename’. If the format
 is not specified, then the format will be guessed from the
 filename. If the format is specified, and is a list, then multiple
@@ -656,16 +655,25 @@ or a list of Molecules (or MoleculeViews)</p>
 <li><p><strong>filename</strong> (<em>str</em>) – The name of the file to which to write the file. Extensions
 will be automatically added if they are needed to match
 the formats of the file (or files) that are written.</p></li>
-<li><p><strong>format</strong> (<em>str</em><em> or </em><em>list</em><em>(</em><em>str</em><em>)</em>) – The format (or formats) that should be used to write the
-file (or files). If the format isn’t specified, then it
+<li><p><strong>format</strong> (<em>str</em><em> or </em><em>list</em><em>(</em><em>str</em><em>)</em>) – <dl class="simple">
+<dt>The format (or formats) that should be used to write the</dt><dd><p>file (or files). If the format isn’t specified, then it
 will be guessed from the extension used for <em class="xref py py-obj">filename</em>.
 If this doesn’t have an extension, then it will be guessed
 based on the formats used to load the molecule originally.
-If it still isn’t available, then PDB will be used.</p></li>
-<li><p><strong>log</strong> (<em>dict</em>) – Optional dictionary that you can pass in that will be populated
-with any error messages or warnings from the parsers as they
-attempt to write the molecular data. This can be helpful
-in diagnosing why your file wasn’t saved.</p></li>
+If it still isn’t available, then PDB will be used.</p>
+</dd>
+<dt>show_warnings (bool):</dt><dd><p>Whether or not to write out any warnings that occur during save</p>
+</dd>
+<dt>silent (bool):</dt><dd><p>Whether or not to silence all output during the save</p>
+</dd>
+<dt>directory (str):</dt><dd><p>If supplied, the directory in which to save the files.</p>
+</dd>
+<dt>parallel (bool):</dt><dd><p>Whether or not to save in parallel (using multiple cores).
+You normally want this switched on, unless you are debugging
+or want to restrict sire to a single core.</p>
+</dd>
+</dl>
+</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -688,16 +696,10 @@ in diagnosing why your file wasn’t saved.</p></li>
 <span class="go">["/path/to/ala.top", "/path/to/ala.crd"]</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">log</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="s2">"broken.top"</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span>
-<span class="go">Exception</span>
-<span class="go">(look at `log` to find in detail what went wrong)</span>
-</pre></div>
-</div>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.save_to_string">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">save_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/sire/_load.html#save_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.save_to_string" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">save_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/sire/_load.html#save_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.save_to_string" title="Permalink to this definition">#</a></dt>
 <dd><p>Save the passed molecules to an in-memory list of lines.
 This will write the molecule(s) in the format specified
 to memory, thereby avoiding writing any data to a text file</p>
@@ -728,8 +730,64 @@ to memory, thereby avoiding writing any data to a text file</p>
 </dl>
 </dd></dl>
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.set_default_num_threads">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">set_default_num_threads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_parallel.html#set_default_num_threads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.set_default_num_threads" title="Permalink to this definition">#</a></dt>
+<dd><p>Set a reasonable default number of C++ threads that will be
+allowed for computation. Note that this is the maximum number of compute
+threads managed via Intel’s Threading Building blocks. Sire
+additionally uses a small number of lightweight background
+threads for management, which are unaffected by this setting.</p>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.set_max_num_threads">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">set_max_num_threads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_parallel.html#set_max_num_threads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.set_max_num_threads" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the maximum number of C++ threads that will be allowed
+for computation. Note that this is the maximum number of compute
+threads managed via Intel’s Threading Building blocks. Sire
+additionally uses a small number of lightweight background
+threads for management, which are unaffected by this setting.</p>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.smarts">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">smarts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smarts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smarts_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'smarts'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'labels'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#smarts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.smarts" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a molecule that has been generated using the passed
+smiles string. This uses rdkit to create the molecule,
+so it must be installed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smiles</strong> – str or list[str] or pandas.Dataframe
+The smiles string to interpret. This can be a single smiles string,
+a list of smiles strings, or a pandas Dataframe containing
+a smiles column and a label column (either called this, or
+use options below to name them yourself)</p></li>
+<li><p><strong>label</strong> – str
+The label for the molecule being created. This can only
+be a single string. If it is set, then <em class="xref py py-obj">labels</em> will be
+ignored.</p></li>
+<li><p><strong>labels</strong> – str or list[str]
+The label (name) for the molecule that will be created.
+This should be a single string or a list of strings depending
+on ‘smiles’. Note that this will be ignored if a
+Dataframe is passed in. Note that if this is not passed in
+then the label will be taken from the smiles string</p></li>
+<li><p><strong>smiles_column</strong> – str
+The name of the smiles column in the Dataframe (default ‘smiles’)</p></li>
+<li><p><strong>labels_column</strong> – str
+The name of the labels column in the Dataframe (default ‘labels’)</p></li>
+<li><p><strong>map</strong> – Property map if you want to put the molecule properties
+into different places</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns: sire.mol.Molecule</dt><dd><p>The actual molecule</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.smiles">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiles_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'smiles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'labels'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_hydrogens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#smiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.smiles" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiles_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'smiles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'labels'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_hydrogens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">must_sanitize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_load.html#smiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.smiles" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a molecule that has been generated using the passed
 smiles string. This uses rdkit to create the molecule,
 so it must be installed.</p>
@@ -763,6 +821,13 @@ generation of coordinates.</p></li>
 Whether or not to automatically generate 3D coordinates.
 Note that generating coordinates requires that
 hydrogens are automatically added.</p></li>
+<li><p><strong>must_sanitize</strong> – bool (default True)
+Whether or not all sanity checks must pass when creating
+the molecule. This will ensure that all sanity checks pass,
+and if they don’t, then an exception will be raised.
+If this is not True, then sanity checks that failed are
+skipped and silently ignored. It is possible, in this case,
+that a null or malformed molecule may be returned.</p></li>
 <li><p><strong>map</strong> – Property map if you want to put the molecule properties
 into different places</p></li>
 </ul>
@@ -780,21 +845,11 @@ into different places</p></li>
 that are supported by Sire</p>
 </dd></dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="sire.thumbs_up">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">thumbs_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_thumbsup.html#thumbs_up"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.thumbs_up" title="Permalink to this definition">#</a></dt>
-<dd><p>Give Sire a thumbs up! This will send a small amount of data
-to sire.openbiosim.org to let us know that you like Sire, and what
-operating system and version of Sire you are using.</p>
-<dl class="simple">
-<dt>(you can see all of the information that would be sent</dt><dd><p>by calling “get_thumbs_up_info()”)</p>
-</dd>
-</dl>
-<p>You can get more information about what is sent and why
-this is useful to us by visiting <a class="reference external" href="https://sire.openbiosim.org/thumbs_up">https://sire.openbiosim.org/thumbs_up</a></p>
-<p>You can permanently disable thumbs_up() on your computer by
-calling “disable_thumbs_up()”. This will write a small
-file to your home directory that will tell Sire to not
-allow any more thumbs_up data to be sent.</p>
+<dt class="sig sig-object py" id="sire.u">
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">u</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire.html#u"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.u" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a sire unit created from the passed expression. If this is a
+sire.units.GeneralUnit then it will be returned. If this is a string,
+then it will be parseed and returned as a sire.units.GeneralUnit.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.use_mixed_api">
@@ -860,7 +915,7 @@ not be used with new code</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -887,9 +942,8 @@ not be used with new code</p>
 <li><a class="reference internal" href="#module-sire">Public API</a><ul>
 <li><a class="reference internal" href="#sire.atomid"><code class="docutils literal notranslate"><span class="pre">atomid()</span></code></a></li>
 <li><a class="reference internal" href="#sire.chainid"><code class="docutils literal notranslate"><span class="pre">chainid()</span></code></a></li>
-<li><a class="reference internal" href="#sire.disable_thumbs_up"><code class="docutils literal notranslate"><span class="pre">disable_thumbs_up()</span></code></a></li>
 <li><a class="reference internal" href="#sire.expand"><code class="docutils literal notranslate"><span class="pre">expand()</span></code></a></li>
-<li><a class="reference internal" href="#sire.get_thumbs_up_info"><code class="docutils literal notranslate"><span class="pre">get_thumbs_up_info()</span></code></a></li>
+<li><a class="reference internal" href="#sire.get_max_num_threads"><code class="docutils literal notranslate"><span class="pre">get_max_num_threads()</span></code></a></li>
 <li><a class="reference internal" href="#sire.load"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
 <li><a class="reference internal" href="#sire.load_test_files"><code class="docutils literal notranslate"><span class="pre">load_test_files()</span></code></a></li>
 <li><a class="reference internal" href="#sire.measure"><code class="docutils literal notranslate"><span class="pre">measure()</span></code></a></li>
@@ -897,9 +951,12 @@ not be used with new code</p>
 <li><a class="reference internal" href="#sire.save"><code class="docutils literal notranslate"><span class="pre">save()</span></code></a></li>
 <li><a class="reference internal" href="#sire.save_to_string"><code class="docutils literal notranslate"><span class="pre">save_to_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.segid"><code class="docutils literal notranslate"><span class="pre">segid()</span></code></a></li>
+<li><a class="reference internal" href="#sire.set_default_num_threads"><code class="docutils literal notranslate"><span class="pre">set_default_num_threads()</span></code></a></li>
+<li><a class="reference internal" href="#sire.set_max_num_threads"><code class="docutils literal notranslate"><span class="pre">set_max_num_threads()</span></code></a></li>
+<li><a class="reference internal" href="#sire.smarts"><code class="docutils literal notranslate"><span class="pre">smarts()</span></code></a></li>
 <li><a class="reference internal" href="#sire.smiles"><code class="docutils literal notranslate"><span class="pre">smiles()</span></code></a></li>
 <li><a class="reference internal" href="#sire.supported_formats"><code class="docutils literal notranslate"><span class="pre">supported_formats()</span></code></a></li>
-<li><a class="reference internal" href="#sire.thumbs_up"><code class="docutils literal notranslate"><span class="pre">thumbs_up()</span></code></a></li>
+<li><a class="reference internal" href="#sire.u"><code class="docutils literal notranslate"><span class="pre">u()</span></code></a></li>
 <li><a class="reference internal" href="#sire.use_mixed_api"><code class="docutils literal notranslate"><span class="pre">use_mixed_api()</span></code></a></li>
 <li><a class="reference internal" href="#sire.use_new_api"><code class="docutils literal notranslate"><span class="pre">use_new_api()</span></code></a></li>
 <li><a class="reference internal" href="#sire.use_old_api"><code class="docutils literal notranslate"><span class="pre">use_old_api()</span></code></a></li>

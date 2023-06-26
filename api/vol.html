@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="How to ask for help" href="../support.html" /><link rel="prev" title="sire.vol" href="index_vol.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -397,6 +402,20 @@ a traditional gas-phase or no-boundary system.</p>
 <dt>beyond( (Cartesian)arg1, (float)dist, (CoordGroup)group0, (CoordGroup)group1) -&gt; bool :</dt><dd><p>Return whether or not these two groups are definitely beyond the cutoff distance.</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>bool beyond(SireVol::Cartesian {lvalue},double,SireVol::CoordGroup,SireVol::CoordGroup)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.vol.Cartesian.box_matrix">
+<span class="sig-name descname"><span class="pre">box_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.Cartesian.box_matrix" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>boxMatrix( (Space)arg1) -&gt; Matrix :</dt><dd><dl class="simple">
+<dt>Return the matrix that describes this box - these are the</dt><dd><p>three box vectors. This raises an exception if this is
+not a periodic space</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix boxMatrix(SireVol::Space {lvalue})</p>
 </dd>
 </dl>
 </dd>
@@ -635,7 +654,7 @@ it has the right coordinates to be around center. As this is not
 a periodic space, this will merely return a copy of group if
 it is within the specified distance.</p>
 <dl class="simple">
-<dt>C++ signature :</dt><dd><p>QList&lt;boost::tuples::tuple&lt;double, SireVol::CoordGroup, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt; &gt; getCopiesWithin(SireVol::Cartesian {lvalue},SireVol::CoordGroup,SireVol::CoordGroup,double)</p>
+<dt>C++ signature :</dt><dd><p>QList&lt;boost::tuples::tuple&lt;double, SireVol::CoordGroup, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt;&gt; getCopiesWithin(SireVol::Cartesian {lvalue},SireVol::CoordGroup,SireVol::CoordGroup,double)</p>
 </dd>
 </dl>
 </dd>
@@ -658,6 +677,12 @@ dist distance of center</p>
 <dt class="sig sig-object py" id="sire.vol.Cartesian.get_minimum_image">
 <span class="sig-name descname"><span class="pre">get_minimum_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.Cartesian.get_minimum_image" title="Permalink to this definition">#</a></dt>
 <dd><dl>
+<dt>getMinimumImage( (Cartesian)arg1, (object)coords, (Vector)center) -&gt; object :</dt><dd><p>A cartesian space is not periodic, so this just returns the input point</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;SireMaths::Vector&gt; getMinimumImage(SireVol::Cartesian {lvalue},QVector&lt;SireMaths::Vector&gt;,SireMaths::Vector)</p>
+</dd>
+</dl>
+</dd>
 <dt>getMinimumImage( (Cartesian)arg1, (CoordGroup)group, (Vector)center) -&gt; CoordGroup :</dt><dd><p>Return the minimum image copy of group with respect to center.
 In this case, as this is not a periodic space, this just returns
 group</p>
@@ -724,6 +749,38 @@ groups</p>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.vol.Cartesian.make_whole">
+<span class="sig-name descname"><span class="pre">make_whole</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.Cartesian.make_whole" title="Permalink to this definition">#</a></dt>
+<dd><p>makeWhole( (Space)arg1, (object)coords) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;SireMaths::Vector&gt; makeWhole(SireVol::Space {lvalue},QVector&lt;SireMaths::Vector&gt;)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>makeWhole( (Space)arg1, (object)coords, (Vector)center) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;SireMaths::Vector&gt; makeWhole(SireVol::Space {lvalue},QVector&lt;SireMaths::Vector&gt;,SireMaths::Vector)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>makeWhole( (Space)arg1, (object)coords) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;QVector&lt;SireMaths::Vector&gt;&gt; makeWhole(SireVol::Space {lvalue},QVector&lt;QVector&lt;SireMaths::Vector&gt;&gt;)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>makeWhole( (Space)arg1, (object)coords, (Vector)center) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;QVector&lt;SireMaths::Vector&gt;&gt; makeWhole(SireVol::Space {lvalue},QVector&lt;QVector&lt;SireMaths::Vector&gt;&gt;,SireMaths::Vector)</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.vol.Cartesian.maximum_cutoff">
@@ -846,6 +903,17 @@ and half the smallest box side for periodic spaces</p>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.vol.PeriodicBox.box_matrix">
+<span class="sig-name descname"><span class="pre">box_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.PeriodicBox.box_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>boxMatrix( (PeriodicBox)arg1) -&gt; Matrix :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix boxMatrix(SireVol::PeriodicBox {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.vol.PeriodicBox.calc_angle">
@@ -1056,7 +1124,7 @@ minimum distance between that periodic replica and center.
 If there are no periodic replicas of group that are within
 dist of center, then an empty list is returned.</p>
 <dl class="simple">
-<dt>C++ signature :</dt><dd><p>QList&lt;boost::tuples::tuple&lt;double, SireVol::CoordGroup, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt; &gt; getCopiesWithin(SireVol::PeriodicBox {lvalue},SireVol::CoordGroup,SireVol::CoordGroup,double)</p>
+<dt>C++ signature :</dt><dd><p>QList&lt;boost::tuples::tuple&lt;double, SireVol::CoordGroup, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt;&gt; getCopiesWithin(SireVol::PeriodicBox {lvalue},SireVol::CoordGroup,SireVol::CoordGroup,double)</p>
 </dd>
 </dl>
 </dd>
@@ -1079,6 +1147,13 @@ dist distance of center</p>
 <dt class="sig sig-object py" id="sire.vol.PeriodicBox.get_minimum_image">
 <span class="sig-name descname"><span class="pre">get_minimum_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.PeriodicBox.get_minimum_image" title="Permalink to this definition">#</a></dt>
 <dd><dl>
+<dt>getMinimumImage( (PeriodicBox)arg1, (object)coords, (Vector)center) -&gt; object :</dt><dd><p>Return the copy of the point point which is the closest minimum image
+to center</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;SireMaths::Vector&gt; getMinimumImage(SireVol::PeriodicBox {lvalue},QVector&lt;SireMaths::Vector&gt;,SireMaths::Vector)</p>
+</dd>
+</dl>
+</dd>
 <dt>getMinimumImage( (PeriodicBox)arg1, (CoordGroup)group, (Vector)center) -&gt; CoordGroup :</dt><dd><p>Return the closest periodic copy of group to the point point,
 according to the minimum image convention. The effect of this is
 to move group into the box which is now centered on point</p>
@@ -1154,6 +1229,24 @@ is at the center center)</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.vol.PeriodicBox.make_whole">
+<span class="sig-name descname"><span class="pre">make_whole</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.PeriodicBox.make_whole" title="Permalink to this definition">#</a></dt>
+<dd><p>makeWhole( (PeriodicBox)arg1, (object)coords) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;SireMaths::Vector&gt; makeWhole(SireVol::PeriodicBox {lvalue},QVector&lt;SireMaths::Vector&gt;)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>makeWhole( (PeriodicBox)arg1, (object)coords, (Vector)center) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;SireMaths::Vector&gt; makeWhole(SireVol::PeriodicBox {lvalue},QVector&lt;SireMaths::Vector&gt;,SireMaths::Vector)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.vol.PeriodicBox.max_coords">
 <span class="sig-name descname"><span class="pre">max_coords</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.PeriodicBox.max_coords" title="Permalink to this definition">#</a></dt>
 <dd><dl>
@@ -1212,14 +1305,14 @@ used)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.vol.PeriodicBox.set_dimensions">
 <span class="sig-name descname"><span class="pre">set_dimensions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.vol.PeriodicBox.set_dimensions" title="Permalink to this definition">#</a></dt>
-<dd><p>setDimensions( (PeriodicBox)arg1, (Vector)dimensions) -&gt; None :</p>
-<blockquote>
-<div><dl class="simple">
+<dd><dl>
+<dt>setDimensions( (PeriodicBox)arg1, (Vector)dimensions) -&gt; None :</dt><dd><p>Set the dimensions of this box to dimensions (the lengths of the
+three sides of this box)</p>
+<dl class="simple">
 <dt>C++ signature :</dt><dd><p>void setDimensions(SireVol::PeriodicBox {lvalue},SireMaths::Vector)</p>
 </dd>
 </dl>
-</div></blockquote>
-<dl>
+</dd>
 <dt>setDimensions( (PeriodicBox)arg1, (Vector)mincoords, (Vector)maxcoords) -&gt; None :</dt><dd><p>Set the dimensions of the box so that they span from mincoords
 to maxcoords</p>
 <dl class="simple">
@@ -1309,7 +1402,7 @@ the same location, to achieve this volume</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -1336,6 +1429,7 @@ the same location, to achieve this volume</p>
 <li><a class="reference internal" href="#sire.vol.Cartesian"><code class="docutils literal notranslate"><span class="pre">Cartesian</span></code></a><ul>
 <li><a class="reference internal" href="#sire.vol.Cartesian.assign"><code class="docutils literal notranslate"><span class="pre">Cartesian.assign()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.beyond"><code class="docutils literal notranslate"><span class="pre">Cartesian.beyond()</span></code></a></li>
+<li><a class="reference internal" href="#sire.vol.Cartesian.box_matrix"><code class="docutils literal notranslate"><span class="pre">Cartesian.box_matrix()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.calc_angle"><code class="docutils literal notranslate"><span class="pre">Cartesian.calc_angle()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.calc_dihedral"><code class="docutils literal notranslate"><span class="pre">Cartesian.calc_dihedral()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.calc_dist"><code class="docutils literal notranslate"><span class="pre">Cartesian.calc_dist()</span></code></a></li>
@@ -1353,6 +1447,7 @@ the same location, to achieve this volume</p>
 <li><a class="reference internal" href="#sire.vol.Cartesian.get_random_point"><code class="docutils literal notranslate"><span class="pre">Cartesian.get_random_point()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.is_cartesian"><code class="docutils literal notranslate"><span class="pre">Cartesian.is_cartesian()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.is_periodic"><code class="docutils literal notranslate"><span class="pre">Cartesian.is_periodic()</span></code></a></li>
+<li><a class="reference internal" href="#sire.vol.Cartesian.make_whole"><code class="docutils literal notranslate"><span class="pre">Cartesian.make_whole()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.maximum_cutoff"><code class="docutils literal notranslate"><span class="pre">Cartesian.maximum_cutoff()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.minimum_distance"><code class="docutils literal notranslate"><span class="pre">Cartesian.minimum_distance()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.Cartesian.set_volume"><code class="docutils literal notranslate"><span class="pre">Cartesian.set_volume()</span></code></a></li>
@@ -1364,6 +1459,7 @@ the same location, to achieve this volume</p>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox"><code class="docutils literal notranslate"><span class="pre">PeriodicBox</span></code></a><ul>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.assign"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.assign()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.beyond"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.beyond()</span></code></a></li>
+<li><a class="reference internal" href="#sire.vol.PeriodicBox.box_matrix"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.box_matrix()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.calc_angle"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.calc_angle()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.calc_dihedral"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.calc_dihedral()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.calc_dist"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.calc_dist()</span></code></a></li>
@@ -1382,6 +1478,7 @@ the same location, to achieve this volume</p>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.get_random_point"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.get_random_point()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.is_cartesian"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.is_cartesian()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.is_periodic"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.is_periodic()</span></code></a></li>
+<li><a class="reference internal" href="#sire.vol.PeriodicBox.make_whole"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.make_whole()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.max_coords"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.max_coords()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.maximum_cutoff"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.maximum_cutoff()</span></code></a></li>
 <li><a class="reference internal" href="#sire.vol.PeriodicBox.min_coords"><code class="docutils literal notranslate"><span class="pre">PeriodicBox.min_coords()</span></code></a></li>

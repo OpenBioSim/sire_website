@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Atom Properties" href="part03/01_atom_properties.html" /><link rel="prev" title="Searching" href="part02/10_searching.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Part 3 - Molecular Properties - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -388,7 +393,7 @@ For example, the coordinates are held in the <code class="docutils literal notra
 <span class="go">2: ( 20.0513 Å, 3.63293 Å, 13.2874 Å )</span>
 <span class="go">3: ( 18.798 Å, 2.43076 Å, 13.7337 Å )</span>
 <span class="go">4: ( 18.4805 Å, 4.54971 Å, 14.3514 Å )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: ( 15.3407 Å, 5.44815 Å, 17.9626 Å )</span>
 <span class="go">18: ( 13.8341 Å, 3.93668 Å, 18.3509 Å )</span>
 <span class="go">19: ( 14.3525 Å, 3.40994 Å, 19.1521 Å )</span>
@@ -405,7 +410,7 @@ For example, the coordinates are held in the <code class="docutils literal notra
 <span class="go">2: 0.1123 |e|</span>
 <span class="go">3: 0.1123 |e|</span>
 <span class="go">4: 0.5972 |e|</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: 0.2719 |e|</span>
 <span class="go">18: -0.149 |e|</span>
 <span class="go">19: 0.0976 |e|</span>
@@ -433,7 +438,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: E</span>
 <span class="go">3: E</span>
 <span class="go">4: M</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: E</span>
 <span class="go">18: M</span>
 <span class="go">19: E</span>
@@ -446,7 +451,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2:   CH3:2-HH33:4  : 340 [r - 1.09]^2</span>
 <span class="go">3:   CH3:2-C:5     : 317 [r - 1.522]^2</span>
 <span class="go">4:     C:5-O:6     : 570 [r - 1.229]^2</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">16:    N:17-H:18    : 434 [r - 1.01]^2</span>
 <span class="go">17:    N:17-CH3:19  : 337 [r - 1.449]^2</span>
 <span class="go">18:  CH3:19-HH31:20 : 340 [r - 1.09]^2</span>
@@ -459,7 +464,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2:   CH3:2-C:5-N:7-H:8             : 2.5 cos(2 phi - 3.14159) + 2.5</span>
 <span class="go">3:   CH3:2-C:5-N:7-CA:9            : 2.5 cos(2 phi - 3.14159) + 2.5</span>
 <span class="go">4:  HH32:3-CH3:2-C:5-O:6           : 0.8 cos(phi) + 0.08 cos(3 phi - 3.14159) + 0.88</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">36:    O:16-C:15-N:17-H:18          : 2 cos(phi) + 2.5 cos(2 phi - 3.14159) + 4.5</span>
 <span class="go">37:    O:16-C:15-N:17-CH3:19        : 2.5 cos(2 phi - 3.14159) + 2.5</span>
 <span class="go">38:    H:18-N:17-CH3:19-HH31:20     : 0</span>
@@ -473,7 +478,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: HC</span>
 <span class="go">3: HC</span>
 <span class="go">4: C</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: H</span>
 <span class="go">18: CT</span>
 <span class="go">19: H1</span>
@@ -486,7 +491,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: LJ( sigma = 2.64953 Å, epsilon = 0.0157 kcal mol-1 )</span>
 <span class="go">3: LJ( sigma = 2.64953 Å, epsilon = 0.0157 kcal mol-1 )</span>
 <span class="go">4: LJ( sigma = 3.39967 Å, epsilon = 0.086 kcal mol-1 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: LJ( sigma = 1.06908 Å, epsilon = 0.0157 kcal mol-1 )</span>
 <span class="go">18: LJ( sigma = 3.39967 Å, epsilon = 0.1094 kcal mol-1 )</span>
 <span class="go">19: LJ( sigma = 2.47135 Å, epsilon = 0.0157 kcal mol-1 )</span>
@@ -499,7 +504,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: HC</span>
 <span class="go">3: HC</span>
 <span class="go">4: C</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: H</span>
 <span class="go">18: CT</span>
 <span class="go">19: H1</span>
@@ -513,7 +518,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: ( -0.0117127 Å ps-1, 0.0275995 Å ps-1, 0.018425 Å ps-1 )</span>
 <span class="go">3: ( -0.0505938 Å ps-1, 0.00951136 Å ps-1, 0.0125766 Å ps-1 )</span>
 <span class="go">4: ( 0.0185456 Å ps-1, -0.00277097 Å ps-1, -0.005927 Å ps-1 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: ( 0.0203835 Å ps-1, -0.0236023 Å ps-1, 0.0269803 Å ps-1 )</span>
 <span class="go">18: ( -0.0229536 Å ps-1, 0.00122144 Å ps-1, 0.0168112 Å ps-1 )</span>
 <span class="go">19: ( 0.0225591 Å ps-1, -0.0584583 Å ps-1, -0.0468198 Å ps-1 )</span>
@@ -526,7 +531,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: 0.1123 |e|</span>
 <span class="go">3: 0.1123 |e|</span>
 <span class="go">4: 0.5972 |e|</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: 0.2719 |e|</span>
 <span class="go">18: -0.149 |e|</span>
 <span class="go">19: 0.0976 |e|</span>
@@ -539,7 +544,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2:  HH31:1-CH3:2-C:5       : 50 [theta - 1.91114]^2</span>
 <span class="go">3:   CH3:2-C:5-O:6         : 80 [theta - 2.10138]^2</span>
 <span class="go">4:   CH3:2-C:5-N:7         : 70 [theta - 2.03505]^2</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">31:    N:17-CH3:19-HH33:22  : 50 [theta - 1.91114]^2</span>
 <span class="go">32:    H:18-N:17-CH3:19     : 50 [theta - 2.06019]^2</span>
 <span class="go">33: HH31:20-CH3:19-HH32:21  : 35 [theta - 1.91114]^2</span>
@@ -552,7 +557,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: ( 20.0513, 3.63293, 13.2874 )</span>
 <span class="go">3: ( 18.798, 2.43076, 13.7337 )</span>
 <span class="go">4: ( 18.4805, 4.54971, 14.3514 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: ( 15.3407, 5.44815, 17.9626 )</span>
 <span class="go">18: ( 13.8341, 3.93668, 18.3509 )</span>
 <span class="go">19: ( 14.3525, 3.40994, 19.1521 )</span>
@@ -565,7 +570,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: Hydrogen (H, 1)</span>
 <span class="go">3: Hydrogen (H, 1)</span>
 <span class="go">4: Carbon (C, 6)</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: Hydrogen (H, 1)</span>
 <span class="go">18: Carbon (C, 6)</span>
 <span class="go">19: Hydrogen (H, 1)</span>
@@ -578,7 +583,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: 0.85</span>
 <span class="go">3: 0.85</span>
 <span class="go">4: 0.72</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: 0.85</span>
 <span class="go">18: 0.72</span>
 <span class="go">19: 0.85</span>
@@ -591,7 +596,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: 1.3 Å</span>
 <span class="go">3: 1.3 Å</span>
 <span class="go">4: 1.7 Å</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: 1.3 Å</span>
 <span class="go">18: 1.7 Å</span>
 <span class="go">19: 1.3 Å</span>
@@ -611,7 +616,7 @@ via the <code class="docutils literal notranslate"><span class="pre">property_ke
 <span class="go">2: 1.008 g mol-1</span>
 <span class="go">3: 1.008 g mol-1</span>
 <span class="go">4: 12.01 g mol-1</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: 1.008 g mol-1</span>
 <span class="go">18: 12.01 g mol-1</span>
 <span class="go">19: 1.008 g mol-1</span>
@@ -654,7 +659,7 @@ directly from this object, e.g.</p>
 <span class="go">2: LJ( sigma = 2.64953 Å, epsilon = 0.0157 kcal mol-1 )</span>
 <span class="go">3: LJ( sigma = 2.64953 Å, epsilon = 0.0157 kcal mol-1 )</span>
 <span class="go">4: LJ( sigma = 3.39967 Å, epsilon = 0.086 kcal mol-1 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">17: LJ( sigma = 1.06908 Å, epsilon = 0.0157 kcal mol-1 )</span>
 <span class="go">18: LJ( sigma = 3.39967 Å, epsilon = 0.1094 kcal mol-1 )</span>
 <span class="go">19: LJ( sigma = 2.47135 Å, epsilon = 0.0157 kcal mol-1 )</span>
@@ -720,7 +725,7 @@ across all of the views within molecules.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">

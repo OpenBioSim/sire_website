@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Viewing Molecules" href="view.html" /><link rel="prev" title="Detailed Guides" href="index.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Trajectories" href="trajectory.html" /><link rel="prev" title="Detailed Guides" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Searching - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Detailed Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1023,6 +1028,36 @@ periodic boundaries are accounted for in the search. You can specify
 the space to use by passing this in via a property map.</p>
 </div>
 </section>
+<section id="searching-using-smiles-or-smarts-strings">
+<h2>Searching using Smiles or Smarts Strings<a class="headerlink" href="#searching-using-smiles-or-smarts-strings" title="Permalink to this heading">#</a></h2>
+<p>You can search for substructure matches in views using either
+<a class="reference external" href="https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system">smiles</a> or
+<a class="reference external" href="https://en.wikipedia.org/wiki/SMILES_arbitrary_target_specification">smarts</a>.</p>
+<p>These searches are processed using the <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>’s integration with
+<a class="reference external" href="https://rdkit.org">RDKit</a>.</p>
+<p>You can search using smiles or smarts by putting <code class="docutils literal notranslate"><span class="pre">smiles</span></code> or <code class="docutils literal notranslate"><span class="pre">smarts</span></code>
+before the search term.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">smarts</span> <span class="pre">[#6]</span></code> - search for all carbon atoms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smarts</span> <span class="pre">[#6]!:[#6]</span></code> - search for carbons bonded to other carbon atoms
+using an aliphatic bond.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smiles</span> <span class="pre">CNC(=O)C(C)NC(C)=O</span></code> - search for molecules that match the
+smiles string for alanine dipeptide.</p></li>
+</ul>
+<p>Since these searches can match multiple groups, and can have multiple
+atoms per match, the results of the search are returned as
+<a class="reference internal" href="../api/mol.html#sire.mol.AtomMatch" title="sire.mol.AtomMatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtomMatch</span></code></a> or <a class="reference internal" href="../api/mol.html#sire.mol.AtomMatchM" title="sire.mol.AtomMatchM"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtomMatchM</span></code></a> objects.</p>
+<p>These are derived from the standard atom selector classes, and will contain
+all atoms that are included in all matches of the smiles or smarts string
+in the molecule.</p>
+<p>You can extract individual matches (and then individual atoms within those
+matches) using the <a class="reference internal" href="../api/mol.html#sire.mol.AtomMatch.group" title="sire.mol.AtomMatch.group"><code class="xref py py-func docutils literal notranslate"><span class="pre">group()</span></code></a> or
+<a class="reference internal" href="../api/mol.html#sire.mol.AtomMatch.groups" title="sire.mol.AtomMatch.groups"><code class="xref py py-func docutils literal notranslate"><span class="pre">groups()</span></code></a> functions. These return either individual
+match groups, or all of the matching groups, as individual atom selectors.
+The order of the atoms in the atom selectors matches the order of the
+atoms in the smiles or smarts strings. More detail on how to use these
+match objects is given in the <a class="reference internal" href="../tutorial/part05/04_smarts.html"><span class="doc">the tutorial</span></a>.</p>
+</section>
 <section id="searching-for-water-or-protein-molecules">
 <h2>Searching for Water or Protein Molecules<a class="headerlink" href="#searching-for-water-or-protein-molecules" title="Permalink to this heading">#</a></h2>
 <p>You can search for protein or water molecules using the <code class="docutils literal notranslate"><span class="pre">protein</span></code>
@@ -1113,12 +1148,12 @@ tokens that used it, e.g.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="view.html">
+          <a class="next-page" href="trajectory.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Viewing Molecules</div>
+                <div class="title">Trajectories</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -1139,7 +1174,7 @@ tokens that used it, e.g.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -1181,6 +1216,7 @@ tokens that used it, e.g.</p>
 <li><a class="reference internal" href="#searching-by-property">Searching by Property</a></li>
 <li><a class="reference internal" href="#finding-the-nth-view-that-matches">Finding the Nth View that Matches</a></li>
 <li><a class="reference internal" href="#searching-by-distance">Searching by Distance</a></li>
+<li><a class="reference internal" href="#searching-using-smiles-or-smarts-strings">Searching using Smiles or Smarts Strings</a></li>
 <li><a class="reference internal" href="#searching-for-water-or-protein-molecules">Searching for Water or Protein Molecules</a></li>
 <li><a class="reference internal" href="#creating-custom-search-tokens">Creating Custom Search Tokens</a></li>
 </ul>

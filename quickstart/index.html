@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Tutorial" href="../tutorial/index.html" /><link rel="prev" title="Installation" href="../install.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-6.1.3, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-7.0.1, furo 2022.04.07"/>
         <title>Quick Start Guide - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -198,7 +198,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,7 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +249,10 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/units.html">Units</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +274,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -399,7 +404,7 @@ of <code class="docutils literal notranslate"><span class="pre">ala.top</span></
 </div>
 <p>There are lots of ways to search or index for molecules, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="go">Molecule( ACE:3   num_atoms=22 num_residues=3 )</span>
+<span class="go">Molecule( ACE:7   num_atoms=22 num_residues=3 )</span>
 </pre></div>
 </div>
 <p>has returned the first molecule in the system of molecules that were loaded.</p>
@@ -410,7 +415,7 @@ of <code class="docutils literal notranslate"><span class="pre">ala.top</span></
 <span class="go">2: Molecule( WAT:6   num_atoms=3 num_residues=1 )</span>
 <span class="go">3: Molecule( WAT:7   num_atoms=3 num_residues=1 )</span>
 <span class="go">4: Molecule( WAT:8   num_atoms=3 num_residues=1 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">625: Molecule( WAT:629 num_atoms=3 num_residues=1 )</span>
 <span class="go">626: Molecule( WAT:630 num_atoms=3 num_residues=1 )</span>
 <span class="go">627: Molecule( WAT:631 num_atoms=3 num_residues=1 )</span>
@@ -433,6 +438,16 @@ of <code class="docutils literal notranslate"><span class="pre">ala.top</span></
 </pre></div>
 </div>
 <p>has returned all of the carbon atoms in the first molecule.</p>
+<p>Smarts searchs are supported too! For example, here are three matches
+for a smarts string that finds aliphatic carbons.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="s2">"smarts [#6]!:[#6]"</span><span class="p">]</span>
+<span class="go">AtomMatch( size=3</span>
+<span class="go">0: [2] CH3:2,C:5</span>
+<span class="go">1: [2] CA:9,CB:11</span>
+<span class="go">2: [2] CA:9,C:15</span>
+<span class="go">)</span>
+</pre></div>
+</div>
 <p>You can also search for bonds, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bonds</span><span class="p">()</span>
 <span class="go">SelectorBond( size=21</span>
@@ -441,7 +456,7 @@ of <code class="docutils literal notranslate"><span class="pre">ala.top</span></
 <span class="go">2: Bond( CH3:2 =&gt; HH33:4 )</span>
 <span class="go">3: Bond( CH3:2 =&gt; C:5 )</span>
 <span class="go">4: Bond( C:5 =&gt; O:6 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">16: Bond( N:17 =&gt; H:18 )</span>
 <span class="go">17: Bond( N:17 =&gt; CH3:19 )</span>
 <span class="go">18: Bond( CH3:19 =&gt; HH31:20 )</span>
@@ -458,7 +473,7 @@ of <code class="docutils literal notranslate"><span class="pre">ala.top</span></
 <span class="go">2: MolNum(5) Bond( O:26 =&gt; H1:27 )</span>
 <span class="go">3: MolNum(5) Bond( O:26 =&gt; H2:28 )</span>
 <span class="go">4: MolNum(6) Bond( O:29 =&gt; H1:30 )</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">1255: MolNum(631) Bond( O:1904 =&gt; H2:1906 )</span>
 <span class="go">1256: MolNum(632) Bond( O:1907 =&gt; H1:1908 )</span>
 <span class="go">1257: MolNum(632) Bond( O:1907 =&gt; H2:1909 )</span>
@@ -495,40 +510,90 @@ selection, so you can view the movie of the first molecule using</p>
 calculate its energy using the <a class="reference internal" href="../api/mol.html#sire.mol.SelectorMol.energy" title="sire.mol.SelectorMol.energy"><code class="xref py py-func docutils literal notranslate"><span class="pre">energy()</span></code></a>
 function.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span>
-<span class="go">23.6917 kcal mol-1</span>
+<span class="go">31.5691 kcal mol-1</span>
 </pre></div>
 </div>
 <p>You can get all of the components via</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span><span class="o">.</span><span class="n">components</span><span class="p">()</span>
-<span class="go">{'dihedral': 9.80034 kcal mol-1,</span>
+<span class="go">{'bond': 4.22497 kcal mol-1,</span>
+<span class="go"> '1-4_LJ': 3.50984 kcal mol-1,</span>
+<span class="go"> 'angle': 7.57006 kcal mol-1,</span>
+<span class="go"> 'dihedral': 9.80034 kcal mol-1,</span>
+<span class="go"> '1-4_coulomb': 44.8105 kcal mol-1,</span>
 <span class="go"> 'intra_LJ': -1.31125 kcal mol-1,</span>
 <span class="go"> 'improper': 0.485545 kcal mol-1,</span>
-<span class="go"> '1-4_coulomb': 44.8105 kcal mol-1,</span>
-<span class="go"> '1-4_LJ': 3.50984 kcal mol-1,</span>
-<span class="go"> 'intra_coulomb': -45.3982 kcal mol-1,</span>
-<span class="go"> 'bond': 4.22497 kcal mol-1,</span>
-<span class="go"> 'angle': 7.57006 kcal mol-1}</span>
+<span class="go"> 'intra_coulomb': -37.5208 kcal mol-1}</span>
 </pre></div>
 </div>
 <p>You can calculate the energy across a trajectory, with the results
 returned as a pandas dataframe!</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span>
 <span class="go">     frame        time    1-4_LJ  1-4_coulomb      angle      bond   dihedral  improper  intra_LJ  intra_coulomb      total</span>
-<span class="go">0        0    0.200000  3.509838    44.810452   7.570059  4.224970   9.800343  0.485545 -1.311255     -45.398213  23.691740</span>
-<span class="go">1        1    0.400000  2.700506    47.698455  12.470519  2.785874  11.776295  1.131481 -1.617496     -48.137252  28.808384</span>
-<span class="go">2        2    0.600000  2.801076    43.486411  11.607753  2.023439  11.614774  0.124729 -1.103966     -44.458051  26.096165</span>
-<span class="go">3        3    0.800000  3.365638    47.483966   6.524609  0.663454  11.383852  0.339333 -0.983872     -48.191512  20.585469</span>
-<span class="go">4        4    1.000000  3.534830    48.596027   6.517530  2.190370  10.214994  0.255331 -1.699613     -48.393889  21.215580</span>
+<span class="go">0        0    0.200000  3.509838    44.810452   7.570059  4.224970   9.800343  0.485545 -1.311255     -37.520806  31.569147</span>
+<span class="go">1        1    0.400000  2.700506    47.698455  12.470519  2.785874  11.776295  1.131481 -1.617496     -40.126219  36.819417</span>
+<span class="go">2        2    0.600000  2.801076    43.486411  11.607753  2.023439  11.614774  0.124729 -1.103966     -36.633297  33.920920</span>
+<span class="go">3        3    0.800000  3.365638    47.483966   6.524609  0.663454  11.383852  0.339333 -0.983872     -40.197920  28.579061</span>
+<span class="go">4        4    1.000000  3.534830    48.596027   6.517530  2.190370  10.214994  0.255331 -1.699613     -40.355054  29.254415</span>
 <span class="go">..     ...         ...       ...          ...        ...       ...        ...       ...       ...            ...        ...</span>
-<span class="go">495    495   99.199997  2.665994    42.866319  11.339087  4.172684   9.875872  0.356887 -1.584092     -44.220005  25.472747</span>
-<span class="go">496    496   99.400002  3.062467    44.852774   9.268408  1.878366  10.548897  0.327064 -1.814718     -44.419100  23.704158</span>
-<span class="go">497    497   99.599998  3.530233    44.908117  10.487378  4.454670  10.223964  1.006034 -0.692972     -44.902056  29.015369</span>
-<span class="go">498    498   99.800003  3.511116    42.976288   9.017446  0.809064  10.841436  0.518190 -1.862433     -43.205034  22.606073</span>
-<span class="go">499    499  100.000000  3.768998    41.625135  13.629923  1.089916  11.889372  0.846805 -1.897328     -44.306437  26.646384</span>
+<span class="go">495    495   99.199997  2.665994    42.866319  11.339087  4.172684   9.875872  0.356887 -1.584092     -36.499764  33.192988</span>
+<span class="go">496    496   99.400002  3.062467    44.852774   9.268408  1.878366  10.548897  0.327064 -1.814718     -36.671683  31.451575</span>
+<span class="go">497    497   99.599998  3.530233    44.908117  10.487378  4.454670  10.223964  1.006034 -0.692972     -37.118048  36.799376</span>
+<span class="go">498    498   99.800003  3.511116    42.976288   9.017446  0.809064  10.841436  0.518190 -1.862433     -35.481467  30.329641</span>
+<span class="go">499    499  100.000000  3.768998    41.625135  13.629923  1.089916  11.889372  0.846805 -1.897328     -36.547672  34.405149</span>
+</pre></div>
+</div>
+<p>You can do more with the molecule, for example viewing it’s 2D structure</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">view2d</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="2D view of first molecule the subset of the aladip movie" src="../_images/qs05.jpg"/>
+<p>or generating its smiles string.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">smiles</span><span class="p">()</span>
+<span class="go">'CNC(=O)C(C)NC(C)=O'</span>
+</pre></div>
+</div>
+<p>You can also convert it to an RDKit molecule!</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdmol</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"rdkit"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And you can even run molecular dynamics using the integration with OpenMM.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">"kigaki.gro"</span><span class="p">,</span> <span class="s2">"kigaki.top"</span><span class="p">),</span>
+<span class="gp">... </span>               <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="3D view of the kigaki system" src="../_images/qs06.jpg"/>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">"4fs"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"20ps"</span><span class="p">,</span> <span class="n">save_frequency</span><span class="o">=</span><span class="s2">"1ps"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span>
+<span class="go">    frame  time     1-4_LJ  1-4_coulomb           LJ      angle          bond       coulomb    dihedral   intra_LJ  intra_coulomb         total</span>
+<span class="go">0       0   1.0  59.828605  1356.012783  9717.588398  34.081250  9.935577e-08 -58901.908280  145.262639 -60.009867    -830.297820 -48479.442291</span>
+<span class="go">1       1   2.0  59.859426  1358.426949  9721.478025  33.488730  1.020368e-07 -58977.547695  143.620760 -63.368620    -832.992328 -48557.034752</span>
+<span class="go">2       2   3.0  60.891111  1363.801767  9854.057685  32.568284  9.815839e-08 -59169.733258  145.274884 -62.029406    -838.669248 -48613.838181</span>
+<span class="go">3       3   4.0  59.832609  1357.912373  9851.460866  32.471396  2.825340e-07 -59192.703528  140.362271 -65.433697    -829.466133 -48645.563842</span>
+<span class="go">4       4   5.0  60.074686  1359.927851  9879.077092  34.170306  1.003672e-07 -59240.068442  139.836463 -64.083724    -833.119507 -48664.185275</span>
+<span class="go">5       5   6.0  59.375049  1358.601877  9886.713393  34.034265  9.092219e-08 -59270.897562  140.563988 -63.993368    -831.838422 -48687.440781</span>
+<span class="go">6       6   7.0  59.614215  1357.914063  9857.271105  34.639254  1.061152e-07 -59250.463890  140.829589 -64.766169    -829.218503 -48694.180337</span>
+<span class="go">7       7   8.0  59.926889  1361.405155  9957.054478  34.806703  3.159753e-07 -59380.997407  143.988778 -66.272231    -836.888535 -48726.976172</span>
+<span class="go">8       8   9.0  58.966007  1358.311827  9967.327772  34.997531  3.027917e-07 -59405.583408  142.485999 -64.733607    -831.207715 -48739.435594</span>
+<span class="go">9       9  10.0  60.324323  1360.640600  9939.400939  36.198475  1.166730e-07 -59388.226935  143.212016 -64.316508    -837.483867 -48750.250956</span>
+<span class="go">10     10  11.0  61.320326  1362.023485  9955.071224  34.056823  1.139431e-07 -59424.212266  143.513301 -64.975309    -837.997195 -48771.199611</span>
+<span class="go">11     11  12.0  60.415993  1362.776379  9936.669535  31.304641  9.647357e-08 -59410.580161  145.678519 -64.433834    -835.417971 -48773.586899</span>
+<span class="go">12     12  13.0  60.970833  1366.508370  9986.881634  33.251273  2.509407e-07 -59466.056471  144.351857 -65.429617    -841.930932 -48781.453053</span>
+<span class="go">13     13  14.0  60.245588  1361.266409  9986.122124  34.192312  1.163054e-07 -59480.201397  145.712628 -61.013711    -838.646145 -48792.322190</span>
+<span class="go">14     14  15.0  61.878785  1370.377196  9924.323617  31.399821  2.785520e-07 -59418.248563  144.305975 -64.940040    -845.430135 -48796.333344</span>
+<span class="go">15     15  16.0  60.430617  1365.739457  9926.082150  33.156124  2.836895e-07 -59423.448702  144.681590 -64.043674    -840.110188 -48797.512625</span>
+<span class="go">16     16  17.0  60.294772  1360.174160  9950.578785  32.453372  1.011507e-07 -59450.019119  143.409696 -64.041887    -835.388935 -48802.539157</span>
+<span class="go">17     17  18.0  61.156756  1363.542712  9947.586104  34.036896  9.579309e-08 -59452.548714  146.142252 -64.800847    -839.303707 -48804.188547</span>
+<span class="go">18     18  19.0  60.048626  1364.033346  9976.885470  33.771207  9.353054e-08 -59483.125256  144.011481 -64.081234    -838.157968 -48806.614328</span>
+<span class="go">19     19  20.0  61.609644  1363.227511  9935.113811  32.689491  2.968531e-07 -59452.910379  144.467384 -64.420695    -835.410744 -48815.633975</span>
 </pre></div>
 </div>
 <p>This is just the beginning of what <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> can do! To learn more,
-please take a look at <a class="reference internal" href="../tutorial/index.html"><span class="doc">the tutorial</span></a>.</p>
+please take a look at <a class="reference internal" href="../cheatsheet/index.html"><span class="doc">the detailed guides</span></a>
+or <a class="reference internal" href="../tutorial/index.html"><span class="doc">the tutorial</span></a>.</p>
 </section>
 
         </article>
@@ -562,7 +627,7 @@ please take a look at <a class="reference internal" href="../tutorial/index.html
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 27, 2023</div>
+              Last updated on Jun 26, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
