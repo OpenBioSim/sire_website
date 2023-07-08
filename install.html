@@ -644,6 +644,142 @@ to learn how to use <a class="reference internal" href="api/sire.html#module-sir
 for more information on how to develop and contribute new code
 to <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>.</p>
 </section>
+<section id="hardest-install-build-your-own-custom-conda-packages">
+<h2>5. Hardest install - build your own custom conda packages<a class="headerlink" href="#hardest-install-build-your-own-custom-conda-packages" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> conda packages that we build have a lot of dependencies that
+may conflict with your own environment. This is because we build <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
+to be compatible with the latest version of <a class="reference external" href="https://biosimspace.openbiosim.org">BioSimSpace</a>,
+which itself optionally depends on a large number of simulation packages.</p>
+<p>You can build your own <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> conda package that has fewer dependencies,
+or which is compatible with the packages already installed in your conda
+environment. There are a few steps you need to complete.</p>
+<section id="a-define-your-runtime-environment">
+<h3>A. Define your runtime environment<a class="headerlink" href="#a-define-your-runtime-environment" title="Permalink to this heading">#</a></h3>
+<p>The first step is to describe the desired runtime environment for the package.
+The easiest way to do this is to create that environment, e.g. by installing
+the packages you want, and to then create an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file
+that describes that environment. You can do this by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+<p>This will create an environment file called <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>
+that creates pins for the exact version of all of the packages installed
+in your environment.</p>
+<p>If you want, you can edit this file to add or remove pins. Simply delete
+lines describing the version of packages that you don’t need pinned,
+add new lines if there are additional packages that you do want pinned,
+or even update the version number of the pins if you can allow more
+flexibility for the installation.</p>
+</section>
+<section id="b-check-out-the-sire-source-code">
+<h3>B. Check out the sire source code<a class="headerlink" href="#b-check-out-the-sire-source-code" title="Permalink to this heading">#</a></h3>
+<p>The next step is to check out the <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> source code (if you haven’t
+already).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/openbiosim/sire<span class="w"> </span>-b<span class="w"> </span>main
+</pre></div>
+</div>
+<p>This checks the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of the code out into a directory called
+<code class="docutils literal notranslate"><span class="pre">sire</span></code>. You can build a package for any branch of the code. Typically,
+you will want to choose the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, as this always corresponds to the
+last release. You can checkout the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch by changing into the
+<code class="docutils literal notranslate"><span class="pre">sire</span></code> directory and running;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+<section id="c-create-the-conda-build-environment">
+<h3>C. Create the conda build environment<a class="headerlink" href="#c-create-the-conda-build-environment" title="Permalink to this heading">#</a></h3>
+<p>While you could build in your existing environment, it is cleaner to
+build in a dedicated build environment. Here, we will create a build
+environment called <code class="docutils literal notranslate"><span class="pre">build_sire</span></code>. You can use any name you want.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>build_sire<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+<p>Activate that environment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>build_sire
+</pre></div>
+</div>
+<p>And then install the tools needed to run conda-build</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
+$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>boa<span class="w"> </span>anaconda-client<span class="w"> </span><span class="nv">packaging</span><span class="o">=</span><span class="m">21</span><span class="w"> </span>pip-requirements-parser
+</pre></div>
+</div>
+</section>
+<section id="d-create-the-conda-recipe">
+<h3>D. Create the conda recipe<a class="headerlink" href="#d-create-the-conda-recipe" title="Permalink to this heading">#</a></h3>
+<p>Next, we need to create the conda recipe to build the package. We do this by
+running the script <code class="docutils literal notranslate"><span class="pre">actions/update_recipe.py</span></code>. You can add the path to
+your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file as an argument. This tells the script to
+create a recipe that includes all of the pins in the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>.
+For example;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>actions/update_recipe.py<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+<p>would create the recipe using the pins in <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> (assuming this
+file was in the current directory).</p>
+<p>The recipe is written to <code class="docutils literal notranslate"><span class="pre">recipes/sire/meta.yaml</span></code>. You can (optionally)
+edit the pins in this file too, if you want to do some fine-tuning.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may need to edit the recipe to fix version inconsistencies.
+This is especially the case for <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> - you need to to make
+sure that if you specify a version for <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> in your
+<code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> that you also use the same version
+for the <code class="docutils literal notranslate"><span class="pre">rdkit-devel</span></code> package.</p>
+</div>
+</section>
+<section id="e-building-the-package">
+<h3>E. Building the package<a class="headerlink" href="#e-building-the-package" title="Permalink to this heading">#</a></h3>
+<p>You can now run <code class="docutils literal notranslate"><span class="pre">conda-build</span></code> to create the package.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>mambabuild<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>openbiosim/label/dev<span class="w"> </span>recipes/sire
+</pre></div>
+</div>
+<p>This will take a while. At the end, it will print out the location of the
+sire conda package, e.g.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above command assumes that you don’t need any other channels included
+to install all of the packages included in your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">actions/update_recipe.py</span></code> script will print out the correct
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">mambabuild</span></code> command at the end, which includes any extra
+channels that are needed.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># To have conda build upload to anaconda.org automatically, use</span>
+<span class="c1"># conda config --set anaconda_upload yes</span>
+<span class="n">anaconda</span> <span class="n">upload</span> \
+    <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">mambaforge</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">build_sire</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">bld</span><span class="o">/</span><span class="n">osx</span><span class="o">-</span><span class="mi">64</span><span class="o">/</span><span class="n">sire</span><span class="o">-</span><span class="mf">2023.3.0</span><span class="o">-</span><span class="n">py310hf95ea87_25</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">anaconda_upload</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">set</span><span class="o">.</span>  <span class="n">Not</span> <span class="n">uploading</span> <span class="n">wheels</span><span class="p">:</span> <span class="p">[]</span>
+
+<span class="n">INFO</span> <span class="p">::</span> <span class="n">The</span> <span class="n">inputs</span> <span class="n">making</span> <span class="n">up</span> <span class="n">the</span> <span class="n">hashes</span> <span class="k">for</span> <span class="n">the</span> <span class="n">built</span> <span class="n">packages</span> <span class="n">are</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+<span class="p">{</span>
+  <span class="s2">"sire-2023.3.0-py310hf95ea87_25"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"recipe"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"c_compiler"</span><span class="p">:</span> <span class="s2">"clang"</span><span class="p">,</span>
+      <span class="s2">"cxx_compiler"</span><span class="p">:</span> <span class="s2">"clangxx"</span><span class="p">,</span>
+      <span class="s2">"numpy"</span><span class="p">:</span> <span class="s2">"1.22"</span><span class="p">,</span>
+      <span class="s2">"target_platform"</span><span class="p">:</span> <span class="s2">"osx-64"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, you can see that the package is the file
+<code class="docutils literal notranslate"><span class="pre">/path/to/mambaforge/envs/build_sire/conda-bld/osx-64/sire-2023.3.0-py310hf95ea87_25.tar.bz2</span></code>.</p>
+<p>Copy this conda package to wherever you need (e.g. into a channel, upload
+to conda, etc.).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A full set of tests will be run on the package after it has been built.
+Some of these tests may fail if you have edited the recipe to remove
+some of the dependencies. If this happens, you can decide to ignore
+the tests, e.g. by removing them from the conda recipe (<code class="docutils literal notranslate"><span class="pre">meta.yml</span></code>)
+or by just copying the file that is produced and has been placed into
+the <code class="docutils literal notranslate"><span class="pre">conda-bld/broken</span></code> directory.</p>
+</div>
+<p>You can then install it, either via the channel you’ve uploaded to, or by
+directly running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> on the package file itself.</p>
+</section>
+</section>
 </section>
 
         </article>
@@ -677,7 +813,7 @@ to <a class="reference internal" href="api/sire.html#module-sire" title="sire"><
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 26, 2023</div>
+              Last updated on Jul 08, 2023</div>
           </div>
           <div class="right-details">
             <div class="icons">
@@ -710,6 +846,14 @@ to <a class="reference internal" href="api/sire.html#module-sire" title="sire"><
 </li>
 <li><a class="reference internal" href="#also-easy-installation-run-in-a-container">3. Also easy installation - Run in a container</a></li>
 <li><a class="reference internal" href="#harder-installation-compile-from-source">4. Harder installation - Compile from source</a></li>
+<li><a class="reference internal" href="#hardest-install-build-your-own-custom-conda-packages">5. Hardest install - build your own custom conda packages</a><ul>
+<li><a class="reference internal" href="#a-define-your-runtime-environment">A. Define your runtime environment</a></li>
+<li><a class="reference internal" href="#b-check-out-the-sire-source-code">B. Check out the sire source code</a></li>
+<li><a class="reference internal" href="#c-create-the-conda-build-environment">C. Create the conda build environment</a></li>
+<li><a class="reference internal" href="#d-create-the-conda-recipe">D. Create the conda recipe</a></li>
+<li><a class="reference internal" href="#e-building-the-package">E. Building the package</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
