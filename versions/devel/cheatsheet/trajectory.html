@@ -1,0 +1,905 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Viewing Molecules" href="view.html" /><link rel="prev" title="Searching" href="search.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Trajectories - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_pygments.css?v=c839eb9e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorial/index.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Part 1 - Loading and Saving</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Part 2 - Indexing and Searching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part03.html">Part 3 - Molecular Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Part 3 - Molecular Properties</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/02_cursors.html">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Part 4 - Measurement, Trajectories and Movement</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/05_movement.html">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Part 5 - Interconverting with other Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part06.html">Part 6 - Morphs and Alchemical Free Energies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Part 6 - Morphs and Alchemical Free Energies</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/01_merge.html">Merged Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/03_restraints.html">Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Detailed Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="search.html">Searching</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/sire.html">sire module</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/io_parser.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/maths.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/morph.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/restraints.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/system.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="trajectories">
+<h1>Trajectories<a class="headerlink" href="#trajectories" title="Link to this heading">#</a></h1>
+<p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> supports loading, editing and saving of trajectories via multiple
+file formats. Trajectories are represented as a series of frames, with
+each frame containing (optionally) coordinate, velocity, force, space,
+time and generic property data.</p>
+<section id="supported-file-formats">
+<h2>Supported file formats<a class="headerlink" href="#supported-file-formats" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> natively supports the following trajectory formats:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Format</p></th>
+<th class="head"><p>Parser</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DCD</p></td>
+<td><p><a class="reference internal" href="../api/io_parser.html#sire.io.parser.DCD" title="sire.io.parser.DCD"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.io.parser.DCD</span></code></a></p></td>
+<td><p>DCD coordinate/velocity binary
+trajectory files based
+on charmm / namd / x-plor format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RST</p></td>
+<td><p><a class="reference internal" href="../api/io_parser.html#sire.io.parser.RST" title="sire.io.parser.RST"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.io.parser.RST</span></code></a></p></td>
+<td><p>Amber coordinate/velocity binary
+(netcdf) restart/trajectory files
+supported since Amber 9, now
+default since Amber 16.</p></td>
+</tr>
+<tr class="row-even"><td><p>TRAJ</p></td>
+<td><p><a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRAJ" title="sire.io.parser.TRAJ"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.io.parser.TRAJ</span></code></a></p></td>
+<td><p>Amber trajectory (ascii)
+coordinate or velocity files
+supported from Amber 7 upwards.</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRR</p></td>
+<td><p><a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRR" title="sire.io.parser.TRR"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.io.parser.TRR</span></code></a></p></td>
+<td><p>Gromacs TRR (XDR file) coordinate
+/ velocity / force trajectory
+file</p></td>
+</tr>
+<tr class="row-even"><td><p>XTC</p></td>
+<td><p><a class="reference internal" href="../api/io_parser.html#sire.io.parser.XTC" title="sire.io.parser.XTC"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.io.parser.XTC</span></code></a></p></td>
+<td><p>Gromacs XTC (XDR file) compressed
+coordinate trajectory file</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <a class="reference internal" href="../api/io_parser.html#sire.io.parser.DCD" title="sire.io.parser.DCD"><code class="xref py py-class docutils literal notranslate"><span class="pre">DCD</span></code></a>, <a class="reference internal" href="../api/io_parser.html#sire.io.parser.RST" title="sire.io.parser.RST"><code class="xref py py-class docutils literal notranslate"><span class="pre">RST</span></code></a> and
+<a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRR" title="sire.io.parser.TRR"><code class="xref py py-class docutils literal notranslate"><span class="pre">TRR</span></code></a> formats are binary, and so hold the trajectory
+data at the highest precision and in the most compact format. They are
+easily seekable, so give the best balance between speed and trajectory size.</p>
+<p>The <a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRAJ" title="sire.io.parser.TRAJ"><code class="xref py py-class docutils literal notranslate"><span class="pre">TRAJ</span></code></a> format is text-based, and so takes up a
+lot of space and stores data at a fixed (lower) precision. It is included
+for completeness, but is not recommended as a format for saving new
+trajectories.</p>
+<p>The <a class="reference internal" href="../api/io_parser.html#sire.io.parser.XTC" title="sire.io.parser.XTC"><code class="xref py py-class docutils literal notranslate"><span class="pre">XTC</span></code></a> is a compressed binary format that stores
+trajectory data in binary in lower precision. This is very space efficient,
+but at the cost of losing quite a bit of precision in the exact coordinate
+data. It is only recommended if you want to save storage space and don’t
+need to recover, e.g. energies or other properties that depend
+on exact coordinates.</p>
+</section>
+<section id="loading-trajectories">
+<h2>Loading trajectories<a class="headerlink" href="#loading-trajectories" title="Link to this heading">#</a></h2>
+<p>You load trajectories in the same way as loading any other file, e.g.
+using <a class="reference internal" href="../api/sire.html#sire.load" title="sire.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.load()</span></code></a>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">num_frames</span><span class="p">())</span>
+<span class="go">500</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> will automatically determine the format of the trajectory.
+For example, here we have loaded the 500 frames from the file
+<code class="docutils literal notranslate"><span class="pre">ala.traj</span></code>. This file is in <a class="reference internal" href="../api/io_parser.html#sire.io.parser.RST" title="sire.io.parser.RST"><code class="xref py py-class docutils literal notranslate"><span class="pre">RST</span></code></a> format, not
+<a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRAJ" title="sire.io.parser.TRAJ"><code class="xref py py-class docutils literal notranslate"><span class="pre">TRAJ</span></code></a> format, despite the file extension.</p>
+<p>An exception will be raised if any errors are detected in the trajectory
+files. These errors can sometimes be difficult to debug. To help, you can
+try to directly load the trajectory file using the appropriate parser, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">TRAJ</span><span class="p">(</span><span class="s2">&quot;ala.traj&quot;</span><span class="p">)</span>
+<span class="go">UserWarning: SireIO::parse_error: Disagreement over the number of read bytes... 128 vs -13.</span>
+<span class="go">This indicates a program bug or IO error. (call sire.error.get_last_error_details()</span>
+<span class="go">for more info)</span>
+</pre></div>
+</div>
+<p>Trying using the correct parser gives us</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">RST</span><span class="p">(</span><span class="s2">&quot;ala.traj&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">AmberRst( nAtoms() = 1912, nFrames() = 500 )</span>
+</pre></div>
+</div>
+<p>You can use the parsers to read frames individually into
+<code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.Frame</span></code> objects, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_frame</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code> object has functions like <code class="docutils literal notranslate"><span class="pre">.coordinates()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.velocities()</span></code> and <code class="docutils literal notranslate"><span class="pre">.forces()</span></code>, which can be used to get the
+raw coordinates, velocities and forces data from the frame.</p>
+</section>
+<section id="loading-and-joining-multiple-trajectories">
+<h2>Loading and joining multiple trajectories<a class="headerlink" href="#loading-and-joining-multiple-trajectories" title="Link to this heading">#</a></h2>
+<p>It is easy to load and join multiple trajectories together into a single
+trajectory. You just load multiple files, in the order in which you
+want the trajectory frames to be placed. Assuming you have trajectory
+files <code class="docutils literal notranslate"><span class="pre">block1.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">block2.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">block3.rst</span></code>, with the topology
+in file <code class="docutils literal notranslate"><span class="pre">topology.prm</span></code>, then you could load
+them as a single trajectory via</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;topology.prm&quot;</span><span class="p">,</span> <span class="s2">&quot;block1.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;block2.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;block3.rst&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or, you could use file globbing, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;topology.prm&quot;</span><span class="p">,</span> <span class="s2">&quot;block*.rst&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that you can load a combination of trajectories with different formats,
+e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;topology.prm&quot;</span><span class="p">,</span> <span class="s2">&quot;block1.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;block2.dcd&quot;</span><span class="p">,</span> <span class="s2">&quot;block3.trr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would combine trajectories in <a class="reference internal" href="../api/io_parser.html#sire.io.parser.RST" title="sire.io.parser.RST"><code class="xref py py-class docutils literal notranslate"><span class="pre">RST</span></code></a>,
+<a class="reference internal" href="../api/io_parser.html#sire.io.parser.DCD" title="sire.io.parser.DCD"><code class="xref py py-class docutils literal notranslate"><span class="pre">DCD</span></code></a> and <a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRR" title="sire.io.parser.TRR"><code class="xref py py-class docutils literal notranslate"><span class="pre">TRR</span></code></a> formats.</p>
+</section>
+<section id="saving-trajectories">
+<h2>Saving trajectories<a class="headerlink" href="#saving-trajectories" title="Link to this heading">#</a></h2>
+<p>You can save trajectories using the <a class="reference internal" href="../api/sire.html#sire.save" title="sire.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.save()</span></code></a> function. For example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RST&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">[&quot;output.rst&quot;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">RST</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">AmberRst( nAtoms() = 1912, nFrames() = 1 )</span>
+</pre></div>
+</div>
+<p>would save the first frame of the trajectory loaded from <code class="docutils literal notranslate"><span class="pre">ala.traj</span></code> to
+a <a class="reference internal" href="../api/io_parser.html#sire.io.parser.RST" title="sire.io.parser.RST"><code class="xref py py-class docutils literal notranslate"><span class="pre">RST</span></code></a> format file called <code class="docutils literal notranslate"><span class="pre">output.rst</span></code>.</p>
+<p>To save all the frames, you need to pass in a <a class="reference internal" href="../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a>
+that specifies which frames to save. You can get the
+<a class="reference internal" href="../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a> that specifies all frames just be
+calling <code class="docutils literal notranslate"><span class="pre">.trajectory()</span></code> on the molecule(s) you want to save.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(),</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RST&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">RST</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">AmberRst( nAtoms() = 1912, nFrames() = 500 )</span>
+</pre></div>
+</div>
+<p>You can choose subsets of frames to save via the functions of the
+<a class="reference internal" href="../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a> (typically using the indexing functions).
+For example, here we can save frames 10-100 to <a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRR" title="sire.io.parser.TRR"><code class="xref py py-class docutils literal notranslate"><span class="pre">TRR</span></code></a> format.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[</span><span class="mi">10</span><span class="p">:</span><span class="mi">101</span><span class="p">],</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TRR&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">TRR</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">TRR( nAtoms() = 1912, nFrames() = 91 )</span>
+</pre></div>
+</div>
+<p>or here we can save every 10th frame to <a class="reference internal" href="../api/io_parser.html#sire.io.parser.DCD" title="sire.io.parser.DCD"><code class="xref py py-class docutils literal notranslate"><span class="pre">DCD</span></code></a> format.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[::</span><span class="mi">10</span><span class="p">],</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;DCD&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">DCD</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">DCD( nAtoms() = 1912, nFrames() = 50 )</span>
+</pre></div>
+</div>
+<p>or here we will write all frames out in reverse order to
+<a class="reference internal" href="../api/io_parser.html#sire.io.parser.XTC" title="sire.io.parser.XTC"><code class="xref py py-class docutils literal notranslate"><span class="pre">XTC</span></code></a> format.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;XTC&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">XTC</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">XTC( nAtoms() = 1912, nFrames() = 500 )</span>
+</pre></div>
+</div>
+</section>
+<section id="saving-trajectory-for-subsets-of-molecules">
+<h2>Saving trajectory for subsets of molecules<a class="headerlink" href="#saving-trajectory-for-subsets-of-molecules" title="Link to this heading">#</a></h2>
+<p>You can save trajectories for subsets of molecules, just be passing in
+the <a class="reference internal" href="../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a> for that subset to
+<a class="reference internal" href="../api/sire.html#sire.save" title="sire.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.save()</span></code></a>. For example, here we will save every frame of the
+first molecule in the system to <a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRAJ" title="sire.io.parser.TRAJ"><code class="xref py py-class docutils literal notranslate"><span class="pre">TRAJ</span></code></a> format.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(),</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TRAJ&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">TRAJ</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">AmberTraj( title() = TRAJ file create by sire, nAtoms() = 22, nFrames() = 500 )</span>
+</pre></div>
+</div>
+</section>
+<section id="saving-to-multiple-files-in-parallel">
+<h2>Saving to multiple files in parallel<a class="headerlink" href="#saving-to-multiple-files-in-parallel" title="Link to this heading">#</a></h2>
+<p>You can save a trajectory to as many files as you wish. For example, you
+could simultaneously write the trajectory to
+<a class="reference internal" href="../api/io_parser.html#sire.io.parser.RST" title="sire.io.parser.RST"><code class="xref py py-class docutils literal notranslate"><span class="pre">RST</span></code></a> and <a class="reference internal" href="../api/io_parser.html#sire.io.parser.DCD" title="sire.io.parser.DCD"><code class="xref py py-class docutils literal notranslate"><span class="pre">DCD</span></code></a> format by passing
+in both <code class="docutils literal notranslate"><span class="pre">RST</span></code> and <code class="docutils literal notranslate"><span class="pre">DCD</span></code> to the <code class="docutils literal notranslate"><span class="pre">format</span></code> argument.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(),</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RST&quot;</span><span class="p">,</span> <span class="s2">&quot;DCD&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">[&quot;output.rst&quot;, &quot;output.dcd&quot;]</span>
+</pre></div>
+</div>
+<p>It is also common to save the topology for the trajectory at the same time,
+particular as this makes loading it in the future easier. Here we will
+save the trajectory as a Gromacs topology and <a class="reference internal" href="../api/io_parser.html#sire.io.parser.DCD" title="sire.io.parser.DCD"><code class="xref py py-class docutils literal notranslate"><span class="pre">DCD</span></code></a>
+file.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(),</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GroTop&quot;</span><span class="p">,</span> <span class="s2">&quot;DCD&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">[&quot;output.grotop&quot;, &quot;output.dcd&quot;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">mols</span><span class="o">.</span><span class="n">num_frames</span><span class="p">())</span>
+<span class="go">System( name=ACE num_molecules=631 num_residues=633 num_atoms=1912 ) 500</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can mix and match topology and trajectory formats, e.g. save
+Amber PRM topologies with Gromacs TRR trajectories. You don’t need to
+choose “compatible” formats.</p>
+</div>
+</section>
+<section id="saving-to-file-trajectories">
+<h2>Saving to file trajectories<a class="headerlink" href="#saving-to-file-trajectories" title="Link to this heading">#</a></h2>
+<p>In addition to the standard trajectory formats, <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> also supports
+reading and writing coordinates to single-frame formats, e.g.
+<a class="reference internal" href="../api/io_parser.html#sire.io.parser.PDB" title="sire.io.parser.PDB"><code class="xref py py-class docutils literal notranslate"><span class="pre">PDB</span></code></a>, <a class="reference internal" href="../api/io_parser.html#sire.io.parser.SDF" title="sire.io.parser.SDF"><code class="xref py py-class docutils literal notranslate"><span class="pre">SDF</span></code></a> etc.</p>
+<p>These “single-frame” formats are not really designed to hold multiple
+frames of a trajectory. To support these formats, <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> will write
+trajectories for these formats as a collection of individual frame files
+within a directory named according to the output file. For example,
+here we will write every 10th frame as a <code class="xref py py-class docutils literal notranslate"><span class="pre">PDB`</span></code> file,
+and will also write the topology to a <a class="reference internal" href="../api/io_parser.html#sire.io.parser.PRM" title="sire.io.parser.PRM"><code class="xref py py-class docutils literal notranslate"><span class="pre">PRM</span></code></a> file.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[::</span><span class="mi">10</span><span class="p">],</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PRM&quot;</span><span class="p">,</span> <span class="s2">&quot;PDB&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">[&quot;output.prm&quot;, &quot;output.pdb&quot;]</span>
+</pre></div>
+</div>
+<p>This <code class="docutils literal notranslate"><span class="pre">output.pdb</span></code> is actually a directory that contains individual PDB
+files for each frame, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;output.pdb&quot;</span><span class="p">)</span>
+<span class="go">[&#39;frame_049_98.pdb&#39;,</span>
+<span class="go"> &#39;frame_040_80.pdb&#39;,</span>
+<span class="go"> &#39;frame_002_4.pdb&#39;,</span>
+<span class="go"> &#39;frame_042_84.pdb&#39;,</span>
+<span class="go"> &#39;frame_024_48.pdb&#39;,</span>
+<span class="go">...</span>
+<span class="go"> &#39;frame_045_90.pdb&#39;,</span>
+<span class="go"> &#39;frame_004_8.pdb&#39;,</span>
+<span class="go"> &#39;frame_034_68.pdb&#39;]</span>
+</pre></div>
+</div>
+<p>Each frame’s filename includes the frame number (e.g. <code class="docutils literal notranslate"><span class="pre">49</span></code> for the first
+frame listed above) and the time in picoseconds (<code class="docutils literal notranslate"><span class="pre">98</span> <span class="pre">ps</span></code>) of that frame.</p>
+<p>You can load all of these frames by just passing in the name of the
+directory (together with a topology file), e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;output.prm&quot;</span><span class="p">,</span> <span class="s2">&quot;output.pdb&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">mols</span><span class="o">.</span><span class="n">num_frames</span><span class="p">())</span>
+<span class="go">System( name=ACE num_molecules=631 num_residues=633 num_atoms=1912 ) 50</span>
+</pre></div>
+</div>
+</section>
+<section id="visualising-trajectories">
+<h2>Visualising trajectories<a class="headerlink" href="#visualising-trajectories" title="Link to this heading">#</a></h2>
+<p>Viewing trajectories is very simple - just call <code class="docutils literal notranslate"><span class="pre">.view()</span></code> on any
+view of molecules that contains a trajectory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="View of the aladip trajectory." src="../_images/view_20.jpg" />
+<p>Use the “play” button or trajectory slider to move through the trajectory.</p>
+<p>You can view sub-frames or sub-sets of the trajectory by calling
+<code class="docutils literal notranslate"><span class="pre">.view()</span></code> on those sub-sets, or by passing in
+a <a class="reference internal" href="../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a> that contains the frames you
+want to view. For example, this would view the trajectory of just
+the first molecule.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="View of the first molecule in the trajectory" src="../_images/view_09.jpg" />
+<p>While this would view every 10 frames of the trajectory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()[::</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="View of every 10 frames of the aladip trajectory." src="../_images/view_20.jpg" />
+<p>See the <a class="reference internal" href="view.html"><span class="doc">view documentation</span></a> for more information on
+how you can control the view.</p>
+</section>
+<section id="smoothing-and-aligning-frames">
+<h2>Smoothing and aligning frames<a class="headerlink" href="#smoothing-and-aligning-frames" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> has in-built support for processing trajectories. You can
+re-wrap molecules into periodic boxes, align frames against a selection,
+and also average (smooth) coordinates across multiple frames.</p>
+<p>For example, here we will align all frames against the selection of
+carbon atoms.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;element C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;element C&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>And here we will smooth trajectories by averaging over 20 frames</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">smooth</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here we center the view on the first molecule</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="s2">&quot;molidx 0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and here we turn off automatic wrapping of molecules into the periodic box</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">wrap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can use similar arguments to save the results of this processing to
+a trajectory file. So,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">smooth</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span> <span class="s2">&quot;smoothed&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RST&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>saves the results of smoothing the trajectory over 20 frames to the
+file <code class="docutils literal notranslate"><span class="pre">smoothed.rst</span></code>.</p>
+<p>Similarly</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;element C&quot;</span><span class="p">),</span> <span class="s2">&quot;aligned&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;DCD&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;element C&quot;</span><span class="p">],</span> <span class="s2">&quot;aligned&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;DCD&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>saves the result of aligning every frame against carbon atoms to a
+file <code class="docutils literal notranslate"><span class="pre">aligned.dcd</span></code>,</p>
+<p>while</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">wrap</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;not_wrapped&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TRR&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>saves the trajectory without wrapping into the periodic space to the
+file <code class="docutils literal notranslate"><span class="pre">not_wrapped.trr</span></code>.</p>
+<p>To automatically wrap the frames use</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">wrap</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;wrapped&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TRR&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Viewing molecules will automatically wrap into the periodic box
+(so for <code class="docutils literal notranslate"><span class="pre">.view()</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">wrap</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>).
+In contrast, saving molecules will not automatically wrap into the
+periodic box (so for <code class="docutils literal notranslate"><span class="pre">sire.save</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">wrap</span></code> defaults
+to <code class="docutils literal notranslate"><span class="pre">False</span></code>). This is because you typically want to wrap
+coordinates when viewing trajectories, while you typically don’t
+want the code to change the wrapping state of a trajectory when you
+save it (i.e. you don’t want an unwrapped trajectory that was loaded
+to be automatically wrapped on save). Make sure that you set the
+value of <code class="docutils literal notranslate"><span class="pre">wrap</span></code> if you want to ensure a particular behaviour.</p>
+</div>
+</section>
+<section id="aligning-to-molecules-outside-the-trajectory">
+<h2>Aligning to molecules outside the trajectory<a class="headerlink" href="#aligning-to-molecules-outside-the-trajectory" title="Link to this heading">#</a></h2>
+<p>You can also align to molecules that are not part of a trajectory. You
+do this by giving a view of the reference molecules againt
+which to align the trajectory, and also supplying
+an <a class="reference internal" href="../api/mol.html#sire.mol.AtomMapping" title="sire.mol.AtomMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.AtomMapping</span></code></a> object that describes how atoms in
+the reference map to atoms in the trajectory.</p>
+<p>For example, imagine you have loaded the same molecule in two files.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ref_mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>You could align the trajectory in <code class="docutils literal notranslate"><span class="pre">mols</span></code> against the molecules in
+<code class="docutils literal notranslate"><span class="pre">ref_mols</span></code> by building a mapping. For example, the mapping could be
+between the alanine dipeptide molecule in both trajectories. You can
+build the mapping using the <a class="reference internal" href="../api/sire.html#sire.match_atoms" title="sire.match_atoms"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.match_atoms()</span></code></a> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">match_atoms</span><span class="p">(</span><span class="n">ref_mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">match_light_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you can align <code class="docutils literal notranslate"><span class="pre">mols</span></code> against <code class="docutils literal notranslate"><span class="pre">ref_mols</span></code> by passing in this mapping,
+e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="n">ref_mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">),</span> <span class="s2">&quot;aligned&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;DCD&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You could also use mappings to calculate RMSDs against this molecule, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()</span><span class="o">.</span><span class="n">rmsd</span><span class="p">(</span><span class="n">ref_mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or when viewing the trajectory</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="n">ref_mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="calculating-energies-across-frames">
+<h2>Calculating energies across frames<a class="headerlink" href="#calculating-energies-across-frames" title="Link to this heading">#</a></h2>
+<p>You can perform lots of different types of analysis across trajectory frames.
+A useful type of analysis is calculating the interaction energy between
+molecules. For example, you could use the <code class="docutils literal notranslate"><span class="pre">.energy()</span></code> function to calculate
+total energies of each frame,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()</span><span class="o">.</span><span class="n">energy</span><span class="p">())</span>
+<span class="go">     frame        time    1-4_LJ  1-4_coulomb          LJ      angle      bond      coulomb   dihedral  improper  intra_LJ  intra_coulomb        total</span>
+<span class="go">0        0    0.200000  3.509838    44.810452  922.010757   7.570059  4.224970 -6794.775454   9.800343  0.485545 -1.311255     -37.520806 -5841.195551</span>
+<span class="go">1        1    0.400000  2.700506    47.698455  928.715959  12.470519  2.785875 -6861.966370  11.776295  1.131481 -1.617496     -40.126219 -5896.430994</span>
+<span class="go">2        2    0.600000  2.801076    43.486411  838.387490  11.607753  2.023439 -6724.278286  11.614774  0.124729 -1.103966     -36.633297 -5851.969876</span>
+<span class="go">3        3    0.800000  3.365638    47.483966  958.913012   6.524609  0.663455 -6828.029775  11.383852  0.339333 -0.983872     -40.197920 -5840.537702</span>
+<span class="go">4        4    1.000000  3.534830    48.596027  915.994574   6.517530  2.190370 -6838.160251  10.214994  0.255331 -1.699613     -40.355054 -5892.911262</span>
+<span class="go">..     ...         ...       ...          ...         ...        ...       ...          ...        ...       ...       ...            ...          ...</span>
+<span class="go">495    495   99.199997  2.665994    42.866319  899.586671  11.339087  4.172684 -6636.461269   9.875872  0.356887 -1.584092     -36.499764 -5703.681610</span>
+<span class="go">496    496   99.400002  3.062467    44.852774  916.416899   9.268408  1.878366 -6582.928689  10.548897  0.327064 -1.814718     -36.671683 -5635.060214</span>
+<span class="go">497    497   99.599998  3.530233    44.908117  895.229707  10.487378  4.454670 -6600.333270  10.223964  1.006034 -0.692972     -37.118048 -5668.304187</span>
+<span class="go">498    498   99.800003  3.511116    42.976288  851.153213   9.017446  0.809064 -6557.430299  10.841436  0.518190 -1.862433     -35.481467 -5675.947445</span>
+<span class="go">499    499  100.000000  3.768998    41.625135  825.743725  13.629923  1.089917 -6504.532783  11.889372  0.846805 -1.897328     -36.547672 -5644.383908</span>
+<span class="go">[500 rows x 13 columns]</span>
+</pre></div>
+</div>
+<p>Or you could calculate the interaction energy between the first molecule
+and all of the water molecules.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;water&quot;</span><span class="p">]))</span>
+<span class="go">     frame        time         LJ    coulomb      total</span>
+<span class="go">0        0    0.200000 -16.380889 -35.380162 -51.761051</span>
+<span class="go">1        1    0.400000  -8.945872 -36.624766 -45.570638</span>
+<span class="go">2        2    0.600000 -17.827446 -27.348159 -45.175605</span>
+<span class="go">3        3    0.800000 -17.448833 -34.799090 -52.247922</span>
+<span class="go">4        4    1.000000 -12.476675 -43.806890 -56.283565</span>
+<span class="go">..     ...         ...        ...        ...        ...</span>
+<span class="go">495    495   99.199997 -10.742225 -36.700127 -47.442352</span>
+<span class="go">496    496   99.400002 -14.539061 -29.326716 -43.865778</span>
+<span class="go">497    497   99.599998 -10.165851 -35.616962 -45.782813</span>
+<span class="go">498    498   99.800003 -12.226096 -35.170080 -47.396176</span>
+<span class="go">499    499  100.000000  -7.356142 -41.265345 -48.621487</span>
+<span class="go">[500 rows x 5 columns]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="view.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Viewing Molecules</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="search.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Searching</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Sep 21, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Trajectories</a><ul>
+<li><a class="reference internal" href="#supported-file-formats">Supported file formats</a></li>
+<li><a class="reference internal" href="#loading-trajectories">Loading trajectories</a></li>
+<li><a class="reference internal" href="#loading-and-joining-multiple-trajectories">Loading and joining multiple trajectories</a></li>
+<li><a class="reference internal" href="#saving-trajectories">Saving trajectories</a></li>
+<li><a class="reference internal" href="#saving-trajectory-for-subsets-of-molecules">Saving trajectory for subsets of molecules</a></li>
+<li><a class="reference internal" href="#saving-to-multiple-files-in-parallel">Saving to multiple files in parallel</a></li>
+<li><a class="reference internal" href="#saving-to-file-trajectories">Saving to file trajectories</a></li>
+<li><a class="reference internal" href="#visualising-trajectories">Visualising trajectories</a></li>
+<li><a class="reference internal" href="#smoothing-and-aligning-frames">Smoothing and aligning frames</a></li>
+<li><a class="reference internal" href="#aligning-to-molecules-outside-the-trajectory">Aligning to molecules outside the trajectory</a></li>
+<li><a class="reference internal" href="#calculating-energies-across-frames">Calculating energies across frames</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=4dfd88e5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/js/custom.js?v=c9df2d0f"></script>
+    </body>
+</html>

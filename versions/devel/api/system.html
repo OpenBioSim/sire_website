@@ -1,1 +1,1233 @@
-../../../api/system.html
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.units" href="index_units.html" /><link rel="prev" title="sire.system" href="index_system.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Public API - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_pygments.css?v=c839eb9e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorial/index.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Part 1 - Loading and Saving</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/07_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Part 2 - Indexing and Searching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part03.html">Part 3 - Molecular Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Part 3 - Molecular Properties</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/02_cursors.html">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Part 4 - Measurement, Trajectories and Movement</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/05_movement.html">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Part 5 - Interconverting with other Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part06.html">Part 6 - Morphs and Alchemical Free Energies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Part 6 - Morphs and Alchemical Free Energies</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/01_merge.html">Merged Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/03_restraints.html">Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/units.html">Units</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sire.html">sire module</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="sire_modules.html">Sub-modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="io_parser.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="maths.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="morph.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="restraints.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="index_system.html">sire.system</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-sire.system">
+<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.system" title="Link to this heading">#</a></h1>
+<p><a class="reference internal" href="index_system.html"><span class="doc">View Module Index</span></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.system.ForceFieldInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.system.</span></span><span class="sig-name descname"><span class="pre">ForceFieldInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system.html#ForceFieldInfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.ForceFieldInfo" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.system.System">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.system.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System" title="Link to this definition">#</a></dt>
+<dd><p>This class holds a complete system of molecules. This is normally
+created by reading in molecules from an input file.</p>
+<p>This provides a “MoleculeView”-style interface to the molecules,
+acting very similarly to a sire.mol.SelectorMol object.</p>
+<p>You can convert this to a sire.mol.SelectorMol object by
+calling the System.molecules() function.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.add" title="Link to this definition">#</a></dt>
+<dd><p>Add the passed molecules to this system. This will only
+add molecules that don’t already exist in this system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.add_shared_property">
+<span class="sig-name descname"><span class="pre">add_shared_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.add_shared_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.add_shared_property" title="Link to this definition">#</a></dt>
+<dd><p>Add the shared System property called ‘name’ to this system.
+If ‘value’ is supplied, then this also sets the property too.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.angle">
+<span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.angle" title="Link to this definition">#</a></dt>
+<dd><p>Return the angle that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.angles">
+<span class="sig-name descname"><span class="pre">angles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.angles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.angles" title="Link to this definition">#</a></dt>
+<dd><p>Return all angles in this System (or those that match
+the passed index, if supplied)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.apply" title="Link to this definition">#</a></dt>
+<dd><p>Apply (perform / map) the passed function (with associated arguments)
+on all of the molecules in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.apply_reduce">
+<span class="sig-name descname"><span class="pre">apply_reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.apply_reduce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.apply_reduce" title="Link to this definition">#</a></dt>
+<dd><p>Apply (perform / map) the passed function (with associated arguments)
+on all of the molecules in this System, reducing the result
+using the passed reduction function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.atom">
+<span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.atom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.atom" title="Link to this definition">#</a></dt>
+<dd><p>Return the atom that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.atoms">
+<span class="sig-name descname"><span class="pre">atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.atoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.atoms" title="Link to this definition">#</a></dt>
+<dd><p>Return all atoms in this System (or those that match
+the passed index, if supplied)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.bond">
+<span class="sig-name descname"><span class="pre">bond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.bond"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.bond" title="Link to this definition">#</a></dt>
+<dd><p>Return the bond that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.bonds">
+<span class="sig-name descname"><span class="pre">bonds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.bonds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.bonds" title="Link to this definition">#</a></dt>
+<dd><p>Return all bonds in this System (or those that match
+the passed index, if supplied)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.chain">
+<span class="sig-name descname"><span class="pre">chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.chain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.chain" title="Link to this definition">#</a></dt>
+<dd><p>Return the chain that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.chains">
+<span class="sig-name descname"><span class="pre">chains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.chains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.chains" title="Link to this definition">#</a></dt>
+<dd><p>Return all chains in this System (or those that match
+the passed index, if supplied)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.charge">
+<span class="sig-name descname"><span class="pre">charge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.charge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.charge" title="Link to this definition">#</a></dt>
+<dd><p>Return the total charge of this System (or of the matching
+index/search subset of this System)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.clear_energy_trajectory">
+<span class="sig-name descname"><span class="pre">clear_energy_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.clear_energy_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.clear_energy_trajectory" title="Link to this definition">#</a></dt>
+<dd><p>Completely clear any existing energy trajectory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.clone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.clone" title="Link to this definition">#</a></dt>
+<dd><p>Return a copy (clone) of this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.coordinates">
+<span class="sig-name descname"><span class="pre">coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.coordinates" title="Link to this definition">#</a></dt>
+<dd><p>Return the center of geometry of this System (or of the matching
+index/search subset of this System)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.count" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of items in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.cursor">
+<span class="sig-name descname"><span class="pre">cursor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.cursor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.cursor" title="Link to this definition">#</a></dt>
+<dd><p>Return a sire.mol.Cursor that can be used to edit
+the molecules in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.delete_all_frames">
+<span class="sig-name descname"><span class="pre">delete_all_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.delete_all_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.delete_all_frames" title="Link to this definition">#</a></dt>
+<dd><p>Delete all the frames from the trajectory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.delete_frame">
+<span class="sig-name descname"><span class="pre">delete_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.delete_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.delete_frame" title="Link to this definition">#</a></dt>
+<dd><p>Delete the ith frame from the trajectory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.dihedral">
+<span class="sig-name descname"><span class="pre">dihedral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.dihedral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.dihedral" title="Link to this definition">#</a></dt>
+<dd><p>Return the dihedral that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.dihedrals">
+<span class="sig-name descname"><span class="pre">dihedrals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.dihedrals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.dihedrals" title="Link to this definition">#</a></dt>
+<dd><p>Return all dihedrals in this System (or those that match
+the passed index, if supplied)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.dynamics">
+<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.dynamics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.dynamics" title="Link to this definition">#</a></dt>
+<dd><p>Return a Dynamics object that can be used to perform
+dynamics on the molecule(s) in this System</p>
+<dl class="simple">
+<dt>cutoff: Length</dt><dd><p>The size of the non-bonded cutoff</p>
+</dd>
+<dt>cutoff_type: str</dt><dd><p>The type of cutoff to use, e.g. “PME”, “RF” etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options</p>
+</dd>
+<dt>timestep: time</dt><dd><p>The size of the dynamics timestep</p>
+</dd>
+<dt>save_frequency: time</dt><dd><p>The amount of simulation time between saving energies and frames.
+This can be overridden using <em class="xref py py-obj">energy_frequency</em> or <em class="xref py py-obj">frame_frequency</em>,
+or by these options in individual dynamics runs. Set this
+to zero if you don’t want any saves.</p>
+</dd>
+<dt>energy_frequency: time</dt><dd><p>The amount of time between saving energies. This overrides the
+value in <em class="xref py py-obj">save_frequency</em>. Set this to zero if you don’t want
+to save energies during the trajectory. This can be overridden
+by setting energy_frequency during an individual run.</p>
+</dd>
+<dt>frame_frequency: time</dt><dd><p>The amount of time between saving frames. This overrides the
+value in <em class="xref py py-obj">save_frequency</em>. Set this to zero if you don’t want
+to save frames during the trajectory. This can be overridden
+by setting frame_frequency during an individual run.</p>
+</dd>
+<dt>save_velocities: bool</dt><dd><p>Whether or not to save velocities when saving trajectory frames
+during the simulation. This defaults to False, as velocity
+trajectories aren’t often needed, and they double the amount
+of space that is required for a trajectory.</p>
+</dd>
+<dt>constraint: str</dt><dd><p>The type of constraint to use for bonds and/or angles, e.g.
+<em class="xref py py-obj">h-bonds</em>, <a class="reference internal" href="#sire.system.System.bonds" title="sire.system.System.bonds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bonds</span></code></a> etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options. This will be automatically
+guessed from the timestep if it isn’t set.</p>
+</dd>
+<dt>schedule: sire.cas.LambdaSchedule</dt><dd><p>The schedule used to control how perturbable forcefield parameters
+should be morphed as a function of lambda. If this is not set
+then a sire.cas.LambdaSchedule.standard_morph() is used.</p>
+</dd>
+<dt>lambda_value: float</dt><dd><p>The value of lambda at which to run dynamics. This only impacts
+perturbable molecules, whose forcefield parameters will be
+scaled according to the lambda schedule for the specified
+value of lambda.</p>
+</dd>
+<dt>swap_end_states: bool</dt><dd><p>Whether or not to swap the end states. If this is True, then
+the perturbation will run from the perturbed back to the
+reference molecule (the perturbed molecule will be at lambda=0,
+while the reference molecule will be at lambda=1). This will
+use the coordinates of the perturbed molecule as the
+starting point.</p>
+</dd>
+<dt>ignore_perturbations: bool</dt><dd><p>Whether or not to ignore perturbations. If this is True, then
+the perturbation will be ignored, and the simulation will
+be run using the properties of the reference molecule
+(or the perturbed molecule if swap_end_states is True). This
+is useful if you just want to run standard molecular dynamics
+of the reference or perturbed states.</p>
+</dd>
+<dt>temperature: temperature</dt><dd><p>The temperature at which to run the simulation. A
+microcanonical (NVE) simulation will be run if you don’t
+specify the temperature.</p>
+</dd>
+<dt>pressure: pressure</dt><dd><p>The pressure at which to run the simulation. A
+microcanonical (NVE) or canonical (NVT) simulation will be
+run if the pressure is not set.</p>
+</dd>
+<dt>shift_delta: length</dt><dd><p>The shift_delta parameter that controls the electrostatic
+and van der Waals softening potential that smooths the
+creation and deletion of ghost atoms during a potential.
+This defaults to 2.0 A.</p>
+</dd>
+<dt>coulomb_power: int</dt><dd><p>The coulomb power parmeter that controls the electrostatic
+softening potential that smooths the creation and deletion
+of ghost atoms during a potential. This defaults to 0.</p>
+</dd>
+<dt>restraints: sire.mm.Restraints or list[sire.mm.Restraints]</dt><dd><p>A single set of restraints, or a list of sets of
+restraints that will be applied to the atoms during
+the simulation.</p>
+</dd>
+<dt>fixed: molecule(s) view, search string, int, list[int] etc</dt><dd><p>Anything that can be used to identify the atom or atoms
+that should be fixed in place during the simulation. These
+atoms will not be moved by dynamics.</p>
+</dd>
+<dt>device: str or int</dt><dd><p>The ID of the GPU (or accelerator) used to accelerate
+the simulation. This would be CUDA_DEVICE_ID or similar
+if CUDA was used. This can be any valid OpenMM device string</p>
+</dd>
+<dt>precision: str</dt><dd><p>The desired precision for the simulation (e.g. <em class="xref py py-obj">single</em>,
+<em class="xref py py-obj">mixed</em> or <em class="xref py py-obj">double</em>)</p>
+</dd>
+<dt>map: dict</dt><dd><p>A dictionary of additional options. Note that any options
+set in this dictionary that are also specified via one of
+the arguments above will be overridden by the argument
+value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.energies">
+<span class="sig-name descname"><span class="pre">energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.energies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.energies" title="Link to this definition">#</a></dt>
+<dd><p>Calculate and return the individual energies of the
+contents of this System (or of the matching index/search
+subset of this System)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.energy" title="Link to this definition">#</a></dt>
+<dd><p>Calculate and return the energy of this System
+(or of the matching index/search subset of this System)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.energy_trajectory">
+<span class="sig-name descname"><span class="pre">energy_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.energy_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.energy_trajectory" title="Link to this definition">#</a></dt>
+<dd><p>Return the energy trajectory for this System. This is the history
+of energies evaluate during any dynamics runs. It could include
+energies calculated at different values of lambda</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Return an evaluator for this Systme (or of the matching
+index/search subset of this System)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">views</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.find" title="Link to this definition">#</a></dt>
+<dd><p>Return the index(es) of the molecule(s) that are in <em class="xref py py-obj">views</em></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.has_property">
+<span class="sig-name descname"><span class="pre">has_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.has_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.has_property" title="Link to this definition">#</a></dt>
+<dd><p>Return whether or not this system has the passed property</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.improper">
+<span class="sig-name descname"><span class="pre">improper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.improper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.improper" title="Link to this definition">#</a></dt>
+<dd><p>Return the improper that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.impropers">
+<span class="sig-name descname"><span class="pre">impropers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.impropers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.impropers" title="Link to this definition">#</a></dt>
+<dd><p>Return all impropers in this System (or those that match
+the passed index, if supplied)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.is_system">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.is_system"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.is_system" title="Link to this definition">#</a></dt>
+<dd><p>Return whether the passed object is a System class
+(either a new or legacy System)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.load_frame">
+<span class="sig-name descname"><span class="pre">load_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.load_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.load_frame" title="Link to this definition">#</a></dt>
+<dd><p>Load the ith frame into this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.make_whole">
+<span class="sig-name descname"><span class="pre">make_whole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.make_whole"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.make_whole" title="Link to this definition">#</a></dt>
+<dd><p>Make all of the molecules in this system whole. This
+maps each molecule into the current space, such that no
+molecule is broken across a periodic box boundary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.mass">
+<span class="sig-name descname"><span class="pre">mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.mass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.mass" title="Link to this definition">#</a></dt>
+<dd><p>Return the total mass of this System (or of the matching
+index/search subset of this System)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.minimisation">
+<span class="sig-name descname"><span class="pre">minimisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.minimisation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.minimisation" title="Link to this definition">#</a></dt>
+<dd><p>Return a Minimisation object that can be used to perform
+minimisation of the molecule(s) in this System</p>
+<dl class="simple">
+<dt>cutoff: Length</dt><dd><p>The size of the non-bonded cutoff</p>
+</dd>
+<dt>cutoff_type: str</dt><dd><p>The type of cutoff to use, e.g. “PME”, “RF” etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options</p>
+</dd>
+<dt>constraint: str</dt><dd><p>The type of constraint to use for bonds and/or angles, e.g.
+<em class="xref py py-obj">h-bonds</em>, <a class="reference internal" href="#sire.system.System.bonds" title="sire.system.System.bonds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bonds</span></code></a> etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options. This will be automatically
+guessed from the timestep if it isn’t set.</p>
+</dd>
+<dt>schedule: sire.cas.LambdaSchedule</dt><dd><p>The schedule used to control how perturbable forcefield parameters
+should be morphed as a function of lambda. If this is not set
+then a sire.cas.LambdaSchedule.standard_morph() is used.</p>
+</dd>
+<dt>lambda_value: float</dt><dd><p>The value of lambda at which to run minimisation. This only impacts
+perturbable molecules, whose forcefield parameters will be
+scaled according to the lambda schedule for the specified
+value of lambda.</p>
+</dd>
+<dt>swap_end_states: bool</dt><dd><p>Whether or not to swap the end states. If this is True, then
+the perturbation will run from the perturbed back to the
+reference molecule (the perturbed molecule will be at lambda=0,
+while the reference molecule will be at lambda=1). This will
+use the coordinates of the perturbed molecule as the
+starting point.</p>
+</dd>
+<dt>ignore_perturbations: bool</dt><dd><p>Whether or not to ignore perturbations. If this is True, then
+the perturbation will be ignored, and the simulation will
+be run using the properties of the reference molecule
+(or the perturbed molecule if swap_end_states is True). This
+is useful if you just want to run standard molecular dynamics
+of the reference or perturbed states.</p>
+</dd>
+<dt>shift_delta: length</dt><dd><p>The shift_delta parameter that controls the electrostatic
+and van der Waals softening potential that smooths the
+creation and deletion of ghost atoms during a potential.
+This defaults to 2.0 A.</p>
+</dd>
+<dt>coulomb_power: int</dt><dd><p>The coulomb power parmeter that controls the electrostatic
+softening potential that smooths the creation and deletion
+of ghost atoms during a potential. This defaults to 0.</p>
+</dd>
+<dt>restraints: sire.mm.Restraints or list[sire.mm.Restraints]</dt><dd><p>A single set of restraints, or a list of sets of
+restraints that will be applied to the atoms during
+the simulation.</p>
+</dd>
+<dt>fixed: molecule(s) view, search string, int, list[int] etc</dt><dd><p>Anything that can be used to identify the atom or atoms
+that should be fixed in place during the simulation. These
+atoms will not be moved by minimisation.</p>
+</dd>
+<dt>device: str or int</dt><dd><p>The ID of the GPU (or accelerator) used to accelerate
+minimisation. This would be CUDA_DEVICE_ID or similar
+if CUDA was used. This can be any valid OpenMM device string</p>
+</dd>
+<dt>map: dict</dt><dd><p>A dictionary of additional options. Note that any options
+set in this dictionary that are also specified via one of
+the arguments above will be overridden by the argument
+value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.molecule">
+<span class="sig-name descname"><span class="pre">molecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.molecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.molecule" title="Link to this definition">#</a></dt>
+<dd><p>Return the molecule that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.molecules">
+<span class="sig-name descname"><span class="pre">molecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.molecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.molecules" title="Link to this definition">#</a></dt>
+<dd><p>Return this System converted to a sire.mol.SelectorMol.
+You can pass in arguments to search or index so that you
+limit the number of molecules returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.names">
+<span class="sig-name descname"><span class="pre">names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.names" title="Link to this definition">#</a></dt>
+<dd><p>Return the names of all of the molecules in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.num_atoms">
+<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.num_atoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.num_atoms" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of atoms in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.num_chains">
+<span class="sig-name descname"><span class="pre">num_chains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.num_chains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.num_chains" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of chains in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.num_frames">
+<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.num_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.num_frames" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of trajectory frames for this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.num_molecules">
+<span class="sig-name descname"><span class="pre">num_molecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.num_molecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.num_molecules" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of molecules in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.num_residues">
+<span class="sig-name descname"><span class="pre">num_residues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.num_residues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.num_residues" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of residues in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.num_segments">
+<span class="sig-name descname"><span class="pre">num_segments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.num_segments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.num_segments" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of segments in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.numbers">
+<span class="sig-name descname"><span class="pre">numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.numbers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.numbers" title="Link to this definition">#</a></dt>
+<dd><p>Return the numbers of all of the molecules in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.properties" title="Link to this definition">#</a></dt>
+<dd><p>Return all of the System-level properties of this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.property">
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.property" title="Link to this definition">#</a></dt>
+<dd><p>Return the System property that matches the passed key/arguments</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.property_keys">
+<span class="sig-name descname"><span class="pre">property_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.property_keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.property_keys" title="Link to this definition">#</a></dt>
+<dd><p>Return the keys (IDs) of all of the System-level properties
+of this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.remove" title="Link to this definition">#</a></dt>
+<dd><p>Remove the passed molecules from this system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.remove_all_shared_properties">
+<span class="sig-name descname"><span class="pre">remove_all_shared_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.remove_all_shared_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.remove_all_shared_properties" title="Link to this definition">#</a></dt>
+<dd><p>Completely remove all shared properties, and set no properties
+as being shared from this system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.remove_shared_property">
+<span class="sig-name descname"><span class="pre">remove_shared_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.remove_shared_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.remove_shared_property" title="Link to this definition">#</a></dt>
+<dd><p>Completely remove the specified shared property, and set this
+as a non-shared property for the future</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.residue">
+<span class="sig-name descname"><span class="pre">residue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.residue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.residue" title="Link to this definition">#</a></dt>
+<dd><p>Return the residue that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.residues">
+<span class="sig-name descname"><span class="pre">residues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.residues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.residues" title="Link to this definition">#</a></dt>
+<dd><p>Return all residues in this System (or those that match
+the passed index, if supplied)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.save_frame">
+<span class="sig-name descname"><span class="pre">save_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.save_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.save_frame" title="Link to this definition">#</a></dt>
+<dd><p>Save the current coordinates to the ith frame of this System.
+If i is not specfied then this adds the frame onto the
+end of the trajectory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.segment">
+<span class="sig-name descname"><span class="pre">segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.segment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.segment" title="Link to this definition">#</a></dt>
+<dd><p>Return the segment that matches the passed index/search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.segments">
+<span class="sig-name descname"><span class="pre">segments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.segments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.segments" title="Link to this definition">#</a></dt>
+<dd><p>Return all segments in this System (or those that match
+the passed index, if supplied)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.set_energy_trajectory">
+<span class="sig-name descname"><span class="pre">set_energy_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trajectory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.set_energy_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.set_energy_trajectory" title="Link to this definition">#</a></dt>
+<dd><p>Set the energy trajectory to the passed value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.set_property">
+<span class="sig-name descname"><span class="pre">set_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.set_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.set_property" title="Link to this definition">#</a></dt>
+<dd><p>Set the System property according to the passed arguments</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.set_shared_property">
+<span class="sig-name descname"><span class="pre">set_shared_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.set_shared_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.set_shared_property" title="Link to this definition">#</a></dt>
+<dd><p>Set the shared System property according to the passed arguments</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.set_space">
+<span class="sig-name descname"><span class="pre">set_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.set_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.set_space" title="Link to this definition">#</a></dt>
+<dd><p>Set the space to be used to hold all of the molecules
+in this system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.set_time">
+<span class="sig-name descname"><span class="pre">set_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.set_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.set_time" title="Link to this definition">#</a></dt>
+<dd><p>Set the current time for the system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.shared_properties">
+<span class="sig-name descname"><span class="pre">shared_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.shared_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.shared_properties" title="Link to this definition">#</a></dt>
+<dd><p>Return all of the System properties that are being shared
+(copied) to all contained molecules</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.size" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of items in this System</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.smarts">
+<span class="sig-name descname"><span class="pre">smarts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.smarts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.smarts" title="Link to this definition">#</a></dt>
+<dd><p>Return the molecule views in this container as smarts strings. Include
+hydrogens in ‘include_hydrogens’ is True. This returns a list
+of smarts strings, in the same order as the views in the container</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.smiles">
+<span class="sig-name descname"><span class="pre">smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.smiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.smiles" title="Link to this definition">#</a></dt>
+<dd><p>Return the molecule views in this container as smiles strings. Include
+hydrogens in ‘include_hydrogens’ is True. This returns a list
+of smiles strings, in the same order as the views in the container</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.space">
+<span class="sig-name descname"><span class="pre">space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.space" title="Link to this definition">#</a></dt>
+<dd><p>Return the space used for this system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.time">
+<span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.time" title="Link to this definition">#</a></dt>
+<dd><p>Return the current system time</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.to_molecule_group">
+<span class="sig-name descname"><span class="pre">to_molecule_group</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.to_molecule_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.to_molecule_group" title="Link to this definition">#</a></dt>
+<dd><p>Return this System converted to a sire.mol.MoleculeGroup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.trajectory">
+<span class="sig-name descname"><span class="pre">trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.trajectory" title="Link to this definition">#</a></dt>
+<dd><p>Return an iterator over the trajectory of frames of this view.</p>
+<dl>
+<dt>align:</dt><dd><p>Pass in a selection string to select atoms against which
+every frame will be aligned. These atoms will be moved
+to the center of the periodic box (if a periodic box
+is used). If “True” is passed, then this will attempt
+to align <em>ALL</em> of the coordinates in the view.</p>
+<p>You can also choose to pass in a molecular container,
+and it will align against the atoms in that container,
+assuming they are contained in this view. If not, then
+you need to supply a mapping that maps from the
+atoms in the align container, to the atoms in this view.</p>
+</dd>
+<dt>frame:</dt><dd><p>The frame of the trajectory against which the alignment
+should be based. For example, <em class="xref py py-obj">frame=3</em> would align based
+on the coordinates of the aligned atoms in frame 3 of
+the trajectory. If this is <em class="xref py py-obj">None</em> (the default) then the
+first frame will be used.</p>
+</dd>
+<dt>mapping: AtomMapping</dt><dd><p>An AtomMapping object that maps from atoms in the alignment
+container to atoms in this view. You only need to supply
+this if all of the alignment atoms are not contained
+in this view.</p>
+</dd>
+<dt>smooth:</dt><dd><p>Pass in the number of frames to smooth (average) the view
+over. If ‘True’ is passed, then the recommended number
+of frames will be averaged over</p>
+</dd>
+<dt>wrap: bool</dt><dd><p>Whether or not to wrap the coordinates into the periodic box</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.update" title="Link to this definition">#</a></dt>
+<dd><p>Update the molecules in this system so that they have
+the same versions and data as the new molecules contained
+in ‘value’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.view">
+<span class="sig-name descname"><span class="pre">view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.view" title="Link to this definition">#</a></dt>
+<dd><p>View this System (or the matching index/search subset)
+via a nglview viewer. Only works in an interactive
+notebook session, e.g. in a Jupyter notebook</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.view2d">
+<span class="sig-name descname"><span class="pre">view2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.view2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.view2d" title="Link to this definition">#</a></dt>
+<dd><p>Create a 2D representation of the molecules in this system.
+If ‘filename’ is set then this will be written to that file. Otherwise
+this will be returned for visualisation in a jupyter notebook.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="index_units.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">sire.units</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index_system.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">sire.system</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Sep 21, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Public API</a><ul>
+<li><a class="reference internal" href="#sire.system.ForceFieldInfo"><code class="docutils literal notranslate"><span class="pre">ForceFieldInfo</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System"><code class="docutils literal notranslate"><span class="pre">System</span></code></a><ul>
+<li><a class="reference internal" href="#sire.system.System.add"><code class="docutils literal notranslate"><span class="pre">System.add()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.add_shared_property"><code class="docutils literal notranslate"><span class="pre">System.add_shared_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.angle"><code class="docutils literal notranslate"><span class="pre">System.angle()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.angles"><code class="docutils literal notranslate"><span class="pre">System.angles()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.apply"><code class="docutils literal notranslate"><span class="pre">System.apply()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.apply_reduce"><code class="docutils literal notranslate"><span class="pre">System.apply_reduce()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.atom"><code class="docutils literal notranslate"><span class="pre">System.atom()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.atoms"><code class="docutils literal notranslate"><span class="pre">System.atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.bond"><code class="docutils literal notranslate"><span class="pre">System.bond()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.bonds"><code class="docutils literal notranslate"><span class="pre">System.bonds()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.chain"><code class="docutils literal notranslate"><span class="pre">System.chain()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.chains"><code class="docutils literal notranslate"><span class="pre">System.chains()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.charge"><code class="docutils literal notranslate"><span class="pre">System.charge()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.clear_energy_trajectory"><code class="docutils literal notranslate"><span class="pre">System.clear_energy_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.clone"><code class="docutils literal notranslate"><span class="pre">System.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.coordinates"><code class="docutils literal notranslate"><span class="pre">System.coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.count"><code class="docutils literal notranslate"><span class="pre">System.count()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.cursor"><code class="docutils literal notranslate"><span class="pre">System.cursor()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.delete_all_frames"><code class="docutils literal notranslate"><span class="pre">System.delete_all_frames()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.delete_frame"><code class="docutils literal notranslate"><span class="pre">System.delete_frame()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.dihedral"><code class="docutils literal notranslate"><span class="pre">System.dihedral()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.dihedrals"><code class="docutils literal notranslate"><span class="pre">System.dihedrals()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.dynamics"><code class="docutils literal notranslate"><span class="pre">System.dynamics()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.energies"><code class="docutils literal notranslate"><span class="pre">System.energies()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.energy"><code class="docutils literal notranslate"><span class="pre">System.energy()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.energy_trajectory"><code class="docutils literal notranslate"><span class="pre">System.energy_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.evaluate"><code class="docutils literal notranslate"><span class="pre">System.evaluate()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.find"><code class="docutils literal notranslate"><span class="pre">System.find()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.has_property"><code class="docutils literal notranslate"><span class="pre">System.has_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.improper"><code class="docutils literal notranslate"><span class="pre">System.improper()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.impropers"><code class="docutils literal notranslate"><span class="pre">System.impropers()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.is_system"><code class="docutils literal notranslate"><span class="pre">System.is_system()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.load_frame"><code class="docutils literal notranslate"><span class="pre">System.load_frame()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.make_whole"><code class="docutils literal notranslate"><span class="pre">System.make_whole()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.mass"><code class="docutils literal notranslate"><span class="pre">System.mass()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.minimisation"><code class="docutils literal notranslate"><span class="pre">System.minimisation()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.molecule"><code class="docutils literal notranslate"><span class="pre">System.molecule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.molecules"><code class="docutils literal notranslate"><span class="pre">System.molecules()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.names"><code class="docutils literal notranslate"><span class="pre">System.names()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.num_atoms"><code class="docutils literal notranslate"><span class="pre">System.num_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.num_chains"><code class="docutils literal notranslate"><span class="pre">System.num_chains()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.num_frames"><code class="docutils literal notranslate"><span class="pre">System.num_frames()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.num_molecules"><code class="docutils literal notranslate"><span class="pre">System.num_molecules()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.num_residues"><code class="docutils literal notranslate"><span class="pre">System.num_residues()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.num_segments"><code class="docutils literal notranslate"><span class="pre">System.num_segments()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.numbers"><code class="docutils literal notranslate"><span class="pre">System.numbers()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.properties"><code class="docutils literal notranslate"><span class="pre">System.properties()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.property"><code class="docutils literal notranslate"><span class="pre">System.property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.property_keys"><code class="docutils literal notranslate"><span class="pre">System.property_keys()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.remove"><code class="docutils literal notranslate"><span class="pre">System.remove()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.remove_all_shared_properties"><code class="docutils literal notranslate"><span class="pre">System.remove_all_shared_properties()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.remove_shared_property"><code class="docutils literal notranslate"><span class="pre">System.remove_shared_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.residue"><code class="docutils literal notranslate"><span class="pre">System.residue()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.residues"><code class="docutils literal notranslate"><span class="pre">System.residues()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.save_frame"><code class="docutils literal notranslate"><span class="pre">System.save_frame()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.segment"><code class="docutils literal notranslate"><span class="pre">System.segment()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.segments"><code class="docutils literal notranslate"><span class="pre">System.segments()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.set_energy_trajectory"><code class="docutils literal notranslate"><span class="pre">System.set_energy_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.set_property"><code class="docutils literal notranslate"><span class="pre">System.set_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.set_shared_property"><code class="docutils literal notranslate"><span class="pre">System.set_shared_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.set_space"><code class="docutils literal notranslate"><span class="pre">System.set_space()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.set_time"><code class="docutils literal notranslate"><span class="pre">System.set_time()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.shared_properties"><code class="docutils literal notranslate"><span class="pre">System.shared_properties()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.size"><code class="docutils literal notranslate"><span class="pre">System.size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.smarts"><code class="docutils literal notranslate"><span class="pre">System.smarts()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.smiles"><code class="docutils literal notranslate"><span class="pre">System.smiles()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.space"><code class="docutils literal notranslate"><span class="pre">System.space()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.time"><code class="docutils literal notranslate"><span class="pre">System.time()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.to_molecule_group"><code class="docutils literal notranslate"><span class="pre">System.to_molecule_group()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.trajectory"><code class="docutils literal notranslate"><span class="pre">System.trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.update"><code class="docutils literal notranslate"><span class="pre">System.update()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.view"><code class="docutils literal notranslate"><span class="pre">System.view()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.view2d"><code class="docutils literal notranslate"><span class="pre">System.view2d()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=4dfd88e5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/js/custom.js?v=c9df2d0f"></script>
+    </body>
+</html>
