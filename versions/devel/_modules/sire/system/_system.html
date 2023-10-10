@@ -247,10 +247,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -881,8 +886,21 @@
 <span class="sd">            The type of constraint to use for bonds and/or angles, e.g.</span>
 <span class="sd">            `h-bonds`, `bonds` etc.</span>
 <span class="sd">            See https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</span>
-<span class="sd">            for the full list of options. This will be automatically</span>
-<span class="sd">            guessed from the timestep if it isn&#39;t set.</span>
+<span class="sd">            for the full list of options. This will be `none` if it hasn&#39;t</span>
+<span class="sd">            been set.</span>
+
+<span class="sd">        perturbable_constraint: str</span>
+<span class="sd">            The type of constraint to use for perturbable bonds and/or angles,</span>
+<span class="sd">            e.g. `h-bonds`, `bonds` etc.</span>
+<span class="sd">            See https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</span>
+<span class="sd">            for the full list of options. This equal the value of `constraint`</span>
+<span class="sd">            if it isn&#39;t set.</span>
+
+<span class="sd">        include_constrained_energies: bool</span>
+<span class="sd">            Whether or not to include the energies of the perturbable bonds</span>
+<span class="sd">            and angles. If this is False, then the internal bond or angle</span>
+<span class="sd">            energy of the perturbable degrees of freedom are not included</span>
+<span class="sd">            in the total energy, and their forces are not evaluated.</span>
 
 <span class="sd">        schedule: sire.cas.LambdaSchedule</span>
 <span class="sd">            The schedule used to control how perturbable forcefield parameters</span>
@@ -922,6 +940,12 @@
 <span class="sd">            softening potential that smooths the creation and deletion</span>
 <span class="sd">            of ghost atoms during a potential. This defaults to 0.</span>
 
+<span class="sd">        vacuum: bool</span>
+<span class="sd">            Whether or not to run the simulation in vacuum. If this is</span>
+<span class="sd">            set to `True`, then the simulation space automatically be</span>
+<span class="sd">            replaced by a `sire.vol.Cartesian` space, and the</span>
+<span class="sd">            simulation run in vacuum.</span>
+
 <span class="sd">        restraints: sire.mm.Restraints or list[sire.mm.Restraints]</span>
 <span class="sd">            A single set of restraints, or a list of sets of</span>
 <span class="sd">            restraints that will be applied to the atoms during</span>
@@ -931,6 +955,10 @@
 <span class="sd">            Anything that can be used to identify the atom or atoms</span>
 <span class="sd">            that should be fixed in place during the simulation. These</span>
 <span class="sd">            atoms will not be moved by minimisation.</span>
+
+<span class="sd">        platform: str</span>
+<span class="sd">            The name of the OpenMM platform on which to run the dynamics,</span>
+<span class="sd">            e.g. &quot;CUDA&quot;, &quot;OpenCL&quot;, &quot;Metal&quot; etc.</span>
 
 <span class="sd">        device: str or int</span>
 <span class="sd">            The ID of the GPU (or accelerator) used to accelerate</span>
@@ -997,6 +1025,19 @@
 <span class="sd">            for the full list of options. This will be automatically</span>
 <span class="sd">            guessed from the timestep if it isn&#39;t set.</span>
 
+<span class="sd">        perturbable_constraint: str</span>
+<span class="sd">            The type of constraint to use for perturbable bonds and/or angles,</span>
+<span class="sd">            e.g. `h-bonds`, `bonds` etc.</span>
+<span class="sd">            See https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</span>
+<span class="sd">            for the full list of options. This equal the value of `constraint`</span>
+<span class="sd">            if it isn&#39;t set.</span>
+
+<span class="sd">        include_constrained_energies: bool</span>
+<span class="sd">            Whether or not to include the energies of the perturbable bonds</span>
+<span class="sd">            and angles. If this is False, then the internal bond or angle</span>
+<span class="sd">            energy of the perturbable degrees of freedom are not included</span>
+<span class="sd">            in the total energy, and their forces are not evaluated.</span>
+
 <span class="sd">        schedule: sire.cas.LambdaSchedule</span>
 <span class="sd">            The schedule used to control how perturbable forcefield parameters</span>
 <span class="sd">            should be morphed as a function of lambda. If this is not set</span>
@@ -1034,6 +1075,12 @@
 <span class="sd">            microcanonical (NVE) or canonical (NVT) simulation will be</span>
 <span class="sd">            run if the pressure is not set.</span>
 
+<span class="sd">        vacuum: bool</span>
+<span class="sd">            Whether or not to run the simulation in vacuum. If this is</span>
+<span class="sd">            set to `True`, then the simulation space automatically be</span>
+<span class="sd">            replaced by a `sire.vol.Cartesian` space, and the</span>
+<span class="sd">            simulation run in vacuum.</span>
+
 <span class="sd">        shift_delta: length</span>
 <span class="sd">            The shift_delta parameter that controls the electrostatic</span>
 <span class="sd">            and van der Waals softening potential that smooths the</span>
@@ -1055,6 +1102,10 @@
 <span class="sd">            that should be fixed in place during the simulation. These</span>
 <span class="sd">            atoms will not be moved by dynamics.</span>
 
+<span class="sd">        platform: str</span>
+<span class="sd">            The name of the OpenMM platform on which to run the dynamics,</span>
+<span class="sd">            e.g. &quot;CUDA&quot;, &quot;OpenCL&quot;, &quot;Metal&quot; etc.</span>
+
 <span class="sd">        device: str or int</span>
 <span class="sd">            The ID of the GPU (or accelerator) used to accelerate</span>
 <span class="sd">            the simulation. This would be CUDA_DEVICE_ID or similar</span>
@@ -1073,6 +1124,39 @@
         <span class="kn">from</span> <span class="nn">..mol</span> <span class="kn">import</span> <span class="n">_dynamics</span>
 
         <span class="k">return</span> <span class="n">_dynamics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="System.ensemble">
+<a class="viewcode-back" href="../../../api/system.html#sire.system.System.ensemble">[docs]</a>
+    <span class="k">def</span> <span class="nf">ensemble</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the last ensemble that was used to simulate this system.</span>
+<span class="sd">        This returns a microcanonical ensemble if None was used</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+
+        <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;ensemble&quot;</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">..move</span> <span class="kn">import</span> <span class="n">Ensemble</span>
+
+            <span class="k">return</span> <span class="n">Ensemble</span><span class="o">.</span><span class="n">microcanonical</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="System.set_ensemble">
+<a class="viewcode-back" href="../../../api/system.html#sire.system.System.set_ensemble">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_ensemble</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ensemble</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the ensemble that was last used to simulate this system.</span>
+<span class="sd">        This is copied into the map[&quot;ensemble&quot;] property</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+
+        <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;ensemble&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">ensemble</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.energy">
@@ -1235,11 +1319,23 @@
 
 <div class="viewcode-block" id="System.energy_trajectory">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.energy_trajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">energy_trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_pandas</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">energy_trajectory</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">to_pandas</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">to_alchemlyb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the energy trajectory for this System. This is the history</span>
 <span class="sd">        of energies evaluate during any dynamics runs. It could include</span>
-<span class="sd">        energies calculated at different values of lambda</span>
+<span class="sd">        energies calculated at different values of lambda.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        to_pandas: bool</span>
+<span class="sd">            Whether or not to return the energy trajectory as a pandas DataFrame.</span>
+
+<span class="sd">        to_alchemlyb: bool</span>
+<span class="sd">            Whether or not to return the energy trajectory as a pandas DataFrame</span>
+<span class="sd">            that is formatted to usable in alchemlyb</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
 
@@ -1272,8 +1368,20 @@
 
             <span class="n">traj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">traj_propname</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">to_pandas</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">traj</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">to_pandas</span> <span class="ow">or</span> <span class="n">to_alchemlyb</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">traj</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="n">to_alchemlyb</span><span class="o">=</span><span class="n">to_alchemlyb</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">ensemble</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">is_constant_temperature</span><span class="p">():</span>
+                    <span class="n">temperature</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">temperature</span> <span class="o">=</span> <span class="kc">None</span>
+
+                <span class="k">return</span> <span class="n">traj</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span>
+                    <span class="n">to_alchemlyb</span><span class="o">=</span><span class="n">to_alchemlyb</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span>
+                <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">traj</span></div>
 
@@ -1589,7 +1697,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             

@@ -248,10 +248,15 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -475,29 +480,31 @@ on how to use the <code class="docutils literal notranslate"><span class="pre">m
 <h3>And then… Install sire into a new environment<a class="headerlink" href="#and-then-install-sire-into-a-new-environment" title="Link to this heading">#</a></h3>
 <p>We recommend that <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is installed into a new (clean) environment.
 This minimises the risk of failures caused by incompatible dependencies.</p>
-<p>Sire is currently packaged for Python 3.8, 3.9 and Python 3.10. We will start
-by creating a Python 3.10 environment that we will call <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="s2">&quot;python&lt;3.11&quot;</span>
+<p>Sire is currently packaged for Python 3.9, 3.10 and Python 3.11. We will start
+by creating a Python 3.11 environment that we will call <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="s2">&quot;python&lt;3.12&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We use <code class="docutils literal notranslate"><span class="pre">python&lt;3.11</span></code> as this will install the most recent 3.10
+<p>We use <code class="docutils literal notranslate"><span class="pre">python&lt;3.12</span></code> as this will install the most recent 3.11
 release of python.</p>
 </div>
 <p>We can now install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> into that environment by typing</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>openbiosim<span class="w"> </span>sire
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>openbiosim<span class="w"> </span>sire
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The option <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">openbiosim</span></code> tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
-into the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment. The option <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">openbiosim</span></code>
+into the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment. The option <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">conda-forge</span></code>
+tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to use the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel for all
+dependencies. The option <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">openbiosim</span></code>
 tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> from the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>
 conda channel.</p>
 </div>
 <p>If you want the latest development release, then install by typing</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;openbiosim/label/dev&quot;</span><span class="w"> </span>sire
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;openbiosim/label/dev&quot;</span><span class="w"> </span>sire
 </pre></div>
 </div>
 <p>You may (optionally) want to install additional tools such as
@@ -524,6 +531,14 @@ to learn how to use <a class="reference internal" href="api/sire.html#module-sir
 </section>
 <section id="also-easy-installation-run-in-a-container">
 <h2>3. Also easy installation - Run in a container<a class="headerlink" href="#also-easy-installation-run-in-a-container" title="Link to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Because of low demand, pre-built containers are created only for
+major releases, and may be out of date compared to the newest release.
+Please <a class="reference external" href="https://github.com/OpenBioSim/sire/issues">get in touch</a>
+if you want to use a container and would like us to build the latest
+release.</p>
+</div>
 <p>Another route to install <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> is to download and run our
 pre-built containers. These can be run via
 <a class="reference external" href="https://www.docker.com">docker</a> (on Linux, MacOS and Windows)
@@ -581,7 +596,7 @@ branch if you are a developer).</p>
 <p>You compile <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> into an existing anaconda / miniconda environment.
 Please create and activate an environment, e.g. by following
 <em class="xref py py-obj">the instructions</em> to install a fresh <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code> and
-then creating and activating Python 3.10 environment called
+then creating and activating Python 3.11 environment called
 <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
 <p>Next, download the source code. You could download the latest development
 version of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> by typing;</p>
@@ -830,7 +845,7 @@ directly running <code class="docutils literal notranslate"><span class="pre">co
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             

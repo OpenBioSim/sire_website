@@ -246,10 +246,15 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1210,6 +1215,8 @@
 </li>
         <li><a href="api/system.html#sire.system.System.clear_energy_trajectory">clear_energy_trajectory() (sire.system.System method)</a>
 </li>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.clear_properties">clear_properties() (sire.maths.EnergyTrajectory method)</a>
+</li>
         <li><a href="api/base.html#sire.base.PropertyMap.clone">clone() (sire.base.PropertyMap method)</a>
 
         <ul>
@@ -1923,7 +1930,11 @@
         <li><a href="api/maths.html#sire.maths.Matrix.enforce_symmetric">enforce_symmetric() (sire.maths.Matrix method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Dynamics.ensemble">ensemble() (sire.mol.Dynamics method)</a>
+
+        <ul>
+          <li><a href="api/system.html#sire.system.System.ensemble">(sire.system.System method)</a>
 </li>
+        </ul></li>
         <li><a href="api/mm.html#sire.mm.LJParameter.epsilon">epsilon() (sire.mm.LJParameter method)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Console.error">error() (sire.utils.Console static method)</a>
@@ -2162,6 +2173,10 @@
         </ul></li>
         <li><a href="api/mol.html#sire.mol.Cursor.get_index">get_index() (sire.mol.Cursor method)</a>
 </li>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.get_labels">get_labels() (sire.maths.EnergyTrajectory method)</a>
+</li>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.get_labels_as_numbers">get_labels_as_numbers() (sire.maths.EnergyTrajectory method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Dynamics.get_lambda">get_lambda() (sire.mol.Dynamics method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.get_lambda_in_stage">get_lambda_in_stage() (sire.cas.LambdaSchedule method)</a>
@@ -2366,9 +2381,11 @@
           <li><a href="api/mol.html#sire.mol.Segment.has_metadata">(sire.mol.Segment method)</a>
 </li>
         </ul></li>
-        <li><a href="api/mm.html#sire.mm.Angle.has_property">has_property() (sire.mm.Angle method)</a>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.has_property">has_property() (sire.maths.EnergyTrajectory method)</a>
 
         <ul>
+          <li><a href="api/mm.html#sire.mm.Angle.has_property">(sire.mm.Angle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.has_property">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.has_property">(sire.mm.Dihedral method)</a>
@@ -3052,6 +3069,12 @@
   <h2>L</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.label_keys">label_keys() (sire.maths.EnergyTrajectory method)</a>
+</li>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.labels">labels() (sire.maths.EnergyTrajectory method)</a>
+</li>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.labels_as_numbers">labels_as_numbers() (sire.maths.EnergyTrajectory method)</a>
+</li>
         <li><a href="api/cas.html#sire.cas.lam">lam (in module sire.cas)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.lam">lam() (sire.cas.LambdaSchedule static method)</a>
@@ -3947,6 +3970,8 @@
 </li>
         <li><a href="api/mm.html#sire.mm.AmberDihPart.periodicity">periodicity() (sire.mm.AmberDihPart method)</a>
 </li>
+        <li><a href="api/mol.html#sire.mol.Dynamics.perturbable_constraint">perturbable_constraint() (sire.mol.Dynamics method)</a>
+</li>
         <li><a href="api/morph.html#sire.morph.Perturbation">Perturbation (class in sire.morph)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Molecule.perturbation">perturbation() (sire.mol.Molecule method)</a>
@@ -4009,9 +4034,11 @@
 </li>
         <li><a href="api/utils.html#sire.utils.Profiler">Profiler (class in sire.utils)</a>
 </li>
-        <li><a href="api/mm.html#sire.mm.Angle.properties">properties() (sire.mm.Angle method)</a>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.properties">properties() (sire.maths.EnergyTrajectory method)</a>
 
         <ul>
+          <li><a href="api/mm.html#sire.mm.Angle.properties">(sire.mm.Angle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.properties">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.properties">(sire.mm.Dihedral method)</a>
@@ -4043,9 +4070,11 @@
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api/mol.html#sire.mol.Molecule.property">property() (sire.mol.Molecule method)</a>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.property">property() (sire.maths.EnergyTrajectory method)</a>
 
         <ul>
+          <li><a href="api/mol.html#sire.mol.Molecule.property">(sire.mol.Molecule method)</a>
+</li>
           <li><a href="api/system.html#sire.system.System.property">(sire.system.System method)</a>
 </li>
         </ul></li>
@@ -4069,9 +4098,11 @@
           <li><a href="api/mol.html#sire.mol.Segment.property_as_variant">(sire.mol.Segment method)</a>
 </li>
         </ul></li>
-        <li><a href="api/mm.html#sire.mm.Angle.property_keys">property_keys() (sire.mm.Angle method)</a>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.property_keys">property_keys() (sire.maths.EnergyTrajectory method)</a>
 
         <ul>
+          <li><a href="api/mm.html#sire.mm.Angle.property_keys">(sire.mm.Angle method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.property_keys">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.property_keys">(sire.mm.Dihedral method)</a>
@@ -4167,6 +4198,8 @@
 </li>
         <li><a href="api/maths.html#sire.maths.RanGenerator.rand_norm">rand_norm() (sire.maths.RanGenerator method)</a>
 </li>
+        <li><a href="api/mol.html#sire.mol.Dynamics.randomise_velocities">randomise_velocities() (sire.mol.Dynamics method)</a>
+</li>
         <li><a href="api/maths.html#sire.maths.RanGenerator">RanGenerator (class in sire.maths)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Element.rare_earth">rare_earth() (sire.mol.Element method)</a>
@@ -4189,9 +4222,13 @@
 </li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.remove_levers">remove_levers() (sire.cas.LambdaSchedule method)</a>
 </li>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.remove_property">remove_property() (sire.maths.EnergyTrajectory method)</a>
+</li>
         <li><a href="api/system.html#sire.system.System.remove_shared_property">remove_shared_property() (sire.system.System method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.renumber">renumber() (sire.mol.Cursor method)</a>
+</li>
+        <li><a href="api/morph.html#sire.morph.repartition_hydrogen_masses">repartition_hydrogen_masses() (in module sire.morph)</a>
 </li>
         <li><a href="api/morph.html#sire.morph.replica_exchange">replica_exchange() (in module sire.morph)</a>
 </li>
@@ -4766,7 +4803,11 @@
         <li><a href="api/units.html#sire.units.set_energy_unit">set_energy_unit() (in module sire.units)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Dynamics.set_ensemble">set_ensemble() (sire.mol.Dynamics method)</a>
+
+        <ul>
+          <li><a href="api/system.html#sire.system.System.set_ensemble">(sire.system.System method)</a>
 </li>
+        </ul></li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.set_equation">set_equation() (sire.cas.LambdaSchedule method)</a>
 </li>
         <li><a href="api/stream.html#sire.stream.set_header_property">set_header_property() (in module sire.stream)</a>
@@ -4795,8 +4836,14 @@
         </ul></li>
         <li><a href="api/mol.html#sire.mol.Cursor.set_number">set_number() (sire.mol.Cursor method)</a>
 </li>
-        <li><a href="api/system.html#sire.system.System.set_property">set_property() (sire.system.System method)</a>
+        <li><a href="api/mol.html#sire.mol.Dynamics.set_pressure">set_pressure() (sire.mol.Dynamics method)</a>
 </li>
+        <li><a href="api/maths.html#sire.maths.EnergyTrajectory.set_property">set_property() (sire.maths.EnergyTrajectory method)</a>
+
+        <ul>
+          <li><a href="api/system.html#sire.system.System.set_property">(sire.system.System method)</a>
+</li>
+        </ul></li>
         <li><a href="api/search.html#sire.search.set_protein_residue_names">set_protein_residue_names() (in module sire.search)</a>
 </li>
         <li><a href="api/units.html#sire.units.set_quantity_unit">set_quantity_unit() (in module sire.units)</a>
@@ -4810,6 +4857,8 @@
         <li><a href="api/system.html#sire.system.System.set_space">set_space() (sire.system.System method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.RanGenerator.set_state">set_state() (sire.maths.RanGenerator method)</a>
+</li>
+        <li><a href="api/mol.html#sire.mol.Dynamics.set_temperature">set_temperature() (sire.mol.Dynamics method)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Console.set_theme">set_theme() (sire.utils.Console static method)</a>
 </li>
@@ -5152,6 +5201,12 @@
 </li>
         <li><a href="api/convert.html#sire.convert.to">to() (in module sire.convert)</a>
 </li>
+        <li><a href="api/morph.html#sire.morph.to_alchemlyb">to_alchemlyb() (in module sire.morph)</a>
+
+        <ul>
+          <li><a href="api/maths.html#sire.maths.EnergyTrajectory.to_alchemlyb">(sire.maths.EnergyTrajectory method)</a>
+</li>
+        </ul></li>
         <li><a href="api/convert.html#sire.convert.to_biosimspace">to_biosimspace() (in module sire.convert)</a>
 </li>
         <li><a href="api/base.html#sire.base.PropertyMap.to_dict">to_dict() (sire.base.PropertyMap method)</a>
@@ -5990,7 +6045,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             

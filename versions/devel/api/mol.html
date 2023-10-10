@@ -248,10 +248,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -6991,7 +6996,7 @@ Use .commit() to get the up-to-date version of this view.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.mol.Dynamics">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.mol.</span></span><span class="sig-name descname"><span class="pre">Dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.mol.</span></span><span class="sig-name descname"><span class="pre">Dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics" title="Link to this definition">#</a></dt>
 <dd><p>Class that runs dynamics on the contained molecule(s). Note that
 this class is not designed to be constructed directly. You should only
 use this class by calling <em class="xref py py-obj">dynamics()</em> on the molecules(s)
@@ -7053,7 +7058,7 @@ the start time and the current time.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Dynamics.energy_trajectory">
-<span class="sig-name descname"><span class="pre">energy_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.energy_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.energy_trajectory" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">energy_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_alchemlyb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.energy_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.energy_trajectory" title="Link to this definition">#</a></dt>
 <dd><p>Return the energy trajectory. This is the trajectory of
 energy values that have been captured during dynamics.</p>
 <p>If ‘to_pandas’ is True, (the default) then this will
@@ -7101,9 +7106,31 @@ of max_iterations iterations.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Dynamics.perturbable_constraint">
+<span class="sig-name descname"><span class="pre">perturbable_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.perturbable_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.perturbable_constraint" title="Link to this definition">#</a></dt>
+<dd><p>Return the perturbable constraint used for the dynamics (e.g.
+constraining bonds involving hydrogens etc.)</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Dynamics.platform">
 <span class="sig-name descname"><span class="pre">platform</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.platform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.platform" title="Link to this definition">#</a></dt>
 <dd><p>Return the name of the OpenMM platform being used for dynamics</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Dynamics.randomise_velocities">
+<span class="sig-name descname"><span class="pre">randomise_velocities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.randomise_velocities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.randomise_velocities" title="Link to this definition">#</a></dt>
+<dd><p>Set the velocities to random values, drawn from the Boltzmann
+distribution for the current temperature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>temperature</strong><strong>)</strong> (<em>- temperature</em>) – the current temperature will be used</p></li>
+<li><p><strong>(</strong><strong>int</strong><strong>)</strong> (<em>- random_seed</em>) – a random seed will be generated</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -7189,12 +7216,30 @@ this isn’t a perturbable system</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Dynamics.set_pressure">
+<span class="sig-name descname"><span class="pre">set_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.set_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.set_pressure" title="Link to this definition">#</a></dt>
+<dd><p>Set the pressure for the dynamics. Note that this will only
+let you change the pressure of the ensemble.
+You can’t change its fundemental nature.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Dynamics.set_schedule">
 <span class="sig-name descname"><span class="pre">set_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedule</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.set_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.set_schedule" title="Link to this definition">#</a></dt>
 <dd><p>Set the LambdaSchedule that will be used to control how
 lambda changes the underlying forcefield parameters
 in the system. This does nothing if this isn’t
 a perturbable system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Dynamics.set_temperature">
+<span class="sig-name descname"><span class="pre">set_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_velocities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.set_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.set_temperature" title="Link to this definition">#</a></dt>
+<dd><p>Set the temperature for the dynamics. Note that this will only
+let you change the temperature of the ensemble.
+You can’t change its fundemental nature.</p>
+<p>If rescale_velocities is True, then the velocities will be
+rescaled to the new temperature.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -11465,7 +11510,7 @@ is operator.add by default.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.SelectorMol.dynamics">
-<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.dynamics" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.dynamics" title="Link to this definition">#</a></dt>
 <dd><p>Return a Dynamics object that can be used to perform
 dynamics of the molecule(s) in this view</p>
 <dl class="simple">
@@ -11503,6 +11548,17 @@ See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/o
 for the full list of options. This will be automatically
 guessed from the timestep if it isn’t set.</p>
 </dd>
+<dt>perturbable_constraint: str</dt><dd><p>The type of constraint to use for perturbable bonds and/or angles,
+e.g. <em class="xref py py-obj">h-bonds</em>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">bonds</span></code> etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options. This equal the value of <code class="xref py py-obj docutils literal notranslate"><span class="pre">constraint</span></code>
+if it isn’t set.</p>
+</dd>
+<dt>include_constrained_energies: bool</dt><dd><p>Whether or not to include the energies of the constrained bonds
+and angles. If this is False, then the internal bond or angle
+energy of the constrained degrees of freedom are not included
+in the total energy, and their forces are not evaluated.</p>
+</dd>
 <dt>schedule: sire.cas.LambdaSchedule</dt><dd><p>The schedule used to control how perturbable forcefield parameters
 should be morphed as a function of lambda. If this is not set
 then a sire.cas.LambdaSchedule.standard_morph() is used.</p>
@@ -11534,6 +11590,11 @@ specify the temperature.</p>
 microcanonical (NVE) or canonical (NVT) simulation will be
 run if the pressure is not set.</p>
 </dd>
+<dt>vacuum: bool (optional)</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
+set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
+replaced by a <a class="reference internal" href="vol.html#sire.vol.Cartesian" title="sire.vol.Cartesian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sire.vol.Cartesian</span></code></a> space, and the
+simulation run in vacuum.</p>
+</dd>
 <dt>shift_delta: length</dt><dd><p>The shift_delta parameter that controls the electrostatic
 and van der Waals softening potential that smooths the
 creation and deletion of ghost atoms during a potential.
@@ -11550,6 +11611,9 @@ the simulation.</p>
 <dt>fixed: molecule(s) view, search string, int, list[int] etc</dt><dd><p>Anything that can be used to identify the atom or atoms
 that should be fixed in place during the simulation. These
 atoms will not be moved by dynamics.</p>
+</dd>
+<dt>platform: str</dt><dd><p>The name of the OpenMM platform on which to run the dynamics,
+e.g. “CUDA”, “OpenCL”, “Metal” etc.</p>
 </dd>
 <dt>device: str or int</dt><dd><p>The ID of the GPU (or accelerator) used to accelerate
 the simulation. This would be CUDA_DEVICE_ID or similar
@@ -11725,7 +11789,7 @@ not in this container.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.SelectorMol.minimisation">
-<span class="sig-name descname"><span class="pre">minimisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.minimisation" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">minimisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.minimisation" title="Link to this definition">#</a></dt>
 <dd><p>Return a Minimisation object that can be used to perform
 minimisation of the molecule(s) in this view</p>
 <dl class="simple">
@@ -11738,8 +11802,18 @@ for the full list of options</p>
 <dt>constraint: str</dt><dd><p>The type of constraint to use for bonds and/or angles, e.g.
 <em class="xref py py-obj">h-bonds</em>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">bonds</span></code> etc.
 See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
-for the full list of options. This will be automatically
-guessed from the timestep if it isn’t set.</p>
+for the full list of options. This is <em class="xref py py-obj">none</em> if it is not set.</p>
+</dd>
+<dt>perturbable_constraint: str</dt><dd><p>The type of constraint to use for perturbable bonds and/or angles,
+e.g. <em class="xref py py-obj">h-bonds</em>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">bonds</span></code> etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options. This equal the value of <code class="xref py py-obj docutils literal notranslate"><span class="pre">constraint</span></code>
+if it isn’t set.</p>
+</dd>
+<dt>include_constrained_energies: bool</dt><dd><p>Whether or not to include the energies of the perturbable bonds
+and angles. If this is False, then the internal bond or angle
+energy of the perturbable degrees of freedom are not included
+in the total energy, and their forces are not evaluated.</p>
 </dd>
 <dt>schedule: sire.cas.LambdaSchedule</dt><dd><p>The schedule used to control how perturbable forcefield parameters
 should be morphed as a function of lambda. If this is not set
@@ -11764,6 +11838,11 @@ be run using the properties of the reference molecule
 is useful if you just want to run standard molecular dynamics
 of the reference or perturbed states.</p>
 </dd>
+<dt>vacuum: bool (optional)</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
+set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
+replaced by a <a class="reference internal" href="vol.html#sire.vol.Cartesian" title="sire.vol.Cartesian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sire.vol.Cartesian</span></code></a> space, and the
+simulation run in vacuum.</p>
+</dd>
 <dt>shift_delta: length</dt><dd><p>The shift_delta parameter that controls the electrostatic
 and van der Waals softening potential that smooths the
 creation and deletion of ghost atoms during a potential.
@@ -11780,6 +11859,9 @@ the simulation.</p>
 <dt>fixed: molecule(s) view, search string, int, list[int] etc</dt><dd><p>Anything that can be used to identify the atom or atoms
 that should be fixed in place during the simulation. These
 atoms will not be moved by minimisation.</p>
+</dd>
+<dt>platform: str</dt><dd><p>The name of the OpenMM platform on which to run the dynamics,
+e.g. “CUDA”, “OpenCL”, “Metal” etc.</p>
 </dd>
 <dt>device: str or int</dt><dd><p>The ID of the GPU (or accelerator) used to accelerate
 minimisation. This would be CUDA_DEVICE_ID or similar
@@ -12800,7 +12882,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             
@@ -13329,11 +13411,15 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.Dynamics.get_schedule"><code class="docutils literal notranslate"><span class="pre">Dynamics.get_schedule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.info"><code class="docutils literal notranslate"><span class="pre">Dynamics.info()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.minimise"><code class="docutils literal notranslate"><span class="pre">Dynamics.minimise()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Dynamics.perturbable_constraint"><code class="docutils literal notranslate"><span class="pre">Dynamics.perturbable_constraint()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.platform"><code class="docutils literal notranslate"><span class="pre">Dynamics.platform()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Dynamics.randomise_velocities"><code class="docutils literal notranslate"><span class="pre">Dynamics.randomise_velocities()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.run"><code class="docutils literal notranslate"><span class="pre">Dynamics.run()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.set_ensemble"><code class="docutils literal notranslate"><span class="pre">Dynamics.set_ensemble()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.set_lambda"><code class="docutils literal notranslate"><span class="pre">Dynamics.set_lambda()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Dynamics.set_pressure"><code class="docutils literal notranslate"><span class="pre">Dynamics.set_pressure()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.set_schedule"><code class="docutils literal notranslate"><span class="pre">Dynamics.set_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Dynamics.set_temperature"><code class="docutils literal notranslate"><span class="pre">Dynamics.set_temperature()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.step_speed"><code class="docutils literal notranslate"><span class="pre">Dynamics.step_speed()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.time_speed"><code class="docutils literal notranslate"><span class="pre">Dynamics.time_speed()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.timestep"><code class="docutils literal notranslate"><span class="pre">Dynamics.timestep()</span></code></a></li>

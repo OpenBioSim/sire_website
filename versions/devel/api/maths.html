@@ -248,10 +248,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -407,6 +412,18 @@ timestep the energy was recorded and the types of energy
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.clear_properties">
+<span class="sig-name descname"><span class="pre">clear_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.clear_properties" title="Link to this definition">#</a></dt>
+<dd><p>clearProperties( (EnergyTrajectory)arg1) -&gt; None :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void clearProperties(SireMaths::EnergyTrajectory {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.clone">
 <span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">EnergyTrajectory</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.clone" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
@@ -451,16 +468,56 @@ unit</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.get">
 <span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get" title="Link to this definition">#</a></dt>
-<dd><blockquote>
-<div><dl class="simple">
+<dd><dl>
+<dt>Return the time and energy components at the ith row.</dt><dd><blockquote>
+<div><p>Values are returned in internal units</p>
+</div></blockquote>
+<dl class="simple">
 <dt>C++ signature :</dt><dd><p>QHash&lt;QString, double&gt; get(SireMaths::EnergyTrajectory {lvalue},int)</p>
 </dd>
 </dl>
-</div></blockquote>
-<p>get( (EnergyTrajectory)arg1, (int)i, (GeneralUnit)time_unit, (GeneralUnit)energy_unit) -&gt; object :</p>
+</dd>
+<dt>get( (EnergyTrajectory)arg1, (int)i, (GeneralUnit)time_unit, (GeneralUnit)energy_unit) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return the time and energy components at the ith row.</dt><dd><p>Values are returned in the specified units</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QHash&lt;QString, double&gt; get(SireMaths::EnergyTrajectory {lvalue},int,SireUnits::Dimension::GeneralUnit,SireUnits::Dimension::GeneralUnit)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.get_labels">
+<span class="sig-name descname"><span class="pre">get_labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get_labels" title="Link to this definition">#</a></dt>
+<dd><p>getLabels( (EnergyTrajectory)arg1, (int)i) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
-<dt>C++ signature :</dt><dd><p>QHash&lt;QString, double&gt; get(SireMaths::EnergyTrajectory {lvalue},int,SireUnits::Dimension::GeneralUnit,SireUnits::Dimension::GeneralUnit)</p>
+<dt>C++ signature :</dt><dd><p>QHash&lt;QString, QString&gt; getLabels(SireMaths::EnergyTrajectory {lvalue},int)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.get_labels_as_numbers">
+<span class="sig-name descname"><span class="pre">get_labels_as_numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get_labels_as_numbers" title="Link to this definition">#</a></dt>
+<dd><p>getLabelsAsNumbers( (EnergyTrajectory)arg1, (int)i) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QHash&lt;QString, double&gt; getLabelsAsNumbers(SireMaths::EnergyTrajectory {lvalue},int)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.has_property">
+<span class="sig-name descname"><span class="pre">has_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.has_property" title="Link to this definition">#</a></dt>
+<dd><p>hasProperty( (EnergyTrajectory)arg1, (PropertyName)key) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasProperty(SireMaths::EnergyTrajectory {lvalue},SireBase::PropertyName)</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -502,14 +559,112 @@ unit</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.label_keys">
+<span class="sig-name descname"><span class="pre">label_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.label_keys" title="Link to this definition">#</a></dt>
+<dd><p>labelKeys( (EnergyTrajectory)arg1) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QStringList labelKeys(SireMaths::EnergyTrajectory {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.labels">
+<span class="sig-name descname"><span class="pre">labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.labels" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;QString&gt; labels(SireMaths::EnergyTrajectory {lvalue},QString)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.labels_as_numbers">
+<span class="sig-name descname"><span class="pre">labels_as_numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.labels_as_numbers" title="Link to this definition">#</a></dt>
+<dd><p>labelsAsNumbers( (EnergyTrajectory)arg1, (object)key) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; labelsAsNumbers(SireMaths::EnergyTrajectory {lvalue},QString)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.properties" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Properties properties(SireMaths::EnergyTrajectory {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.property">
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.property" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Property property(SireMaths::EnergyTrajectory {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.property_keys">
+<span class="sig-name descname"><span class="pre">property_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.property_keys" title="Link to this definition">#</a></dt>
+<dd><p>propertyKeys( (EnergyTrajectory)arg1) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QStringList propertyKeys(SireMaths::EnergyTrajectory {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.remove_property">
+<span class="sig-name descname"><span class="pre">remove_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.remove_property" title="Link to this definition">#</a></dt>
+<dd><p>removeProperty( (EnergyTrajectory)arg1, (object)key) -&gt; None :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeProperty(SireMaths::EnergyTrajectory {lvalue},QString)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.set">
 <span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(GeneralUnit)time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)energies</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.set" title="Link to this definition">#</a></dt>
-<dd><dl class="simple">
-<dt>Set the energies at time time to the components contained</dt><dd><p>in energies</p>
-</dd>
+<dd><dl>
+<dt>Set the energies at time time to the components contained</dt><dd><blockquote>
+<div><p>in energies</p>
+</div></blockquote>
+<dl class="simple">
 <dt>C++ signature :</dt><dd><p>void set(SireMaths::EnergyTrajectory {lvalue},SireUnits::Dimension::GeneralUnit,QHash&lt;QString, SireUnits::Dimension::GeneralUnit&gt;)</p>
 </dd>
 </dl>
+</dd>
+</dl>
+<p>set( (EnergyTrajectory)arg1, (GeneralUnit)time, (object)energies, (object)labels) -&gt; None :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void set(SireMaths::EnergyTrajectory {lvalue},SireUnits::Dimension::GeneralUnit,QHash&lt;QString, SireUnits::Dimension::GeneralUnit&gt;,QHash&lt;QString, QString&gt;)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.set_property">
+<span class="sig-name descname"><span class="pre">set_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.set_property" title="Link to this definition">#</a></dt>
+<dd><p>setProperty( (EnergyTrajectory)arg1, (object)key, (Property)value) -&gt; None :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setProperty(SireMaths::EnergyTrajectory {lvalue},QString,SireBase::Property)</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -545,9 +700,44 @@ unit</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.to_alchemlyb">
+<span class="sig-name descname"><span class="pre">to_alchemlyb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_alchemlyb" title="Link to this definition">#</a></dt>
+<dd><p>Return the energy trajectory as an alchemlyb-formatted pandas DataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperature</strong> (<em>temperature</em>) – The temperature of the simulation. If this is
+not set then the temperature from this table’s
+<em class="xref py py-obj">ensemble</em> or <em class="xref py py-obj">temperature</em> property will be
+used.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas DataFrame that is compatible with alchemlyb.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.to_pandas">
-<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_pandas" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_alchemlyb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_pandas" title="Link to this definition">#</a></dt>
 <dd><p>Return the energy trajectory as a pandas DataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<em>temperature</em>) – The temperature of the simulation. If this is
+not set then the temperature from this table’s
+<em class="xref py py-obj">ensemble</em> or <em class="xref py py-obj">temperature</em> property will be
+used. Note that you only need a temperature
+if you are converting to alchemlyb format.</p></li>
+<li><p><strong>to_alchemlyb</strong> (<em>bool</em>) – This will format the DataFrame in a way that is
+compatible with alchemlyb. This will allow the
+DataFrame to be used as part of an alchemlyb
+free energy calculation.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2215,7 +2405,7 @@ the quaternion argument.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             
@@ -2239,16 +2429,29 @@ the quaternion argument.</p>
 <li><a class="reference internal" href="#">Public API</a><ul>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code></a><ul>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.assign"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.clear_properties"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.clear_properties()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.clone"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.clone()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.count"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.count()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.energies"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.energies()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.get"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.get()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.get_labels"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.get_labels()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.get_labels_as_numbers"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.get_labels_as_numbers()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.has_property"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.has_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.is_empty"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.is_empty()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.is_null"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.keys"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.keys()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.label_keys"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.label_keys()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.labels"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.labels()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.labels_as_numbers"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.labels_as_numbers()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.properties"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.properties()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.property"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.property_keys"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.property_keys()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.remove_property"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.remove_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.set"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.set()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.set_property"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.set_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.size"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.size()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.times"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.times()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.EnergyTrajectory.to_alchemlyb"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.to_alchemlyb()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.to_pandas"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.to_pandas()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.to_string"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.to_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.EnergyTrajectory.typename"><code class="docutils literal notranslate"><span class="pre">EnergyTrajectory.typename()</span></code></a></li>

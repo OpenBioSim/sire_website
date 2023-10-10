@@ -1,0 +1,1056 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Diaries" href="../../blogposts.html" /><link rel="prev" title="Running a Free Energy Perturbation Simulation" href="05_free_energy_perturbation.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Running Faster Free Energy Simulations - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css?v=c839eb9e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Part 1 - Loading and Saving</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/07_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Part 2 - Indexing and Searching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part03.html">Part 3 - Molecular Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Part 3 - Molecular Properties</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part03/01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/02_cursors.html">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Part 4 - Measurement, Trajectories and Movement</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part04/01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/05_movement.html">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Part 5 - Interconverting with other Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part06.html">Part 6 - Morphs and Alchemical Free Energies</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Part 6 - Morphs and Alchemical Free Energies</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_merge.html">Merged Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_restraints.html">Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Running Faster Free Energy Simulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blogposts.html">Diaries</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/trajectory.html">Trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/units.html">Units</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sire.html">sire module</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io_parser.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/morph.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/restraints.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="running-faster-free-energy-simulations">
+<h1>Running Faster Free Energy Simulations<a class="headerlink" href="#running-faster-free-energy-simulations" title="Link to this heading">#</a></h1>
+<p>The previous section showed how to calculate the relative hydration free
+energy of ethane and methanol using alchemical dynamics. Short dynamics
+simulation were run for each λ-value, with the energy differences
+between neighbouring λ-values used to calculate the free energy differences.</p>
+<p>The simulations used a timestep of 1 fs, and calculated energy differences
+every 0.1 ps (100 steps). This calculated a free energy that should be
+accurate, but the simulation took a long time to run. In this section, we
+will show how to calculate the same result, but with a much faster
+simulation.</p>
+<section id="timesteps-and-constraints">
+<h2>Timesteps and Constraints<a class="headerlink" href="#timesteps-and-constraints" title="Link to this heading">#</a></h2>
+<p>The easiest way to speed up a simulation is to increase the dynamic
+timestep. This is the amount of time between each step of the simulation,
+i.e. the amount of time between each calculation of the forces. The longer
+the timestep, the faster the simulation will run, but at the cost of
+more unstable dynamics. At an extreme, the simulation will become
+totally unstable and an
+<a class="reference external" href="https://github.com/openmm/openmm/wiki/Frequently-Asked-Questions#nan">OpenMM Particle Exception</a>
+will be raised.</p>
+<p>As a rule of thumb, the timestep should be less than the fastest vibrational
+motion in the simulation. Since the fastest vibrations will likely involve
+bonds with hydrogen atoms, we can make the simulation more stable by
+contraining the bonds that involve hydrogen atoms.</p>
+<p>We can choose the constraint to use via the <code class="docutils literal notranslate"><span class="pre">constraint</span></code> keyword, e.g.
+after loading the molecules and minimising,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;merged_molecule.s3&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;molecule property is_perturbable&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">()</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>…we can turn on constraints of the bonds involving hydrogen atoms by
+setting <code class="docutils literal notranslate"><span class="pre">constraint</span></code> to <code class="docutils literal notranslate"><span class="pre">h-bonds</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;2fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;h-bonds&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">Dynamics(completed=5 ps, energy=-32140.6 kcal mol-1, speed=51.2 ns day-1)</span>
+</pre></div>
+</div>
+<p>We would hope that this is faster than running a simulation with no constraints
+and a 1 fs timestep…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;1fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">Dynamics(completed=5 ps, energy=-27197.8 kcal mol-1, speed=67.3 ns day-1)</span>
+</pre></div>
+</div>
+<p>…but this is not the case. We can see here that the cost of the constraints
+has out-weighed the benefit of having half the simulation steps.</p>
+<p>The simulation can go a lot faster with a 4 fs timestep…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;4fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;h-bonds&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;4ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">Dynamics(completed=4 ps, energy=-32807 kcal mol-1, speed=100.9 ns day-1)</span>
+</pre></div>
+</div>
+<p>However, turning on <code class="docutils literal notranslate"><span class="pre">h-bonds</span></code> constraints would not be enough to keep the
+simulation stable for larger timesteps. For example, if we use a timestep
+of 5 fs…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;5fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;h-bonds&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="go">OpenMMException: Particle coordinate is NaN.  For more information, see</span>
+<span class="go">https://github.com/openmm/openmm/wiki/Frequently-Asked-Questions#nan</span>
+</pre></div>
+</div>
+<p>For such timesteps, we would need to constrain all bonds and angles
+involving hydrogen, using the <code class="docutils literal notranslate"><span class="pre">h-bonds-h-angles</span></code> constraint.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;5fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;h-bonds-h-angles&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">Dynamics(completed=5 ps, energy=-34450.6 kcal mol-1, speed=116.2 ns day-1)</span>
+</pre></div>
+</div>
+<p>You can go even further by constraining all bonds, and all angles involving
+hydrogen using the <code class="docutils literal notranslate"><span class="pre">bonds-h-angles</span></code> constraint…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;8fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;bonds-h-angles&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">Dynamics(completed=5 ps, energy=-34130.9 kcal mol-1, speed=152.6 ns day-1)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is also the <code class="docutils literal notranslate"><span class="pre">bonds</span></code> constraint which constrains
+all chemical bonds, but this doesn’t really help unless
+angles involving hydrogen aren’t also constrained.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Different molecular systems will behave differently, and may produce
+more, or less stable dynamics than that shown above. As a rule of thumb,
+start using a 4 fs timestep with <code class="docutils literal notranslate"><span class="pre">h-bonds-h-angles</span></code> constraints, and
+then either increase the timestep and dial up the constraints if you can,
+or reduce the timestep and reduce the timestep if the simulation becomes
+unstable.</p>
+</div>
+<p>To make things easy, <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> automatically chooses a suitable constraint
+based on the timestep. You can see the constraint chosen using the
+<a class="reference internal" href="../../api/mol.html#sire.mol.Dynamics.constraint" title="sire.mol.Dynamics.constraint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">constraint()</span></code></a> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;8fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">constraint</span><span class="p">())</span>
+<span class="go">bonds-h-angles</span>
+</pre></div>
+</div>
+<p>You can disable all constraints by setting <code class="docutils literal notranslate"><span class="pre">constraint</span></code> equal to <code class="docutils literal notranslate"><span class="pre">none</span></code>,
+e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;4fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">constraint</span><span class="p">())</span>
+<span class="go">none</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="go">RuntimeError: The kinetic energy has exceeded 1000 kcal mol-1 per atom (it is 2.2202087996265908e+16 kcal mol-1 atom-1, and</span>
+<span class="go">2.701328046505673e+20 kcal mol-1 total). This suggests that the simulation has become unstable. Try reducing the timestep and/or minimising</span>
+<span class="go">the system and run again.</span>
+</pre></div>
+</div>
+<p>but do expect to see a <code class="docutils literal notranslate"><span class="pre">ParticleException</span></code> or other <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>
+exceptions raised at some point!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">constraint</span></code> to the Python <code class="docutils literal notranslate"><span class="pre">None</span></code> type indicates that you
+don’t have a preference, and so <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> will choose a suitable
+constraint for you. Use the string <code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code> to explicitly disable
+constraints.</p>
+</div>
+</section>
+<section id="constraints-and-perturbable-molecules">
+<h2>Constraints and Perturbable Molecules<a class="headerlink" href="#constraints-and-perturbable-molecules" title="Link to this heading">#</a></h2>
+<p>While constraints are useful for speeding up simulations, they can cause
+problems when used with perturbable (merged) molecules. This is because the
+constraints hold the bonds and/or angles at fixed values based on the
+starting coordinates of the simulation. Changes in λ, which may change the
+equilibrium bond and angle parameters, will not be reflected in the
+free energy. This is because the constraints will stop dynamics from sampling
+these perturbing bonds and angles.</p>
+<p>For example, changing the value of λ to 1.0, and sampling with bond and angle
+constraints on would force methanol to adopt ethane’s internal geometry.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bond</span><span class="p">(</span><span class="s2">&quot;element C&quot;</span><span class="p">,</span> <span class="s2">&quot;element C&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
+<span class="go">1.53625 Å</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;1fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span> <span class="n">lambda_value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bond</span><span class="p">(</span><span class="s2">&quot;element C&quot;</span><span class="p">,</span> <span class="s2">&quot;element C&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
+<span class="go">1.48737 Å</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;2fs&quot;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;bonds-h-angles&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span> <span class="n">lambda_value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bond</span><span class="p">(</span><span class="s2">&quot;element C&quot;</span><span class="p">,</span> <span class="s2">&quot;element C&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
+<span class="go">1.53625 Å</span>
+</pre></div>
+</div>
+<p>As seen here, the C-C bond length for ethane is 1.54 Å, while the C-O
+bond length for methanol is 1.49 Å. Using <code class="docutils literal notranslate"><span class="pre">bonds-h-angles</span></code> constrains
+this bond, meaning that the simulation at λ=1 uses ethane’s bond length
+(1.54 Å) rather than methanol’s (1.49 Å).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The C-C bond morphs into the C-O bond during the perturbation from ethane
+to methanol. Earlier, we mapped the default parameters to those of
+ethane, meaning that the elements property of ethane is used by
+default. This is why we searched for <code class="docutils literal notranslate"><span class="pre">bond(&quot;element</span> <span class="pre">C&quot;,</span> <span class="pre">&quot;element</span> <span class="pre">C&quot;)</span></code>
+rather than <code class="docutils literal notranslate"><span class="pre">bond(&quot;element</span> <span class="pre">C&quot;,</span> <span class="pre">&quot;element</span> <span class="pre">O&quot;)</span></code>. We would use
+<code class="docutils literal notranslate"><span class="pre">bond(&quot;element</span> <span class="pre">C&quot;,</span> <span class="pre">&quot;element</span> <span class="pre">O&quot;)</span></code> if we had used
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">link_to_perturbed()</span></code> to set the
+default properties.</p>
+</div>
+<p>One solution is to choose a different constraint for perturbable molecules
+than for the rest of the system. You can do this using the
+<code class="docutils literal notranslate"><span class="pre">perturbable_constraint</span></code> keyword, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;2fs&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;bonds-h-angles&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">perturbable_constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">lambda_value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bond</span><span class="p">(</span><span class="s2">&quot;element C&quot;</span><span class="p">,</span> <span class="s2">&quot;element C&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
+<span class="go">1.42569 Å</span>
+</pre></div>
+</div>
+<p>has run dynamics using no constraints on the perturbable molecules,
+and <code class="docutils literal notranslate"><span class="pre">bonds-h-angles</span></code> constraints on all other molecules. This has
+allowed sampling of the C-O bond in methanol, so that it was able to
+vibrate around its equilibrium bond length (1.42 Å).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">perturbable_constraint</span></code> argument accepts the same values as
+<code class="docutils literal notranslate"><span class="pre">constraint</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">h-bonds</span></code>, <code class="docutils literal notranslate"><span class="pre">h-bond-h-angles</span></code> etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">perturbable_constraint</span></code> will have the same value
+as <code class="docutils literal notranslate"><span class="pre">constraint</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must set <code class="docutils literal notranslate"><span class="pre">perturbable_constraint</span></code> to the string <code class="docutils literal notranslate"><span class="pre">none</span></code> if you want
+to disable constraints. Setting <code class="docutils literal notranslate"><span class="pre">perturbable_constraint</span></code> to the Python
+<code class="docutils literal notranslate"><span class="pre">None</span></code> indicates you are providing no preference for any constraint,
+and so the code automatically assigns <code class="docutils literal notranslate"><span class="pre">perturbable_constraint</span></code> as
+equal to <code class="docutils literal notranslate"><span class="pre">constraint</span></code>.</p>
+</div>
+<p>Unfortunately, not constraining the bonds and/or angles of the perturbable
+molecules will impact the stability of dynamics, and thus the size of
+timestep that will be achievable. For example,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;4fs&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;h-bonds-h-angles&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">perturbable_constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">lambda_value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="go">OpenMMException: Particle coordinate is NaN.  For more information, see</span>
+<span class="go">https://github.com/openmm/openmm/wiki/Frequently-Asked-Questions#nan</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can still use constraints on perturbable molecules. Just be careful
+to minimise and then equilibrate the molecule(s) at the desired value
+of λ without using constraints, so that the perturbable bonds and angles
+have the right size for that value of λ. You can then run longer simulations
+with constraints applied, as they will use the bond / angle sizes
+measured from these starting coordinates as the constrained values.</p>
+</div>
+</section>
+<section id="hydrogen-mass-repartitioning">
+<h2>Hydrogen Mass Repartitioning<a class="headerlink" href="#hydrogen-mass-repartitioning" title="Link to this heading">#</a></h2>
+<p>Bonds involving hydrogen atoms vibrate quickly because vibrational frequency
+is related to atomic mass - the lighter the atom, the faster it will
+vibrate. We can reduce the frequency of these vibrations by increasing the
+mass of the hydrogens. Fortunately, free energy is derived from the
+potential energy of the molecules, which is independent of their mass.
+So, we are free to magically move mass from heavy atoms such as carbon to
+their bonded hydrogen atoms without affecting the free energy.</p>
+<p>This method, called “hydrogen mass repartitioning”, is implemented in
+the <a class="reference internal" href="../../api/morph.html#sire.morph.repartition_hydrogen_masses" title="sire.morph.repartition_hydrogen_masses"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.morph.repartition_hydrogen_masses()</span></code></a> function. It takes a
+molecule as argument, and returns that same molecule with its hydrogen
+masses repartitioned.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecule</span><span class="p">(</span><span class="s2">&quot;molecule property is_perturbable&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">repartitioned_mol</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">repartition_hydrogen_masses</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">(),</span> <span class="n">repartitioned_mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">()):</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">atom0</span><span class="p">,</span> <span class="n">atom0</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">),</span> <span class="n">atom1</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">))</span>
+<span class="go">Atom( C1:1    [  25.71,   24.94,   25.25] ) 12.01 g mol-1 10.498 g mol-1</span>
+<span class="go">Atom( C2:2    [  24.29,   25.06,   24.75] ) 12.01 g mol-1 10.498 g mol-1</span>
+<span class="go">Atom( H3:3    [  25.91,   23.89,   25.56] ) 1.008 g mol-1 1.512 g mol-1</span>
+<span class="go">Atom( H4:4    [  26.43,   25.22,   24.45] ) 1.008 g mol-1 1.512 g mol-1</span>
+<span class="go">Atom( H5:5    [  25.86,   25.61,   26.13] ) 1.008 g mol-1 1.512 g mol-1</span>
+<span class="go">Atom( H6:6    [  24.14,   24.39,   23.87] ) 1.008 g mol-1 1.512 g mol-1</span>
+<span class="go">Atom( H7:7    [  24.09,   26.11,   24.44] ) 1.008 g mol-1 1.512 g mol-1</span>
+<span class="go">Atom( H8:8    [  23.57,   24.78,   25.55] ) 1.008 g mol-1 1.512 g mol-1</span>
+</pre></div>
+</div>
+<p>This has repartioned the hydrogen masses using a <code class="docutils literal notranslate"><span class="pre">mass_factor</span></code> of 1.5.
+This factor is known to be good for using the (default)
+<code class="docutils literal notranslate"><span class="pre">LangevinMiddleIntegrator</span></code> with a timestep of 4 fs. You may need to use
+a different factor for a different integrator or timestep, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rep4_mol</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">repartition_hydrogen_masses</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mass_factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">(),</span> <span class="n">rep4_mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">()):</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">atom0</span><span class="p">,</span> <span class="n">atom0</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">),</span> <span class="n">atom1</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">))</span>
+<span class="go">Atom( C1:1    [  25.71,   24.94,   25.25] ) 12.01 g mol-1 2.938 g mol-1</span>
+<span class="go">Atom( C2:2    [  24.29,   25.06,   24.75] ) 12.01 g mol-1 2.938 g mol-1</span>
+<span class="go">Atom( H3:3    [  25.91,   23.89,   25.56] ) 1.008 g mol-1 4.032 g mol-1</span>
+<span class="go">Atom( H4:4    [  26.43,   25.22,   24.45] ) 1.008 g mol-1 4.032 g mol-1</span>
+<span class="go">Atom( H5:5    [  25.86,   25.61,   26.13] ) 1.008 g mol-1 4.032 g mol-1</span>
+<span class="go">Atom( H6:6    [  24.14,   24.39,   23.87] ) 1.008 g mol-1 4.032 g mol-1</span>
+<span class="go">Atom( H7:7    [  24.09,   26.11,   24.44] ) 1.008 g mol-1 4.032 g mol-1</span>
+<span class="go">Atom( H8:8    [  23.57,   24.78,   25.55] ) 1.008 g mol-1 4.032 g mol-1</span>
+</pre></div>
+</div>
+<p>would multiply the hydrogen masses by a factor of 4.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, this function will repartition the masses of the hydrogens
+in both the standard mass property (<code class="docutils literal notranslate"><span class="pre">mass</span></code>) and also for the end-state
+mass properties (<code class="docutils literal notranslate"><span class="pre">mass0</span></code> and <code class="docutils literal notranslate"><span class="pre">mass1</span></code> if they exist). You can disable
+repartitioning of the end-state masses by setting <code class="docutils literal notranslate"><span class="pre">include_end_states</span></code>
+to <code class="docutils literal notranslate"><span class="pre">False</span></code>. You can choose to repartition specific mass properties by
+passing in a property map, e.g. <code class="docutils literal notranslate"><span class="pre">map={&quot;mass&quot;:</span> <span class="pre">&quot;mass0&quot;}</span></code>.</p>
+</div>
+<p>The repartitioned molecule has the same mass as the original molecule, but
+the hydrogens have been made heavier. The mass of the carbon atoms has been
+reduced to compensate.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">mass</span><span class="p">(),</span> <span class="n">repartitioned_mol</span><span class="o">.</span><span class="n">mass</span><span class="p">())</span>
+<span class="go">30.068 g mol-1 30.068 g mol-1</span>
+</pre></div>
+</div>
+<p>It is normal to only repartition the hydrogen masses of perturbable molecules.
+This lets us disable the constraints on the perturbable molecules, but
+still use a large timestep (e.g. 3 fs or 4 fs). This is because
+the hydrogens on the perturbable molecules would become heavier,
+and so the vibrations of those atoms should have a lower frequency.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">repartitioned_mol</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;4fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;h-bonds&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">perturbable_constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5ps&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">Dynamics(completed=5 ps, energy=-31950.1 kcal mol-1, speed=100.8 ns day-1)</span>
+</pre></div>
+</div>
+<p>This has given us the best of both worlds - a fast simulation with a larger
+timestep, plus no constraints on the perturbable molecules.</p>
+<p>Using this protocol, we can now recalculate the relative free energy of
+ethane and methanol.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="c1"># turn l into the lambda value by dividing by 100</span>
+<span class="gp">... </span>    <span class="n">lambda_value</span> <span class="o">=</span> <span class="n">l</span> <span class="o">/</span> <span class="mf">100.0</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># minimise the system at this lambda value</span>
+<span class="gp">... </span>    <span class="n">min_mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="c1"># create a dynamics object for the system</span>
+<span class="gp">... </span>    <span class="n">d</span> <span class="o">=</span> <span class="n">min_mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;4fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;h-bonds&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="n">perturbable_constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># generate random velocities</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">randomise_velocities</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="c1"># equilibrate, not saving anything</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;2ps&quot;</span><span class="p">,</span> <span class="n">save_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Equilibration complete&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># get the values of lambda for neighbouring windows</span>
+<span class="gp">... </span>    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="p">[</span><span class="n">lambda_value</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">lambda_value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">lambda_windows</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">lambda_value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">lambda_windows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">l</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># run the dynamics, saving the energy every 0.1 ps</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;25ps&quot;</span><span class="p">,</span> <span class="n">energy_frequency</span><span class="o">=</span><span class="s2">&quot;0.1ps&quot;</span><span class="p">,</span> <span class="n">frame_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="gp">... </span>          <span class="n">lambda_windows</span><span class="o">=</span><span class="n">lambda_windows</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dynamics complete&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># stream the EnergyTrajectory to a sire save stream object</span>
+<span class="gp">... </span>    <span class="n">sr</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">energy_trajectory</span><span class="p">(),</span>
+<span class="gp">... </span>                   <span class="sa">f</span><span class="s2">&quot;energy_fast_</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.s3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The simulation runs 33% faster than before, taking about 30 seconds per
+λ-window.</p>
+<p>We can now calculate the free energy using alchemlyb as before;</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">(</span><span class="s2">&quot;energy_fast_*.s3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">BAR</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BAR</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">delta_f_</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">])</span>
+<span class="go">-2.9972763590251836</span>
+</pre></div>
+</div>
+<p>Within error, this is the same free energy as before, but calculated in
+a little less time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The random error on these calculations can be seen in <code class="docutils literal notranslate"><span class="pre">b.d_delta_f</span></code>,
+which shows the error per λ-window is about 0.02 kcal mol-1. Summed over
+the whole λ-coordinate suggest an error of about 0.4 kcal mol-1. You
+could reduce this error by running the simulation for longer
+(e.g. 250 ps per λ-window) or by running multiple repeats and taking
+and average.</p>
+</div>
+</section>
+<section id="complete-example-script">
+<span id="examplefepscript"></span><h2>Complete Example Script<a class="headerlink" href="#complete-example-script" title="Link to this heading">#</a></h2>
+<p>Putting everything together, here is a simple script that does all of the
+work of calculating the relative hydration free energy of ethane
+and methanol. The key parameters (e.g. timestep, constraint, run time,
+λ-values etc) are pulled out as variables at the top. The script then
+runs a dynamics simulation for each λ-window for the water leg, then
+a dynamics simulation using the same parameters and λ-windows for the
+vacuum leg. The free energies are collected and then calculated using BAR
+from alchemlyb. This is a good starting point for you to adapt for your
+own simulations. Or take a look at
+<a class="reference external" href="https://biosimspace.openbiosim.org">BioSimSpace</a> or the upcoming
+<a class="reference external" href="https://github.com/openbiosim/somd2">somd2 software</a> if you are
+interested in higher-level interfaces to this functionality that
+automatically run more complex protocols.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;merged_molecule.s3&quot;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;molecule property is_perturbable&quot;</span><span class="p">):</span>
+    <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">()</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">mol</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">repartition_hydrogen_masses</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mass_factor</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="n">timestep</span> <span class="o">=</span> <span class="s2">&quot;4fs&quot;</span>
+<span class="n">energy_frequency</span> <span class="o">=</span> <span class="s2">&quot;0.1ps&quot;</span>
+
+<span class="n">constraint</span> <span class="o">=</span> <span class="s2">&quot;h-bonds&quot;</span>
+<span class="n">perturbable_constraint</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">equil_time</span> <span class="o">=</span> <span class="s2">&quot;2ps&quot;</span>
+<span class="n">run_time</span> <span class="o">=</span> <span class="s2">&quot;25ps&quot;</span>
+
+<span class="n">lambda_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">/</span> <span class="mf">100.0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Water leg&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lambda_value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># minimise the system at this lambda value</span>
+    <span class="n">min_mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="c1"># create a dynamics object for the system</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">min_mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span>
+        <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+        <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+        <span class="n">constraint</span><span class="o">=</span><span class="n">constraint</span><span class="p">,</span>
+        <span class="n">perturbable_constraint</span><span class="o">=</span><span class="n">perturbable_constraint</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># generate random velocities</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">randomise_velocities</span><span class="p">()</span>
+
+    <span class="c1"># equilibrate, not saving anything</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">equil_time</span><span class="p">,</span> <span class="n">save_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Equilibration complete&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="c1"># get the values of lambda for neighbouring windows</span>
+    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="n">lambda_values</span><span class="p">[</span>
+        <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># run the dynamics, saving the energy every 0.1 ps</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="n">run_time</span><span class="p">,</span>
+        <span class="n">energy_frequency</span><span class="o">=</span><span class="n">energy_frequency</span><span class="p">,</span>
+        <span class="n">frame_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">lambda_windows</span><span class="o">=</span><span class="n">lambda_windows</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dynamics complete&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="c1"># stream the EnergyTrajectory to a sire save stream object</span>
+    <span class="n">sr</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">energy_trajectory</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;energy_water_</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.s3&quot;</span>
+    <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Vacuum leg&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lambda_value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># minimise the system at this lambda value</span>
+    <span class="n">min_mols</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span> <span class="n">vacuum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="c1"># create a dynamics object for the system</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">min_mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span>
+        <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+        <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+        <span class="n">constraint</span><span class="o">=</span><span class="n">constraint</span><span class="p">,</span>
+        <span class="n">perturbable_constraint</span><span class="o">=</span><span class="n">perturbable_constraint</span><span class="p">,</span>
+        <span class="n">vacuum</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># generate random velocities</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">randomise_velocities</span><span class="p">()</span>
+
+    <span class="c1"># equilibrate, not saving anything</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">equil_time</span><span class="p">,</span> <span class="n">save_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Equilibration complete&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="c1"># get the values of lambda for neighbouring windows</span>
+    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="n">lambda_values</span><span class="p">[</span>
+        <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># run the dynamics, saving the energy every 0.1 ps</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="n">run_time</span><span class="p">,</span>
+        <span class="n">energy_frequency</span><span class="o">=</span><span class="n">energy_frequency</span><span class="p">,</span>
+        <span class="n">frame_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">lambda_windows</span><span class="o">=</span><span class="n">lambda_windows</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dynamics complete&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="c1"># stream the EnergyTrajectory to a sire save stream object</span>
+    <span class="n">sr</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">energy_trajectory</span><span class="p">(),</span>
+        <span class="sa">f</span><span class="s2">&quot;energy_vacuum_</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.s3&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">BAR</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">(</span><span class="s2">&quot;energy_water_*.s3&quot;</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">BAR</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">dG_solv</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">delta_f_</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">(</span><span class="s2">&quot;energy_vacuum_*.s3&quot;</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">BAR</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">dG_vac</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">delta_f_</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Water phase:  </span><span class="si">{</span><span class="n">dG_solv</span><span class="si">}</span><span class="s2"> kcal mol-1&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vacuum phase: </span><span class="si">{</span><span class="n">dG_vac</span><span class="si">}</span><span class="s2"> kcal mol-1&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydration free energy: </span><span class="si">{</span><span class="n">dG_solv</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dG_vac</span><span class="si">}</span><span class="s2"> kcal mol-1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The relative hydration free energy calculated using the above script is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Water</span> <span class="n">phase</span><span class="p">:</span>  <span class="o">-</span><span class="mf">3.2587718667371606</span> <span class="n">kcal</span> <span class="n">mol</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">Vacuum</span> <span class="n">phase</span><span class="p">:</span> <span class="mf">2.980451221216327</span> <span class="n">kcal</span> <span class="n">mol</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">Hydration</span> <span class="n">free</span> <span class="n">energy</span><span class="p">:</span> <span class="o">-</span><span class="mf">6.239223087953487</span> <span class="n">kcal</span> <span class="n">mol</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>This is in good agreement with
+<a class="reference external" href="https://www.pure.ed.ac.uk/ws/portalfiles/portal/75900057/20181010_Michel_reprod.pdf">published results from other codes</a>
+which are typically -5.99 kcal mol-1 to -6.26 kcal mol-1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There will be some variation between different codes and different
+protocols, as the convergence of the free energy estimate is sensitive
+to the length of the dynamics simulation at each λ-value. In this case,
+we used very short simulations. Edit the script to increase the amount
+of simulation time per λ-value to get a more accurate result.</p>
+</div>
+<p>This script can be edited to run a longer, more statistically accurate
+by setting <code class="docutils literal notranslate"><span class="pre">run_time</span></code> to a larger value, e.g. 250 ps. On my machine,
+this results in a simulation that takes 5 minutes per λ-window for the
+water phase at 100 ns day-1, and 45 seconds per λ-window for the vacuum
+phase, at 950 ns day-1 (total run time about 120 minutes). The resulting
+free energy is in remarkable agreement with that from the shorter
+simulation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Water</span> <span class="n">phase</span><span class="p">:</span>  <span class="o">-</span><span class="mf">3.3027026336540715</span> <span class="n">kcal</span> <span class="n">mol</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">Vacuum</span> <span class="n">phase</span><span class="p">:</span> <span class="mf">2.9761399609273567</span> <span class="n">kcal</span> <span class="n">mol</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">Hydration</span> <span class="n">free</span> <span class="n">energy</span><span class="p">:</span> <span class="o">-</span><span class="mf">6.278842594581429</span> <span class="n">kcal</span> <span class="n">mol</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>We can check the convergence and get an error estimate as before. First
+the water phase;</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.convergence</span> <span class="kn">import</span> <span class="n">forward_backward_convergence</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.visualisation</span> <span class="kn">import</span> <span class="n">plot_convergence</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s3files</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;energy_water*.s3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s3files</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">s3</span> <span class="ow">in</span> <span class="n">s3files</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">forward_backward_convergence</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_convergence</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important that the dataframes are passed to alchemlyb in
+ascending order of λ-value, or else it will calculate the wrong
+free energy. This is why we had to sort the result of globbing
+the files, and why a file naming scheme was chosen that names
+the files in ascending λ order.</p>
+</div>
+<img alt="Convergence of the free energy estimate for the water phase." src="../../_images/06_06_01.jpg" />
+<p>And now the vacuum phase;</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s3files</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;energy_vacuum*.s3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s3files</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">s3</span> <span class="ow">in</span> <span class="n">s3files</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">forward_backward_convergence</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_convergence</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="Convergence of the free energy estimate for the vacuum phase." src="../../_images/06_06_02.jpg" />
+<p>From the convergence plots and the output printed by alchemlyb, we can
+see that the error on the water leg is 0.02 kcal mol-1, and the error
+on the vacuum leg is 0.01 kcal mol-1. Summed in quadrature, this gives
+an error of 0.022 kcal mol-1 on the hydration free energy. This gives
+a final result of -6.279 ± 0.022 kcal mol-1, which is in good agreement with
+<a class="reference external" href="https://www.pure.ed.ac.uk/ws/portalfiles/portal/75900057/20181010_Michel_reprod.pdf">published results from other codes</a>
+which are in the range of -5.99 kcal mol-1 to -6.26 kcal mol-1.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../blogposts.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Diaries</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="05_free_energy_perturbation.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Running a Free Energy Perturbation Simulation</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 10, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Running Faster Free Energy Simulations</a><ul>
+<li><a class="reference internal" href="#timesteps-and-constraints">Timesteps and Constraints</a></li>
+<li><a class="reference internal" href="#constraints-and-perturbable-molecules">Constraints and Perturbable Molecules</a></li>
+<li><a class="reference internal" href="#hydrogen-mass-repartitioning">Hydrogen Mass Repartitioning</a></li>
+<li><a class="reference internal" href="#complete-example-script">Complete Example Script</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=4dfd88e5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/js/custom.js?v=c9df2d0f"></script>
+    </body>
+</html>

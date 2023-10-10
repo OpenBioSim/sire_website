@@ -248,10 +248,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -445,6 +450,40 @@ be linked to the reference molecule</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.morph.repartition_hydrogen_masses">
+<span class="sig-prename descclassname"><span class="pre">sire.morph.</span></span><span class="sig-name descname"><span class="pre">repartition_hydrogen_masses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_water</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_non_water</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_end_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/morph/_hmr.html#repartition_hydrogen_masses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.morph.repartition_hydrogen_masses" title="Link to this definition">#</a></dt>
+<dd><p>Increase the mass of hydrogen atoms to hmass times * amu, and subtract the
+mass increase from the heavy atom the hydrogen is bonded to.</p>
+<dl class="simple">
+<dt>(based heavily on the repartitionMasses function in</dt><dd><p>Sire.Tools.OpenMMMD)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> (<a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule"><em>sire.mol.Molecule</em></a><em> or </em><em>list</em><em> of </em><em>molecules</em><em>, or </em><a class="reference internal" href="system.html#sire.system.System" title="sire.system.System"><em>System</em></a>) – The molecule(s) whose hydrogen masses should be repartitioned</p></li>
+<li><p><strong>mass_factor</strong> (<em>float</em>) – The factor to multiply the mass of hydrogen atoms by. Using
+the default of 1.5 is known to be a good value to use to
+achieve a 4 fs timestep with the (default) LangevinMiddle integrator</p></li>
+<li><p><strong>ignore_water</strong> (<em>bool</em>) – Whether or not to ignore water molecules (default False)</p></li>
+<li><p><strong>ignore_non_water</strong> (<em>bool</em>) – Whether or not to ignore non-water molecules (default False)</p></li>
+<li><p><strong>include_end_states</strong> (<em>bool</em>) – Whether or not to repartition the masses of the end states
+of perturbable molecules (default True) (i.e. this will
+automatically repartition <em class="xref py py-obj">mass0</em> and <em class="xref py py-obj">mass1</em> in addition
+to <em class="xref py py-obj">mass</em>)</p></li>
+<li><p><strong>map</strong> (<em>dict</em>) – The property map used to identify molecular properties</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The repartitioned molecule(s)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="mol.html#sire.mol.Molecule" title="sire.mol.Molecule">sire.mol.Molecule</a>, list of molecules or <a class="reference internal" href="system.html#sire.system.System" title="sire.system.System">System</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.morph.replica_exchange">
 <span class="sig-prename descclassname"><span class="pre">sire.morph.</span></span><span class="sig-name descname"><span class="pre">replica_exchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replica0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replica1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rangenerator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_velocities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/morph/_repex.html#replica_exchange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.morph.replica_exchange" title="Link to this definition">#</a></dt>
 <dd><p>Perform a replica exchange move between the passed two replicas.
@@ -493,6 +532,39 @@ end state (but not both) are shrunk to <em class="xref py py-obj">length</em>. T
 fewest NaNs).</p>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.morph.to_alchemlyb">
+<span class="sig-prename descclassname"><span class="pre">sire.morph.</span></span><span class="sig-name descname"><span class="pre">to_alchemlyb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_trajectories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/morph/_alchemy.html#to_alchemlyb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.morph.to_alchemlyb" title="Link to this definition">#</a></dt>
+<dd><p>Convert the passed list of energy trajectories into
+a single alchemlyb-compatible DataFrame, ready for
+free energy analysis via alchemlyb.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>energy_trajectories</strong> (<em>list</em><em> of </em><em>sire.maths.EnergyTrajectory objects</em><em>,</em>) – <dl class="simple">
+<dt>list of filenames of s3 files,</dt><dd><p>globbed expression for list of filenames etc.</p>
+</dd>
+</dl>
+<p>A list of EnergyTrajectory objects, each containing the
+energy trajectory for a single simulation at a single
+lambda value.</p>
+</p></li>
+<li><p><strong>temperature</strong> (<em>temperature</em><em>, </em><em>optional</em>) – The temperature of the simulation. If not provided,
+the temperature will be taken from the values in
+each EnergyTrajectory</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A single DataFrame containing the energy trajectories
+from all simulations, ready for free energy analysis
+via alchemlyb.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
         </article>
@@ -526,7 +598,7 @@ fewest NaNs).</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             
@@ -556,8 +628,10 @@ fewest NaNs).</p>
 <li><a class="reference internal" href="#sire.morph.Perturbation.view"><code class="docutils literal notranslate"><span class="pre">Perturbation.view()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#sire.morph.repartition_hydrogen_masses"><code class="docutils literal notranslate"><span class="pre">repartition_hydrogen_masses()</span></code></a></li>
 <li><a class="reference internal" href="#sire.morph.replica_exchange"><code class="docutils literal notranslate"><span class="pre">replica_exchange()</span></code></a></li>
 <li><a class="reference internal" href="#sire.morph.shrink_ghost_atoms"><code class="docutils literal notranslate"><span class="pre">shrink_ghost_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.morph.to_alchemlyb"><code class="docutils literal notranslate"><span class="pre">to_alchemlyb()</span></code></a></li>
 </ul>
 </li>
 </ul>

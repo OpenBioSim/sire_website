@@ -248,10 +248,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -590,6 +595,17 @@ See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/o
 for the full list of options. This will be automatically
 guessed from the timestep if it isn’t set.</p>
 </dd>
+<dt>perturbable_constraint: str</dt><dd><p>The type of constraint to use for perturbable bonds and/or angles,
+e.g. <em class="xref py py-obj">h-bonds</em>, <a class="reference internal" href="#sire.system.System.bonds" title="sire.system.System.bonds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bonds</span></code></a> etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options. This equal the value of <code class="xref py py-obj docutils literal notranslate"><span class="pre">constraint</span></code>
+if it isn’t set.</p>
+</dd>
+<dt>include_constrained_energies: bool</dt><dd><p>Whether or not to include the energies of the perturbable bonds
+and angles. If this is False, then the internal bond or angle
+energy of the perturbable degrees of freedom are not included
+in the total energy, and their forces are not evaluated.</p>
+</dd>
 <dt>schedule: sire.cas.LambdaSchedule</dt><dd><p>The schedule used to control how perturbable forcefield parameters
 should be morphed as a function of lambda. If this is not set
 then a sire.cas.LambdaSchedule.standard_morph() is used.</p>
@@ -621,6 +637,11 @@ specify the temperature.</p>
 microcanonical (NVE) or canonical (NVT) simulation will be
 run if the pressure is not set.</p>
 </dd>
+<dt>vacuum: bool</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
+set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
+replaced by a <a class="reference internal" href="vol.html#sire.vol.Cartesian" title="sire.vol.Cartesian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sire.vol.Cartesian</span></code></a> space, and the
+simulation run in vacuum.</p>
+</dd>
 <dt>shift_delta: length</dt><dd><p>The shift_delta parameter that controls the electrostatic
 and van der Waals softening potential that smooths the
 creation and deletion of ghost atoms during a potential.
@@ -637,6 +658,9 @@ the simulation.</p>
 <dt>fixed: molecule(s) view, search string, int, list[int] etc</dt><dd><p>Anything that can be used to identify the atom or atoms
 that should be fixed in place during the simulation. These
 atoms will not be moved by dynamics.</p>
+</dd>
+<dt>platform: str</dt><dd><p>The name of the OpenMM platform on which to run the dynamics,
+e.g. “CUDA”, “OpenCL”, “Metal” etc.</p>
 </dd>
 <dt>device: str or int</dt><dd><p>The ID of the GPU (or accelerator) used to accelerate
 the simulation. This would be CUDA_DEVICE_ID or similar
@@ -670,10 +694,26 @@ subset of this System)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.system.System.energy_trajectory">
-<span class="sig-name descname"><span class="pre">energy_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.energy_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.energy_trajectory" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">energy_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_alchemlyb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.energy_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.energy_trajectory" title="Link to this definition">#</a></dt>
 <dd><p>Return the energy trajectory for this System. This is the history
 of energies evaluate during any dynamics runs. It could include
-energies calculated at different values of lambda</p>
+energies calculated at different values of lambda.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_pandas</strong> (<em>bool</em>) – Whether or not to return the energy trajectory as a pandas DataFrame.</p></li>
+<li><p><strong>to_alchemlyb</strong> (<em>bool</em>) – Whether or not to return the energy trajectory as a pandas DataFrame
+that is formatted to usable in alchemlyb</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.ensemble">
+<span class="sig-name descname"><span class="pre">ensemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.ensemble"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.ensemble" title="Link to this definition">#</a></dt>
+<dd><p>Return the last ensemble that was used to simulate this system.
+This returns a microcanonical ensemble if None was used</p>
 </dd></dl>
 
 <dl class="py method">
@@ -751,8 +791,19 @@ for the full list of options</p>
 <dt>constraint: str</dt><dd><p>The type of constraint to use for bonds and/or angles, e.g.
 <em class="xref py py-obj">h-bonds</em>, <a class="reference internal" href="#sire.system.System.bonds" title="sire.system.System.bonds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bonds</span></code></a> etc.
 See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
-for the full list of options. This will be automatically
-guessed from the timestep if it isn’t set.</p>
+for the full list of options. This will be <em class="xref py py-obj">none</em> if it hasn’t
+been set.</p>
+</dd>
+<dt>perturbable_constraint: str</dt><dd><p>The type of constraint to use for perturbable bonds and/or angles,
+e.g. <em class="xref py py-obj">h-bonds</em>, <a class="reference internal" href="#sire.system.System.bonds" title="sire.system.System.bonds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bonds</span></code></a> etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options. This equal the value of <code class="xref py py-obj docutils literal notranslate"><span class="pre">constraint</span></code>
+if it isn’t set.</p>
+</dd>
+<dt>include_constrained_energies: bool</dt><dd><p>Whether or not to include the energies of the perturbable bonds
+and angles. If this is False, then the internal bond or angle
+energy of the perturbable degrees of freedom are not included
+in the total energy, and their forces are not evaluated.</p>
 </dd>
 <dt>schedule: sire.cas.LambdaSchedule</dt><dd><p>The schedule used to control how perturbable forcefield parameters
 should be morphed as a function of lambda. If this is not set
@@ -786,6 +837,11 @@ This defaults to 2.0 A.</p>
 softening potential that smooths the creation and deletion
 of ghost atoms during a potential. This defaults to 0.</p>
 </dd>
+<dt>vacuum: bool</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
+set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
+replaced by a <a class="reference internal" href="vol.html#sire.vol.Cartesian" title="sire.vol.Cartesian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sire.vol.Cartesian</span></code></a> space, and the
+simulation run in vacuum.</p>
+</dd>
 <dt>restraints: sire.mm.Restraints or list[sire.mm.Restraints]</dt><dd><p>A single set of restraints, or a list of sets of
 restraints that will be applied to the atoms during
 the simulation.</p>
@@ -793,6 +849,9 @@ the simulation.</p>
 <dt>fixed: molecule(s) view, search string, int, list[int] etc</dt><dd><p>Anything that can be used to identify the atom or atoms
 that should be fixed in place during the simulation. These
 atoms will not be moved by minimisation.</p>
+</dd>
+<dt>platform: str</dt><dd><p>The name of the OpenMM platform on which to run the dynamics,
+e.g. “CUDA”, “OpenCL”, “Metal” etc.</p>
 </dd>
 <dt>device: str or int</dt><dd><p>The ID of the GPU (or accelerator) used to accelerate
 minimisation. This would be CUDA_DEVICE_ID or similar
@@ -945,6 +1004,13 @@ the passed index, if supplied)</p>
 <dt class="sig sig-object py" id="sire.system.System.set_energy_trajectory">
 <span class="sig-name descname"><span class="pre">set_energy_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trajectory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.set_energy_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.set_energy_trajectory" title="Link to this definition">#</a></dt>
 <dd><p>Set the energy trajectory to the passed value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.system.System.set_ensemble">
+<span class="sig-name descname"><span class="pre">set_ensemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/system/_system.html#System.set_ensemble"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.system.System.set_ensemble" title="Link to this definition">#</a></dt>
+<dd><p>Set the ensemble that was last used to simulate this system.
+This is copied into the map[“ensemble”] property</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1114,7 +1180,7 @@ this will be returned for visualisation in a jupyter notebook.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1164,6 +1230,7 @@ this will be returned for visualisation in a jupyter notebook.</p>
 <li><a class="reference internal" href="#sire.system.System.energies"><code class="docutils literal notranslate"><span class="pre">System.energies()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.energy"><code class="docutils literal notranslate"><span class="pre">System.energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.energy_trajectory"><code class="docutils literal notranslate"><span class="pre">System.energy_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.ensemble"><code class="docutils literal notranslate"><span class="pre">System.ensemble()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.evaluate"><code class="docutils literal notranslate"><span class="pre">System.evaluate()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.find"><code class="docutils literal notranslate"><span class="pre">System.find()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.has_property"><code class="docutils literal notranslate"><span class="pre">System.has_property()</span></code></a></li>
@@ -1196,6 +1263,7 @@ this will be returned for visualisation in a jupyter notebook.</p>
 <li><a class="reference internal" href="#sire.system.System.segment"><code class="docutils literal notranslate"><span class="pre">System.segment()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.segments"><code class="docutils literal notranslate"><span class="pre">System.segments()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.set_energy_trajectory"><code class="docutils literal notranslate"><span class="pre">System.set_energy_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#sire.system.System.set_ensemble"><code class="docutils literal notranslate"><span class="pre">System.set_ensemble()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.set_property"><code class="docutils literal notranslate"><span class="pre">System.set_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.set_shared_property"><code class="docutils literal notranslate"><span class="pre">System.set_shared_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.system.System.set_space"><code class="docutils literal notranslate"><span class="pre">System.set_space()</span></code></a></li>

@@ -247,10 +247,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -544,8 +549,10 @@
 <span class="n">_is_using_old_api</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">_is_using_new_api</span> <span class="o">=</span> <span class="kc">None</span>
 
+<span class="n">_is_in_loading_process</span> <span class="o">=</span> <span class="kc">False</span>
 
-<span class="k">def</span> <span class="nf">_load_new_api_modules</span><span class="p">(</span><span class="n">delete_old</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">_load_new_api_modules</span><span class="p">(</span><span class="n">delete_old</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">is_base</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Internal function to load the new API modules, pythonizing</span>
 <span class="sd">    the function names as we go. If `delete_old` is True, then</span>
@@ -556,8 +563,16 @@
 
     <span class="n">_is_using_new_api</span> <span class="o">=</span> <span class="kc">True</span>
 
+    <span class="k">global</span> <span class="n">_is_in_loading_process</span>
+
+    <span class="k">if</span> <span class="n">_is_in_loading_process</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">_is_in_loading_process</span> <span class="o">=</span> <span class="kc">True</span>
+
     <span class="c1"># call Pythonize on all of the new modules</span>
     <span class="kn">from</span> <span class="nn">.legacy</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">Base</span><span class="p">,</span>
         <span class="n">Move</span><span class="p">,</span>
         <span class="n">IO</span><span class="p">,</span>
         <span class="n">System</span><span class="p">,</span>
@@ -566,7 +581,6 @@
         <span class="n">FF</span><span class="p">,</span>
         <span class="n">Mol</span><span class="p">,</span>
         <span class="n">Analysis</span><span class="p">,</span>
-        <span class="n">Base</span><span class="p">,</span>
         <span class="n">CAS</span><span class="p">,</span>
         <span class="n">Cluster</span><span class="p">,</span>
         <span class="n">Convert</span><span class="p">,</span>  <span class="c1"># does not need pythonizing, but importing will make it visible</span>
@@ -581,8 +595,8 @@
 
     <span class="n">_pythonize_modules</span><span class="p">(</span>
         <span class="p">[</span>
-            <span class="n">Analysis</span><span class="o">.</span><span class="n">_Analysis</span><span class="p">,</span>
             <span class="n">Base</span><span class="o">.</span><span class="n">_Base</span><span class="p">,</span>
+            <span class="n">Analysis</span><span class="o">.</span><span class="n">_Analysis</span><span class="p">,</span>
             <span class="n">CAS</span><span class="o">.</span><span class="n">_CAS</span><span class="p">,</span>
             <span class="n">Cluster</span><span class="o">.</span><span class="n">_Cluster</span><span class="p">,</span>
             <span class="n">Error</span><span class="o">.</span><span class="n">_Error</span><span class="p">,</span>
@@ -612,6 +626,18 @@
 
     <span class="k">if</span> <span class="n">have_lazy_import</span><span class="p">:</span>
         <span class="c1"># Now make sure that all new modules have been loaded</span>
+        <span class="c1"># (we need to import base first)</span>
+        <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">base</span>
+
+        <span class="k">if</span> <span class="n">lazy_import</span><span class="o">.</span><span class="n">LazyModule</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">base</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+            <span class="c1"># this module is lazily loaded - use &#39;dir&#39; to load it</span>
+            <span class="nb">dir</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">is_base</span><span class="p">:</span>
+            <span class="c1"># return, as we will only import base here</span>
+            <span class="n">_is_in_loading_process</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">return</span>
+
         <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="p">(</span>
             <span class="n">move</span><span class="p">,</span>
             <span class="n">io</span><span class="p">,</span>
@@ -622,7 +648,6 @@
             <span class="n">ff</span><span class="p">,</span>
             <span class="n">mol</span><span class="p">,</span>
             <span class="n">analysis</span><span class="p">,</span>
-            <span class="n">base</span><span class="p">,</span>
             <span class="n">cas</span><span class="p">,</span>
             <span class="n">cluster</span><span class="p">,</span>
             <span class="n">error</span><span class="p">,</span>
@@ -646,7 +671,6 @@
             <span class="n">ff</span><span class="p">,</span>
             <span class="n">mol</span><span class="p">,</span>
             <span class="n">analysis</span><span class="p">,</span>
-            <span class="n">base</span><span class="p">,</span>
             <span class="n">cas</span><span class="p">,</span>
             <span class="n">cluster</span><span class="p">,</span>
             <span class="n">error</span><span class="p">,</span>
@@ -662,6 +686,8 @@
             <span class="k">if</span> <span class="n">lazy_import</span><span class="o">.</span><span class="n">LazyModule</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
                 <span class="c1"># this module is lazily loaded - use &#39;dir&#39; to load it</span>
                 <span class="nb">dir</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+
+    <span class="n">_is_in_loading_process</span> <span class="o">=</span> <span class="kc">False</span>
 
 
 <div class="viewcode-block" id="use_mixed_api">
@@ -707,10 +733,19 @@
 
 <div class="viewcode-block" id="use_new_api">
 <a class="viewcode-back" href="../../api/sire.html#sire.use_new_api">[docs]</a>
-<span class="k">def</span> <span class="nf">use_new_api</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load Sire using the new (python-style) API. This will be called</span>
+<span class="k">def</span> <span class="nf">use_new_api</span><span class="p">(</span><span class="n">is_base</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load Sire using the new (python-style) API. This will be called</span>
 <span class="sd">    automatically when you load any of the new Python modules, so you</span>
 <span class="sd">    shouldn&#39;t need to call this yourself.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    is_base: bool (defaults to False)</span>
+<span class="sd">        Whether or not this is being called by the sire.base module.</span>
+<span class="sd">        This triggers a special case where we only load sire.base,</span>
+<span class="sd">        and thus avoid circular imports</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">global</span> <span class="n">_is_using_new_api</span><span class="p">,</span> <span class="n">_is_using_old_api</span>
 
@@ -734,7 +769,7 @@
         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
     <span class="c1"># Now bring in the new API</span>
-    <span class="n">_load_new_api_modules</span><span class="p">(</span><span class="n">delete_old</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    <span class="n">_load_new_api_modules</span><span class="p">(</span><span class="n">delete_old</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_base</span><span class="o">=</span><span class="n">is_base</span><span class="p">)</span></div>
 
 
 
@@ -868,7 +903,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             

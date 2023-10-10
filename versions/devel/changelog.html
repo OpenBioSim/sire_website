@@ -248,10 +248,15 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -398,8 +403,8 @@ since the project started in 2005.</p>
 <a class="reference external" href="https://github.com/openbiosim">OpenBioSim</a>
 organisation on <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 </section>
-<section id="september-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.0...2023.4.0">2023.4.0</a> - September 2023<a class="headerlink" href="#september-2023" title="Link to this heading">#</a></h2>
+<section id="october-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.0...2023.4.0">2023.4.0</a> - October 2023<a class="headerlink" href="#october-2023" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Added <code class="docutils literal notranslate"><span class="pre">closest</span></code> and <code class="docutils literal notranslate"><span class="pre">furthest</span></code> keywords to enable searching for the n closest
 or furthest views. This is very general, and is described in the
@@ -418,11 +423,6 @@ will be documented and expanded by subsequent PRs.</p></li>
 deletion of ghost atoms during alchemical free energy simulations.
 Added a new <code class="docutils literal notranslate"><span class="pre">sire.morph</span></code> module that includes functions that should
 make it easier to set up, view and control morphs (perturbations).</p></li>
-<li><p>Added an <code class="docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code> class that lets us record the energy
-trajectory along a dynamics simulation. This includes recording energies
-at different λ-windows to that being simulated, thereby providing
-the raw data for free energy calculations. By default the
-<code class="docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code> is returned to the user as a pandas DataFrame.</p></li>
 <li><p>Forced all new-style modules to import when <em class="xref py py-obj">sr.use_new_api()</em> is called.
 This will make it easier to use sire with multiprocessing.</p></li>
 <li><p>Added option to allow GROMACS water molecules to be flagged as crystal waters.
@@ -461,12 +461,37 @@ This lets you scale restraints as part of a λ-coordinate. This is
 documented in the <span class="xref std std-doc">tutorial &lt;tutorial/part06/04_alchemical_restraints</span>.
 Restraints can be named, meaning that you can scale different restraints
 at different stages and by different values across the λ-coordinate.</p></li>
-<li><p>Please add the changelog entry for your PR here. We will add the link to your PR
-during the code review :-)</p></li>
+<li><p>Added an <a class="reference internal" href="api/maths.html#sire.maths.EnergyTrajectory" title="sire.maths.EnergyTrajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code></a> class that lets us record the
+energy trajectory along a dynamics simulation. This includes recording
+energies at different λ-windows to that being simulated, thereby providing
+the raw data for free energy calculations. By default the
+<code class="docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code> is returned to the user as a pandas DataFrame.</p></li>
+<li><p>Added the ability to export an <a class="reference internal" href="api/maths.html#sire.maths.EnergyTrajectory" title="sire.maths.EnergyTrajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code></a> as
+an alchemlyb-compatible data frame. Added <a class="reference internal" href="api/morph.html#sire.morph.to_alchemlyb" title="sire.morph.to_alchemlyb"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.morph.to_alchemlyb()</span></code></a>
+to convert lots of <code class="docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code> objects (or files containing
+s3 streams) into a single alchemlyb-compatible data frame that is
+ready for analysis. You can now calculate relative hydration and binding
+free energies and analyse the results using alchemlyb. This is documented
+in the <a class="reference internal" href="tutorial/part06/05_free_energy_perturbation.html"><span class="doc">tutorial</span></a>.</p></li>
+<li><p>Added a <a class="reference internal" href="api/morph.html#sire.morph.repartition_hydrogen_masses" title="sire.morph.repartition_hydrogen_masses"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.morph.repartition_hydrogen_masses()</span></code></a> to make it easier to
+repartition hydrogen masses during alchemical free energy simulations.
+Set the default mass factor to 1.5 to support a 4 fs timestep with the
+default <code class="docutils literal notranslate"><span class="pre">LangevinMiddleIntegrator</span></code>.</p></li>
+<li><p>Added support for an Andersen thermostat in the OpenMM dynamics layer.</p></li>
+<li><p>Added support for scaling intramolecular non-bonded scale factors to the
+<code class="docutils literal notranslate"><span class="pre">LambdaLever</span></code>, so that we have rudimentary support for perturbations
+that involve bond breaking and forming.</p></li>
+<li><p>Added support to somd for one or more “permanent” distance restraints. These
+are distance restraints that are always applied, and are never scaled by λ.
+This allows the release of all other distance restraints to a single
+harmonic or flat-bottomed restraint. When the ligand is fully decoupled,
+the free energy of release of the single remaining restraint can be
+computed without simulation. See
+&lt;<a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.jctc.3c00139">https://pubs.acs.org/doi/10.1021/acs.jctc.3c00139</a>&gt; for more details.</p></li>
 </ul>
 </section>
-<section id="id1">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.1...2023.3.2">2023.3.2</a> - September 2023<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="september-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.1...2023.3.2">2023.3.2</a> - September 2023<a class="headerlink" href="#september-2023" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Made sure that a title is written to an AmberRst file, even if the system
 has no name (issue #99).</p></li>
@@ -499,13 +524,9 @@ for water molecules. Added a new <code class="docutils literal notranslate"><spa
 find function in <code class="docutils literal notranslate"><span class="pre">SelectorM&lt;T&gt;</span></code> so that it is not an O(N^2) search. It
 is now roughly O(N), using a hash to lookup at the molecule level, so that
 we don’t have to test individual atoms.</p></li>
-<li><p>Fixed <a href="#id2"><span class="problematic" id="id3">:module:`sire.wrapper.tools.standardstatecorrection`</span></a>. This stopped working after</p></li>
-</ul>
-<blockquote>
-<div><p>the commit <a class="reference external" href="https://github.com/OpenBioSim/sire/commit/e2e370940894315838fb8f65e141baaf07050ce0">https://github.com/OpenBioSim/sire/commit/e2e370940894315838fb8f65e141baaf07050ce0</a>,
-because not all required changes were included.</p>
-</div></blockquote>
-<ul class="simple">
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">StandardStateCorrection</span></code>. This stopped working after
+the commit <a class="reference external" href="https://github.com/OpenBioSim/sire/commit/e2e370940894315838fb8f65e141baaf07050ce0">https://github.com/OpenBioSim/sire/commit/e2e370940894315838fb8f65e141baaf07050ce0</a>,
+because not all required changes were included.</p></li>
 <li><p>Fix for crash when not passing a map to the SelectorImproper constructor</p></li>
 <li><p>Fix for crash when checking a list of atoms rather than a list of molecules</p></li>
 </ul>
@@ -660,8 +681,8 @@ upload to the <code class="docutils literal notranslate"><span class="pre">test<
 to the <code class="docutils literal notranslate"><span class="pre">main</span></code> channel)</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.0...2023.2.1">2023.2.1</a> - April 2023<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.0...2023.2.1">2023.2.1</a> - April 2023<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Added in <code class="docutils literal notranslate"><span class="pre">openmmtools</span></code> as a host requirement. This allows it to be installed in the
 same environment as <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. Note that this changes the dependencies of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
@@ -796,8 +817,8 @@ Chirality, and BondOrder. These are used by the RDKit code and the SDF parser.
 These will be fully exposed in a later release.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.1...2023.1.2">2023.1.2</a> - February 2023<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.1...2023.1.2">2023.1.2</a> - February 2023<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Used clang-format to autoformat all the C++ files.</p></li>
 <li><p>Fixed SDF pickle bug (molecules read from SDF files could not be pickled / unpickled)</p></li>
@@ -837,8 +858,8 @@ to fixing paths on Windows. Now all the integration tests pass on Windows
 not easy).</p></li>
 </ul>
 </section>
-<section id="id6">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Initial release of the OpenBioSim version of sire. The code has been completely
 refurbished using a tutorial-driven development process and has a new
@@ -1370,7 +1391,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1393,18 +1414,18 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#github-openbiosim-january-2023-current">GitHub (OpenBioSim): January 2023 - current</a></li>
-<li><a class="reference internal" href="#september-2023">2023.4.0 - September 2023</a></li>
-<li><a class="reference internal" href="#id1">2023.3.2 - September 2023</a></li>
+<li><a class="reference internal" href="#october-2023">2023.4.0 - October 2023</a></li>
+<li><a class="reference internal" href="#september-2023">2023.3.2 - September 2023</a></li>
 <li><a class="reference internal" href="#july-2023">2023.3.1 - July 2023</a></li>
 <li><a class="reference internal" href="#june-2023">2023.3.0 - June 2023</a></li>
 <li><a class="reference internal" href="#may-2023">2023.2.3 - May 2023</a></li>
 <li><a class="reference internal" href="#april-2023">2023.2.2 - April 2023</a></li>
-<li><a class="reference internal" href="#id4">2023.2.1 - April 2023</a></li>
+<li><a class="reference internal" href="#id1">2023.2.1 - April 2023</a></li>
 <li><a class="reference internal" href="#march-2023">2023.2.0 - March 2023</a></li>
 <li><a class="reference internal" href="#february-2023">2023.1.3 - February 2023</a></li>
-<li><a class="reference internal" href="#id5">2023.1.2 - February 2023</a></li>
+<li><a class="reference internal" href="#id2">2023.1.2 - February 2023</a></li>
 <li><a class="reference internal" href="#january-2023">2023.1.1 - January 2023</a></li>
-<li><a class="reference internal" href="#id6">2023.1.0 - January 2023</a></li>
+<li><a class="reference internal" href="#id3">2023.1.0 - January 2023</a></li>
 <li><a class="reference internal" href="#github-michellab-june-22nd-2015-january-2023">GitHub (michellab): June 22nd 2015 - January 2023</a></li>
 <li><a class="reference internal" href="#google-code-august-7th-2006-april-1st-2015">Google Code: August 7th 2006 - April 1st 2015</a></li>
 <li><a class="reference internal" href="#local-subversion-february-5th-2005-july-25th-2006">Local Subversion: February 5th 2005 - July 25th 2006</a></li>

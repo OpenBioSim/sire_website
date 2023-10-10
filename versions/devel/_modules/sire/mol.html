@@ -247,10 +247,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1802,20 +1807,23 @@
     <span class="n">frame_frequency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">save_velocities</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">perturbable_constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">include_constrained_energies</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">schedule</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">lambda_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">swap_end_states</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ignore_perturbations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">vacuum</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">shift_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">coulomb_power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">restraints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">fixed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">platform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">precision</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a Dynamics object that can be used to perform</span>
@@ -1863,6 +1871,19 @@
 <span class="sd">        for the full list of options. This will be automatically</span>
 <span class="sd">        guessed from the timestep if it isn&#39;t set.</span>
 
+<span class="sd">    perturbable_constraint: str</span>
+<span class="sd">        The type of constraint to use for perturbable bonds and/or angles,</span>
+<span class="sd">        e.g. `h-bonds`, `bonds` etc.</span>
+<span class="sd">        See https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</span>
+<span class="sd">        for the full list of options. This equal the value of `constraint`</span>
+<span class="sd">        if it isn&#39;t set.</span>
+
+<span class="sd">    include_constrained_energies: bool</span>
+<span class="sd">        Whether or not to include the energies of the constrained bonds</span>
+<span class="sd">        and angles. If this is False, then the internal bond or angle</span>
+<span class="sd">        energy of the constrained degrees of freedom are not included</span>
+<span class="sd">        in the total energy, and their forces are not evaluated.</span>
+
 <span class="sd">    schedule: sire.cas.LambdaSchedule</span>
 <span class="sd">        The schedule used to control how perturbable forcefield parameters</span>
 <span class="sd">        should be morphed as a function of lambda. If this is not set</span>
@@ -1900,6 +1921,12 @@
 <span class="sd">        microcanonical (NVE) or canonical (NVT) simulation will be</span>
 <span class="sd">        run if the pressure is not set.</span>
 
+<span class="sd">    vacuum: bool (optional)</span>
+<span class="sd">        Whether or not to run the simulation in vacuum. If this is</span>
+<span class="sd">        set to `True`, then the simulation space automatically be</span>
+<span class="sd">        replaced by a `sire.vol.Cartesian` space, and the</span>
+<span class="sd">        simulation run in vacuum.</span>
+
 <span class="sd">    shift_delta: length</span>
 <span class="sd">        The shift_delta parameter that controls the electrostatic</span>
 <span class="sd">        and van der Waals softening potential that smooths the</span>
@@ -1921,6 +1948,10 @@
 <span class="sd">        that should be fixed in place during the simulation. These</span>
 <span class="sd">        atoms will not be moved by dynamics.</span>
 
+<span class="sd">    platform: str</span>
+<span class="sd">        The name of the OpenMM platform on which to run the dynamics,</span>
+<span class="sd">        e.g. &quot;CUDA&quot;, &quot;OpenCL&quot;, &quot;Metal&quot; etc.</span>
+
 <span class="sd">    device: str or int</span>
 <span class="sd">        The ID of the GPU (or accelerator) used to accelerate</span>
 <span class="sd">        the simulation. This would be CUDA_DEVICE_ID or similar</span>
@@ -1940,7 +1971,12 @@
     <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">System</span>
     <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">u</span>
 
-    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">vacuum</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">):</span>
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;space&quot;</span><span class="p">:</span> <span class="s2">&quot;space&quot;</span><span class="p">})</span>
@@ -1954,7 +1990,12 @@
         <span class="c1"># space is not a shared property, so may be lost when we</span>
         <span class="c1"># convert to molecules. Make sure this doens&#39;t happen by</span>
         <span class="c1"># adding the space directly to the property map</span>
-        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;space&quot;</span><span class="p">]))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;space&quot;</span><span class="p">]))</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+
+            <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
 
     <span class="c1"># Set default values if these have not been set</span>
     <span class="k">if</span> <span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;cutoff&quot;</span><span class="p">):</span>
@@ -2002,17 +2043,24 @@
             <span class="c1"># it must be in the map</span>
             <span class="n">timestep</span> <span class="o">=</span> <span class="nb">map</span><span class="p">[</span><span class="s2">&quot;timestep&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="n">timestep</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">femtosecond</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">timestep</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">femtosecond</span><span class="p">:</span>
             <span class="c1"># need constraint on everything</span>
             <span class="n">constraint</span> <span class="o">=</span> <span class="s2">&quot;bonds-h-angles&quot;</span>
 
+        <span class="k">elif</span> <span class="n">timestep</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">femtosecond</span><span class="p">:</span>
+            <span class="c1"># need constraint on everything</span>
+            <span class="n">constraint</span> <span class="o">=</span> <span class="s2">&quot;h-bonds-h-angles&quot;</span>
+
         <span class="k">elif</span> <span class="n">timestep</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">femtosecond</span><span class="p">:</span>
             <span class="c1"># need it just on H bonds and angles</span>
-            <span class="n">constraint</span> <span class="o">=</span> <span class="s2">&quot;h-bonds-h-angles&quot;</span>
+            <span class="n">constraint</span> <span class="o">=</span> <span class="s2">&quot;h-bonds&quot;</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># can get away with no constraints</span>
             <span class="n">constraint</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span>
+
+    <span class="k">if</span> <span class="n">perturbable_constraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">perturbable_constraint</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">perturbable_constraint</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">temperature</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
@@ -2028,12 +2076,19 @@
     <span class="k">if</span> <span class="n">precision</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;precision&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">precision</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 
+    <span class="k">if</span> <span class="n">include_constrained_energies</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;include_constrained_energies&quot;</span><span class="p">,</span> <span class="n">include_constrained_energies</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;platform&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">platform</span><span class="p">))</span>
+
     <span class="k">return</span> <span class="n">Dynamics</span><span class="p">(</span>
         <span class="n">view</span><span class="p">,</span>
         <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">,</span>
         <span class="n">cutoff_type</span><span class="o">=</span><span class="n">cutoff_type</span><span class="p">,</span>
         <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span>
         <span class="n">constraint</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">constraint</span><span class="p">),</span>
+        <span class="n">perturbable_constraint</span><span class="o">=</span><span class="n">perturbable_constraint</span><span class="p">,</span>
         <span class="n">schedule</span><span class="o">=</span><span class="n">schedule</span><span class="p">,</span>
         <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
         <span class="n">shift_delta</span><span class="o">=</span><span class="n">shift_delta</span><span class="p">,</span>
@@ -2051,18 +2106,21 @@
     <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">cutoff_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">perturbable_constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">include_constrained_energies</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">schedule</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">lambda_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">swap_end_states</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ignore_perturbations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">vacuum</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">shift_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">coulomb_power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">platform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">precision</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">restraints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">fixed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a Minimisation object that can be used to perform</span>
@@ -2080,8 +2138,20 @@
 <span class="sd">        The type of constraint to use for bonds and/or angles, e.g.</span>
 <span class="sd">        `h-bonds`, `bonds` etc.</span>
 <span class="sd">        See https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</span>
-<span class="sd">        for the full list of options. This will be automatically</span>
-<span class="sd">        guessed from the timestep if it isn&#39;t set.</span>
+<span class="sd">        for the full list of options. This is `none` if it is not set.</span>
+
+<span class="sd">    perturbable_constraint: str</span>
+<span class="sd">        The type of constraint to use for perturbable bonds and/or angles,</span>
+<span class="sd">        e.g. `h-bonds`, `bonds` etc.</span>
+<span class="sd">        See https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</span>
+<span class="sd">        for the full list of options. This equal the value of `constraint`</span>
+<span class="sd">        if it isn&#39;t set.</span>
+
+<span class="sd">    include_constrained_energies: bool</span>
+<span class="sd">        Whether or not to include the energies of the perturbable bonds</span>
+<span class="sd">        and angles. If this is False, then the internal bond or angle</span>
+<span class="sd">        energy of the perturbable degrees of freedom are not included</span>
+<span class="sd">        in the total energy, and their forces are not evaluated.</span>
 
 <span class="sd">    schedule: sire.cas.LambdaSchedule</span>
 <span class="sd">        The schedule used to control how perturbable forcefield parameters</span>
@@ -2110,6 +2180,12 @@
 <span class="sd">        is useful if you just want to run standard molecular dynamics</span>
 <span class="sd">        of the reference or perturbed states.</span>
 
+<span class="sd">    vacuum: bool (optional)</span>
+<span class="sd">        Whether or not to run the simulation in vacuum. If this is</span>
+<span class="sd">        set to `True`, then the simulation space automatically be</span>
+<span class="sd">        replaced by a `sire.vol.Cartesian` space, and the</span>
+<span class="sd">        simulation run in vacuum.</span>
+
 <span class="sd">    shift_delta: length</span>
 <span class="sd">        The shift_delta parameter that controls the electrostatic</span>
 <span class="sd">        and van der Waals softening potential that smooths the</span>
@@ -2131,6 +2207,10 @@
 <span class="sd">        that should be fixed in place during the simulation. These</span>
 <span class="sd">        atoms will not be moved by minimisation.</span>
 
+<span class="sd">    platform: str</span>
+<span class="sd">        The name of the OpenMM platform on which to run the dynamics,</span>
+<span class="sd">        e.g. &quot;CUDA&quot;, &quot;OpenCL&quot;, &quot;Metal&quot; etc.</span>
+
 <span class="sd">    device: str or int</span>
 <span class="sd">        The ID of the GPU (or accelerator) used to accelerate</span>
 <span class="sd">        minimisation. This would be CUDA_DEVICE_ID or similar</span>
@@ -2150,7 +2230,12 @@
     <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">System</span>
     <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">u</span>
 
-    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">vacuum</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">):</span>
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;space&quot;</span><span class="p">:</span> <span class="s2">&quot;space&quot;</span><span class="p">})</span>
@@ -2164,7 +2249,12 @@
         <span class="c1"># space is not a shared property, so may be lost when we</span>
         <span class="c1"># convert to molecules. Make sure this doens&#39;t happen by</span>
         <span class="c1"># adding the space directly to the property map</span>
-        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;space&quot;</span><span class="p">]))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;space&quot;</span><span class="p">]))</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+
+            <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
 
     <span class="c1"># Set default values if these have not been set</span>
     <span class="k">if</span> <span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;cutoff&quot;</span><span class="p">):</span>
@@ -2189,7 +2279,16 @@
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;precision&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">precision</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 
     <span class="k">if</span> <span class="n">constraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;constraint&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">constraint</span><span class="p">))</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;constraint&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">constraint</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">perturbable_constraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;perturbable_constraint&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">perturbable_constraint</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">include_constrained_energies</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;include_constrained_energies&quot;</span><span class="p">,</span> <span class="n">include_constrained_energies</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;platform&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">platform</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">Minimisation</span><span class="p">(</span>
         <span class="n">view</span><span class="p">,</span>
@@ -2656,7 +2755,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             

@@ -248,10 +248,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -914,10 +919,17 @@ a duplicated API (e.g. have both X.nAtoms() and X.num_atoms() etc.)</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.use_new_api">
-<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">use_new_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_pythonize.html#use_new_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.use_new_api" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.</span></span><span class="sig-name descname"><span class="pre">use_new_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_base</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/_pythonize.html#use_new_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.use_new_api" title="Link to this definition">#</a></dt>
 <dd><p>Load Sire using the new (python-style) API. This will be called
 automatically when you load any of the new Python modules, so you
 shouldn’t need to call this yourself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>is_base</strong> (<em>bool</em><em> (</em><em>defaults to False</em><em>)</em>) – Whether or not this is being called by the sire.base module.
+This triggers a special case where we only load sire.base,
+and thus avoid circular imports</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -969,7 +981,7 @@ not be used with new code</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             

@@ -247,10 +247,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/03_restraints.html">Restraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -562,26 +567,136 @@
 
 <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">EnergyTrajectory</span><span class="p">,</span> <span class="s2">&quot;to_pandas&quot;</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">_to_pandas</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_to_pandas</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">to_alchemlyb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the energy trajectory as a pandas DataFrame</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        temperature: temperature</span>
+<span class="sd">            The temperature of the simulation. If this is</span>
+<span class="sd">            not set then the temperature from this table&#39;s</span>
+<span class="sd">            `ensemble` or `temperature` property will be</span>
+<span class="sd">            used. Note that you only need a temperature</span>
+<span class="sd">            if you are converting to alchemlyb format.</span>
+
+<span class="sd">        to_alchemlyb: bool</span>
+<span class="sd">            This will format the DataFrame in a way that is</span>
+<span class="sd">            compatible with alchemlyb. This will allow the</span>
+<span class="sd">            DataFrame to be used as part of an alchemlyb</span>
+<span class="sd">            free energy calculation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
         <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">picosecond</span><span class="p">,</span> <span class="n">kcal_per_mol</span>
 
         <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
 
-        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">times</span><span class="p">(</span><span class="n">picosecond</span><span class="o">.</span><span class="n">get_default</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">to_alchemlyb</span><span class="p">:</span>
+            <span class="n">time_unit</span> <span class="o">=</span> <span class="n">picosecond</span>
+            <span class="n">time_unit_string</span> <span class="o">=</span> <span class="s2">&quot;ps&quot;</span>
+
+            <span class="n">energy_unit</span> <span class="o">=</span> <span class="n">kcal_per_mol</span>
+            <span class="n">energy_unit_string</span> <span class="o">=</span> <span class="s2">&quot;kcal/mol&quot;</span>
+
+            <span class="k">if</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># look for the temperature in the ensemble property</span>
+                <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;ensemble&quot;</span><span class="p">):</span>
+                    <span class="n">temperature</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;ensemble&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+
+                <span class="c1"># ok, try the temperature property</span>
+                <span class="k">if</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;temperature&quot;</span><span class="p">):</span>
+                    <span class="n">temperature</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;temperature&quot;</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">&quot;You must specify the temperature of the simulation &quot;</span>
+                        <span class="s2">&quot;when converting to alchemlyb format, or ensure that &quot;</span>
+                        <span class="s2">&quot;the trajectory has an ensemble or temperature &quot;</span>
+                        <span class="s2">&quot;property.&quot;</span>
+                    <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">time_unit</span> <span class="o">=</span> <span class="n">picosecond</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+            <span class="n">time_unit_string</span> <span class="o">=</span> <span class="n">time_unit</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+            <span class="n">energy_unit</span> <span class="o">=</span> <span class="n">kcal_per_mol</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+            <span class="n">energy_unit_string</span> <span class="o">=</span> <span class="n">energy_unit</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">times</span><span class="p">(</span><span class="n">time_unit</span><span class="p">)</span>
+
+        <span class="n">keys</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">label_keys</span><span class="p">()</span>
+        <span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">to_alchemlyb</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;lambda&quot;</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="s2">&quot;fep-lambda&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">labels_as_numbers</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># use float keys if possible</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">column_header</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">column_header</span> <span class="o">=</span> <span class="n">key</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">column_header</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">labels_as_numbers</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">column_header</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">labels</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
         <span class="n">keys</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
         <span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 
-        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-            <span class="n">data</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">energies</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">kcal_per_mol</span><span class="o">.</span><span class="n">get_default</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">to_alchemlyb</span><span class="p">:</span>
+            <span class="n">keys</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;kinetic&quot;</span><span class="p">)</span>
+            <span class="n">keys</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;potential&quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="c1"># use float keys if possible</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">column_header</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">column_header</span> <span class="o">=</span> <span class="n">key</span>
+
+            <span class="n">data</span><span class="p">[</span><span class="n">column_header</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">energies</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">energy_unit</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">to_alchemlyb</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;fep-lambda&quot;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">u</span>
+            <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">kelvin</span>
+
+            <span class="n">df</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">kelvin</span><span class="p">)</span>
+
+        <span class="n">df</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;energy_unit&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">energy_unit_string</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;time_unit&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_unit_string</span>
+
+        <span class="k">return</span> <span class="n">df</span>
+
+    <span class="k">def</span> <span class="nf">_to_alchemlyb</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the energy trajectory as an alchemlyb-formatted pandas DataFrame</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        temperature: temperature</span>
+<span class="sd">            The temperature of the simulation. If this is</span>
+<span class="sd">            not set then the temperature from this table&#39;s</span>
+<span class="sd">            `ensemble` or `temperature` property will be</span>
+<span class="sd">            used.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        pandas.DataFrame</span>
+<span class="sd">            A pandas DataFrame that is compatible with alchemlyb.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span> <span class="n">to_alchemlyb</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">EnergyTrajectory</span><span class="o">.</span><span class="n">to_pandas</span> <span class="o">=</span> <span class="n">_to_pandas</span>
+    <span class="n">EnergyTrajectory</span><span class="o">.</span><span class="n">to_alchemlyb</span> <span class="o">=</span> <span class="n">_to_alchemlyb</span>
 </pre></div>
         </article>
       </div>
@@ -596,7 +711,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 21, 2023</div>
+              Last updated on Oct 10, 2023</div>
           </div>
           <div class="right-details">
             
