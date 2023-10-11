@@ -1,0 +1,770 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Running Faster Free Energy Simulations" href="06_faster_fep.html" /><link rel="prev" title="Alchemical Restraints" href="04_alchemical_restraints.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Running a Free Energy Perturbation Simulation - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css?v=c839eb9e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Part 1 - Loading and Saving</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/07_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Part 2 - Indexing and Searching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part03.html">Part 3 - Molecular Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Part 3 - Molecular Properties</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part03/01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/02_cursors.html">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Part 4 - Measurement, Trajectories and Movement</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part04/01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/05_movement.html">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Part 5 - Interconverting with other Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part06.html">Part 6 - Morphs and Alchemical Free Energies</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Part 6 - Morphs and Alchemical Free Energies</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_merge.html">Merged Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_restraints.html">Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blogposts.html">Diaries</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/trajectory.html">Trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/units.html">Units</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sire.html">sire module</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io_parser.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/morph.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/restraints.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="running-a-free-energy-perturbation-simulation">
+<h1>Running a Free Energy Perturbation Simulation<a class="headerlink" href="#running-a-free-energy-perturbation-simulation" title="Link to this heading">#</a></h1>
+<p>Now that you have your (possibly restrained) alchemical system, you can
+run a free energy perturbation simulation. There are many ways to do this,
+and the exact protocol will depend on what type of free energy you are
+calculating, what level of accuracy you require and what compute resource
+you have available. <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> provides the building blocks to run a
+simulation in any way you like, but in this tutorial we will use the
+a very simple protocol. Take a look at
+<a class="reference external" href="https://biosimspace.openbiosim.org">BioSimSpace</a> or the upcoming
+<a class="reference external" href="https://github.com/openbiosim/somd2">somd2 software</a> if you are
+interested in higher-level interfaces to this functionality that
+automatically run more complex protocols.</p>
+<p>At its simplest, a free energy perturbation simulation consists of a series
+of alchemical molecular dynamics simulations run at different values
+of the alchemical parameter, λ. Let’s start with the ethane to methanol
+merged molecule from the previous section.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;merged_molecule.s3&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
+<span class="go">System( name=BioSimSpace_System num_molecules=4054 num_residues=4054 num_atoms=12167 )</span>
+</pre></div>
+</div>
+<p>And lets link the properties to the reference state, so that we start the
+simulation using the reference state coordinates.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;molecule property is_perturbable&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">()</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Next we will run through 21 evenly-space λ values from 0 to 1. We’ve picked
+21 because it is a reasonable number that should over-sample the λ-coordinate.</p>
+<p>For each λ-value, we will minimise the system, generate random velocities
+from a Boltzmann distribution for the simulation temperature,
+equilibrate the molecules for 2 ps, then
+run dynamics for 25 ps. We will calculate the energy of each simulation at
+each λ-value, plus at the neighbouring λ-values. This will allow us to
+calculate energy differences which we will later use to calculate the
+free energy difference.</p>
+<p>We will calculate these energies every 0.1 ps, and will write them at the
+end of each block of dynamics via the <a class="reference internal" href="../../api/maths.html#sire.maths.EnergyTrajectory" title="sire.maths.EnergyTrajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code></a>
+output which we will stream as a <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> object.</p>
+<p>This will let us subsequently calculate the free energy across λ using
+<a class="reference external" href="https://alchemlyb.readthedocs.io/en/latest/">alchemlyb</a>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="c1"># turn l into the lambda value by dividing by 100</span>
+<span class="gp">... </span>    <span class="n">lambda_value</span> <span class="o">=</span> <span class="n">l</span> <span class="o">/</span> <span class="mf">100.0</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># minimise the system at this lambda value</span>
+<span class="gp">... </span>    <span class="n">min_mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="c1"># create a dynamics object for the system</span>
+<span class="gp">... </span>    <span class="n">d</span> <span class="o">=</span> <span class="n">min_mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;1fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># generate random velocities</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">randomise_velocities</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="c1"># equilibrate, not saving anything</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;2ps&quot;</span><span class="p">,</span> <span class="n">save_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Equilibration complete&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># get the values of lambda for neighbouring windows</span>
+<span class="gp">... </span>    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="p">[</span><span class="n">lambda_value</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">lambda_value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">lambda_windows</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">lambda_value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">lambda_windows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">l</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># run the dynamics, saving the energy every 0.1 ps</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;25ps&quot;</span><span class="p">,</span> <span class="n">energy_frequency</span><span class="o">=</span><span class="s2">&quot;0.1ps&quot;</span><span class="p">,</span> <span class="n">frame_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="gp">... </span>          <span class="n">lambda_windows</span><span class="o">=</span><span class="n">lambda_windows</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dynamics complete&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># stream the EnergyTrajectory to a sire save stream object</span>
+<span class="gp">... </span>    <span class="n">sr</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">energy_trajectory</span><span class="p">(),</span>
+<span class="gp">... </span>                   <span class="sa">f</span><span class="s2">&quot;energy_</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.s3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is a very simple protocol for a free energy simulation, with simulation
+times chosen so that it will run relatively quickly. For example, with a
+modern GPU this should run at about 60 nanoseconds of sampling per day,
+so take only 45 seconds or so for each of the 21 λ-windows.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not enough sampling to calculate a properly converged free energy
+for most molecular systems. You would need to experiment with different
+equilibration and simulation times, or use a more sophisticated algorithm
+implemented via <a class="reference external" href="https://biosimspace.openbiosim.org">BioSimSpace</a> or
+<a class="reference external" href="https://github.com/openbiosim/somd2">somd2</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We set the forwards and backwards λ-values to <code class="docutils literal notranslate"><span class="pre">(l-5)/100.0</span></code> and
+<code class="docutils literal notranslate"><span class="pre">(l+5)/100.0</span></code> so that they exactly match the way we set the reference
+λ-value. This is because alchemlyb matches energies using a
+floating point representation of λ, so small numerical differences
+between, e.g. <code class="docutils literal notranslate"><span class="pre">(l+5)/100.0</span></code> and <code class="docutils literal notranslate"><span class="pre">lambda_value</span> <span class="pre">+</span> <span class="pre">0.05</span></code> will lead
+to errors (as in this case, <code class="docutils literal notranslate"><span class="pre">(l+5)/100.0</span></code> is exactly every 0.05, while
+<code class="docutils literal notranslate"><span class="pre">lambda_value</span> <span class="pre">+</span> <span class="pre">0.05</span></code> has numerical error, meaning some values are
+at, e.g. <code class="docutils literal notranslate"><span class="pre">0.15000000000000002</span></code>).</p>
+</div>
+<p>At the end of the simulation, you should have 21 energy files, one for each
+λ-window. These are called <code class="docutils literal notranslate"><span class="pre">energy_0.00.s3</span></code>, <code class="docutils literal notranslate"><span class="pre">energy_0.05.s3</span></code>, …,
+<code class="docutils literal notranslate"><span class="pre">energy_1.00.s3</span></code>.</p>
+<section id="processing-free-energy-data-using-alchemlyb">
+<h2>Processing Free Energy Data using alchemlyb<a class="headerlink" href="#processing-free-energy-data-using-alchemlyb" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://alchemlyb.readthedocs.io/en/latest/">alchemlyb</a> is a simple
+alchemistry python package for easily analysing the results of free energy
+simulations. They have excellent documentation on their website that you
+can use if you want to go into the details of how to calculate free
+energies.</p>
+<p>Here, we will show a simple BAR analysis of the data that we have just
+generated. We can do this because we have calculated data which
+alchemlyb can convert into reduced potentials for each λ-window.</p>
+<p>First, we need to import alchemlyb</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">alchemlyb</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you see an error then you may need to install (or reinstall)
+alchemlyb. You can do this using conda or mamba, e.g.
+<code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">alchemlyb</span></code>.</p>
+</div>
+<p>Next, we will load all of the <a class="reference internal" href="../../api/maths.html#sire.maths.EnergyTrajectory" title="sire.maths.EnergyTrajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code></a> objects
+for each λ-window, and will convert them into pandas DataFrames arranged
+into an alchemlyb-compatible format. We could do this manually by first
+loading all of the s3 files containing the <a class="reference internal" href="../../api/maths.html#sire.maths.EnergyTrajectory" title="sire.maths.EnergyTrajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code></a>
+objects…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">energy_files</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;energy*.s3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">energy_files</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">energy_file</span> <span class="ow">in</span> <span class="n">energy_files</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">energy_file</span><span class="p">)</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you wanted, you could have put the dataframes generated above
+directly into the <code class="docutils literal notranslate"><span class="pre">dfs</span></code> list here, and not saved them to disk
+via the <code class="docutils literal notranslate"><span class="pre">.s3</span></code> files. However, this would risk you having to re-run
+all of the simulation if you wanted to change the analysis below.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful to load the DataFrames in λ-order. The <code class="docutils literal notranslate"><span class="pre">glob</span></code> function
+can return the files in a random order, hence why we need to sort
+this list. This sort only works because we have used a naming convention
+for the files that puts them in λ-order. They must be in the right
+order or else alchemlyb will calculate the free energy incorrectly
+(it uses the column-order rather than the λ-order when calculating
+free energies).</p>
+</div>
+<p>…then joining them together all of these DataFrames into a single
+DataFrame…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">                         0.00          0.05  0.10  0.15  0.20  0.25  0.30  0.35  ...  0.65  0.70  0.75  0.80  0.85  0.90          0.95          1.00</span>
+<span class="go">time fep-lambda                                                                  ...</span>
+<span class="go">2.1  0.0        -39300.750665 -39301.636585   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN           NaN           NaN</span>
+<span class="go">2.2  0.0        -39231.737759 -39232.504175   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN           NaN           NaN</span>
+<span class="go">2.3  0.0        -38982.663906 -38982.683430   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN           NaN           NaN</span>
+<span class="go">2.4  0.0        -38950.308505 -38950.357904   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN           NaN           NaN</span>
+<span class="go">2.5  0.0        -38732.275522 -38733.221193   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN           NaN           NaN</span>
+<span class="go">...                       ...           ...   ...   ...   ...   ...   ...   ...  ...   ...   ...   ...   ...   ...   ...           ...           ...</span>
+<span class="go">26.6 1.0                  NaN           NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN -37208.485229 -37208.880770</span>
+<span class="go">26.7 1.0                  NaN           NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN -37332.051194 -37332.476611</span>
+<span class="go">26.8 1.0                  NaN           NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN -37276.392733 -37276.609020</span>
+<span class="go">26.9 1.0                  NaN           NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN -37234.238097 -37234.603762</span>
+<span class="go">27.0 1.0                  NaN           NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN -37268.684798 -37269.319345</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not worry about the large number of <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values. These just show that
+we have only calculated free energy differences along the diagonal of this
+DataFrame, i.e. only between the simulated and neighbouring λ-windows.</p>
+</div>
+<p>…or we can use the in-build <a class="reference internal" href="../../api/morph.html#sire.morph.to_alchemlyb" title="sire.morph.to_alchemlyb"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.morph.to_alchemlyb()</span></code></a> function to
+do all of the above for us.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">(</span><span class="s2">&quot;energy*.s3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This function is not only quicker, but it will automatically sort the
+data by λ-value, meaning that you don’t need to worry about the naming
+convention of your files.</p>
+<p>Now we can tell alchemlyb to calculate the free energy using the BAR method.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">BAR</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BAR</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">delta_f_</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">])</span>
+<span class="go">-3.009332126465953</span>
+</pre></div>
+</div>
+<p>You can get a convergence plot, showing how the free energy changes as
+a function of the simulation length using the <code class="docutils literal notranslate"><span class="pre">convergence_plot</span></code> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.convergence</span> <span class="kn">import</span> <span class="n">forward_backward_convergence</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.visualisation</span> <span class="kn">import</span> <span class="n">plot_convergence</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">forward_backward_convergence</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_convergence</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="Convergence of the free energy estimate as a function of the fraction of simulation length" src="../../_images/06_05_01.jpg" />
+<p>All of this shows that the relative free energy for the perturbation of
+ethane to methanol in water is about -3.0 kcal mol-1.</p>
+<p>To get the relative hydration free energy, we would need to complete the
+cycle by calculating the relative free energy for the perturbation in the
+gas phase. We could do this using this code (which is almost identical to
+above, except we only simulate the perturbable molecule, and save
+the <a class="reference internal" href="../../api/maths.html#sire.maths.EnergyTrajectory" title="sire.maths.EnergyTrajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code></a> objects to <code class="docutils literal notranslate"><span class="pre">energy_gas_{lambda}.s3</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">energy_{lambda}.s3</span></code>).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;merged_molecule.s3&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecule</span><span class="p">(</span><span class="s2">&quot;molecule property is_perturbable&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">()</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="c1"># turn l into the lambda value by dividing by 100</span>
+<span class="gp">... </span>    <span class="n">lambda_value</span> <span class="o">=</span> <span class="n">l</span> <span class="o">/</span> <span class="mf">100.0</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># minimise the system at this lambda value</span>
+<span class="gp">... </span>    <span class="n">min_mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+<span class="gp">... </span>                               <span class="n">vacuum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="c1"># create a dynamics object for the system</span>
+<span class="gp">... </span>    <span class="n">d</span> <span class="o">=</span> <span class="n">min_mol</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;1fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="n">vacuum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># generate random velocities</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">randomise_velocities</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="c1"># equilibrate, not saving anything</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;2ps&quot;</span><span class="p">,</span> <span class="n">save_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Equilibration complete&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># get the values of lambda for neighbouring windows</span>
+<span class="gp">... </span>    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="p">[</span><span class="n">lambda_value</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">lambda_value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">lambda_windows</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">lambda_value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">lambda_windows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">l</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># run the dynamics, saving the energy every 0.1 ps</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;25ps&quot;</span><span class="p">,</span> <span class="n">energy_frequency</span><span class="o">=</span><span class="s2">&quot;0.1ps&quot;</span><span class="p">,</span> <span class="n">frame_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="gp">... </span>          <span class="n">lambda_windows</span><span class="o">=</span><span class="n">lambda_windows</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dynamics complete&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># stream the EnergyTrajectory to a sire save stream object</span>
+<span class="gp">... </span>    <span class="n">sr</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">energy_trajectory</span><span class="p">(),</span>
+<span class="gp">... </span>                   <span class="sa">f</span><span class="s2">&quot;energy_gas_</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.s3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The option <code class="docutils literal notranslate"><span class="pre">vacuum=True</span></code> tells the minimisation and dynamics to
+remove any simulation space that may be attached to the molecule(s),
+and instead set the space to a <code class="xref py py-class docutils literal notranslate"><span class="pre">Cartesian</span></code> space.
+This has the affect of simulating the molecules in vacuum.</p>
+</div>
+<p>This should run more quickly than the simulation in water, e.g. about
+15 seconds per window (at about 150 nanoseconds per day of sampling).</p>
+<p>We can then analyse the results using the same analysis code, except we
+switch to analysing the <code class="docutils literal notranslate"><span class="pre">energy_gas_{lambda}.s3</span></code> files instead.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">(</span><span class="s2">&quot;energy_gas*.s3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">                     0.00      0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  ...  0.60  0.65  0.70  0.75  0.80  0.85  0.90      0.95      1.00</span>
+<span class="go">time fep-lambda                                                                ...</span>
+<span class="go">2.1  0.0         6.966376  7.115377   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN       NaN       NaN</span>
+<span class="go">2.2  0.0         6.614100  6.434525   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN       NaN       NaN</span>
+<span class="go">2.3  0.0         6.782235  6.831925   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN       NaN       NaN</span>
+<span class="go">2.4  0.0         4.196341  4.227257   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN       NaN       NaN</span>
+<span class="go">2.5  0.0         4.141862  4.205784   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN       NaN       NaN</span>
+<span class="go">...                   ...       ...   ...   ...   ...   ...   ...   ...   ...  ...   ...   ...   ...   ...   ...   ...   ...       ...       ...</span>
+<span class="go">26.6 1.0              NaN       NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN  8.246601  8.707174</span>
+<span class="go">26.7 1.0              NaN       NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN  7.169596  7.100342</span>
+<span class="go">26.8 1.0              NaN       NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN  6.422485  6.466972</span>
+<span class="go">26.9 1.0              NaN       NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN  5.892950  6.129184</span>
+<span class="go">27.0 1.0              NaN       NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...   NaN   NaN   NaN   NaN   NaN   NaN   NaN  7.487893  7.618827</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">BAR</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BAR</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">delta_f_</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">])</span>
+<span class="go">3.186998316374265</span>
+</pre></div>
+</div>
+<p>This shows that the relative free energy for the perturbation of ethane
+to methanol in the gas phase is about 3.2 kcal mol-1. Subtracting this
+from the free energy in water gives a relative hydration free energy of
+about -6.2 kcal mol-1, which is in reasonable agreement with
+<a class="reference external" href="https://www.pure.ed.ac.uk/ws/portalfiles/portal/75900057/20181010_Michel_reprod.pdf">published results from other codes</a>
+which are in the range of -5.99 kcal mol-1 to -6.26 kcal mol-1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The quoted published results are the difference in computed
+absolute hydration free energies calculated using difference codes
+and protocols for ethane and methanol, as reported in table 2
+of the linked paper.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There will be some variation between different codes and different
+protocols, as the convergence of the free energy estimate is sensitive
+to the length of the dynamics simulation at each λ-value. In this case,
+we used very short simulations.</p>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="06_faster_fep.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Running Faster Free Energy Simulations</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="04_alchemical_restraints.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Alchemical Restraints</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 11, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Running a Free Energy Perturbation Simulation</a><ul>
+<li><a class="reference internal" href="#processing-free-energy-data-using-alchemlyb">Processing Free Energy Data using alchemlyb</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=6ab53bef"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/js/custom.js?v=c9df2d0f"></script>
+    </body>
+</html>
