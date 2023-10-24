@@ -395,9 +395,6 @@
 <span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dynamics&quot;</span><span class="p">]</span>
 
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-
-
 <span class="k">class</span> <span class="nc">DynamicsData</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Internal class that is designed to only be used by the Dynamics</span>
@@ -522,25 +519,32 @@
             <span class="n">mols</span> <span class="o">=</span> <span class="n">openmm_extract_coordinates_and_velocities</span><span class="p">(</span>
                 <span class="n">state</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_sire_mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(),</span>
-                <span class="n">perturbable_maps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_omm_mols</span><span class="o">.</span><span class="n">get_lambda_lever</span><span class="p">()</span><span class="o">.</span><span class="n">get_perturbable_molecule_maps</span><span class="p">(),</span>
+                <span class="c1"># black auto-formats this to a long line</span>
+                <span class="n">perturbable_maps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_omm_mols</span><span class="o">.</span><span class="n">get_lambda_lever</span><span class="p">()</span><span class="o">.</span><span class="n">get_perturbable_molecule_maps</span><span class="p">(),</span>  <span class="c1"># noqa: E501</span>
                 <span class="nb">map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">mols</span> <span class="o">=</span> <span class="n">openmm_extract_coordinates</span><span class="p">(</span>
                 <span class="n">state</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_sire_mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(),</span>
-                <span class="n">perturbable_maps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_omm_mols</span><span class="o">.</span><span class="n">get_lambda_lever</span><span class="p">()</span><span class="o">.</span><span class="n">get_perturbable_molecule_maps</span><span class="p">(),</span>
+                <span class="c1"># black auto-formats this to a long line</span>
+                <span class="n">perturbable_maps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_omm_mols</span><span class="o">.</span><span class="n">get_lambda_lever</span><span class="p">()</span><span class="o">.</span><span class="n">get_perturbable_molecule_maps</span><span class="p">(),</span>  <span class="c1"># noqa: E501</span>
                 <span class="nb">map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">,</span>
             <span class="p">)</span>
-
-        <span class="n">space</span> <span class="o">=</span> <span class="n">openmm_extract_space</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_current_step</span> <span class="o">=</span> <span class="n">nsteps_completed</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_sire_mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">to_molecules</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_sire_mols</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">space</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ffinfo</span><span class="o">.</span><span class="n">space</span><span class="p">()</span><span class="o">.</span><span class="n">is_periodic</span><span class="p">():</span>
+            <span class="c1"># don&#39;t change the space if it is infinite - this</span>
+            <span class="c1"># cannot change during the simulation and OpenMM</span>
+            <span class="c1"># likes giving back fake spaces</span>
+            <span class="n">space</span> <span class="o">=</span> <span class="n">openmm_extract_space</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sire_mols</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">space</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ffinfo</span><span class="o">.</span><span class="n">set_space</span><span class="p">(</span><span class="n">space</span><span class="p">)</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_sire_mols</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_time</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ffinfo</span><span class="o">.</span><span class="n">set_space</span><span class="p">(</span><span class="n">space</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_enter_dynamics_block</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_running</span><span class="p">:</span>
@@ -915,39 +919,12 @@
 
 <span class="sd">        - max_iterations (int): The maximum number of iterations to run</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">openmm</span> <span class="kn">import</span> <span class="n">LocalEnergyMinimizer</span>
-        <span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+        <span class="kn">from</span> <span class="nn">..legacy.Convert</span> <span class="kn">import</span> <span class="n">minimise_openmm_context</span>
 
         <span class="k">if</span> <span class="n">max_iterations</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">max_iterations</span> <span class="o">=</span> <span class="mi">0</span>
 
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">ProgressBar</span>
-
-        <span class="k">def</span> <span class="nf">runfunc</span><span class="p">(</span><span class="n">max_its</span><span class="p">):</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">LocalEnergyMinimizer</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_omm_mols</span><span class="p">,</span> <span class="n">maxIterations</span><span class="o">=</span><span class="n">max_its</span>
-                <span class="p">)</span>
-
-                <span class="k">return</span> <span class="mi">0</span>
-            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">e</span>
-
-        <span class="k">with</span> <span class="n">ProgressBar</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;minimisation&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">spinner</span><span class="p">:</span>
-            <span class="n">spinner</span><span class="o">.</span><span class="n">set_speed_unit</span><span class="p">(</span><span class="s2">&quot;checks / s&quot;</span><span class="p">)</span>
-
-            <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
-                <span class="n">run_promise</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">runfunc</span><span class="p">,</span> <span class="n">max_iterations</span><span class="p">)</span>
-
-                <span class="k">while</span> <span class="ow">not</span> <span class="n">run_promise</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="n">result</span> <span class="o">=</span> <span class="n">run_promise</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-                    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-                        <span class="n">spinner</span><span class="o">.</span><span class="n">tick</span><span class="p">()</span>
-                        <span class="k">pass</span>
-
-                <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">result</span>
+        <span class="n">minimise_openmm_context</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_omm_mols</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="n">max_iterations</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_rebuild_and_minimise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_null</span><span class="p">():</span>
@@ -1197,11 +1174,19 @@
                             <span class="c1"># run the current block in the background</span>
                             <span class="n">run_promise</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">runfunc</span><span class="p">,</span> <span class="n">nrun</span><span class="p">)</span>
 
+                            <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+
                             <span class="k">while</span> <span class="ow">not</span> <span class="n">run_promise</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
                                 <span class="k">try</span><span class="p">:</span>
                                     <span class="n">result</span> <span class="o">=</span> <span class="n">run_promise</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
                                 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                                     <span class="k">pass</span>
+
+                            <span class="c1"># catch rare edge case where the promise timed</span>
+                            <span class="c1"># out, but then completed before the .done()</span>
+                            <span class="c1"># test in the next loop iteration</span>
+                            <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                                <span class="n">result</span> <span class="o">=</span> <span class="n">run_promise</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
                             <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                                 <span class="n">completed</span> <span class="o">+=</span> <span class="n">nrun</span>
@@ -1255,12 +1240,13 @@
                                 <span class="k">raise</span> <span class="n">NeedsMinimiseError</span><span class="p">()</span>
 
                             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-                                <span class="s2">&quot;The kinetic energy has exceeded 1000 kcal mol-1 &quot;</span>
-                                <span class="sa">f</span><span class="s2">&quot;per atom (it is </span><span class="si">{</span><span class="n">ke_per_atom</span><span class="si">}</span><span class="s2"> kcal mol-1 atom-1,&quot;</span>
-                                <span class="sa">f</span><span class="s2">&quot; and </span><span class="si">{</span><span class="n">kinetic_energy</span><span class="si">}</span><span class="s2"> kcal mol-1 total). This &quot;</span>
-                                <span class="s2">&quot;suggests that the simulation has become &quot;</span>
-                                <span class="s2">&quot;unstable. Try reducing the timestep and/or &quot;</span>
-                                <span class="s2">&quot;minimising the system and run again.&quot;</span>
+                                <span class="s2">&quot;The kinetic energy has exceeded 1000 kcal &quot;</span>
+                                <span class="sa">f</span><span class="s2">&quot;mol-1 per atom (it is </span><span class="si">{</span><span class="n">ke_per_atom</span><span class="si">}</span><span class="s2"> kcal &quot;</span>
+                                <span class="sa">f</span><span class="s2">&quot;mol-1 atom-1, and </span><span class="si">{</span><span class="n">kinetic_energy</span><span class="si">}</span><span class="s2"> kcal &quot;</span>
+                                <span class="s2">&quot;mol-1 total). This suggests that the &quot;</span>
+                                <span class="s2">&quot;simulation has become unstable. Try reducing &quot;</span>
+                                <span class="s2">&quot;the timestep and/or minimising the system &quot;</span>
+                                <span class="s2">&quot;and run again.&quot;</span>
                             <span class="p">)</span>
 
                 <span class="bp">self</span><span class="o">.</span><span class="n">_walltime</span> <span class="o">+=</span> <span class="p">(</span>
@@ -1953,7 +1939,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 11, 2023</div>
+              Last updated on Oct 24, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1968,7 +1954,7 @@
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=6ab53bef"></script>
+</div><script src="../../../_static/documentation_options.js?v=cecdbff6"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>

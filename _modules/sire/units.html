@@ -549,7 +549,8 @@
     <span class="s2">&quot;yards&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
+<span class="c1"># Imported so that it is pythonized</span>
+<span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>  <span class="c1"># noqa: F401</span>
 
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
 
@@ -1146,7 +1147,7 @@
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">pass</span>
 
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">angstrom</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">angstrom</span><span class="p">)):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;The value &#39;</span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">&#39; of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">length</span><span class="p">)</span><span class="si">}</span><span class="s2"> is &quot;</span>
             <span class="s2">&quot;not a type that is compatible with a GeneralUnit Length&quot;</span>
@@ -1170,7 +1171,7 @@
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">pass</span>
 
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">degrees</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">degrees</span><span class="p">)):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;The value &#39;</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">&#39; of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="si">}</span><span class="s2"> is &quot;</span>
             <span class="s2">&quot;not a type that is compatible with a GeneralUnit angle&quot;</span>
@@ -1196,7 +1197,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 11, 2023</div>
+              Last updated on Oct 24, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1211,7 +1212,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=6ab53bef"></script>
+</div><script src="../../_static/documentation_options.js?v=cecdbff6"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

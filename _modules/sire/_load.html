@@ -692,7 +692,8 @@
 
 <span class="sd">     Examples:</span>
 <span class="sd">         &gt;&gt;&gt; expand(&quot;https://sire.openbiosim.org/m&quot;, &quot;urea.gro&quot;, &quot;urea.top&quot;)</span>
-<span class="sd">         [&quot;https://sire.openbiosim.org/m/urea.gro&quot;, &quot;https://sire.openbiosim.org/n/urea.top&quot;]</span>
+<span class="sd">         [&quot;https://sire.openbiosim.org/m/urea.gro&quot;,</span>
+<span class="sd">          &quot;https://sire.openbiosim.org/n/urea.top&quot;]</span>
 
 <span class="sd">         &gt;&gt;&gt; expand(&quot;input&quot;, [&quot;ala.top&quot;, &quot;ala.crd&quot;])</span>
 <span class="sd">         [&quot;input/ala.top&quot;, &quot;input/ala.crd&quot;]</span>
@@ -839,8 +840,6 @@
 
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">m</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-
-    <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 
@@ -1325,7 +1324,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 11, 2023</div>
+              Last updated on Oct 24, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1340,7 +1339,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=6ab53bef"></script>
+</div><script src="../../_static/documentation_options.js?v=cecdbff6"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
