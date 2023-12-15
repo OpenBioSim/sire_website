@@ -860,6 +860,206 @@ last condition.</p>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">PDB2</span></code></p>
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PDBx</span></span><a class="headerlink" href="#sire.io.parser.PDBx" title="Link to this definition">#</a></dt>
+<dd><p>This class holds a parser for reading and writing PDBxmmcif files</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PDBx)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PDBx</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.assign" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireIO::PDBx {lvalue} assign(SireIO::PDBx {lvalue},SireIO::PDBx)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PDBx</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.clone" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireIO::PDBx clone(SireIO::PDBx)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.construct">
+<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.construct" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>Return the parser that has been constructed by reading in the passed</dt><dd><p>file using the passed properties</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PropPtr&lt;SireIO::MoleculeParser&gt; construct(SireIO::PDBx {lvalue},QString,SireBase::PropertyMap)</p>
+</dd>
+</dl>
+</dd>
+<dt>construct( (PDBx)arg1, (object)lines, (PropertyMap)map) -&gt; object :</dt><dd><p>Return the parser that has been constructed by reading in the passed
+text lines using the passed properties</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PropPtr&lt;SireIO::MoleculeParser&gt; construct(SireIO::PDBx {lvalue},QStringList,SireBase::PropertyMap)</p>
+</dd>
+</dl>
+</dd>
+<dt>construct( (PDBx)arg1, (System)system, (PropertyMap)map) -&gt; object :</dt><dd><p>Return the parser that has been constructed by extract all necessary
+data from the passed SireSystem::System using the specified properties</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PropPtr&lt;SireIO::MoleculeParser&gt; construct(SireIO::PDBx {lvalue},SireSystem::System,SireBase::PropertyMap)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.format_description">
+<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_description" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>formatDescription( (PDBx)arg1) -&gt; object :</dt><dd><p>Return a description of the file format</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString formatDescription(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.format_name">
+<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_name" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>formatName( (PDBx)arg1) -&gt; object :</dt><dd><p>Return the format name that is used to identify this file format within Sire</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString formatName(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.format_suffix">
+<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_suffix" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>formatSuffix( (PDBx)arg1) -&gt; object :</dt><dd><p>Return the suffixes that these files are normally associated with</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QStringList formatSuffix(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.get_frame">
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.get_frame" title="Link to this definition">#</a></dt>
+<dd><p>getFrame( (PDBx)arg1, (int)i) -&gt; Frame :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Frame getFrame(SireIO::PDBx {lvalue},int)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.is_frame">
+<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.is_frame" title="Link to this definition">#</a></dt>
+<dd><p>isFrame( (PDBx)arg1) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isFrame(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.is_topology">
+<span class="sig-name descname"><span class="pre">is_topology</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.is_topology" title="Link to this definition">#</a></dt>
+<dd><p>isTopology( (PDBx)arg1) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isTopology(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.num_atoms">
+<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.num_atoms" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>nAtoms( (PDBx)arg1) -&gt; int :</dt><dd><p>Return the total number of atoms in all molecules.</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int nAtoms(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.num_frames">
+<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.num_frames" title="Link to this definition">#</a></dt>
+<dd><p>nFrames( (PDBx)arg1) -&gt; int :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>int nFrames(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.to_lines">
+<span class="sig-name descname"><span class="pre">to_lines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.to_lines" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>toLines( (PDBx)arg1) -&gt; object :</dt><dd><p>Convert the the parsed data to a collection of PDBx record lines.</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;QString&gt; toLines(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.to_string" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>toString( (PDBx)arg1) -&gt; object :</dt><dd><p>Return a string representation of this parser</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.typename" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>typeName() -&gt; str :</dt><dd><p>Return the C++ name for this class</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.io.parser.PDBx.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.what" title="Link to this definition">#</a></dt>
+<dd><p>Return the C++ name for this class</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireIO::PDBx {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.PRM">
 <span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PRM</span></span><a class="headerlink" href="#sire.io.parser.PRM" title="Link to this definition">#</a></dt>
@@ -1595,7 +1795,7 @@ This is a compressed trajectory format</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1655,6 +1855,24 @@ This is a compressed trajectory format</p>
 <li><a class="reference internal" href="#sire.io.parser.GTOP"><code class="docutils literal notranslate"><span class="pre">GTOP</span></code></a></li>
 <li><a class="reference internal" href="#sire.io.parser.MOL2"><code class="docutils literal notranslate"><span class="pre">MOL2</span></code></a></li>
 <li><a class="reference internal" href="#sire.io.parser.PDB"><code class="docutils literal notranslate"><span class="pre">PDB</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx"><code class="docutils literal notranslate"><span class="pre">PDBx</span></code></a><ul>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.assign"><code class="docutils literal notranslate"><span class="pre">PDBx.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.clone"><code class="docutils literal notranslate"><span class="pre">PDBx.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.construct"><code class="docutils literal notranslate"><span class="pre">PDBx.construct()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.format_description"><code class="docutils literal notranslate"><span class="pre">PDBx.format_description()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.format_name"><code class="docutils literal notranslate"><span class="pre">PDBx.format_name()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.format_suffix"><code class="docutils literal notranslate"><span class="pre">PDBx.format_suffix()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.get_frame"><code class="docutils literal notranslate"><span class="pre">PDBx.get_frame()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.is_frame"><code class="docutils literal notranslate"><span class="pre">PDBx.is_frame()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.is_topology"><code class="docutils literal notranslate"><span class="pre">PDBx.is_topology()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.num_atoms"><code class="docutils literal notranslate"><span class="pre">PDBx.num_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.num_frames"><code class="docutils literal notranslate"><span class="pre">PDBx.num_frames()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.to_lines"><code class="docutils literal notranslate"><span class="pre">PDBx.to_lines()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.to_string"><code class="docutils literal notranslate"><span class="pre">PDBx.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.typename"><code class="docutils literal notranslate"><span class="pre">PDBx.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.io.parser.PDBx.what"><code class="docutils literal notranslate"><span class="pre">PDBx.what()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#sire.io.parser.PRM"><code class="docutils literal notranslate"><span class="pre">PRM</span></code></a></li>
 <li><a class="reference internal" href="#sire.io.parser.PSF"><code class="docutils literal notranslate"><span class="pre">PSF</span></code></a></li>
 <li><a class="reference internal" href="#sire.io.parser.RST"><code class="docutils literal notranslate"><span class="pre">RST</span></code></a></li>
@@ -1732,7 +1950,7 @@ This is a compressed trajectory format</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

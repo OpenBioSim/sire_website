@@ -405,10 +405,17 @@ PDB code as the argument to <a class="reference internal" href="../../api/sire.h
 <code class="docutils literal notranslate"><span class="pre">3NSS</span></code>;</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;3NSS&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
-<span class="go">Downloading from &#39;https://files.rcsb.org/download/3NSS.pdb.gz&#39;...</span>
-<span class="go">Unzipping &#39;./3NSS.pdb.gz&#39;...</span>
+<span class="go">Downloading from &#39;https://files.rcsb.org/download/3NSS.cif.gz&#39;...</span>
+<span class="go">Unzipping &#39;./3NSS.cif.gz&#39;...</span>
 <span class="go">System( name=3NSS num_molecules=1 num_residues=1679 num_atoms=6984 )</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will download a PDBx/mmCIF file from the RCSB website if
+<a class="reference external" href="https://gemmi.readthedocs.io">gemmi</a> is installed. Otherwise,
+it will download an (older format) PDB file. You can use either
+traditional (“3NSS”) or new-style (“pdb_00003nss”) PDB codes.</p>
 </div>
 <p>If you are running in a Jupyter Notebook (or similar) you can view
 the molecule by calling the <a class="reference internal" href="../../api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code></a> function,
@@ -523,7 +530,7 @@ It contains 74 atoms in 1 residue.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -560,7 +567,7 @@ It contains 74 atoms in 1 residue.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

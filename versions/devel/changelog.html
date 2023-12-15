@@ -403,8 +403,104 @@ since the project started in 2005.</p>
 <a class="reference external" href="https://github.com/openbiosim">OpenBioSim</a>
 organisation on <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 </section>
+<section id="march-2024">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.5.0...2024.1.0">2024.1.0</a> - March 2024<a class="headerlink" href="#march-2024" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Please add an item to this changelog when you create your PR</p></li>
+</ul>
+</section>
+<section id="december-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.2...2023.5.0">2023.5.0</a> - December 2023<a class="headerlink" href="#december-2023" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Added a new <code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.options</span></code> module that contains new
+<code class="xref py py-class docutils literal notranslate"><span class="pre">sire.options.Option</span></code> objects to represent configurable options.
+These include documentation, and make it easier to validate and expose
+possible values of configurable options. The API docs for
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Option</span></code> shows how to create your own Option type.
+The unit test in <code class="docutils literal notranslate"><span class="pre">tests/options/test_options.py</span></code> show how to use
+the options. This is integrated into the sire/OpenMM layer.</p></li>
+<li><p>Extended the <code class="docutils literal notranslate"><span class="pre">.atom(s)</span></code>, <code class="docutils literal notranslate"><span class="pre">.residue(s)</span></code>, <code class="docutils literal notranslate"><span class="pre">.bond(s)</span></code> and all other
+indexing functions so that you can pass in an existing view or views as
+the key. This lets you look up views in a container by other views, e.g.
+<code class="docutils literal notranslate"><span class="pre">mols.bond(mols.atoms()[0],</span> <span class="pre">mols.atoms()[1])</span></code> would return the bond
+between the first two atoms in the container <code class="docutils literal notranslate"><span class="pre">mols</span></code>. Also added
+a <code class="docutils literal notranslate"><span class="pre">error_on_missing</span></code> flag to the <code class="docutils literal notranslate"><span class="pre">atoms</span></code>, <code class="docutils literal notranslate"><span class="pre">residues</span></code>, <code class="docutils literal notranslate"><span class="pre">bonds</span></code> etc
+functions, so that you get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> exception if there is no match,
+and <code class="docutils literal notranslate"><span class="pre">error_on_missing</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. For example,
+<code class="docutils literal notranslate"><span class="pre">mols.atoms(&quot;element</span> <span class="pre">C&quot;,</span> <span class="pre">error_on_missing=True)</span></code> would raise an exception
+if there are no carbon atoms in this container. This is default <code class="docutils literal notranslate"><span class="pre">False</span></code>
+to keep existing behaviour, but we would recommend setting this to <code class="docutils literal notranslate"><span class="pre">True</span></code>
+and would like to change the default in the future.</p></li>
+<li><p>Added <a class="reference internal" href="api/convert.html#module-sire.convert" title="sire.convert"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.convert()</span></code></a> support for converting between <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
+objects and <a class="reference external" href="https://gemmi.readthedocs.io">Gemmi</a> objects. This
+has allowed us to support reading and writing of PDBx/mmCIF files.
+We’ve updated <a class="reference internal" href="api/sire.html#sire.load" title="sire.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.load()</span></code></a> to automatically choose PDBs/mmCIF
+files if gemmi-support is available. We’ve also added support for the
+new-style PDB codes (e.g. “pdb_00003nss” instead of “3NSS”). Note that
+this needs a custom Gemmi package build, where “shared libraries” are
+turned on. This should be available from conda-forge in 2024, but for now,
+you will need to clone the <a class="reference external" href="https://github.com/conda-forge/gemmi-feedstock">Gemmi feedstock</a>
+and build the conda package yourself. You will then need to recompile
+sire from source. We will release 2023.5.1 as a conda package once
+the conda-forge Gemmi package with shared library support is available.</p></li>
+<li><p>Optimised the <code class="docutils literal notranslate"><span class="pre">LambdaLever</span></code> class so that it caches the forcefield parameters
+calculated at different lambda values. This means that we don’t have to
+re-calculate the parameters at each lambda update step. This is a
+significant speed-up for alchemical free energy simulations.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.1...2023.4.2">2023.4.2</a> - December 2023<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fixed use of <code class="docutils literal notranslate"><span class="pre">QString::compare</span></code> when comparing molecular properties during
+a water topology swap.</p></li>
+<li><p>Have <a class="reference internal" href="api/io_parser.html#sire.io.parser.RST7" title="sire.io.parser.RST7"><code class="xref py py-class docutils literal notranslate"><span class="pre">RST7</span></code></a> return a list of angles from the
+<code class="docutils literal notranslate"><span class="pre">box_angles()</span></code> function, rather than a <a class="reference internal" href="api/maths.html#sire.maths.Vector" title="sire.maths.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>.
+This prevents the confusing behaviour where the angles are wrongly
+shown in units of angstroms… This fixes issues #106.</p></li>
+<li><p>Added a new <a class="reference internal" href="api/maths.html#sire.maths.rotate" title="sire.maths.rotate"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.maths.rotate()</span></code></a> function, and added the option
+(default True) to rotate velocities as well as coordinates when usign
+a cursor to rotate molecule views. This fixes issue #103.</p></li>
+<li><p>Fix validation of <code class="docutils literal notranslate"><span class="pre">perturbable_constraint</span></code> dynamics option when the string
+includes hyphens. This fixes issue #130.</p></li>
+<li><p>Fix streaming of <a class="reference internal" href="api/vol.html#sire.vol.TriclinicBox" title="sire.vol.TriclinicBox"><code class="xref py py-class docutils literal notranslate"><span class="pre">TriclinicBox</span></code></a> objects. This fixes issue #128.</p></li>
+<li><p>Fix the sire to OpenMM conversion so that null LJ parameters will never have
+a zero sigma value. They will either be sigma=1/epsilon=0 for non-perturbable
+atoms, or sigma=1e-9/epsilon=1e-9 for perturbable atoms.</p></li>
+<li><p>Now catch <code class="docutils literal notranslate"><span class="pre">std::bad_alloc</span></code> and raise it as a <code class="docutils literal notranslate"><span class="pre">MemoryError</span></code>. This
+means that we can catch out-of-memory errors and raise a more
+informative exception.</p></li>
+<li><p>Fixed the bug where the wrong return type from <code class="docutils literal notranslate"><span class="pre">.minimisation()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">.dynamics()</span></code> was returned. This fixes issue #137.</p></li>
+<li><p>Fixed the bug where the cutoff would not be set correctly if a string
+was passed. You can now do <code class="docutils literal notranslate"><span class="pre">mol.dynamics(cutoff=&quot;10A&quot;)</span></code> or
+<code class="docutils literal notranslate"><span class="pre">mol.dynamics(cutoff=&quot;infinite&quot;)</span></code> and it will be processed correctly.
+This also required adding a <code class="docutils literal notranslate"><span class="pre">map.unset(&quot;key&quot;)</span></code> option to <code class="docutils literal notranslate"><span class="pre">PropertyMap</span></code>,
+to make it easier to unset mapped properties.</p></li>
+</ul>
+</section>
 <section id="october-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.0...2023.4.0">2023.4.0</a> - October 2023<a class="headerlink" href="#october-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.0...2023.4.1">2023.4.1</a> - October 2023<a class="headerlink" href="#october-2023" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fixed regression introduced in 2023.4.0 that meant that removed the constraints
+from water molecules that had no internal bonds. These waters would blow up
+as there was nothing holding them together. The need for these constraints is
+now better detected and explicitly added.</p></li>
+<li><p>Significantly sped up the OpenMM layer by checking for similar constraint lengths
+and matching them all to be the same (within 0.05 A for calculated constraints,
+e.g. unbonded atoms or angle constraints) or to R0 for bonds where the bond
+length is within 0.1 A of R0 and the molecule isn’t perturbable.</p></li>
+<li><p>Added a custom minimiser that is based on OpenMM’s LocalEnergyMinimizer,
+but that copes better with exclusion errors, and that has deep integration
+with the progress bar / interuption system.</p></li>
+<li><p>Fixed a bug where the exclusions and exceptions were mismatched for the
+OpenMM CPU platform, leading to exclusion errors.</p></li>
+<li><p>Fixed an issue where the vacuum dynamics and minimisation simulations still
+had a spurious periodic box added when <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> was called.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.0...2023.4.0">2023.4.0</a> - October 2023<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Added <code class="docutils literal notranslate"><span class="pre">closest</span></code> and <code class="docutils literal notranslate"><span class="pre">furthest</span></code> keywords to enable searching for the n closest
 or furthest views. This is very general, and is described in the
@@ -458,7 +554,7 @@ in the <a class="reference internal" href="tutorial/part06/03_restraints.html"><
 new code to let you specify atoms that should be fixed in space.</p></li>
 <li><p>Added support for alchemical restraints to the OpenMM dynamics layer.
 This lets you scale restraints as part of a λ-coordinate. This is
-documented in the <span class="xref std std-doc">tutorial &lt;tutorial/part06/04_alchemical_restraints</span>.
+documented in the <a class="reference internal" href="tutorial/part06/04_alchemical_restraints.html"><span class="doc">tutorial</span></a>.
 Restraints can be named, meaning that you can scale different restraints
 at different stages and by different values across the λ-coordinate.</p></li>
 <li><p>Added an <a class="reference internal" href="api/maths.html#sire.maths.EnergyTrajectory" title="sire.maths.EnergyTrajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnergyTrajectory</span></code></a> class that lets us record the
@@ -681,8 +777,8 @@ upload to the <code class="docutils literal notranslate"><span class="pre">test<
 to the <code class="docutils literal notranslate"><span class="pre">main</span></code> channel)</p></li>
 </ul>
 </section>
-<section id="id1">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.0...2023.2.1">2023.2.1</a> - April 2023<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.0...2023.2.1">2023.2.1</a> - April 2023<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Added in <code class="docutils literal notranslate"><span class="pre">openmmtools</span></code> as a host requirement. This allows it to be installed in the
 same environment as <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. Note that this changes the dependencies of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
@@ -719,7 +815,7 @@ documented in full (together with more detail about 2D views) in
 a <a class="reference internal" href="cheatsheet/view.html"><span class="doc">detailed guide</span></a>.</p></li>
 <li><p>Added support for performing minimisation and molecular dynamics simulations
 based on the OpenMM integration. This is documented in full via both
-<span class="xref std std-doc">a tutorial</span> and a
+<a class="reference internal" href="tutorial/part05/05_dynamics.html"><span class="doc">a tutorial</span></a> and a
 <a class="reference internal" href="cheatsheet/openmm.html"><span class="doc">detailed guide</span></a>.</p></li>
 <li><p>Fixed the Amber PRMTOP <a class="reference external" href="https://github.com/OpenBioSim/sire/commit/397271f4229f3cbed6a4c3b425e4baaf4aae4ec5">dihedral ring bug</a>.</p></li>
 <li><p>Fixed the bug regarding preservation of water properties when
@@ -817,8 +913,8 @@ Chirality, and BondOrder. These are used by the RDKit code and the SDF parser.
 These will be fully exposed in a later release.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.1...2023.1.2">2023.1.2</a> - February 2023<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.1...2023.1.2">2023.1.2</a> - February 2023<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Used clang-format to autoformat all the C++ files.</p></li>
 <li><p>Fixed SDF pickle bug (molecules read from SDF files could not be pickled / unpickled)</p></li>
@@ -858,8 +954,8 @@ to fixing paths on Windows. Now all the integration tests pass on Windows
 not easy).</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Initial release of the OpenBioSim version of sire. The code has been completely
 refurbished using a tutorial-driven development process and has a new
@@ -1104,13 +1200,13 @@ right directory. Updated the pythonizing framework so that we
 only pythonize the C++ layer, and avoid the circular dependencies
 that were causing random import errors (particularly on Windows).</p>
 </dd>
-<dt>[2023.0.2] December 2023: Fix multiple distance restraint bug in SOMD</dt><dd><p>(&#64;fjclark). Add support for PME FEP with SOMD and fix
+<dt>[2023.0.2] December 2022: Fix multiple distance restraint bug in SOMD</dt><dd><p>(&#64;fjclark). Add support for PME FEP with SOMD and fix
 associated bugs (&#64;halx, &#64;jmichel80). Fix CI issues so that
 PRs use the correct URL when triggered by external forks.
 Exclude dummy atoms when repartitioning hydrogen masses.
 Deprecate py37.</p>
 </dd>
-<dt>[2023.0.1] November 2023: Improve handling of HETATM and TER records in</dt><dd><p>PDB files. Fix SOMD selection issues following update to the
+<dt>[2023.0.1] November 2022: Improve handling of HETATM and TER records in</dt><dd><p>PDB files. Fix SOMD selection issues following update to the
 2023 API. Fix writing of steps to SOMD simfile.dat (&#64;fjclark).
 Throw exception when CHAMBER format AMBER topology files are
 detected. Expose toVector() method for the velocity property.
@@ -1124,7 +1220,7 @@ property exists.  Make sure searches are returned in MolIdx
 order. Ensure Sire is built against packages with the “dev”
 label.</p>
 </dd>
-<dt>[2023.0.0] July 2023 - Updated Sire’s API to a more pythonic style.</dt><dd><p>Module names are in lower case, e.g. <em class="xref py py-obj">import Sire</em> becomes
+<dt>[2023.0.0] July 2022 - Updated Sire’s API to a more pythonic style.</dt><dd><p>Module names are in lower case, e.g. <em class="xref py py-obj">import Sire</em> becomes
 <em class="xref py py-obj">import sire</em>, or <em class="xref py py-obj">import sire as sr</em>. Functions are in
 underscore_case. This change is not backwards compatible. To
 support old code, a <em class="xref py py-obj">sire.use_old_api()</em> function has been added.
@@ -1391,7 +1487,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1414,18 +1510,22 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#github-openbiosim-january-2023-current">GitHub (OpenBioSim): January 2023 - current</a></li>
-<li><a class="reference internal" href="#october-2023">2023.4.0 - October 2023</a></li>
+<li><a class="reference internal" href="#march-2024">2024.1.0 - March 2024</a></li>
+<li><a class="reference internal" href="#december-2023">2023.5.0 - December 2023</a></li>
+<li><a class="reference internal" href="#id1">2023.4.2 - December 2023</a></li>
+<li><a class="reference internal" href="#october-2023">2023.4.1 - October 2023</a></li>
+<li><a class="reference internal" href="#id2">2023.4.0 - October 2023</a></li>
 <li><a class="reference internal" href="#september-2023">2023.3.2 - September 2023</a></li>
 <li><a class="reference internal" href="#july-2023">2023.3.1 - July 2023</a></li>
 <li><a class="reference internal" href="#june-2023">2023.3.0 - June 2023</a></li>
 <li><a class="reference internal" href="#may-2023">2023.2.3 - May 2023</a></li>
 <li><a class="reference internal" href="#april-2023">2023.2.2 - April 2023</a></li>
-<li><a class="reference internal" href="#id1">2023.2.1 - April 2023</a></li>
+<li><a class="reference internal" href="#id3">2023.2.1 - April 2023</a></li>
 <li><a class="reference internal" href="#march-2023">2023.2.0 - March 2023</a></li>
 <li><a class="reference internal" href="#february-2023">2023.1.3 - February 2023</a></li>
-<li><a class="reference internal" href="#id2">2023.1.2 - February 2023</a></li>
+<li><a class="reference internal" href="#id4">2023.1.2 - February 2023</a></li>
 <li><a class="reference internal" href="#january-2023">2023.1.1 - January 2023</a></li>
-<li><a class="reference internal" href="#id3">2023.1.0 - January 2023</a></li>
+<li><a class="reference internal" href="#id5">2023.1.0 - January 2023</a></li>
 <li><a class="reference internal" href="#github-michellab-june-22nd-2015-january-2023">GitHub (michellab): June 22nd 2015 - January 2023</a></li>
 <li><a class="reference internal" href="#google-code-august-7th-2006-april-1st-2015">Google Code: August 7th 2006 - April 1st 2015</a></li>
 <li><a class="reference internal" href="#local-subversion-february-5th-2005-july-25th-2006">Local Subversion: February 5th 2005 - July 25th 2006</a></li>
@@ -1440,7 +1540,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>

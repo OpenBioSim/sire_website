@@ -571,7 +571,7 @@
     <span class="n">_is_in_loading_process</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="c1"># call Pythonize on all of the new modules</span>
-    <span class="kn">from</span> <span class="nn">.legacy</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="kn">from</span> <span class="nn">.legacy</span> <span class="kn">import</span> <span class="p">(</span>  <span class="c1"># noqa: F401</span>
         <span class="n">Base</span><span class="p">,</span>
         <span class="n">Move</span><span class="p">,</span>
         <span class="n">IO</span><span class="p">,</span>
@@ -583,7 +583,8 @@
         <span class="n">Analysis</span><span class="p">,</span>
         <span class="n">CAS</span><span class="p">,</span>
         <span class="n">Cluster</span><span class="p">,</span>
-        <span class="n">Convert</span><span class="p">,</span>  <span class="c1"># does not need pythonizing, but importing will make it visible</span>
+        <span class="c1"># doesn&#39;t need pythonizing but importing will make it visible</span>
+        <span class="n">Convert</span><span class="p">,</span>
         <span class="n">Error</span><span class="p">,</span>
         <span class="n">ID</span><span class="p">,</span>
         <span class="n">Maths</span><span class="p">,</span>
@@ -903,7 +904,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -918,7 +919,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

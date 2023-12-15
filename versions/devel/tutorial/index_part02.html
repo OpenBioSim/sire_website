@@ -408,13 +408,11 @@ which we will learn how to do in this part of the tutorial.</p>
 <code class="docutils literal notranslate"><span class="pre">7SA1</span></code> from the <a class="reference external" href="https://www.rcsb.org/structure/7SA1">PDB</a></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;7SA1&quot;</span><span class="p">)</span>
-<span class="go">Downloading from &#39;https://files.rcsb.org/download/7SA1.pdb.gz&#39;...</span>
-<span class="go">7SA1.pdb.gz</span>
-<span class="go">Unzipping &#39;./7SA1.pdb.gz&#39;...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="go">Molecule( 7SA1:2  num_atoms=11728 num_residues=1518 )</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+<span class="go">Downloading from &#39;https://files.rcsb.org/download/7SA1.cif.gz&#39;...</span>
+<span class="go">Unzipping &#39;./7SA1.cif.gz&#39;...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
+<span class="go">System( name=7SA1 num_molecules=26 num_residues=1518 num_atoms=11728 )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="Picture of 7SA1 viewed in NGLView" src="../_images/7SA1.jpg" />
@@ -423,16 +421,23 @@ which we will learn how to do in this part of the tutorial.</p>
 <p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> automatically downloads and unpacks structures from the PDB. Just
 put in the PDB code as the argument to <a class="reference internal" href="../api/sire.html#sire.load" title="sire.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.load()</span></code></a>.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A new-format PDBx/mmCIF file will be downloaded if you have
+<a href="#id1"><span class="problematic" id="id2">`gemmi &lt;&gt;`__</span></a> installed. Otherwise, a legacy-format PDB file will be downloaded.</p>
+</div>
 <p>Molecules are constructed as atoms, which be can be (optionally) arranged
 into residues, chains and segments. We can get the number of each using</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of atoms is </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of atoms is </span><span class="si">{</span><span class="n">mols</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">The number of atoms is 11728</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of residues is </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">num_residues</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of residues is </span><span class="si">{</span><span class="n">mols</span><span class="o">.</span><span class="n">num_residues</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">The number of residues is 1518</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of chains is </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">num_chains</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of chains is </span><span class="si">{</span><span class="n">mols</span><span class="o">.</span><span class="n">num_chains</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">The number of chains is 4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of segments is </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">num_segments</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of segments is </span><span class="si">{</span><span class="n">mols</span><span class="o">.</span><span class="n">num_segments</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">The number of segments is 0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of molecules is </span><span class="si">{</span><span class="n">mols</span><span class="o">.</span><span class="n">num_molecules</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">26</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -482,7 +487,7 @@ into residues, chains and segments. We can get the number of each using</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -497,7 +502,7 @@ into residues, chains and segments. We can get the number of each using</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

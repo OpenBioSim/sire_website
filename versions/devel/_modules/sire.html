@@ -484,7 +484,7 @@
     <span class="k">if</span> <span class="n">need_path</span><span class="p">:</span>
         <span class="c1"># importing openmm should add this path</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="kn">import</span> <span class="nn">openmm</span>
+            <span class="kn">import</span> <span class="nn">openmm</span>  <span class="c1"># noqa: F401 (imported but unused)</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OpenMM import failed!&quot;</span><span class="p">)</span>
             <span class="c1"># Copy the files</span>
@@ -1106,6 +1106,7 @@
     <span class="n">mol</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.mol&quot;</span><span class="p">)</span>
     <span class="n">morph</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.morph&quot;</span><span class="p">)</span>
     <span class="n">move</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.move&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.options&quot;</span><span class="p">)</span>
     <span class="n">qt</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.qt&quot;</span><span class="p">)</span>
     <span class="n">restraints</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.restraints&quot;</span><span class="p">)</span>
     <span class="n">search</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;sire.search&quot;</span><span class="p">)</span>
@@ -1152,7 +1153,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1167,7 +1168,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

@@ -404,6 +404,12 @@ of Molecules) to a sire equivalent</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.convert.gemmi_to_sire">
+<span class="sig-prename descclassname"><span class="pre">sire.convert.</span></span><span class="sig-name descname"><span class="pre">gemmi_to_sire</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/convert.html#gemmi_to_sire"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.gemmi_to_sire" title="Link to this definition">#</a></dt>
+<dd><p>Convert the passed gemmi Structure to the sire equivalent</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.convert.openmm_to_sire">
 <span class="sig-prename descclassname"><span class="pre">sire.convert.</span></span><span class="sig-name descname"><span class="pre">openmm_to_sire</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/convert.html#openmm_to_sire"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm_to_sire" title="Link to this definition">#</a></dt>
 <dd><p>Convert the passed OpenMM.System to the sire equivalent</p>
@@ -421,6 +427,12 @@ list of molecules) to the sire equivalent</p>
 <span class="sig-prename descclassname"><span class="pre">sire.convert.</span></span><span class="sig-name descname"><span class="pre">sire_to_biosimspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/convert.html#sire_to_biosimspace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.sire_to_biosimspace" title="Link to this definition">#</a></dt>
 <dd><p>Convert the passed sire object (either a molecule or list
 of molecules) to a BioSimSpace equivalent</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.convert.sire_to_gemmi">
+<span class="sig-prename descclassname"><span class="pre">sire.convert.</span></span><span class="sig-name descname"><span class="pre">sire_to_gemmi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/convert.html#sire_to_gemmi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.sire_to_gemmi" title="Link to this definition">#</a></dt>
+<dd><p>Convert the passed sire object to a gemmi structure</p>
 </dd></dl>
 
 <dl class="py function">
@@ -525,7 +537,7 @@ from, e.g. an openmm or rdkit molecule to a sire molecule
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -548,9 +560,11 @@ from, e.g. an openmm or rdkit molecule to a sire molecule
             <ul>
 <li><a class="reference internal" href="#">Public API</a><ul>
 <li><a class="reference internal" href="#sire.convert.biosimspace_to_sire"><code class="docutils literal notranslate"><span class="pre">biosimspace_to_sire()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.gemmi_to_sire"><code class="docutils literal notranslate"><span class="pre">gemmi_to_sire()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm_to_sire"><code class="docutils literal notranslate"><span class="pre">openmm_to_sire()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.rdkit_to_sire"><code class="docutils literal notranslate"><span class="pre">rdkit_to_sire()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.sire_to_biosimspace"><code class="docutils literal notranslate"><span class="pre">sire_to_biosimspace()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.sire_to_gemmi"><code class="docutils literal notranslate"><span class="pre">sire_to_gemmi()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.sire_to_openmm"><code class="docutils literal notranslate"><span class="pre">sire_to_openmm()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.sire_to_rdkit"><code class="docutils literal notranslate"><span class="pre">sire_to_rdkit()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.supported_formats"><code class="docutils literal notranslate"><span class="pre">supported_formats()</span></code></a></li>
@@ -570,7 +584,7 @@ from, e.g. an openmm or rdkit molecule to a sire molecule
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

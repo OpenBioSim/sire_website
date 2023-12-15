@@ -401,6 +401,7 @@
     <span class="s2">&quot;kabasch_fit&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Matrix&quot;</span><span class="p">,</span>
     <span class="s2">&quot;pi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rotate&quot;</span><span class="p">,</span>
     <span class="s2">&quot;RanGenerator&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Sphere&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Torsion&quot;</span><span class="p">,</span>
@@ -439,6 +440,61 @@
 
 <span class="n">kabasch</span> <span class="o">=</span> <span class="n">_Maths</span><span class="o">.</span><span class="n">kabasch</span>
 <span class="n">align</span> <span class="o">=</span> <span class="n">_Maths</span><span class="o">.</span><span class="n">align</span>
+
+
+<div class="viewcode-block" id="rotate">
+<a class="viewcode-back" href="../../api/maths.html#sire.maths.rotate">[docs]</a>
+<span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span>
+    <span class="n">point</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quaternion</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rotate the passed point by the passed angle and axis, or the</span>
+<span class="sd">    passed matrix, or the passed quaternion, optionally centering</span>
+<span class="sd">    the rotation about the passed center.</span>
+
+<span class="sd">     point: sire.maths.Vector</span>
+<span class="sd">         The vector to be rotated</span>
+
+<span class="sd">     angle: (float or angle)</span>
+<span class="sd">         The angle to rotate by - this is interpreted as</span>
+<span class="sd">         degrees if you pass in a float. Otherwise use</span>
+<span class="sd">         sire.units.degrees or sire.units.radians to specify</span>
+<span class="sd">         the angle unit. This is superseded by the</span>
+<span class="sd">         matrix and quaternion arguments.</span>
+
+<span class="sd">     axis: sire.maths.Vector (or anything that can convert to a Vector)</span>
+<span class="sd">         The vector about which to rotate. If this is not</span>
+<span class="sd">         specified, and no other rotation specification is</span>
+<span class="sd">         used, then the rotation is about the z axis.</span>
+<span class="sd">         This is superseded by the matrix and</span>
+<span class="sd">         quaternion arguments.</span>
+
+<span class="sd">     quaternion: sire.maths.Quaternion</span>
+<span class="sd">         The Quaternion description of the rotation. Note that,</span>
+<span class="sd">         if you pass this, then the angle, axis and matrix</span>
+<span class="sd">         arguments will be ignored.</span>
+
+<span class="sd">     matrix: sire.maths.Matrix</span>
+<span class="sd">         The 3x3 rotation matrix that describes the rotation.</span>
+<span class="sd">         Note that, if you pass this, then the angle and axis</span>
+<span class="sd">         arguments will be ignored. This is superseded by</span>
+<span class="sd">         the quaternion argument.</span>
+
+<span class="sd">     center: sire.maths.Vector</span>
+<span class="sd">         The center of rotation. Defaults to (0,0,0) if not set.</span>
+
+<span class="sd">     Returns: sire.maths.Vector</span>
+<span class="sd">         The rotated vector</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">create_quaternion</span><span class="p">(</span>
+        <span class="n">angle</span><span class="o">=</span><span class="n">angle</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">matrix</span><span class="o">=</span><span class="n">matrix</span><span class="p">,</span> <span class="n">quaternion</span><span class="o">=</span><span class="n">quaternion</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">center</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_Maths</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">to_matrix</span><span class="p">(),</span> <span class="n">center</span><span class="p">)</span></div>
+
 
 
 <div class="viewcode-block" id="create_quaternion">
@@ -500,14 +556,13 @@
             <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">degrees</span>
 
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">angle</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="n">degrees</span>
-            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-                <span class="k">pass</span>
-
-            <span class="k">try</span><span class="p">:</span>
                 <span class="n">valid_angle</span> <span class="o">=</span> <span class="n">angle</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-                <span class="n">valid_angle</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">angle</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="n">degrees</span>
+                    <span class="n">valid_angle</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">valid_angle</span> <span class="o">=</span> <span class="kc">False</span>
 
             <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_angle</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
@@ -711,7 +766,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -726,7 +781,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

@@ -414,11 +414,6 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">conda</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">if</span> <span class="s2">&quot;CONDA_DEFAULT_ENV&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-        <span class="n">conda_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CONDA_DEFAULT_ENV&quot;</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">conda_env</span> <span class="o">=</span> <span class="kc">None</span>
-
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">conda_base</span><span class="p">,</span> <span class="s2">&quot;python.exe&quot;</span><span class="p">)):</span>
         <span class="c1"># Windows</span>
         <span class="n">conda_bin</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">conda_base</span><span class="p">,</span> <span class="s2">&quot;Library&quot;</span><span class="p">,</span> <span class="s2">&quot;bin&quot;</span><span class="p">)</span>
@@ -474,7 +469,8 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">_v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">version</span><span class="p">)</span>
+                <span class="c1"># Check first that &#39;version&#39; is a number</span>
+                <span class="n">_v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">version</span><span class="p">)</span>  <span class="c1"># noqa: F841</span>
                 <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;==</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">version</span>
             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                 <span class="k">pass</span>
@@ -665,7 +661,7 @@
 <span class="sd">    This will raise a ModuleNotFoundError if the module</span>
 <span class="sd">    has not been imported, and has instead been stubbed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="o">==</span> <span class="n">_ModuleStub</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">_ModuleStub</span><span class="p">):</span>
         <span class="n">module</span><span class="o">.</span><span class="n">this_will_break</span><span class="p">()</span></div>
 
 
@@ -677,7 +673,7 @@
 <span class="sd">    Return whether or not the passed module has indeed</span>
 <span class="sd">    been imported (and thus is not stubbed).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="o">!=</span> <span class="n">_ModuleStub</span></div>
+    <span class="k">return</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">_ModuleStub</span><span class="p">)</span></div>
 
 </pre></div>
         </article>
@@ -693,7 +689,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -708,7 +704,7 @@
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../../../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>

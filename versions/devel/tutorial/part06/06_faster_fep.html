@@ -701,7 +701,9 @@ ethane and methanol.</p>
 <span class="gp">... </span>    <span class="n">lambda_value</span> <span class="o">=</span> <span class="n">l</span> <span class="o">/</span> <span class="mf">100.0</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="c1"># minimise the system at this lambda value</span>
-<span class="gp">... </span>    <span class="n">min_mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">min_mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+<span class="gp">... </span>                                 <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;h-bonds&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                                 <span class="n">perturbable_constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="c1"># create a dynamics object for the system</span>
 <span class="gp">... </span>    <span class="n">d</span> <span class="o">=</span> <span class="n">min_mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;4fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
 <span class="gp">... </span>                          <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
@@ -794,7 +796,15 @@ automatically run more complex protocols.</p>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lambda_value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="c1"># minimise the system at this lambda value</span>
-    <span class="n">min_mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">min_mols</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span>
+            <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+            <span class="n">constraint</span><span class="o">=</span><span class="n">constraint</span><span class="p">,</span>
+            <span class="n">perturbable_constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="p">)</span>
 
     <span class="c1"># create a dynamics object for the system</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">min_mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span>
@@ -814,9 +824,7 @@ automatically run more complex protocols.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 
     <span class="c1"># get the values of lambda for neighbouring windows</span>
-    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="n">lambda_values</span><span class="p">[</span>
-        <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">]</span>
+    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="n">lambda_values</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)]</span>
 
     <span class="c1"># run the dynamics, saving the energy every 0.1 ps</span>
     <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
@@ -837,12 +845,19 @@ automatically run more complex protocols.</p>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lambda_value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># minimise the system at this lambda value</span>
+    <span class="c1"># minimise the system at this lambda value using the</span>
+    <span class="c1"># same constraints as the dynamics (but switching</span>
+    <span class="c1"># off the perturbable constraint)</span>
     <span class="n">min_mols</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span> <span class="n">vacuum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">minimisation</span><span class="p">(</span>
+            <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+            <span class="n">vacuum</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">constraint</span><span class="o">=</span><span class="n">constraint</span><span class="p">,</span>
+            <span class="n">perturbable_constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="o">.</span><span class="n">run</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">return_as_system</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="p">)</span>
 
     <span class="c1"># create a dynamics object for the system</span>
@@ -864,9 +879,7 @@ automatically run more complex protocols.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 
     <span class="c1"># get the values of lambda for neighbouring windows</span>
-    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="n">lambda_values</span><span class="p">[</span>
-        <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">]</span>
+    <span class="n">lambda_windows</span> <span class="o">=</span> <span class="n">lambda_values</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)]</span>
 
     <span class="c1"># run the dynamics, saving the energy every 0.1 ps</span>
     <span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
@@ -1010,7 +1023,7 @@ which are in the range of -5.99 kcal mol-1 to -6.26 kcal mol-1.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 10, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1047,7 +1060,7 @@ which are in the range of -5.99 kcal mol-1 to -6.26 kcal mol-1.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=4dfd88e5"></script>
+</div><script src="../../_static/documentation_options.js?v=b5bdeb13"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
