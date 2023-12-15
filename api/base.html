@@ -397,6 +397,679 @@
 <span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.base" title="Link to this heading">#</a></h1>
 <p><a class="reference internal" href="index_base.html"><span class="doc">View Module Index</span></a></p>
 <dl class="py class">
+<dt class="sig sig-object py" id="sire.base.Properties">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">Properties</span></span><a class="headerlink" href="#sire.base.Properties" title="Link to this definition">#</a></dt>
+<dd><p>This class holds a collection of properties, indexed by name.
+Each property comes complete with a set of metadata.
+The metadata is actually another Properties object,
+and indeed Properties can itself be a Property,
+so allowing Properties to be nested indefinitely.</p>
+<p>Author: Christopher Woods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.add_link">
+<span class="sig-name descname"><span class="pre">add_link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.add_link" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>addLink( (Properties)arg1, (object)key, (object)linked_property) -&gt; None :</dt><dd><dl>
+<dt>Add a link from the property key to the property linked_property.</dt><dd><p>The linked_property will be returned if there is no property
+called key in this set.</p>
+<p>Note that the linked property must already be contained in this set.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void addLink(SireBase::Properties {lvalue},QString,QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.all_metadata">
+<span class="sig-name descname"><span class="pre">all_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.all_metadata" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>allMetadata( (Properties)arg1) -&gt; Properties :</dt><dd><p>Return all of the metadata associated with this properties object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Properties allMetadata(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+<dt>allMetadata( (Properties)arg1, (PropertyName)key) -&gt; Properties :</dt><dd><p>Return the metadata for the property with key key
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Properties allMetadata(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.as_array">
+<span class="sig-name descname"><span class="pre">as_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_array" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>asAnArray( (Property)arg1) -&gt; PropertyList :</dt><dd><p>Return this property converted to an array property. By default, this
+automatically puts this property into a PropertyList and returns that</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PropertyList asAnArray(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.as_boolean">
+<span class="sig-name descname"><span class="pre">as_boolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_boolean" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>asABoolean( (Property)arg1) -&gt; bool :</dt><dd><p>Return this property converted to a bool. This throws an invalid
+cast if this is not possible</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool asABoolean(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.as_double">
+<span class="sig-name descname"><span class="pre">as_double</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_double" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>asADouble( (Property)arg1) -&gt; float :</dt><dd><p>Return this property converted to a double. This throws an invalid
+cast if this is not possible</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>double asADouble(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.as_integer">
+<span class="sig-name descname"><span class="pre">as_integer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_integer" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>asAnInteger( (Property)arg1) -&gt; int :</dt><dd><p>Return this property converted to an integer. This throws an invalid
+cast if this is not possible</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int asAnInteger(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.as_string">
+<span class="sig-name descname"><span class="pre">as_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_string" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>asAString( (Property)arg1) -&gt; object :</dt><dd><p>Return this property converted to a string. This throws an invalid
+cast if this is not possible</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString asAString(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.as_unit">
+<span class="sig-name descname"><span class="pre">as_unit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_unit" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>asAUnit( (Property)arg1) -&gt; GeneralUnit :</dt><dd><p>Return this property converted to a unit</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::GeneralUnit asAUnit(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.assert_contains_metadata">
+<span class="sig-name descname"><span class="pre">assert_contains_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.assert_contains_metadata" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>assertContainsMetadata( (Properties)arg1, (PropertyName)metakey) -&gt; None :</dt><dd><p>Assert that this contains the metadata at metakey metakey</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void assertContainsMetadata(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+<dt>assertContainsMetadata( (Properties)arg1, (PropertyName)key, (PropertyName)metakey) -&gt; None :</dt><dd><p>Assert that this set contains the metadata property for the
+property key with metakey metakey
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void assertContainsMetadata(SireBase::Properties {lvalue},SireBase::PropertyName,SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.assert_contains_property">
+<span class="sig-name descname"><span class="pre">assert_contains_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.assert_contains_property" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>assertContainsProperty( (Properties)arg1, (PropertyName)key) -&gt; None :</dt><dd><p>Assert that this set contains a property with key key
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void assertContainsProperty(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Properties)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.assign" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Properties {lvalue} assign(SireBase::Properties {lvalue},SireBase::Properties)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.clear" title="Link to this definition">#</a></dt>
+<dd><p>Completely clear this object of all properties and metadata</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void clear(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.clone" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Properties clone(SireBase::Properties)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.count" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of properties in this set</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int count(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.get_links">
+<span class="sig-name descname"><span class="pre">get_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.get_links" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getLinks( (Properties)arg1) -&gt; object :</dt><dd><p>Return all of the property links</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QHash&lt;QString, QString&gt; getLinks(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.has_links">
+<span class="sig-name descname"><span class="pre">has_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_links" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>hasLinks( (Properties)arg1) -&gt; bool :</dt><dd><p>Return whether or not there are any property links</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasLinks(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.has_metadata">
+<span class="sig-name descname"><span class="pre">has_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_metadata" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>hasMetadata( (Properties)arg1, (PropertyName)metakey) -&gt; bool :</dt><dd><p>Return whether or not this contains the metadata with metakey metakey</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasMetadata(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+<dt>hasMetadata( (Properties)arg1, (PropertyName)key, (PropertyName)metakey) -&gt; bool :</dt><dd><p>Return whether or not the property with key key contains some
+metadata with the metakey metakey
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasMetadata(SireBase::Properties {lvalue},SireBase::PropertyName,SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.has_property">
+<span class="sig-name descname"><span class="pre">has_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_property" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>hasProperty( (Properties)arg1, (PropertyName)key) -&gt; bool :</dt><dd><p>Return whether or not this contains a property with key key</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasProperty(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.is_array">
+<span class="sig-name descname"><span class="pre">is_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_array" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>isAnArray( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is an array property (or can convert to an
+array property)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isAnArray(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.is_boolean">
+<span class="sig-name descname"><span class="pre">is_boolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_boolean" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>isABoolean( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds a bool (or can convert
+to a bool)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isABoolean(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.is_double">
+<span class="sig-name descname"><span class="pre">is_double</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_double" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>isADouble( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds a double (or can convert
+to a double)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isADouble(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.is_empty">
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_empty" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>isEmpty( (Properties)arg1) -&gt; bool :</dt><dd><p>Return whether this is empty (has no values)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isEmpty(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.is_integer">
+<span class="sig-name descname"><span class="pre">is_integer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_integer" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>isAnInteger( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds an integer (or can convert
+to an integer)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isAnInteger(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.is_string">
+<span class="sig-name descname"><span class="pre">is_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_string" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>isAString( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds a string (or can convert
+to a string)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isAString(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.is_unit">
+<span class="sig-name descname"><span class="pre">is_unit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_unit" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>isAUnit( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds a unit (or can convert
+to a unit)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isAUnit(SireBase::Property {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.keys" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>propertyKeys( (Properties)arg1) -&gt; object :</dt><dd><p>Return the keys for all of the properties in this set</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QStringList propertyKeys(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.metadata">
+<span class="sig-name descname"><span class="pre">metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)metakey</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.metadata" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>Return the metadata at metakey metakey - note that if metakey</dt><dd><p>specifies a value rather than a source, then the value contained
+in the metakey is returned.
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Property metadata(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+<dt>metadata( (Properties)arg1, (PropertyName)metakey, (Property)default_value) -&gt; Property :</dt><dd><p>Return the metadata at metakey metakey - note that if metakey
+specifies a value rather than a source, then the value contained
+in the metakey is returned. If there is no such metadata, and no
+value is contained in the metakey, then default_value is
+returned</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Property metadata(SireBase::Properties {lvalue},SireBase::PropertyName,SireBase::Property)</p>
+</dd>
+</dl>
+</dd>
+<dt>metadata( (Properties)arg1, (PropertyName)key, (PropertyName)metakey) -&gt; Property :</dt><dd><p>Return the metadata at metakey metakey that is associated with
+the property at key key.
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Property metadata(SireBase::Properties {lvalue},SireBase::PropertyName,SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+<dt>metadata( (Properties)arg1, (PropertyName)key, (PropertyName)metakey, (Property)default_value) -&gt; Property :</dt><dd><p>Return the metadata at metakey metakey that is associated with
+the property at key key, or default_value if there is no
+such metadata.</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Property metadata(SireBase::Properties {lvalue},SireBase::PropertyName,SireBase::PropertyName,SireBase::Property)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.metadata_keys">
+<span class="sig-name descname"><span class="pre">metadata_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.metadata_keys" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>metadataKeys( (Properties)arg1) -&gt; object :</dt><dd><p>Return the list of metadata keys</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QStringList metadataKeys(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+<dt>metadataKeys( (Properties)arg1, (PropertyName)key) -&gt; object :</dt><dd><p>Return the list of metadata keys for the property with key key
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QStringList metadataKeys(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.metadata_type">
+<span class="sig-name descname"><span class="pre">metadata_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.metadata_type" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>metadataType( (Properties)arg1, (PropertyName)metakey) -&gt; str :</dt><dd><p>Return the type name of the metadata at metakey metakey
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* metadataType(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+<dt>metadataType( (Properties)arg1, (PropertyName)key, (PropertyName)metakey) -&gt; str :</dt><dd><p>Return the type name of the metadata at metakey metakey
+for the property at key key
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* metadataType(SireBase::Properties {lvalue},SireBase::PropertyName,SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.num_properties">
+<span class="sig-name descname"><span class="pre">num_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.num_properties" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>nProperties( (Properties)arg1) -&gt; int :</dt><dd><p>Return the number of properties in this set</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int nProperties(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.property">
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.property" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>Return the property with key key - note that if</dt><dd><p>key specifies a value rather than a source, then the
+value contained in the key is returned
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Property property(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+<dt>property( (Properties)arg1, (PropertyName)key, (Property)default_value) -&gt; Property :</dt><dd><p>Return the property with key key - note that if
+key specifies a value rather than a source, then the
+value contained in the key is returned. If no such source
+exists, and there is no value in the key, then
+default_value is returned</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::Property property(SireBase::Properties {lvalue},SireBase::PropertyName,SireBase::Property)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.property_keys">
+<span class="sig-name descname"><span class="pre">property_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.property_keys" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>propertyKeys( (Properties)arg1) -&gt; object :</dt><dd><p>Return the keys for all of the properties in this set</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QStringList propertyKeys(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.property_type">
+<span class="sig-name descname"><span class="pre">property_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.property_type" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>propertyType( (Properties)arg1, (PropertyName)key) -&gt; str :</dt><dd><p>Return the type name of the property at key key
+Throw: SireBase::missing_property</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* propertyType(SireBase::Properties {lvalue},SireBase::PropertyName)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.remove_all_links">
+<span class="sig-name descname"><span class="pre">remove_all_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_all_links" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>removeAllLinks( (Properties)arg1) -&gt; None :</dt><dd><p>Remove all property links from this set</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeAllLinks(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.remove_all_metadata">
+<span class="sig-name descname"><span class="pre">remove_all_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_all_metadata" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>removeAllMetadata( (Properties)arg1) -&gt; None :</dt><dd><p>Remove all of the top-level metadata</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeAllMetadata(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+<dt>removeAllMetadata( (Properties)arg1, (object)key) -&gt; None :</dt><dd><p>Remove all of the metadata associated with the property at
+key key</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeAllMetadata(SireBase::Properties {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.remove_link">
+<span class="sig-name descname"><span class="pre">remove_link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_link" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>removeLink( (Properties)arg1, (object)key) -&gt; None :</dt><dd><p>Remove the link associated with the key key</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeLink(SireBase::Properties {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.remove_metadata">
+<span class="sig-name descname"><span class="pre">remove_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_metadata" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>removeMetadata( (Properties)arg1, (object)metakey) -&gt; None :</dt><dd><p>Remove the metadata at metakey metakey</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeMetadata(SireBase::Properties {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+<dt>removeMetadata( (Properties)arg1, (object)key, (object)metakey) -&gt; None :</dt><dd><p>Remove the metadata at metakey metakey for the
+property at key key</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeMetadata(SireBase::Properties {lvalue},QString,QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.remove_property">
+<span class="sig-name descname"><span class="pre">remove_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_property" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>removeProperty( (Properties)arg1, (object)key) -&gt; None :</dt><dd><p>Remove the property with key key and all of its metadata</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeProperty(SireBase::Properties {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.set_metadata">
+<span class="sig-name descname"><span class="pre">set_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.set_metadata" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>setMetadata( (Properties)arg1, (object)metakey, (Property)value) -&gt; None :</dt><dd><p>Set the metadata at metakey metakey to have the value value.
+This replaces any existing metadata with this metakey</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setMetadata(SireBase::Properties {lvalue},QString,SireBase::Property)</p>
+</dd>
+</dl>
+</dd>
+<dt>setMetadata( (Properties)arg1, (object)key, (object)metakey, (Property)value) -&gt; None :</dt><dd><p>Set the metadata at metakey metakey for the property at key key.
+This replaces any existing metadata for this keymetakey pair</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setMetadata(SireBase::Properties {lvalue},QString,QString,SireBase::Property)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.size" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of properties in this set</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int size(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.to_string" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>toString( (Properties)arg1) -&gt; object :</dt><dd><p>Return a string representation of this set of properties</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireBase::Properties {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.typename" title="Link to this definition">#</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.Properties.update_property">
+<span class="sig-name descname"><span class="pre">update_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.update_property" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>updateProperty( (Properties)arg1, (object)key, (Property)value [, (bool)auto_add=True]) -&gt; bool :</dt><dd><dl class="simple">
+<dt>Update the passed property to have the value value. This does</dt><dd><p>an in-place update on the existing property (which must have
+a compatible type). If auto-add is true, then this will add
+the property if it doesnt exist. This returns whether or not
+a property was updated (or added)</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>bool updateProperty(SireBase::Properties {lvalue},QString,SireBase::Property [,bool=True])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="sire.base.PropertyMap">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">PropertyMap</span></span><a class="headerlink" href="#sire.base.PropertyMap" title="Link to this definition">#</a></dt>
 <dd><p>This is the class that holds the collection of user-supplied
@@ -457,6 +1130,13 @@ map[key] = X to map[keysuffix] = X</p>
 <dt>C++ signature :</dt><dd><p>SireBase::PropertyMap clone(SireBase::PropertyMap)</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.get_string">
+<span class="sig-name descname"><span class="pre">get_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.get_string" title="Link to this definition">#</a></dt>
+<dd><p>Return the string value associated with the passed ‘key’</p>
+<p>This returns ‘key’ if there is no value associated</p>
 </dd></dl>
 
 <dl class="py method">
@@ -550,6 +1230,16 @@ of the property called name</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PropertyMap.unset">
+<span class="sig-name descname"><span class="pre">unset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)name</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.unset" title="Link to this definition">#</a></dt>
+<dd><p>Unset the property called name. This will return it to default</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void unset(SireBase::PropertyMap {lvalue},QString)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.what">
 <span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.what" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
@@ -639,7 +1329,7 @@ automatically.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -661,17 +1351,65 @@ automatically.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Public API</a><ul>
+<li><a class="reference internal" href="#sire.base.Properties"><code class="docutils literal notranslate"><span class="pre">Properties</span></code></a><ul>
+<li><a class="reference internal" href="#sire.base.Properties.add_link"><code class="docutils literal notranslate"><span class="pre">Properties.add_link()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.all_metadata"><code class="docutils literal notranslate"><span class="pre">Properties.all_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.as_array"><code class="docutils literal notranslate"><span class="pre">Properties.as_array()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.as_boolean"><code class="docutils literal notranslate"><span class="pre">Properties.as_boolean()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.as_double"><code class="docutils literal notranslate"><span class="pre">Properties.as_double()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.as_integer"><code class="docutils literal notranslate"><span class="pre">Properties.as_integer()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.as_string"><code class="docutils literal notranslate"><span class="pre">Properties.as_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.as_unit"><code class="docutils literal notranslate"><span class="pre">Properties.as_unit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.assert_contains_metadata"><code class="docutils literal notranslate"><span class="pre">Properties.assert_contains_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.assert_contains_property"><code class="docutils literal notranslate"><span class="pre">Properties.assert_contains_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.assign"><code class="docutils literal notranslate"><span class="pre">Properties.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.clear"><code class="docutils literal notranslate"><span class="pre">Properties.clear()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.clone"><code class="docutils literal notranslate"><span class="pre">Properties.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.count"><code class="docutils literal notranslate"><span class="pre">Properties.count()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.get_links"><code class="docutils literal notranslate"><span class="pre">Properties.get_links()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.has_links"><code class="docutils literal notranslate"><span class="pre">Properties.has_links()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.has_metadata"><code class="docutils literal notranslate"><span class="pre">Properties.has_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.has_property"><code class="docutils literal notranslate"><span class="pre">Properties.has_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.is_array"><code class="docutils literal notranslate"><span class="pre">Properties.is_array()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.is_boolean"><code class="docutils literal notranslate"><span class="pre">Properties.is_boolean()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.is_double"><code class="docutils literal notranslate"><span class="pre">Properties.is_double()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.is_empty"><code class="docutils literal notranslate"><span class="pre">Properties.is_empty()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.is_integer"><code class="docutils literal notranslate"><span class="pre">Properties.is_integer()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.is_string"><code class="docutils literal notranslate"><span class="pre">Properties.is_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.is_unit"><code class="docutils literal notranslate"><span class="pre">Properties.is_unit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.keys"><code class="docutils literal notranslate"><span class="pre">Properties.keys()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.metadata"><code class="docutils literal notranslate"><span class="pre">Properties.metadata()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.metadata_keys"><code class="docutils literal notranslate"><span class="pre">Properties.metadata_keys()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.metadata_type"><code class="docutils literal notranslate"><span class="pre">Properties.metadata_type()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.num_properties"><code class="docutils literal notranslate"><span class="pre">Properties.num_properties()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.property"><code class="docutils literal notranslate"><span class="pre">Properties.property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.property_keys"><code class="docutils literal notranslate"><span class="pre">Properties.property_keys()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.property_type"><code class="docutils literal notranslate"><span class="pre">Properties.property_type()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.remove_all_links"><code class="docutils literal notranslate"><span class="pre">Properties.remove_all_links()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.remove_all_metadata"><code class="docutils literal notranslate"><span class="pre">Properties.remove_all_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.remove_link"><code class="docutils literal notranslate"><span class="pre">Properties.remove_link()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.remove_metadata"><code class="docutils literal notranslate"><span class="pre">Properties.remove_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.remove_property"><code class="docutils literal notranslate"><span class="pre">Properties.remove_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.set_metadata"><code class="docutils literal notranslate"><span class="pre">Properties.set_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.size"><code class="docutils literal notranslate"><span class="pre">Properties.size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.to_string"><code class="docutils literal notranslate"><span class="pre">Properties.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.typename"><code class="docutils literal notranslate"><span class="pre">Properties.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.Properties.update_property"><code class="docutils literal notranslate"><span class="pre">Properties.update_property()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#sire.base.PropertyMap"><code class="docutils literal notranslate"><span class="pre">PropertyMap</span></code></a><ul>
 <li><a class="reference internal" href="#sire.base.PropertyMap.add_prefix"><code class="docutils literal notranslate"><span class="pre">PropertyMap.add_prefix()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.add_suffix"><code class="docutils literal notranslate"><span class="pre">PropertyMap.add_suffix()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.assign"><code class="docutils literal notranslate"><span class="pre">PropertyMap.assign()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.clone"><code class="docutils literal notranslate"><span class="pre">PropertyMap.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.get_string"><code class="docutils literal notranslate"><span class="pre">PropertyMap.get_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.is_default"><code class="docutils literal notranslate"><span class="pre">PropertyMap.is_default()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.merge"><code class="docutils literal notranslate"><span class="pre">PropertyMap.merge()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.specified"><code class="docutils literal notranslate"><span class="pre">PropertyMap.specified()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.to_dict"><code class="docutils literal notranslate"><span class="pre">PropertyMap.to_dict()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.to_string"><code class="docutils literal notranslate"><span class="pre">PropertyMap.to_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.typename"><code class="docutils literal notranslate"><span class="pre">PropertyMap.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PropertyMap.unset"><code class="docutils literal notranslate"><span class="pre">PropertyMap.unset()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.PropertyMap.what"><code class="docutils literal notranslate"><span class="pre">PropertyMap.what()</span></code></a></li>
 </ul>
 </li>
@@ -688,7 +1426,7 @@ automatically.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=cecdbff6"></script>
+</div><script src="../_static/documentation_options.js?v=1b6071b6"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

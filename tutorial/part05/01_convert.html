@@ -522,7 +522,7 @@ depend on whether or not you have the package installed in the same conda
 environment as <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>, and whether or not <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> was compiled
 with support for that package.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">supported_formats</span><span class="p">())</span>
-<span class="go">[&#39;biosimspace&#39;, &#39;openmm&#39;, &#39;rdkit&#39;, &#39;sire&#39;]</span>
+<span class="go">[&#39;biosimspace&#39;, &#39;gemmi&#39;, &#39;openmm&#39;, &#39;rdkit&#39;, &#39;sire&#39;]</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -605,7 +605,7 @@ depend on whether or not you have the package installed in the same conda
 environment as <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>, and whether or not <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> was compiled
 with support for that package.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">supported_formats</span><span class="p">())</span>
-<span class="go">[&#39;biosimspace&#39;, &#39;openmm&#39;, &#39;rdkit&#39;, &#39;sire&#39;]</span>
+<span class="go">[&#39;biosimspace&#39;, &#39;gemmi&#39;, &#39;openmm&#39;, &#39;rdkit&#39;, &#39;sire&#39;]</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -656,6 +656,128 @@ extracted from the Context. Please do get in touch with us if you would like
 to learn about these functions, and would like to contribute to coding
 a more complete OpenMM to sire converter.</p>
 </section>
+<section id="gemmi">
+<h2>Gemmi<a class="headerlink" href="#gemmi" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://gemmi.readthedocs.io/en/latest/">Gemmi</a> is a Python library
+developed primarily for use in macromolecular crystallography (MX).
+In particular it can be used to parse PDBx/mmCIF files, refinement
+restraints, reflection data, 3D grid data and dealing with
+crystallographic symmetry. This is useful for structural bioinformatics.</p>
+<p>The <a class="reference internal" href="../../api/convert.html#sire.convert.supported_formats" title="sire.convert.supported_formats"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.convert.supported_formats()</span></code></a> function lists the formats that
+<a class="reference internal" href="../../api/convert.html#module-sire.convert" title="sire.convert"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.convert</span></code></a> supports for the current installation. This will
+depend on whether or not you have the package installed in the same conda
+environment as <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>, and whether or not <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> was compiled
+with support for that package.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">supported_formats</span><span class="p">())</span>
+<span class="go">[&#39;biosimspace&#39;, &#39;gemmi&#39;, &#39;openmm&#39;, &#39;rdkit&#39;, &#39;sire&#39;]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">gemmi</span></code> isn’t listed, then you should quit Python and install
+it, e.g. using the command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">gemmi</span></code>.
+If it still isn’t listed then please raise an issue on the
+<a class="reference external" href="https://github.com/OpenBioSim/sire/issues">sire GitHub repository</a>.</p>
+</div>
+<p><a class="reference internal" href="../../api/convert.html#sire.convert.to" title="sire.convert.to"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.convert.to()</span></code></a> can convert a <a class="reference internal" href="../../api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>, list
+of molecules, or single molecule into a
+<a class="reference external" href="https://gemmi.readthedocs.io/en/latest/mol.html#structure">Gemmi Structure</a>
+object.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi_struct</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="s2">&quot;gemmi&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">gemmi_struct</span><span class="p">)</span>
+<span class="go">&lt;gemmi.Structure  with 1 model(s)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">gemmi_struct</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_all_residue_names</span><span class="p">())</span>
+<span class="go">[&#39;ACE&#39;, &#39;ALA&#39;, &#39;NME&#39;, &#39;WAT&#39;]</span>
+</pre></div>
+</div>
+<p>Passing in a single molecule or subset of molecules will return a
+<a class="reference external" href="https://gemmi.readthedocs.io/en/latest/mol.html#structure">Gemmi Structure</a>
+with just those molecules, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi_struct</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;gemmi&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">gemmi_struct</span><span class="p">)</span>
+<span class="go">&lt;gemmi.Structure  with 1 model(s)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">gemmi_struct</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_all_residue_names</span><span class="p">())</span>
+<span class="go">[&#39;ACE&#39;, &#39;ALA&#39;, &#39;NME&#39;]</span>
+</pre></div>
+</div>
+<p>You can convert a
+<a class="reference external" href="https://gemmi.readthedocs.io/en/latest/mol.html#structure">Gemmi Structure</a>
+back to a <a class="reference internal" href="../../api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> object, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">gemmi_struct</span><span class="p">,</span> <span class="s2">&quot;sire&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
+<span class="go">System( name= num_molecules=1 num_residues=3 num_atoms=22 )</span>
+</pre></div>
+</div>
+<p>This conversion also preserves user-supplied System metadata, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">set_metadata</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;alanine dipeptide&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">set_metadata</span><span class="p">(</span><span class="s2">&quot;residues&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ACE&quot;</span><span class="p">,</span> <span class="s2">&quot;ALA&quot;</span><span class="p">,</span> <span class="s2">&quot;NME&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">set_metadata</span><span class="p">(</span><span class="s2">&quot;atoms&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;element&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">],</span>
+<span class="gp">... </span>                            <span class="s2">&quot;x_coords&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span>
+<span class="gp">... </span>                            <span class="s2">&quot;y_coords&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span>
+<span class="gp">... </span>                            <span class="s2">&quot;z_coords&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="s2">&quot;test.pdbx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would add the following to the PDBx/mmCIF file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data_sire
+loop_
+_atoms.element
+_atoms.x_coords
+_atoms.y_coords
+_atoms.z_coords
+C 0 3 6
+N 1 4 7
+O 2 5 8
+
+_name &quot;alanine dipeptide&quot;
+
+loop_
+_residues.value
+ACE
+ALA
+NME
+</pre></div>
+</div>
+<p>which could be recovered when loading the file…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;test.pdbx&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">metadata</span><span class="p">())</span>
+<span class="go">Properties(</span>
+<span class="go">    residues =&gt; [ ACE,ALA,NME ],</span>
+<span class="go">    name =&gt; alanine dipeptide,</span>
+<span class="go">    atoms =&gt; Properties(</span>
+<span class="go">    element =&gt; SireBase::StringArrayProperty( size=3</span>
+<span class="go">0: C</span>
+<span class="go">1: N</span>
+<span class="go">2: O</span>
+<span class="go">),</span>
+<span class="go">    x_coords =&gt; SireBase::StringArrayProperty( size=3</span>
+<span class="go">0: 0</span>
+<span class="go">1: 1</span>
+<span class="go">2: 2</span>
+<span class="go">),</span>
+<span class="go">    y_coords =&gt; SireBase::StringArrayProperty( size=3</span>
+<span class="go">0: 3</span>
+<span class="go">1: 4</span>
+<span class="go">2: 5</span>
+<span class="go">),</span>
+<span class="go">    z_coords =&gt; SireBase::StringArrayProperty( size=3</span>
+<span class="go">0: 6</span>
+<span class="go">1: 7</span>
+<span class="go">2: 8</span>
+<span class="go">)</span>
+<span class="go">)</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that metadata values loaded from a PDBx/mmCIF file are always
+stored as strings. You may need to convert them to the appropriate
+type for your application (e.g., here the coordinate values are
+the strings “0”, “1”, “2” etc. rather than the numbers 0, 1, 2 etc.).</p>
+</div>
+</section>
 <section id="anything-to-anything">
 <h2>Anything to Anything<a class="headerlink" href="#anything-to-anything" title="Link to this heading">#</a></h2>
 <p>Above you have seen how <a class="reference internal" href="../../api/convert.html#sire.convert.to" title="sire.convert.to"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.convert.to()</span></code></a> can convert to and from
@@ -694,6 +816,22 @@ convert it to an OpenMM Context ready for minimisation or dynamics…</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">integrator</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">omm</span><span class="o">.</span><span class="n">getState</span><span class="p">()</span><span class="o">.</span><span class="n">getTime</span><span class="p">())</span>
 <span class="go">0.010000000000000002 ps</span>
+</pre></div>
+</div>
+<p>or you could load a PDBx file from Gemmi and convert a “MAN” moelcule within it
+into an RDKit structure…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gemmi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rdkit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="s2">&quot;https://files.rcsb.org/download/3NSS.cif.gz&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                           <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;3NSS.cif.gz&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_structure</span><span class="p">(</span><span class="s2">&quot;3NSS.cif.gz&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Selection</span><span class="p">(</span><span class="s2">&quot;(MAN)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">copy_structure_selection</span><span class="p">(</span><span class="n">struct</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rdkit_mol</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">convert</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s2">&quot;rdkit&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">rdkit_mol</span><span class="p">))</span>
+<span class="go">O=C=C1OC(OC2=C(=O)C(=C=O)O[C-]=C2[O-])=C(=O)=C(=O)C1=O</span>
 </pre></div>
 </div>
 </section>
@@ -736,7 +874,7 @@ look at, or if you want to provide some help with implementation.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -761,6 +899,7 @@ look at, or if you want to provide some help with implementation.</p>
 <li><a class="reference internal" href="#biosimspace">BioSimSpace</a></li>
 <li><a class="reference internal" href="#rdkit">RDKit</a></li>
 <li><a class="reference internal" href="#openmm">OpenMM</a></li>
+<li><a class="reference internal" href="#gemmi">Gemmi</a></li>
 <li><a class="reference internal" href="#anything-to-anything">Anything to Anything</a></li>
 <li><a class="reference internal" href="#supporting-other-formats">Supporting other formats</a></li>
 </ul>
@@ -774,7 +913,7 @@ look at, or if you want to provide some help with implementation.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=cecdbff6"></script>
+</div><script src="../../_static/documentation_options.js?v=1b6071b6"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

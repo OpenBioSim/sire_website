@@ -521,6 +521,47 @@ Throw: SireError::incompatible_error</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Atom.atom">
+<span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(MoleculeView)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map={}</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Atom</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Atom.atom" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>Return the atom in this view that matches the ID atomid</dt><dd><p>Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},int [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (object)name [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},QString [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (AtomID)atomid [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},SireMol::AtomID [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1) -&gt; Atom :</dt><dd><p>Return this view as a Atom - this will only work if
+this view contains only a single atom
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Atom.atoms">
 <span class="sig-name descname"><span class="pre">atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(MoleculeView)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map={}</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Selector_Atom_</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Atom.atoms" title="Link to this definition">#</a></dt>
 <dd><dl>
@@ -4468,6 +4509,47 @@ Throw: SireError::incompatible_error</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Chain.atom">
+<span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(MoleculeView)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map={}</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Atom</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Chain.atom" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>Return the atom in this view that matches the ID atomid</dt><dd><p>Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},int [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (object)name [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},QString [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (AtomID)atomid [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},SireMol::AtomID [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1) -&gt; Atom :</dt><dd><p>Return this view as a Atom - this will only work if
+this view contains only a single atom
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Chain.atom_idxs">
 <span class="sig-name descname"><span class="pre">atom_idxs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.Chain.atom_idxs" title="Link to this definition">#</a></dt>
 <dd><dl>
@@ -6243,7 +6325,7 @@ that match ‘id’</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Cursor.rotate">
-<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_cursor.html#Cursor.rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Cursor.rotate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate_velocities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_cursor.html#Cursor.rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Cursor.rotate" title="Link to this definition">#</a></dt>
 <dd><p>Rotate all of the atoms operated on by this cursor
 by the passed arguments. Use ‘map’ to specify the
 property map to use to find the coordinates property.</p>
@@ -6276,6 +6358,9 @@ arguments will be ignored.</p>
 Note that, if you pass this, then the angle and axis
 arguments will be ignored. This is superseded by
 the quaternion argument.</p>
+</dd>
+<dt>rotate_velocities: bool</dt><dd><p>Whether or not to rotate the velocities as well as
+the coordinates (default True)</p>
 </dd>
 <dt>map: None, dict or sire.base.PropertyMap</dt><dd><p>The property map used to find the coordinates property</p>
 </dd>
@@ -6586,7 +6671,7 @@ that match ‘id’</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Cursors.rotate">
-<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_cursor.html#Cursors.rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Cursors.rotate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate_velocities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_cursor.html#Cursors.rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Cursors.rotate" title="Link to this definition">#</a></dt>
 <dd><p>Rotate all of the atoms operated on by this cursor
 by the passed arguments. Use ‘map’ to specify the
 property map to use to find the coordinates property.</p>
@@ -6619,6 +6704,9 @@ arguments will be ignored.</p>
 Note that, if you pass this, then the angle and axis
 arguments will be ignored. This is superseded by
 the quaternion argument.</p>
+</dd>
+<dt>rotate_velocities: bool</dt><dd><p>Whether or not to rotate the velocities as well as
+the coordinates (default True)</p>
 </dd>
 <dt>map: None, dict or sire.base.PropertyMap</dt><dd><p>The property map used to find the coordinates property</p>
 </dd>
@@ -6895,7 +6983,7 @@ that match ‘id’</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.CursorsM.rotate">
-<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_cursor.html#CursorsM.rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.CursorsM.rotate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate_velocities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_cursor.html#CursorsM.rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.CursorsM.rotate" title="Link to this definition">#</a></dt>
 <dd><p>Rotate all of the atoms operated on by this cursor
 by the passed arguments. Use ‘map’ to specify the
 property map to use to find the coordinates property.</p>
@@ -6928,6 +7016,9 @@ arguments will be ignored.</p>
 Note that, if you pass this, then the angle and axis
 arguments will be ignored. This is superseded by
 the quaternion argument.</p>
+</dd>
+<dt>rotate_velocities: bool</dt><dd><p>Whether or not to rotate the velocities as well as
+the coordinates (default True)</p>
 </dd>
 <dt>map: None, dict or sire.base.PropertyMap</dt><dd><p>The property map used to find the coordinates property</p>
 </dd>
@@ -7001,6 +7092,15 @@ Use .commit() to get the up-to-date version of this view.</p>
 this class is not designed to be constructed directly. You should only
 use this class by calling <em class="xref py py-obj">dynamics()</em> on the molecules(s)
 you want to simulate</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Dynamics.commit">
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">return_as_system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.commit" title="Link to this definition">#</a></dt>
+<dd><p>Commit the dynamics and return the molecules after the simulation.
+Normally this will return the same view of as was used for
+construction. If <em class="xref py py-obj">return_as_system</em> is True, then this will
+return a System object instead.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Dynamics.constraint">
 <span class="sig-name descname"><span class="pre">constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.constraint" title="Link to this definition">#</a></dt>
@@ -7092,6 +7192,12 @@ Returns None if this isn’t a perturbable system.</p>
 <span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.info" title="Link to this definition">#</a></dt>
 <dd><p>Return the information that describes the forcefield that will
 be used for dynamics</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Dynamics.integrator">
+<span class="sig-name descname"><span class="pre">integrator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.integrator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.integrator" title="Link to this definition">#</a></dt>
+<dd><p>Return the integrator that is used to run dynamics</p>
 </dd></dl>
 
 <dl class="py method">
@@ -7657,9 +7763,12 @@ use this class by calling <em class="xref py py-obj">minimisation()</em> on the 
 you want to minimise</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Minimisation.commit">
-<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_minimisation.html#Minimisation.commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Minimisation.commit" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">return_as_system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_minimisation.html#Minimisation.commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Minimisation.commit" title="Link to this definition">#</a></dt>
 <dd><p>Commit the minimisation to the molecules, returning the
 minimised molecules.</p>
+<p>Normally this will return the same view of as was used for
+construction. If <em class="xref py py-obj">return_as_system</em> is True, then this will
+return a System object instead.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -8147,6 +8256,47 @@ Throw: SireError::incompatible_error</p>
 <span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Molecule)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Molecule)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Molecule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Molecule.assign" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMol::Molecule {lvalue} assign(SireMol::Molecule {lvalue},SireMol::Molecule)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Molecule.atom">
+<span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(MoleculeView)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map={}</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Atom</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Molecule.atom" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>Return the atom in this view that matches the ID atomid</dt><dd><p>Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},int [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (object)name [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},QString [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (AtomID)atomid [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},SireMol::AtomID [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1) -&gt; Atom :</dt><dd><p>Return this view as a Atom - this will only work if
+this view contains only a single atom
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue})</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -9763,6 +9913,47 @@ Throw: SireBase::missing_property</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Residue.atom">
+<span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(MoleculeView)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map={}</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Atom</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Residue.atom" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>Return the atom in this view that matches the ID atomid</dt><dd><p>Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},int [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (object)name [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},QString [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (AtomID)atomid [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},SireMol::AtomID [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1) -&gt; Atom :</dt><dd><p>Return this view as a Atom - this will only work if
+this view contains only a single atom
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Residue.atom_idxs">
 <span class="sig-name descname"><span class="pre">atom_idxs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.Residue.atom_idxs" title="Link to this definition">#</a></dt>
 <dd><dl>
@@ -10616,6 +10807,47 @@ Throw: SireBase::missing_property</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Segment.atom">
+<span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(MoleculeView)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map={}</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Atom</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.Segment.atom" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>Return the atom in this view that matches the ID atomid</dt><dd><p>Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},int [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (object)name [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},QString [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1, (AtomID)atomid [, (PropertyMap)map={}]) -&gt; Atom :</dt><dd><p>Return the atom in this view that matches the ID atomid
+Throw: SireMol::missing_atom
+Throw: SireError::invalid_index
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue},SireMol::AtomID [,SireBase::PropertyMap={}])</p>
+</dd>
+</dl>
+</dd>
+<dt>atom( (MoleculeView)arg1) -&gt; Atom :</dt><dd><p>Return this view as a Atom - this will only work if
+this view contains only a single atom
+Throw: SireMol::duplicate_atom</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::MoleculeView {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Segment.atom_idxs">
 <span class="sig-name descname"><span class="pre">atom_idxs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.Segment.atom_idxs" title="Link to this definition">#</a></dt>
 <dd><dl>
@@ -11318,31 +11550,6 @@ is operator.add by default.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="sire.mol.SelectorMol.atom">
-<span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SelectorMol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map={}</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Atom</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.SelectorMol.atom" title="Link to this definition">#</a></dt>
-<dd><blockquote>
-<div><dl class="simple">
-<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::SelectorMol {lvalue},int [,SireBase::PropertyMap={}])</p>
-</dd>
-</dl>
-</div></blockquote>
-<p>atom( (SelectorMol)arg1, (object)name [, (PropertyMap)map={}]) -&gt; Atom :</p>
-<blockquote>
-<div><dl class="simple">
-<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::SelectorMol {lvalue},QString [,SireBase::PropertyMap={}])</p>
-</dd>
-</dl>
-</div></blockquote>
-<p>atom( (SelectorMol)arg1, (AtomID)atomid [, (PropertyMap)map={}]) -&gt; Atom :</p>
-<blockquote>
-<div><dl class="simple">
-<dt>C++ signature :</dt><dd><p>SireMol::Atom atom(SireMol::SelectorMol {lvalue},SireMol::AtomID [,SireBase::PropertyMap={}])</p>
-</dd>
-</dl>
-</div></blockquote>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.SelectorMol.chain">
 <span class="sig-name descname"><span class="pre">chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SelectorMol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map={}</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Chain</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mol.SelectorMol.chain" title="Link to this definition">#</a></dt>
 <dd><blockquote>
@@ -11510,7 +11717,7 @@ is operator.add by default.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.SelectorMol.dynamics">
-<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.dynamics" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mol.SelectorMol.dynamics" title="Link to this definition">#</a></dt>
 <dd><p>Return a Dynamics object that can be used to perform
 dynamics of the molecule(s) in this view</p>
 <dl class="simple">
@@ -11558,6 +11765,12 @@ if it isn’t set.</p>
 and angles. If this is False, then the internal bond or angle
 energy of the constrained degrees of freedom are not included
 in the total energy, and their forces are not evaluated.</p>
+</dd>
+<dt>integrator: str</dt><dd><p>The type of integrator to use, e.g. <em class="xref py py-obj">langevin</em>, <em class="xref py py-obj">verlet</em> etc.
+See <a class="reference external" href="https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options">https://sire.openbiosim.org/cheatsheet/openmm.html#choosing-options</a>
+for the full list of options. This will be automatically
+set to <em class="xref py py-obj">langevin_middle</em> (NVT/NPT) or <em class="xref py py-obj">verlet</em> (NVE) depending
+on the ensemble if this is not set (or is set to <em class="xref py py-obj">auto</em>)</p>
 </dd>
 <dt>schedule: sire.cas.LambdaSchedule</dt><dd><p>The schedule used to control how perturbable forcefield parameters
 should be morphed as a function of lambda. If this is not set
@@ -12882,7 +13095,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -12912,6 +13125,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.Atom.assert_has_property"><code class="docutils literal notranslate"><span class="pre">Atom.assert_has_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.assert_same_molecule"><code class="docutils literal notranslate"><span class="pre">Atom.assert_same_molecule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.assign"><code class="docutils literal notranslate"><span class="pre">Atom.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Atom.atom"><code class="docutils literal notranslate"><span class="pre">Atom.atom()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.atoms"><code class="docutils literal notranslate"><span class="pre">Atom.atoms()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.cg_atom_idx"><code class="docutils literal notranslate"><span class="pre">Atom.cg_atom_idx()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Atom.chain"><code class="docutils literal notranslate"><span class="pre">Atom.chain()</span></code></a></li>
@@ -13174,6 +13388,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.Chain.assert_has_property"><code class="docutils literal notranslate"><span class="pre">Chain.assert_has_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.assert_same_molecule"><code class="docutils literal notranslate"><span class="pre">Chain.assert_same_molecule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.assign"><code class="docutils literal notranslate"><span class="pre">Chain.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Chain.atom"><code class="docutils literal notranslate"><span class="pre">Chain.atom()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.atom_idxs"><code class="docutils literal notranslate"><span class="pre">Chain.atom_idxs()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.atoms"><code class="docutils literal notranslate"><span class="pre">Chain.atoms()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Chain.chains"><code class="docutils literal notranslate"><span class="pre">Chain.chains()</span></code></a></li>
@@ -13397,6 +13612,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 </ul>
 </li>
 <li><a class="reference internal" href="#sire.mol.Dynamics"><code class="docutils literal notranslate"><span class="pre">Dynamics</span></code></a><ul>
+<li><a class="reference internal" href="#sire.mol.Dynamics.commit"><code class="docutils literal notranslate"><span class="pre">Dynamics.commit()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.constraint"><code class="docutils literal notranslate"><span class="pre">Dynamics.constraint()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.current_energy"><code class="docutils literal notranslate"><span class="pre">Dynamics.current_energy()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.current_kinetic_energy"><code class="docutils literal notranslate"><span class="pre">Dynamics.current_kinetic_energy()</span></code></a></li>
@@ -13410,6 +13626,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.Dynamics.get_lambda"><code class="docutils literal notranslate"><span class="pre">Dynamics.get_lambda()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.get_schedule"><code class="docutils literal notranslate"><span class="pre">Dynamics.get_schedule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.info"><code class="docutils literal notranslate"><span class="pre">Dynamics.info()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Dynamics.integrator"><code class="docutils literal notranslate"><span class="pre">Dynamics.integrator()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.minimise"><code class="docutils literal notranslate"><span class="pre">Dynamics.minimise()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.perturbable_constraint"><code class="docutils literal notranslate"><span class="pre">Dynamics.perturbable_constraint()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.platform"><code class="docutils literal notranslate"><span class="pre">Dynamics.platform()</span></code></a></li>
@@ -13509,6 +13726,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.Molecule.assert_has_property"><code class="docutils literal notranslate"><span class="pre">Molecule.assert_has_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.assert_same_molecule"><code class="docutils literal notranslate"><span class="pre">Molecule.assert_same_molecule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.assign"><code class="docutils literal notranslate"><span class="pre">Molecule.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Molecule.atom"><code class="docutils literal notranslate"><span class="pre">Molecule.atom()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.atoms"><code class="docutils literal notranslate"><span class="pre">Molecule.atoms()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.chains"><code class="docutils literal notranslate"><span class="pre">Molecule.chains()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Molecule.clone"><code class="docutils literal notranslate"><span class="pre">Molecule.clone()</span></code></a></li>
@@ -13614,6 +13832,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.Residue.assert_contains_metadata"><code class="docutils literal notranslate"><span class="pre">Residue.assert_contains_metadata()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.assert_contains_property"><code class="docutils literal notranslate"><span class="pre">Residue.assert_contains_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.assign"><code class="docutils literal notranslate"><span class="pre">Residue.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Residue.atom"><code class="docutils literal notranslate"><span class="pre">Residue.atom()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.atom_idxs"><code class="docutils literal notranslate"><span class="pre">Residue.atom_idxs()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.atoms"><code class="docutils literal notranslate"><span class="pre">Residue.atoms()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Residue.chains"><code class="docutils literal notranslate"><span class="pre">Residue.chains()</span></code></a></li>
@@ -13677,6 +13896,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.Segment.assert_contains_metadata"><code class="docutils literal notranslate"><span class="pre">Segment.assert_contains_metadata()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.assert_contains_property"><code class="docutils literal notranslate"><span class="pre">Segment.assert_contains_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.assign"><code class="docutils literal notranslate"><span class="pre">Segment.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Segment.atom"><code class="docutils literal notranslate"><span class="pre">Segment.atom()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.atom_idxs"><code class="docutils literal notranslate"><span class="pre">Segment.atom_idxs()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.atoms"><code class="docutils literal notranslate"><span class="pre">Segment.atoms()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Segment.chains"><code class="docutils literal notranslate"><span class="pre">Segment.chains()</span></code></a></li>
@@ -13717,7 +13937,6 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.SelectorMol.apply"><code class="docutils literal notranslate"><span class="pre">SelectorMol.apply()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.apply_reduce"><code class="docutils literal notranslate"><span class="pre">SelectorMol.apply_reduce()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.assign"><code class="docutils literal notranslate"><span class="pre">SelectorMol.assign()</span></code></a></li>
-<li><a class="reference internal" href="#sire.mol.SelectorMol.atom"><code class="docutils literal notranslate"><span class="pre">SelectorMol.atom()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.chain"><code class="docutils literal notranslate"><span class="pre">SelectorMol.chain()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.clone"><code class="docutils literal notranslate"><span class="pre">SelectorMol.clone()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.SelectorMol.contains"><code class="docutils literal notranslate"><span class="pre">SelectorMol.contains()</span></code></a></li>
@@ -13813,7 +14032,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=cecdbff6"></script>
+</div><script src="../_static/documentation_options.js?v=1b6071b6"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

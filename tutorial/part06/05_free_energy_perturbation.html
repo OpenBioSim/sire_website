@@ -613,7 +613,7 @@ instead of <code class="docutils literal notranslate"><span class="pre">energy_{
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulating lambda=</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="c1"># minimise the system at this lambda value</span>
 <span class="gp">... </span>    <span class="n">min_mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
-<span class="gp">... </span>                               <span class="n">vacuum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">... </span>                               <span class="n">vacuum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">return_as_system</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="c1"># create a dynamics object for the system</span>
 <span class="gp">... </span>    <span class="n">d</span> <span class="o">=</span> <span class="n">min_mol</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span><span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;1fs&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="s2">&quot;25oC&quot;</span><span class="p">,</span>
 <span class="gp">... </span>                         <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
@@ -646,6 +646,14 @@ instead of <code class="docutils literal notranslate"><span class="pre">energy_{
 remove any simulation space that may be attached to the molecule(s),
 and instead set the space to a <code class="xref py py-class docutils literal notranslate"><span class="pre">Cartesian</span></code> space.
 This has the affect of simulating the molecules in vacuum.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The option <code class="docutils literal notranslate"><span class="pre">return_as_system</span></code> tells the minimisation’s <code class="docutils literal notranslate"><span class="pre">commit</span></code>
+function to return the result as a <a class="reference internal" href="../../api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> object,
+rather than a molecule. This way, <code class="docutils literal notranslate"><span class="pre">min_mol</span></code> is a <a class="reference internal" href="../../api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>,
+and so you can access the energy trajectory via the
+<code class="docutils literal notranslate"><span class="pre">energy_trajectory()</span></code> function.</p>
 </div>
 <p>This should run more quickly than the simulation in water, e.g. about
 15 seconds per window (at about 150 nanoseconds per day of sampling).</p>
@@ -727,7 +735,7 @@ we used very short simulations.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -761,7 +769,7 @@ we used very short simulations.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=cecdbff6"></script>
+</div><script src="../../_static/documentation_options.js?v=1b6071b6"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

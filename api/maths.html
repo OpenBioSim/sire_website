@@ -2366,6 +2366,45 @@ the quaternion argument.</p>
 </div></blockquote>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.maths.rotate">
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths.html#rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.rotate" title="Link to this definition">#</a></dt>
+<dd><p>Rotate the passed point by the passed angle and axis, or the
+passed matrix, or the passed quaternion, optionally centering
+the rotation about the passed center.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>point: sire.maths.Vector</dt><dd><p>The vector to be rotated</p>
+</dd>
+<dt>angle: (float or angle)</dt><dd><p>The angle to rotate by - this is interpreted as
+degrees if you pass in a float. Otherwise use
+sire.units.degrees or sire.units.radians to specify
+the angle unit. This is superseded by the
+matrix and quaternion arguments.</p>
+</dd>
+<dt>axis: sire.maths.Vector (or anything that can convert to a Vector)</dt><dd><p>The vector about which to rotate. If this is not
+specified, and no other rotation specification is
+used, then the rotation is about the z axis.
+This is superseded by the matrix and
+quaternion arguments.</p>
+</dd>
+<dt>quaternion: sire.maths.Quaternion</dt><dd><p>The Quaternion description of the rotation. Note that,
+if you pass this, then the angle, axis and matrix
+arguments will be ignored.</p>
+</dd>
+<dt>matrix: sire.maths.Matrix</dt><dd><p>The 3x3 rotation matrix that describes the rotation.
+Note that, if you pass this, then the angle and axis
+arguments will be ignored. This is superseded by
+the quaternion argument.</p>
+</dd>
+<dt>center: sire.maths.Vector</dt><dd><p>The center of rotation. Defaults to (0,0,0) if not set.</p>
+</dd>
+<dt>Returns: sire.maths.Vector</dt><dd><p>The rotated vector</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
 <dl class="py data">
 <dt class="sig sig-object py" id="sire.maths.pi">
 <span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">pi</span></span><em class="property"><span class="w"> </span><span class="pre">π</span> <span class="pre">(3.141592653589793)</span></em><a class="headerlink" href="#sire.maths.pi" title="Link to this definition">#</a></dt>
@@ -2405,7 +2444,7 @@ the quaternion argument.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -2593,6 +2632,7 @@ the quaternion argument.</p>
 <li><a class="reference internal" href="#sire.maths.get_alignment"><code class="docutils literal notranslate"><span class="pre">get_alignment()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.kabasch"><code class="docutils literal notranslate"><span class="pre">kabasch()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.kabasch_fit"><code class="docutils literal notranslate"><span class="pre">kabasch_fit()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.rotate"><code class="docutils literal notranslate"><span class="pre">rotate()</span></code></a></li>
 <li><a class="reference internal" href="#sire.maths.pi"><code class="docutils literal notranslate"><span class="pre">pi</span></code></a></li>
 </ul>
 </li>
@@ -2605,7 +2645,7 @@ the quaternion argument.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=cecdbff6"></script>
+</div><script src="../_static/documentation_options.js?v=1b6071b6"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

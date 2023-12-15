@@ -484,7 +484,7 @@ other functions as <a class="reference internal" href="../../api/mol.html#sire.m
 </pre></div>
 </div>
 <p>This gives the atoms at indicies 0, 2, 4, 6, and 8.</p>
-<p>This indexing is a shorthand for calling the <code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code>
+<p>This indexing is a shorthand for calling the <a class="reference internal" href="../../api/mol.html#sire.mol.Atom.atom" title="sire.mol.Atom.atom"><code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code></a>
 (for single) and <a class="reference internal" href="../../api/mol.html#sire.mol.Atom.atoms" title="sire.mol.Atom.atoms"><code class="xref py py-func docutils literal notranslate"><span class="pre">atoms()</span></code></a> (for multiple) atom functions,
 which are available on all of the molecular container types.</p>
 <p>You can call these directly, e.g.</p>
@@ -502,7 +502,7 @@ which are available on all of the molecular container types.</p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code> function is guaranteed to always return
+<p>The <a class="reference internal" href="../../api/mol.html#sire.mol.Atom.atom" title="sire.mol.Atom.atom"><code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code></a> function is guaranteed to always return
 either a single atom, or raise an exception if this is not possible.</p>
 <p>The <a class="reference internal" href="../../api/mol.html#sire.mol.Atom.atoms" title="sire.mol.Atom.atoms"><code class="xref py py-func docutils literal notranslate"><span class="pre">atoms()</span></code></a> function will return either a single
 atom or a selector of atoms, or raise an exception if this is not possible.</p>
@@ -530,7 +530,7 @@ like Python dictionaries, and get atoms by their name.</p>
 </div>
 <p>Note that there are multiple atoms in this molecule called <code class="docutils literal notranslate"><span class="pre">C</span></code>, hence
 several are returned. This would raise an exception if you called
-the shorthand <code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code> function with this name,</p>
+the shorthand <a class="reference internal" href="../../api/mol.html#sire.mol.Atom.atom" title="sire.mol.Atom.atom"><code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code></a> function with this name,</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">))</span>
 <span class="go">---------------------------------------------------------------------------</span>
 <span class="go">KeyError                                  Traceback (most recent call last)</span>
@@ -566,7 +566,7 @@ one you want.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Using the index operator (<code class="docutils literal notranslate"><span class="pre">mol[&quot;C&quot;]</span></code>) is easiest, as it will always
-do the right thing. Use the <code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code> and
+do the right thing. Use the <a class="reference internal" href="../../api/mol.html#sire.mol.Atom.atom" title="sire.mol.Atom.atom"><code class="xref py py-func docutils literal notranslate"><span class="pre">atom()</span></code></a> and
 <a class="reference internal" href="../../api/mol.html#sire.mol.Atom.atoms" title="sire.mol.Atom.atoms"><code class="xref py py-func docutils literal notranslate"><span class="pre">atoms()</span></code></a> functions only when you want to
 ensure that the container will return atoms.</p>
 </div>
@@ -1074,7 +1074,7 @@ function to get the numbers of all of the atoms.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -1116,7 +1116,7 @@ function to get the numbers of all of the atoms.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=cecdbff6"></script>
+</div><script src="../../_static/documentation_options.js?v=1b6071b6"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

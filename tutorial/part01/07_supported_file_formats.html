@@ -399,67 +399,72 @@
 You can print the list of supported formats using</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">supported_formats</span><span class="p">())</span>
 
-<span class="go">## Parser DCD ##</span>
+<span class="go">## Parser dcd ##</span>
 <span class="go">Supports files: DCD</span>
 <span class="go">DCD coordinate/velocity binary trajectory files based on charmm / namd / x-plor format.</span>
 <span class="go">################</span>
 
-<span class="go">## Parser Gro87 ##</span>
-<span class="go">Supports files: gro</span>
+<span class="go">## Parser gro87 ##</span>
+<span class="go">Supports files: gro, g87</span>
 <span class="go">Gromacs Gro87 structure format files.</span>
 <span class="go">##################</span>
 
-<span class="go">## Parser GroTop ##</span>
-<span class="go">Supports files: top</span>
+<span class="go">## Parser grotop ##</span>
+<span class="go">Supports files: top, grotop, gtop</span>
 <span class="go">Gromacs Topology format files.</span>
 <span class="go">###################</span>
 
-<span class="go">## Parser MOL2 ##</span>
+<span class="go">## Parser mol2 ##</span>
 <span class="go">Supports files: mol2</span>
 <span class="go">Sybyl Mol2 format files.</span>
 <span class="go">#################</span>
 
-<span class="go">## Parser PDB ##</span>
+<span class="go">## Parser pdb ##</span>
 <span class="go">Supports files: pdb</span>
 <span class="go">Protein Data Bank (PDB) format files.</span>
 <span class="go">################</span>
 
-<span class="go">## Parser PRM7 ##</span>
+<span class="go">## Parser pdbx ##</span>
+<span class="go">Supports files: pdbx, cif</span>
+<span class="go">Protein Data Bank PDBx/mmCIF format files.</span>
+<span class="go">#################</span>
+
+<span class="go">## Parser prm7 ##</span>
 <span class="go">Supports files: prm7, prm, top7, top, prmtop7, prmtop</span>
 <span class="go">Amber topology/parameter format files supported from Amber 7 upwards.</span>
 <span class="go">#################</span>
 
-<span class="go">## Parser PSF ##</span>
+<span class="go">## Parser psf ##</span>
 <span class="go">Supports files: psf</span>
 <span class="go">Charmm PSF format files.</span>
 <span class="go">################</span>
 
-<span class="go">## Parser RST ##</span>
+<span class="go">## Parser rst ##</span>
 <span class="go">Supports files: rst, crd, trj, traj</span>
 <span class="go">Amber coordinate/velocity binary (netcdf) restart/trajectory files supported since Amber 9, now default since Amber 16.</span>
 <span class="go">################</span>
 
-<span class="go">## Parser RST7 ##</span>
+<span class="go">## Parser rst7 ##</span>
 <span class="go">Supports files: rst7, rst, crd7, crd</span>
 <span class="go">Amber coordinate/velocity text (ascii) restart files supported from Amber 7 upwards.</span>
 <span class="go">#################</span>
 
-<span class="go">## Parser SDF ##</span>
+<span class="go">## Parser sdf ##</span>
 <span class="go">Supports files: sdf, mol</span>
 <span class="go">Structure Data File (SDF) format files.</span>
 <span class="go">################</span>
 
-<span class="go">## Parser TRAJ ##</span>
+<span class="go">## Parser traj ##</span>
 <span class="go">Supports files: traj, trj, crd</span>
 <span class="go">Amber trajectory (ascii) coordinate or velocity files supported from Amber 7 upwards.</span>
 <span class="go">#################</span>
 
-<span class="go">## Parser TRR ##</span>
+<span class="go">## Parser trr ##</span>
 <span class="go">Supports files: trr</span>
 <span class="go">Gromacs TRR (XDR file) coordinate / velocity / force trajectory file</span>
 <span class="go">################</span>
 
-<span class="go">## Parser XTC ##</span>
+<span class="go">## Parser xtc ##</span>
 <span class="go">Supports files: xtc</span>
 <span class="go">Gromacs XTC (XDR file) compressed coordinate trajectory file</span>
 <span class="go">################</span>
@@ -471,8 +476,8 @@ You can print the list of supported formats using</p>
 is symmetrical. This means that <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> can read in and write out the same
 amount of information from a file (i.e. it can always read what it writes).</p>
 <p>Another design principle is that information should not be lost. As much
-as possible, <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> will load and preserve all information it can
-read from a molecular file.</p>
+as possible, <a class="reference internal" href="../../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> will load and preserve all
+molecular-level information it can read from a molecular file.</p>
 </section>
 </section>
 
@@ -507,7 +512,7 @@ read from a molecular file.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2023</div>
+              Last updated on Dec 15, 2023</div>
           </div>
           <div class="right-details">
             
@@ -541,7 +546,7 @@ read from a molecular file.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=cecdbff6"></script>
+</div><script src="../../_static/documentation_options.js?v=1b6071b6"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
