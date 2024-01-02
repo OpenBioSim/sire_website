@@ -400,11 +400,10 @@
 <section id="setting-up-your-computer">
 <h2>Setting up your computer<a class="headerlink" href="#setting-up-your-computer" title="Link to this heading">#</a></h2>
 <p>You first need to create an anaconda, miniconda or
-mambaforce environment as described in
+miniforge environment as described in
 the <a class="reference internal" href="../install.html"><span class="doc">installation page</span></a>.</p>
-<p>We recommend using mambaforge, as this sets the right
-priority for the conda-forge channel, and it bundles
-mamba, which we find to be much faster than conda.</p>
+<p>We recommend using miniforge, as this sets the right
+priority for the conda-forge channel.</p>
 <section id="virtual-environments">
 <h3>Virtual environments<a class="headerlink" href="#virtual-environments" title="Link to this heading">#</a></h3>
 <p>We recommend that you develop <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> in its own
@@ -423,7 +422,7 @@ e.g. via</p>
 <p>(where <code class="docutils literal notranslate"><span class="pre">environment_name</span></code> should be replaced by the name
 of your environment - e.g. <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>).</p>
 <p>This will update your shell so that all python commands (such as
-<code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">mamba</span></code> etc.) will use the virtual environment. You can
+<code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">conda</span></code> etc.) will use the virtual environment. You can
 deactivate the environment and return to the “standard” Python using;</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>deactivate
 </pre></div>
@@ -762,7 +761,7 @@ for details. The documentation is automatically built using
 <p>To build the documentation locally you will first need to install some
 additional packages as described in the
 <a class="reference external" href="https://github.com/OpenBioSim/sire/blob/devel/doc/requirements.txt">requirements.txt</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>sphinxcontrib-programoutput<span class="w"> </span>sphinx_issues<span class="w"> </span>furo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>sphinxcontrib-programoutput<span class="w"> </span>sphinx_issues<span class="w"> </span>furo
 </pre></div>
 </div>
 <p>Then move to the <code class="docutils literal notranslate"><span class="pre">doc</span></code> directory and run:</p>
@@ -855,7 +854,7 @@ most of the procedures, scripts and documentation above is derived.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 15, 2023</div>
+              Last updated on Jan 02, 2024</div>
           </div>
           <div class="right-details">
             
@@ -918,7 +917,7 @@ most of the procedures, scripts and documentation above is derived.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=1b6071b6"></script>
+</div><script src="../_static/documentation_options.js?v=bf18f5af"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

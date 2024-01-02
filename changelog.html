@@ -403,6 +403,19 @@ since the project started in 2005.</p>
 <a class="reference external" href="https://github.com/openbiosim">OpenBioSim</a>
 organisation on <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 </section>
+<section id="january-2024">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.5.0...2023.5.1">2023.5.1</a> - January 2024<a class="headerlink" href="#january-2024" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">.dynamics().step(num_steps)</span></code> function to make it easier to quickly run
+steps of OpenMM dynamics with minimal overhead (this directly called <code class="docutils literal notranslate"><span class="pre">Integrator.step()</span></code>)</p></li>
+<li><p>Some optimisations to the OpenMM layer that make full use of the
+experimental “updateSomeParametersInContext” functions.</p></li>
+<li><p>Updated gemmi to 0.6.4, so that it can be default-enabled on all supported platforms.
+As part of this, had to change the version of the compilers used on Windows and Linux
+to make the conda packages. Windows now uses Visual Studio 2022 instead of 2017,
+and Linux now uses GCC 12.3.0 instead of GCC 13.</p></li>
+</ul>
+</section>
 <section id="december-2023">
 <h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.2...2023.5.0">2023.5.0</a> - December 2023<a class="headerlink" href="#december-2023" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -1194,13 +1207,13 @@ right directory. Updated the pythonizing framework so that we
 only pythonize the C++ layer, and avoid the circular dependencies
 that were causing random import errors (particularly on Windows).</p>
 </dd>
-<dt>[2023.0.2] December 2023: Fix multiple distance restraint bug in SOMD</dt><dd><p>(&#64;fjclark). Add support for PME FEP with SOMD and fix
+<dt>[2023.0.2] December 2022: Fix multiple distance restraint bug in SOMD</dt><dd><p>(&#64;fjclark). Add support for PME FEP with SOMD and fix
 associated bugs (&#64;halx, &#64;jmichel80). Fix CI issues so that
 PRs use the correct URL when triggered by external forks.
 Exclude dummy atoms when repartitioning hydrogen masses.
 Deprecate py37.</p>
 </dd>
-<dt>[2023.0.1] November 2023: Improve handling of HETATM and TER records in</dt><dd><p>PDB files. Fix SOMD selection issues following update to the
+<dt>[2023.0.1] November 2022: Improve handling of HETATM and TER records in</dt><dd><p>PDB files. Fix SOMD selection issues following update to the
 2023 API. Fix writing of steps to SOMD simfile.dat (&#64;fjclark).
 Throw exception when CHAMBER format AMBER topology files are
 detected. Expose toVector() method for the velocity property.
@@ -1214,7 +1227,7 @@ property exists.  Make sure searches are returned in MolIdx
 order. Ensure Sire is built against packages with the “dev”
 label.</p>
 </dd>
-<dt>[2023.0.0] July 2023 - Updated Sire’s API to a more pythonic style.</dt><dd><p>Module names are in lower case, e.g. <em class="xref py py-obj">import Sire</em> becomes
+<dt>[2023.0.0] July 2022 - Updated Sire’s API to a more pythonic style.</dt><dd><p>Module names are in lower case, e.g. <em class="xref py py-obj">import Sire</em> becomes
 <em class="xref py py-obj">import sire</em>, or <em class="xref py py-obj">import sire as sr</em>. Functions are in
 underscore_case. This change is not backwards compatible. To
 support old code, a <em class="xref py py-obj">sire.use_old_api()</em> function has been added.
@@ -1481,7 +1494,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 15, 2023</div>
+              Last updated on Jan 02, 2024</div>
           </div>
           <div class="right-details">
             
@@ -1504,6 +1517,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#github-openbiosim-january-2023-current">GitHub (OpenBioSim): January 2023 - current</a></li>
+<li><a class="reference internal" href="#january-2024">2023.5.1 - January 2024</a></li>
 <li><a class="reference internal" href="#december-2023">2023.5.0 - December 2023</a></li>
 <li><a class="reference internal" href="#id1">2023.4.2 - December 2023</a></li>
 <li><a class="reference internal" href="#october-2023">2023.4.1 - October 2023</a></li>
@@ -1533,7 +1547,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=1b6071b6"></script>
+</div><script src="_static/documentation_options.js?v=bf18f5af"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>

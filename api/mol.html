@@ -7349,6 +7349,15 @@ rescaled to the new temperature.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.mol.Dynamics.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.step" title="Link to this definition">#</a></dt>
+<dd><p>Simple function that performs <em class="xref py py-obj">num_steps</em> steps of dynamics.
+This does not save any frames or energies - it is designed for
+times when you want to run a small number of steps quickly
+with minimal overhead.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.mol.Dynamics.step_speed">
 <span class="sig-name descname"><span class="pre">step_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/mol/_dynamics.html#Dynamics.step_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.mol.Dynamics.step_speed" title="Link to this definition">#</a></dt>
 <dd><p>Return the speed of this simulation in number of steps per second</p>
@@ -13095,7 +13104,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 15, 2023</div>
+              Last updated on Jan 02, 2024</div>
           </div>
           <div class="right-details">
             
@@ -13637,6 +13646,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
 <li><a class="reference internal" href="#sire.mol.Dynamics.set_pressure"><code class="docutils literal notranslate"><span class="pre">Dynamics.set_pressure()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.set_schedule"><code class="docutils literal notranslate"><span class="pre">Dynamics.set_schedule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.set_temperature"><code class="docutils literal notranslate"><span class="pre">Dynamics.set_temperature()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mol.Dynamics.step"><code class="docutils literal notranslate"><span class="pre">Dynamics.step()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.step_speed"><code class="docutils literal notranslate"><span class="pre">Dynamics.step_speed()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.time_speed"><code class="docutils literal notranslate"><span class="pre">Dynamics.time_speed()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mol.Dynamics.timestep"><code class="docutils literal notranslate"><span class="pre">Dynamics.timestep()</span></code></a></li>
@@ -14032,7 +14042,7 @@ atoms from <code class="docutils literal notranslate"><span class="pre">mols</sp
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=1b6071b6"></script>
+</div><script src="../_static/documentation_options.js?v=bf18f5af"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

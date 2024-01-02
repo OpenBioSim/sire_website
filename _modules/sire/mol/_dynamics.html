@@ -922,6 +922,21 @@
     <span class="k">def</span> <span class="nf">energy_trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_energy_trajectory</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
 
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Just perform &#39;num_steps&#39; steps of dynamics, without saving</span>
+<span class="sd">        anything or running anything in a background thread. This is</span>
+<span class="sd">        designed for times when we want a minimial overhead, e.g.</span>
+<span class="sd">        when we want to run a small number of steps quickly.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_running</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">SystemError</span><span class="p">(</span><span class="s2">&quot;Cannot step dynamics while it is already running!&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_omm_state</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_omm_state_has_cv</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_omm_mols</span><span class="o">.</span><span class="n">getIntegrator</span><span class="p">()</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">num_steps</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">run_minimisation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal method that runs minimisation on the molecules.</span>
@@ -1403,6 +1418,21 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">run_minimisation</span><span class="p">(</span>
                 <span class="n">max_iterations</span><span class="o">=</span><span class="n">max_iterations</span><span class="p">,</span>
             <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="Dynamics.step">
+<a class="viewcode-back" href="../../../api/mol.html#sire.mol.Dynamics.step">[docs]</a>
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Simple function that performs `num_steps` steps of dynamics.</span>
+<span class="sd">        This does not save any frames or energies - it is designed for</span>
+<span class="sd">        times when you want to run a small number of steps quickly</span>
+<span class="sd">        with minimal overhead.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">is_null</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">num_steps</span><span class="o">=</span><span class="n">num_steps</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span></div>
 
@@ -1959,7 +1989,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 15, 2023</div>
+              Last updated on Jan 02, 2024</div>
           </div>
           <div class="right-details">
             
@@ -1974,7 +2004,7 @@
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=1b6071b6"></script>
+</div><script src="../../../_static/documentation_options.js?v=bf18f5af"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
