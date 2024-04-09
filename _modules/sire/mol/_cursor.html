@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>sire.mol._cursor - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -251,6 +251,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorial/index_part07.html">Part 7 - Merged Molecules and Lambda Levers</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Part 7 - Merged Molecules and Lambda Levers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/01_perturbation.html">Perturbation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/02_levers.html">Lambda schedules and levers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/03_ghosts.html">Ghost Atoms and Softening Potentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/04_merge.html">Creating merge molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/05_pertfile.html">Perturbation Files (pertfiles)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/06_decouple.html">Annihilation and Decoupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/07_residue.html">Residue mutations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -258,7 +268,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet/search.html">Searching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet/view.html">Viewing Molecules</a></li>
@@ -268,67 +278,67 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/sire.html">sire module</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/base.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/cas.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/convert.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/io.html">Public API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/morph.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/restraints.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/vol.html">Public API</a></li>
 </ul>
 </li>
@@ -341,7 +351,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
@@ -440,9 +450,7 @@
 
                 <span class="k">try</span><span class="p">:</span>
                     <span class="n">connectivity</span> <span class="o">=</span> <span class="n">hunter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">molecule</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">)</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">connectivity_property</span><span class="p">,</span> <span class="n">connectivity</span>
-                    <span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connectivity_property</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">connectivity</span> <span class="o">=</span> <span class="n">connectivity</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">Console</span>
@@ -769,9 +777,7 @@
             <span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
-        <span class="k">def</span> <span class="nf">set_length</span><span class="p">(</span>
-            <span class="n">value</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
-        <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">set_length</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;Set the length of the bond being edited by this cursor to</span>
 <span class="sd">            &#39;value&#39;. This should be either a length unit, or a float</span>
 <span class="sd">            (in which case it is converted into a value with default</span>
@@ -877,12 +883,34 @@
 
             <span class="k">return</span> <span class="bp">self</span>
 
+        <span class="k">def</span> <span class="nf">get_potential</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return the energy expression for this bond&quot;&quot;&quot;</span>
+            <span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()])</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+
+        <span class="k">def</span> <span class="nf">set_potential</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Set the energy expression for this bond to &#39;value&#39;&quot;&quot;&quot;</span>
+            <span class="kn">from</span> <span class="nn">..cas</span> <span class="kn">import</span> <span class="n">Expression</span>
+
+            <span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+            <span class="n">internals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()])</span>
+            <span class="n">internals</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">(),</span> <span class="n">Expression</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()],</span> <span class="n">internals</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="bp">self</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">get_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_length</span> <span class="o">=</span> <span class="n">set_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">change_length</span> <span class="o">=</span> <span class="n">change_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">measure</span> <span class="o">=</span> <span class="n">get_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_measure</span> <span class="o">=</span> <span class="n">set_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">change_measure</span> <span class="o">=</span> <span class="n">change_length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_potential</span> <span class="o">=</span> <span class="n">get_potential</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_potential</span> <span class="o">=</span> <span class="n">set_potential</span>
 
     <span class="k">def</span> <span class="nf">_add_angle_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal function used to add member functions that are</span>
@@ -1020,9 +1048,7 @@
             <span class="k">if</span> <span class="n">move_all</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_dihedral</span><span class="p">():</span>
                 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">BondID</span>
 
-                <span class="n">center_bond</span> <span class="o">=</span> <span class="n">BondID</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom1</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom2</span><span class="p">()</span>
-                <span class="p">)</span>
+                <span class="n">center_bond</span> <span class="o">=</span> <span class="n">BondID</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom1</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom2</span><span class="p">())</span>
                 <span class="n">moved</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">move</span><span class="p">()</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="n">center_bond</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="nb">map</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">moved</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">move</span><span class="p">()</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_internal</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="nb">map</span><span class="p">)</span>
@@ -1033,12 +1059,35 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span> <span class="o">=</span> <span class="n">moved</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
 
+        <span class="k">def</span> <span class="nf">get_potential</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return the energy expression for this internal&quot;&quot;&quot;</span>
+            <span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()])</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+
+        <span class="k">def</span> <span class="nf">set_potential</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Set the energy expression for this internal to &#39;value&#39;&quot;&quot;&quot;</span>
+            <span class="kn">from</span> <span class="nn">..cas</span> <span class="kn">import</span> <span class="n">Expression</span>
+
+            <span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+            <span class="n">internals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()])</span>
+            <span class="n">internals</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">(),</span> <span class="n">Expression</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()],</span> <span class="n">internals</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="bp">self</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">get_size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_size</span> <span class="o">=</span> <span class="n">set_size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">change_size</span> <span class="o">=</span> <span class="n">change_size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">measure</span> <span class="o">=</span> <span class="n">get_size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_measure</span> <span class="o">=</span> <span class="n">set_size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">change_measure</span> <span class="o">=</span> <span class="n">change_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_potential</span> <span class="o">=</span> <span class="n">get_potential</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_potential</span> <span class="o">=</span> <span class="n">set_potential</span>
 
     <span class="k">def</span> <span class="nf">_add_extra_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal function that adds additional functions to this</span>
@@ -1357,8 +1406,7 @@
                 <span class="k">return</span> <span class="n">c</span>
             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;There is no residue that contains </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="si">}</span><span class="s2">:&quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;There is no residue that contains </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="si">}</span><span class="s2">:&quot;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
                 <span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
@@ -1388,8 +1436,7 @@
                 <span class="k">return</span> <span class="n">c</span>
             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;There is no chain that contains </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="si">}</span><span class="s2">:&quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;There is no chain that contains </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="si">}</span><span class="s2">:&quot;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
                 <span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
@@ -1419,8 +1466,7 @@
                 <span class="k">return</span> <span class="n">c</span>
             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;There is no segment that contains </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="si">}</span><span class="s2">:&quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;There is no segment that contains </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">()</span><span class="si">}</span><span class="s2">:&quot;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
                 <span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
@@ -1459,6 +1505,12 @@
         <span class="n">c</span><span class="o">.</span><span class="n">_internal</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
         <span class="n">c</span><span class="o">.</span><span class="n">_add_extra_functions</span><span class="p">()</span>
 
+        <span class="k">if</span> <span class="s2">&quot;map&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;The &#39;map&#39; parameter is not allowed when creating a &quot;</span>
+                <span class="s2">&quot;Cursor for a bond&quot;</span>
+            <span class="p">)</span>
+
         <span class="k">return</span> <span class="n">c</span></div>
 
 
@@ -1473,6 +1525,12 @@
         <span class="n">c</span><span class="o">.</span><span class="n">_view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span>
         <span class="n">c</span><span class="o">.</span><span class="n">_internal</span> <span class="o">=</span> <span class="n">angle</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
         <span class="n">c</span><span class="o">.</span><span class="n">_add_extra_functions</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="s2">&quot;map&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;The &#39;map&#39; parameter is not allowed when creating a &quot;</span>
+                <span class="s2">&quot;Cursor for an angle&quot;</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">c</span></div>
 
@@ -1489,6 +1547,12 @@
         <span class="n">c</span><span class="o">.</span><span class="n">_internal</span> <span class="o">=</span> <span class="n">dihedral</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
         <span class="n">c</span><span class="o">.</span><span class="n">_add_extra_functions</span><span class="p">()</span>
 
+        <span class="k">if</span> <span class="s2">&quot;map&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;The &#39;map&#39; parameter is not allowed when creating a &quot;</span>
+                <span class="s2">&quot;Cursor for a dihedral&quot;</span>
+            <span class="p">)</span>
+
         <span class="k">return</span> <span class="n">c</span></div>
 
 
@@ -1503,6 +1567,12 @@
         <span class="n">c</span><span class="o">.</span><span class="n">_view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span>
         <span class="n">c</span><span class="o">.</span><span class="n">_internal</span> <span class="o">=</span> <span class="n">improper</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
         <span class="n">c</span><span class="o">.</span><span class="n">_add_extra_functions</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="s2">&quot;map&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;The &#39;map&#39; parameter is not allowed when creating a &quot;</span>
+                <span class="s2">&quot;Cursor for an improper&quot;</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">c</span></div>
 
@@ -1579,8 +1649,7 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_internal</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span>
-                <span class="s2">&quot;a name!&quot;</span>
+                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span> <span class="s2">&quot;a name!&quot;</span>
             <span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span></div>
@@ -1594,8 +1663,7 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_internal</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span>
-                <span class="s2">&quot;a name!&quot;</span>
+                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span> <span class="s2">&quot;a name!&quot;</span>
             <span class="p">)</span>
 
         <span class="c1"># get the type right...</span>
@@ -1621,8 +1689,7 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_internal</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span>
-                <span class="s2">&quot;a number!&quot;</span>
+                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span> <span class="s2">&quot;a number!&quot;</span>
             <span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
@@ -1639,8 +1706,7 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_internal</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span>
-                <span class="s2">&quot;a number!&quot;</span>
+                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span> <span class="s2">&quot;a number!&quot;</span>
             <span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
@@ -1664,8 +1730,7 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_internal</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span>
-                <span class="s2">&quot;an index!&quot;</span>
+                <span class="s2">&quot;An internal (bond/angle/dihedral/improper) does not have &quot;</span> <span class="s2">&quot;an index!&quot;</span>
             <span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">index</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span></div>
@@ -1955,9 +2020,7 @@
             <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
 
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-                <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                    <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">connectivity</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_internal</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-                <span class="p">)</span>
+                <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">connectivity</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_internal</span><span class="p">,</span> <span class="n">key</span><span class="p">)))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">property_keys</span><span class="p">()</span>
             <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2048,9 +2111,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">..maths</span> <span class="kn">import</span> <span class="n">Vector</span>
 
-            <span class="n">view</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">view</span><span class="o">.</span><span class="n">move</span><span class="p">()</span><span class="o">.</span><span class="n">make_whole</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">Vector</span><span class="p">(</span><span class="n">center</span><span class="p">),</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-            <span class="p">)</span>
+            <span class="n">view</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">move</span><span class="p">()</span><span class="o">.</span><span class="n">make_whole</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">Vector</span><span class="p">(</span><span class="n">center</span><span class="p">),</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
@@ -2212,9 +2273,7 @@
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2"> must be a Cursor object!&quot;</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">_d</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">parent</span><span class="o">.</span><span class="n">_d</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;The list of cursors must be created from the parent!&quot;</span>
-                <span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The list of cursors must be created from the parent!&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span> <span class="n">parent</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cursors</span> <span class="o">=</span> <span class="n">cursors</span>
@@ -2343,9 +2402,7 @@
 
             <span class="k">return</span> <span class="n">lengths</span>
 
-        <span class="k">def</span> <span class="nf">set_lengths</span><span class="p">(</span>
-            <span class="n">values</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
-        <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">set_lengths</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            Set the lengths of the bonds being edited by this cursor to the</span>
 <span class="sd">            specified</span>
@@ -2416,9 +2473,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
             <span class="k">return</span> <span class="bp">self</span>
 
-        <span class="k">def</span> <span class="nf">set_length</span><span class="p">(</span>
-            <span class="n">value</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
-        <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">set_length</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;Set all bonds edited by this cursor to the supplied length.</span>
 
 <span class="sd">            value: float or length</span>
@@ -2811,9 +2866,7 @@
                 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">BondID</span>
 
                 <span class="k">for</span> <span class="n">delta</span><span class="p">,</span> <span class="n">cursor</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">deltas</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cursors</span><span class="p">):</span>
-                    <span class="n">bond</span> <span class="o">=</span> <span class="n">BondID</span><span class="p">(</span>
-                        <span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom1</span><span class="p">()</span>
-                    <span class="p">)</span>
+                    <span class="n">bond</span> <span class="o">=</span> <span class="n">BondID</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom1</span><span class="p">())</span>
                     <span class="n">moved</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="n">bond</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="nb">map</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">delta</span><span class="p">,</span> <span class="n">cursor</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">deltas</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cursors</span><span class="p">):</span>
@@ -3375,9 +3428,7 @@
                 <span class="k">if</span> <span class="n">molnum</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molcursors</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_molcursors</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span> <span class="o">=</span> <span class="n">child_mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
-                <span class="bp">self</span><span class="o">.</span><span class="n">_cursors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_molcursors</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span><span class="o">.</span><span class="n">_from_view</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
-                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_cursors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_molcursors</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span><span class="o">.</span><span class="n">_from_view</span><span class="p">(</span><span class="n">child</span><span class="p">))</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_add_extra_functions</span><span class="p">()</span>
 
@@ -3395,9 +3446,7 @@
 
             <span class="k">return</span> <span class="n">lengths</span>
 
-        <span class="k">def</span> <span class="nf">set_lengths</span><span class="p">(</span>
-            <span class="n">values</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
-        <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">set_lengths</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            Set the lengths of the bonds being edited by this cursor to the</span>
 <span class="sd">            specified values. Note that there should be the same number of</span>
@@ -3480,9 +3529,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
             <span class="k">return</span> <span class="bp">self</span>
 
-        <span class="k">def</span> <span class="nf">set_length</span><span class="p">(</span>
-            <span class="n">value</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
-        <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">set_length</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_align</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;Set the lengths of all of the bonds edited by this</span>
 <span class="sd">            cursor to the passed value.</span>
 
@@ -3901,9 +3948,7 @@
                     <span class="n">molnum</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">number</span><span class="p">()</span>
 
                     <span class="k">if</span> <span class="n">molnum</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">movers</span><span class="p">:</span>
-                        <span class="n">molecule</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molcursors</span><span class="p">[</span>
-                            <span class="n">molnum</span>
-                        <span class="p">]</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                        <span class="n">molecule</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molcursors</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
                         <span class="n">molecules</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span> <span class="o">=</span> <span class="n">molecule</span>
                         <span class="n">movers</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span> <span class="o">=</span> <span class="n">molecule</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
                         <span class="n">maps</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cursors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
@@ -3915,18 +3960,14 @@
                             <span class="p">)</span>
                         <span class="p">)</span>
 
-                    <span class="n">bond</span> <span class="o">=</span> <span class="n">BondID</span><span class="p">(</span>
-                        <span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom1</span><span class="p">()</span>
-                    <span class="p">)</span>
+                    <span class="n">bond</span> <span class="o">=</span> <span class="n">BondID</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="o">.</span><span class="n">atom1</span><span class="p">())</span>
                     <span class="n">movers</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="n">bond</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">maps</span><span class="p">[</span><span class="n">molnum</span><span class="p">])</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">delta</span><span class="p">,</span> <span class="n">cursor</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">deltas</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cursors</span><span class="p">):</span>
                     <span class="n">molnum</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">number</span><span class="p">()</span>
 
                     <span class="k">if</span> <span class="n">molnum</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">movers</span><span class="p">:</span>
-                        <span class="n">molecule</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molcursors</span><span class="p">[</span>
-                            <span class="n">molnum</span>
-                        <span class="p">]</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                        <span class="n">molecule</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molcursors</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
                         <span class="n">molecules</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span> <span class="o">=</span> <span class="n">molecule</span>
                         <span class="n">movers</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span> <span class="o">=</span> <span class="n">molecule</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
                         <span class="n">maps</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cursors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
@@ -3938,9 +3979,7 @@
                             <span class="p">)</span>
                         <span class="p">)</span>
 
-                    <span class="n">movers</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span><span class="o">.</span><span class="n">change</span><span class="p">(</span>
-                        <span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">maps</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span>
-                    <span class="p">)</span>
+                    <span class="n">movers</span><span class="p">[</span><span class="n">molnum</span><span class="p">]</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">_internal</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">maps</span><span class="p">[</span><span class="n">molnum</span><span class="p">])</span>
 
             <span class="k">for</span> <span class="n">molnum</span><span class="p">,</span> <span class="n">mover</span> <span class="ow">in</span> <span class="n">movers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">auto_align</span> <span class="ow">and</span> <span class="p">(</span><span class="n">anchor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
@@ -4634,7 +4673,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 02, 2024</div>
+              Last updated on Apr 09, 2024</div>
           </div>
           <div class="right-details">
             
@@ -4649,7 +4688,7 @@
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=bf18f5af"></script>
+</div><script src="../../../_static/documentation_options.js?v=9887e882"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>

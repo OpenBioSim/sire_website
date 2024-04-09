@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>sire.morph._perturbation - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -251,6 +251,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorial/index_part07.html">Part 7 - Merged Molecules and Lambda Levers</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Part 7 - Merged Molecules and Lambda Levers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/01_perturbation.html">Perturbation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/02_levers.html">Lambda schedules and levers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/03_ghosts.html">Ghost Atoms and Softening Potentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/04_merge.html">Creating merge molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/05_pertfile.html">Perturbation Files (pertfiles)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/06_decouple.html">Annihilation and Decoupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/07_residue.html">Residue mutations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -258,7 +268,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet/search.html">Searching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet/view.html">Viewing Molecules</a></li>
@@ -268,67 +278,67 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/sire.html">sire module</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/base.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/cas.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/convert.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/io.html">Public API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/io_parser.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/morph.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/restraints.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/vol.html">Public API</a></li>
 </ul>
 </li>
@@ -341,7 +351,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
@@ -392,7 +402,134 @@
         </div>
         <article role="main">
           <h1>Source code for sire.morph._perturbation</h1><div class="highlight"><pre>
-<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Perturbation&quot;</span><span class="p">]</span>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Perturbation&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;link_to_reference&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;link_to_perturbed&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;extract_reference&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;extract_perturbed&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;zero_ghost_bonds&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;zero_ghost_angles&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;zero_ghost_torsions&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="link_to_reference">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.link_to_reference">[docs]</a>
+<span class="k">def</span> <span class="nf">link_to_reference</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the passed molecule(s), where any perturbable molecules</span>
+<span class="sd">    are linked to their reference (lambda=0) states</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;property is_perturbable&quot;</span><span class="p">):</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">(</span><span class="n">auto_commit</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
+
+
+
+<div class="viewcode-block" id="link_to_perturbed">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.link_to_perturbed">[docs]</a>
+<span class="k">def</span> <span class="nf">link_to_perturbed</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the passed molecule(s), where any perturbable molecules</span>
+<span class="sd">    are linked to their perturbed (lambda=1) states</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;property is_perturbable&quot;</span><span class="p">):</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">link_to_perturbed</span><span class="p">(</span><span class="n">auto_commit</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
+
+
+
+<div class="viewcode-block" id="extract_reference">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.extract_reference">[docs]</a>
+<span class="k">def</span> <span class="nf">extract_reference</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">remove_ghosts</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the passed molecule(s) where any perturbable molecules</span>
+<span class="sd">    have been extracted to their reference (lambda=0) state (i.e. deleting</span>
+<span class="sd">    their perturbed state)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;property is_perturbable&quot;</span><span class="p">):</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">extract_reference</span><span class="p">(</span><span class="n">remove_ghosts</span><span class="o">=</span><span class="n">remove_ghosts</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
+
+
+
+<div class="viewcode-block" id="extract_perturbed">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.extract_perturbed">[docs]</a>
+<span class="k">def</span> <span class="nf">extract_perturbed</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">remove_ghosts</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the passed molecule(s) where any perturbable molecules</span>
+<span class="sd">    have been extracted to their perturbed (lambda=1) state (i.e. deleting</span>
+<span class="sd">    their reference state)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;property is_perturbable&quot;</span><span class="p">):</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">extract_perturbed</span><span class="p">(</span><span class="n">remove_ghosts</span><span class="o">=</span><span class="n">remove_ghosts</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
+
+
+
+<div class="viewcode-block" id="zero_ghost_bonds">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.zero_ghost_bonds">[docs]</a>
+<span class="k">def</span> <span class="nf">zero_ghost_bonds</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Zero any bonds in the reference or perturbed</span>
+<span class="sd">    states where any of the atoms in those states is a ghost (dummy) atom</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;property is_perturbable&quot;</span><span class="p">):</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">zero_ghost_bonds</span><span class="p">(</span><span class="n">auto_commit</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
+
+
+
+<div class="viewcode-block" id="zero_ghost_angles">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.zero_ghost_angles">[docs]</a>
+<span class="k">def</span> <span class="nf">zero_ghost_angles</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Zero any angles in the reference or perturbed</span>
+<span class="sd">    states where any of the atoms in those states is a ghost (dummy) atom</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;property is_perturbable&quot;</span><span class="p">):</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">zero_ghost_angles</span><span class="p">(</span><span class="n">auto_commit</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
+
+
+
+<div class="viewcode-block" id="zero_ghost_torsions">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.zero_ghost_torsions">[docs]</a>
+<span class="k">def</span> <span class="nf">zero_ghost_torsions</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Zero any torsions (dihedrals or impropers) in the reference or perturbed</span>
+<span class="sd">    states where any of the atoms in those states is a ghost (dummy) atom</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;property is_perturbable&quot;</span><span class="p">):</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">zero_ghost_torsions</span><span class="p">(</span><span class="n">auto_commit</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">mols</span></div>
+
 
 
 <div class="viewcode-block" id="Perturbation">
@@ -414,29 +551,17 @@
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">]):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;You can only create a `Perturbation` from a &quot;</span>
-                <span class="s2">&quot;perturbable molecule!&quot;</span>
+                <span class="s2">&quot;You can only create a `Perturbation` from a &quot;</span> <span class="s2">&quot;perturbable molecule!&quot;</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">]):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;You can only create a `Perturbation` from a &quot;</span>
-                <span class="s2">&quot;perturbable molecule!&quot;</span>
+                <span class="s2">&quot;You can only create a `Perturbation` from a &quot;</span> <span class="s2">&quot;perturbable molecule!&quot;</span>
             <span class="p">)</span>
 
         <span class="c1"># construct the perturbation objects that can move the</span>
         <span class="c1"># coordinates between the end states</span>
-        <span class="kn">from</span> <span class="nn">..legacy.Mol</span> <span class="kn">import</span> <span class="p">(</span>
-            <span class="n">BondPerturbation</span><span class="p">,</span>
-            <span class="n">AnglePerturbation</span><span class="p">,</span>
-            <span class="n">GeometryPerturbations</span><span class="p">,</span>
-        <span class="p">)</span>
-
-        <span class="kn">from</span> <span class="nn">..legacy.MM</span> <span class="kn">import</span> <span class="n">AmberBond</span><span class="p">,</span> <span class="n">AmberAngle</span>
-        <span class="kn">from</span> <span class="nn">..cas</span> <span class="kn">import</span> <span class="n">Symbol</span>
-        <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span><span class="p">,</span> <span class="n">radian</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span> <span class="o">=</span> <span class="n">GeometryPerturbations</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="n">props</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s2">&quot;LJ&quot;</span><span class="p">,</span>
@@ -459,8 +584,36 @@
             <span class="s2">&quot;treechain&quot;</span><span class="p">,</span>
         <span class="p">]</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_map</span> <span class="o">=</span> <span class="nb">map</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_map0</span> <span class="o">=</span> <span class="nb">map</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_map1</span> <span class="o">=</span> <span class="nb">map</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Perturbation( </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="si">}</span><span class="s2"> )&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_get_perturbations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Find all of the perturbations in the molecule</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">..legacy.MM</span> <span class="kn">import</span> <span class="n">AmberBond</span><span class="p">,</span> <span class="n">AmberAngle</span>
+        <span class="kn">from</span> <span class="nn">..cas</span> <span class="kn">import</span> <span class="n">Symbol</span>
+        <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span><span class="p">,</span> <span class="n">radian</span>
+        <span class="kn">from</span> <span class="nn">..legacy.Mol</span> <span class="kn">import</span> <span class="p">(</span>
+            <span class="n">GeometryPerturbations</span><span class="p">,</span>
+            <span class="n">BondPerturbation</span><span class="p">,</span>
+            <span class="n">AnglePerturbation</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span>
+
+        <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span> <span class="o">=</span> <span class="n">GeometryPerturbations</span><span class="p">()</span>
 
         <span class="c1"># identify all of the ghost atoms</span>
         <span class="n">from_ghosts</span> <span class="o">=</span> <span class="p">[]</span>
@@ -505,7 +658,7 @@
                         <span class="n">angle</span><span class="o">=</span><span class="n">angle</span><span class="o">.</span><span class="n">id</span><span class="p">(),</span>
                         <span class="n">start</span><span class="o">=</span><span class="n">theta0_0</span> <span class="o">*</span> <span class="n">radian</span><span class="p">,</span>
                         <span class="n">end</span><span class="o">=</span><span class="n">theta0_1</span> <span class="o">*</span> <span class="n">radian</span><span class="p">,</span>
-                        <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span>
+                        <span class="nb">map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">,</span>
                     <span class="p">)</span>
                 <span class="p">)</span>
 
@@ -523,21 +676,155 @@
                     <span class="n">bond</span><span class="o">=</span><span class="n">bond</span><span class="o">.</span><span class="n">id</span><span class="p">(),</span>
                     <span class="n">start</span><span class="o">=</span><span class="n">r0_0</span> <span class="o">*</span> <span class="n">angstrom</span><span class="p">,</span>
                     <span class="n">end</span><span class="o">=</span><span class="n">r0_1</span> <span class="o">*</span> <span class="n">angstrom</span><span class="p">,</span>
-                    <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span>
+                    <span class="nb">map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">,</span>
                 <span class="p">)</span>
             <span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Perturbation( </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="si">}</span><span class="s2"> )&quot;</span>
+<div class="viewcode-block" id="Perturbation.extract_reference">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.extract_reference">[docs]</a>
+    <span class="k">def</span> <span class="nf">extract_reference</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">properties</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">remove_ghosts</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract the reference state properties of the molecule</span>
+<span class="sd">        and remove the perturbed state.</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+<span class="sd">        If a list of properties is passed then only those properties will</span>
+<span class="sd">        be extracted to the reference molecule</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        properties: list[str]</span>
+<span class="sd">            The list of properties to extract to the reference molecule</span>
+
+<span class="sd">        remove_ghosts: bool</span>
+<span class="sd">            If True then any ghost atoms will be removed from the molecule</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">properties</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">properties</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property_keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">):</span>
+                    <span class="n">properties</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="n">properties</span> <span class="o">=</span> <span class="p">[</span><span class="n">properties</span><span class="p">]</span>
+
+        <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span>
+            <span class="n">ref_prop</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">0&quot;</span>
+            <span class="n">pert_prop</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">1&quot;</span>
+
+            <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="n">ref_prop</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                    <span class="n">mol</span><span class="o">.</span><span class="n">remove_property</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+                <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">ref_prop</span><span class="p">))</span>
+                <span class="n">mol</span><span class="o">.</span><span class="n">remove_property</span><span class="p">(</span><span class="n">ref_prop</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="n">pert_prop</span><span class="p">):</span>
+                    <span class="n">mol</span><span class="o">.</span><span class="n">remove_property</span><span class="p">(</span><span class="n">pert_prop</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">):</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">remove_property</span><span class="p">(</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">)</span>
+
+        <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">remove_ghosts</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="p">[</span><span class="s2">&quot;not element Xx&quot;</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="c1"># there are no non-ghost atoms!</span>
+                <span class="kn">from</span> <span class="nn">..mol</span> <span class="kn">import</span> <span class="n">Molecule</span>
+
+                <span class="k">return</span> <span class="n">Molecule</span><span class="p">()</span>
+
+            <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">to_same_molecule</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">mol</span></div>
+
+
+<div class="viewcode-block" id="Perturbation.extract_perturbed">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.extract_perturbed">[docs]</a>
+    <span class="k">def</span> <span class="nf">extract_perturbed</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">properties</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">remove_ghosts</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract the perturbed state properties of the molecule</span>
+<span class="sd">        and remove the reference state.</span>
+
+<span class="sd">        If a list of properties is passed then only those properties will</span>
+<span class="sd">        be extracted to the reference molecule</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        properties: list[str]</span>
+<span class="sd">            The list of properties to extract to the perturbed molecule</span>
+
+<span class="sd">        remove_ghosts: bool</span>
+<span class="sd">            If True then any ghost atoms will be removed from the molecule</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">properties</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">properties</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property_keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">):</span>
+                    <span class="n">properties</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="n">properties</span> <span class="o">=</span> <span class="p">[</span><span class="n">properties</span><span class="p">]</span>
+
+        <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span>
+            <span class="n">ref_prop</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">0&quot;</span>
+            <span class="n">pert_prop</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">1&quot;</span>
+
+            <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="n">pert_prop</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                    <span class="n">mol</span><span class="o">.</span><span class="n">remove_property</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+                <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">pert_prop</span><span class="p">))</span>
+                <span class="n">mol</span><span class="o">.</span><span class="n">remove_property</span><span class="p">(</span><span class="n">pert_prop</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="n">ref_prop</span><span class="p">):</span>
+                    <span class="n">mol</span><span class="o">.</span><span class="n">remove_property</span><span class="p">(</span><span class="n">ref_prop</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">):</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">remove_property</span><span class="p">(</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">)</span>
+
+        <span class="n">mol</span><span class="o">.</span><span class="n">switch_to_alternate_names</span><span class="p">()</span>
+
+        <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">remove_ghosts</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="p">[</span><span class="s2">&quot;not element Xx&quot;</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="c1"># there are no non-ghost atoms!</span>
+                <span class="kn">from</span> <span class="nn">..mol</span> <span class="kn">import</span> <span class="n">Molecule</span>
+
+                <span class="k">return</span> <span class="n">Molecule</span><span class="p">()</span>
+
+            <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">to_same_molecule</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">mol</span>
+
+        <span class="k">return</span> <span class="n">mol</span></div>
+
 
 <div class="viewcode-block" id="Perturbation.link_to_reference">
 <a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.link_to_reference">[docs]</a>
-    <span class="k">def</span> <span class="nf">link_to_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">link_to_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">auto_commit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Link all of the properties of the molecule to their values in the</span>
 <span class="sd">        reference molecule (lambda=0).</span>
@@ -550,6 +837,9 @@
 
 <span class="sd">        properties: list[str]</span>
 <span class="sd">            The list of properties to link to the reference molecule</span>
+
+<span class="sd">        auto_commit: bool</span>
+<span class="sd">            If True then the molecule will be committed and returned</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">properties</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">properties</span> <span class="o">=</span> <span class="p">[]</span>
@@ -570,12 +860,16 @@
             <span class="n">mol</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">0&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+
+        <span class="k">if</span> <span class="n">auto_commit</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span></div>
 
 
 <div class="viewcode-block" id="Perturbation.link_to_perturbed">
 <a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.link_to_perturbed">[docs]</a>
-    <span class="k">def</span> <span class="nf">link_to_perturbed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">link_to_perturbed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">auto_commit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Link all of the properties of the molecule to their values in the</span>
 <span class="sd">        perturbed molecule (lambda=1).</span>
@@ -588,6 +882,9 @@
 
 <span class="sd">        properties: list[str]</span>
 <span class="sd">            The list of properties to link to the perturbed molecule</span>
+
+<span class="sd">        auto_commit: bool</span>
+<span class="sd">            If True then the molecule will be committed and returned</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">properties</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">properties</span> <span class="o">=</span> <span class="p">[]</span>
@@ -608,7 +905,11 @@
             <span class="n">mol</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">1&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+
+        <span class="k">if</span> <span class="n">auto_commit</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span></div>
 
 
 <div class="viewcode-block" id="Perturbation.set_lambda">
@@ -642,7 +943,7 @@
             <span class="p">)</span>
 
         <span class="n">vals</span> <span class="o">=</span> <span class="n">Values</span><span class="p">({</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;lambda&quot;</span><span class="p">):</span> <span class="n">lam_val</span><span class="p">})</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span><span class="o">.</span><span class="n">perturb</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">vals</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_perturbations</span><span class="p">()</span><span class="o">.</span><span class="n">perturb</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">vals</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
 
@@ -657,7 +958,7 @@
 
 <div class="viewcode-block" id="Perturbation.view">
 <a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.view">[docs]</a>
-    <span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;perturbed&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        View the perturbation</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -667,7 +968,11 @@
 
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">({})</span>
 
-        <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;perturbed&quot;</span><span class="p">:</span>
+            <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">)</span><span class="o">.</span><span class="n">link_to_perturbed</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">)</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">()</span>
+
         <span class="n">mol</span><span class="o">.</span><span class="n">delete_all_frames</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">is_link</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]):</span>
@@ -675,10 +980,7 @@
             <span class="c1"># as we will be replacing it with the calculated perturbed</span>
             <span class="c1"># coordinates</span>
             <span class="n">mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
-                <span class="n">mol</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
-                <span class="o">.</span><span class="n">edit</span><span class="p">()</span>
-                <span class="o">.</span><span class="n">remove_link</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">())</span>
-                <span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="n">mol</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span><span class="o">.</span><span class="n">remove_link</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">())</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]):</span>
@@ -694,15 +996,322 @@
 
         <span class="k">for</span> <span class="n">lam</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
             <span class="n">vals</span> <span class="o">=</span> <span class="n">Values</span><span class="p">({</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;lambda&quot;</span><span class="p">):</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">lam</span><span class="p">})</span>
-            <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span><span class="o">.</span><span class="n">perturb</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
+            <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_perturbations</span><span class="p">()</span><span class="o">.</span><span class="n">perturb</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
             <span class="n">mol</span><span class="o">.</span><span class="n">save_frame</span><span class="p">()</span>
 
         <span class="k">for</span> <span class="n">lam</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
             <span class="n">vals</span> <span class="o">=</span> <span class="n">Values</span><span class="p">({</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;lambda&quot;</span><span class="p">):</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">lam</span><span class="p">})</span>
-            <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_perturbations</span><span class="o">.</span><span class="n">perturb</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
+            <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_perturbations</span><span class="p">()</span><span class="o">.</span><span class="n">perturb</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
             <span class="n">mol</span><span class="o">.</span><span class="n">save_frame</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">mol</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">mol</span><span class="p">[</span><span class="s2">&quot;not element Xx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Perturbation.view_reference">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.view_reference">[docs]</a>
+    <span class="k">def</span> <span class="nf">view_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        View the reference state of the perturbation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;reference&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Perturbation.view_perturbed">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.view_perturbed">[docs]</a>
+    <span class="k">def</span> <span class="nf">view_perturbed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        View the perturbed state of the perturbation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;perturbed&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Perturbation.zero_ghost_bonds">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.zero_ghost_bonds">[docs]</a>
+    <span class="k">def</span> <span class="nf">zero_ghost_bonds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auto_commit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Zero the bonds in the reference and perturbed states where any of</span>
+<span class="sd">        the atoms in those states is a ghost atom</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_openmm</span><span class="p">()</span>
+
+        <span class="n">zero_in_ref</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">zero_in_pert</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">from_ghosts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">to_ghosts</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">get_to_ghost_idxs</span><span class="p">():</span>
+            <span class="n">to_ghosts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">get_from_ghost_idxs</span><span class="p">():</span>
+            <span class="n">from_ghosts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">bonds</span><span class="p">():</span>
+            <span class="n">atoms</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+
+            <span class="n">n_in_from</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">()</span> <span class="ow">in</span> <span class="n">from_ghosts</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
+            <span class="n">n_in_to</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">()</span> <span class="ow">in</span> <span class="n">to_ghosts</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
+
+            <span class="k">if</span> <span class="n">n_in_from</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">n_in_to</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">n_in_from</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">zero_in_pert</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bond</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">n_in_to</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">zero_in_ref</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bond</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">zero_in_pert</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bond</span><span class="p">)</span>
+                <span class="n">zero_in_ref</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bond</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_ref</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_pert</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># nothing to do</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+        <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_ref</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">bonds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;bond0&quot;</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">zero_in_ref</span><span class="p">:</span>
+                <span class="n">bonds</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">bond</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+
+            <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;bond0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">bonds</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_pert</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">bonds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;bond1&quot;</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">zero_in_pert</span><span class="p">:</span>
+                <span class="n">bonds</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">bond</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+
+            <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;bond1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">bonds</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">auto_commit</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="Perturbation.zero_ghost_angles">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.zero_ghost_angles">[docs]</a>
+    <span class="k">def</span> <span class="nf">zero_ghost_angles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auto_commit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Zero the angles in the reference and perturbed states where any of</span>
+<span class="sd">        the atoms in those states is a ghost atom</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_openmm</span><span class="p">()</span>
+
+        <span class="n">zero_in_ref</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">zero_in_pert</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">from_ghosts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">to_ghosts</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">get_to_ghost_idxs</span><span class="p">():</span>
+            <span class="n">to_ghosts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">get_from_ghost_idxs</span><span class="p">():</span>
+            <span class="n">from_ghosts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">angles</span><span class="p">():</span>
+            <span class="n">atoms</span> <span class="o">=</span> <span class="n">angle</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+
+            <span class="n">n_in_from</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">()</span> <span class="ow">in</span> <span class="n">from_ghosts</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+            <span class="n">n_in_to</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">()</span> <span class="ow">in</span> <span class="n">to_ghosts</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+
+            <span class="k">if</span> <span class="n">n_in_from</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">n_in_to</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">n_in_from</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># don&#39;t zero if all are ghosts</span>
+                <span class="k">if</span> <span class="n">n_in_to</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">zero_in_pert</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">n_in_to</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># don&#39;t zero if all are ghosts</span>
+                <span class="k">if</span> <span class="n">n_in_from</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">zero_in_ref</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">zero_in_pert</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+                <span class="n">zero_in_ref</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_ref</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_pert</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># nothing to do</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+        <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_ref</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">angs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;angle0&quot;</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">zero_in_ref</span><span class="p">:</span>
+                <span class="n">angs</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+
+            <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;angle0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">angs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_pert</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">angs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;angle1&quot;</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">zero_in_pert</span><span class="p">:</span>
+                <span class="n">angs</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+
+            <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;angle1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">angs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">auto_commit</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="Perturbation.zero_ghost_torsions">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.zero_ghost_torsions">[docs]</a>
+    <span class="k">def</span> <span class="nf">zero_ghost_torsions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auto_commit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Zero the torsions (dihedrals and impropers) in the reference and</span>
+<span class="sd">        perturbed states where any of the atoms in those states is a ghost atom</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_openmm</span><span class="p">()</span>
+
+        <span class="n">zero_in_ref</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">zero_in_pert</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">from_ghosts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">to_ghosts</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">get_to_ghost_idxs</span><span class="p">():</span>
+            <span class="n">to_ghosts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">get_from_ghost_idxs</span><span class="p">():</span>
+            <span class="n">from_ghosts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">torsion</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">torsions</span><span class="p">():</span>
+            <span class="n">atoms</span> <span class="o">=</span> <span class="n">torsion</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+
+            <span class="n">n_in_from</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">()</span> <span class="ow">in</span> <span class="n">from_ghosts</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+            <span class="n">n_in_to</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">()</span> <span class="ow">in</span> <span class="n">to_ghosts</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+
+            <span class="k">if</span> <span class="n">n_in_from</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">n_in_to</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">n_in_from</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># don&#39;t zero if all are ghosts</span>
+                <span class="k">if</span> <span class="n">n_in_to</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+                    <span class="n">zero_in_pert</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torsion</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">n_in_to</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># don&#39;t zero if all are ghosts</span>
+                <span class="k">if</span> <span class="n">n_in_from</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+                    <span class="n">zero_in_ref</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torsion</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">zero_in_pert</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torsion</span><span class="p">)</span>
+                <span class="n">zero_in_ref</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torsion</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_ref</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_pert</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># nothing to do</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+        <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_ref</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dihs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;dihedral0&quot;</span><span class="p">])</span>
+            <span class="n">imps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;improper0&quot;</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">torsion</span> <span class="ow">in</span> <span class="n">zero_in_ref</span><span class="p">:</span>
+                <span class="n">dihs</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">torsion</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+                <span class="n">imps</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">torsion</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+
+            <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;dihedral0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">dihs</span><span class="p">)</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;improper0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">imps</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zero_in_pert</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dihs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;dihedral1&quot;</span><span class="p">])</span>
+            <span class="n">imps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;improper1&quot;</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">torsion</span> <span class="ow">in</span> <span class="n">zero_in_pert</span><span class="p">:</span>
+                <span class="n">dihs</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">torsion</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+                <span class="n">imps</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">torsion</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
+
+            <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;dihedral1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">dihs</span><span class="p">)</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">[</span><span class="s2">&quot;improper1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">imps</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">auto_commit</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="Perturbation.to_openmm">
+<a class="viewcode-back" href="../../../api/morph.html#sire.morph.Perturbation.to_openmm">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_openmm</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">constraint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">perturbable_constraint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">swap_end_states</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">include_constrained_energies</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="nb">map</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the PerturbableOpenMMMolecule that corresponds to</span>
+<span class="sd">        this perturbation in the OpenMM simulation. The arguments</span>
+<span class="sd">        to this function have the same meaning as the equivalents</span>
+<span class="sd">        in the dynamics() and minimisation() functions of a molecule.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        constraint: str</span>
+<span class="sd">            The constraint algorithm to use</span>
+
+<span class="sd">        perturbable_constraint: str</span>
+<span class="sd">            The constraint algorithm to use for perturbable atoms</span>
+
+<span class="sd">        swap_end_states: bool</span>
+<span class="sd">            If True then the end states will be swapped</span>
+
+<span class="sd">        include_constrained_energies: bool</span>
+<span class="sd">            If True then the constrained energies will be included</span>
+
+<span class="sd">        map: dict</span>
+<span class="sd">            The property map to use</span>
+
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        PerturbableOpenMMMolecule</span>
+<span class="sd">            The perturbable OpenMM molecule</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+
+        <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="p">,</span> <span class="nb">map</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">constraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;constraint&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">constraint</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">perturbable_constraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;perturbable_constraint&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">perturbable_constraint</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">swap_end_states</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;swap_end_states&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">swap_end_states</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">include_constrained_energies</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;include_constrained_energies&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">include_constrained_energies</span><span class="p">))</span>
+
+        <span class="kn">from</span> <span class="nn">..convert.openmm</span> <span class="kn">import</span> <span class="n">PerturbableOpenMMMolecule</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">PerturbableOpenMMMolecule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">molecule</span><span class="p">(),</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="c1"># probably need to choose an end-state - default to reference</span>
+            <span class="k">return</span> <span class="n">PerturbableOpenMMMolecule</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">()</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">(</span><span class="n">auto_commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">(),</span>
+                <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span>
+            <span class="p">)</span></div>
 </div>
 
 </pre></div>
@@ -719,7 +1328,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 02, 2024</div>
+              Last updated on Apr 09, 2024</div>
           </div>
           <div class="right-details">
             
@@ -734,7 +1343,7 @@
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=bf18f5af"></script>
+</div><script src="../../../_static/documentation_options.js?v=9887e882"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>

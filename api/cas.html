@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.convert" href="index_convert.html" /><link rel="prev" title="sire.cas" href="index_cas.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
@@ -252,6 +252,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part07.html">Part 7 - Merged Molecules and Lambda Levers</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Part 7 - Merged Molecules and Lambda Levers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/01_perturbation.html">Perturbation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/02_levers.html">Lambda schedules and levers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/03_ghosts.html">Ghost Atoms and Softening Potentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/04_merge.html">Creating merge molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/05_pertfile.html">Perturbation Files (pertfiles)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/06_decouple.html">Annihilation and Decoupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/07_residue.html">Residue mutations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -259,7 +269,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
@@ -269,67 +279,67 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sire.html">sire module</a></li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="sire_modules.html">Sub-modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="sire_modules.html">Sub-modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="base.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current has-children"><a class="reference internal" href="index_cas.html">sire.cas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="index_cas.html">sire.cas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="convert.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="io.html">Public API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="io_parser.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="morph.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="restraints.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="vol.html">Public API</a></li>
 </ul>
 </li>
@@ -342,7 +352,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
@@ -922,6 +932,29 @@ been substituted into this expression</p>
 to a global lambda value. The change can be broken up by sub lever,
 and by stage.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_annihilate_stage">
+<span class="sig-name descname"><span class="pre">add_annihilate_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_annihilate_stage" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>addAnnihilateStage( (LambdaSchedule)arg1 [, (bool)perturbed_is_annihilated=True]) -&gt; None :</dt><dd><dl class="simple">
+<dt>Add a stage to the schedule that will annihilate the perturbed</dt><dd><p>state if <em class="xref py py-obj">perturbed_is_annihilated</em> is true, otherwise the
+reference state is annihilated. The stage will be called annihilate.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void addAnnihilateStage(SireCAS::LambdaSchedule {lvalue} [,bool=True])</p>
+</dd>
+</dl>
+</dd>
+<dt>addAnnihilateStage( (LambdaSchedule)arg1, (object)name [, (bool)perturbed_is_annihilated=True]) -&gt; None :</dt><dd><dl class="simple">
+<dt>Add a named stage to the schedule that will annihilate the perturbed</dt><dd><p>state if <em class="xref py py-obj">perturbed_is_annihilated</em> is true, otherwise the
+reference state is annihilated.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void addAnnihilateStage(SireCAS::LambdaSchedule {lvalue},QString [,bool=True])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_charge_scale_stages">
 <span class="sig-name descname"><span class="pre">add_charge_scale_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_charge_scale_stages" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
@@ -937,14 +970,74 @@ scales the charge parameter from :gamma:.final to final.</p>
 </dd>
 </dl>
 </dd>
-</dl>
-<p>addChargeScaleStages( (LambdaSchedule)arg1, (object)decharge_name, (object)recharge_name [, (float)scale=0.2]) -&gt; None :</p>
-<blockquote>
-<div><dl class="simple">
+<dt>addChargeScaleStages( (LambdaSchedule)arg1, (object)decharge_name, (object)recharge_name [, (float)scale=0.2]) -&gt; None :</dt><dd><dl class="simple">
+<dt>Sandwich the current set of stages with a charge-descaling and</dt><dd><p>a charge-scaling stage. This prepends a charge-descaling stage
+that scales the charge parameter down from <a class="reference internal" href="#sire.cas.LambdaSchedule.initial" title="sire.cas.LambdaSchedule.initial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial</span></code></a> to
+:gamma:.initial (where :gamma:=`scale`). The charge parameter in all of
+the exising stages in this schedule are then multiplied
+by :gamma:. A final charge-rescaling stage is then appended that
+scales the charge parameter from :gamma:.final to final.</p>
+</dd>
 <dt>C++ signature :</dt><dd><p>void addChargeScaleStages(SireCAS::LambdaSchedule {lvalue},QString,QString [,double=0.2])</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_decouple_stage">
+<span class="sig-name descname"><span class="pre">add_decouple_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_decouple_stage" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>addDecoupleStage( (LambdaSchedule)arg1 [, (bool)perturbed_is_decoupled=True]) -&gt; None :</dt><dd><dl class="simple">
+<dt>Add a stage to the schedule that will decouple the perturbed</dt><dd><p>state if <em class="xref py py-obj">perturbed_is_decoupled</em> is true, otherwise the
+reference state is decoupled. The stage will be called decouple.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void addDecoupleStage(SireCAS::LambdaSchedule {lvalue} [,bool=True])</p>
+</dd>
+</dl>
+</dd>
+<dt>addDecoupleStage( (LambdaSchedule)arg1, (object)name [, (bool)perturbed_is_decoupled=True]) -&gt; None :</dt><dd><dl class="simple">
+<dt>Add a named stage to the schedule that will decouple the perturbed</dt><dd><p>state if <em class="xref py py-obj">perturbed_is_decoupled</em> is true, otherwise the
+reference state is decoupled.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void addDecoupleStage(SireCAS::LambdaSchedule {lvalue},QString [,bool=True])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_force">
+<span class="sig-name descname"><span class="pre">add_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_force" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>addForce( (LambdaSchedule)arg1, (object)force) -&gt; None :</dt><dd><dl class="simple">
+<dt>Add a force to a schedule. This is only useful if you want to</dt><dd><p>plot how the equations would affect the lever. Forces will be
+automatically added by any perturbation run that needs them,
+so you dont need to add them manually yourself.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void addForce(SireCAS::LambdaSchedule {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_forces">
+<span class="sig-name descname"><span class="pre">add_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_forces" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>addForces( (LambdaSchedule)arg1, (object)forces) -&gt; None :</dt><dd><dl class="simple">
+<dt>Add some forces to a schedule. This is only useful if you want to</dt><dd><p>plot how the equations would affect the lever. Forces will be
+automatically added by any perturbation run that needs them,
+so you dont need to add them manually yourself.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void addForces(SireCAS::LambdaSchedule {lvalue},QStringList)</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -991,14 +1084,15 @@ so you dont need to add them manually yourself.</p>
 </dd>
 </dl>
 </dd>
-</dl>
-<p>addMorphStage( (LambdaSchedule)arg1, (object)name) -&gt; None :</p>
-<blockquote>
-<div><dl class="simple">
+<dt>addMorphStage( (LambdaSchedule)arg1, (object)name) -&gt; None :</dt><dd><dl class="simple">
+<dt>Append a morph stage onto this schedule. The morph stage is a</dt><dd><p>standard stage that scales each forcefield parameter by
+(1-:lambda:).initial + :lambda:.final</p>
+</dd>
 <dt>C++ signature :</dt><dd><p>void addMorphStage(SireCAS::LambdaSchedule {lvalue},QString)</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1038,6 +1132,36 @@ a custom lever for this stage.</p>
 <span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.assign" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule {lvalue} assign(SireCAS::LambdaSchedule {lvalue},SireCAS::LambdaSchedule)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.charge_scaled_annihilate">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_annihilate" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return a schedule that can be used for a standard double-annihilation</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_annihilated</em> is true, then
+the perturbed state is annihilated, otherwise the reference state is
+annihilated. In this case also add states to decharge and recharge
+the molecule either side of the annihilation stage, where the charges
+are scaled to scale times their original value.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule charge_scaled_annihilate([ double=0.2 [,bool=True]])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.charge_scaled_decouple">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_decouple" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return a schedule that can be used for a standard double-decoupling</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_decoupled</em> is true, then
+the perturbed state is decoupled, otherwise the reference state is
+decoupled. In this case also add states to decharge and recharge
+the molecule either side of the decoupling stage, where the charges
+are scaled to scale times their original value.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule charge_scaled_decouple([ double=0.2 [,bool=True]])</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1138,19 +1262,29 @@ original values.</p>
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_equation">
 <span class="sig-name descname"><span class="pre">get_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_equation" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
-<dt>getEquation( (LambdaSchedule)arg1, (object)stage) -&gt; Expression :</dt><dd><dl class="simple">
-<dt>Return the default equation used to control the parameters for</dt><dd><p>the stage <em class="xref py py-obj">stage</em>.</p>
+<dt>getEquation( (LambdaSchedule)arg1 [, (object)stage=’*’ [, (object)force=’*’ [, (object)lever=’*’]]]) -&gt; Expression :</dt><dd><dl class="simple">
+<dt>Return the equation used to control the specified lever</dt><dd><p>in the specified force at the specified stage. This will
+be a custom equation if that has been set for this lever in this
+force, or else it will be a custom equation set for this lever,
+else it will be the default equation for this stage</p>
 </dd>
-<dt>C++ signature :</dt><dd><p>SireCAS::Expression getEquation(SireCAS::LambdaSchedule {lvalue},QString)</p>
+<dt>C++ signature :</dt><dd><p>SireCAS::Expression getEquation(SireCAS::LambdaSchedule {lvalue} [,QString=’*’ [,QString=’*’ [,QString=’*’]]])</p>
 </dd>
 </dl>
 </dd>
-<dt>getEquation( (LambdaSchedule)arg1, (object)stage, (object)lever) -&gt; Expression :</dt><dd><dl class="simple">
-<dt>Return the equation used to control the specified <em class="xref py py-obj">lever</em></dt><dd><p>at the specified <em class="xref py py-obj">stage</em>. This will be a custom equation
-if that has been set for this lever, or else the
-default equation for this stage.</p>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_forces">
+<span class="sig-name descname"><span class="pre">get_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_forces" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getForces( (LambdaSchedule)arg1) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return all of the forces that have been explicitly added</dt><dd><p>to the schedule. Note that forces will be automatically added
+by any perturbation run that needs them, so you dont normally
+need to manage them manually yourself.</p>
 </dd>
-<dt>C++ signature :</dt><dd><p>SireCAS::Expression getEquation(SireCAS::LambdaSchedule {lvalue},QString,QString)</p>
+<dt>C++ signature :</dt><dd><p>QStringList getForces(SireCAS::LambdaSchedule {lvalue})</p>
 </dd>
 </dl>
 </dd>
@@ -1176,7 +1310,7 @@ default equation for this stage.</p>
 <span class="sig-name descname"><span class="pre">get_lever_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_lever_stages" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
 <dt>getLeverStages( (LambdaSchedule)arg1, (object)lambda_values) -&gt; object :</dt><dd><dl class="simple">
-<dt>Return the list of lever stages that are used for the passed list</dt><dd><p>of lambda values. The lever names will be returned in the matching
+<dt>Return the list of stages that are used for the passed list</dt><dd><p>of lambda values. The stage names will be returned in the matching
 order of the lambda values.</p>
 </dd>
 <dt>C++ signature :</dt><dd><p>QStringList getLeverStages(SireCAS::LambdaSchedule {lvalue},QVector&lt;double&gt;)</p>
@@ -1184,7 +1318,7 @@ order of the lambda values.</p>
 </dl>
 </dd>
 <dt>getLeverStages( (LambdaSchedule)arg1 [, (int)num_lambda=101]) -&gt; object :</dt><dd><dl class="simple">
-<dt>Return the lever stages used for the list of <em class="xref py py-obj">nvalue</em> lambda values</dt><dd><p>generated for the global lambda value between 0 and 1 inclusive.</p>
+<dt>Return the stages used for the list of <em class="xref py py-obj">nvalue</em> lambda values</dt><dd><p>generated for the global lambda value between 0 and 1 inclusive.</p>
 </dd>
 <dt>C++ signature :</dt><dd><p>QStringList getLeverStages(SireCAS::LambdaSchedule {lvalue} [,int=101])</p>
 </dd>
@@ -1239,6 +1373,24 @@ need to manage them manually yourself.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_molecule_schedule">
+<span class="sig-name descname"><span class="pre">get_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_molecule_schedule" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id) -&gt; LambdaSchedule :</dt><dd><dl>
+<dt>Return the schedule used to control perturbations for the</dt><dd><p>perturbable molecule (or part of molecule) that is identified by the
+passed pert_mol_id. This schedule will be used to control
+all of the levers for this molecule (or part of molecule).</p>
+<p>This returns this schedule if there is no specified schedule
+for this molecule</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule getMoleculeSchedule(SireCAS::LambdaSchedule {lvalue},int)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_stage">
 <span class="sig-name descname"><span class="pre">get_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_stage" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
@@ -1260,6 +1412,34 @@ need to manage them manually yourself.</p>
 <dt>Return the names of all of the stages in this schedule, in</dt><dd><p>the order they will be performed</p>
 </dd>
 <dt>C++ signature :</dt><dd><p>QStringList getStages(SireCAS::LambdaSchedule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.has_force_specific_equation">
+<span class="sig-name descname"><span class="pre">has_force_specific_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.has_force_specific_equation" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>hasForceSpecificEquation( (LambdaSchedule)arg1 [, (object)stage=’*’ [, (object)force=’*’ [, (object)lever=’*’]]]) -&gt; bool :</dt><dd><dl class="simple">
+<dt>Return whether or not the specified lever in the specified force</dt><dd><p>at the specified stage has a custom equation set for it</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>bool hasForceSpecificEquation(SireCAS::LambdaSchedule {lvalue} [,QString=’*’ [,QString=’*’ [,QString=’*’]]])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.has_molecule_schedule">
+<span class="sig-name descname"><span class="pre">has_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.has_molecule_schedule" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>hasMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id) -&gt; bool :</dt><dd><dl class="simple">
+<dt>Return whether or not the perturbable molecule (or part of molecule)</dt><dd><p>that is identified by passed pert_mol_id has its own schedule</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>bool hasMoleculeSchedule(SireCAS::LambdaSchedule {lvalue},int)</p>
 </dd>
 </dl>
 </dd>
@@ -1319,10 +1499,11 @@ variable that goes from 0.0-1.0 within that stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.morph">
-<span class="sig-name descname"><span class="pre">morph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)lever</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(float)initial</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(float)final</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(float)lambda_value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.morph" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">morph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(object)force='*'</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(object)lever='*'</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)initial=0</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)final=1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)lambda_value=0</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.morph" title="Link to this definition">#</a></dt>
 <dd><dl>
 <dt>Return the parameters for the specified lever called <em class="xref py py-obj">lever_name</em></dt><dd><blockquote>
-<div><p>that have been morphed from the passed list of initial values
+<div><p>in the force force
+that have been morphed from the passed list of initial values
 (in <a class="reference internal" href="#sire.cas.LambdaSchedule.initial" title="sire.cas.LambdaSchedule.initial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial</span></code></a>) to the passed list of final values (in <a class="reference internal" href="#sire.cas.LambdaSchedule.final" title="sire.cas.LambdaSchedule.final"><code class="xref py py-obj docutils literal notranslate"><span class="pre">final</span></code></a>)
 for the specified global value of :lambda: (in <em class="xref py py-obj">lambda_value</em>).</p>
 <p>The morphed parameters will be returned in the matching
@@ -1330,12 +1511,13 @@ order to <a class="reference internal" href="#sire.cas.LambdaSchedule.initial" t
 <p>This morphs a single floating point parameters.</p>
 </div></blockquote>
 <dl class="simple">
-<dt>C++ signature :</dt><dd><p>double morph(SireCAS::LambdaSchedule {lvalue},QString,double,double,double)</p>
+<dt>C++ signature :</dt><dd><p>double morph(SireCAS::LambdaSchedule {lvalue} [,QString=’*’ [,QString=’*’ [,double=0 [,double=1 [,double=0]]]]])</p>
 </dd>
 </dl>
 </dd>
-<dt>morph( (LambdaSchedule)arg1, (object)lever, (object)initial, (object)final, (float)lambda_value) -&gt; object :</dt><dd><dl>
-<dt>Return the parameters for the specified lever called <em class="xref py py-obj">lever_name</em></dt><dd><p>that have been morphed from the passed list of initial values
+<dt>morph( (LambdaSchedule)arg1 [, (object)force=’*’ [, (object)lever=’*’ [, (object)initial=[] [, (object)final=[] [, (float)lambda_value=0.0]]]]]) -&gt; object :</dt><dd><dl>
+<dt>Return the parameters for the specified lever called <em class="xref py py-obj">lever_name</em></dt><dd><p>in the specified force,
+that have been morphed from the passed list of initial values
 (in <a class="reference internal" href="#sire.cas.LambdaSchedule.initial" title="sire.cas.LambdaSchedule.initial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial</span></code></a>) to the passed list of final values (in <a class="reference internal" href="#sire.cas.LambdaSchedule.final" title="sire.cas.LambdaSchedule.final"><code class="xref py py-obj docutils literal notranslate"><span class="pre">final</span></code></a>)
 for the specified global value of :lambda: (in <em class="xref py py-obj">lambda_value</em>).</p>
 <p>The morphed parameters will be returned in the matching
@@ -1344,12 +1526,13 @@ order to <a class="reference internal" href="#sire.cas.LambdaSchedule.initial" t
 of this function that morphs integer parameters, in which
 case the result would be rounded to the nearest integer.</p>
 </dd>
-<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; morph(SireCAS::LambdaSchedule {lvalue},QString,QVector&lt;double&gt;,QVector&lt;double&gt;,double)</p>
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; morph(SireCAS::LambdaSchedule {lvalue} [,QString=’*’ [,QString=’*’ [,QVector&lt;double&gt;=[] [,QVector&lt;double&gt;=[] [,double=0.0]]]]])</p>
 </dd>
 </dl>
 </dd>
-<dt>morph( (LambdaSchedule)arg1, (object)lever, (object)initial, (object)final, (float)lambda_value) -&gt; object :</dt><dd><dl>
-<dt>Return the parameters for the specified lever called <em class="xref py py-obj">lever_name</em></dt><dd><p>that have been morphed from the passed list of initial values
+<dt>morph( (LambdaSchedule)arg1 [, (object)force=’*’ [, (object)lever=’*’ [, (object)initial=[] [, (object)final=[] [, (float)lambda_value=0.0]]]]]) -&gt; object :</dt><dd><dl>
+<dt>Return the parameters for the specified lever called <em class="xref py py-obj">lever_name</em></dt><dd><p>for the specified force
+that have been morphed from the passed list of initial values
 (in <a class="reference internal" href="#sire.cas.LambdaSchedule.initial" title="sire.cas.LambdaSchedule.initial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial</span></code></a>) to the passed list of final values (in <a class="reference internal" href="#sire.cas.LambdaSchedule.final" title="sire.cas.LambdaSchedule.final"><code class="xref py py-obj docutils literal notranslate"><span class="pre">final</span></code></a>)
 for the specified global value of :lambda: (in <em class="xref py py-obj">lambda_value</em>).</p>
 <p>The morphed parameters will be returned in the matching
@@ -1357,7 +1540,23 @@ order to <a class="reference internal" href="#sire.cas.LambdaSchedule.initial" t
 <p>This function morphs integer parameters. In this case,
 the result will be the rounded to the nearest integer.</p>
 </dd>
-<dt>C++ signature :</dt><dd><p>QVector&lt;int&gt; morph(SireCAS::LambdaSchedule {lvalue},QString,QVector&lt;int&gt;,QVector&lt;int&gt;,double)</p>
+<dt>C++ signature :</dt><dd><p>QVector&lt;int&gt; morph(SireCAS::LambdaSchedule {lvalue} [,QString=’*’ [,QString=’*’ [,QVector&lt;int&gt;=[] [,QVector&lt;int&gt;=[] [,double=0.0]]]]])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.num_forces">
+<span class="sig-name descname"><span class="pre">num_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.num_forces" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>nForces( (LambdaSchedule)arg1) -&gt; int :</dt><dd><dl class="simple">
+<dt>Return the number of forces that have been explicitly added</dt><dd><p>to the schedule. Note that forces will be automatically added
+by any perturbation run that needs them, so you dont normally
+need to manage them manually yourself.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>int nForces(SireCAS::LambdaSchedule {lvalue})</p>
 </dd>
 </dl>
 </dd>
@@ -1413,11 +1612,43 @@ a custom lever for this stage.</p>
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_equation">
 <span class="sig-name descname"><span class="pre">remove_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_equation" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
-<dt>removeEquation( (LambdaSchedule)arg1, (object)stage, (object)lever) -&gt; None :</dt><dd><dl class="simple">
-<dt>Remove the custom equation for the specified <em class="xref py py-obj">lever</em> at the</dt><dd><p>specified <em class="xref py py-obj">stage</em>. The lever will now use the default
-equation at this stage.</p>
+<dt>removeEquation( (LambdaSchedule)arg1 [, (object)stage=’*’ [, (object)force=’*’ [, (object)lever=’*’]]]) -&gt; None :</dt><dd><dl class="simple">
+<dt>Remove the custom equation for the specified <em class="xref py py-obj">lever</em> in the</dt><dd><p>specified force at the specified <em class="xref py py-obj">stage</em>.
+The lever will now use the equation specified for this
+lever for this stage, or the default lever for the stage
+if this isnt set</p>
 </dd>
-<dt>C++ signature :</dt><dd><p>void removeEquation(SireCAS::LambdaSchedule {lvalue},QString,QString)</p>
+<dt>C++ signature :</dt><dd><p>void removeEquation(SireCAS::LambdaSchedule {lvalue} [,QString=’*’ [,QString=’*’ [,QString=’*’]]])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_force">
+<span class="sig-name descname"><span class="pre">remove_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_force" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>removeForce( (LambdaSchedule)arg1, (object)force) -&gt; None :</dt><dd><dl class="simple">
+<dt>Remove a force from a schedule. This will not impact any</dt><dd><p>perturbation runs that use this schedule, as any missing
+forces will be re-added.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void removeForce(SireCAS::LambdaSchedule {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_forces">
+<span class="sig-name descname"><span class="pre">remove_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_forces" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>removeForces( (LambdaSchedule)arg1, (object)forces) -&gt; None :</dt><dd><dl class="simple">
+<dt>Remove some forces from a schedule. This will not impact any</dt><dd><p>perturbation runs that use this schedule, as any missing
+forces will be re-added.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void removeForces(SireCAS::LambdaSchedule {lvalue},QStringList)</p>
 </dd>
 </dl>
 </dd>
@@ -1455,6 +1686,34 @@ levers will be re-added.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_molecule_schedule">
+<span class="sig-name descname"><span class="pre">remove_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_molecule_schedule" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>removeMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id) -&gt; None :</dt><dd><dl class="simple">
+<dt>Remove the perturbable molecule-specific schedule associated</dt><dd><p>with the perturbable molecule (or part of molecule) that is
+identified by the passed pert_mol_id.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void removeMoleculeSchedule(SireCAS::LambdaSchedule {lvalue},int)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_stage">
+<span class="sig-name descname"><span class="pre">remove_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_stage" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>removeStage( (LambdaSchedule)arg1, (object)stage) -&gt; None :</dt><dd><p>Remove the stage stage</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void removeStage(SireCAS::LambdaSchedule {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_constant">
 <span class="sig-name descname"><span class="pre">set_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_constant" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
@@ -1479,12 +1738,28 @@ levers will be re-added.</p>
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_default_equation">
 <span class="sig-name descname"><span class="pre">set_default_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_default_equation" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
-<dt>setDefaultEquation( (LambdaSchedule)arg1, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
+<dt>setDefaultStageEquation( (LambdaSchedule)arg1, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
 <dt>Set the default equation used to control levers for the</dt><dd><p>stage stage to equation. This equation will be used
 to control any levers in this stage that dont have
 their own custom equation.</p>
 </dd>
-<dt>C++ signature :</dt><dd><p>void setDefaultEquation(SireCAS::LambdaSchedule {lvalue},QString,SireCAS::Expression)</p>
+<dt>C++ signature :</dt><dd><p>void setDefaultStageEquation(SireCAS::LambdaSchedule {lvalue},QString,SireCAS::Expression)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_default_stage_equation">
+<span class="sig-name descname"><span class="pre">set_default_stage_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_default_stage_equation" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>setDefaultStageEquation( (LambdaSchedule)arg1, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
+<dt>Set the default equation used to control levers for the</dt><dd><p>stage stage to equation. This equation will be used
+to control any levers in this stage that dont have
+their own custom equation.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void setDefaultStageEquation(SireCAS::LambdaSchedule {lvalue},QString,SireCAS::Expression)</p>
 </dd>
 </dl>
 </dd>
@@ -1495,14 +1770,57 @@ their own custom equation.</p>
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_equation">
 <span class="sig-name descname"><span class="pre">set_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_equation" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
-<dt>setEquation( (LambdaSchedule)arg1, (object)stage, (object)lever, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
-<dt>Set the custom equation used to control the specified</dt><dd><p><em class="xref py py-obj">lever</em> at the stage <em class="xref py py-obj">stage</em> to <em class="xref py py-obj">equation</em>. This equation
-will only be used to control the parameters for the
-specified lever at the specified stage.</p>
+<dt>setEquation( (LambdaSchedule)arg1 [, (object)stage=’*’ [, (object)force=’*’ [, (object)lever=’*’ [, (Expression)equation=0]]]]) -&gt; None :</dt><dd><dl class="simple">
+<dt>Set the custom equation used to control the specified lever</dt><dd><p>for the specified force at the stage stage to equation.
+This equation will only be used to control the parameters for the
+specified lever in the specified force at the specified stage</p>
 </dd>
-<dt>C++ signature :</dt><dd><p>void setEquation(SireCAS::LambdaSchedule {lvalue},QString,QString,SireCAS::Expression)</p>
+<dt>C++ signature :</dt><dd><p>void setEquation(SireCAS::LambdaSchedule {lvalue} [,QString=’*’ [,QString=’*’ [,QString=’*’ [,SireCAS::Expression=0]]]])</p>
 </dd>
 </dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_molecule_schedule">
+<span class="sig-name descname"><span class="pre">set_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_molecule_schedule" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>setMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id, (LambdaSchedule)schedule) -&gt; None :</dt><dd><dl class="simple">
+<dt>Set schedule as the molecule-specific schedule for the</dt><dd><p>perturbable molecule (or part of molecule) that is identified by the
+passed pert_mol_id. This schedule will be used to control
+all of the levers for this molecule (or part of molecule),
+and replaces any levers provided by this schedule</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void setMoleculeSchedule(SireCAS::LambdaSchedule {lvalue},int,SireCAS::LambdaSchedule)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.standard_annihilate">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_annihilate" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return a schedule that can be used for a standard double-annihilation</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_annihilated</em> is true, then
+the perturbed state is annihilated, otherwise the reference state is
+annihilated.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule standard_annihilate([ bool=True])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.standard_decouple">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_decouple" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return a schedule that can be used for a standard double-decoupling</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_decoupled</em> is true, then
+the perturbed state is decoupled, otherwise the reference state is
+decoupled.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule standard_decouple([ bool=True])</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1515,6 +1833,23 @@ specified lever at the specified stage.</p>
 (1-:lambda:).initial + :lambda:.final</p>
 </dd>
 <dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule standard_morph()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.cas.LambdaSchedule.take_molecule_schedule">
+<span class="sig-name descname"><span class="pre">take_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.take_molecule_schedule" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>takeMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id) -&gt; LambdaSchedule :</dt><dd><dl class="simple">
+<dt>Remove the perturbable molecule-specific schedule associated</dt><dd><p>with the perturbable molecule (or part of molecule) that is
+identified by the passed pert_mol_id. This returns the
+schedule that was removed. If no such schedule exists, then
+a copy of this schedule is returned.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule takeMoleculeSchedule(SireCAS::LambdaSchedule {lvalue},int)</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1830,7 +2165,7 @@ an expression holding only this symbol if it does no exist in identities</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 02, 2024</div>
+              Last updated on Apr 09, 2024</div>
           </div>
           <div class="right-details">
             
@@ -1893,13 +2228,19 @@ an expression holding only this symbol if it does no exist in identities</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule</span></code></a><ul>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_annihilate_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_annihilate_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_charge_scale_stages"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_charge_scale_stages()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_decouple_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_decouple_stage()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_force"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_force()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_forces"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_forces()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_lever"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_lever()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_levers"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_levers()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_morph_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_morph_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.add_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.add_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.append_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.append_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.assign"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.charge_scaled_annihilate"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.charge_scaled_annihilate()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.charge_scaled_decouple"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.charge_scaled_decouple()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.charge_scaled_morph"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.charge_scaled_morph()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.clamp"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.clamp()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.clear"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.clear()</span></code></a></li>
@@ -1908,27 +2249,41 @@ an expression holding only this symbol if it does no exist in identities</p>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_constant"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_constant()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_constant_symbol"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_constant_symbol()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_equation"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_equation()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_forces"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_forces()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_lambda_in_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_lambda_in_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_lever_stages"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_lever_stages()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_lever_values"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_lever_values()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_levers"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_levers()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_molecule_schedule"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_molecule_schedule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.get_stages"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.get_stages()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.has_force_specific_equation"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.has_force_specific_equation()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.has_molecule_schedule"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.has_molecule_schedule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.initial"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.initial()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.insert_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.insert_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.is_null"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.lam"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.lam()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.morph"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.morph()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.num_forces"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.num_forces()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.num_levers"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.num_levers()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.num_stages"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.num_stages()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.prepend_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.prepend_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.remove_equation"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.remove_equation()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.remove_force"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.remove_force()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.remove_forces"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.remove_forces()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.remove_lever"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.remove_lever()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.remove_levers"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.remove_levers()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.remove_molecule_schedule"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.remove_molecule_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.remove_stage"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.remove_stage()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.set_constant"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.set_constant()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.set_default_equation"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.set_default_equation()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.set_default_stage_equation"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.set_default_stage_equation()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.set_equation"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.set_equation()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.set_molecule_schedule"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.set_molecule_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.standard_annihilate"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.standard_annihilate()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.standard_decouple"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.standard_decouple()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.standard_morph"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.standard_morph()</span></code></a></li>
+<li><a class="reference internal" href="#sire.cas.LambdaSchedule.take_molecule_schedule"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.take_molecule_schedule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.to_string"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.to_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.typename"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.typename()</span></code></a></li>
 <li><a class="reference internal" href="#sire.cas.LambdaSchedule.what"><code class="docutils literal notranslate"><span class="pre">LambdaSchedule.what()</span></code></a></li>
@@ -1969,7 +2324,7 @@ an expression holding only this symbol if it does no exist in identities</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=bf18f5af"></script>
+</div><script src="../_static/documentation_options.js?v=9887e882"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

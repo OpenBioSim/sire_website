@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.io" href="index_io.html" /><link rel="prev" title="sire.convert" href="index_convert.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
@@ -252,6 +252,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
 </ul>
 </li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part07.html">Part 7 - Merged Molecules and Lambda Levers</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Part 7 - Merged Molecules and Lambda Levers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/01_perturbation.html">Perturbation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/02_levers.html">Lambda schedules and levers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/03_ghosts.html">Ghost Atoms and Softening Potentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/04_merge.html">Creating merge molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/05_pertfile.html">Perturbation Files (pertfiles)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/06_decouple.html">Annihilation and Decoupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/07_residue.html">Residue mutations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -259,7 +269,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../blogposts.html">Diaries</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/trajectory.html">Trajectories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cheatsheet/view.html">Viewing Molecules</a></li>
@@ -269,67 +279,67 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sire.html">sire module</a></li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="sire_modules.html">Sub-modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="sire_modules.html">Sub-modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="base.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="cas.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current has-children"><a class="reference internal" href="index_convert.html">sire.convert</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="index_convert.html">sire.convert</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="io.html">Public API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="io_parser.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="maths.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="mm.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="mol.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="morph.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="restraints.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="search.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="stream.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="system.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="units.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="utils.html">Public API</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="vol.html">Public API</a></li>
 </ul>
 </li>
@@ -342,7 +352,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
@@ -504,6 +514,1279 @@ from, e.g. an openmm or rdkit molecule to a sire molecule
 (or from a list of molecules to a SelectorMol).</p>
 </dd></dl>
 
+<p id="module-sire.convert.openmm"><a class="reference internal" href="index_convert.html"><span class="doc">View Module Index</span></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.convert.openmm.</span></span><span class="sig-name descname"><span class="pre">LambdaLever</span></span><a class="headerlink" href="#sire.convert.openmm.LambdaLever" title="Link to this definition">#</a></dt>
+<dd><p>This is a lever that is used to change the parameters in an OpenMM
+context according to a lambda value. This is actually a collection
+of levers, each of which is controlled by the main lever.</p>
+<p>You can use SireCAS expressions to control how each lever changes
+each parameter</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.add_lever">
+<span class="sig-name descname"><span class="pre">add_lever</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.add_lever" title="Link to this definition">#</a></dt>
+<dd><p>addLever( (LambdaLever)arg1, (object)lever_name) -&gt; None :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void addLever(SireOpenMM::LambdaLever {lvalue},QString)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.add_perturbable_molecule">
+<span class="sig-name descname"><span class="pre">add_perturbable_molecule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.add_perturbable_molecule" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>addPerturbableMolecule( (LambdaLever)arg1, (object)molecule, (object)start_indicies) -&gt; int :</dt><dd><dl class="simple">
+<dt>Add info for the passed perturbable OpenMMMolecule, returning</dt><dd><p>its index in the list of perturbable molecules</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>int addPerturbableMolecule(SireOpenMM::LambdaLever {lvalue},SireOpenMM::OpenMMMolecule,QHash&lt;QString, int&gt;)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.add_restraint_index">
+<span class="sig-name descname"><span class="pre">add_restraint_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.add_restraint_index" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>addRestraintIndex( (LambdaLever)arg1, (object)force, (int)index) -&gt; None :</dt><dd><dl class="simple">
+<dt>Add the index of a restraint force called restraint in the</dt><dd><p>OpenMM System. There can be multiple restraint forces with
+the same name</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void addRestraintIndex(SireOpenMM::LambdaLever {lvalue},QString,int)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaLever)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(LambdaLever)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaLever</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.assign" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireOpenMM::LambdaLever {lvalue} assign(SireOpenMM::LambdaLever {lvalue},SireOpenMM::LambdaLever)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaLever)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaLever</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.clone" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireOpenMM::LambdaLever clone(SireOpenMM::LambdaLever)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.get_force_index">
+<span class="sig-name descname"><span class="pre">get_force_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.get_force_index" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getForceIndex( (LambdaLever)arg1, (object)name) -&gt; int :</dt><dd><dl class="simple">
+<dt>Get the index of the force called name. Returns -1 if</dt><dd><p>there is no force with this name</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>int getForceIndex(SireOpenMM::LambdaLever {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.get_force_type">
+<span class="sig-name descname"><span class="pre">get_force_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.get_force_type" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getForceType( (LambdaLever)arg1, (object)name, (object)system) -&gt; object :</dt><dd><dl class="simple">
+<dt>Get the C++ type of the force called name. Returns an</dt><dd><p>empty string if there is no such force</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QString getForceType(SireOpenMM::LambdaLever {lvalue},QString,OpenMM::System)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.get_lever_values">
+<span class="sig-name descname"><span class="pre">get_lever_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.get_lever_values" title="Link to this definition">#</a></dt>
+<dd><p>getLeverValues( (LambdaLever)arg1, (object)lambda_values, (PerturbableOpenMMMolecule)mol) -&gt; PropertyList :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PropertyList getLeverValues(SireOpenMM::LambdaLever {lvalue},QVector&lt;double&gt;,SireOpenMM::PerturbableOpenMMMolecule)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.get_perturbable_molecule_maps">
+<span class="sig-name descname"><span class="pre">get_perturbable_molecule_maps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.get_perturbable_molecule_maps" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getPerturbableMoleculeMaps( (LambdaLever)arg1) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return all of the property maps used to find the perturbable properties</dt><dd><p>of the perturbable molecules. This is indexed by molecule number</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QHash&lt;SireMol::MolNum, SireBase::PropertyMap&gt; getPerturbableMoleculeMaps(SireOpenMM::LambdaLever {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.get_restraints">
+<span class="sig-name descname"><span class="pre">get_restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.get_restraints" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getRestraints( (LambdaLever)arg1, (object)name, (object)system) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return the pointers to all of the forces from the passed System</dt><dd><p>are restraints called restraint. This returns an empty
+list if there are no restraints with this name</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QList&lt;OpenMM::Force*&gt; getRestraints(SireOpenMM::LambdaLever {lvalue},QString,OpenMM::System {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.get_schedule">
+<span class="sig-name descname"><span class="pre">get_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.get_schedule" title="Link to this definition">#</a></dt>
+<dd><p>getSchedule( (LambdaLever)arg1) -&gt; LambdaSchedule :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule getSchedule(SireOpenMM::LambdaLever {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.has_lever">
+<span class="sig-name descname"><span class="pre">has_lever</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.has_lever" title="Link to this definition">#</a></dt>
+<dd><p>hasLever( (LambdaLever)arg1, (object)lever_name) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasLever(SireOpenMM::LambdaLever {lvalue},QString)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.set_constraint_indicies">
+<span class="sig-name descname"><span class="pre">set_constraint_indicies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.set_constraint_indicies" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>setConstraintIndicies( (LambdaLever)arg1, (int)idx, (object)constraint_idxs) -&gt; None :</dt><dd><dl class="simple">
+<dt>Set the constraint indicies for the perturbable molecule at</dt><dd><p>index mol_idx</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void setConstraintIndicies(SireOpenMM::LambdaLever {lvalue},int,QVector&lt;int&gt;)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.set_exception_indicies">
+<span class="sig-name descname"><span class="pre">set_exception_indicies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.set_exception_indicies" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>setExceptionIndicies( (LambdaLever)arg1, (int)idx, (object)ff, (object)exception_idxs) -&gt; None :</dt><dd><dl class="simple">
+<dt>Set the exception indices for the perturbable molecule at</dt><dd><p>index mol_idx</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void setExceptionIndicies(SireOpenMM::LambdaLever {lvalue},int,QString,QVector&lt;boost::tuples::tuple&lt;int, int, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt;&gt;)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.set_force_index">
+<span class="sig-name descname"><span class="pre">set_force_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.set_force_index" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>setForceIndex( (LambdaLever)arg1, (object)force, (int)index) -&gt; None :</dt><dd><dl class="simple">
+<dt>Set the index of the force called force in the OpenMM System.</dt><dd><p>There can only be one force with this name. Attempts to add
+a duplicate will cause an error to be raised.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void setForceIndex(SireOpenMM::LambdaLever {lvalue},QString,int)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.set_lambda">
+<span class="sig-name descname"><span class="pre">set_lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.set_lambda" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>setLambda( (LambdaLever)arg1, (object)system, (float)lambda_value [, (bool)update_constraints=True]) -&gt; float :</dt><dd><dl class="simple">
+<dt>Set the value of lambda in the passed context. Returns the</dt><dd><p>actual value of lambda set.</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>double setLambda(SireOpenMM::LambdaLever {lvalue},OpenMM::Context {lvalue},double [,bool=True])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.set_schedule">
+<span class="sig-name descname"><span class="pre">set_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.set_schedule" title="Link to this definition">#</a></dt>
+<dd><p>setSchedule( (LambdaLever)arg1, (LambdaSchedule)schedule) -&gt; None :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setSchedule(SireOpenMM::LambdaLever {lvalue},SireCAS::LambdaSchedule)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.typename" title="Link to this definition">#</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaLever)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.what" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireOpenMM::LambdaLever {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.convert.openmm.</span></span><span class="sig-name descname"><span class="pre">OpenMMMetaData</span></span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData" title="Link to this definition">#</a></dt>
+<dd><p>This is a read-only container for the extra information
+we need to create an OpenMM system and make it editable</p>
+<p>This is used for a number of things:</p>
+<p>1. For an array of
+OpenMM::Vec3 objects (e.g. coordinates or velocities).
+This is used internally to return coordinate and velocity
+data up to Python, so that it can be passed back down
+again to populate the openmm.Context</p>
+<p>2. Index - this is a SelectorM&lt;Atom&gt; in the order that the
+atoms appear in the system. This lets us easily locate
+atoms by searching</p>
+<p>3. LambdaLever - the simplest LambdaLever which can be
+used to update the parameters of the system containing
+perturbable atoms between the two end states</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.box_vectors">
+<span class="sig-name descname"><span class="pre">box_vectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.box_vectors" title="Link to this definition">#</a></dt>
+<dd><p>boxVectors( (OpenMMMetaData)arg1) -&gt; vector_less__OpenMM_scope_Vec3__greater_ :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>std::__1::vector&lt;OpenMM::Vec3, std::__1::allocator&lt;OpenMM::Vec3&gt;&gt; boxVectors(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(OpenMMMetaData)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OpenMMMetaData</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.clone" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireOpenMM::OpenMMMetaData clone(SireOpenMM::OpenMMMetaData)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.coordinates">
+<span class="sig-name descname"><span class="pre">coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(OpenMMMetaData)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">vector_less__OpenMM_scope_Vec3__greater_</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.coordinates" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>std::__1::vector&lt;OpenMM::Vec3, std::__1::allocator&lt;OpenMM::Vec3&gt;&gt; coordinates(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.has_box_vectors">
+<span class="sig-name descname"><span class="pre">has_box_vectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.has_box_vectors" title="Link to this definition">#</a></dt>
+<dd><p>hasBoxVectors( (OpenMMMetaData)arg1) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasBoxVectors(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.has_coordinates">
+<span class="sig-name descname"><span class="pre">has_coordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.has_coordinates" title="Link to this definition">#</a></dt>
+<dd><p>hasCoordinates( (OpenMMMetaData)arg1) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasCoordinates(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.has_velocities">
+<span class="sig-name descname"><span class="pre">has_velocities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.has_velocities" title="Link to this definition">#</a></dt>
+<dd><p>hasVelocities( (OpenMMMetaData)arg1) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool hasVelocities(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(OpenMMMetaData)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">SelectorM_Atom_</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.index" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMol::SelectorM&lt;SireMol::Atom&gt; index(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.lambda_lever">
+<span class="sig-name descname"><span class="pre">lambda_lever</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.lambda_lever" title="Link to this definition">#</a></dt>
+<dd><p>lambdaLever( (OpenMMMetaData)arg1) -&gt; LambdaLever :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireOpenMM::LambdaLever lambdaLever(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.to_string" title="Link to this definition">#</a></dt>
+<dd><p>toString( (OpenMMMetaData)arg1) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.typename" title="Link to this definition">#</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.velocities">
+<span class="sig-name descname"><span class="pre">velocities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(OpenMMMetaData)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">vector_less__OpenMM_scope_Vec3__greater_</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.velocities" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>std::__1::vector&lt;OpenMM::Vec3, std::__1::allocator&lt;OpenMM::Vec3&gt;&gt; velocities(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.OpenMMMetaData.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(OpenMMMetaData)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.OpenMMMetaData.what" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireOpenMM::OpenMMMetaData {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.convert.openmm.</span></span><span class="sig-name descname"><span class="pre">PerturbableOpenMMMolecule</span></span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule" title="Link to this definition">#</a></dt>
+<dd><p>This class holds all of the information of an OpenMM molecule
+that can be perturbed using a LambdaSchedule. The data is held
+in easy-to-access arrays, with guarantees that the arrays are
+compatible and the data is aligned.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.angles">
+<span class="sig-name descname"><span class="pre">angles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PerturbableOpenMMMolecule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.angles" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return the angles which are perturbed, in the order they are</dt><dd><p>set in this perturbation</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QList&lt;SireMM::Angle&gt; angles(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PerturbableOpenMMMolecule)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PerturbableOpenMMMolecule)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PerturbableOpenMMMolecule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.assign" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireOpenMM::PerturbableOpenMMMolecule {lvalue} assign(SireOpenMM::PerturbableOpenMMMolecule {lvalue},SireOpenMM::PerturbableOpenMMMolecule)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.atoms">
+<span class="sig-name descname"><span class="pre">atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PerturbableOpenMMMolecule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.atoms" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return the atoms which are perturbed, in the order they are</dt><dd><p>set in this perturbation</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QList&lt;SireMol::Atom&gt; atoms(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.bonds">
+<span class="sig-name descname"><span class="pre">bonds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PerturbableOpenMMMolecule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.bonds" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return the bonds which are perturbed, in the order they are</dt><dd><p>set in this perturbation</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QList&lt;SireMM::Bond&gt; bonds(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.changed_angles">
+<span class="sig-name descname"><span class="pre">changed_angles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_angles" title="Link to this definition">#</a></dt>
+<dd><p>Return a list of the angles that change parameters in this
+perturbation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_pandas</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default=True</em>) – If True then the list of angles will be returned as a pandas
+DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.changed_atoms">
+<span class="sig-name descname"><span class="pre">changed_atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_atoms" title="Link to this definition">#</a></dt>
+<dd><p>Return a list of the atoms that change parameters in this
+perturbation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_pandas</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default=True</em>) – If True then the list of atoms will be returned as a pandas
+DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.changed_bonds">
+<span class="sig-name descname"><span class="pre">changed_bonds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_bonds" title="Link to this definition">#</a></dt>
+<dd><p>Return a list of the bonds that change parameters in this
+perturbation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_pandas</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default=True</em>) – If True then the list of bonds will be returned as a pandas
+DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.changed_constraints">
+<span class="sig-name descname"><span class="pre">changed_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Return a list of the constraints that change parameters in this
+perturbation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_pandas</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default=True</em>) – If True then the list of constraints will be returned as a pandas
+DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.changed_exceptions">
+<span class="sig-name descname"><span class="pre">changed_exceptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_exceptions" title="Link to this definition">#</a></dt>
+<dd><p>Return a list of the exceptions that change parameters in this
+perturbation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_pandas</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default=True</em>) – If True then the list of exceptions will be returned as a pandas
+DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.changed_torsions">
+<span class="sig-name descname"><span class="pre">changed_torsions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_torsions" title="Link to this definition">#</a></dt>
+<dd><p>Return a list of the torsions that change parameters in this
+perturbation. Note that this combines the dihedrals and improper
+dihedrals into a single list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_pandas</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default=True</em>) – If True then the list of torsions will be returned as a pandas
+DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PerturbableOpenMMMolecule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PerturbableOpenMMMolecule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.clone" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireOpenMM::PerturbableOpenMMMolecule clone(SireOpenMM::PerturbableOpenMMMolecule)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_alphas0">
+<span class="sig-name descname"><span class="pre">get_alphas0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_alphas0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getAlphas0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the alpha parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getAlphas0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_alphas1">
+<span class="sig-name descname"><span class="pre">get_alphas1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_alphas1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getAlphas1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the alpha parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getAlphas1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_ks0">
+<span class="sig-name descname"><span class="pre">get_angle_ks0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_ks0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getAngleKs0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the angle k parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getAngleKs0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_ks1">
+<span class="sig-name descname"><span class="pre">get_angle_ks1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_ks1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getAngleKs1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the angle k parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getAngleKs1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_sizes0">
+<span class="sig-name descname"><span class="pre">get_angle_sizes0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_sizes0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getAngleSizes0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the angle size parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getAngleSizes0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_sizes1">
+<span class="sig-name descname"><span class="pre">get_angle_sizes1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_sizes1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getAngleSizes1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the angle size parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getAngleSizes1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_ks0">
+<span class="sig-name descname"><span class="pre">get_bond_ks0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_ks0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getBondKs0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the bond k parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getBondKs0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_ks1">
+<span class="sig-name descname"><span class="pre">get_bond_ks1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_ks1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getBondKs1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the bond k parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getBondKs1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_lengths0">
+<span class="sig-name descname"><span class="pre">get_bond_lengths0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_lengths0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getBondLengths0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the bond length parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getBondLengths0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_lengths1">
+<span class="sig-name descname"><span class="pre">get_bond_lengths1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_lengths1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getBondLengths1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the bond length parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getBondLengths1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_charge_scales0">
+<span class="sig-name descname"><span class="pre">get_charge_scales0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_charge_scales0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getChargeScales0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the coulomb intramolecular scale factors of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getChargeScales0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_charge_scales1">
+<span class="sig-name descname"><span class="pre">get_charge_scales1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_charge_scales1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getChargeScales1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the coulomb intramolecular scale factors of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getChargeScales1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_charges0">
+<span class="sig-name descname"><span class="pre">get_charges0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_charges0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getCharges0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the atom charges of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getCharges0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_charges1">
+<span class="sig-name descname"><span class="pre">get_charges1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_charges1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getCharges1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the atom charges of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getCharges1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_constraint_indicies">
+<span class="sig-name descname"><span class="pre">get_constraint_indicies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_constraint_indicies" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getConstraintIndicies( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the indicies of the perturbable constraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;int&gt; getConstraintIndicies(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_epsilons0">
+<span class="sig-name descname"><span class="pre">get_epsilons0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_epsilons0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getEpsilons0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the LJ epsilon parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getEpsilons0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_epsilons1">
+<span class="sig-name descname"><span class="pre">get_epsilons1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_epsilons1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getEpsilons1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the LJ epsilon parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getEpsilons1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_exception_atoms">
+<span class="sig-name descname"><span class="pre">get_exception_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_exception_atoms" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getExceptionAtoms( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the indices of the atoms in the exceptions</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;boost::tuples::tuple&lt;int, int, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt;&gt; getExceptionAtoms(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_exception_indicies">
+<span class="sig-name descname"><span class="pre">get_exception_indicies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_exception_indicies" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getExceptionIndicies( (PerturbableOpenMMMolecule)arg1, (object)name) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return the global indexes of the exceptions in the non-bonded and</dt><dd><p>ghost-14 forces</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QVector&lt;boost::tuples::tuple&lt;int, int, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt;&gt; getExceptionIndicies(SireOpenMM::PerturbableOpenMMMolecule {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_from_ghost_idxs">
+<span class="sig-name descname"><span class="pre">get_from_ghost_idxs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_from_ghost_idxs" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getFromGhostIdxs( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return the indexes of the atoms that were ghosts in the</dt><dd><p>reference state</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QSet&lt;int&gt; getFromGhostIdxs(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_kappas0">
+<span class="sig-name descname"><span class="pre">get_kappas0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_kappas0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getKappas0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the kappa parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getKappas0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_kappas1">
+<span class="sig-name descname"><span class="pre">get_kappas1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_kappas1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getKappas1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the kappa parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getKappas1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_lever_values">
+<span class="sig-name descname"><span class="pre">get_lever_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lambda</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">101</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_lever_values" title="Link to this definition">#</a></dt>
+<dd><p>Return the value of all of the parameters for this perturbable molecule
+at all of the specified values of lambda, given the passed
+lambda schedule. If no schedule is passed then a default morph
+will be used. Return this as a pandas DataFrame if ‘to_pandas’ is True</p>
+<p>If a pandas DataFrame is returned then note the following two points:</p>
+<p>1. Note that this function will only return the values of parameters
+that change during the morph. If a parameter does not change then
+it is not included.</p>
+<p>2. Also note that columns are merged together if they have identical
+values. You can see which columns have been merged by looking at the
+“merged” attribute of the returned DataFrame (e.g. ‘df.attrs[“merged”]’)</p>
+<p>Otherwise, the raw data is returned as a set of dictionaries with
+no additional processing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>schedule</strong> (<a class="reference internal" href="cas.html#sire.cas.LambdaSchedule" title="sire.cas.LambdaSchedule"><em>LambdaSchedule</em></a><em>, </em><em>optional</em><em>, </em><em>default=None</em>) – The lambda schedule to use for the morph. If this is not
+passed then a default morph will be used</p></li>
+<li><p><strong>lambda_values</strong> (<em>list</em><em>[</em><em>float</em><em>]</em><em>, </em><em>optional</em><em>, </em><em>default=None</em>) – A list of lambda values to evaluate. If this is not passed
+then the lambda values will be auto-generated based on an
+even spacing between 0 and 1 of ‘num_lambda’ points</p></li>
+<li><p><strong>num_lambda</strong> (<em>int</em><em>, </em><em>optional</em><em>, </em><em>default=101</em>) – The number of lambda values to evaluate if ‘lambda_values’
+is not passed</p></li>
+<li><p><strong>to_pandas</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default=True</em>) – Whether or not to return the result as a pandas DataFrame
+(defaults to True)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas DataFrame containing the values of the parameters
+at each of the lambda values, or a dictionary containing
+the values of the parameters at each of the lambda values</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame or dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_lj_scales0">
+<span class="sig-name descname"><span class="pre">get_lj_scales0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_lj_scales0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getLJScales0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the LJ intramolecular scale factors of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getLJScales0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_lj_scales1">
+<span class="sig-name descname"><span class="pre">get_lj_scales1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_lj_scales1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getLJScales1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the LJ intramolecular scale factors of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getLJScales1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_perturbable_constraints">
+<span class="sig-name descname"><span class="pre">get_perturbable_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_perturbable_constraints" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getPerturbableConstraints( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return three arrays containing the constraint indexes, and the</dt><dd><p>reference and perturbed values of the constraint lengths</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>boost::tuples::tuple&lt;QVector&lt;int&gt;, QVector&lt;double&gt;, QVector&lt;double&gt;, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt; getPerturbableConstraints(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_perturbable_constraints_with_atoms">
+<span class="sig-name descname"><span class="pre">get_perturbable_constraints_with_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_perturbable_constraints_with_atoms" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getPerturbableConstraintsWithAtoms( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return the atom indexes of all of the constraints, with</dt><dd><p>the constraint lengths at the two end states, in the order
+they appear in this molecule</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QVector&lt;boost::tuples::tuple&lt;int, int, double, double, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt;&gt; getPerturbableConstraintsWithAtoms(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_sigmas0">
+<span class="sig-name descname"><span class="pre">get_sigmas0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_sigmas0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getSigmas0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the LJ sigma parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getSigmas0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_sigmas1">
+<span class="sig-name descname"><span class="pre">get_sigmas1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_sigmas1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getSigmas1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the LJ sigma parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getSigmas1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_to_ghost_idxs">
+<span class="sig-name descname"><span class="pre">get_to_ghost_idxs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_to_ghost_idxs" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>getToGhostIdxs( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><dl class="simple">
+<dt>Return the indexes of the atoms that are to be ghosted in the</dt><dd><p>perturbed state</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QSet&lt;int&gt; getToGhostIdxs(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_ks0">
+<span class="sig-name descname"><span class="pre">get_torsion_ks0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_ks0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getTorsionKs0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the torsion k parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getTorsionKs0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_ks1">
+<span class="sig-name descname"><span class="pre">get_torsion_ks1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_ks1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getTorsionKs1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the torsion k parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getTorsionKs1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_periodicities0">
+<span class="sig-name descname"><span class="pre">get_torsion_periodicities0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_periodicities0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getTorsionPeriodicities0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the torsion periodicity parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;signed char&gt; getTorsionPeriodicities0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_periodicities1">
+<span class="sig-name descname"><span class="pre">get_torsion_periodicities1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_periodicities1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getTorsionPeriodicities1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the torsion periodicity parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;signed char&gt; getTorsionPeriodicities1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_phases0">
+<span class="sig-name descname"><span class="pre">get_torsion_phases0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_phases0" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getTorsionPhases0( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the torsion phase parameters of the reference state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getTorsionPhases0(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_phases1">
+<span class="sig-name descname"><span class="pre">get_torsion_phases1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_phases1" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>getTorsionPhases1( (PerturbableOpenMMMolecule)arg1) -&gt; object :</dt><dd><p>Return the torsion phase parameters of the perturbed state</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;double&gt; getTorsionPhases1(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.is_ghost_atom">
+<span class="sig-name descname"><span class="pre">is_ghost_atom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.is_ghost_atom" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>isGhostAtom( (PerturbableOpenMMMolecule)arg1, (int)atom) -&gt; bool :</dt><dd><dl class="simple">
+<dt>Return true if the atom is a ghost atom in the</dt><dd><p>referenece or perturbed states</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>bool isGhostAtom(SireOpenMM::PerturbableOpenMMMolecule {lvalue},int)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.set_constraint_indicies">
+<span class="sig-name descname"><span class="pre">set_constraint_indicies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.set_constraint_indicies" title="Link to this definition">#</a></dt>
+<dd><dl>
+<dt>setConstraintIndicies( (PerturbableOpenMMMolecule)arg1, (object)constraint_idxs) -&gt; None :</dt><dd><p>Set the indexes of perturbable constraints in the System</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setConstraintIndicies(SireOpenMM::PerturbableOpenMMMolecule {lvalue},QVector&lt;int&gt;)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.set_exception_indicies">
+<span class="sig-name descname"><span class="pre">set_exception_indicies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.set_exception_indicies" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>setExceptionIndicies( (PerturbableOpenMMMolecule)arg1, (object)name, (object)exception_idxs) -&gt; None :</dt><dd><dl class="simple">
+<dt>Set the global indexes of the exceptions in the non-bonded and</dt><dd><p>ghost-14 forces</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void setExceptionIndicies(SireOpenMM::PerturbableOpenMMMolecule {lvalue},QString,QVector&lt;boost::tuples::tuple&lt;int, int, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt;&gt;)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.to_string" title="Link to this definition">#</a></dt>
+<dd><p>toString( (PerturbableOpenMMMolecule)arg1) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.torsions">
+<span class="sig-name descname"><span class="pre">torsions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PerturbableOpenMMMolecule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.torsions" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Return the torsions which are perturbed, in the order they are</dt><dd><p>set in this perturbation. Note that this include both the
+normal dihedrals and the improper torsions (openmm internally
+treats them the same)</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>QList&lt;SireMM::Dihedral&gt; torsions(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.typename" title="Link to this definition">#</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.PerturbableOpenMMMolecule.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PerturbableOpenMMMolecule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.convert.openmm.PerturbableOpenMMMolecule.what" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireOpenMM::PerturbableOpenMMMolecule {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.convert.openmm.</span></span><span class="sig-name descname"><span class="pre">SOMMContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext" title="Link to this definition">#</a></dt>
+<dd><p>This is a specialised version of an OpenMM Context
+class that provides extra information and functions
+to support the integration with sire.</p>
+<p>Extra information includes an atom index (so
+we can map atom metadata to atom index in the
+openmm context) and a LambdaLever that can be used
+to morph a context between end states. There are
+extra functions that use this LambdaLever to
+set the lambda value of the context</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_atom_index">
+<span class="sig-name descname"><span class="pre">get_atom_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_atom_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_atom_index" title="Link to this definition">#</a></dt>
+<dd><p>Return the index mapping from atom metadata to its index
+in the openmm context</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_constraint">
+<span class="sig-name descname"><span class="pre">get_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_constraint" title="Link to this definition">#</a></dt>
+<dd><p>Return the constraint applied to the system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_constraints">
+<span class="sig-name descname"><span class="pre">get_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Return all pairs of atoms that are constrained, together with
+the constraint distance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_energy">
+<span class="sig-name descname"><span class="pre">get_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_sire_units</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_energy" title="Link to this definition">#</a></dt>
+<dd><p>Synonym for self.get_potential_energy()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_integrator">
+<span class="sig-name descname"><span class="pre">get_integrator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_integrator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_integrator" title="Link to this definition">#</a></dt>
+<dd><p>Return the integrator used for the simulation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_lambda">
+<span class="sig-name descname"><span class="pre">get_lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_lambda"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_lambda" title="Link to this definition">#</a></dt>
+<dd><p>Return the current value of lambda for this context</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_lambda_lever">
+<span class="sig-name descname"><span class="pre">get_lambda_lever</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_lambda_lever"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_lambda_lever" title="Link to this definition">#</a></dt>
+<dd><p>Return the LambdaLever used to change the lambda value
+of the parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_lambda_schedule">
+<span class="sig-name descname"><span class="pre">get_lambda_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_lambda_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_lambda_schedule" title="Link to this definition">#</a></dt>
+<dd><p>Return the LambdaSchedule used to control how different forcefield
+parameters will be changed with lambda</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_perturbable_constraint">
+<span class="sig-name descname"><span class="pre">get_perturbable_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_perturbable_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_perturbable_constraint" title="Link to this definition">#</a></dt>
+<dd><p>Return the perturbable constraint applied to the system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_platform">
+<span class="sig-name descname"><span class="pre">get_platform</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_platform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_platform" title="Link to this definition">#</a></dt>
+<dd><p>Return the platform used for this simulation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_platform_properties">
+<span class="sig-name descname"><span class="pre">get_platform_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_platform_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_platform_properties" title="Link to this definition">#</a></dt>
+<dd><p>Return all of the properties (and their values) of the
+platform used to run the simulation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_platform_property">
+<span class="sig-name descname"><span class="pre">get_platform_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_platform_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_platform_property" title="Link to this definition">#</a></dt>
+<dd><p>Return the value of the specified platform property</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_potential_energy">
+<span class="sig-name descname"><span class="pre">get_potential_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_sire_units</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_potential_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_potential_energy" title="Link to this definition">#</a></dt>
+<dd><p>Calculate and return the potential energy of the system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.set_lambda">
+<span class="sig-name descname"><span class="pre">set_lambda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_lambda"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_lambda" title="Link to this definition">#</a></dt>
+<dd><p>Update the parameters in the context to set the lambda value
+to ‘lamval’. If update_constraints is True then the constraints
+will be updated to match the new value of lambda</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.set_lambda_schedule">
+<span class="sig-name descname"><span class="pre">set_lambda_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedule</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_lambda_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_lambda_schedule" title="Link to this definition">#</a></dt>
+<dd><p>Set the LambdaSchedule used to control how different forcefield
+parameters will be changed with lambda</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.set_platform_property">
+<span class="sig-name descname"><span class="pre">set_platform_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_platform_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_platform_property" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of the platform property ‘key’ to ‘value’</p>
+<p>Note that this probably doesn’t do anything as it looks
+like platform properties cannot be changed after
+construction. This function may be removed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.set_pressure">
+<span class="sig-name descname"><span class="pre">set_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_pressure" title="Link to this definition">#</a></dt>
+<dd><p>Set the target pressure for the dynamics.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.set_temperature">
+<span class="sig-name descname"><span class="pre">set_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_temperature" title="Link to this definition">#</a></dt>
+<dd><p>Set the target temperature for the dynamics. If
+rescale_velocities is True then the velocities will
+be rescaled to the new temperature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.to_xml">
+<span class="sig-name descname"><span class="pre">to_xml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.to_xml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.to_xml" title="Link to this definition">#</a></dt>
+<dd><p>Save the current state of the dynamics to XML.
+This is mostly used for debugging. This will return the
+XML string if ‘f’ is None. Otherwise it will write the
+XML to ‘f’ (either a filename, or a FILE object)</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -537,7 +1820,7 @@ from, e.g. an openmm or rdkit molecule to a sire molecule
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 02, 2024</div>
+              Last updated on Apr 09, 2024</div>
           </div>
           <div class="right-details">
             
@@ -573,6 +1856,122 @@ from, e.g. an openmm or rdkit molecule to a sire molecule
 <li><a class="reference internal" href="#sire.convert.to_openmm"><code class="docutils literal notranslate"><span class="pre">to_openmm()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.to_rdkit"><code class="docutils literal notranslate"><span class="pre">to_rdkit()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.to_sire"><code class="docutils literal notranslate"><span class="pre">to_sire()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever"><code class="docutils literal notranslate"><span class="pre">LambdaLever</span></code></a><ul>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.add_lever"><code class="docutils literal notranslate"><span class="pre">LambdaLever.add_lever()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.add_perturbable_molecule"><code class="docutils literal notranslate"><span class="pre">LambdaLever.add_perturbable_molecule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.add_restraint_index"><code class="docutils literal notranslate"><span class="pre">LambdaLever.add_restraint_index()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.assign"><code class="docutils literal notranslate"><span class="pre">LambdaLever.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.clone"><code class="docutils literal notranslate"><span class="pre">LambdaLever.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.get_force_index"><code class="docutils literal notranslate"><span class="pre">LambdaLever.get_force_index()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.get_force_type"><code class="docutils literal notranslate"><span class="pre">LambdaLever.get_force_type()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.get_lever_values"><code class="docutils literal notranslate"><span class="pre">LambdaLever.get_lever_values()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.get_perturbable_molecule_maps"><code class="docutils literal notranslate"><span class="pre">LambdaLever.get_perturbable_molecule_maps()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.get_restraints"><code class="docutils literal notranslate"><span class="pre">LambdaLever.get_restraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.get_schedule"><code class="docutils literal notranslate"><span class="pre">LambdaLever.get_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.has_lever"><code class="docutils literal notranslate"><span class="pre">LambdaLever.has_lever()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.set_constraint_indicies"><code class="docutils literal notranslate"><span class="pre">LambdaLever.set_constraint_indicies()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.set_exception_indicies"><code class="docutils literal notranslate"><span class="pre">LambdaLever.set_exception_indicies()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.set_force_index"><code class="docutils literal notranslate"><span class="pre">LambdaLever.set_force_index()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.set_lambda"><code class="docutils literal notranslate"><span class="pre">LambdaLever.set_lambda()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.set_schedule"><code class="docutils literal notranslate"><span class="pre">LambdaLever.set_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.typename"><code class="docutils literal notranslate"><span class="pre">LambdaLever.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.LambdaLever.what"><code class="docutils literal notranslate"><span class="pre">LambdaLever.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData</span></code></a><ul>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.box_vectors"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.box_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.clone"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.coordinates"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.has_box_vectors"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.has_box_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.has_coordinates"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.has_coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.has_velocities"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.has_velocities()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.index"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.index()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.lambda_lever"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.lambda_lever()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.to_string"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.typename"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.velocities"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.velocities()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.OpenMMMetaData.what"><code class="docutils literal notranslate"><span class="pre">OpenMMMetaData.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule</span></code></a><ul>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.angles"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.angles()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.assign"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.atoms"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.bonds"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.bonds()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_angles"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.changed_angles()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_atoms"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.changed_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_bonds"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.changed_bonds()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_constraints"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.changed_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_exceptions"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.changed_exceptions()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.changed_torsions"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.changed_torsions()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.clone"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_alphas0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_alphas0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_alphas1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_alphas1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_ks0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_angle_ks0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_ks1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_angle_ks1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_sizes0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_angle_sizes0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_angle_sizes1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_angle_sizes1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_ks0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_bond_ks0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_ks1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_bond_ks1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_lengths0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_bond_lengths0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_bond_lengths1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_bond_lengths1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_charge_scales0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_charge_scales0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_charge_scales1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_charge_scales1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_charges0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_charges0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_charges1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_charges1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_constraint_indicies"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_constraint_indicies()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_epsilons0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_epsilons0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_epsilons1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_epsilons1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_exception_atoms"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_exception_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_exception_indicies"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_exception_indicies()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_from_ghost_idxs"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_from_ghost_idxs()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_kappas0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_kappas0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_kappas1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_kappas1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_lever_values"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_lever_values()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_lj_scales0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_lj_scales0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_lj_scales1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_lj_scales1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_perturbable_constraints"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_perturbable_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_perturbable_constraints_with_atoms"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_perturbable_constraints_with_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_sigmas0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_sigmas0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_sigmas1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_sigmas1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_to_ghost_idxs"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_to_ghost_idxs()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_ks0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_torsion_ks0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_ks1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_torsion_ks1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_periodicities0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_torsion_periodicities0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_periodicities1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_torsion_periodicities1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_phases0"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_torsion_phases0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.get_torsion_phases1"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.get_torsion_phases1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.is_ghost_atom"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.is_ghost_atom()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.set_constraint_indicies"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.set_constraint_indicies()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.set_exception_indicies"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.set_exception_indicies()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.to_string"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.torsions"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.torsions()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.typename"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.PerturbableOpenMMMolecule.what"><code class="docutils literal notranslate"><span class="pre">PerturbableOpenMMMolecule.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext"><code class="docutils literal notranslate"><span class="pre">SOMMContext</span></code></a><ul>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_atom_index"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_atom_index()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_constraint"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_constraints"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_energy"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_energy()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_integrator"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_integrator()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_lambda"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_lambda()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_lambda_lever"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_lambda_lever()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_lambda_schedule"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_lambda_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_perturbable_constraint"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_perturbable_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_platform"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_platform()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_platform_properties"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_platform_properties()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_platform_property"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_platform_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_potential_energy"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_potential_energy()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_lambda"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_lambda()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_lambda_schedule"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_lambda_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_platform_property"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_platform_property()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_pressure"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_pressure()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_temperature"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_temperature()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.to_xml"><code class="docutils literal notranslate"><span class="pre">SOMMContext.to_xml()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -584,7 +1983,7 @@ from, e.g. an openmm or rdkit molecule to a sire molecule
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=bf18f5af"></script>
+</div><script src="../_static/documentation_options.js?v=9887e882"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
