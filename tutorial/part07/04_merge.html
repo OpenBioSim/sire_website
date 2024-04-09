@@ -592,7 +592,7 @@ This will only work on MacOS and Linux.</p>
 </div>
 <p>By default, this algorithm ignores hydrogens. This is why only a single
 atom was matched above. You can change this by passing in the
-<code class="docutils literal notranslate"><span class="pre">ignore_light_atoms=True</span></code> argument.</p>
+<code class="docutils literal notranslate"><span class="pre">match_light_atoms=True</span></code> argument.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">mol0</span><span class="o">=</span><span class="n">neopentane</span><span class="p">,</span> <span class="n">mol1</span><span class="o">=</span><span class="n">methane</span><span class="p">,</span> <span class="n">match_light_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 <span class="go">AtomMapping( size=4, unmapped0=13, unmapped1=1</span>
