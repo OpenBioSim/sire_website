@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.maths" href="index_maths.html" /><link rel="prev" title="Public API" href="io.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,7 +106,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -114,7 +114,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -122,6 +122,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +188,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +208,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -389,10 +446,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -402,20 +461,20 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="module-sire.io.parser">
-<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.io.parser" title="Link to this heading">#</a></h1>
+<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.io.parser" title="Link to this heading">¶</a></h1>
 <p><a class="reference internal" href="index_io.html"><span class="doc">View Module Index</span></a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.io.parser.DCD">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">DCD</span></span><a class="headerlink" href="#sire.io.parser.DCD" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">DCD</span></span><a class="headerlink" href="#sire.io.parser.DCD" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents a DCD file reader.</p>
 <p>The format is described here</p>
 <p><a class="reference external" href="https:www.ks.uiuc.eduResearchvmdpluginsmolfiledcdplugin.html">https:www.ks.uiuc.eduResearchvmdpluginsmolfiledcdplugin.html</a></p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(DCD)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DCD</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(DCD)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DCD</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::DCD {lvalue} assign(SireIO::DCD {lvalue},SireIO::DCD)</p>
 </dd>
@@ -424,7 +483,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DCD</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DCD</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::DCD clone(SireIO::DCD)</p>
 </dd>
@@ -433,7 +492,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.construct">
-<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.construct" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.construct" title="Link to this definition">¶</a></dt>
 <dd><p>Return this parser constructed from the passed filename</p>
 <blockquote>
 <div><dl class="simple">
@@ -459,7 +518,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.count" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.count" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>int count(SireIO::DCD {lvalue})</p>
 </dd>
@@ -468,7 +527,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.disable_parallel">
-<span class="sig-name descname"><span class="pre">disable_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.disable_parallel" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">disable_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.disable_parallel" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>disableParallel( (MoleculeParser)arg1) -&gt; None :</dt><dd><p>Disable code to parse files in parallel - parsing will happen in serial</p>
 <dl class="simple">
@@ -481,7 +540,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.enable_parallel">
-<span class="sig-name descname"><span class="pre">enable_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.enable_parallel" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">enable_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.enable_parallel" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>enableParallel( (MoleculeParser)arg1) -&gt; None :</dt><dd><p>Enable code to parse files in parallel</p>
 <dl class="simple">
@@ -494,7 +553,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.error_report">
-<span class="sig-name descname"><span class="pre">error_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.error_report" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">error_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.error_report" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>errorReport( (MoleculeParser)arg1) -&gt; object :</dt><dd><dl class="simple">
 <dt>Return the error report, if this parser is broken. If it isnt,</dt><dd><p>then an empty string is returned.</p>
@@ -508,7 +567,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.format_description">
-<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.format_description" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.format_description" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatDescription( (DCD)arg1) -&gt; object :</dt><dd><p>Return a description of the file format</p>
 <dl class="simple">
@@ -521,7 +580,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.format_name">
-<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.format_name" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.format_name" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatName( (DCD)arg1) -&gt; object :</dt><dd><p>Return the format name that is used to identify this file format within Sire</p>
 <dl class="simple">
@@ -534,7 +593,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.format_suffix">
-<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.format_suffix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.format_suffix" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatSuffix( (DCD)arg1) -&gt; object :</dt><dd><p>Return the suffixes that DCD files will typically have</p>
 <dl class="simple">
@@ -547,7 +606,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.get_frame">
-<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.get_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.get_frame" title="Link to this definition">¶</a></dt>
 <dd><p>getFrame( (DCD)arg1, (int)i) -&gt; Frame :</p>
 <blockquote>
 <div><dl class="simple">
@@ -559,7 +618,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.has_warnings">
-<span class="sig-name descname"><span class="pre">has_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.has_warnings" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">has_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.has_warnings" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>hasWarnings( (MoleculeParser)arg1) -&gt; bool :</dt><dd><dl class="simple">
 <dt>Return whether there were any warnings when loading the file</dt><dd><p>using this parser</p>
@@ -573,7 +632,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.is_binary_file">
-<span class="sig-name descname"><span class="pre">is_binary_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_binary_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_binary_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_binary_file" title="Link to this definition">¶</a></dt>
 <dd><p>isBinaryFile( (MoleculeParser)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -585,7 +644,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.is_broken">
-<span class="sig-name descname"><span class="pre">is_broken</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_broken" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_broken</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_broken" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isBroken( (MoleculeParser)arg1) -&gt; bool :</dt><dd><p>Return whether or not this parser is broken</p>
 <dl class="simple">
@@ -598,7 +657,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.is_empty">
-<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_empty" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_empty" title="Link to this definition">¶</a></dt>
 <dd><p>isEmpty( (MoleculeParser)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -610,7 +669,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.is_frame">
-<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_frame" title="Link to this definition">¶</a></dt>
 <dd><p>isFrame( (DCD)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -622,7 +681,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.is_supplementary">
-<span class="sig-name descname"><span class="pre">is_supplementary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_supplementary" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_supplementary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_supplementary" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isSupplementary( (MoleculeParser)arg1) -&gt; bool :</dt><dd><p>Return whether or not this parser is a supplementary parser</p>
 <dl class="simple">
@@ -635,7 +694,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.is_text_file">
-<span class="sig-name descname"><span class="pre">is_text_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_text_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_text_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_text_file" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isTextFile( (DCD)arg1) -&gt; bool :</dt><dd><p>This is not a text file</p>
 <dl class="simple">
@@ -648,7 +707,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.is_topology">
-<span class="sig-name descname"><span class="pre">is_topology</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_topology" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_topology</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.is_topology" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isTopology( (MoleculeParser)arg1) -&gt; bool :</dt><dd><p>Return whether or not this parser is a topology parser</p>
 <dl class="simple">
@@ -661,7 +720,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.num_atoms">
-<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.num_atoms" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.num_atoms" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nAtoms( (DCD)arg1) -&gt; int :</dt><dd><p>Return the number of atoms whose coordinates are contained in this restart file</p>
 <dl class="simple">
@@ -674,7 +733,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.num_frames">
-<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.num_frames" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.num_frames" title="Link to this definition">¶</a></dt>
 <dd><p>nFrames( (DCD)arg1) -&gt; int :</p>
 <blockquote>
 <div><dl class="simple">
@@ -686,7 +745,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.parse">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DCD</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.parse" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DCD</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.parse" title="Link to this definition">¶</a></dt>
 <dd><p>Parse from the passed file</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::DCD parse(QString)</p>
@@ -696,7 +755,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.set_use_parallel">
-<span class="sig-name descname"><span class="pre">set_use_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.set_use_parallel" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_use_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.set_use_parallel" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>setUseParallel( (MoleculeParser)arg1, (bool)on) -&gt; None :</dt><dd><p>Set whether or not to parse files in parallel or serial</p>
 <dl class="simple">
@@ -709,7 +768,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.size">
-<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.size" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.size" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>int size(SireIO::DCD {lvalue})</p>
 </dd>
@@ -718,7 +777,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.supported_formats">
-<span class="sig-name descname"><span class="pre">supported_formats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.supported_formats" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">supported_formats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.supported_formats" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>supportedFormats() -&gt; object :</dt><dd><p>This returns a human readable set of lines describing the formats supported
 by MoleculeParser. Each line is formatted as extension : description where
@@ -734,7 +793,7 @@ description is a description of the file format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.to_string" title="Link to this definition">¶</a></dt>
 <dd><p>toString( (DCD)arg1) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -746,7 +805,7 @@ description is a description of the file format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.to_system">
-<span class="sig-name descname"><span class="pre">to_system</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.to_system" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_system</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.to_system" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toSystem( (MoleculeParser)arg1, (PropertyMap)map) -&gt; System :</dt><dd><p>Return the System that is constructed from the data in this parser</p>
 <dl class="simple">
@@ -795,7 +854,7 @@ in earlier parsers may be overwritten by data from later parsers</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -807,7 +866,7 @@ in earlier parsers may be overwritten by data from later parsers</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.uses_parallel">
-<span class="sig-name descname"><span class="pre">uses_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.uses_parallel" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">uses_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.uses_parallel" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>usesParallel( (MoleculeParser)arg1 [, (int)n=-1]) -&gt; bool :</dt><dd><dl class="simple">
 <dt>Return whether or not this parser runs in parallel - this will depend</dt><dd><p>on whether parallel was enabled for parsing, we have more than
@@ -824,7 +883,7 @@ last condition.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DCD)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.DCD.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireIO::DCD {lvalue})</p>
 </dd>
@@ -833,7 +892,7 @@ last condition.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.DCD.write_to_file">
-<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.write_to_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.DCD.write_to_file" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>writeToFile( (DCD)arg1, (object)filename) -&gt; object :</dt><dd><p>Write this binary file filename</p>
 <dl class="simple">
@@ -848,35 +907,35 @@ last condition.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.G87">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">G87</span></span><a class="headerlink" href="#sire.io.parser.G87" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">G87</span></span><a class="headerlink" href="#sire.io.parser.G87" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Gro87</span></code></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.GTOP">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">GTOP</span></span><a class="headerlink" href="#sire.io.parser.GTOP" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">GTOP</span></span><a class="headerlink" href="#sire.io.parser.GTOP" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">GroTop</span></code></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.MOL2">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">MOL2</span></span><a class="headerlink" href="#sire.io.parser.MOL2" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">MOL2</span></span><a class="headerlink" href="#sire.io.parser.MOL2" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Mol2</span></code></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.PDB">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PDB</span></span><a class="headerlink" href="#sire.io.parser.PDB" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PDB</span></span><a class="headerlink" href="#sire.io.parser.PDB" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">PDB2</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PDBx</span></span><a class="headerlink" href="#sire.io.parser.PDBx" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PDBx</span></span><a class="headerlink" href="#sire.io.parser.PDBx" title="Link to this definition">¶</a></dt>
 <dd><p>This class holds a parser for reading and writing PDBxmmcif files</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PDBx)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PDBx</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PDBx)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PDBx</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::PDBx {lvalue} assign(SireIO::PDBx {lvalue},SireIO::PDBx)</p>
 </dd>
@@ -885,7 +944,7 @@ last condition.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PDBx</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PDBx</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::PDBx clone(SireIO::PDBx)</p>
 </dd>
@@ -894,7 +953,7 @@ last condition.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.construct">
-<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.construct" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.construct" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return the parser that has been constructed by reading in the passed</dt><dd><p>file using the passed properties</p>
 <dl class="simple">
@@ -921,7 +980,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.format_description">
-<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_description" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_description" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatDescription( (PDBx)arg1) -&gt; object :</dt><dd><p>Return a description of the file format</p>
 <dl class="simple">
@@ -934,7 +993,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.format_name">
-<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_name" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_name" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatName( (PDBx)arg1) -&gt; object :</dt><dd><p>Return the format name that is used to identify this file format within Sire</p>
 <dl class="simple">
@@ -947,7 +1006,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.format_suffix">
-<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_suffix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.format_suffix" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatSuffix( (PDBx)arg1) -&gt; object :</dt><dd><p>Return the suffixes that these files are normally associated with</p>
 <dl class="simple">
@@ -960,7 +1019,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.get_frame">
-<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.get_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.get_frame" title="Link to this definition">¶</a></dt>
 <dd><p>getFrame( (PDBx)arg1, (int)i) -&gt; Frame :</p>
 <blockquote>
 <div><dl class="simple">
@@ -972,7 +1031,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.is_frame">
-<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.is_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.is_frame" title="Link to this definition">¶</a></dt>
 <dd><p>isFrame( (PDBx)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -984,7 +1043,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.is_topology">
-<span class="sig-name descname"><span class="pre">is_topology</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.is_topology" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_topology</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.is_topology" title="Link to this definition">¶</a></dt>
 <dd><p>isTopology( (PDBx)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -996,7 +1055,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.num_atoms">
-<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.num_atoms" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.num_atoms" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nAtoms( (PDBx)arg1) -&gt; int :</dt><dd><p>Return the total number of atoms in all molecules.</p>
 <dl class="simple">
@@ -1009,7 +1068,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.num_frames">
-<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.num_frames" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.num_frames" title="Link to this definition">¶</a></dt>
 <dd><p>nFrames( (PDBx)arg1) -&gt; int :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1021,7 +1080,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.to_lines">
-<span class="sig-name descname"><span class="pre">to_lines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.to_lines" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_lines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.to_lines" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toLines( (PDBx)arg1) -&gt; object :</dt><dd><p>Convert the the parsed data to a collection of PDBx record lines.</p>
 <dl class="simple">
@@ -1034,7 +1093,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (PDBx)arg1) -&gt; object :</dt><dd><p>Return a string representation of this parser</p>
 <dl class="simple">
@@ -1047,7 +1106,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.PDBx.typename" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>typeName() -&gt; str :</dt><dd><p>Return the C++ name for this class</p>
 <dl class="simple">
@@ -1060,7 +1119,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.PDBx.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PDBx)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.PDBx.what" title="Link to this definition">¶</a></dt>
 <dd><p>Return the C++ name for this class</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireIO::PDBx {lvalue})</p>
@@ -1072,37 +1131,37 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.PRM">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PRM</span></span><a class="headerlink" href="#sire.io.parser.PRM" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PRM</span></span><a class="headerlink" href="#sire.io.parser.PRM" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AmberPrm</span></code></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.PSF">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PSF</span></span><a class="headerlink" href="#sire.io.parser.PSF" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">PSF</span></span><a class="headerlink" href="#sire.io.parser.PSF" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">CharmmPSF</span></code></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.RST">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">RST</span></span><a class="headerlink" href="#sire.io.parser.RST" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">RST</span></span><a class="headerlink" href="#sire.io.parser.RST" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AmberRst</span></code></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.RST7">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">RST7</span></span><a class="headerlink" href="#sire.io.parser.RST7" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">RST7</span></span><a class="headerlink" href="#sire.io.parser.RST7" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AmberRst7</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.io.parser.SDF">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">SDF</span></span><a class="headerlink" href="#sire.io.parser.SDF" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">SDF</span></span><a class="headerlink" href="#sire.io.parser.SDF" title="Link to this definition">¶</a></dt>
 <dd><p>This class holds a parser for reading and writing
 Structure Data File (SDF) molecular file formats</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SDF)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(SDF)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">SDF</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.SDF.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SDF)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(SDF)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">SDF</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.SDF.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::SDF {lvalue} assign(SireIO::SDF {lvalue},SireIO::SDF)</p>
 </dd>
@@ -1111,7 +1170,7 @@ Structure Data File (SDF) molecular file formats</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SDF)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">SDF</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.SDF.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SDF)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">SDF</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.SDF.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::SDF clone(SireIO::SDF)</p>
 </dd>
@@ -1120,7 +1179,7 @@ Structure Data File (SDF) molecular file formats</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.construct">
-<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SDF)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.SDF.construct" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SDF)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.SDF.construct" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return the parser that has been constructed by reading in the passed</dt><dd><p>file using the passed properties</p>
 <dl class="simple">
@@ -1147,7 +1206,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.format_description">
-<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.format_description" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.format_description" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatDescription( (SDF)arg1) -&gt; object :</dt><dd><p>Return a description of the file format</p>
 <dl class="simple">
@@ -1160,7 +1219,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.format_name">
-<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.format_name" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.format_name" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatName( (SDF)arg1) -&gt; object :</dt><dd><p>Return the format name that is used to identify this file format within Sire</p>
 <dl class="simple">
@@ -1173,7 +1232,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.format_suffix">
-<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.format_suffix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.format_suffix" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatSuffix( (SDF)arg1) -&gt; object :</dt><dd><p>Return the suffixes that these files are normally associated with</p>
 <dl class="simple">
@@ -1186,7 +1245,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.get_frame">
-<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.get_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.get_frame" title="Link to this definition">¶</a></dt>
 <dd><p>getFrame( (SDF)arg1, (int)i) -&gt; Frame :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1198,7 +1257,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.is_frame">
-<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.is_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.is_frame" title="Link to this definition">¶</a></dt>
 <dd><p>isFrame( (SDF)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1210,7 +1269,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.is_topology">
-<span class="sig-name descname"><span class="pre">is_topology</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.is_topology" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_topology</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.is_topology" title="Link to this definition">¶</a></dt>
 <dd><p>isTopology( (SDF)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1222,7 +1281,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.num_atoms">
-<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.num_atoms" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.num_atoms" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nAtoms( (SDF)arg1) -&gt; int :</dt><dd><p>Return the total number of atoms.</p>
 <dl class="simple">
@@ -1241,7 +1300,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.num_frames">
-<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.num_frames" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.num_frames" title="Link to this definition">¶</a></dt>
 <dd><p>nFrames( (SDF)arg1) -&gt; int :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1253,7 +1312,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.num_molecules">
-<span class="sig-name descname"><span class="pre">num_molecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.num_molecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_molecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.num_molecules" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nMolecules( (SDF)arg1) -&gt; int :</dt><dd><p>Return the number of molecules loaded in this file</p>
 <dl class="simple">
@@ -1266,7 +1325,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.parse_warnings">
-<span class="sig-name descname"><span class="pre">parse_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.parse_warnings" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">parse_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.parse_warnings" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>parseWarnings( (SDF)arg1) -&gt; object :</dt><dd><p>Return any warnings raised when parsing this file</p>
 <dl class="simple">
@@ -1279,7 +1338,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (SDF)arg1) -&gt; object :</dt><dd><p>Return a string representation of this parser</p>
 <dl class="simple">
@@ -1292,7 +1351,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.SDF.typename" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>typeName() -&gt; str :</dt><dd><p>Return the C++ name for this class</p>
 <dl class="simple">
@@ -1305,7 +1364,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.SDF.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SDF)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.SDF.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(SDF)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.SDF.what" title="Link to this definition">¶</a></dt>
 <dd><p>Return the C++ name for this class</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireIO::SDF {lvalue})</p>
@@ -1317,17 +1376,17 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sire.io.parser.TRAJ">
-<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">TRAJ</span></span><a class="headerlink" href="#sire.io.parser.TRAJ" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">TRAJ</span></span><a class="headerlink" href="#sire.io.parser.TRAJ" title="Link to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AmberTraj</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.io.parser.TRR">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">TRR</span></span><a class="headerlink" href="#sire.io.parser.TRR" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">TRR</span></span><a class="headerlink" href="#sire.io.parser.TRR" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents a Gromacs TRR (XDR file) trajectory.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(TRR)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TRR</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(TRR)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TRR</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::TRR {lvalue} assign(SireIO::TRR {lvalue},SireIO::TRR)</p>
 </dd>
@@ -1336,7 +1395,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TRR</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TRR</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::TRR clone(SireIO::TRR)</p>
 </dd>
@@ -1345,7 +1404,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.construct">
-<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.construct" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.construct" title="Link to this definition">¶</a></dt>
 <dd><p>Return this parser constructed from the passed filename</p>
 <blockquote>
 <div><dl class="simple">
@@ -1371,7 +1430,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.count" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.count" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>int count(SireIO::TRR {lvalue})</p>
 </dd>
@@ -1380,7 +1439,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.format_description">
-<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.format_description" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.format_description" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatDescription( (TRR)arg1) -&gt; object :</dt><dd><p>Return a description of the file format</p>
 <dl class="simple">
@@ -1393,7 +1452,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.format_name">
-<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.format_name" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.format_name" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatName( (TRR)arg1) -&gt; object :</dt><dd><p>Return the format name that is used to identify this file format within Sire</p>
 <dl class="simple">
@@ -1406,7 +1465,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.format_suffix">
-<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.format_suffix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.format_suffix" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatSuffix( (TRR)arg1) -&gt; object :</dt><dd><p>Return the suffixes that TRR files will typically have</p>
 <dl class="simple">
@@ -1419,7 +1478,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.get_frame">
-<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.get_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.get_frame" title="Link to this definition">¶</a></dt>
 <dd><p>getFrame( (TRR)arg1, (int)i) -&gt; Frame :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1431,7 +1490,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.is_frame">
-<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.is_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.is_frame" title="Link to this definition">¶</a></dt>
 <dd><p>isFrame( (TRR)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1443,7 +1502,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.is_text_file">
-<span class="sig-name descname"><span class="pre">is_text_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.is_text_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_text_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.is_text_file" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isTextFile( (TRR)arg1) -&gt; bool :</dt><dd><p>This is not a text file</p>
 <dl class="simple">
@@ -1456,7 +1515,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.num_atoms">
-<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.num_atoms" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.num_atoms" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nAtoms( (TRR)arg1) -&gt; int :</dt><dd><p>Return the number of atoms whose coordinates are contained in this restart file</p>
 <dl class="simple">
@@ -1469,7 +1528,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.num_frames">
-<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.num_frames" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.num_frames" title="Link to this definition">¶</a></dt>
 <dd><p>nFrames( (TRR)arg1) -&gt; int :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1481,7 +1540,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.parse">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TRR</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.parse" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TRR</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.parse" title="Link to this definition">¶</a></dt>
 <dd><p>Parse from the passed file</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::TRR parse(QString)</p>
@@ -1491,7 +1550,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.size">
-<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.size" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.size" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>int size(SireIO::TRR {lvalue})</p>
 </dd>
@@ -1500,7 +1559,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.to_string" title="Link to this definition">¶</a></dt>
 <dd><p>toString( (TRR)arg1) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1512,7 +1571,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1524,7 +1583,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(TRR)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.TRR.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireIO::TRR {lvalue})</p>
 </dd>
@@ -1533,7 +1592,7 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.TRR.write_to_file">
-<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.write_to_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.TRR.write_to_file" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>writeToFile( (TRR)arg1, (object)filename) -&gt; object :</dt><dd><p>Write this binary file filename</p>
 <dl class="simple">
@@ -1548,12 +1607,12 @@ data from the passed SireSystem::System using the specified properties</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.io.parser.XTC">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">XTC</span></span><a class="headerlink" href="#sire.io.parser.XTC" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.io.parser.</span></span><span class="sig-name descname"><span class="pre">XTC</span></span><a class="headerlink" href="#sire.io.parser.XTC" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents a Gromacs XTC (XDR file) trajectory.
 This is a compressed trajectory format</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(XTC)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XTC</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(XTC)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XTC</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::XTC {lvalue} assign(SireIO::XTC {lvalue},SireIO::XTC)</p>
 </dd>
@@ -1562,7 +1621,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XTC</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XTC</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::XTC clone(SireIO::XTC)</p>
 </dd>
@@ -1571,7 +1630,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.construct">
-<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.construct" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)map</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.construct" title="Link to this definition">¶</a></dt>
 <dd><p>Return this parser constructed from the passed filename</p>
 <blockquote>
 <div><dl class="simple">
@@ -1597,7 +1656,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.count" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.count" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>int count(SireIO::XTC {lvalue})</p>
 </dd>
@@ -1606,7 +1665,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.format_description">
-<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.format_description" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.format_description" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatDescription( (XTC)arg1) -&gt; object :</dt><dd><p>Return a description of the file format</p>
 <dl class="simple">
@@ -1619,7 +1678,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.format_name">
-<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.format_name" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.format_name" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatName( (XTC)arg1) -&gt; object :</dt><dd><p>Return the format name that is used to identify this file format within Sire</p>
 <dl class="simple">
@@ -1632,7 +1691,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.format_suffix">
-<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.format_suffix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">format_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.format_suffix" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>formatSuffix( (XTC)arg1) -&gt; object :</dt><dd><p>Return the suffixes that XTC files will typically have</p>
 <dl class="simple">
@@ -1645,7 +1704,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.get_frame">
-<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.get_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.get_frame" title="Link to this definition">¶</a></dt>
 <dd><p>getFrame( (XTC)arg1, (int)i) -&gt; Frame :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1657,7 +1716,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.is_frame">
-<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.is_frame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.is_frame" title="Link to this definition">¶</a></dt>
 <dd><p>isFrame( (XTC)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1669,7 +1728,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.is_text_file">
-<span class="sig-name descname"><span class="pre">is_text_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.is_text_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_text_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.is_text_file" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isTextFile( (XTC)arg1) -&gt; bool :</dt><dd><p>This is not a text file</p>
 <dl class="simple">
@@ -1682,7 +1741,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.num_atoms">
-<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.num_atoms" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.num_atoms" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nAtoms( (XTC)arg1) -&gt; int :</dt><dd><p>Return the number of atoms whose coordinates are contained in this restart file</p>
 <dl class="simple">
@@ -1695,7 +1754,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.num_frames">
-<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.num_frames" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.num_frames" title="Link to this definition">¶</a></dt>
 <dd><p>nFrames( (XTC)arg1) -&gt; int :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1707,7 +1766,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.parse">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XTC</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.parse" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XTC</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.parse" title="Link to this definition">¶</a></dt>
 <dd><p>Parse from the passed file</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireIO::XTC parse(QString)</p>
@@ -1717,7 +1776,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.size">
-<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.size" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.size" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>int size(SireIO::XTC {lvalue})</p>
 </dd>
@@ -1726,7 +1785,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.to_string" title="Link to this definition">¶</a></dt>
 <dd><p>toString( (XTC)arg1) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1738,7 +1797,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1750,7 +1809,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(XTC)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.io.parser.XTC.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireIO::XTC {lvalue})</p>
 </dd>
@@ -1759,7 +1818,7 @@ This is a compressed trajectory format</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.io.parser.XTC.write_to_file">
-<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.write_to_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.io.parser.XTC.write_to_file" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>writeToFile( (XTC)arg1, (object)filename) -&gt; object :</dt><dd><p>Write this binary file filename</p>
 <dl class="simple">
@@ -1805,7 +1864,7 @@ This is a compressed trajectory format</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 09, 2024</div>
+              Last updated on Jun 29, 2024</div>
           </div>
           <div class="right-details">
             
@@ -1960,10 +2019,10 @@ This is a compressed trajectory format</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=9887e882"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+</div><script src="../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/js/custom.js?v=c9df2d0f"></script>
     </body>
 </html>

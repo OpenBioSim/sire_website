@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Acknowledgements" href="acknowledgements.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>Changelog - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_style.css?v=094c566b" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,7 +106,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -114,7 +114,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -122,6 +122,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +188,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +208,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -389,10 +446,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -402,19 +461,75 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
 <p>There have been four main phases of development of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
 since the project started in 2005.</p>
 <section id="github-openbiosim-january-2023-current">
-<h2>GitHub (OpenBioSim): January 2023 - current<a class="headerlink" href="#github-openbiosim-january-2023-current" title="Link to this heading">#</a></h2>
+<h2>GitHub (OpenBioSim): January 2023 - current<a class="headerlink" href="#github-openbiosim-january-2023-current" title="Link to this heading">¶</a></h2>
 <p>Development was migrated into the
 <a class="reference external" href="https://github.com/openbiosim">OpenBioSim</a>
 organisation on <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 </section>
+<section id="june-2024">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.1.0...2024.2.0">2024.2.0</a> - June 2024<a class="headerlink" href="#june-2024" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Correctly set the <code class="docutils literal notranslate"><span class="pre">element1</span></code> property in <code class="docutils literal notranslate"><span class="pre">sire.morph.create_from_pertfile</span></code>.</p></li>
+<li><p>Added mising <code class="xref py py-meth docutils literal notranslate"><span class="pre">maximum_cutoff()</span></code> method so that
+the cutoff is set correctly when creating a <a class="reference internal" href="api/system.html#sire.system.ForceFieldInfo" title="sire.system.ForceFieldInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForceFieldInfo</span></code></a>
+object.</p></li>
+<li><p>Added a <a class="reference internal" href="api/base.html#sire.base.PageCache" title="sire.base.PageCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.base.PageCache</span></code></a> class which can be used to cache and
+restore objects to memory pages which are automatically paged to and from
+disk as needed. This lets you work on data that can’t fit in memory.</p></li>
+<li><p>Updated the way that <a class="reference internal" href="api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.system.System</span></code></a> objects hold the
+set of temporary frames in a trajectory. Rather than each molecule holding
+its own temporary frame, now the <a class="reference internal" href="api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> object holds
+a <code class="docutils literal notranslate"><span class="pre">SystemTrajectory</span></code> object. This holds the frame data for all molecules
+in the <a class="reference internal" href="api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> in a single binary array. The data
+for this array is paged to disk as needed via the above
+<a class="reference internal" href="api/base.html#sire.base.PageCache" title="sire.base.PageCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.base.PageCache</span></code></a> class. This both significantly speeds up
+processing of these temporary frames, and ensures that long simulations
+do not fill memory, causing the system to crash. In addition, the
+<code class="docutils literal notranslate"><span class="pre">SystemTrajectory</span></code> object is NOT streamed to a S3 file. This means that
+the S3 file (used normally for restarts) won’t grow unbounded with
+temporary frames, meaning that it is safe to create restarts of
+long-running simulations. Note that this does mean that the temporary
+directory is lost. You <strong>must</strong> save the trajectory to a file at the
+end of your simulation or it will be lost. You can do this using the
+standard trajectory save functions, e.g.
+<code class="docutils literal notranslate"><span class="pre">sire.save(mols.trajectory(),</span> <span class="pre">&quot;output&quot;,</span> <span class="pre">format=[&quot;PRMTOP&quot;,</span> <span class="pre">&quot;RST&quot;])</span></code>.</p></li>
+<li><p>Added code that automatically excludes non-bonded interactions between
+from_ghost and to_ghost atoms in the OpenMM layer. This is to prevent
+crashes caused by poor interactions between from_ghost atoms appearing
+over the top of to_ghost atoms during a perturbation where one group
+is grown over another.</p></li>
+<li><p>Ignore BioSimSpace format position restraint include directives when
+parsing GROMACS topology files.</p></li>
+<li><p>Added a map option (fix_perturbable_zero_sigmas) to prevent perturbation of
+the Lennard-Jones sigma parameter for ghost atoms during alchemical free energy simulations.</p></li>
+<li><p>[CHANGE IN BEHAVIOUR] - added code that ensures that, when editing molecules,
+the CGAtomIdx order will always follow the AtomIdx order of atoms. This is
+because a lot of code had implicitly assumed this, and so it was a cause
+of bugs when this wasn’t the case. Now, when you edit a molecule, on committing,
+the orders will be checked. If they don’t agree, then the CutGroups will be
+reordered, with atoms reordered as necessary to make the CGAtomIdx order match
+the AtomIdx order. If this isn’t possible (e.g. because atoms in CutGroups
+are not contiguous), then the molecule will be converted to a single-cutgroup
+molecule, with the atoms placed in AtomIdx order. As part of this change,
+the merge code will now also ensure that added atoms are added with the
+correct AtomIdx, rather than added as the last atoms in the molecule. This
+is also more natural. This fixes issue #202.</p></li>
+<li><p>Added the “center” keyword argument to the <code class="docutils literal notranslate"><span class="pre">make_whole</span></code> functions of
+<a class="reference internal" href="api/mol.html#sire.mol.Cursors" title="sire.mol.Cursors"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursors</span></code></a>, <a class="reference internal" href="api/mol.html#sire.mol.CursorsM" title="sire.mol.CursorsM"><code class="xref py py-class docutils literal notranslate"><span class="pre">CursorsM</span></code></a> and
+<a class="reference internal" href="api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> (as well as to the legacy System class).
+Also allowed the constructor of <a class="reference internal" href="api/maths.html#sire.maths.Vector" title="sire.maths.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a> to recognise
+<code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">zero</span></code> as arguments, meaning you can write
+<code class="docutils literal notranslate"><span class="pre">cursor.make_whole(center=&quot;origin&quot;)</span></code>. This fixes issue #199.</p></li>
+</ul>
+</section>
 <section id="april-2024">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.5.2...2024.1.0">2024.1.0</a> - April 2024<a class="headerlink" href="#april-2024" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.5.2...2024.1.0">2024.1.0</a> - April 2024<a class="headerlink" href="#april-2024" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Dropped official builds and support for Python 3.9, and added official
 builds and support for Python 3.12. Note that MacOS builds are currently
@@ -564,7 +679,7 @@ stages where one or more stages contained a standard morph equation.</p></li>
 </ul>
 </section>
 <section id="march-2024">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.5.1...2023.5.2">2023.5.2</a> - March 2024<a class="headerlink" href="#march-2024" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.5.1...2023.5.2">2023.5.2</a> - March 2024<a class="headerlink" href="#march-2024" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fix bug that disabled the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> log level from the global logger.</p></li>
 <li><p>Fixed bug in :class`sire.legacy.Mol.ResIdxAtomCoordMatcher` by ensuring
@@ -592,7 +707,7 @@ fixes issue #170.</p></li>
 </ul>
 </section>
 <section id="january-2024">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.5.0...2023.5.1">2023.5.1</a> - January 2024<a class="headerlink" href="#january-2024" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.5.0...2023.5.1">2023.5.1</a> - January 2024<a class="headerlink" href="#january-2024" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added a <code class="docutils literal notranslate"><span class="pre">.dynamics().step(num_steps)</span></code> function to make it easier to quickly run
 steps of OpenMM dynamics with minimal overhead (this directly called <code class="docutils literal notranslate"><span class="pre">Integrator.step()</span></code>)</p></li>
@@ -605,7 +720,7 @@ and Linux now uses GCC 12.3.0 instead of GCC 13.</p></li>
 </ul>
 </section>
 <section id="december-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.2...2023.5.0">2023.5.0</a> - December 2023<a class="headerlink" href="#december-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.2...2023.5.0">2023.5.0</a> - December 2023<a class="headerlink" href="#december-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added a new <code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.options</span></code> module that contains new
 <code class="xref py py-class docutils literal notranslate"><span class="pre">sire.options.Option</span></code> objects to represent configurable options.
@@ -645,7 +760,7 @@ significant speed-up for alchemical free energy simulations.</p></li>
 </ul>
 </section>
 <section id="id1">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.1...2023.4.2">2023.4.2</a> - December 2023<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.1...2023.4.2">2023.4.2</a> - December 2023<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed use of <code class="docutils literal notranslate"><span class="pre">QString::compare</span></code> when comparing molecular properties during
 a water topology swap.</p></li>
@@ -675,7 +790,7 @@ to make it easier to unset mapped properties.</p></li>
 </ul>
 </section>
 <section id="october-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.0...2023.4.1">2023.4.1</a> - October 2023<a class="headerlink" href="#october-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.0...2023.4.1">2023.4.1</a> - October 2023<a class="headerlink" href="#october-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed regression introduced in 2023.4.0 that meant that removed the constraints
 from water molecules that had no internal bonds. These waters would blow up
@@ -695,7 +810,7 @@ had a spurious periodic box added when <code class="docutils literal notranslate
 </ul>
 </section>
 <section id="id2">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.0...2023.4.0">2023.4.0</a> - October 2023<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.0...2023.4.0">2023.4.0</a> - October 2023<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added <code class="docutils literal notranslate"><span class="pre">closest</span></code> and <code class="docutils literal notranslate"><span class="pre">furthest</span></code> keywords to enable searching for the n closest
 or furthest views. This is very general, and is described in the
@@ -782,7 +897,7 @@ computed without simulation. See
 </ul>
 </section>
 <section id="september-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.1...2023.3.2">2023.3.2</a> - September 2023<a class="headerlink" href="#september-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.1...2023.3.2">2023.3.2</a> - September 2023<a class="headerlink" href="#september-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Made sure that a title is written to an AmberRst file, even if the system
 has no name (issue #99).</p></li>
@@ -792,7 +907,7 @@ and make both optional. (PR #102).</p></li>
 </ul>
 </section>
 <section id="july-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.3...2023.3.1">2023.3.1</a> - July 2023<a class="headerlink" href="#july-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.3...2023.3.1">2023.3.1</a> - July 2023<a class="headerlink" href="#july-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed a bug in <code class="docutils literal notranslate"><span class="pre">analyse_freenrg</span></code> which produced incorrect TI results
 when not all lambda windows were run for equal lengths of time.</p></li>
@@ -823,7 +938,7 @@ because not all required changes were included.</p></li>
 </ul>
 </section>
 <section id="june-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.3...2023.3.0">2023.3.0</a> - June 2023<a class="headerlink" href="#june-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.3...2023.3.0">2023.3.0</a> - June 2023<a class="headerlink" href="#june-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added alignment and smoothing options to trajectory views (and trajectory processing).
 You can now align a trajectory against any search string, can wrap molecules into
@@ -947,7 +1062,7 @@ flipping during a trajectory), and <a class="reference external" href="https://g
 </ul>
 </section>
 <section id="may-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.2...2023.2.3">2023.2.3</a> - May 2023<a class="headerlink" href="#may-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.2...2023.2.3">2023.2.3</a> - May 2023<a class="headerlink" href="#may-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed numerical precision issues caused by lattice reduction of triclinic
 lattice box vectors to prevent oscillation of the box angles. This is caused
@@ -960,7 +1075,7 @@ version that <code class="docutils literal notranslate"><span class="pre">sire</
 </ul>
 </section>
 <section id="april-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.1...2023.2.2">2023.2.2</a> - April 2023<a class="headerlink" href="#april-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.1...2023.2.2">2023.2.2</a> - April 2023<a class="headerlink" href="#april-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed random crashes when loading Amber PRMTOP files when parallelisation
 was enabled. <a class="reference external" href="https://github.com/OpenBioSim/sire/pull/45">PR 45 - fix_44</a></p></li>
@@ -973,7 +1088,7 @@ to the <code class="docutils literal notranslate"><span class="pre">main</span><
 </ul>
 </section>
 <section id="id3">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.0...2023.2.1">2023.2.1</a> - April 2023<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.0...2023.2.1">2023.2.1</a> - April 2023<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added in <code class="docutils literal notranslate"><span class="pre">openmmtools</span></code> as a host requirement. This allows it to be installed in the
 same environment as <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. Note that this changes the dependencies of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
@@ -992,7 +1107,7 @@ people compiling manually know when they have to rebuild from scratch.</p></li>
 </ul>
 </section>
 <section id="march-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.3...2023.2.0">2023.2.0</a> - March 2023<a class="headerlink" href="#march-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.3...2023.2.0">2023.2.0</a> - March 2023<a class="headerlink" href="#march-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Completed the <a class="reference internal" href="api/convert.html#module-sire.convert" title="sire.convert"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.convert</span></code></a> framework for interconverting <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
 objects with <a class="reference external" href="https://biosimspace.openbiosim.org">BioSimSpace</a>,
@@ -1074,7 +1189,7 @@ based on a quarterly release cycle.</p></li>
 </ul>
 </section>
 <section id="february-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.2...2023.1.3">2023.1.3</a> - February 2023<a class="headerlink" href="#february-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.2...2023.1.3">2023.1.3</a> - February 2023<a class="headerlink" href="#february-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added the beginnings of the new <a class="reference internal" href="api/convert.html#module-sire.convert" title="sire.convert"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire.convert</span></code></a> framework for converting
 between different molecule object formats. Created initial converters for RDKit,
@@ -1109,7 +1224,7 @@ These will be fully exposed in a later release.</p></li>
 </ul>
 </section>
 <section id="id4">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.1...2023.1.2">2023.1.2</a> - February 2023<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.1...2023.1.2">2023.1.2</a> - February 2023<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Used clang-format to autoformat all the C++ files.</p></li>
 <li><p>Fixed SDF pickle bug (molecules read from SDF files could not be pickled / unpickled)</p></li>
@@ -1119,7 +1234,7 @@ These will be fully exposed in a later release.</p></li>
 </ul>
 </section>
 <section id="january-2023">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.0...2023.1.1">2023.1.1</a> - January 2023<a class="headerlink" href="#january-2023" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.0...2023.1.1">2023.1.1</a> - January 2023<a class="headerlink" href="#january-2023" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fix incompatibility between the updated code and the Boresch restraint code.</p></li>
 <li><p>Fixes try_import so that it works within a conda environment, and so that
@@ -1150,7 +1265,7 @@ not easy).</p></li>
 </ul>
 </section>
 <section id="id5">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Initial release of the OpenBioSim version of sire. The code has been completely
 refurbished using a tutorial-driven development process and has a new
@@ -1291,7 +1406,7 @@ functionality.</p></li>
 </ul>
 </section>
 <section id="github-michellab-june-22nd-2015-january-2023">
-<h2>GitHub (michellab): June 22nd 2015 - January 2023<a class="headerlink" href="#github-michellab-june-22nd-2015-january-2023" title="Link to this heading">#</a></h2>
+<h2>GitHub (michellab): June 22nd 2015 - January 2023<a class="headerlink" href="#github-michellab-june-22nd-2015-january-2023" title="Link to this heading">¶</a></h2>
 <p>Thanks to <a class="reference external" href="https://github.com/ppxasjsm">&#64;ppxasjsm</a> and
 <a class="reference external" href="https://github.com/jmichel80">&#64;jmichel80</a> development
 was migrated into the <a class="reference external" href="https://github.com/michellab">michellab</a>
@@ -1622,7 +1737,7 @@ Added nautilus scripts</p>
 </div></blockquote>
 </section>
 <section id="google-code-august-7th-2006-april-1st-2015">
-<h2>Google Code: August 7th 2006 - April 1st 2015<a class="headerlink" href="#google-code-august-7th-2006-april-1st-2015" title="Link to this heading">#</a></h2>
+<h2>Google Code: August 7th 2006 - April 1st 2015<a class="headerlink" href="#google-code-august-7th-2006-april-1st-2015" title="Link to this heading">¶</a></h2>
 <p>Sire was developed against the subversion repository provided
 by Google Code. Here is an
 <a class="reference external" href="https://code.google.com/p/sire">archive of the repository</a>.</p>
@@ -1632,7 +1747,7 @@ by Google Code. Here is an
 <a class="reference external" href="mailto:nividic73&#37;&#52;&#48;googlemail&#46;com"><span>&#64;</span>nividic73</a>.</p>
 </section>
 <section id="local-subversion-february-5th-2005-july-25th-2006">
-<h2>Local Subversion: February 5th 2005 - July 25th 2006<a class="headerlink" href="#local-subversion-february-5th-2005-july-25th-2006" title="Link to this heading">#</a></h2>
+<h2>Local Subversion: February 5th 2005 - July 25th 2006<a class="headerlink" href="#local-subversion-february-5th-2005-july-25th-2006" title="Link to this heading">¶</a></h2>
 <p>Sire was developed against a local subversion repository.
 Here is a
 <a class="reference external" href="https://sire.openbiosim.org/f/orig_sire_repository.dump.bz2">svndump of the original repository</a>,
@@ -1682,7 +1797,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 09, 2024</div>
+              Last updated on Jun 29, 2024</div>
           </div>
           <div class="right-details">
             
@@ -1705,6 +1820,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#github-openbiosim-january-2023-current">GitHub (OpenBioSim): January 2023 - current</a></li>
+<li><a class="reference internal" href="#june-2024">2024.2.0 - June 2024</a></li>
 <li><a class="reference internal" href="#april-2024">2024.1.0 - April 2024</a></li>
 <li><a class="reference internal" href="#march-2024">2023.5.2 - March 2024</a></li>
 <li><a class="reference internal" href="#january-2024">2023.5.1 - January 2024</a></li>
@@ -1737,10 +1853,10 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=9887e882"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+</div><script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="_static/js/custom.js?v=c9df2d0f"></script>
     </body>
 </html>

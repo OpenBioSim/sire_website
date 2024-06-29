@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.mm" href="index_mm.html" /><link rel="prev" title="sire.maths" href="index_maths.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,7 +106,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -114,7 +114,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -122,6 +122,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +188,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +208,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -389,10 +446,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -402,19 +461,19 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="module-sire.maths">
-<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.maths" title="Link to this heading">#</a></h1>
+<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.maths" title="Link to this heading">¶</a></h1>
 <p><a class="reference internal" href="index_maths.html"><span class="doc">View Module Index</span></a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">EnergyTrajectory</span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">EnergyTrajectory</span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory" title="Link to this definition">¶</a></dt>
 <dd><p>This class holds the trajectory of energies, organised by
 timestep the energy was recorded and the types of energy
 (e.g. kinetic, potential, values at different lambda windows)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">EnergyTrajectory</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">EnergyTrajectory</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::EnergyTrajectory {lvalue} assign(SireMaths::EnergyTrajectory {lvalue},SireMaths::EnergyTrajectory)</p>
 </dd>
@@ -423,7 +482,7 @@ timestep the energy was recorded and the types of energy
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.clear_properties">
-<span class="sig-name descname"><span class="pre">clear_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.clear_properties" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clear_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.clear_properties" title="Link to this definition">¶</a></dt>
 <dd><p>clearProperties( (EnergyTrajectory)arg1) -&gt; None :</p>
 <blockquote>
 <div><dl class="simple">
@@ -435,7 +494,7 @@ timestep the energy was recorded and the types of energy
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">EnergyTrajectory</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">EnergyTrajectory</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::EnergyTrajectory clone(SireMaths::EnergyTrajectory)</p>
 </dd>
@@ -444,7 +503,7 @@ timestep the energy was recorded and the types of energy
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.count" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.count" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of time values (number of rows)</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>int count(SireMaths::EnergyTrajectory {lvalue})</p>
@@ -454,7 +513,7 @@ timestep the energy was recorded and the types of energy
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.energies">
-<span class="sig-name descname"><span class="pre">energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.energies" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.energies" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return all of the energy values for the passed key (the energy-key column).</dt><dd><blockquote>
 <div><p>This is in the same order as the times, and is in the default internal
@@ -477,7 +536,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return the time and energy components at the ith row.</dt><dd><blockquote>
 <div><p>Values are returned in internal units</p>
@@ -499,7 +558,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.get_labels">
-<span class="sig-name descname"><span class="pre">get_labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get_labels" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get_labels" title="Link to this definition">¶</a></dt>
 <dd><p>getLabels( (EnergyTrajectory)arg1, (int)i) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -511,7 +570,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.get_labels_as_numbers">
-<span class="sig-name descname"><span class="pre">get_labels_as_numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get_labels_as_numbers" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_labels_as_numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.get_labels_as_numbers" title="Link to this definition">¶</a></dt>
 <dd><p>getLabelsAsNumbers( (EnergyTrajectory)arg1, (int)i) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -523,7 +582,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.has_property">
-<span class="sig-name descname"><span class="pre">has_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.has_property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">has_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.has_property" title="Link to this definition">¶</a></dt>
 <dd><p>hasProperty( (EnergyTrajectory)arg1, (PropertyName)key) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -535,7 +594,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.is_empty">
-<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.is_empty" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.is_empty" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isEmpty( (EnergyTrajectory)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is empty</p>
 <dl class="simple">
@@ -548,7 +607,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.is_null">
-<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.is_null" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>isNull( (EnergyTrajectory)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -560,7 +619,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.keys">
-<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.keys" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.keys" title="Link to this definition">¶</a></dt>
 <dd><p>Return all of the energy keys</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>QStringList keys(SireMaths::EnergyTrajectory {lvalue})</p>
@@ -570,7 +629,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.label_keys">
-<span class="sig-name descname"><span class="pre">label_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.label_keys" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">label_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.label_keys" title="Link to this definition">¶</a></dt>
 <dd><p>labelKeys( (EnergyTrajectory)arg1) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -582,7 +641,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.labels">
-<span class="sig-name descname"><span class="pre">labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.labels" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.labels" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>QVector&lt;QString&gt; labels(SireMaths::EnergyTrajectory {lvalue},QString)</p>
 </dd>
@@ -591,7 +650,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.labels_as_numbers">
-<span class="sig-name descname"><span class="pre">labels_as_numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.labels_as_numbers" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">labels_as_numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.labels_as_numbers" title="Link to this definition">¶</a></dt>
 <dd><p>labelsAsNumbers( (EnergyTrajectory)arg1, (object)key) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -603,7 +662,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.properties">
-<span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.properties" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.properties" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireBase::Properties properties(SireMaths::EnergyTrajectory {lvalue})</p>
 </dd>
@@ -612,7 +671,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.property">
-<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.property" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireBase::Property property(SireMaths::EnergyTrajectory {lvalue},SireBase::PropertyName)</p>
 </dd>
@@ -621,7 +680,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.property_keys">
-<span class="sig-name descname"><span class="pre">property_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.property_keys" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">property_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.property_keys" title="Link to this definition">¶</a></dt>
 <dd><p>propertyKeys( (EnergyTrajectory)arg1) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -633,7 +692,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.remove_property">
-<span class="sig-name descname"><span class="pre">remove_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.remove_property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.remove_property" title="Link to this definition">¶</a></dt>
 <dd><p>removeProperty( (EnergyTrajectory)arg1, (object)key) -&gt; None :</p>
 <blockquote>
 <div><dl class="simple">
@@ -645,7 +704,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.set">
-<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(GeneralUnit)time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)energies</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.set" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(GeneralUnit)time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)energies</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.set" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Set the energies at time time to the components contained</dt><dd><blockquote>
 <div><p>in energies</p>
@@ -667,7 +726,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.set_property">
-<span class="sig-name descname"><span class="pre">set_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.set_property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.set_property" title="Link to this definition">¶</a></dt>
 <dd><p>setProperty( (EnergyTrajectory)arg1, (object)key, (Property)value) -&gt; None :</p>
 <blockquote>
 <div><dl class="simple">
@@ -679,7 +738,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.size">
-<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.size" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.size" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of time values (number of rows)</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>int size(SireMaths::EnergyTrajectory {lvalue})</p>
@@ -689,7 +748,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.times">
-<span class="sig-name descname"><span class="pre">times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.times" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.times" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return all of the time values (the time column). This is</dt><dd><blockquote>
 <div><p>sorted from earliest to latest time, and is in the default internal
@@ -711,7 +770,7 @@ unit</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.to_alchemlyb">
-<span class="sig-name descname"><span class="pre">to_alchemlyb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'kcal/mol'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_alchemlyb" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_alchemlyb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'kcal/mol'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_alchemlyb" title="Link to this definition">¶</a></dt>
 <dd><p>Return the energy trajectory as an alchemlyb-formatted pandas DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -736,7 +795,7 @@ DataFrame to use. This is in alchemlyb format, e.g.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.to_pandas">
-<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_alchemlyb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_pandas" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_alchemlyb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_pandas" title="Link to this definition">¶</a></dt>
 <dd><p>Return the energy trajectory as a pandas DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -761,7 +820,7 @@ DataFrame to use. This is in alchemlyb format, e.g.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.to_string" title="Link to this definition">¶</a></dt>
 <dd><p>toString( (EnergyTrajectory)arg1) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -773,7 +832,7 @@ DataFrame to use. This is in alchemlyb format, e.g.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.EnergyTrajectory.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -785,7 +844,7 @@ DataFrame to use. This is in alchemlyb format, e.g.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.EnergyTrajectory.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(EnergyTrajectory)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.EnergyTrajectory.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireMaths::EnergyTrajectory {lvalue})</p>
 </dd>
@@ -796,12 +855,12 @@ DataFrame to use. This is in alchemlyb format, e.g.
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.maths.Matrix">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><a class="headerlink" href="#sire.maths.Matrix" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><a class="headerlink" href="#sire.maths.Matrix" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents a 3x3 square matrix, used to represent 3D transformations.</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Matrix)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Matrix)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Matrix {lvalue} assign(SireMaths::Matrix {lvalue},SireMaths::Matrix)</p>
 </dd>
@@ -810,7 +869,7 @@ DataFrame to use. This is in alchemlyb format, e.g.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.at">
-<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)j</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.at" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)j</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.at" title="Link to this definition">¶</a></dt>
 <dd><p>Return the element at index i,j</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>double at(SireMaths::Matrix {lvalue},int,int)</p>
@@ -820,7 +879,7 @@ DataFrame to use. This is in alchemlyb format, e.g.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.checked_offset">
-<span class="sig-name descname"><span class="pre">checked_offset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.checked_offset" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">checked_offset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.checked_offset" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>checkedOffset( (Matrix)arg1, (int)i, (int)j) -&gt; int :</dt><dd><p>Return the offset into the array of the value at index [i,j]
 Throw: SireError::invalid_index</p>
@@ -834,7 +893,7 @@ Throw: SireError::invalid_index</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Matrix clone(SireMaths::Matrix)</p>
 </dd>
@@ -843,7 +902,7 @@ Throw: SireError::invalid_index</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.column0">
-<span class="sig-name descname"><span class="pre">column0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column0" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">column0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column0" title="Link to this definition">¶</a></dt>
 <dd><p>Return each column</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector column0(SireMaths::Matrix {lvalue})</p>
@@ -853,7 +912,7 @@ Throw: SireError::invalid_index</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.column1">
-<span class="sig-name descname"><span class="pre">column1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column1" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">column1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column1" title="Link to this definition">¶</a></dt>
 <dd><p>Return each column</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector column1(SireMaths::Matrix {lvalue})</p>
@@ -863,7 +922,7 @@ Throw: SireError::invalid_index</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.column2">
-<span class="sig-name descname"><span class="pre">column2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column2" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">column2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column2" title="Link to this definition">¶</a></dt>
 <dd><p>Return each column</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector column2(SireMaths::Matrix {lvalue})</p>
@@ -873,7 +932,7 @@ Throw: SireError::invalid_index</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.covariance">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">covariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)q</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)n=-1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.covariance" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">covariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)q</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)n=-1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.covariance" title="Link to this definition">¶</a></dt>
 <dd><p>Return the covariance matrix of the passed arrays of points. This
 matches point p[i] against point q[i], and only calculates up to either
 the specified number of points, if n &gt; 0, or to min(len(p),len(q))</p>
@@ -885,7 +944,7 @@ the specified number of points, if n &gt; 0, or to min(len(p),len(q))</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.determinant">
-<span class="sig-name descname"><span class="pre">determinant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.determinant" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">determinant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.determinant" title="Link to this definition">¶</a></dt>
 <dd><p>Return the determinant of the matrix</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>double determinant(SireMaths::Matrix {lvalue})</p>
@@ -895,7 +954,7 @@ the specified number of points, if n &gt; 0, or to min(len(p),len(q))</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.diagonal">
-<span class="sig-name descname"><span class="pre">diagonal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.diagonal" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diagonal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.diagonal" title="Link to this definition">¶</a></dt>
 <dd><p>Return the diagonal of this matrix</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector diagonal(SireMaths::Matrix {lvalue})</p>
@@ -905,7 +964,7 @@ the specified number of points, if n &gt; 0, or to min(len(p),len(q))</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.diagonalise">
-<span class="sig-name descname"><span class="pre">diagonalise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.diagonalise" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diagonalise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.diagonalise" title="Link to this definition">¶</a></dt>
 <dd><p>Return the eigenvectors and eigenvalues of this matrix</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>boost::tuples::tuple&lt;SireMaths::Vector, SireMaths::Matrix, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt; diagonalise(SireMaths::Matrix {lvalue})</p>
@@ -915,7 +974,7 @@ the specified number of points, if n &gt; 0, or to min(len(p),len(q))</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.enforce_symmetric">
-<span class="sig-name descname"><span class="pre">enforce_symmetric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.enforce_symmetric" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">enforce_symmetric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.enforce_symmetric" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>enforceSymmetric( (Matrix)arg1) -&gt; None :</dt><dd><p>Ensure that this matrix is symmetric - this is done by copying the upper-right
 diagonal to the lower-left diagonal. Note that you should only really use this
@@ -931,7 +990,7 @@ their symmetry due to numerical rounding error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.get_principal_axes">
-<span class="sig-name descname"><span class="pre">get_principal_axes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.get_principal_axes" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_principal_axes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.get_principal_axes" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>getPrincipalAxes( (Matrix)arg1) -&gt; Matrix :</dt><dd><p>Obtain the principal axes of this matrix. This can only be performed if this
 matrix is symmetric. You should only call this function for matricies that
@@ -949,7 +1008,7 @@ the lowest.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.identity">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.identity" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.identity" title="Link to this definition">¶</a></dt>
 <dd><p>Return the identity matrix</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Matrix identity()</p>
@@ -959,7 +1018,7 @@ the lowest.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.inverse">
-<span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.inverse" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.inverse" title="Link to this definition">¶</a></dt>
 <dd><p>Return the inverse of this matrix. Throws a math_error if this
 matrix cannot be inverted.</p>
 <dl class="simple">
@@ -970,7 +1029,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.is_diagonal">
-<span class="sig-name descname"><span class="pre">is_diagonal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_diagonal" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_diagonal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_diagonal" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isDiagonal( (Matrix)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is a diagonal matrix</p>
 <dl class="simple">
@@ -983,7 +1042,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.is_identity">
-<span class="sig-name descname"><span class="pre">is_identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_identity" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_identity" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isIdentity( (Matrix)arg1) -&gt; bool :</dt><dd><p>Return whether or not this matrix is equal to the identity matrix</p>
 <dl class="simple">
@@ -996,7 +1055,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.is_symmetric">
-<span class="sig-name descname"><span class="pre">is_symmetric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_symmetric" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_symmetric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_symmetric" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isSymmetric( (Matrix)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is a symmetric matrix</p>
 <dl class="simple">
@@ -1009,7 +1068,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.is_zero">
-<span class="sig-name descname"><span class="pre">is_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_zero" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_zero" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isZero( (Matrix)arg1) -&gt; bool :</dt><dd><p>Return whether or not this matrix is all zero</p>
 <dl class="simple">
@@ -1022,7 +1081,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.offset">
-<span class="sig-name descname"><span class="pre">offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)j</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.offset" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)j</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.offset" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>int offset(SireMaths::Matrix {lvalue},int,int)</p>
 </dd>
@@ -1031,7 +1090,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.row0">
-<span class="sig-name descname"><span class="pre">row0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row0" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">row0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row0" title="Link to this definition">¶</a></dt>
 <dd><p>Return each row</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector row0(SireMaths::Matrix {lvalue})</p>
@@ -1041,7 +1100,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.row1">
-<span class="sig-name descname"><span class="pre">row1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row1" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">row1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row1" title="Link to this definition">¶</a></dt>
 <dd><p>Return each row</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector row1(SireMaths::Matrix {lvalue})</p>
@@ -1051,7 +1110,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.row2">
-<span class="sig-name descname"><span class="pre">row2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row2" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">row2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row2" title="Link to this definition">¶</a></dt>
 <dd><p>Return each row</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector row2(SireMaths::Matrix {lvalue})</p>
@@ -1061,7 +1120,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.set_to_identity">
-<span class="sig-name descname"><span class="pre">set_to_identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.set_to_identity" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_to_identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.set_to_identity" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>setToIdentity( (Matrix)arg1) -&gt; None :</dt><dd><p>Set the matrix to identity</p>
 <dl class="simple">
@@ -1074,7 +1133,7 @@ matrix cannot be inverted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.single_value_decomposition">
-<span class="sig-name descname"><span class="pre">single_value_decomposition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.single_value_decomposition" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">single_value_decomposition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.single_value_decomposition" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>singleValueDecomposition( (Matrix)arg1) -&gt; object :</dt><dd><p>Return the single value decomposition of this matrix.
 This calculates the decomposition of this matrix
@@ -1089,7 +1148,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.svd">
-<span class="sig-name descname"><span class="pre">svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.svd" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.svd" title="Link to this definition">¶</a></dt>
 <dd><p>Return the single value decomposition of this matrix.
 This calculates the decomposition of this matrix
 into U S V^T, returning U, S and V in the tuple</p>
@@ -1101,7 +1160,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (Matrix)arg1) -&gt; object :</dt><dd><p>Return a QString representation of the matrix</p>
 <dl class="simple">
@@ -1114,7 +1173,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.trace">
-<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.trace" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.trace" title="Link to this definition">¶</a></dt>
 <dd><p>Return the trace of the matrix</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector trace(SireMaths::Matrix {lvalue})</p>
@@ -1124,7 +1183,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.transpose">
-<span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.transpose" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.transpose" title="Link to this definition">¶</a></dt>
 <dd><p>Return the transpose of the matrix</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Matrix transpose(SireMaths::Matrix {lvalue})</p>
@@ -1134,7 +1193,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1146,7 +1205,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1155,7 +1214,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.xx">
-<span class="sig-name descname"><span class="pre">xx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xx" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">xx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xx" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double xx(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1164,7 +1223,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.xy">
-<span class="sig-name descname"><span class="pre">xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xy" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double xy(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1173,7 +1232,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.xz">
-<span class="sig-name descname"><span class="pre">xz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xz" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">xz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xz" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double xz(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1182,7 +1241,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.yx">
-<span class="sig-name descname"><span class="pre">yx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yx" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">yx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yx" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double yx(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1191,7 +1250,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.yy">
-<span class="sig-name descname"><span class="pre">yy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">yy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yy" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double yy(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1200,7 +1259,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.yz">
-<span class="sig-name descname"><span class="pre">yz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yz" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">yz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yz" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double yz(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1209,7 +1268,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.zero">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zero" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zero" title="Link to this definition">¶</a></dt>
 <dd><p>Return the null matrix</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Matrix zero()</p>
@@ -1219,7 +1278,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.zx">
-<span class="sig-name descname"><span class="pre">zx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zx" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">zx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zx" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double zx(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1228,7 +1287,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.zy">
-<span class="sig-name descname"><span class="pre">zy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">zy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zy" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double zy(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1237,7 +1296,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Matrix.zz">
-<span class="sig-name descname"><span class="pre">zz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zz" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">zz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zz" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>double zz(SireMaths::Matrix {lvalue})</p>
 </dd>
@@ -1248,7 +1307,7 @@ into U S V^T, returning U, S and V in the tuple</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">RanGenerator</span></span><a class="headerlink" href="#sire.maths.RanGenerator" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">RanGenerator</span></span><a class="headerlink" href="#sire.maths.RanGenerator" title="Link to this definition">¶</a></dt>
 <dd><p>This class provides a thread-safe, copyable and streamable
 random number generator. Copies are guaranteed to produce
 different random number sequences (thus the possibility
@@ -1256,7 +1315,7 @@ of accidental repeat random numbers is removed).</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(RanGenerator)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RanGenerator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(RanGenerator)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RanGenerator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::RanGenerator {lvalue} assign(SireMaths::RanGenerator {lvalue},SireMaths::RanGenerator)</p>
 </dd>
@@ -1265,7 +1324,7 @@ of accidental repeat random numbers is removed).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RanGenerator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RanGenerator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::RanGenerator clone(SireMaths::RanGenerator)</p>
 </dd>
@@ -1274,7 +1333,7 @@ of accidental repeat random numbers is removed).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.detach">
-<span class="sig-name descname"><span class="pre">detach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.detach" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">detach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.detach" title="Link to this definition">¶</a></dt>
 <dd><p>Detach from shared storage</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>void detach(SireMaths::RanGenerator {lvalue})</p>
@@ -1284,7 +1343,7 @@ of accidental repeat random numbers is removed).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.get_state">
-<span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.get_state" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.get_state" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>getState( (RanGenerator)arg1) -&gt; object :</dt><dd><p>Return the current state of the random number generator.
 Use this if you truly wish to get reproducible sequences
@@ -1299,7 +1358,7 @@ of random numbers</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.global">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RanGenerator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.global" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RanGenerator</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.global" title="Link to this definition">¶</a></dt>
 <dd><p>Return a reference to the global random number generator
 (shared between all threads)</p>
 <dl class="simple">
@@ -1310,7 +1369,7 @@ of random numbers</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.lock">
-<span class="sig-name descname"><span class="pre">lock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.lock" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">lock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.lock" title="Link to this definition">¶</a></dt>
 <dd><p>Take hold of the generator lock. Only you can now generate
 random numbers while this lock is held</p>
 <dl class="simple">
@@ -1321,7 +1380,7 @@ random numbers while this lock is held</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.locked_rand">
-<span class="sig-name descname"><span class="pre">locked_rand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.locked_rand" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">locked_rand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.locked_rand" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return a random real number on [0,1]. Should only be called while</dt><dd><p>you hold the generator lock</p>
 <dl class="simple">
@@ -1348,7 +1407,7 @@ you hold the generator lock</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.locked_rand_norm">
-<span class="sig-name descname"><span class="pre">locked_rand_norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.locked_rand_norm" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">locked_rand_norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.locked_rand_norm" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>locked_randNorm( (RanGenerator)arg1) -&gt; float :</dt><dd><p>Return a random number generated from the normal distribution
 with mean 0 and standard deviation 1. You must hold the generator
@@ -1371,7 +1430,7 @@ lock when calling this function</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.locked_vector_on_sphere">
-<span class="sig-name descname"><span class="pre">locked_vector_on_sphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.locked_vector_on_sphere" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">locked_vector_on_sphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.locked_vector_on_sphere" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>locked_vectorOnSphere( (RanGenerator)arg1) -&gt; Vector :</dt><dd><p>Return a random vector on the unit sphere. You must hold the generator
 lock when calling this function</p>
@@ -1392,7 +1451,7 @@ You must hold the generator lock when calling this function</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.nrand">
-<span class="sig-name descname"><span class="pre">nrand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.nrand" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nrand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.nrand" title="Link to this definition">¶</a></dt>
 <dd><p>Return an array of n random numbers on [0,1]</p>
 <blockquote>
 <div><dl class="simple">
@@ -1439,7 +1498,7 @@ value in the array with a random number on [minval,maxval]</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.nrand_norm">
-<span class="sig-name descname"><span class="pre">nrand_norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.nrand_norm" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nrand_norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.nrand_norm" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nrandNorm( (RanGenerator)arg1, (object)result, (float)mean, (float)variance) -&gt; None :</dt><dd><p>Fill the passed array with random numbers drawn from the normal
 distribution with supplied mean and variance</p>
@@ -1460,7 +1519,7 @@ supplied mean and variance</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.nvector_on_sphere">
-<span class="sig-name descname"><span class="pre">nvector_on_sphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.nvector_on_sphere" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nvector_on_sphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.nvector_on_sphere" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nvectorOnSphere( (RanGenerator)arg1, (object)result) -&gt; None :</dt><dd><p>Fill the passed array with random vectors on a unit sphere</p>
 <dl class="simple">
@@ -1491,7 +1550,7 @@ supplied mean and variance</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.rand">
-<span class="sig-name descname"><span class="pre">rand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.rand" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.rand" title="Link to this definition">¶</a></dt>
 <dd><p>Return a random real number on [0,1]</p>
 <blockquote>
 <div><dl class="simple">
@@ -1517,7 +1576,7 @@ supplied mean and variance</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.rand53">
-<span class="sig-name descname"><span class="pre">rand53</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.rand53" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rand53</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.rand53" title="Link to this definition">¶</a></dt>
 <dd><p>Return a high-precision random real number on [0,1)</p>
 <blockquote>
 <div><dl class="simple">
@@ -1543,7 +1602,7 @@ supplied mean and variance</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.rand_bool">
-<span class="sig-name descname"><span class="pre">rand_bool</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.rand_bool" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rand_bool</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.rand_bool" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>randBool( (RanGenerator)arg1) -&gt; bool :</dt><dd><p>Return a random true or false value</p>
 <dl class="simple">
@@ -1556,7 +1615,7 @@ supplied mean and variance</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.rand_int">
-<span class="sig-name descname"><span class="pre">rand_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.rand_int" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rand_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.rand_int" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>randInt( (RanGenerator)arg1) -&gt; int :</dt><dd><p>Return a random 32bit unsigned integer in [0,2^32 - 1]</p>
 <dl class="simple">
@@ -1581,7 +1640,7 @@ supplied mean and variance</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.rand_int64">
-<span class="sig-name descname"><span class="pre">rand_int64</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.rand_int64" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rand_int64</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.rand_int64" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>randInt64( (RanGenerator)arg1) -&gt; int :</dt><dd><p>Return a random 64bit unsigned integer on [0,2^64 - 1]</p>
 <dl class="simple">
@@ -1606,7 +1665,7 @@ supplied mean and variance</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.rand_norm">
-<span class="sig-name descname"><span class="pre">rand_norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.rand_norm" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rand_norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.rand_norm" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>randNorm( (RanGenerator)arg1) -&gt; float :</dt><dd><p>Return a random number generated from the normal distribution
 with mean 0 and standard deviation 1</p>
@@ -1627,7 +1686,7 @@ with supplied mean and variance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.seed">
-<span class="sig-name descname"><span class="pre">seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.seed" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.seed" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>See the generator with a new, random seed - this will detach</dt><dd><p>this explicitly shared copy of the generator</p>
 <dl class="simple">
@@ -1662,7 +1721,7 @@ all explicit copies of one another</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.seed_global">
-<span class="sig-name descname"><span class="pre">seed_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.seed_global" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">seed_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.seed_global" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>seedGlobal() -&gt; None :</dt><dd><p>Seed the global random number generator</p>
 <dl class="simple">
@@ -1693,7 +1752,7 @@ all explicit copies of one another</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.set_state">
-<span class="sig-name descname"><span class="pre">set_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.set_state" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.set_state" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>setState( (RanGenerator)arg1, (object)state) -&gt; None :</dt><dd><p>Load the state into this generator - the state must have
 been produced by the getState() function above.
@@ -1709,7 +1768,7 @@ Throw: SireError::incompatible_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1721,7 +1780,7 @@ Throw: SireError::incompatible_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.unlock">
-<span class="sig-name descname"><span class="pre">unlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.unlock" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">unlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.unlock" title="Link to this definition">¶</a></dt>
 <dd><p>Release the generator lock</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>void unlock(SireMaths::RanGenerator {lvalue})</p>
@@ -1731,7 +1790,7 @@ Throw: SireError::incompatible_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.vector_on_sphere">
-<span class="sig-name descname"><span class="pre">vector_on_sphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.vector_on_sphere" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">vector_on_sphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.RanGenerator.vector_on_sphere" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>vectorOnSphere( (RanGenerator)arg1) -&gt; Vector :</dt><dd><p>Return a random vector on the unit sphere</p>
 <dl class="simple">
@@ -1750,7 +1809,7 @@ Throw: SireError::incompatible_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.RanGenerator.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(RanGenerator)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.RanGenerator.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireMaths::RanGenerator {lvalue})</p>
 </dd>
@@ -1761,13 +1820,13 @@ Throw: SireError::incompatible_error</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.maths.Sphere">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths/_sphere.html#Sphere"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.Sphere" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths/_sphere.html#Sphere"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.Sphere" title="Link to this definition">¶</a></dt>
 <dd><p>A sphere in 3D space</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.maths.Torsion">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Torsion</span></span><a class="headerlink" href="#sire.maths.Torsion" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Torsion</span></span><a class="headerlink" href="#sire.maths.Torsion" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents a torsion in three dimensional space, e.g. four points
 in space, not necessarily lying in a plane. A torsion is used to calculate
 dihedral angles (imagine each point is an atom). I am not happy with the
@@ -1775,7 +1834,7 @@ name of this class, and welcome suggestions :-)</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.angle">
-<span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.angle" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.angle" title="Link to this definition">¶</a></dt>
 <dd><p>Return the torsion angle of this torsion (the torsion angle 0-1-2-3
 around the 1-2 line)</p>
 <dl class="simple">
@@ -1786,7 +1845,7 @@ around the 1-2 line)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.at">
-<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.at" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.at" title="Link to this definition">¶</a></dt>
 <dd><p>Return the point at index i</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector at(SireMaths::Torsion {lvalue},int)</p>
@@ -1796,7 +1855,7 @@ around the 1-2 line)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Torsion</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Torsion</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Torsion clone(SireMaths::Torsion)</p>
 </dd>
@@ -1805,7 +1864,7 @@ around the 1-2 line)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.count" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.count" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of points in a torsion (4)</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>int count(SireMaths::Torsion {lvalue})</p>
@@ -1815,7 +1874,7 @@ around the 1-2 line)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.improper_angle">
-<span class="sig-name descname"><span class="pre">improper_angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.improper_angle" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">improper_angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.improper_angle" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>improperAngle( (Torsion)arg1) -&gt; object :</dt><dd><p>Return the improper angle of this torsion (the acute angle between the
 vector 0-1 and the plane formed by 1-2-3)</p>
@@ -1829,7 +1888,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.line03">
-<span class="sig-name descname"><span class="pre">line03</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.line03" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">line03</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.line03" title="Link to this definition">¶</a></dt>
 <dd><p>Return the line from point 0 to point 3</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Line line03(SireMaths::Torsion {lvalue})</p>
@@ -1839,7 +1898,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.line12">
-<span class="sig-name descname"><span class="pre">line12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.line12" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">line12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.line12" title="Link to this definition">¶</a></dt>
 <dd><p>Return the line from point 1 to point 2</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Line line12(SireMaths::Torsion {lvalue})</p>
@@ -1849,7 +1908,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.point">
-<span class="sig-name descname"><span class="pre">point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.point" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.point" title="Link to this definition">¶</a></dt>
 <dd><p>Return the point at index i</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector point(SireMaths::Torsion {lvalue},int)</p>
@@ -1859,7 +1918,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (Torsion)arg1) -&gt; object :</dt><dd><p>Return a string representation of this torsion</p>
 <dl class="simple">
@@ -1872,7 +1931,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.triangle1">
-<span class="sig-name descname"><span class="pre">triangle1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.triangle1" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">triangle1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.triangle1" title="Link to this definition">¶</a></dt>
 <dd><p>Return the triangle around point 1, i.e. point0-point1-point2</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Triangle triangle1(SireMaths::Torsion {lvalue})</p>
@@ -1882,7 +1941,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.triangle2">
-<span class="sig-name descname"><span class="pre">triangle2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.triangle2" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">triangle2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.triangle2" title="Link to this definition">¶</a></dt>
 <dd><p>Return the triangle around point 2, i.e. point1-point2-point3</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Triangle triangle2(SireMaths::Torsion {lvalue})</p>
@@ -1892,7 +1951,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1904,7 +1963,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.vector03">
-<span class="sig-name descname"><span class="pre">vector03</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.vector03" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">vector03</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.vector03" title="Link to this definition">¶</a></dt>
 <dd><p>Return the vector from point 0 to point 3</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector vector03(SireMaths::Torsion {lvalue})</p>
@@ -1914,7 +1973,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.vector12">
-<span class="sig-name descname"><span class="pre">vector12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.vector12" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">vector12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.vector12" title="Link to this definition">¶</a></dt>
 <dd><p>Return the vector from point 1 to point 2</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector vector12(SireMaths::Torsion {lvalue})</p>
@@ -1924,7 +1983,7 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Torsion.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireMaths::Torsion {lvalue})</p>
 </dd>
@@ -1935,14 +1994,14 @@ vector 0-1 and the plane formed by 1-2-3)</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.maths.Transform">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Transform</span></span><a class="headerlink" href="#sire.maths.Transform" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Transform</span></span><a class="headerlink" href="#sire.maths.Transform" title="Link to this definition">¶</a></dt>
 <dd><p>This class holds everything needed to apply a transformation on a set
 of points. This holds the amount by which to translate the points, together
 with the center of rotation and amount by which to rotate</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.apply">
-<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Vector)point</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.apply" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Vector)point</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.apply" title="Link to this definition">¶</a></dt>
 <dd><p>Apply this transformation to the passed point, returning the result</p>
 <blockquote>
 <div><dl class="simple">
@@ -1962,7 +2021,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Transform)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Transform</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Transform)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Transform</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Transform {lvalue} assign(SireMaths::Transform {lvalue},SireMaths::Transform)</p>
 </dd>
@@ -1971,7 +2030,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Transform</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Transform</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Transform clone(SireMaths::Transform)</p>
 </dd>
@@ -1980,7 +2039,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.inverse">
-<span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Transform</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.inverse" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Transform</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.inverse" title="Link to this definition">¶</a></dt>
 <dd><p>Return the inverse of this transformation</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Transform inverse(SireMaths::Transform {lvalue})</p>
@@ -1990,7 +2049,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.is_null">
-<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.is_null" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.is_null" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isNull( (Transform)arg1) -&gt; bool :</dt><dd><p>Return whether this is null (has no transformation)</p>
 <dl class="simple">
@@ -2003,7 +2062,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.is_zero">
-<span class="sig-name descname"><span class="pre">is_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.is_zero" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.is_zero" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isZero( (Transform)arg1) -&gt; bool :</dt><dd><p>Return whether this is zero (has no transformation)</p>
 <dl class="simple">
@@ -2016,7 +2075,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.reverse">
-<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Vector)point</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.reverse" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Vector)point</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.reverse" title="Link to this definition">¶</a></dt>
 <dd><p>Apply the inverse of this transformation to the passed point, returning the result</p>
 <blockquote>
 <div><dl class="simple">
@@ -2036,7 +2095,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.rotation_center">
-<span class="sig-name descname"><span class="pre">rotation_center</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.rotation_center" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rotation_center</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.rotation_center" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>rotationCenter( (Transform)arg1) -&gt; Vector :</dt><dd><p>Return the center of rotation</p>
 <dl class="simple">
@@ -2049,7 +2108,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.rotation_matrix">
-<span class="sig-name descname"><span class="pre">rotation_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.rotation_matrix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rotation_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.rotation_matrix" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>rotationMatrix( (Transform)arg1) -&gt; Matrix :</dt><dd><p>Return the rotation matrix</p>
 <dl class="simple">
@@ -2062,7 +2121,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.rotation_quaternion">
-<span class="sig-name descname"><span class="pre">rotation_quaternion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.rotation_quaternion" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rotation_quaternion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.rotation_quaternion" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>rotationQuaternion( (Transform)arg1) -&gt; Quaternion :</dt><dd><p>Return the rotation matrix as a quaternion</p>
 <dl class="simple">
@@ -2075,7 +2134,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.to_string" title="Link to this definition">¶</a></dt>
 <dd><p>toString( (Transform)arg1) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -2087,7 +2146,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.translation_delta">
-<span class="sig-name descname"><span class="pre">translation_delta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.translation_delta" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">translation_delta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.translation_delta" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>translationDelta( (Transform)arg1) -&gt; Vector :</dt><dd><p>Return the amount by which to translate</p>
 <dl class="simple">
@@ -2100,7 +2159,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Transform.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -2112,7 +2171,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Transform.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Transform)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Transform.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireMaths::Transform {lvalue})</p>
 </dd>
@@ -2123,12 +2182,12 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.maths.Triangle">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><a class="headerlink" href="#sire.maths.Triangle" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><a class="headerlink" href="#sire.maths.Triangle" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents a triangle in three-dimensional space. (or three points)</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.angle">
-<span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2137,7 +2196,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.angle0">
-<span class="sig-name descname"><span class="pre">angle0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle0" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">angle0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle0" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle0(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2146,7 +2205,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.angle1">
-<span class="sig-name descname"><span class="pre">angle1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle1" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">angle1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle1" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle1(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2155,7 +2214,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.angle2">
-<span class="sig-name descname"><span class="pre">angle2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle2" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">angle2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle2" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle2(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2164,7 +2223,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.at">
-<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.at" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.at" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector at(SireMaths::Triangle {lvalue},int)</p>
 </dd>
@@ -2173,7 +2232,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Triangle clone(SireMaths::Triangle)</p>
 </dd>
@@ -2182,7 +2241,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.count" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.count" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>int count(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2191,7 +2250,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.line0">
-<span class="sig-name descname"><span class="pre">line0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line0" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">line0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line0" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Line line0(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2200,7 +2259,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.line1">
-<span class="sig-name descname"><span class="pre">line1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line1" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">line1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line1" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Line line1(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2209,7 +2268,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.line2">
-<span class="sig-name descname"><span class="pre">line2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line2" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">line2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line2" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Line line2(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2218,7 +2277,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.point">
-<span class="sig-name descname"><span class="pre">point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.point" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.point" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector point(SireMaths::Triangle {lvalue},int)</p>
 </dd>
@@ -2227,7 +2286,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Triangle.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Triangle.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (Triangle)arg1) -&gt; object :</dt><dd><p>Return a string representation of the triangle</p>
 <dl class="simple">
@@ -2240,7 +2299,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Triangle.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Triangle.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -2252,7 +2311,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.vector">
-<span class="sig-name descname"><span class="pre">vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector vector(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2261,7 +2320,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.vector0">
-<span class="sig-name descname"><span class="pre">vector0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector0" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">vector0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector0" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector vector0(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2270,7 +2329,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.vector1">
-<span class="sig-name descname"><span class="pre">vector1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector1" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">vector1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector1" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector vector1(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2279,7 +2338,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.vector2">
-<span class="sig-name descname"><span class="pre">vector2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector2" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">vector2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector2" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Vector vector2(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2288,7 +2347,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.maths.Triangle.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireMaths::Triangle {lvalue})</p>
 </dd>
@@ -2299,7 +2358,7 @@ with the center of rotation and amount by which to rotate</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.maths.Vector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths/_vector.html#Vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.Vector" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths/_vector.html#Vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.Vector" title="Link to this definition">¶</a></dt>
 <dd><p>A 3D point in space, or a 3D vector in space. This is a simple
 class containing 3 double precision values. These values
 represent points in units of Angstroms.</p>
@@ -2307,7 +2366,7 @@ represent points in units of Angstroms.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.maths.align">
-<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)q</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)fit=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.align" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)q</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)fit=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.align" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>QVector&lt;SireMaths::Vector&gt; align(QVector&lt;SireMaths::Vector&gt;,QVector&lt;SireMaths::Vector&gt; [,bool=True])</p>
 </dd>
@@ -2316,7 +2375,7 @@ represent points in units of Angstroms.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.maths.create_quaternion">
-<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">create_quaternion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths.html#create_quaternion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.create_quaternion" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">create_quaternion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths.html#create_quaternion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.create_quaternion" title="Link to this definition">¶</a></dt>
 <dd><p>Create a quaternion from the passed angle and axis
 of the passed rotation matrix. If a rotation
 matrix is passed then this will ignore the
@@ -2354,7 +2413,7 @@ the quaternion argument.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.maths.get_alignment">
-<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">get_alignment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.get_alignment" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">get_alignment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.get_alignment" title="Link to this definition">¶</a></dt>
 <dd><p>getAlignment( (object)p, (object)q [, (bool)fit=True]) -&gt; Transform :</p>
 <blockquote>
 <div><dl class="simple">
@@ -2366,7 +2425,7 @@ the quaternion argument.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.maths.kabasch">
-<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">kabasch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)q</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.kabasch" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">kabasch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)q</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.kabasch" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireMaths::Matrix kabasch(QVector&lt;SireMaths::Vector&gt;,QVector&lt;SireMaths::Vector&gt;)</p>
 </dd>
@@ -2375,7 +2434,7 @@ the quaternion argument.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.maths.kabasch_fit">
-<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">kabasch_fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.kabasch_fit" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">kabasch_fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.kabasch_fit" title="Link to this definition">¶</a></dt>
 <dd><p>kabaschFit( (object)p, (object)q) -&gt; Transform :</p>
 <blockquote>
 <div><dl class="simple">
@@ -2387,7 +2446,7 @@ the quaternion argument.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.maths.rotate">
-<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths.html#rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.rotate" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths.html#rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.rotate" title="Link to this definition">¶</a></dt>
 <dd><p>Rotate the passed point by the passed angle and axis, or the
 passed matrix, or the passed quaternion, optionally centering
 the rotation about the passed center.</p>
@@ -2426,7 +2485,7 @@ the quaternion argument.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="sire.maths.pi">
-<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">pi</span></span><em class="property"><span class="w"> </span><span class="pre">π</span> <span class="pre">(3.141592653589793)</span></em><a class="headerlink" href="#sire.maths.pi" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">pi</span></span><em class="property"><span class="w"> </span><span class="pre">π</span> <span class="pre">(3.141592653589793)</span></em><a class="headerlink" href="#sire.maths.pi" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a string or number to a floating point number, if possible.</p>
 </dd></dl>
 
@@ -2463,7 +2522,7 @@ the quaternion argument.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 09, 2024</div>
+              Last updated on Jun 29, 2024</div>
           </div>
           <div class="right-details">
             
@@ -2664,10 +2723,10 @@ the quaternion argument.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=9887e882"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+</div><script src="../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/js/custom.js?v=c9df2d0f"></script>
     </body>
 </html>

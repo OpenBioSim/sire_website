@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.convert" href="index_convert.html" /><link rel="prev" title="sire.cas" href="index_cas.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,7 +106,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -114,7 +114,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -122,6 +122,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +188,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +208,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -389,10 +446,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -402,18 +461,18 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="module-sire.cas">
-<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.cas" title="Link to this heading">#</a></h1>
+<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.cas" title="Link to this heading">¶</a></h1>
 <p><a class="reference internal" href="index_cas.html"><span class="doc">View Module Index</span></a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.cas.Expression">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">Expression</span></span><a class="headerlink" href="#sire.cas.Expression" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">Expression</span></span><a class="headerlink" href="#sire.cas.Expression" title="Link to this definition">¶</a></dt>
 <dd><p>An Expression is the base class of all algebraic entities.</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)ex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.add" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)ex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.add" title="Link to this definition">¶</a></dt>
 <dd><p>Return this expression added to ex</p>
 <blockquote>
 <div><dl class="simple">
@@ -439,7 +498,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression {lvalue} assign(SireCAS::Expression {lvalue},SireCAS::Expression)</p>
 </dd>
@@ -448,7 +507,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.base">
-<span class="sig-name descname"><span class="pre">base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ExpressionBase</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.base" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ExpressionBase</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.base" title="Link to this definition">¶</a></dt>
 <dd><p>Return the ExpressionBase base-part of this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::ExpressionBase base(SireCAS::Expression {lvalue})</p>
@@ -458,7 +517,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.children">
-<span class="sig-name descname"><span class="pre">children</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.children" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">children</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.children" title="Link to this definition">¶</a></dt>
 <dd><p>Return the child expressions that make up this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expressions children(SireCAS::Expression {lvalue})</p>
@@ -468,7 +527,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression clone(SireCAS::Expression)</p>
 </dd>
@@ -477,7 +536,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.conjugate">
-<span class="sig-name descname"><span class="pre">conjugate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.conjugate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">conjugate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.conjugate" title="Link to this definition">¶</a></dt>
 <dd><p>Return the complex conjugate of this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression conjugate(SireCAS::Expression {lvalue})</p>
@@ -487,7 +546,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.cubed">
-<span class="sig-name descname"><span class="pre">cubed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.cubed" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cubed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.cubed" title="Link to this definition">¶</a></dt>
 <dd><p>Return the cube of this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression cubed(SireCAS::Expression {lvalue})</p>
@@ -497,7 +556,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.diff">
-<span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)level=1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.diff" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)level=1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.diff" title="Link to this definition">¶</a></dt>
 <dd><p>Synonym for differentiate</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression diff(SireCAS::Expression {lvalue},SireCAS::Symbol [,int=1])</p>
@@ -507,7 +566,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.differentiate">
-<span class="sig-name descname"><span class="pre">differentiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)level=1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.differentiate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">differentiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)level=1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.differentiate" title="Link to this definition">¶</a></dt>
 <dd><p>Differentiate this expression with respect to symbol and return
 the resulting expression.
 Throw: SireCAS::unavailable_differential</p>
@@ -519,7 +578,7 @@ Throw: SireCAS::unavailable_differential</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.divide">
-<span class="sig-name descname"><span class="pre">divide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)ex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.divide" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">divide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)ex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.divide" title="Link to this definition">¶</a></dt>
 <dd><p>Return an expression that is this  ex</p>
 <blockquote>
 <div><dl class="simple">
@@ -545,7 +604,7 @@ Throw: SireCAS::unavailable_differential</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.evaluate">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Values)values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.evaluate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Values)values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.evaluate" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Evaluate the numerical value of this expression, using the values</dt><dd><p>supplied in values. Any unidentified symbols or functions are
 assumed to be equal to zero. Note that this only performs real-arithmetic,
@@ -570,7 +629,7 @@ to be equal to zero.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.expand">
-<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.expand" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.expand" title="Link to this definition">¶</a></dt>
 <dd><p>Return the factors and powers for the symbol symbol, given the values of the
 other symbols in values. This attempts to rearrange this equation
 so that it is of the form m  symbol^i + n  symbol^j … + constant,
@@ -585,7 +644,7 @@ Throw: SireCAS::rearrangement_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.factor">
-<span class="sig-name descname"><span class="pre">factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.factor" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.factor" title="Link to this definition">¶</a></dt>
 <dd><p>Return the factor of this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>double factor(SireCAS::Expression {lvalue})</p>
@@ -595,7 +654,7 @@ Throw: SireCAS::rearrangement_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.functions">
-<span class="sig-name descname"><span class="pre">functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.functions" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.functions" title="Link to this definition">¶</a></dt>
 <dd><p>Return all of the functions used in this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Functions functions(SireCAS::Expression {lvalue})</p>
@@ -605,7 +664,7 @@ Throw: SireCAS::rearrangement_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.hash">
-<span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.hash" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.hash" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>unsigned int hash(SireCAS::Expression {lvalue})</p>
 </dd>
@@ -614,7 +673,7 @@ Throw: SireCAS::rearrangement_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.integ">
-<span class="sig-name descname"><span class="pre">integ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.integ" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">integ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.integ" title="Link to this definition">¶</a></dt>
 <dd><p>Synonym for integrate</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression integ(SireCAS::Expression {lvalue},SireCAS::Symbol)</p>
@@ -624,7 +683,7 @@ Throw: SireCAS::rearrangement_error</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.integrate">
-<span class="sig-name descname"><span class="pre">integrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.integrate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">integrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.integrate" title="Link to this definition">¶</a></dt>
 <dd><p>Integrate this expression with respect to symbol and return the
 resulting expression.
 Throw: SireCAS::unavailable_integral</p>
@@ -636,7 +695,7 @@ Throw: SireCAS::unavailable_integral</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.invert">
-<span class="sig-name descname"><span class="pre">invert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.invert" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">invert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.invert" title="Link to this definition">¶</a></dt>
 <dd><p>Return 1  expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression invert(SireCAS::Expression {lvalue})</p>
@@ -646,7 +705,7 @@ Throw: SireCAS::unavailable_integral</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.is_complex">
-<span class="sig-name descname"><span class="pre">is_complex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_complex" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_complex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_complex" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isComplex( (Expression)arg1) -&gt; bool :</dt><dd><p>Return whether or not this expression has complex parts</p>
 <dl class="simple">
@@ -659,7 +718,7 @@ Throw: SireCAS::unavailable_integral</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.is_compound">
-<span class="sig-name descname"><span class="pre">is_compound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_compound" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_compound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_compound" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isCompound( (Expression)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is a compound expression (contains more
 than a single expression, e.g. Sum, Product or PowerFunction)</p>
@@ -673,7 +732,7 @@ than a single expression, e.g. Sum, Product or PowerFunction)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.is_constant">
-<span class="sig-name descname"><span class="pre">is_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_constant" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_constant" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isConstant( (Expression)arg1) -&gt; bool :</dt><dd><p>Return whether or not this expression is constant for all values</p>
 <dl class="simple">
@@ -686,7 +745,7 @@ than a single expression, e.g. Sum, Product or PowerFunction)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.is_function">
-<span class="sig-name descname"><span class="pre">is_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_function" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_function" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isFunction( (Expression)arg1, (Symbol)symbol) -&gt; bool :</dt><dd><p>Return whether or not this is a function of symbol</p>
 <dl class="simple">
@@ -699,7 +758,7 @@ than a single expression, e.g. Sum, Product or PowerFunction)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.is_zero">
-<span class="sig-name descname"><span class="pre">is_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_zero" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.is_zero" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isZero( (Expression)arg1) -&gt; bool :</dt><dd><p>Return whether or not this expression is equal to 0 for all values</p>
 <dl class="simple">
@@ -712,7 +771,7 @@ than a single expression, e.g. Sum, Product or PowerFunction)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.multiply">
-<span class="sig-name descname"><span class="pre">multiply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)ex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.multiply" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">multiply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)ex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.multiply" title="Link to this definition">¶</a></dt>
 <dd><p>Return an expression that is this multiplied by ex</p>
 <blockquote>
 <div><dl class="simple">
@@ -738,7 +797,7 @@ than a single expression, e.g. Sum, Product or PowerFunction)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.negate">
-<span class="sig-name descname"><span class="pre">negate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.negate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">negate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.negate" title="Link to this definition">¶</a></dt>
 <dd><p>Return the negative of this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression negate(SireCAS::Expression {lvalue})</p>
@@ -748,7 +807,7 @@ than a single expression, e.g. Sum, Product or PowerFunction)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.pow">
-<span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.pow" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.pow" title="Link to this definition">¶</a></dt>
 <dd><p>Return this expression raised to the power n</p>
 <blockquote>
 <div><dl class="simple">
@@ -786,7 +845,7 @@ than a single expression, e.g. Sum, Product or PowerFunction)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.root">
-<span class="sig-name descname"><span class="pre">root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.root" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.root" title="Link to this definition">¶</a></dt>
 <dd><p>Return the nth root of this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression root(SireCAS::Expression {lvalue},int)</p>
@@ -796,7 +855,7 @@ than a single expression, e.g. Sum, Product or PowerFunction)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.series">
-<span class="sig-name descname"><span class="pre">series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)order</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.series" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)order</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.series" title="Link to this definition">¶</a></dt>
 <dd><p>Return a series expansion of this function with respect to symbol
 up to order n. If an expansion is not possible, then this just
 returns this expression</p>
@@ -808,7 +867,7 @@ returns this expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.simplify">
-<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)options=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.simplify" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)options=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.simplify" title="Link to this definition">¶</a></dt>
 <dd><p>Try to simplify this expression by using built-in identities. If
 SireCAS::UNSAFE_COMPLEX_SIMPLIFICATIONS is passed, then allow the use
 of identities that are not necessarily true in the complex domain,
@@ -821,7 +880,7 @@ e.g. z = sin(arcsin(z))</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.squared">
-<span class="sig-name descname"><span class="pre">squared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.squared" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">squared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.squared" title="Link to this definition">¶</a></dt>
 <dd><p>Return the square of this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expression squared(SireCAS::Expression {lvalue})</p>
@@ -831,7 +890,7 @@ e.g. z = sin(arcsin(z))</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.substitute">
-<span class="sig-name descname"><span class="pre">substitute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Identities)identities</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.substitute" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">substitute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Identities)identities</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.substitute" title="Link to this definition">¶</a></dt>
 <dd><p>Return an expression whereby the identities in identities have
 been substituted into this expression</p>
 <dl class="simple">
@@ -842,7 +901,7 @@ been substituted into this expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.subtract">
-<span class="sig-name descname"><span class="pre">subtract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)ex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.subtract" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">subtract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Expression)ex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.subtract" title="Link to this definition">¶</a></dt>
 <dd><p>Return an expression that is this - ex</p>
 <blockquote>
 <div><dl class="simple">
@@ -868,7 +927,7 @@ been substituted into this expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.symbols">
-<span class="sig-name descname"><span class="pre">symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.symbols" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.symbols" title="Link to this definition">¶</a></dt>
 <dd><p>Return all of the symbols used in this expression</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Symbols symbols(SireCAS::Expression {lvalue})</p>
@@ -878,7 +937,7 @@ been substituted into this expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.to_open_m_m_string">
-<span class="sig-name descname"><span class="pre">to_open_m_m_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.to_open_m_m_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_open_m_m_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.to_open_m_m_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toOpenMMString( (Expression)arg1) -&gt; object :</dt><dd><p>Return a string representation of this expression in the OpenMM syntax</p>
 <dl class="simple">
@@ -891,7 +950,7 @@ been substituted into this expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (Expression)arg1) -&gt; object :</dt><dd><p>Return a string representation of this expression</p>
 <dl class="simple">
@@ -904,7 +963,7 @@ been substituted into this expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Expression.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -916,7 +975,7 @@ been substituted into this expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Expression.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Expression)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Expression.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireCAS::Expression {lvalue})</p>
 </dd>
@@ -927,13 +986,13 @@ been substituted into this expression</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">LambdaSchedule</span></span><a class="headerlink" href="#sire.cas.LambdaSchedule" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">LambdaSchedule</span></span><a class="headerlink" href="#sire.cas.LambdaSchedule" title="Link to this definition">¶</a></dt>
 <dd><p>This is a schedule that specifies how parameters are changed according
 to a global lambda value. The change can be broken up by sub lever,
 and by stage.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_annihilate_stage">
-<span class="sig-name descname"><span class="pre">add_annihilate_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_annihilate_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_annihilate_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_annihilate_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addAnnihilateStage( (LambdaSchedule)arg1 [, (bool)perturbed_is_annihilated=True]) -&gt; None :</dt><dd><dl class="simple">
 <dt>Add a stage to the schedule that will annihilate the perturbed</dt><dd><p>state if <em class="xref py py-obj">perturbed_is_annihilated</em> is true, otherwise the
@@ -956,7 +1015,7 @@ reference state is annihilated.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_charge_scale_stages">
-<span class="sig-name descname"><span class="pre">add_charge_scale_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_charge_scale_stages" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_charge_scale_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_charge_scale_stages" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addChargeScaleStages( (LambdaSchedule)arg1 [, (float)scale=0.2]) -&gt; None :</dt><dd><dl class="simple">
 <dt>Sandwich the current set of stages with a charge-descaling and</dt><dd><p>a charge-scaling stage. This prepends a charge-descaling stage
@@ -987,7 +1046,7 @@ scales the charge parameter from :gamma:.final to final.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_decouple_stage">
-<span class="sig-name descname"><span class="pre">add_decouple_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_decouple_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_decouple_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_decouple_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addDecoupleStage( (LambdaSchedule)arg1 [, (bool)perturbed_is_decoupled=True]) -&gt; None :</dt><dd><dl class="simple">
 <dt>Add a stage to the schedule that will decouple the perturbed</dt><dd><p>state if <em class="xref py py-obj">perturbed_is_decoupled</em> is true, otherwise the
@@ -1010,7 +1069,7 @@ reference state is decoupled.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_force">
-<span class="sig-name descname"><span class="pre">add_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_force" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_force" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addForce( (LambdaSchedule)arg1, (object)force) -&gt; None :</dt><dd><dl class="simple">
 <dt>Add a force to a schedule. This is only useful if you want to</dt><dd><p>plot how the equations would affect the lever. Forces will be
@@ -1026,7 +1085,7 @@ so you dont need to add them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_forces">
-<span class="sig-name descname"><span class="pre">add_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_forces" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_forces" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addForces( (LambdaSchedule)arg1, (object)forces) -&gt; None :</dt><dd><dl class="simple">
 <dt>Add some forces to a schedule. This is only useful if you want to</dt><dd><p>plot how the equations would affect the lever. Forces will be
@@ -1042,7 +1101,7 @@ so you dont need to add them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_lever">
-<span class="sig-name descname"><span class="pre">add_lever</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_lever" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_lever</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_lever" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addLever( (LambdaSchedule)arg1, (object)lever) -&gt; None :</dt><dd><dl class="simple">
 <dt>Add a lever to the schedule. This is only useful if you want to</dt><dd><p>plot how the equations would affect the lever. Levers will be
@@ -1058,7 +1117,7 @@ so you dont need to add them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_levers">
-<span class="sig-name descname"><span class="pre">add_levers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_levers" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_levers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_levers" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addLevers( (LambdaSchedule)arg1, (object)levers) -&gt; None :</dt><dd><dl class="simple">
 <dt>Add some levers to the schedule. This is only useful if you want to</dt><dd><p>plot how the equations would affect the lever. Levers will be
@@ -1074,7 +1133,7 @@ so you dont need to add them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_morph_stage">
-<span class="sig-name descname"><span class="pre">add_morph_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_morph_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_morph_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_morph_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addMorphStage( (LambdaSchedule)arg1) -&gt; None :</dt><dd><dl class="simple">
 <dt>Append a morph stage onto this schedule. The morph stage is a</dt><dd><p>standard stage that scales each forcefield parameter by
@@ -1097,7 +1156,7 @@ so you dont need to add them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.add_stage">
-<span class="sig-name descname"><span class="pre">add_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.add_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addStage( (LambdaSchedule)arg1, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
 <dt>Append a stage called name which uses the passed equation</dt><dd><p>to the end of this schedule. The equation will be the default
@@ -1113,7 +1172,7 @@ a custom lever for this stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.append_stage">
-<span class="sig-name descname"><span class="pre">append_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.append_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">append_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.append_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>appendStage( (LambdaSchedule)arg1, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
 <dt>Append a stage called name which uses the passed equation</dt><dd><p>to the end of this schedule. The equation will be the default
@@ -1129,7 +1188,7 @@ a custom lever for this stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule {lvalue} assign(SireCAS::LambdaSchedule {lvalue},SireCAS::LambdaSchedule)</p>
 </dd>
@@ -1138,7 +1197,7 @@ a custom lever for this stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.charge_scaled_annihilate">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_annihilate" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_annihilate" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a schedule that can be used for a standard double-annihilation</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_annihilated</em> is true, then
 the perturbed state is annihilated, otherwise the reference state is
@@ -1153,7 +1212,7 @@ are scaled to scale times their original value.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.charge_scaled_decouple">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_decouple" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_decouple" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a schedule that can be used for a standard double-decoupling</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_decoupled</em> is true, then
 the perturbed state is decoupled, otherwise the reference state is
@@ -1168,7 +1227,7 @@ are scaled to scale times their original value.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.charge_scaled_morph">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_morph</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_morph" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_morph</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_morph" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a LambdaSchedule that represents a central morph</dt><dd><p>stage that is sandwiched between a charge descaling,
 and a charge rescaling stage. The first stage scales
@@ -1185,7 +1244,7 @@ original values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.clamp">
-<span class="sig-name descname"><span class="pre">clamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(float)lambda_value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.clamp" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(float)lambda_value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.clamp" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Clamp and return the passed lambda value so that it is between a valid</dt><dd><p>range for this schedule (typically between [0.0-1.0] inclusive).</p>
 </dd>
@@ -1196,7 +1255,7 @@ original values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.clear" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.clear" title="Link to this definition">¶</a></dt>
 <dd><p>Completely clear all stages and levers</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>void clear(SireCAS::LambdaSchedule {lvalue})</p>
@@ -1206,7 +1265,7 @@ original values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::LambdaSchedule clone(SireCAS::LambdaSchedule)</p>
 </dd>
@@ -1215,7 +1274,7 @@ original values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.final">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.final" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.final" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return the symbol used to represent the final</dt><dd><p>(:lambda:=1) value of the forcefield parameter</p>
 </dd>
@@ -1226,7 +1285,7 @@ original values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_constant">
-<span class="sig-name descname"><span class="pre">get_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_constant" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_constant" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>getConstant( (LambdaSchedule)arg1, (object)constant) -&gt; float :</dt><dd><dl class="simple">
 <dt>Return the value of the passed constant that may be</dt><dd><p>used in any of the stage equations</p>
@@ -1247,7 +1306,7 @@ original values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_constant_symbol">
-<span class="sig-name descname"><span class="pre">get_constant_symbol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_constant_symbol" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_constant_symbol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_constant_symbol" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>getConstantSymbol( (LambdaSchedule)arg1, (object)constant) -&gt; Symbol :</dt><dd><p>Get the Symbol used to represent the named constant constant</p>
 <dl class="simple">
@@ -1260,7 +1319,7 @@ original values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_equation">
-<span class="sig-name descname"><span class="pre">get_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_equation" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_equation" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>getEquation( (LambdaSchedule)arg1 [, (object)stage=’*’ [, (object)force=’*’ [, (object)lever=’*’]]]) -&gt; Expression :</dt><dd><dl class="simple">
 <dt>Return the equation used to control the specified lever</dt><dd><p>in the specified force at the specified stage. This will
@@ -1277,7 +1336,7 @@ else it will be the default equation for this stage</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_forces">
-<span class="sig-name descname"><span class="pre">get_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_forces" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_forces" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>getForces( (LambdaSchedule)arg1) -&gt; object :</dt><dd><dl class="simple">
 <dt>Return all of the forces that have been explicitly added</dt><dd><p>to the schedule. Note that forces will be automatically added
@@ -1293,7 +1352,7 @@ need to manage them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_lambda_in_stage">
-<span class="sig-name descname"><span class="pre">get_lambda_in_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_lambda_in_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_lambda_in_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_lambda_in_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>getLambdaInStage( (LambdaSchedule)arg1, (float)lambda_value) -&gt; float :</dt><dd><dl class="simple">
 <dt>Return the stage-local value of :lambda: that corresponds to the</dt><dd><p>global value of :lambda: at <em class="xref py py-obj">lambda_value</em></p>
@@ -1307,7 +1366,7 @@ need to manage them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_lever_stages">
-<span class="sig-name descname"><span class="pre">get_lever_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_lever_stages" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_lever_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_lever_stages" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>getLeverStages( (LambdaSchedule)arg1, (object)lambda_values) -&gt; object :</dt><dd><dl class="simple">
 <dt>Return the list of stages that are used for the passed list</dt><dd><p>of lambda values. The stage names will be returned in the matching
@@ -1329,7 +1388,7 @@ order of the lambda values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_lever_values">
-<span class="sig-name descname"><span class="pre">get_lever_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lambda</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">101</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_lever_values" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_lever_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lambda</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">101</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_pandas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_lever_values" title="Link to this definition">¶</a></dt>
 <dd><p>Return the values a parameter starting at ‘initial’ and
 going to ‘final’ would take for the specified lambda values.</p>
 <p>Return this as a pandas DataFrame is ‘to_pandas’ is True</p>
@@ -1358,7 +1417,7 @@ Defaults to 1.0</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_levers">
-<span class="sig-name descname"><span class="pre">get_levers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_levers" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_levers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_levers" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>getLevers( (LambdaSchedule)arg1) -&gt; object :</dt><dd><dl class="simple">
 <dt>Return all of the levers that have been explicitly added</dt><dd><p>to the schedule. Note that levers will be automatically added
@@ -1374,7 +1433,7 @@ need to manage them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_molecule_schedule">
-<span class="sig-name descname"><span class="pre">get_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_molecule_schedule" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_molecule_schedule" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>getMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id) -&gt; LambdaSchedule :</dt><dd><dl>
 <dt>Return the schedule used to control perturbations for the</dt><dd><p>perturbable molecule (or part of molecule) that is identified by the
@@ -1392,7 +1451,7 @@ for this molecule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_stage">
-<span class="sig-name descname"><span class="pre">get_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>getStage( (LambdaSchedule)arg1, (float)lambda_value) -&gt; object :</dt><dd><dl class="simple">
 <dt>Return the name of the stage that controls the forcefield parameters</dt><dd><p>at the global value of :lambda: equal to <em class="xref py py-obj">lambda_value</em></p>
@@ -1406,7 +1465,7 @@ for this molecule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.get_stages">
-<span class="sig-name descname"><span class="pre">get_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_stages" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.get_stages" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>getStages( (LambdaSchedule)arg1) -&gt; object :</dt><dd><dl class="simple">
 <dt>Return the names of all of the stages in this schedule, in</dt><dd><p>the order they will be performed</p>
@@ -1420,7 +1479,7 @@ for this molecule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.has_force_specific_equation">
-<span class="sig-name descname"><span class="pre">has_force_specific_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.has_force_specific_equation" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">has_force_specific_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.has_force_specific_equation" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>hasForceSpecificEquation( (LambdaSchedule)arg1 [, (object)stage=’*’ [, (object)force=’*’ [, (object)lever=’*’]]]) -&gt; bool :</dt><dd><dl class="simple">
 <dt>Return whether or not the specified lever in the specified force</dt><dd><p>at the specified stage has a custom equation set for it</p>
@@ -1434,7 +1493,7 @@ for this molecule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.has_molecule_schedule">
-<span class="sig-name descname"><span class="pre">has_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.has_molecule_schedule" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">has_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.has_molecule_schedule" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>hasMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id) -&gt; bool :</dt><dd><dl class="simple">
 <dt>Return whether or not the perturbable molecule (or part of molecule)</dt><dd><p>that is identified by passed pert_mol_id has its own schedule</p>
@@ -1448,7 +1507,7 @@ for this molecule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.initial">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.initial" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.initial" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return the symbol used to represent the initial</dt><dd><p>(:lambda:=0) value of the forcefield parameter</p>
 </dd>
@@ -1459,7 +1518,7 @@ for this molecule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.insert_stage">
-<span class="sig-name descname"><span class="pre">insert_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.insert_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">insert_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.insert_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>insertStage( (LambdaSchedule)arg1, (int)i, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
 <dt>Insert a stage called name at position <em class="xref py py-obj">i</em> which uses the passed</dt><dd><p>equation. The equation will be the default
@@ -1475,7 +1534,7 @@ a custom lever for this stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.is_null">
-<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.is_null" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>isNull( (LambdaSchedule)arg1) -&gt; bool :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1487,7 +1546,7 @@ a custom lever for this stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.lam">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.lam" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.lam" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return the symbol used to represent the :lambda: coordinate.</dt><dd><p>This symbol is used to represent the per-stage :lambda:
 variable that goes from 0.0-1.0 within that stage.</p>
@@ -1499,7 +1558,7 @@ variable that goes from 0.0-1.0 within that stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.morph">
-<span class="sig-name descname"><span class="pre">morph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(object)force='*'</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(object)lever='*'</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)initial=0</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)final=1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)lambda_value=0</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.morph" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">morph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(object)force='*'</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(object)lever='*'</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)initial=0</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)final=1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(float)lambda_value=0</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.morph" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return the parameters for the specified lever called <em class="xref py py-obj">lever_name</em></dt><dd><blockquote>
 <div><p>in the force force
@@ -1549,7 +1608,7 @@ the result will be the rounded to the nearest integer.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.num_forces">
-<span class="sig-name descname"><span class="pre">num_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.num_forces" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.num_forces" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>nForces( (LambdaSchedule)arg1) -&gt; int :</dt><dd><dl class="simple">
 <dt>Return the number of forces that have been explicitly added</dt><dd><p>to the schedule. Note that forces will be automatically added
@@ -1565,7 +1624,7 @@ need to manage them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.num_levers">
-<span class="sig-name descname"><span class="pre">num_levers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.num_levers" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_levers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.num_levers" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>nLevers( (LambdaSchedule)arg1) -&gt; int :</dt><dd><dl class="simple">
 <dt>Return the number of levers that have been explicitly added</dt><dd><p>to the schedule. Note that levers will be automatically added
@@ -1581,7 +1640,7 @@ need to manage them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.num_stages">
-<span class="sig-name descname"><span class="pre">num_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.num_stages" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_stages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.num_stages" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nStages( (LambdaSchedule)arg1) -&gt; int :</dt><dd><p>Return the number of stages in this schedule</p>
 <dl class="simple">
@@ -1594,7 +1653,7 @@ need to manage them manually yourself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.prepend_stage">
-<span class="sig-name descname"><span class="pre">prepend_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.prepend_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">prepend_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.prepend_stage" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>prependStage( (LambdaSchedule)arg1, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
 <dt>Prepend a stage called name which uses the passed equation</dt><dd><p>to the start of this schedule. The equation will be the default
@@ -1610,7 +1669,7 @@ a custom lever for this stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_equation">
-<span class="sig-name descname"><span class="pre">remove_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_equation" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_equation" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>removeEquation( (LambdaSchedule)arg1 [, (object)stage=’*’ [, (object)force=’*’ [, (object)lever=’*’]]]) -&gt; None :</dt><dd><dl class="simple">
 <dt>Remove the custom equation for the specified <em class="xref py py-obj">lever</em> in the</dt><dd><p>specified force at the specified <em class="xref py py-obj">stage</em>.
@@ -1627,7 +1686,7 @@ if this isnt set</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_force">
-<span class="sig-name descname"><span class="pre">remove_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_force" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_force" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>removeForce( (LambdaSchedule)arg1, (object)force) -&gt; None :</dt><dd><dl class="simple">
 <dt>Remove a force from a schedule. This will not impact any</dt><dd><p>perturbation runs that use this schedule, as any missing
@@ -1642,7 +1701,7 @@ forces will be re-added.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_forces">
-<span class="sig-name descname"><span class="pre">remove_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_forces" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_forces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_forces" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>removeForces( (LambdaSchedule)arg1, (object)forces) -&gt; None :</dt><dd><dl class="simple">
 <dt>Remove some forces from a schedule. This will not impact any</dt><dd><p>perturbation runs that use this schedule, as any missing
@@ -1657,7 +1716,7 @@ forces will be re-added.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_lever">
-<span class="sig-name descname"><span class="pre">remove_lever</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_lever" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_lever</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_lever" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>removeLever( (LambdaSchedule)arg1, (object)lever) -&gt; None :</dt><dd><dl class="simple">
 <dt>Remove a lever from the schedule. This will not impact any</dt><dd><p>perturbation runs that use this schedule, as any missing
@@ -1672,7 +1731,7 @@ levers will be re-added.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_levers">
-<span class="sig-name descname"><span class="pre">remove_levers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_levers" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_levers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_levers" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>removeLevers( (LambdaSchedule)arg1, (object)levers) -&gt; None :</dt><dd><dl class="simple">
 <dt>Remove some levers from the schedule. This will not impact any</dt><dd><p>perturbation runs that use this schedule, as any missing
@@ -1687,7 +1746,7 @@ levers will be re-added.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_molecule_schedule">
-<span class="sig-name descname"><span class="pre">remove_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_molecule_schedule" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_molecule_schedule" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>removeMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id) -&gt; None :</dt><dd><dl class="simple">
 <dt>Remove the perturbable molecule-specific schedule associated</dt><dd><p>with the perturbable molecule (or part of molecule) that is
@@ -1702,7 +1761,7 @@ identified by the passed pert_mol_id.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.remove_stage">
-<span class="sig-name descname"><span class="pre">remove_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_stage" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_stage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.remove_stage" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>removeStage( (LambdaSchedule)arg1, (object)stage) -&gt; None :</dt><dd><p>Remove the stage stage</p>
 <dl class="simple">
@@ -1715,7 +1774,7 @@ identified by the passed pert_mol_id.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_constant">
-<span class="sig-name descname"><span class="pre">set_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_constant" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_constant" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>setConstant( (LambdaSchedule)arg1, (object)constant, (float)value) -&gt; Symbol :</dt><dd><dl class="simple">
 <dt>Set the value of a constant that may be used in any</dt><dd><p>of the stage equations.</p>
@@ -1736,7 +1795,7 @@ identified by the passed pert_mol_id.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_default_equation">
-<span class="sig-name descname"><span class="pre">set_default_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_default_equation" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_default_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_default_equation" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>setDefaultStageEquation( (LambdaSchedule)arg1, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
 <dt>Set the default equation used to control levers for the</dt><dd><p>stage stage to equation. This equation will be used
@@ -1752,7 +1811,7 @@ their own custom equation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_default_stage_equation">
-<span class="sig-name descname"><span class="pre">set_default_stage_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_default_stage_equation" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_default_stage_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_default_stage_equation" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>setDefaultStageEquation( (LambdaSchedule)arg1, (object)stage, (Expression)equation) -&gt; None :</dt><dd><dl class="simple">
 <dt>Set the default equation used to control levers for the</dt><dd><p>stage stage to equation. This equation will be used
@@ -1768,7 +1827,7 @@ their own custom equation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_equation">
-<span class="sig-name descname"><span class="pre">set_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_equation" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_equation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_equation" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>setEquation( (LambdaSchedule)arg1 [, (object)stage=’*’ [, (object)force=’*’ [, (object)lever=’*’ [, (Expression)equation=0]]]]) -&gt; None :</dt><dd><dl class="simple">
 <dt>Set the custom equation used to control the specified lever</dt><dd><p>for the specified force at the stage stage to equation.
@@ -1784,7 +1843,7 @@ specified lever in the specified force at the specified stage</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.set_molecule_schedule">
-<span class="sig-name descname"><span class="pre">set_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_molecule_schedule" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.set_molecule_schedule" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>setMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id, (LambdaSchedule)schedule) -&gt; None :</dt><dd><dl class="simple">
 <dt>Set schedule as the molecule-specific schedule for the</dt><dd><p>perturbable molecule (or part of molecule) that is identified by the
@@ -1801,7 +1860,7 @@ and replaces any levers provided by this schedule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.standard_annihilate">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_annihilate" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_annihilate" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a schedule that can be used for a standard double-annihilation</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_annihilated</em> is true, then
 the perturbed state is annihilated, otherwise the reference state is
@@ -1814,7 +1873,7 @@ annihilated.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.standard_decouple">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_decouple" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_decouple" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a schedule that can be used for a standard double-decoupling</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_decoupled</em> is true, then
 the perturbed state is decoupled, otherwise the reference state is
@@ -1827,7 +1886,7 @@ decoupled.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.standard_morph">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_morph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_morph" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_morph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_morph" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a LambdaSchedule that represents a standard morph,</dt><dd><p>where every forcefield parameter is scaled by
 (1-:lambda:).initial + :lambda:.final</p>
@@ -1839,7 +1898,7 @@ decoupled.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.take_molecule_schedule">
-<span class="sig-name descname"><span class="pre">take_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.take_molecule_schedule" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">take_molecule_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.take_molecule_schedule" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>takeMoleculeSchedule( (LambdaSchedule)arg1, (int)pert_mol_id) -&gt; LambdaSchedule :</dt><dd><dl class="simple">
 <dt>Remove the perturbable molecule-specific schedule associated</dt><dd><p>with the perturbable molecule (or part of molecule) that is
@@ -1856,7 +1915,7 @@ a copy of this schedule is returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.to_string" title="Link to this definition">¶</a></dt>
 <dd><p>toString( (LambdaSchedule)arg1) -&gt; object :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1868,7 +1927,7 @@ a copy of this schedule is returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.LambdaSchedule.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1880,7 +1939,7 @@ a copy of this schedule is returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(LambdaSchedule)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireCAS::LambdaSchedule {lvalue})</p>
 </dd>
@@ -1891,12 +1950,12 @@ a copy of this schedule is returned.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.cas.Symbol">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><a class="headerlink" href="#sire.cas.Symbol" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><a class="headerlink" href="#sire.cas.Symbol" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents an algebraic symbol in the equation (e.g. x or y)</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.assign" title="Link to this definition">¶</a></dt>
 <dd><blockquote>
 <div><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Symbol {lvalue} assign(SireCAS::Symbol {lvalue},SireCAS::Symbol)</p>
@@ -1914,7 +1973,7 @@ a copy of this schedule is returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.children">
-<span class="sig-name descname"><span class="pre">children</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.children" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">children</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.children" title="Link to this definition">¶</a></dt>
 <dd><p>There are no child expressions in a symbol</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Expressions children(SireCAS::Symbol {lvalue})</p>
@@ -1924,7 +1983,7 @@ a copy of this schedule is returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Symbol clone(SireCAS::Symbol)</p>
 </dd>
@@ -1933,7 +1992,7 @@ a copy of this schedule is returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.differentiate">
-<span class="sig-name descname"><span class="pre">differentiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.differentiate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">differentiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.differentiate" title="Link to this definition">¶</a></dt>
 <dd><p>Differentiate this symbol with respect to sym. This returns 1.0 if this
 is sym, else it returns 0.0</p>
 <dl class="simple">
@@ -1944,7 +2003,7 @@ is sym, else it returns 0.0</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.evaluate">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Values)values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.evaluate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Values)values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.evaluate" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Evaluate this symbol - returns the value of the symbol in values if</dt><dd><p>it is present, else it returns 0.0</p>
 <dl class="simple">
@@ -1964,7 +2023,7 @@ it is present, else it returns 0</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.expand">
-<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.expand" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.expand" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>QList&lt;SireCAS::Factor&gt; expand(SireCAS::Symbol {lvalue},SireCAS::Symbol)</p>
 </dd>
@@ -1973,7 +2032,7 @@ it is present, else it returns 0</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.functions">
-<span class="sig-name descname"><span class="pre">functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.functions" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.functions" title="Link to this definition">¶</a></dt>
 <dd><p>This is not a function</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Functions functions(SireCAS::Symbol {lvalue})</p>
@@ -1983,7 +2042,7 @@ it is present, else it returns 0</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.hash">
-<span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.hash" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.hash" title="Link to this definition">¶</a></dt>
 <dd><p>Hash a symbol</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>unsigned int hash(SireCAS::Symbol {lvalue})</p>
@@ -1993,7 +2052,7 @@ it is present, else it returns 0</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.id">
-<span class="sig-name descname"><span class="pre">id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.id" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.id" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>ID( (Symbol)arg1) -&gt; int :</dt><dd><p>Return the unique ID number of the symbol</p>
 <dl class="simple">
@@ -2006,7 +2065,7 @@ it is present, else it returns 0</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.integrate">
-<span class="sig-name descname"><span class="pre">integrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.integrate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">integrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Symbol)symbol</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.integrate" title="Link to this definition">¶</a></dt>
 <dd><p>Integrate this symbol with respect to sym. If sym == this, then
 return 0.5 sym^2, else return this  sym</p>
 <dl class="simple">
@@ -2017,7 +2076,7 @@ return 0.5 sym^2, else return this  sym</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.is_constant">
-<span class="sig-name descname"><span class="pre">is_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.is_constant" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_constant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.is_constant" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isConstant( (Symbol)arg1) -&gt; bool :</dt><dd><p>A symbol is by definition not constant</p>
 <dl class="simple">
@@ -2030,7 +2089,7 @@ return 0.5 sym^2, else return this  sym</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.is_function">
-<span class="sig-name descname"><span class="pre">is_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.is_function" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.is_function" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isFunction( (Symbol)arg1, (Symbol)arg0) -&gt; bool :</dt><dd><p>Is this a function of symbol</p>
 <dl class="simple">
@@ -2043,7 +2102,7 @@ return 0.5 sym^2, else return this  sym</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.is_null">
-<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.is_null" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.is_null" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isNull( (Symbol)arg1) -&gt; bool :</dt><dd><p>Return whether or not the symbol is null</p>
 <dl class="simple">
@@ -2056,7 +2115,7 @@ return 0.5 sym^2, else return this  sym</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.substitute">
-<span class="sig-name descname"><span class="pre">substitute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Identities)identities</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.substitute" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">substitute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Identities)identities</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Expression</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.substitute" title="Link to this definition">¶</a></dt>
 <dd><p>Return the expression that matches this symbol in identities - or return
 an expression holding only this symbol if it does no exist in identities</p>
 <dl class="simple">
@@ -2067,7 +2126,7 @@ an expression holding only this symbol if it does no exist in identities</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.symbols">
-<span class="sig-name descname"><span class="pre">symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.symbols" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.symbols" title="Link to this definition">¶</a></dt>
 <dd><p>Return this symbol</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireCAS::Symbols symbols(SireCAS::Symbol {lvalue})</p>
@@ -2077,7 +2136,7 @@ an expression holding only this symbol if it does no exist in identities</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (Symbol)arg1) -&gt; object :</dt><dd><p>Return a string representation of this symbol</p>
 <dl class="simple">
@@ -2090,7 +2149,7 @@ an expression holding only this symbol if it does no exist in identities</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.cas.Symbol.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -2102,7 +2161,7 @@ an expression holding only this symbol if it does no exist in identities</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.Symbol.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Symbol)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.Symbol.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireCAS::Symbol {lvalue})</p>
 </dd>
@@ -2113,21 +2172,21 @@ an expression holding only this symbol if it does no exist in identities</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="sire.cas.lam">
-<span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">lam</span></span><em class="property"><span class="w"> </span><span class="pre">A</span> <span class="pre">Symbol</span> <span class="pre">representing</span> <span class="pre">λ.</span></em><a class="headerlink" href="#sire.cas.lam" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">lam</span></span><em class="property"><span class="w"> </span><span class="pre">A</span> <span class="pre">Symbol</span> <span class="pre">representing</span> <span class="pre">λ.</span></em><a class="headerlink" href="#sire.cas.lam" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents an algebraic symbol in the equation (e.g. x or y)</p>
 <p>Author: Christopher Woods</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="sire.cas.x">
-<span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">x</span></span><em class="property"><span class="w"> </span><span class="pre">A</span> <span class="pre">Symbol</span> <span class="pre">representing</span> <span class="pre">x</span></em><a class="headerlink" href="#sire.cas.x" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">x</span></span><em class="property"><span class="w"> </span><span class="pre">A</span> <span class="pre">Symbol</span> <span class="pre">representing</span> <span class="pre">x</span></em><a class="headerlink" href="#sire.cas.x" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents an algebraic symbol in the equation (e.g. x or y)</p>
 <p>Author: Christopher Woods</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="sire.cas.y">
-<span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="w"> </span><span class="pre">A</span> <span class="pre">Symbol</span> <span class="pre">representing</span> <span class="pre">y</span></em><a class="headerlink" href="#sire.cas.y" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="w"> </span><span class="pre">A</span> <span class="pre">Symbol</span> <span class="pre">representing</span> <span class="pre">y</span></em><a class="headerlink" href="#sire.cas.y" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents an algebraic symbol in the equation (e.g. x or y)</p>
 <p>Author: Christopher Woods</p>
 </dd></dl>
@@ -2165,7 +2224,7 @@ an expression holding only this symbol if it does no exist in identities</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 09, 2024</div>
+              Last updated on Jun 29, 2024</div>
           </div>
           <div class="right-details">
             
@@ -2324,10 +2383,10 @@ an expression holding only this symbol if it does no exist in identities</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=9887e882"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+</div><script src="../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/js/custom.js?v=c9df2d0f"></script>
     </body>
 </html>

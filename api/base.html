@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.cas" href="index_cas.html" /><link rel="prev" title="sire.base" href="index_base.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,7 +106,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -114,7 +114,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -122,6 +122,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +188,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +208,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -389,10 +446,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -402,13 +461,582 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="module-sire.base">
-<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.base" title="Link to this heading">#</a></h1>
+<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.base" title="Link to this heading">¶</a></h1>
 <p><a class="reference internal" href="index_base.html"><span class="doc">View Module Index</span></a></p>
 <dl class="py class">
+<dt class="sig sig-object py" id="sire.base.PageCache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">PageCache</span></span><a class="headerlink" href="#sire.base.PageCache" title="Link to this definition">¶</a></dt>
+<dd><p>This class manages a swap cache of binary data that can be
+paged to and from disk. The cache can receive binary data
+of any size, and will automatically manage the paging of
+that data to and from disk as it is accessed.</p>
+<p>You can create different caches, and have control over the maximum
+size of each cache page.</p>
+<p>Note that deleting the cache will delete all data contained
+therein - including data paged to disk</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Handle</span></span><a class="headerlink" href="#sire.base.PageCache.Handle" title="Link to this definition">¶</a></dt>
+<dd><p>This is a handle to a piece of data that has
+been added to the cache. This will either contain
+the actual data, or will hold the information
+necessary to retrieve that data from disk.</p>
+<p>Data is removed from the cache when all handles
+to it are deleted</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.assertValid">
+<span class="sig-name descname"><span class="pre">assertValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.assertValid" title="Link to this definition">¶</a></dt>
+<dd><p>Assert that this object is valid</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void assertValid(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Handle)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Handle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.assign" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache::Handle {lvalue} assign(SireBase::PageCache::Handle {lvalue},SireBase::PageCache::Handle)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.clear" title="Link to this definition">¶</a></dt>
+<dd><p>Clear the data from this handle</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void clear(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Handle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.clone" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache::Handle clone(SireBase::PageCache::Handle)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.fetch">
+<span class="sig-name descname"><span class="pre">fetch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.Handle.fetch" title="Link to this definition">¶</a></dt>
+<dd><p>Fetch the object from the cache and return it</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.isNull">
+<span class="sig-name descname"><span class="pre">isNull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.isNull" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether this handle is null (does not hold data)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isNull(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.isValid">
+<span class="sig-name descname"><span class="pre">isValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.isValid" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether this handle is valid (holds data)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isValid(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.nBytes">
+<span class="sig-name descname"><span class="pre">nBytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.nBytes" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of bytes in this handle</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int nBytes(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.page">
+<span class="sig-name descname"><span class="pre">page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Page</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.page" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Return the page on which the data for this handle is placed.</dt><dd><p>This will be null if the data has not yet been put on a page</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache::Page page(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PageCache</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.parent" title="Link to this definition">¶</a></dt>
+<dd><p>Return the parent cache for this handle</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache parent(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.reset" title="Link to this definition">¶</a></dt>
+<dd><p>Clear the data in this handle</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void reset(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.size" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of bytes in this handle</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int size(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.toString">
+<span class="sig-name descname"><span class="pre">toString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.toString" title="Link to this definition">¶</a></dt>
+<dd><p>Return a string representation of this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.typeName">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">typeName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.typeName" title="Link to this definition">¶</a></dt>
+<dd><p>Return the type name for this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Handle.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Handle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Handle.what" title="Link to this definition">¶</a></dt>
+<dd><p>Return the type name for this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireBase::PageCache::Handle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Page</span></span><a class="headerlink" href="#sire.base.PageCache.Page" title="Link to this definition">¶</a></dt>
+<dd><p>This is a page in the cache. This can hold multiple
+objects - the whole page is either resident in memory
+or cached to disk.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.assertValid">
+<span class="sig-name descname"><span class="pre">assertValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.assertValid" title="Link to this definition">¶</a></dt>
+<dd><p>Assert that this object is valid</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void assertValid(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Page)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Page</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.assign" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache::Page {lvalue} assign(SireBase::PageCache::Page {lvalue},SireBase::PageCache::Page)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Page</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.clone" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache::Page clone(SireBase::PageCache::Page)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.isCached">
+<span class="sig-name descname"><span class="pre">isCached</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.isCached" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether this page is cached to disk</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isCached(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.isNull">
+<span class="sig-name descname"><span class="pre">isNull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.isNull" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether this page is null (has no size)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isNull(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.isResident">
+<span class="sig-name descname"><span class="pre">isResident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.isResident" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether this page is resident in memory</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isResident(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.isValid">
+<span class="sig-name descname"><span class="pre">isValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.isValid" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether this page is valid (has some size)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isValid(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.maxBytes">
+<span class="sig-name descname"><span class="pre">maxBytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.maxBytes" title="Link to this definition">¶</a></dt>
+<dd><p>Return the maximum number of bytes that can be stored in this page</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int maxBytes(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.nBytes">
+<span class="sig-name descname"><span class="pre">nBytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.nBytes" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of bytes in this page</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int nBytes(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PageCache</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.parent" title="Link to this definition">¶</a></dt>
+<dd><p>Return the parent cache for this page</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache parent(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.size" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of bytes in this page</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int size(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.toString">
+<span class="sig-name descname"><span class="pre">toString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.toString" title="Link to this definition">¶</a></dt>
+<dd><p>Return a string representation of this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.typeName">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">typeName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.typeName" title="Link to this definition">¶</a></dt>
+<dd><p>Return the type name for this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.Page.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Page)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.Page.what" title="Link to this definition">¶</a></dt>
+<dd><p>Return the type name for this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireBase::PageCache::Page {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.assert_valid">
+<span class="sig-name descname"><span class="pre">assert_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.assert_valid" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>assertValid( (PageCache)arg1) -&gt; None :</dt><dd><p>Assert that this object is valid</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void assertValid(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PageCache)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PageCache)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PageCache</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.assign" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache {lvalue} assign(SireBase::PageCache {lvalue},SireBase::PageCache)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.cache_dir">
+<span class="sig-name descname"><span class="pre">cache_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.cache_dir" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>cacheDir( (PageCache)arg1) -&gt; object :</dt><dd><p>Return the cache directory for this cache</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString cacheDir(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PageCache)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PageCache</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.clone" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireBase::PageCache clone(SireBase::PageCache)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.get_statistics">
+<span class="sig-name descname"><span class="pre">get_statistics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.get_statistics" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>getStatistics() -&gt; object :</dt><dd><p>Return the statistics for all caches</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString getStatistics()</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.is_null" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>isNull( (PageCache)arg1) -&gt; bool :</dt><dd><p>Return whether or not this cache is null</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isNull(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.is_valid" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>isValid( (PageCache)arg1) -&gt; bool :</dt><dd><p>Return whether or not this cache is valid</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isValid(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.max_page_size">
+<span class="sig-name descname"><span class="pre">max_page_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.max_page_size" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>maxPageSize() -&gt; int :</dt><dd><p>Return the current recommend maximum page size</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int maxPageSize()</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.max_resident_pages">
+<span class="sig-name descname"><span class="pre">max_resident_pages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.max_resident_pages" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>maxResidentPages() -&gt; int :</dt><dd><p>Return the maximum number of resident pages per cache</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int maxResidentPages()</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.num_bytes">
+<span class="sig-name descname"><span class="pre">num_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.num_bytes" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>nBytes( (PageCache)arg1) -&gt; int :</dt><dd><p>Return the number of bytes saved in this cache</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int nBytes(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.num_pages">
+<span class="sig-name descname"><span class="pre">num_pages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.num_pages" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>nPages( (PageCache)arg1) -&gt; int :</dt><dd><p>Return the number of pages in this cache</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int nPages(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.page_size">
+<span class="sig-name descname"><span class="pre">page_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.page_size" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>pageSize( (PageCache)arg1) -&gt; int :</dt><dd><p>Return the suggested maximum page size for this cache</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int pageSize(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.root_directory">
+<span class="sig-name descname"><span class="pre">root_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.root_directory" title="Link to this definition">¶</a></dt>
+<dd><p>rootDirectory() -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString rootDirectory()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.set_max_page_size">
+<span class="sig-name descname"><span class="pre">set_max_page_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.set_max_page_size" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>setMaxPageSize( (int)max_page_size [, (bool)update_existing=False]) -&gt; None :</dt><dd><dl class="simple">
+<dt>Set the default maximum page cache size for all new created</dt><dd><p>caches that dont specify it themselves</p>
+</dd>
+<dt>C++ signature :</dt><dd><p>void setMaxPageSize(unsigned int [,bool=False])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.set_max_resident_pages">
+<span class="sig-name descname"><span class="pre">set_max_resident_pages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.set_max_resident_pages" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>setMaxResidentPages( (int)n_pages) -&gt; None :</dt><dd><p>Set the maximum number of resident pages per cache</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setMaxResidentPages(unsigned int)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.set_root_directory">
+<span class="sig-name descname"><span class="pre">set_root_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.set_root_directory" title="Link to this definition">¶</a></dt>
+<dd><p>setRootDirectory( (object)cache_dir) -&gt; None :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setRootDirectory(QString)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PageCache)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.size" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of bytes saved in this cache</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>unsigned int size(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.store" title="Link to this definition">¶</a></dt>
+<dd><p>Store the passed object into the cache. This will convert the object
+into a binary form (pickled, then hex-encoded) and it will store
+it in the cache. This returns a handle to the object in the cache,
+which can be used to restore it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.to_string" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>toString( (PageCache)arg1) -&gt; object :</dt><dd><p>Return a string representation of this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PageCache.typename" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>typeName() -&gt; str :</dt><dd><p>Return the type name for this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.base.PageCache.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PageCache)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PageCache.what" title="Link to this definition">¶</a></dt>
+<dd><p>Return the type name for this object</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireBase::PageCache {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="sire.base.Properties">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">Properties</span></span><a class="headerlink" href="#sire.base.Properties" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">Properties</span></span><a class="headerlink" href="#sire.base.Properties" title="Link to this definition">¶</a></dt>
 <dd><p>This class holds a collection of properties, indexed by name.
 Each property comes complete with a set of metadata.
 The metadata is actually another Properties object,
@@ -417,7 +1045,7 @@ so allowing Properties to be nested indefinitely.</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.add_link">
-<span class="sig-name descname"><span class="pre">add_link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.add_link" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.add_link" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>addLink( (Properties)arg1, (object)key, (object)linked_property) -&gt; None :</dt><dd><dl>
 <dt>Add a link from the property key to the property linked_property.</dt><dd><p>The linked_property will be returned if there is no property
@@ -433,7 +1061,7 @@ called key in this set.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.all_metadata">
-<span class="sig-name descname"><span class="pre">all_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.all_metadata" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">all_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.all_metadata" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>allMetadata( (Properties)arg1) -&gt; Properties :</dt><dd><p>Return all of the metadata associated with this properties object</p>
 <dl class="simple">
@@ -453,7 +1081,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.as_array">
-<span class="sig-name descname"><span class="pre">as_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_array" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">as_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_array" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>asAnArray( (Property)arg1) -&gt; PropertyList :</dt><dd><p>Return this property converted to an array property. By default, this
 automatically puts this property into a PropertyList and returns that</p>
@@ -467,7 +1095,7 @@ automatically puts this property into a PropertyList and returns that</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.as_boolean">
-<span class="sig-name descname"><span class="pre">as_boolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_boolean" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">as_boolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_boolean" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>asABoolean( (Property)arg1) -&gt; bool :</dt><dd><p>Return this property converted to a bool. This throws an invalid
 cast if this is not possible</p>
@@ -481,7 +1109,7 @@ cast if this is not possible</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.as_double">
-<span class="sig-name descname"><span class="pre">as_double</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_double" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">as_double</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_double" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>asADouble( (Property)arg1) -&gt; float :</dt><dd><p>Return this property converted to a double. This throws an invalid
 cast if this is not possible</p>
@@ -495,7 +1123,7 @@ cast if this is not possible</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.as_integer">
-<span class="sig-name descname"><span class="pre">as_integer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_integer" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">as_integer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_integer" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>asAnInteger( (Property)arg1) -&gt; int :</dt><dd><p>Return this property converted to an integer. This throws an invalid
 cast if this is not possible</p>
@@ -509,7 +1137,7 @@ cast if this is not possible</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.as_string">
-<span class="sig-name descname"><span class="pre">as_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">as_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>asAString( (Property)arg1) -&gt; object :</dt><dd><p>Return this property converted to a string. This throws an invalid
 cast if this is not possible</p>
@@ -523,7 +1151,7 @@ cast if this is not possible</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.as_unit">
-<span class="sig-name descname"><span class="pre">as_unit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_unit" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">as_unit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.as_unit" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>asAUnit( (Property)arg1) -&gt; GeneralUnit :</dt><dd><p>Return this property converted to a unit</p>
 <dl class="simple">
@@ -536,7 +1164,7 @@ cast if this is not possible</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.assert_contains_metadata">
-<span class="sig-name descname"><span class="pre">assert_contains_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.assert_contains_metadata" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assert_contains_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.assert_contains_metadata" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>assertContainsMetadata( (Properties)arg1, (PropertyName)metakey) -&gt; None :</dt><dd><p>Assert that this contains the metadata at metakey metakey</p>
 <dl class="simple">
@@ -557,7 +1185,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.assert_contains_property">
-<span class="sig-name descname"><span class="pre">assert_contains_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.assert_contains_property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assert_contains_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.assert_contains_property" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>assertContainsProperty( (Properties)arg1, (PropertyName)key) -&gt; None :</dt><dd><p>Assert that this set contains a property with key key
 Throw: SireBase::missing_property</p>
@@ -571,7 +1199,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Properties)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Properties)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireBase::Properties {lvalue} assign(SireBase::Properties {lvalue},SireBase::Properties)</p>
 </dd>
@@ -580,7 +1208,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.clear" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.clear" title="Link to this definition">¶</a></dt>
 <dd><p>Completely clear this object of all properties and metadata</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>void clear(SireBase::Properties {lvalue})</p>
@@ -590,7 +1218,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Properties</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireBase::Properties clone(SireBase::Properties)</p>
 </dd>
@@ -599,7 +1227,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.count" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.count" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of properties in this set</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>int count(SireBase::Properties {lvalue})</p>
@@ -609,7 +1237,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.get_links">
-<span class="sig-name descname"><span class="pre">get_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.get_links" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.get_links" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>getLinks( (Properties)arg1) -&gt; object :</dt><dd><p>Return all of the property links</p>
 <dl class="simple">
@@ -622,7 +1250,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.has_links">
-<span class="sig-name descname"><span class="pre">has_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_links" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">has_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_links" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>hasLinks( (Properties)arg1) -&gt; bool :</dt><dd><p>Return whether or not there are any property links</p>
 <dl class="simple">
@@ -635,7 +1263,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.has_metadata">
-<span class="sig-name descname"><span class="pre">has_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_metadata" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">has_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_metadata" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>hasMetadata( (Properties)arg1, (PropertyName)metakey) -&gt; bool :</dt><dd><p>Return whether or not this contains the metadata with metakey metakey</p>
 <dl class="simple">
@@ -656,7 +1284,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.has_property">
-<span class="sig-name descname"><span class="pre">has_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">has_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.has_property" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>hasProperty( (Properties)arg1, (PropertyName)key) -&gt; bool :</dt><dd><p>Return whether or not this contains a property with key key</p>
 <dl class="simple">
@@ -669,7 +1297,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.is_array">
-<span class="sig-name descname"><span class="pre">is_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_array" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_array" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isAnArray( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is an array property (or can convert to an
 array property)</p>
@@ -683,7 +1311,7 @@ array property)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.is_boolean">
-<span class="sig-name descname"><span class="pre">is_boolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_boolean" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_boolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_boolean" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isABoolean( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds a bool (or can convert
 to a bool)</p>
@@ -697,7 +1325,7 @@ to a bool)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.is_double">
-<span class="sig-name descname"><span class="pre">is_double</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_double" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_double</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_double" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isADouble( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds a double (or can convert
 to a double)</p>
@@ -711,7 +1339,7 @@ to a double)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.is_empty">
-<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_empty" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_empty" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isEmpty( (Properties)arg1) -&gt; bool :</dt><dd><p>Return whether this is empty (has no values)</p>
 <dl class="simple">
@@ -724,7 +1352,7 @@ to a double)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.is_integer">
-<span class="sig-name descname"><span class="pre">is_integer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_integer" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_integer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_integer" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isAnInteger( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds an integer (or can convert
 to an integer)</p>
@@ -738,7 +1366,7 @@ to an integer)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.is_string">
-<span class="sig-name descname"><span class="pre">is_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isAString( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds a string (or can convert
 to a string)</p>
@@ -752,7 +1380,7 @@ to a string)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.is_unit">
-<span class="sig-name descname"><span class="pre">is_unit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_unit" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_unit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.is_unit" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isAUnit( (Property)arg1) -&gt; bool :</dt><dd><p>Return whether or not this property holds a unit (or can convert
 to a unit)</p>
@@ -766,7 +1394,7 @@ to a unit)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.keys">
-<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.keys" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.keys" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>propertyKeys( (Properties)arg1) -&gt; object :</dt><dd><p>Return the keys for all of the properties in this set</p>
 <dl class="simple">
@@ -779,7 +1407,7 @@ to a unit)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.metadata">
-<span class="sig-name descname"><span class="pre">metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)metakey</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.metadata" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)metakey</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.metadata" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return the metadata at metakey metakey - note that if metakey</dt><dd><p>specifies a value rather than a source, then the value contained
 in the metakey is returned.
@@ -820,7 +1448,7 @@ such metadata.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.metadata_keys">
-<span class="sig-name descname"><span class="pre">metadata_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.metadata_keys" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">metadata_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.metadata_keys" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>metadataKeys( (Properties)arg1) -&gt; object :</dt><dd><p>Return the list of metadata keys</p>
 <dl class="simple">
@@ -840,7 +1468,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.metadata_type">
-<span class="sig-name descname"><span class="pre">metadata_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.metadata_type" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">metadata_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.metadata_type" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>metadataType( (Properties)arg1, (PropertyName)metakey) -&gt; str :</dt><dd><p>Return the type name of the metadata at metakey metakey
 Throw: SireBase::missing_property</p>
@@ -862,7 +1490,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.num_properties">
-<span class="sig-name descname"><span class="pre">num_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.num_properties" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.num_properties" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>nProperties( (Properties)arg1) -&gt; int :</dt><dd><p>Return the number of properties in this set</p>
 <dl class="simple">
@@ -875,7 +1503,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.property">
-<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyName)key</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Property</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.property" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return the property with key key - note that if</dt><dd><p>key specifies a value rather than a source, then the
 value contained in the key is returned
@@ -900,7 +1528,7 @@ default_value is returned</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.property_keys">
-<span class="sig-name descname"><span class="pre">property_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.property_keys" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">property_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.property_keys" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>propertyKeys( (Properties)arg1) -&gt; object :</dt><dd><p>Return the keys for all of the properties in this set</p>
 <dl class="simple">
@@ -913,7 +1541,7 @@ default_value is returned</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.property_type">
-<span class="sig-name descname"><span class="pre">property_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.property_type" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">property_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.property_type" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>propertyType( (Properties)arg1, (PropertyName)key) -&gt; str :</dt><dd><p>Return the type name of the property at key key
 Throw: SireBase::missing_property</p>
@@ -927,7 +1555,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.remove_all_links">
-<span class="sig-name descname"><span class="pre">remove_all_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_all_links" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_all_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_all_links" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>removeAllLinks( (Properties)arg1) -&gt; None :</dt><dd><p>Remove all property links from this set</p>
 <dl class="simple">
@@ -940,7 +1568,7 @@ Throw: SireBase::missing_property</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.remove_all_metadata">
-<span class="sig-name descname"><span class="pre">remove_all_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_all_metadata" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_all_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_all_metadata" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>removeAllMetadata( (Properties)arg1) -&gt; None :</dt><dd><p>Remove all of the top-level metadata</p>
 <dl class="simple">
@@ -960,7 +1588,7 @@ key key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.remove_link">
-<span class="sig-name descname"><span class="pre">remove_link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_link" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_link" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>removeLink( (Properties)arg1, (object)key) -&gt; None :</dt><dd><p>Remove the link associated with the key key</p>
 <dl class="simple">
@@ -973,7 +1601,7 @@ key key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.remove_metadata">
-<span class="sig-name descname"><span class="pre">remove_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_metadata" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_metadata" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>removeMetadata( (Properties)arg1, (object)metakey) -&gt; None :</dt><dd><p>Remove the metadata at metakey metakey</p>
 <dl class="simple">
@@ -993,7 +1621,7 @@ property at key key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.remove_property">
-<span class="sig-name descname"><span class="pre">remove_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.remove_property" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>removeProperty( (Properties)arg1, (object)key) -&gt; None :</dt><dd><p>Remove the property with key key and all of its metadata</p>
 <dl class="simple">
@@ -1006,7 +1634,7 @@ property at key key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.set_metadata">
-<span class="sig-name descname"><span class="pre">set_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.set_metadata" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.set_metadata" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>setMetadata( (Properties)arg1, (object)metakey, (Property)value) -&gt; None :</dt><dd><p>Set the metadata at metakey metakey to have the value value.
 This replaces any existing metadata with this metakey</p>
@@ -1027,7 +1655,7 @@ This replaces any existing metadata for this keymetakey pair</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.size">
-<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.size" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Properties)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.Properties.size" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of properties in this set</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>int size(SireBase::Properties {lvalue})</p>
@@ -1037,7 +1665,7 @@ This replaces any existing metadata for this keymetakey pair</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (Properties)arg1) -&gt; object :</dt><dd><p>Return a string representation of this set of properties</p>
 <dl class="simple">
@@ -1050,7 +1678,7 @@ This replaces any existing metadata for this keymetakey pair</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1062,7 +1690,7 @@ This replaces any existing metadata for this keymetakey pair</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.Properties.update_property">
-<span class="sig-name descname"><span class="pre">update_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.update_property" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">update_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.Properties.update_property" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>updateProperty( (Properties)arg1, (object)key, (Property)value [, (bool)auto_add=True]) -&gt; bool :</dt><dd><dl class="simple">
 <dt>Update the passed property to have the value value. This does</dt><dd><p>an in-place update on the existing property (which must have
@@ -1081,7 +1709,7 @@ a property was updated (or added)</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.base.PropertyMap">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">PropertyMap</span></span><a class="headerlink" href="#sire.base.PropertyMap" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">PropertyMap</span></span><a class="headerlink" href="#sire.base.PropertyMap" title="Link to this definition">¶</a></dt>
 <dd><p>This is the class that holds the collection of user-supplied
 optional properties and their locations to functions.</p>
 <p>This class allows the following code to be written;</p>
@@ -1096,7 +1724,7 @@ wrappers should allow code to be written like;</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.add_prefix">
-<span class="sig-name descname"><span class="pre">add_prefix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.add_prefix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_prefix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.add_prefix" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addPrefix( (PropertyMap)arg1, (object)prefix, (object)properties) -&gt; PropertyMap :</dt><dd><dl class="simple">
 <dt>Add the passed prefix onto all of the passed properties,</dt><dd><p>returning a new property map that would map from
@@ -1111,7 +1739,7 @@ map[key] = X to map[prefixkey] = X</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.add_suffix">
-<span class="sig-name descname"><span class="pre">add_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.add_suffix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_suffix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.add_suffix" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>addSuffix( (PropertyMap)arg1, (object)suffix, (object)properties) -&gt; PropertyMap :</dt><dd><dl class="simple">
 <dt>Add the passed suffix onto all of the passed properties,</dt><dd><p>returning a new property map that would map from
@@ -1126,7 +1754,7 @@ map[key] = X to map[keysuffix] = X</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.assign">
-<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.assign" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireBase::PropertyMap {lvalue} assign(SireBase::PropertyMap {lvalue},SireBase::PropertyMap)</p>
 </dd>
@@ -1135,7 +1763,7 @@ map[key] = X to map[keysuffix] = X</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.clone" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.clone" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>SireBase::PropertyMap clone(SireBase::PropertyMap)</p>
 </dd>
@@ -1144,14 +1772,14 @@ map[key] = X to map[keysuffix] = X</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.get_string">
-<span class="sig-name descname"><span class="pre">get_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.get_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.get_string" title="Link to this definition">¶</a></dt>
 <dd><p>Return the string value associated with the passed ‘key’</p>
 <p>This returns ‘key’ if there is no value associated</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.is_default">
-<span class="sig-name descname"><span class="pre">is_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.is_default" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.is_default" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>isDefault( (PropertyMap)arg1) -&gt; bool :</dt><dd><p>Return whether or not this map is default - if it is,
 then it doesnt specify any properties</p>
@@ -1165,7 +1793,7 @@ then it doesnt specify any properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.merge">
-<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.merge" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(PropertyMap)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PropertyMap</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.merge" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a PropertyMap that is the combination of this and other.</dt><dd><p>Keys set in other take precedence over keys in this.</p>
 </dd>
@@ -1176,7 +1804,7 @@ then it doesnt specify any properties</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.specified">
-<span class="sig-name descname"><span class="pre">specified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(str)name</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.specified" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">specified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(str)name</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.specified" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>Return whether or not this map specifies the source or value</dt><dd><p>of the property called name</p>
 <dl class="simple">
@@ -1203,7 +1831,7 @@ of the property called name</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.to_dict" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.to_dict" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toDict( (PropertyMap)arg1) -&gt; object :</dt><dd><p>Return the raw underlying dictionary of the map</p>
 <dl class="simple">
@@ -1216,7 +1844,7 @@ of the property called name</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.to_string">
-<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.to_string" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.to_string" title="Link to this definition">¶</a></dt>
 <dd><dl>
 <dt>toString( (PropertyMap)arg1) -&gt; object :</dt><dd><p>Return a string representation of this PropertyMap</p>
 <dl class="simple">
@@ -1229,7 +1857,7 @@ of the property called name</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.typename">
-<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.typename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.base.PropertyMap.typename" title="Link to this definition">¶</a></dt>
 <dd><p>typeName() -&gt; str :</p>
 <blockquote>
 <div><dl class="simple">
@@ -1241,7 +1869,7 @@ of the property called name</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.unset">
-<span class="sig-name descname"><span class="pre">unset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)name</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.unset" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">unset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)name</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.unset" title="Link to this definition">¶</a></dt>
 <dd><p>Unset the property called name. This will return it to default</p>
 <dl class="simple">
 <dt>C++ signature :</dt><dd><p>void unset(SireBase::PropertyMap {lvalue},QString)</p>
@@ -1251,7 +1879,7 @@ of the property called name</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.base.PropertyMap.what">
-<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.what" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(PropertyMap)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.base.PropertyMap.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireBase::PropertyMap {lvalue})</p>
 </dd>
@@ -1262,7 +1890,7 @@ of the property called name</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.base.create_map">
-<span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">create_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/base.html#create_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.base.create_map" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">create_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/base.html#create_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.base.create_map" title="Link to this definition">¶</a></dt>
 <dd><p>Construct a PropertyMap from the
 passed values. A PropertyMap is a class that lets you either provide
 extra options to some of the C++ functions, or to
@@ -1296,7 +1924,7 @@ extra options as you want.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sire.base.wrap">
-<span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">wrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Base.html#wrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.base.wrap" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sire.base.</span></span><span class="sig-name descname"><span class="pre">wrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Base.html#wrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.base.wrap" title="Link to this definition">¶</a></dt>
 <dd><p>Wrap the passed value into a <code class="xref py py-class docutils literal notranslate"><span class="pre">Property</span></code>
 object. This works recursively, wrapping all items in
 a container, such that the returned value is derived
@@ -1339,7 +1967,7 @@ automatically.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 09, 2024</div>
+              Last updated on Jun 29, 2024</div>
           </div>
           <div class="right-details">
             
@@ -1361,6 +1989,65 @@ automatically.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Public API</a><ul>
+<li><a class="reference internal" href="#sire.base.PageCache"><code class="docutils literal notranslate"><span class="pre">PageCache</span></code></a><ul>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle</span></code></a><ul>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.assertValid"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.assertValid()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.assign"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.clear"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.clear()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.clone"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.fetch"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.fetch()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.isNull"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.isNull()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.isValid"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.isValid()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.nBytes"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.nBytes()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.page"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.page()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.parent"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.parent()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.reset"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.reset()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.size"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.toString"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.toString()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.typeName"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.typeName()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Handle.what"><code class="docutils literal notranslate"><span class="pre">PageCache.Handle.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page"><code class="docutils literal notranslate"><span class="pre">PageCache.Page</span></code></a><ul>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.assertValid"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.assertValid()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.assign"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.clone"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.isCached"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.isCached()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.isNull"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.isNull()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.isResident"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.isResident()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.isValid"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.isValid()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.maxBytes"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.maxBytes()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.nBytes"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.nBytes()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.parent"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.parent()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.size"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.toString"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.toString()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.typeName"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.typeName()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.Page.what"><code class="docutils literal notranslate"><span class="pre">PageCache.Page.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.base.PageCache.assert_valid"><code class="docutils literal notranslate"><span class="pre">PageCache.assert_valid()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.assign"><code class="docutils literal notranslate"><span class="pre">PageCache.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.cache_dir"><code class="docutils literal notranslate"><span class="pre">PageCache.cache_dir()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.clone"><code class="docutils literal notranslate"><span class="pre">PageCache.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.get_statistics"><code class="docutils literal notranslate"><span class="pre">PageCache.get_statistics()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.is_null"><code class="docutils literal notranslate"><span class="pre">PageCache.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.is_valid"><code class="docutils literal notranslate"><span class="pre">PageCache.is_valid()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.max_page_size"><code class="docutils literal notranslate"><span class="pre">PageCache.max_page_size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.max_resident_pages"><code class="docutils literal notranslate"><span class="pre">PageCache.max_resident_pages()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.num_bytes"><code class="docutils literal notranslate"><span class="pre">PageCache.num_bytes()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.num_pages"><code class="docutils literal notranslate"><span class="pre">PageCache.num_pages()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.page_size"><code class="docutils literal notranslate"><span class="pre">PageCache.page_size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.root_directory"><code class="docutils literal notranslate"><span class="pre">PageCache.root_directory()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.set_max_page_size"><code class="docutils literal notranslate"><span class="pre">PageCache.set_max_page_size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.set_max_resident_pages"><code class="docutils literal notranslate"><span class="pre">PageCache.set_max_resident_pages()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.set_root_directory"><code class="docutils literal notranslate"><span class="pre">PageCache.set_root_directory()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.size"><code class="docutils literal notranslate"><span class="pre">PageCache.size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.store"><code class="docutils literal notranslate"><span class="pre">PageCache.store()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.to_string"><code class="docutils literal notranslate"><span class="pre">PageCache.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.typename"><code class="docutils literal notranslate"><span class="pre">PageCache.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.base.PageCache.what"><code class="docutils literal notranslate"><span class="pre">PageCache.what()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#sire.base.Properties"><code class="docutils literal notranslate"><span class="pre">Properties</span></code></a><ul>
 <li><a class="reference internal" href="#sire.base.Properties.add_link"><code class="docutils literal notranslate"><span class="pre">Properties.add_link()</span></code></a></li>
 <li><a class="reference internal" href="#sire.base.Properties.all_metadata"><code class="docutils literal notranslate"><span class="pre">Properties.all_metadata()</span></code></a></li>
@@ -1436,10 +2123,10 @@ automatically.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=9887e882"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+</div><script src="../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/js/custom.js?v=c9df2d0f"></script>
     </body>
 </html>

@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Viewing Molecules" href="view.html" /><link rel="prev" title="Searching" href="search.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>Trajectories - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,7 +106,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -114,7 +114,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -122,6 +122,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +188,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +208,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -389,10 +446,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -402,15 +461,15 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="trajectories">
-<h1>Trajectories<a class="headerlink" href="#trajectories" title="Link to this heading">#</a></h1>
+<h1>Trajectories<a class="headerlink" href="#trajectories" title="Link to this heading">¶</a></h1>
 <p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> supports loading, editing and saving of trajectories via multiple
 file formats. Trajectories are represented as a series of frames, with
 each frame containing (optionally) coordinate, velocity, force, space,
 time and generic property data.</p>
 <section id="supported-file-formats">
-<h2>Supported file formats<a class="headerlink" href="#supported-file-formats" title="Link to this heading">#</a></h2>
+<h2>Supported file formats<a class="headerlink" href="#supported-file-formats" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> natively supports the following trajectory formats:</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -470,7 +529,7 @@ need to recover, e.g. energies or other properties that depend
 on exact coordinates.</p>
 </section>
 <section id="loading-trajectories">
-<h2>Loading trajectories<a class="headerlink" href="#loading-trajectories" title="Link to this heading">#</a></h2>
+<h2>Loading trajectories<a class="headerlink" href="#loading-trajectories" title="Link to this heading">¶</a></h2>
 <p>You load trajectories in the same way as loading any other file, e.g.
 using <a class="reference internal" href="../api/sire.html#sire.load" title="sire.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.load()</span></code></a>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
@@ -509,7 +568,7 @@ try to directly load the trajectory file using the appropriate parser, e.g.</p>
 raw coordinates, velocities and forces data from the frame.</p>
 </section>
 <section id="loading-and-joining-multiple-trajectories">
-<h2>Loading and joining multiple trajectories<a class="headerlink" href="#loading-and-joining-multiple-trajectories" title="Link to this heading">#</a></h2>
+<h2>Loading and joining multiple trajectories<a class="headerlink" href="#loading-and-joining-multiple-trajectories" title="Link to this heading">¶</a></h2>
 <p>It is easy to load and join multiple trajectories together into a single
 trajectory. You just load multiple files, in the order in which you
 want the trajectory frames to be placed. Assuming you have trajectory
@@ -533,7 +592,7 @@ e.g.</p>
 <a class="reference internal" href="../api/io_parser.html#sire.io.parser.DCD" title="sire.io.parser.DCD"><code class="xref py py-class docutils literal notranslate"><span class="pre">DCD</span></code></a> and <a class="reference internal" href="../api/io_parser.html#sire.io.parser.TRR" title="sire.io.parser.TRR"><code class="xref py py-class docutils literal notranslate"><span class="pre">TRR</span></code></a> formats.</p>
 </section>
 <section id="saving-trajectories">
-<h2>Saving trajectories<a class="headerlink" href="#saving-trajectories" title="Link to this heading">#</a></h2>
+<h2>Saving trajectories<a class="headerlink" href="#saving-trajectories" title="Link to this heading">¶</a></h2>
 <p>You can save trajectories using the <a class="reference internal" href="../api/sire.html#sire.save" title="sire.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.save()</span></code></a> function. For example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
@@ -578,7 +637,7 @@ For example, here we can save frames 10-100 to <a class="reference internal" hre
 </div>
 </section>
 <section id="saving-trajectory-for-subsets-of-molecules">
-<h2>Saving trajectory for subsets of molecules<a class="headerlink" href="#saving-trajectory-for-subsets-of-molecules" title="Link to this heading">#</a></h2>
+<h2>Saving trajectory for subsets of molecules<a class="headerlink" href="#saving-trajectory-for-subsets-of-molecules" title="Link to this heading">¶</a></h2>
 <p>You can save trajectories for subsets of molecules, just be passing in
 the <a class="reference internal" href="../api/mol.html#sire.mol.TrajectoryIterator" title="sire.mol.TrajectoryIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrajectoryIterator</span></code></a> for that subset to
 <a class="reference internal" href="../api/sire.html#sire.save" title="sire.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.save()</span></code></a>. For example, here we will save every frame of the
@@ -590,7 +649,7 @@ first molecule in the system to <a class="reference internal" href="../api/io_pa
 </div>
 </section>
 <section id="saving-to-multiple-files-in-parallel">
-<h2>Saving to multiple files in parallel<a class="headerlink" href="#saving-to-multiple-files-in-parallel" title="Link to this heading">#</a></h2>
+<h2>Saving to multiple files in parallel<a class="headerlink" href="#saving-to-multiple-files-in-parallel" title="Link to this heading">¶</a></h2>
 <p>You can save a trajectory to as many files as you wish. For example, you
 could simultaneously write the trajectory to
 <a class="reference internal" href="../api/io_parser.html#sire.io.parser.RST" title="sire.io.parser.RST"><code class="xref py py-class docutils literal notranslate"><span class="pre">RST</span></code></a> and <a class="reference internal" href="../api/io_parser.html#sire.io.parser.DCD" title="sire.io.parser.DCD"><code class="xref py py-class docutils literal notranslate"><span class="pre">DCD</span></code></a> format by passing
@@ -620,7 +679,7 @@ choose “compatible” formats.</p>
 </div>
 </section>
 <section id="saving-to-file-trajectories">
-<h2>Saving to file trajectories<a class="headerlink" href="#saving-to-file-trajectories" title="Link to this heading">#</a></h2>
+<h2>Saving to file trajectories<a class="headerlink" href="#saving-to-file-trajectories" title="Link to this heading">¶</a></h2>
 <p>In addition to the standard trajectory formats, <a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> also supports
 reading and writing coordinates to single-frame formats, e.g.
 <a class="reference internal" href="../api/io_parser.html#sire.io.parser.PDB" title="sire.io.parser.PDB"><code class="xref py py-class docutils literal notranslate"><span class="pre">PDB</span></code></a>, <a class="reference internal" href="../api/io_parser.html#sire.io.parser.SDF" title="sire.io.parser.SDF"><code class="xref py py-class docutils literal notranslate"><span class="pre">SDF</span></code></a> etc.</p>
@@ -661,7 +720,7 @@ directory (together with a topology file), e.g.</p>
 </div>
 </section>
 <section id="visualising-trajectories">
-<h2>Visualising trajectories<a class="headerlink" href="#visualising-trajectories" title="Link to this heading">#</a></h2>
+<h2>Visualising trajectories<a class="headerlink" href="#visualising-trajectories" title="Link to this heading">¶</a></h2>
 <p>Viewing trajectories is very simple - just call <code class="docutils literal notranslate"><span class="pre">.view()</span></code> on any
 view of molecules that contains a trajectory.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
@@ -689,7 +748,7 @@ the first molecule.</p>
 how you can control the view.</p>
 </section>
 <section id="smoothing-and-aligning-frames">
-<h2>Smoothing and aligning frames<a class="headerlink" href="#smoothing-and-aligning-frames" title="Link to this heading">#</a></h2>
+<h2>Smoothing and aligning frames<a class="headerlink" href="#smoothing-and-aligning-frames" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> has in-built support for processing trajectories. You can
 re-wrap molecules into periodic boxes, align frames against a selection,
 and also average (smooth) coordinates across multiple frames.</p>
@@ -758,7 +817,7 @@ value of <code class="docutils literal notranslate"><span class="pre">wrap</span
 </div>
 </section>
 <section id="aligning-to-molecules-outside-the-trajectory">
-<h2>Aligning to molecules outside the trajectory<a class="headerlink" href="#aligning-to-molecules-outside-the-trajectory" title="Link to this heading">#</a></h2>
+<h2>Aligning to molecules outside the trajectory<a class="headerlink" href="#aligning-to-molecules-outside-the-trajectory" title="Link to this heading">¶</a></h2>
 <p>You can also align to molecules that are not part of a trajectory. You
 do this by giving a view of the reference molecules againt
 which to align the trajectory, and also supplying
@@ -792,7 +851,7 @@ e.g.</p>
 </div>
 </section>
 <section id="calculating-energies-across-frames">
-<h2>Calculating energies across frames<a class="headerlink" href="#calculating-energies-across-frames" title="Link to this heading">#</a></h2>
+<h2>Calculating energies across frames<a class="headerlink" href="#calculating-energies-across-frames" title="Link to this heading">¶</a></h2>
 <p>You can perform lots of different types of analysis across trajectory frames.
 A useful type of analysis is calculating the interaction energy between
 molecules. For example, you could use the <code class="docutils literal notranslate"><span class="pre">.energy()</span></code> function to calculate
@@ -834,6 +893,52 @@ and all of the water molecules.</p>
 </pre></div>
 </div>
 </section>
+<section id="trajectories-and-pagecache">
+<h2>Trajectories and PageCache<a class="headerlink" href="#trajectories-and-pagecache" title="Link to this heading">¶</a></h2>
+<p>When you run a molecular dynamics simulation, you will typically generate
+a lot of frames, which will become too large to fit in memory. To handle
+this, a <a class="reference internal" href="../api/base.html#sire.base.PageCache" title="sire.base.PageCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.base.PageCache</span></code></a> is used. This class provides a
+<a class="reference internal" href="../api/base.html#sire.base.PageCache" title="sire.base.PageCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">PageCache</span></code></a> to which objects can be stored and fetched.
+The memory for those objects is automatically paged back to disk, meaning
+that it doesn’t need to stay resident in memory.</p>
+<p>The <a class="reference internal" href="../api/system.html#sire.system.System" title="sire.system.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> class automatically uses a
+<a class="reference internal" href="../api/base.html#sire.base.PageCache" title="sire.base.PageCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">PageCache</span></code></a> to manage the frames involved in its
+<a class="reference internal" href="../api/system.html#sire.system.System.save_frame" title="sire.system.System.save_frame"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save_frame()</span></code></a> and
+<a class="reference internal" href="../api/system.html#sire.system.System.load_frame" title="sire.system.System.load_frame"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_frame()</span></code></a> function calls. This page cache
+will page data larger than ~256MB to disk, into a directory called
+<code class="docutils literal notranslate"><span class="pre">temp_trajectory_XXXXXX</span></code> in the current working directory
+(where <code class="docutils literal notranslate"><span class="pre">XXXXXX</span></code> is replaced with a random string). This directory
+will be automatically cleaned up when the program exits, and potentially
+earlier when the system is deleted and then garbage collected by python.</p>
+<p>You can change the location of the page cache in two ways. Either,
+you can set the environment variable <code class="docutils literal notranslate"><span class="pre">SIRE_PAGECACHE_ROOT</span></code> to the directory
+where you want the page cache to be stored, or you can call the
+<a class="reference internal" href="../api/base.html#sire.base.PageCache.set_root_directory" title="sire.base.PageCache.set_root_directory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_root_directory()</span></code></a> function to set the
+root directory in your script.</p>
+<p>You can also use the <a class="reference internal" href="../api/base.html#sire.base.PageCache" title="sire.base.PageCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">PageCache</span></code></a> class directly to
+create caches for your own objects. For example, here we will create a
+cache into which we will place some data.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cache</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">PageCache</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handle1</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load_test_files</span><span class="p">(</span><span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handle2</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">handle1</span><span class="o">.</span><span class="n">fetch</span><span class="p">())</span>
+<span class="go">Hello World</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">handle2</span><span class="o">.</span><span class="n">fetch</span><span class="p">())</span>
+<span class="go">System( name=ACE num_molecules=631 num_residues=633 num_atoms=1912 )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">PageCache</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">())</span>
+<span class="go">Cache: /path/to/cache_root/temp_XXXXXX</span>
+<span class="go">  Current Page: 977.279 KB : is_resident 1</span>
+<span class="go">  Total size: 977.279 KB</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="../api/base.html#sire.base.PageCache" title="sire.base.PageCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">PageCache</span></code></a> class can hold any object that is
+picklable.</p>
+</div>
+</section>
 </section>
 
         </article>
@@ -867,7 +972,7 @@ and all of the water molecules.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 09, 2024</div>
+              Last updated on Jun 29, 2024</div>
           </div>
           <div class="right-details">
             
@@ -900,6 +1005,7 @@ and all of the water molecules.</p>
 <li><a class="reference internal" href="#smoothing-and-aligning-frames">Smoothing and aligning frames</a></li>
 <li><a class="reference internal" href="#aligning-to-molecules-outside-the-trajectory">Aligning to molecules outside the trajectory</a></li>
 <li><a class="reference internal" href="#calculating-energies-across-frames">Calculating energies across frames</a></li>
+<li><a class="reference internal" href="#trajectories-and-pagecache">Trajectories and PageCache</a></li>
 </ul>
 </li>
 </ul>
@@ -911,10 +1017,10 @@ and all of the water molecules.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=9887e882"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+</div><script src="../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/js/custom.js?v=c9df2d0f"></script>
     </body>
 </html>

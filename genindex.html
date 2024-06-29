@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 --><title>Index - openbiosim - sire</title>
+    <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 --><title>Index - openbiosim - sire</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_style.css?v=094c566b" />
@@ -89,7 +89,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -104,7 +104,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -112,7 +112,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -120,6 +120,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -132,6 +186,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -150,7 +206,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -389,7 +446,8 @@
           <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -399,7 +457,7 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
@@ -765,11 +823,25 @@
 </li>
         <li><a href="api/mol.html#sire.mol.AtomMapping.assert_single_molecule">assert_single_molecule() (sire.mol.AtomMapping method)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.assert_valid">assert_valid() (sire.base.PageCache method)</a>
+</li>
         <li><a href="api/vol.html#sire.vol.CoordGroup.assert_valid_index">assert_valid_index() (sire.vol.CoordGroup method)</a>
 </li>
-        <li><a href="api/base.html#sire.base.Properties.assign">assign() (sire.base.Properties method)</a>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.assertValid">assertValid() (sire.base.PageCache.Handle method)</a>
 
         <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Page.assertValid">(sire.base.PageCache.Page method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/base.html#sire.base.PageCache.assign">assign() (sire.base.PageCache method)</a>
+
+        <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Handle.assign">(sire.base.PageCache.Handle method)</a>
+</li>
+          <li><a href="api/base.html#sire.base.PageCache.Page.assign">(sire.base.PageCache.Page method)</a>
+</li>
+          <li><a href="api/base.html#sire.base.Properties.assign">(sire.base.Properties method)</a>
+</li>
           <li><a href="api/base.html#sire.base.PropertyMap.assign">(sire.base.PropertyMap method)</a>
 </li>
           <li><a href="api/cas.html#sire.cas.Expression.assign">(sire.cas.Expression method)</a>
@@ -1157,6 +1229,8 @@
 </li>
         <li><a href="api/mm.html#sire.mm.LJ1264Parameter.c_unit">c_unit() (sire.mm.LJ1264Parameter method)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.cache_dir">cache_dir() (sire.base.PageCache method)</a>
+</li>
         <li><a href="api/vol.html#sire.vol.Cartesian.calc_angle">calc_angle() (sire.vol.Cartesian method)</a>
 
         <ul>
@@ -1337,9 +1411,11 @@
         </ul></li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.clamp">clamp() (sire.cas.LambdaSchedule method)</a>
 </li>
-        <li><a href="api/base.html#sire.base.Properties.clear">clear() (sire.base.Properties method)</a>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.clear">clear() (sire.base.PageCache.Handle method)</a>
 
         <ul>
+          <li><a href="api/base.html#sire.base.Properties.clear">(sire.base.Properties method)</a>
+</li>
           <li><a href="api/cas.html#sire.cas.LambdaSchedule.clear">(sire.cas.LambdaSchedule method)</a>
 </li>
         </ul></li>
@@ -1349,9 +1425,15 @@
 </li>
         <li><a href="api/maths.html#sire.maths.EnergyTrajectory.clear_properties">clear_properties() (sire.maths.EnergyTrajectory method)</a>
 </li>
-        <li><a href="api/base.html#sire.base.Properties.clone">clone() (sire.base.Properties method)</a>
+        <li><a href="api/base.html#sire.base.PageCache.clone">clone() (sire.base.PageCache method)</a>
 
         <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Handle.clone">(sire.base.PageCache.Handle method)</a>
+</li>
+          <li><a href="api/base.html#sire.base.PageCache.Page.clone">(sire.base.PageCache.Page method)</a>
+</li>
+          <li><a href="api/base.html#sire.base.Properties.clone">(sire.base.Properties method)</a>
+</li>
           <li><a href="api/base.html#sire.base.PropertyMap.clone">(sire.base.PropertyMap method)</a>
 </li>
           <li><a href="api/cas.html#sire.cas.Expression.clone">(sire.cas.Expression method)</a>
@@ -2203,6 +2285,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/cas.html#sire.cas.Expression.factor">factor() (sire.cas.Expression method)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.fetch">fetch() (sire.base.PageCache.Handle method)</a>
+</li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.final">final() (sire.cas.LambdaSchedule static method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.AtomMatchM.find">find() (sire.mol.AtomMatchM method)</a>
@@ -2586,6 +2670,8 @@
         <li><a href="api/restraints.html#sire.restraints.get_standard_state_correction">get_standard_state_correction() (in module sire.restraints)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.RanGenerator.get_state">get_state() (sire.maths.RanGenerator method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.get_statistics">get_statistics() (sire.base.PageCache method)</a>
 </li>
         <li><a href="api/base.html#sire.base.PropertyMap.get_string">get_string() (sire.base.PropertyMap method)</a>
 </li>
@@ -3197,10 +3283,14 @@
 </li>
         <li><a href="api/mol.html#sire.mol.Stereochemistry.is_not_stereo">is_not_stereo() (sire.mol.Stereochemistry method)</a>
 </li>
-        <li><a href="api/cas.html#sire.cas.LambdaSchedule.is_null">is_null() (sire.cas.LambdaSchedule method)</a>
+        <li><a href="api/base.html#sire.base.PageCache.is_null">is_null() (sire.base.PageCache method)</a>
 
         <ul>
+          <li><a href="api/cas.html#sire.cas.LambdaSchedule.is_null">(sire.cas.LambdaSchedule method)</a>
+</li>
           <li><a href="api/cas.html#sire.cas.Symbol.is_null">(sire.cas.Symbol method)</a>
+</li>
+          <li><a href="api/convert.html#sire.convert.openmm.PerturbableOpenMMMolecule.is_null">(sire.convert.openmm.PerturbableOpenMMMolecule method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.EnergyTrajectory.is_null">(sire.maths.EnergyTrajectory method)</a>
 </li>
@@ -3387,6 +3477,8 @@
 </li>
         <li><a href="api/mol.html#sire.mol.Stereochemistry.is_up">is_up() (sire.mol.Stereochemistry method)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.is_valid">is_valid() (sire.base.PageCache method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.is_water">is_water() (in module sire.mol)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Atom.is_within_chain">is_within_chain() (sire.mol.Atom method)</a>
@@ -3407,8 +3499,24 @@
           <li><a href="api/maths.html#sire.maths.Transform.is_zero">(sire.maths.Transform method)</a>
 </li>
         </ul></li>
+        <li><a href="api/base.html#sire.base.PageCache.Page.isCached">isCached() (sire.base.PageCache.Page method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.isNull">isNull() (sire.base.PageCache.Handle method)</a>
+
+        <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Page.isNull">(sire.base.PageCache.Page method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/base.html#sire.base.PageCache.Page.isResident">isResident() (sire.base.PageCache.Page method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.BondOrder.isromatic">isromatic() (sire.mol.BondOrder method)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.isValid">isValid() (sire.base.PageCache.Handle method)</a>
+
+        <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Page.isValid">(sire.base.PageCache.Page method)</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -3646,6 +3754,12 @@
         <li><a href="api/mol.html#sire.mol.Element.max_bonds">max_bonds() (sire.mol.Element method)</a>
 </li>
         <li><a href="api/vol.html#sire.vol.PeriodicBox.max_coords">max_coords() (sire.vol.PeriodicBox method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.max_page_size">max_page_size() (sire.base.PageCache method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.max_resident_pages">max_resident_pages() (sire.base.PageCache method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.Page.maxBytes">maxBytes() (sire.base.PageCache.Page method)</a>
 </li>
         <li><a href="api/vol.html#sire.vol.Cartesian.maximum_cutoff">maximum_cutoff() (sire.vol.Cartesian method)</a>
 
@@ -3980,6 +4094,12 @@
           <li><a href="api/system.html#sire.system.System.names">(sire.system.System method)</a>
 </li>
         </ul></li>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.nBytes">nBytes() (sire.base.PageCache.Handle method)</a>
+
+        <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Page.nBytes">(sire.base.PageCache.Page method)</a>
+</li>
+        </ul></li>
         <li><a href="api/cas.html#sire.cas.Expression.negate">negate() (sire.cas.Expression method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Element.noble_gas">noble_gas() (sire.mol.Element method)</a>
@@ -4060,6 +4180,8 @@
           <li><a href="api/system.html#sire.system.System.num_atoms">(sire.system.System method)</a>
 </li>
         </ul></li>
+        <li><a href="api/base.html#sire.base.PageCache.num_bytes">num_bytes() (sire.base.PageCache method)</a>
+</li>
         <li><a href="api/mm.html#sire.mm.BondRestraints.num_centroid_restraints">num_centroid_restraints() (sire.mm.BondRestraints method)</a>
 </li>
         <li><a href="api/mm.html#sire.mm.Angle.num_chains">num_chains() (sire.mm.Angle method)</a>
@@ -4226,6 +4348,8 @@
           <li><a href="api/system.html#sire.system.System.num_molecules">(sire.system.System method)</a>
 </li>
         </ul></li>
+        <li><a href="api/base.html#sire.base.PageCache.num_pages">num_pages() (sire.base.PageCache method)</a>
+</li>
         <li><a href="api/base.html#sire.base.Properties.num_properties">num_properties() (sire.base.Properties method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Element.num_protons">num_protons() (sire.mol.Element method)</a>
@@ -4388,11 +4512,25 @@
   <h2>P</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.page">page() (sire.base.PageCache.Handle method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.page_size">page_size() (sire.base.PageCache method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache">PageCache (class in sire.base)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.Handle">PageCache.Handle (class in sire.base)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.Page">PageCache.Page (class in sire.base)</a>
+</li>
         <li><a href="api/utils.html#sire.utils.Console.panel">panel() (sire.utils.Console static method)</a>
 </li>
-        <li><a href="api/mol.html#sire.mol.Cursor.parent">parent() (sire.mol.Cursor method)</a>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.parent">parent() (sire.base.PageCache.Handle method)</a>
 
         <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Page.parent">(sire.base.PageCache.Page method)</a>
+</li>
+          <li><a href="api/mol.html#sire.mol.Cursor.parent">(sire.mol.Cursor method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Cursors.parent">(sire.mol.Cursors method)</a>
 </li>
         </ul></li>
@@ -4718,6 +4856,8 @@
 </li>
         <li><a href="api/mol.html#sire.mol.Chain.res_idxs">res_idxs() (sire.mol.Chain method)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.reset">reset() (sire.base.PageCache.Handle method)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Element.reset_biological_elements">reset_biological_elements() (sire.mol.Element method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Residue">Residue (class in sire.mol)</a>
@@ -4807,6 +4947,8 @@
         <li><a href="api/mol.html#sire.mol.TrajectoryIterator.rmsd">rmsd() (sire.mol.TrajectoryIterator method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.root">root() (sire.cas.Expression method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.root_directory">root_directory() (sire.base.PageCache method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.rotate">rotate() (in module sire.maths)</a>
 
@@ -5268,10 +5410,10 @@
           <li><a href="api/mol.html#sire.mol.CursorsM.set">(sire.mol.CursorsM method)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/search.html#sire.search.set_approx_epsilon">set_approx_epsilon() (in module sire.search)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.set_constant">set_constant() (sire.cas.LambdaSchedule method)</a>
 </li>
         <li><a href="api/convert.html#sire.convert.openmm.LambdaLever.set_constraint_indicies">set_constraint_indicies() (sire.convert.openmm.LambdaLever method)</a>
@@ -5340,6 +5482,10 @@
 </li>
         <li><a href="api/sire.html#sire.set_max_num_threads">set_max_num_threads() (in module sire)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.set_max_page_size">set_max_page_size() (sire.base.PageCache method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.set_max_resident_pages">set_max_resident_pages() (sire.base.PageCache method)</a>
+</li>
         <li><a href="api/base.html#sire.base.Properties.set_metadata">set_metadata() (sire.base.Properties method)</a>
 
         <ul>
@@ -5375,6 +5521,8 @@
         <li><a href="api/search.html#sire.search.set_protein_residue_names">set_protein_residue_names() (in module sire.search)</a>
 </li>
         <li><a href="api/units.html#sire.units.set_quantity_unit">set_quantity_unit() (in module sire.units)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.set_root_directory">set_root_directory() (sire.base.PageCache method)</a>
 </li>
         <li><a href="api/convert.html#sire.convert.openmm.LambdaLever.set_schedule">set_schedule() (sire.convert.openmm.LambdaLever method)</a>
 
@@ -5562,9 +5710,15 @@
 </li>
         <li><a href="api/convert.html#sire.convert.sire_to_rdkit">sire_to_rdkit() (in module sire.convert)</a>
 </li>
-        <li><a href="api/base.html#sire.base.Properties.size">size() (sire.base.Properties method)</a>
+        <li><a href="api/base.html#sire.base.PageCache.size">size() (sire.base.PageCache method)</a>
 
         <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Handle.size">(sire.base.PageCache.Handle method)</a>
+</li>
+          <li><a href="api/base.html#sire.base.PageCache.Page.size">(sire.base.PageCache.Page method)</a>
+</li>
+          <li><a href="api/base.html#sire.base.Properties.size">(sire.base.Properties method)</a>
+</li>
           <li><a href="api/io_parser.html#sire.io.parser.DCD.size">(sire.io.parser.DCD method)</a>
 </li>
           <li><a href="api/io_parser.html#sire.io.parser.TRR.size">(sire.io.parser.TRR method)</a>
@@ -5697,6 +5851,8 @@
         <li><a href="api/mol.html#sire.mol.Stereochemistry">Stereochemistry (class in sire.mol)</a>
 </li>
         <li><a href="api/utils.html#sire.utils.Profiler.stop">stop() (sire.utils.Profiler method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.store">store() (sire.base.PageCache method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.Expression.substitute">substitute() (sire.cas.Expression method)</a>
 
@@ -5946,9 +6102,11 @@
         </ul></li>
         <li><a href="api/convert.html#sire.convert.to_sire">to_sire() (in module sire.convert)</a>
 </li>
-        <li><a href="api/base.html#sire.base.Properties.to_string">to_string() (sire.base.Properties method)</a>
+        <li><a href="api/base.html#sire.base.PageCache.to_string">to_string() (sire.base.PageCache method)</a>
 
         <ul>
+          <li><a href="api/base.html#sire.base.Properties.to_string">(sire.base.Properties method)</a>
+</li>
           <li><a href="api/base.html#sire.base.PropertyMap.to_string">(sire.base.PropertyMap method)</a>
 </li>
           <li><a href="api/cas.html#sire.cas.Expression.to_string">(sire.cas.Expression method)</a>
@@ -6100,6 +6258,12 @@
 </li>
         <li><a href="api/convert.html#sire.convert.openmm.PerturbableOpenMMMolecule.torsions">torsions() (sire.convert.openmm.PerturbableOpenMMMolecule method)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.toString">toString() (sire.base.PageCache.Handle method)</a>
+
+        <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Page.toString">(sire.base.PageCache.Page method)</a>
+</li>
+        </ul></li>
         <li><a href="api/utils.html#sire.utils.Profiler.total">total() (sire.utils.Profiler method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Matrix.trace">trace() (sire.maths.Matrix method)</a>
@@ -6168,6 +6332,14 @@
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.type">type() (sire.mol.Cursor method)</a>
 </li>
+        <li><a href="api/base.html#sire.base.PageCache.typename">typename() (sire.base.PageCache method)</a>
+</li>
+        <li><a href="api/base.html#sire.base.PageCache.Handle.typeName">typeName() (sire.base.PageCache.Handle static method)</a>
+
+        <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Page.typeName">(sire.base.PageCache.Page static method)</a>
+</li>
+        </ul></li>
         <li><a href="api/base.html#sire.base.Properties.typename">typename() (sire.base.Properties method)</a>
 
         <ul>
@@ -6472,9 +6644,15 @@
 </li>
         <li><a href="api/utils.html#sire.utils.Console.warning">warning() (sire.utils.Console static method)</a>
 </li>
-        <li><a href="api/base.html#sire.base.PropertyMap.what">what() (sire.base.PropertyMap method)</a>
+        <li><a href="api/base.html#sire.base.PageCache.what">what() (sire.base.PageCache method)</a>
 
         <ul>
+          <li><a href="api/base.html#sire.base.PageCache.Handle.what">(sire.base.PageCache.Handle method)</a>
+</li>
+          <li><a href="api/base.html#sire.base.PageCache.Page.what">(sire.base.PageCache.Page method)</a>
+</li>
+          <li><a href="api/base.html#sire.base.PropertyMap.what">(sire.base.PropertyMap method)</a>
+</li>
           <li><a href="api/cas.html#sire.cas.Expression.what">(sire.cas.Expression method)</a>
 </li>
           <li><a href="api/cas.html#sire.cas.LambdaSchedule.what">(sire.cas.LambdaSchedule method)</a>
@@ -6694,7 +6872,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 09, 2024</div>
+              Last updated on Jun 29, 2024</div>
           </div>
           <div class="right-details">
             
@@ -6709,10 +6887,10 @@
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=9887e882"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+</div><script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="_static/js/custom.js?v=c9df2d0f"></script>
     </body>
 </html>

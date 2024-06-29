@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="OpenMM Integration" href="openmm.html" /><link rel="prev" title="Trajectories" href="trajectory.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>Viewing Molecules - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,7 +106,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -114,7 +114,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -122,6 +122,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +188,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +208,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -389,10 +446,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -402,9 +461,9 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="viewing-molecules">
-<h1>Viewing Molecules<a class="headerlink" href="#viewing-molecules" title="Link to this heading">#</a></h1>
+<h1>Viewing Molecules<a class="headerlink" href="#viewing-molecules" title="Link to this heading">¶</a></h1>
 <p><a class="reference internal" href="../api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a> has integrations with
 <a class="reference external" href="https://nglviewer.org">NGLView</a> and
 <a class="reference external" href="https://www.rdkit.org">RDKit</a> to enable you to easily create
@@ -416,7 +475,7 @@ Calling <code class="xref py py-func docutils literal notranslate"><span class="
 <a class="reference internal" href="../api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code></a> will view whatever molecular data
 is contained within that object in either 2D or 3D.</p>
 <section id="d-views">
-<h2>2D Views<a class="headerlink" href="#d-views" title="Link to this heading">#</a></h2>
+<h2>2D Views<a class="headerlink" href="#d-views" title="Link to this heading">¶</a></h2>
 <p>Creating 2D structure views is very straightforward. Simply
 call the <code class="xref py py-func docutils literal notranslate"><span class="pre">view2d()</span></code> member function
 of the object that contains the molecular data you want to view.</p>
@@ -501,7 +560,7 @@ used to find information from a molecule by passing in a property
 map via the <code class="docutils literal notranslate"><span class="pre">map</span></code> argument of <code class="xref py py-func docutils literal notranslate"><span class="pre">view2d()</span></code>.</p>
 </section>
 <section id="id1">
-<h2>3D Views<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>3D Views<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <p>Creating 3D views is similarly straightforward. Simply call
 the <a class="reference internal" href="../api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code></a> function on the object
 that contains the molecule data you want to view. This will start
@@ -541,7 +600,7 @@ view by passing <code class="docutils literal notranslate"><span class="pre">ort
 <img alt="3D perspective view of aladip" src="../_images/view_09.jpg" />
 </section>
 <section id="choosing-the-3d-representation">
-<h2>Choosing the 3D representation<a class="headerlink" href="#choosing-the-3d-representation" title="Link to this heading">#</a></h2>
+<h2>Choosing the 3D representation<a class="headerlink" href="#choosing-the-3d-representation" title="Link to this heading">¶</a></h2>
 <p>You can control the representation used for the view via the additional
 arguments of the function.</p>
 <ul class="simple">
@@ -642,7 +701,7 @@ based views (e.g. <code class="docutils literal notranslate"><span class="pre">s
 </div>
 </section>
 <section id="choosing-colors-and-opacities">
-<h2>Choosing colors and opacities<a class="headerlink" href="#choosing-colors-and-opacities" title="Link to this heading">#</a></h2>
+<h2>Choosing colors and opacities<a class="headerlink" href="#choosing-colors-and-opacities" title="Link to this heading">¶</a></h2>
 <p>You can set the color and opacity used for a particular representation
 by passing these as additional terms to the representation or search
 term, separated by colons. For example, to set the color of a
@@ -690,7 +749,7 @@ default colors and a surface colored using electrostatic potential, with
 opacity 0.9.</p>
 </section>
 <section id="centering-the-view">
-<h2>Centering the view<a class="headerlink" href="#centering-the-view" title="Link to this heading">#</a></h2>
+<h2>Centering the view<a class="headerlink" href="#centering-the-view" title="Link to this heading">¶</a></h2>
 <p>You can center the view on any selection using the <code class="docutils literal notranslate"><span class="pre">center</span></code> option, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="s2">&quot;molidx 0&quot;</span><span class="p">)</span>
 </pre></div>
@@ -705,7 +764,7 @@ likely any ligands or ions. Remember that you can create your own
 ligands or ions more specifically.</p>
 </section>
 <section id="viewing-trajectories">
-<h2>Viewing trajectories<a class="headerlink" href="#viewing-trajectories" title="Link to this heading">#</a></h2>
+<h2>Viewing trajectories<a class="headerlink" href="#viewing-trajectories" title="Link to this heading">¶</a></h2>
 <p>If the molecules being viewed have a trajectory, then you will also see
 play controls in the bottom left. These will let you play, pause and
 scroll through the trajectory. Click the play button multiple times to
@@ -726,7 +785,7 @@ of the first 10 frames of the trajectory.</p>
 </div>
 </section>
 <section id="wrapping-molecules-into-the-current-box">
-<h2>Wrapping molecules into the current box<a class="headerlink" href="#wrapping-molecules-into-the-current-box" title="Link to this heading">#</a></h2>
+<h2>Wrapping molecules into the current box<a class="headerlink" href="#wrapping-molecules-into-the-current-box" title="Link to this heading">¶</a></h2>
 <p>You can control whether or not molecules are wrapped into the same
 periodic box using the <code class="docutils literal notranslate"><span class="pre">wrap</span></code> option. If this is <code class="docutils literal notranslate"><span class="pre">True</span></code> (the default),
 then the molecules are wrapped into the same box. If this is <code class="docutils literal notranslate"><span class="pre">False</span></code>
@@ -751,7 +810,7 @@ the maximum amount of drift from the central box.</p>
 </div>
 </section>
 <section id="trajectory-alignment">
-<h2>Trajectory Alignment<a class="headerlink" href="#trajectory-alignment" title="Link to this heading">#</a></h2>
+<h2>Trajectory Alignment<a class="headerlink" href="#trajectory-alignment" title="Link to this heading">¶</a></h2>
 <p>You can align the frames in a trajectory by passing in a search string
 via the <code class="docutils literal notranslate"><span class="pre">align</span></code> keyword. For example, here we could align every frame
 against all of the carbon atoms.</p>
@@ -774,7 +833,7 @@ when you are viewing individual molecules, e.g.</p>
 </div>
 </section>
 <section id="trajectory-smoothing">
-<h2>Trajectory Smoothing<a class="headerlink" href="#trajectory-smoothing" title="Link to this heading">#</a></h2>
+<h2>Trajectory Smoothing<a class="headerlink" href="#trajectory-smoothing" title="Link to this heading">¶</a></h2>
 <p>Molecular dynamics trajectories can be difficult to view because there is a
 lot of high frequency random motion that can obscure the low frequency
 conformational changes that are often of more interest. One way to view
@@ -794,7 +853,7 @@ otherwise).</p>
 </div>
 </section>
 <section id="integration-with-trajectories">
-<h2>Integration with trajectories<a class="headerlink" href="#integration-with-trajectories" title="Link to this heading">#</a></h2>
+<h2>Integration with trajectories<a class="headerlink" href="#integration-with-trajectories" title="Link to this heading">¶</a></h2>
 <p>Note that all of the above options can be passed to the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">trajectory()</span></code> function, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;element C&quot;</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
@@ -837,7 +896,7 @@ To show unwrapped, you would need to use
 </div>
 </section>
 <section id="setting-the-background-color">
-<h2>Setting the background color<a class="headerlink" href="#setting-the-background-color" title="Link to this heading">#</a></h2>
+<h2>Setting the background color<a class="headerlink" href="#setting-the-background-color" title="Link to this heading">¶</a></h2>
 <p>You can set the background color of the view using the <code class="docutils literal notranslate"><span class="pre">bgcolor</span></code> argument.
 This should be a string, using any color that is recognised by NGLView
 via the <code class="docutils literal notranslate"><span class="pre">backgroundColor</span></code> stage parameter.</p>
@@ -851,7 +910,7 @@ via the <code class="docutils literal notranslate"><span class="pre">backgroundC
 </div>
 </section>
 <section id="closer-integration-with-nglview">
-<h2>Closer integration with NGLView<a class="headerlink" href="#closer-integration-with-nglview" title="Link to this heading">#</a></h2>
+<h2>Closer integration with NGLView<a class="headerlink" href="#closer-integration-with-nglview" title="Link to this heading">¶</a></h2>
 <p>We don’t yet properly expose the
 <a class="reference external" href="https://github.com/nglviewer/nglview/blob/master/README.md#properties">NGLView stage parameters</a>.
 Currently you can pass in a dictionary of parameters via the
@@ -871,7 +930,7 @@ which you can manipulate as if you had created it yourself, e.g.</p>
 <img alt="Customised view created by manipulating NGLView directly" src="../_images/view_13.jpg" />
 </section>
 <section id="saving-3d-views-to-files">
-<h2>Saving 3D views to files<a class="headerlink" href="#saving-3d-views-to-files" title="Link to this heading">#</a></h2>
+<h2>Saving 3D views to files<a class="headerlink" href="#saving-3d-views-to-files" title="Link to this heading">¶</a></h2>
 <p>NGLView is not really designed to render frames via a script. Instead, it
 needs to be run within a Jupyter notebook so that it has access to the
 WebGL view in the web browser to perform the rendering.
@@ -941,7 +1000,7 @@ image to render, e.g. in one code cell</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 09, 2024</div>
+              Last updated on Jun 29, 2024</div>
           </div>
           <div class="right-details">
             
@@ -987,10 +1046,10 @@ image to render, e.g. in one code cell</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=9887e882"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+</div><script src="../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/js/custom.js?v=c9df2d0f"></script>
     </body>
 </html>
