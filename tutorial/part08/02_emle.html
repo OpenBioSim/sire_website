@@ -1,0 +1,938 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Alanine-dipeptide conformational landscape" href="03_adp_pmf.html" /><link rel="prev" title="Introduction" href="01_intro.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+        <title>Sire-EMLE - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css?v=c839eb9e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Part 1 - Loading and Saving</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/06_trajectories.html">Loading and saving trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/07_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Part 2 - Indexing and Searching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part03.html">Part 3 - Molecular Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Part 3 - Molecular Properties</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part03/01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/02_cursors.html">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Part 4 - Measurement, Trajectories and Movement</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part04/01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/05_movement.html">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part05.html">Part 5 - Interconverting with other Packages</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Part 5 - Interconverting with other Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part05/01_convert.html">Converting Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/02_view.html">Viewing Molecules in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/03_smiles.html">Creating Molecules from Smiles Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/04_smarts.html">Searching for Fragments using Smarts Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part05/05_dynamics.html">Molecular Dynamics and Minimisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part06.html">Part 6 - Morphs and Alchemical Free Energies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Part 6 - Morphs and Alchemical Free Energies</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part06/01_merge.html">Merged Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part06/02_alchemical_dynamics.html">Alchemical Dynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part06/03_restraints.html">Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part06/04_alchemical_restraints.html">Alchemical Restraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part06/05_free_energy_perturbation.html">Running a Free Energy Perturbation Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part06/06_faster_fep.html">Running Faster Free Energy Simulations</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part07.html">Part 7 - Merged Molecules and Lambda Levers</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Part 7 - Merged Molecules and Lambda Levers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part07/01_perturbation.html">Perturbation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part07/02_levers.html">Lambda schedules and levers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part07/03_ghosts.html">Ghost Atoms and Softening Potentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part07/04_merge.html">Creating merge molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part07/05_pertfile.html">Perturbation Files (pertfiles)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part07/06_decouple.html">Annihilation and Decoupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part07/07_residue.html">Residue mutations</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part08.html">Part 08 - QM/MM</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_intro.html">Introduction</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Sire-EMLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_diels_alder.html">Diels-Alder reaction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blogposts.html">Diaries</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/trajectory.html">Trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/view.html">Viewing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/openmm.html">OpenMM Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/units.html">Units</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sire.html">sire module</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Sub-modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of sire.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of sire.cas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_convert.html">sire.convert</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of sire.convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/convert.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of sire.io</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io_parser.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of sire.maths</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of sire.mm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of sire.mol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_morph.html">sire.morph</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of sire.morph</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/morph.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_restraints.html">sire.restraints</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of sire.restraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/restraints.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of sire.search</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of sire.stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of sire.system</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of sire.units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of sire.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of sire.vol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="sire-emle">
+<h1>Sire-EMLE<a class="headerlink" href="#sire-emle" title="Link to this heading">¶</a></h1>
+<p>In this section we will show how to use the <a class="reference external" href="https://github.com/chemle/emle-engine">emle-engine</a>
+package as a QM/MM engine within <code class="docutils literal notranslate"><span class="pre">sire</span></code>. The <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code> package provides
+support for a wide range of backends and embedding models, importantly providing
+a simple and efficient ML model for electrostatic embedding.</p>
+<p>In order to use EMLE you will first need to create the following <code class="docutils literal notranslate"><span class="pre">conda</span></code>
+environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chemle/emle-engine.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>emle-engine
+$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment_sire.yaml
+$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>emle-sire
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<p>In this tutorial, we will perform a short ML/MM simulation of alanine dipeptide
+in water. First, let us load the molecular system:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load_test_files</span><span class="p">(</span><span class="s2">&quot;ala.crd&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="creating-an-emle-calculator">
+<h2>Creating an EMLE calculator<a class="headerlink" href="#creating-an-emle-calculator" title="Link to this heading">¶</a></h2>
+<p>Next we will create an <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code> calculator to perform the QM (or ML) calculation
+for the dipeptide along with the ML electrostatic embedding. Since this is a small molecule
+it isn’t beneficial to perform the calculation on a GPU, so we will use the CPU instead.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">emle.calculator</span> <span class="kn">import</span> <span class="n">EMLECalculator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calculator</span> <span class="o">=</span> <span class="n">EMLECalculator</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code> will use <a class="reference external" href="https://aiqm.github.io/torchani/">TorchANI</a>
+as the backend for in vacuo calculation of energies and gradients. However,
+it is possible to use a wide variety of other backends, including your own
+as long as  it supports the standand <a class="reference external" href="https://wiki.fysik.dtu.dk/ase/">Atomic Simulation Environment (ASE)</a>
+<a class="reference external" href="https://wiki.fysik.dtu.dk/ase/ase/calculators/calculators.html">calculator</a> interface.
+For details, see the <a class="reference external" href="https://github.com/chemle/emle-engine#backends">backends</a>
+section of the <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code> documentation. At present, the default embedding
+model provided with <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code> supports only the elements H, C, N, O, and S.
+We plan on adding support for other elements in the near future.</p>
+</section>
+<section id="creating-a-qm-engine">
+<h2>Creating a QM engine<a class="headerlink" href="#creating-a-qm-engine" title="Link to this heading">¶</a></h2>
+<p>We now need to set up the molecular system for the QM/MM simulation and create
+an engine to perform the calculation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">qm_mols</span><span class="p">,</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">qm</span><span class="o">.</span><span class="n">emle</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">mols</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">calculator</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">cutoff</span><span class="o">=</span><span class="s2">&quot;7.5A&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">neighbour_list_frequency</span><span class="o">=</span><span class="mi">20</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here the first argument is the molecules that we are simulating, the second
+selection coresponding to the QM region (here this is the first molecule), and
+the third is calculator that was created above. The fourth and fifth arguments
+are optional, and specify the QM cutoff distance and the neighbour list update
+frequency respectively. (Shown are the default values.) The function returns a
+modified version of the molecules containing a “merged” dipeptide that can be
+interpolated between MM and QM levels of theory, along with an engine. The
+engine registers a Python callback that uses <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code> to perform the QM
+calculation.</p>
+</section>
+<section id="running-a-qm-mm-simulation">
+<h2>Running a QM/MM simulation<a class="headerlink" href="#running-a-qm-mm-simulation" title="Link to this heading">¶</a></h2>
+<p>Next we need to create a dynamics object to perform the simulation. For QM/MM
+simulations it is recommended to use a 1 femtosecond timestep and no constraints.
+In this example we will use the <code class="docutils literal notranslate"><span class="pre">lambda_interpolate</span></code> keyword to  interpolate
+the dipeptide potential between pure MM (λ=0) and QM (λ=1) over the course of
+the simulation, which can be used for end-state correction of binding free
+energy calculations.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">qm_mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;1fs&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">qm_engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">lambda_interpolate</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">platform</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can now run the simulation. The options below specify the run time, the
+frequency at which trajectory frames are saved, and the frequency at which
+energies are recorded. The <code class="docutils literal notranslate"><span class="pre">energy_frequency</span></code> also specifies the frequency
+at which the λ value is updated.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;1ps&quot;</span><span class="p">,</span> <span class="n">frame_frequency</span><span class="o">=</span><span class="s2">&quot;0.05ps&quot;</span><span class="p">,</span> <span class="n">energy_frequency</span><span class="o">=</span><span class="s2">&quot;0.05ps&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t require a trajectory file, then better performance can be achieved
+leaving the <code class="docutils literal notranslate"><span class="pre">frame_frequency</span></code> keyword argument unset.</p>
+</div>
+<p>Once the simulation has finished we can get back the trajectory of energy values.
+This can be obtained as a <a class="reference external" href="https://pandas.pydata.org/">pandas</a> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>,
+allowing for easy plotting and analysis. The table below shows the instantaneous
+kinetic and potential energies as a function of λ, along with the accumulated
+non-equilibrium work. (Times are in picoseconds and energies are in kcal/mol.)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nrg_traj</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">energy_trajectory</span><span class="p">(</span><span class="n">to_pandas</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nrg_traj</span><span class="p">)</span>
+<span class="go">           lambda      kinetic      potential          work</span>
+<span class="go">time</span>
+<span class="go">6000.05  0.000000  1004.360323   -6929.923522      0.000000</span>
+<span class="go">6000.10  0.052632   907.430686  -23199.383591   -856.287372</span>
+<span class="go">6000.15  0.105263  1103.734847  -39773.815961  -1728.625918</span>
+<span class="go">6000.20  0.157895   982.097859  -56012.557224  -2583.296511</span>
+<span class="go">6000.25  0.210526  1035.727824  -72437.484783  -3447.766382</span>
+<span class="go">6000.30  0.263158  1029.009153  -88803.629979  -4309.142445</span>
+<span class="go">6000.35  0.315789  1014.269847 -105159.643486  -5169.985261</span>
+<span class="go">6000.40  0.368421  1021.246476 -121532.624612  -6031.721110</span>
+<span class="go">6000.45  0.421053  1022.233858 -137904.993921  -6893.424758</span>
+<span class="go">6000.50  0.473684  1025.310039 -154284.677129  -7755.513348</span>
+<span class="go">6000.55  0.526316  1025.001630 -170655.548776  -8617.138171</span>
+<span class="go">6000.60  0.578947  1016.891585 -187011.341345  -9477.969359</span>
+<span class="go">6000.65  0.631579  1022.910901 -203389.408932 -10339.972916</span>
+<span class="go">6000.70  0.684211  1024.431575 -219765.627241 -11201.879143</span>
+<span class="go">6000.75  0.736842  1052.484710 -236168.647435 -12065.195995</span>
+<span class="go">6000.80  0.789474  1032.732604 -252520.971205 -12925.844615</span>
+<span class="go">6000.85  0.842105  1061.216013 -268919.903129 -13788.946295</span>
+<span class="go">6000.90  0.894737  1062.979311 -285305.108112 -14651.325505</span>
+<span class="go">6000.95  0.947368  1057.025646 -301673.184597 -15512.803215</span>
+<span class="go">6001.00  1.000000  1024.034371 -318006.345331 -16372.443253</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the table above, the time doesn’t start from zero because the example
+molecular system was loaded from an existing trajectory restart file.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike the <code class="docutils literal notranslate"><span class="pre">sander</span></code> interface of <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code>, the interpolated potential
+energy is non-linear with respect to λ, i.e. it is not precisely a linear
+combination of MM and QM energies. This is because the <code class="docutils literal notranslate"><span class="pre">sire</span></code> interface
+performs a <em>perturbation</em> of the system parameters from MM to QM as λ is
+changed, e.g. scaling down the force constants for bonded terms in the QM
+region and scaling down the charges. Perturbing charges linearly results in
+an energy change <em>between</em> charges that is quadratic in λ.</p>
+</div>
+</section>
+<section id="interfacing-with-openmm-ml">
+<h2>Interfacing with OpenMM-ML<a class="headerlink" href="#interfacing-with-openmm-ml" title="Link to this heading">¶</a></h2>
+<p>In the example above we used a sire dynamics object <code class="docutils literal notranslate"><span class="pre">d</span></code> to run the simulation.
+This is wrapper around a standard OpenMM context object, providing a simple
+convenience functions to make it easier to run and analyse simulations. However,
+if you are already familiar with OpenMM, then it is possible to use <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code>
+with OpenMM directly. This allows for fully customised simulations, or the use
+of <a class="reference external" href="https://github.com/openmm/openmm-ml">OpenMM-ML</a> as the backend for
+calculation of the intramolecular force for the QM region.</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">OpenMM-ML</span></code> as the backend for the QM calculation, you will first need
+to install the package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>openmm-ml
+</pre></div>
+</div>
+<p>Next, you will need to create an <code class="docutils literal notranslate"><span class="pre">MLPotential</span></code> for desired backend. Here we
+will use the ANI-2x, as was used for the <code class="docutils literal notranslate"><span class="pre">EMLECalculator</span></code> above. The</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openmm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openmmml</span> <span class="kn">import</span> <span class="n">MLPotential</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potential</span> <span class="o">=</span> <span class="n">MLPotential</span><span class="p">(</span><span class="s2">&quot;ani2x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since we are now using the <code class="docutils literal notranslate"><span class="pre">MLPotential</span></code> for the QM calculation, we need to
+create a new <code class="docutils literal notranslate"><span class="pre">EMLECalculator</span></code> object with no backend, i.e. one that only
+computes the electrostatic embedding:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calculator</span> <span class="o">=</span> <span class="n">EMLECalculator</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we create a new engine bound to the calculator:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">_</span><span class="p">,</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">qm</span><span class="o">.</span><span class="n">emle</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span> <span class="n">mols</span><span class="p">,</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">calculator</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="s2">&quot;7.5A&quot;</span><span class="p">,</span> <span class="n">neighbour_list_frequency</span><span class="o">=</span><span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">qm_mols</span></code> is not needed when using <code class="docutils literal notranslate"><span class="pre">OpenMM-ML</span></code>, since it will perform
+its own internal modifications for performing interpolation.</p>
+</div>
+<p>Rather than using this engine with a <code class="docutils literal notranslate"><span class="pre">sire</span></code> dynamics object, we can instead
+extract the underlying <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> force object and add it to an existing
+<code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> system. The forces can be extracted from the engine as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emle_force</span><span class="p">,</span> <span class="n">interpolation_force</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">get_forces</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">emle_force</span></code> object is the <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> force object that calculates the
+electrostatic embedding interaction. The <code class="docutils literal notranslate"><span class="pre">interpolation_force</span></code> is a null
+<code class="docutils literal notranslate"><span class="pre">CustomBondForce</span></code> object that contains a <code class="docutils literal notranslate"><span class="pre">lambda_emle</span></code> global parameter
+than can be used to scale the electrostatic embedding interaction. (By default,
+this is set to 1, but can be set to any value between 0 and 1.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">interpolation_force</span></code> has no energy contribution. It is only required
+as there is currently no way to add global parameters to the <code class="docutils literal notranslate"><span class="pre">EMLEForce</span></code>.</p>
+</div>
+<p>Next we need to save the original molecular system to disk so that we can load it
+with <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code>. Here we will use AMBER format files, but any format supported by
+<code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="s2">&quot;ala&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;prm7&quot;</span><span class="p">,</span> <span class="s2">&quot;rst7&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>We can now read them back in with <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prmtop</span> <span class="o">=</span> <span class="n">openmm</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">AmberPrmtopFile</span><span class="p">(</span><span class="s2">&quot;ala.prm7&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inpcrd</span> <span class="o">=</span> <span class="n">openmm</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">AmberInpcrdFile</span><span class="p">(</span><span class="s2">&quot;ala.rst7&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we use the <code class="docutils literal notranslate"><span class="pre">prmtop</span></code> to create the MM system:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mm_system</span> <span class="o">=</span> <span class="n">prmtop</span><span class="o">.</span><span class="n">createSystem</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">nonbondedMethod</span><span class="o">=</span><span class="n">openmm</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">PME</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">nonbondedCutoff</span><span class="o">=</span><span class="mi">1</span> <span class="o">*</span> <span class="n">openmm</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">nanometer</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">constraints</span><span class="o">=</span><span class="n">openmm</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">HBonds</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In oder to create the ML system, we first define the ML region. This is a list
+of atom indices that are to be treated with the ML model.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml_atoms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">qm_mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()))</span>
+</pre></div>
+</div>
+<p>We can now create the ML system:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml_system</span> <span class="o">=</span> <span class="n">potential</span><span class="o">.</span><span class="n">createMixedSystem</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">prmtop</span><span class="o">.</span><span class="n">topology</span><span class="p">,</span> <span class="n">mm_system</span><span class="p">,</span> <span class="n">ml_atoms</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By setting <code class="docutils literal notranslate"><span class="pre">interpolate=True</span></code> we are telling the <code class="docutils literal notranslate"><span class="pre">MLPotential</span></code> to create
+a <em>mixed</em> system that can be interpolated between MM and ML levels of theory
+using the <code class="docutils literal notranslate"><span class="pre">lambda_interpolate</span></code> global parameter. (By default this is set to 1.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you choose not to add the <code class="docutils literal notranslate"><span class="pre">emle</span></code> interpolation force to the system, then
+the <code class="docutils literal notranslate"><span class="pre">EMLEForce</span></code> will also use the <code class="docutils literal notranslate"><span class="pre">lambda_interpolate</span></code> global parameter.
+This allows for the electrostatic embedding to be alongside or independent of
+the ML model.</p>
+</div>
+<p>We can now add the <code class="docutils literal notranslate"><span class="pre">emle</span></code> forces to the system:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ml_system</span><span class="o">.</span><span class="n">addForce</span><span class="p">(</span><span class="n">emle_force</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ml_system</span><span class="o">.</span><span class="n">addForce</span><span class="p">(</span><span class="n">interpolation_force</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In order to ensure that <code class="docutils literal notranslate"><span class="pre">OpenMM-ML</span></code> doesn’t perform mechanical embedding, we
+next need to zero the charges of the QM atoms in the MM system:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">force</span> <span class="ow">in</span> <span class="n">ml_system</span><span class="o">.</span><span class="n">getForces</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="n">mm</span><span class="o">.</span><span class="n">NonbondedForce</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ml_atoms</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="n">_</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="n">force</span><span class="o">.</span><span class="n">getParticleParameters</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">... </span>            <span class="n">force</span><span class="o">.</span><span class="n">setParticleParameters</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In order to run a simulation we need to create an integrator and context. First
+we create the integrator:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">integrator</span> <span class="o">=</span> <span class="n">openmm</span><span class="o">.</span><span class="n">LangevinMiddleIntegrator</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="mi">300</span> <span class="o">*</span> <span class="n">openmm</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">kelvin</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="mf">1.0</span> <span class="o">/</span> <span class="n">openmm</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">picosecond</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="mf">0.002</span> <span class="o">*</span> <span class="n">openmm</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">picosecond</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And finally the context:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">context</span> <span class="o">=</span> <span class="n">openmm</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">ml_system</span><span class="p">,</span> <span class="n">integrator</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">context</span><span class="o">.</span><span class="n">setPositions</span><span class="p">(</span><span class="n">inpcrd</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-an-emle-torch-module">
+<h2>Creating an EMLE torch module<a class="headerlink" href="#creating-an-emle-torch-module" title="Link to this heading">¶</a></h2>
+<p>As well as the <code class="docutils literal notranslate"><span class="pre">EMLECalculator</span></code>, the <code class="docutils literal notranslate"><span class="pre">emle-engine</span></code> package provides Torch
+modules for the calculation of the electrostatic embedding. These can be used
+to create derived modules for the calculation of in vacuo and electrostatic
+embedding energies for different backends. For example, we provide an optimised
+<code class="docutils literal notranslate"><span class="pre">ANI2xEMLE</span></code> module that can be used to add electrostatic embedding to the
+existing <code class="docutils literal notranslate"><span class="pre">ANI2x</span></code> model from <a class="reference external" href="https://aiqm.github.io/torchani/">TorchANI</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Torch support is currently not available for our Windows conda pacakge
+since <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> is not available for Windows on the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.
+It is possible to compile Sire from source using a local <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>
+installation, or using the pacakge from the official <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> conda
+channel.</p>
+</div>
+<p>As an example for how to use the module, let’s again use the example alanine
+dipeptide system. First, let’s reload the system and center the solute within
+the simulation box:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load_test_files</span><span class="p">(</span><span class="s2">&quot;ala.crd&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">center</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coordinates</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">make_whole</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To obtain the point charges around the QM region we can take advantage of
+Sire’s powerful search syntax, e.g:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="p">[</span><span class="s2">&quot;mols within 7.5 of molidx 0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference external image-reference" href="images/ala.png"><img alt="Alanine-dipeptide in water." src="../../_images/ala.png" />
+</a>
+<p>Next we will set the device and dtype for our Torch tensors:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">float32</span>
+</pre></div>
+</div>
+<p>Now we can create the input tensors for our calculation. First the coordinates
+of the QM region:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coords_qm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">get_coords_array</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next the coordinates of the MM region, which can be obtained using the search
+term above:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mm_atoms</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="s2">&quot;water within 7.5 of molidx 0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coords_mm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">sr</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">get_coords_array</span><span class="p">(</span><span class="n">mm_atoms</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now the atomic numbers for the atoms within the QM region:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atomic_numbers</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">num_protons</span><span class="p">()</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element&quot;</span><span class="p">)],</span>
+<span class="gp">... </span>    <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And finally the charges of the MM atoms:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">charges_mm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;charge&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mm_atoms</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In order to perform a calculation we need to create an instance of the
+<code class="docutils literal notranslate"><span class="pre">ANI2xEMLE</span></code> module:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">emle.models</span> <span class="kn">import</span> <span class="n">ANI2xEMLE</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ANI2xEMLE</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can now calculate the in vacuo and electrostatic embedding energies:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">energies</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">atomic_numbers</span><span class="p">,</span> <span class="n">charges_mm</span><span class="p">,</span> <span class="n">coords_qm</span><span class="p">,</span> <span class="n">coords_mm</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span>
+<span class="go">tensor([-4.9570e+02, -4.2597e-02, -1.2952e-02], device=&#39;cuda:0&#39;,</span>
+<span class="go">       dtype=torch.float64, grad_fn=&lt;StackBackward0&gt;)</span>
+</pre></div>
+</div>
+<p>The first element of the tensor is the in vacuo energy of the QM region, the
+second is the static electrostatic embedding energy, and the third is the
+induced electrostatic embedding energy.</p>
+<p>Then we can use <code class="docutils literal notranslate"><span class="pre">autograd</span></code> to compute the gradients of the energies with respect
+to the QM and MM coordinates:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grad_qm</span><span class="p">,</span> <span class="n">grad_mm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">energies</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="p">(</span><span class="n">coords_qm</span><span class="p">,</span> <span class="n">coords_mm</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">grad_qm</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">grad_mm</span><span class="p">)</span>
+<span class="go">tensor([[-2.4745e-03, -1.2421e-02,  1.1079e-02],</span>
+<span class="go">        [-7.0100e-03, -2.9659e-02, -6.8182e-03],</span>
+<span class="go">        [-1.8393e-03,  1.1682e-02,  1.1509e-02],</span>
+<span class="go">        [-3.4777e-03,  1.5750e-03, -1.9650e-02],</span>
+<span class="go">        [-3.4737e-02,  7.3493e-02,  3.7996e-02],</span>
+<span class="go">        [-9.3575e-03, -3.7101e-02, -2.0774e-02],</span>
+<span class="go">        [ 9.2816e-02, -7.5343e-03, -5.0656e-02],</span>
+<span class="go">        [ 4.9443e-03,  1.1114e-02, -4.0737e-04],</span>
+<span class="go">        [-1.6362e-03,  3.0464e-03,  3.0192e-02],</span>
+<span class="go">        [-6.2813e-03, -1.3678e-02, -3.4606e-03],</span>
+<span class="go">        [ 4.5878e-03,  3.0234e-02, -2.9871e-02],</span>
+<span class="go">        [-3.8999e-03, -1.3376e-02, -2.6382e-03],</span>
+<span class="go">        [ 4.4184e-03, -7.4247e-03,  5.1742e-04],</span>
+<span class="go">        [ 8.8851e-05, -8.5786e-03,  1.2712e-02],</span>
+<span class="go">        [-5.9939e-02,  1.1648e-01,  1.6692e-01],</span>
+<span class="go">        [-6.4231e-03, -4.4771e-02,  3.0655e-03],</span>
+<span class="go">        [ 1.1274e-01, -6.4833e-02, -1.5494e-01],</span>
+<span class="go">        [ 1.8500e-03,  5.5206e-03, -7.0060e-03],</span>
+<span class="go">        [-6.3634e-02, -1.5340e-02, -2.7031e-03],</span>
+<span class="go">        [ 7.7061e-03,  3.7852e-02,  6.0927e-03],</span>
+<span class="go">        [-2.9915e-03, -3.5084e-02,  2.3909e-02],</span>
+<span class="go">        [-1.5018e-02,  8.6911e-03, -2.5789e-03]], device=&#39;cuda:0&#39;)</span>
+<span class="go">tensor([[ 1.8065e-03, -1.4048e-03, -6.0694e-04],</span>
+<span class="go">        [-9.0640e-04,  5.1307e-04,  9.6374e-06],</span>
+<span class="go">        [-8.4827e-04,  9.5815e-04,  1.7164e-04],</span>
+<span class="go">        ...,</span>
+<span class="go">        [-5.7833e-04, -1.9125e-04,  2.0395e-03],</span>
+<span class="go">        [ 3.2311e-04,  2.1525e-04, -7.8029e-04],</span>
+<span class="go">        [ 3.5424e-04,  4.0781e-04, -1.5014e-03]], device=&#39;cuda:0&#39;)</span>
+</pre></div>
+</div>
+<p>The model is serialisable, so can be saved and loaded using the standard
+<code class="docutils literal notranslate"><span class="pre">torch.jit</span></code> functions, e.g.:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">script_model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">script</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">script_model</span><span class="p">,</span> <span class="s2">&quot;ani2xemle.pt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is also possible to use the model with Sire when performing QM/MM dynamics:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">qm_mols</span><span class="p">,</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">qm</span><span class="o">.</span><span class="n">emle</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">mols</span><span class="p">,</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">model</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="s2">&quot;7.5A&quot;</span><span class="p">,</span> <span class="n">neighbour_list_frequency</span><span class="o">=</span><span class="mi">20</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The model will be serialised and loaded into a C++ <code class="docutils literal notranslate"><span class="pre">TorchQMEngine</span></code> object,
+bypassing the need for a Python callback.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="03_adp_pmf.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Alanine-dipeptide conformational landscape</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="01_intro.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Introduction</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 23, 2024</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Sire-EMLE</a><ul>
+<li><a class="reference internal" href="#creating-an-emle-calculator">Creating an EMLE calculator</a></li>
+<li><a class="reference internal" href="#creating-a-qm-engine">Creating a QM engine</a></li>
+<li><a class="reference internal" href="#running-a-qm-mm-simulation">Running a QM/MM simulation</a></li>
+<li><a class="reference internal" href="#interfacing-with-openmm-ml">Interfacing with OpenMM-ML</a></li>
+<li><a class="reference internal" href="#creating-an-emle-torch-module">Creating an EMLE torch module</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=7b2d7c30"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/js/custom.js?v=c9df2d0f"></script>
+    </body>
+</html>
