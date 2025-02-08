@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>sire.system._system - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -305,7 +305,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -459,7 +459,7 @@
 
 <div class="viewcode-block" id="System">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System">[docs]</a>
-<span class="k">class</span> <span class="nc">System</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">System</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This class holds a complete system of molecules. This is normally</span>
 <span class="sd">    created by reading in molecules from an input file.</span>
@@ -471,14 +471,14 @@
 <span class="sd">    calling the System.molecules() function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">..legacy.System</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.System</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 
         <span class="k">if</span> <span class="n">system</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
-            <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">picosecond</span>
-            <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">wrap</span>
-            <span class="kn">from</span> <span class="nn">..legacy.Mol</span> <span class="kn">import</span> <span class="n">MoleculeGroup</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..vol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cartesian</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..units</span><span class="w"> </span><span class="kn">import</span> <span class="n">picosecond</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">wrap</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.Mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeGroup</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="n">_System</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">add_shared_property</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
@@ -501,64 +501,64 @@
 <div class="viewcode-block" id="System.is_system">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.is_system">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">is_system</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_system</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return whether the passed object is a System class</span>
 <span class="sd">        (either a new or legacy System)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..legacy.System</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.System</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 
         <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">System</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">_System</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_to_legacy_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_to_legacy_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal function used to convert this back to a legacy system</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span>
 
-    <span class="k">def</span> <span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">other</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
         <span class="n">other</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
         <span class="n">other</span><span class="o">.</span><span class="n">_molecules</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">other</span>
 
-    <span class="k">def</span> <span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memo</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memo</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy__</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()[</span><span class="n">key</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="fm">__iadd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iadd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy__</span><span class="p">()</span>
         <span class="n">ret</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span>
 
-    <span class="k">def</span> <span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__isub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__isub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy__</span><span class="p">()</span>
         <span class="n">ret</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span>
 
 <div class="viewcode-block" id="System.clone">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.clone">[docs]</a>
-    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a copy (clone) of this System&quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
         <span class="n">s</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
@@ -568,80 +568,80 @@
 
 <div class="viewcode-block" id="System.count">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.count">[docs]</a>
-    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of items in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.size">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.size">[docs]</a>
-    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of items in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">())</span>
 
 <div class="viewcode-block" id="System.num_atoms">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.num_atoms">[docs]</a>
-    <span class="k">def</span> <span class="nf">num_atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of atoms in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.num_residues">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.num_residues">[docs]</a>
-    <span class="k">def</span> <span class="nf">num_residues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_residues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of residues in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">num_residues</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.num_chains">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.num_chains">[docs]</a>
-    <span class="k">def</span> <span class="nf">num_chains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_chains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of chains in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">num_chains</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.num_segments">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.num_segments">[docs]</a>
-    <span class="k">def</span> <span class="nf">num_segments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_segments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of segments in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">num_segments</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.num_molecules">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.num_molecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">num_molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of molecules in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">num_molecules</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.find">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.find">[docs]</a>
-    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">views</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">views</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the index(es) of the molecule(s) that are in `views`&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">views</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.names">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.names">[docs]</a>
-    <span class="k">def</span> <span class="nf">names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the names of all of the molecules in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">names</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.numbers">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.numbers">[docs]</a>
-    <span class="k">def</span> <span class="nf">numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the numbers of all of the molecules in this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">numbers</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.make_whole">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.make_whole">[docs]</a>
-    <span class="k">def</span> <span class="nf">make_whole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_whole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make all of the molecules in this system whole. This</span>
 <span class="sd">        maps each molecule into the current space, such that no</span>
@@ -651,18 +651,18 @@
             <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">make_whole</span><span class="p">()</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+                <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
                 <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">make_whole</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..maths</span> <span class="kn">import</span> <span class="n">Vector</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..maths</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector</span>
 
             <span class="n">center</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">make_whole</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+                <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
                 <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">make_whole</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
 
@@ -671,18 +671,18 @@
 
 <div class="viewcode-block" id="System.num_frames">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.num_frames">[docs]</a>
-    <span class="k">def</span> <span class="nf">num_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of trajectory frames for this System&quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">num_frames</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="System.load_frame">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.load_frame">[docs]</a>
-    <span class="k">def</span> <span class="nf">load_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Load the ith frame into this System&quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">load_frame</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_molecules</span> <span class="o">=</span> <span class="kc">None</span></div>
@@ -690,12 +690,12 @@
 
 <div class="viewcode-block" id="System.save_frame">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.save_frame">[docs]</a>
-    <span class="k">def</span> <span class="nf">save_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the current coordinates to the ith frame of this System.</span>
 <span class="sd">        If i is not specfied then this adds the frame onto the</span>
 <span class="sd">        end of the trajectory</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -709,9 +709,9 @@
 
 <div class="viewcode-block" id="System.delete_frame">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.delete_frame">[docs]</a>
-    <span class="k">def</span> <span class="nf">delete_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete the ith frame from the trajectory&quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">delete_frame</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_molecules</span> <span class="o">=</span> <span class="kc">None</span></div>
@@ -719,9 +719,9 @@
 
 <div class="viewcode-block" id="System.delete_all_frames">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.delete_all_frames">[docs]</a>
-    <span class="k">def</span> <span class="nf">delete_all_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_all_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete all the frames from the trajectory&quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">delete_all_frames</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_molecules</span> <span class="o">=</span> <span class="kc">None</span></div>
@@ -729,14 +729,14 @@
 
 <div class="viewcode-block" id="System.to_molecule_group">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.to_molecule_group">[docs]</a>
-    <span class="k">def</span> <span class="nf">to_molecule_group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_molecule_group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return this System converted to a sire.mol.MoleculeGroup&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">to_molecule_group</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.molecules">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.molecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return this System converted to a sire.mol.SelectorMol.</span>
 <span class="sd">        You can pass in arguments to search or index so that you</span>
 <span class="sd">        limit the number of molecules returned.</span>
@@ -744,7 +744,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molecules</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molecules</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="kn">import</span> <span class="nn">sire.mol</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">sire.mol</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_molecules</span> <span class="o">=</span> <span class="n">sire</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">SelectorMol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="p">)</span>
 
@@ -763,7 +763,7 @@
 
 <div class="viewcode-block" id="System.segments">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.segments">[docs]</a>
-    <span class="k">def</span> <span class="nf">segments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">segments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all segments in this System (or those that match</span>
 <span class="sd">        the passed index, if supplied)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -772,7 +772,7 @@
 
 <div class="viewcode-block" id="System.chains">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.chains">[docs]</a>
-    <span class="k">def</span> <span class="nf">chains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">chains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all chains in this System (or those that match</span>
 <span class="sd">        the passed index, if supplied)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -781,7 +781,7 @@
 
 <div class="viewcode-block" id="System.residues">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.residues">[docs]</a>
-    <span class="k">def</span> <span class="nf">residues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">residues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all residues in this System (or those that match</span>
 <span class="sd">        the passed index, if supplied)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -790,7 +790,7 @@
 
 <div class="viewcode-block" id="System.atoms">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.atoms">[docs]</a>
-    <span class="k">def</span> <span class="nf">atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all atoms in this System (or those that match</span>
 <span class="sd">        the passed index, if supplied)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -799,7 +799,7 @@
 
 <div class="viewcode-block" id="System.bonds">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.bonds">[docs]</a>
-    <span class="k">def</span> <span class="nf">bonds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">bonds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all bonds in this System (or those that match</span>
 <span class="sd">        the passed index, if supplied)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -808,7 +808,7 @@
 
 <div class="viewcode-block" id="System.angles">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.angles">[docs]</a>
-    <span class="k">def</span> <span class="nf">angles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">angles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all angles in this System (or those that match</span>
 <span class="sd">        the passed index, if supplied)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -817,7 +817,7 @@
 
 <div class="viewcode-block" id="System.dihedrals">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.dihedrals">[docs]</a>
-    <span class="k">def</span> <span class="nf">dihedrals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dihedrals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all dihedrals in this System (or those that match</span>
 <span class="sd">        the passed index, if supplied)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -826,7 +826,7 @@
 
 <div class="viewcode-block" id="System.impropers">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.impropers">[docs]</a>
-    <span class="k">def</span> <span class="nf">impropers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">impropers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all impropers in this System (or those that match</span>
 <span class="sd">        the passed index, if supplied)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -835,70 +835,70 @@
 
 <div class="viewcode-block" id="System.molecule">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.molecule">[docs]</a>
-    <span class="k">def</span> <span class="nf">molecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">molecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the molecule that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">molecule</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.segment">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.segment">[docs]</a>
-    <span class="k">def</span> <span class="nf">segment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">segment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the segment that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.chain">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.chain">[docs]</a>
-    <span class="k">def</span> <span class="nf">chain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">chain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the chain that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.residue">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.residue">[docs]</a>
-    <span class="k">def</span> <span class="nf">residue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">residue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the residue that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">residue</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.atom">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.atom">[docs]</a>
-    <span class="k">def</span> <span class="nf">atom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">atom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the atom that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.bond">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.bond">[docs]</a>
-    <span class="k">def</span> <span class="nf">bond</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">bond</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the bond that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">bond</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.angle">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.angle">[docs]</a>
-    <span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">angle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the angle that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.dihedral">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.dihedral">[docs]</a>
-    <span class="k">def</span> <span class="nf">dihedral</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dihedral</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the dihedral that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">dihedral</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.improper">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.improper">[docs]</a>
-    <span class="k">def</span> <span class="nf">improper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">improper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the improper that matches the passed index/search&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">improper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.trajectory">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.trajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an iterator over the trajectory of frames of this view.</span>
 
@@ -936,14 +936,14 @@
 <span class="sd">        wrap: bool</span>
 <span class="sd">            Whether or not to wrap the coordinates into the periodic box</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..mol._trajectory</span> <span class="kn">import</span> <span class="n">TrajectoryIterator</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mol._trajectory</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrajectoryIterator</span>
 
         <span class="k">return</span> <span class="n">TrajectoryIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.minimisation">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.minimisation">[docs]</a>
-    <span class="k">def</span> <span class="nf">minimisation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">minimisation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a Minimisation object that can be used to perform</span>
 <span class="sd">        minimisation of the molecule(s) in this System</span>
@@ -1058,14 +1058,14 @@
 <span class="sd">            the arguments above will be overridden by the argument</span>
 <span class="sd">            value</span>
 <span class="sd">        &quot;&quot;&quot;</span>  <span class="c1"># noqa: E501</span>
-        <span class="kn">from</span> <span class="nn">..mol</span> <span class="kn">import</span> <span class="n">_minimisation</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">_minimisation</span>
 
         <span class="k">return</span> <span class="n">_minimisation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.dynamics">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.dynamics">[docs]</a>
-    <span class="k">def</span> <span class="nf">dynamics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dynamics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a Dynamics object that can be used to perform</span>
 <span class="sd">        dynamics on the molecule(s) in this System</span>
@@ -1169,6 +1169,23 @@
 <span class="sd">            microcanonical (NVE) or canonical (NVT) simulation will be</span>
 <span class="sd">            run if the pressure is not set.</span>
 
+<span class="sd">        rest2_scale: float</span>
+<span class="sd">            The scaling factor to apply when running a REST2 simulation</span>
+<span class="sd">            (Replica Exchange with Solute Tempering). This defaults to 1.0.</span>
+<span class="sd">            This specifies the ratio of the temperature of the REST2 region</span>
+<span class="sd">            to the temperature of the rest of the system.</span>
+
+<span class="sd">        rest2_selection: str</span>
+<span class="sd">            A selection string for atoms to include in the REST2 region</span>
+<span class="sd">            in addition to any perturbable molecules. For example,</span>
+<span class="sd">            &quot;molidx 0 and residx 0,1,2&quot; would select atoms from the first</span>
+<span class="sd">            three residues of the first molecule. If None, then all atoms</span>
+<span class="sd">            within perturbable molecules will be included in the REST2</span>
+<span class="sd">            region. When atoms within a perturbable molecule are also</span>
+<span class="sd">            included in the selection, then only those atoms will be</span>
+<span class="sd">            considered as part of the REST2 region. This allows REST2 to</span>
+<span class="sd">            be applied to protein mutations.</span>
+
 <span class="sd">        vacuum: bool</span>
 <span class="sd">            Whether or not to run the simulation in vacuum. If this is</span>
 <span class="sd">            set to `True`, then the simulation space automatically be</span>
@@ -1250,38 +1267,38 @@
 <span class="sd">            the arguments above will be overridden by the argument</span>
 <span class="sd">            value</span>
 <span class="sd">        &quot;&quot;&quot;</span>  <span class="c1"># noqa: E501</span>
-        <span class="kn">from</span> <span class="nn">..mol</span> <span class="kn">import</span> <span class="n">_dynamics</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">_dynamics</span>
 
         <span class="k">return</span> <span class="n">_dynamics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.ensemble">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.ensemble">[docs]</a>
-    <span class="k">def</span> <span class="nf">ensemble</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ensemble</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the last ensemble that was used to simulate this system.</span>
 <span class="sd">        This returns a microcanonical ensemble if None was used</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;ensemble&quot;</span><span class="p">])</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..move</span> <span class="kn">import</span> <span class="n">Ensemble</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..move</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ensemble</span>
 
             <span class="k">return</span> <span class="n">Ensemble</span><span class="o">.</span><span class="n">microcanonical</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.set_ensemble">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.set_ensemble">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_ensemble</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ensemble</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_ensemble</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ensemble</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the ensemble that was last used to simulate this system.</span>
 <span class="sd">        This is copied into the map[&quot;ensemble&quot;] property</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -1290,7 +1307,7 @@
 
 <div class="viewcode-block" id="System.energy">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.energy">[docs]</a>
-    <span class="k">def</span> <span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate and return the energy of this System</span>
 <span class="sd">        (or of the matching index/search subset of this System)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1299,7 +1316,7 @@
 
 <div class="viewcode-block" id="System.energies">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.energies">[docs]</a>
-    <span class="k">def</span> <span class="nf">energies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">energies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate and return the individual energies of the</span>
 <span class="sd">        contents of this System (or of the matching index/search</span>
 <span class="sd">        subset of this System)</span>
@@ -1309,7 +1326,7 @@
 
 <div class="viewcode-block" id="System.charge">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.charge">[docs]</a>
-    <span class="k">def</span> <span class="nf">charge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">charge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the total charge of this System (or of the matching</span>
 <span class="sd">        index/search subset of this System)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1318,7 +1335,7 @@
 
 <div class="viewcode-block" id="System.mass">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.mass">[docs]</a>
-    <span class="k">def</span> <span class="nf">mass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the total mass of this System (or of the matching</span>
 <span class="sd">        index/search subset of this System)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1327,7 +1344,7 @@
 
 <div class="viewcode-block" id="System.coordinates">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.coordinates">[docs]</a>
-    <span class="k">def</span> <span class="nf">coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the center of geometry of this System (or of the matching</span>
 <span class="sd">        index/search subset of this System)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1336,7 +1353,7 @@
 
 <div class="viewcode-block" id="System.space">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.space">[docs]</a>
-    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the space used for this system</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1344,19 +1361,19 @@
             <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+                <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
                 <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;space&quot;</span><span class="p">])</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..vol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cartesian</span>
 
             <span class="k">return</span> <span class="n">Cartesian</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.time">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.time">[docs]</a>
-    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the current system time</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1364,24 +1381,24 @@
             <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+                <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
                 <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">picosecond</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..units</span><span class="w"> </span><span class="kn">import</span> <span class="n">picosecond</span>
 
             <span class="k">return</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">picosecond</span></div>
 
 
 <div class="viewcode-block" id="System.set_space">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.set_space">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_space</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">space</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_space</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">space</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the space to be used to hold all of the molecules</span>
 <span class="sd">        in this system</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..legacy.Vol</span> <span class="kn">import</span> <span class="n">Space</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.Vol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Space</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">space</span><span class="p">),</span> <span class="n">Space</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
@@ -1394,7 +1411,7 @@
         <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">space</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
             <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -1408,12 +1425,12 @@
 
 <div class="viewcode-block" id="System.set_time">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.set_time">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the current time for the system</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">picosecond</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">wrap</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..units</span><span class="w"> </span><span class="kn">import</span> <span class="n">picosecond</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">wrap</span>
 
         <span class="k">if</span> <span class="n">time</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">time</span> <span class="o">=</span> <span class="n">wrap</span><span class="p">(</span><span class="mi">0</span> <span class="o">*</span> <span class="n">picosecond</span><span class="p">)</span>
@@ -1436,7 +1453,7 @@
         <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
             <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -1450,7 +1467,7 @@
 
 <div class="viewcode-block" id="System.energy_trajectory">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.energy_trajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">energy_trajectory</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">energy_trajectory</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">to_pandas</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">to_alchemlyb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -1479,7 +1496,7 @@
 <span class="sd">            `kcal/mol`, `kJ/mol`, or `kT`. This is only used if</span>
 <span class="sd">            `to_alchemlyb` is True.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -1502,7 +1519,7 @@
 
         <span class="k">if</span> <span class="n">traj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># we need to create this trajectory</span>
-            <span class="kn">from</span> <span class="nn">..maths</span> <span class="kn">import</span> <span class="n">EnergyTrajectory</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..maths</span><span class="w"> </span><span class="kn">import</span> <span class="n">EnergyTrajectory</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="n">traj_propname</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">EnergyTrajectory</span><span class="p">())</span>
 
@@ -1532,11 +1549,11 @@
 
 <div class="viewcode-block" id="System.set_energy_trajectory">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.set_energy_trajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_energy_trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trajectory</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_energy_trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trajectory</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the energy trajectory to the passed value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -1555,11 +1572,11 @@
 
 <div class="viewcode-block" id="System.clear_energy_trajectory">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.clear_energy_trajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">clear_energy_trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear_energy_trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Completely clear any existing energy trajectory</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -1568,14 +1585,14 @@
         <span class="k">if</span> <span class="n">traj_propname</span><span class="o">.</span><span class="n">has_value</span><span class="p">():</span>
             <span class="k">return</span>
 
-        <span class="kn">from</span> <span class="nn">..maths</span> <span class="kn">import</span> <span class="n">EnergyTrajectory</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..maths</span><span class="w"> </span><span class="kn">import</span> <span class="n">EnergyTrajectory</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="n">traj_propname</span><span class="o">.</span><span class="n">source</span><span class="p">(),</span> <span class="n">EnergyTrajectory</span><span class="p">())</span></div>
 
 
 <div class="viewcode-block" id="System.evaluate">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.evaluate">[docs]</a>
-    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return an evaluator for this Systme (or of the matching</span>
 <span class="sd">        index/search subset of this System)&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
@@ -1583,21 +1600,21 @@
 
 <div class="viewcode-block" id="System.has_property">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.has_property">[docs]</a>
-    <span class="k">def</span> <span class="nf">has_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether or not this system has the passed property&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">contains_property</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.property">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.property">[docs]</a>
-    <span class="k">def</span> <span class="nf">property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the System property that matches the passed key/arguments&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.set_property">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.set_property">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the System property according to the passed arguments&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_molecules</span> <span class="o">=</span> <span class="kc">None</span></div>
@@ -1605,9 +1622,9 @@
 
 <div class="viewcode-block" id="System.set_shared_property">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.set_shared_property">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_shared_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_shared_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the shared System property according to the passed arguments&quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">wrap</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">wrap</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">set_shared_property</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">wrap</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_molecules</span> <span class="o">=</span> <span class="kc">None</span></div>
@@ -1615,7 +1632,7 @@
 
 <div class="viewcode-block" id="System.add_shared_property">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.add_shared_property">[docs]</a>
-    <span class="k">def</span> <span class="nf">add_shared_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_shared_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add the shared System property called &#39;name&#39; to this system.</span>
 <span class="sd">        If &#39;value&#39; is supplied, then this also sets the property too.</span>
@@ -1623,7 +1640,7 @@
         <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">add_shared_property</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">wrap</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">wrap</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">add_shared_property</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">wrap</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 
@@ -1632,7 +1649,7 @@
 
 <div class="viewcode-block" id="System.remove_shared_property">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.remove_shared_property">[docs]</a>
-    <span class="k">def</span> <span class="nf">remove_shared_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_shared_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Completely remove the specified shared property, and set this</span>
 <span class="sd">        as a non-shared property for the future</span>
@@ -1643,7 +1660,7 @@
 
 <div class="viewcode-block" id="System.remove_all_shared_properties">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.remove_all_shared_properties">[docs]</a>
-    <span class="k">def</span> <span class="nf">remove_all_shared_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_all_shared_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Completely remove all shared properties, and set no properties</span>
 <span class="sd">        as being shared from this system</span>
@@ -1654,14 +1671,14 @@
 
 <div class="viewcode-block" id="System.properties">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.properties">[docs]</a>
-    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all of the System-level properties of this System&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">properties</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="System.property_keys">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.property_keys">[docs]</a>
-    <span class="k">def</span> <span class="nf">property_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">property_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the keys (IDs) of all of the System-level properties</span>
 <span class="sd">        of this System</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1670,7 +1687,7 @@
 
 <div class="viewcode-block" id="System.shared_properties">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.shared_properties">[docs]</a>
-    <span class="k">def</span> <span class="nf">shared_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">shared_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all of the System properties that are being shared</span>
 <span class="sd">        (copied) to all contained molecules</span>
@@ -1680,12 +1697,12 @@
 
 <div class="viewcode-block" id="System.set_metadata">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.set_metadata">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the metadata for this System so that the metadata associated</span>
 <span class="sd">        with the key &#39;key&#39; is equal to &#39;value&#39;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">Properties</span><span class="p">,</span> <span class="n">wrap</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Properties</span><span class="p">,</span> <span class="n">wrap</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">contains_property</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">):</span>
             <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">)</span>
@@ -1703,7 +1720,7 @@
 
 <div class="viewcode-block" id="System.has_metadata">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.has_metadata">[docs]</a>
-    <span class="k">def</span> <span class="nf">has_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return whether or not this System has metadata associated</span>
 <span class="sd">        with the requested key</span>
@@ -1716,7 +1733,7 @@
 
 <div class="viewcode-block" id="System.metadata">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.metadata">[docs]</a>
-    <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the metadata associated with the passed &#39;key&#39;, or</span>
 <span class="sd">        all metadata if &#39;key&#39; is None. This returns None if there</span>
@@ -1746,7 +1763,7 @@
 
 <div class="viewcode-block" id="System.metadata_keys">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.metadata_keys">[docs]</a>
-    <span class="k">def</span> <span class="nf">metadata_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">metadata_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the keys of all metadata set in this System</span>
 <span class="sd">        This returns an empty list if no metadata has been set</span>
@@ -1759,19 +1776,19 @@
 
 <div class="viewcode-block" id="System.cursor">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.cursor">[docs]</a>
-    <span class="k">def</span> <span class="nf">cursor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cursor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a sire.mol.Cursor that can be used to edit</span>
 <span class="sd">        the molecules in this System</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..mol._cursor</span> <span class="kn">import</span> <span class="n">CursorsM</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mol._cursor</span><span class="w"> </span><span class="kn">import</span> <span class="n">CursorsM</span>
 
         <span class="k">return</span> <span class="n">CursorsM</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.smiles">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.smiles">[docs]</a>
-    <span class="k">def</span> <span class="nf">smiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">smiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the molecule views in this container as smiles strings. Include</span>
 <span class="sd">        hydrogens in &#39;include_hydrogens&#39; is True. This returns a list</span>
@@ -1782,7 +1799,7 @@
 
 <div class="viewcode-block" id="System.smarts">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.smarts">[docs]</a>
-    <span class="k">def</span> <span class="nf">smarts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">smarts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the molecule views in this container as smarts strings. Include</span>
 <span class="sd">        hydrogens in &#39;include_hydrogens&#39; is True. This returns a list</span>
@@ -1793,7 +1810,7 @@
 
 <div class="viewcode-block" id="System.view">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.view">[docs]</a>
-    <span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        View this System (or the matching index/search subset)</span>
 <span class="sd">        via a nglview viewer. Only works in an interactive</span>
@@ -1804,7 +1821,7 @@
 
 <div class="viewcode-block" id="System.view2d">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.view2d">[docs]</a>
-    <span class="k">def</span> <span class="nf">view2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">view2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a 2D representation of the molecules in this system.</span>
 <span class="sd">        If &#39;filename&#39; is set then this will be written to that file. Otherwise</span>
@@ -1815,7 +1832,7 @@
 
 <div class="viewcode-block" id="System.add">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.add">[docs]</a>
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add the passed molecules to this system. This will only</span>
 <span class="sd">        add molecules that don&#39;t already exist in this system.</span>
@@ -1825,7 +1842,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molecule</span><span class="p">)</span>
             <span class="k">return</span>
 
-        <span class="kn">from</span> <span class="nn">..legacy.Mol</span> <span class="kn">import</span> <span class="n">MGName</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.Mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">MGName</span>
 
         <span class="n">mgid</span> <span class="o">=</span> <span class="n">MGName</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
 
@@ -1841,7 +1858,7 @@
 
 <div class="viewcode-block" id="System.remove">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.remove">[docs]</a>
-    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove the passed molecules from this system.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1865,7 +1882,7 @@
 
 <div class="viewcode-block" id="System.update">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.update">[docs]</a>
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update the molecules in this system so that they have</span>
 <span class="sd">        the same versions and data as the new molecules contained</span>
@@ -1886,7 +1903,7 @@
 
 <div class="viewcode-block" id="System.apply">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.apply">[docs]</a>
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply (perform / map) the passed function (with associated arguments)</span>
 <span class="sd">        on all of the molecules in this System</span>
@@ -1896,7 +1913,7 @@
 
 <div class="viewcode-block" id="System.apply_reduce">
 <a class="viewcode-back" href="../../../api/system.html#sire.system.System.apply_reduce">[docs]</a>
-    <span class="k">def</span> <span class="nf">apply_reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply_reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply (perform / map) the passed function (with associated arguments)</span>
 <span class="sd">        on all of the molecules in this System, reducing the result</span>
@@ -1919,7 +1936,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1934,7 +1951,7 @@
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../../../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=5fa4622c"></script>

@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Alchemical Dynamics - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -477,6 +477,18 @@ the simulation that will control how it is run:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">lambda_value</span></code> - this sets the global λ-value for the simulation.
 λ is a parameter that controls the morph from the reference state
 (at λ=0) to the perturbed state (at λ=1).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rest2_scale</span></code> - this sets the scale factor for Replica Exchange
+with Solute Tempering (REST2) simulations. This is a floating point
+number that defaults to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>. The scale factor defines the temperature
+of the REST2 region relative to the rest of the system, which can be used
+to soften dihedral potentials and non-bonded interactions in the REST2
+region to aid conformational sampling.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rest2_selection</span></code> - this is a selection string that specifies additional
+atoms to include in the REST2 region, e.g. relevant atoms within the protein
+binding site. (By default, the REST2 region comprises all atoms in perturbable
+molecules.) If the selection includes atoms from a perturbable molecule, then
+only those atoms within the perturbable molecule will be used, i.e. this
+allows a user to specify a sub-set of atoms within a perturbable molecule.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">swap_end_states</span></code> - if set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, this will swap the end states
 of the perturbation. The morph will run from the perturbed state
 (at λ=0) to the reference state (at λ=1). Note that the coordinates
@@ -492,7 +504,7 @@ run a standard dynamics simulation of the reference or perturbed states,
 without the machinery of alchemical dynamics.</p></li>
 </ul>
 <p>For example, we could minimise our alchemical system at λ=0.5 using</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;merged_molecule.s3&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">(</span><span class="n">lambda_value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
@@ -659,7 +671,7 @@ e.g. at λ=0.5, the perturbable properties are set to half-way between the
 a <a class="reference internal" href="../../api/cas.html#sire.cas.LambdaSchedule" title="sire.cas.LambdaSchedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.cas.LambdaSchedule</span></code></a>.</p>
 <p>You can get the λ-schedule used by the dynamics simulation using the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">lambda_schedule()</span></code> function, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">lambda_schedule</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="go">LambdaSchedule(</span>
 <span class="go">  morph: λ * final + initial * (-λ + 1)</span>
@@ -669,12 +681,12 @@ a <a class="reference internal" href="../../api/cas.html#sire.cas.LambdaSchedule
 <p>You can plot how this schedule would morph the perturbable properties
 using the <code class="xref py py-func docutils literal notranslate"><span class="pre">plot()</span></code> function, e.g.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">get_lever_values</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="View of the default λ-schedule" src="../../_images/06_02_01.jpg" />
 <p>This shows how the different levers available in this schedule would morph
-a hyperthetical parameter that has an <code class="docutils literal notranslate"><span class="pre">initial</span></code> value of <code class="docutils literal notranslate"><span class="pre">2.0</span></code> and a
+a hypothetical parameter that has an <code class="docutils literal notranslate"><span class="pre">initial</span></code> value of <code class="docutils literal notranslate"><span class="pre">2.0</span></code> and a
 <code class="docutils literal notranslate"><span class="pre">final</span></code> value of <code class="docutils literal notranslate"><span class="pre">3.0</span></code>.</p>
 <p>In this case the levers are all identical, so would change the parameter
 in the same way. You can choose your own equation for the λ-schedule.
@@ -691,7 +703,7 @@ For example, maybe we want to scale the charge by the square of λ.</p>
 <p>This shows that in the default <code class="docutils literal notranslate"><span class="pre">morph</span></code> stage of this schedule, we will
 scale the <code class="docutils literal notranslate"><span class="pre">charge</span></code> parameters by λ^2, while all other parameters (the
 default) will scale using λ. We can plot the result of this using;</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get_lever_values</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get_lever_values</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="View of the λ-schedule where charge is scaled by λ^2" src="../../_images/06_02_02.jpg" />
@@ -717,9 +729,9 @@ this stage that scales down the charge to 0,</p>
 <span class="go">)</span>
 </pre></div>
 </div>
-<p>Again, it is worth plotting the impact of this schedule on a hyperthetical
+<p>Again, it is worth plotting the impact of this schedule on a hypothetical
 parameter.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get_lever_values</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get_lever_values</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="View of the λ-schedule where charge is scaled in a second stage to zero." src="../../_images/06_02_03.jpg" />
@@ -768,20 +780,12 @@ value to γ times that value, and a <code class="docutils literal notranslate"><
 the charge lever from γ times the <code class="docutils literal notranslate"><span class="pre">final</span></code> value to the full
 <code class="docutils literal notranslate"><span class="pre">final</span></code> value. It also scales the charge lever in the <code class="docutils literal notranslate"><span class="pre">morph</span></code> stage
 by γ, which is set to 0.2 for all stages.</p>
-<p>We can see how this would affect a hyperthetical parameter that goes
+<p>We can see how this would affect a hypothetical parameter that goes
 from an <code class="docutils literal notranslate"><span class="pre">initial</span></code> value of 2.0 to a <code class="docutils literal notranslate"><span class="pre">final</span></code> value of 3.0 via</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get_lever_values</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get_lever_values</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="View of the λ-schedule that sandwiches a standard morph stage between two stages that scale the charge lever." src="../../_images/06_02_04.jpg" />
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Schedules constructed outside of the dynamics simulation do not have
-the full set of levers (e.g. torsion_k, dih_scale etc) as
-levers are only added as they are needed (hence why only
-<code class="docutils literal notranslate"><span class="pre">default</span></code> and <code class="docutils literal notranslate"><span class="pre">charge</span></code> are shown here). The additional levers
-are added when the schedule is added to the simulation.</p>
-</div>
 <p>Once you have created your schedule you can add it via the
 <a class="reference internal" href="../../api/mol.html#sire.mol.Dynamics.set_schedule" title="sire.mol.Dynamics.set_schedule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_schedule()</span></code></a> function of the
 <a class="reference internal" href="../../api/mol.html#sire.mol.Dynamics" title="sire.mol.Dynamics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dynamics</span></code></a> object, e.g.</p>
@@ -881,7 +885,8 @@ current value of λ for the context.</p></li>
 new value of λ for the context. Note that this should only really
 be used to change λ to evaluate energies at different λ-windows.
 It is better to re-create the context if you want to simulate
-at a different λ-value.</p></li>
+at a different λ-value. This function can also be used to set the
+<code class="docutils literal notranslate"><span class="pre">rest2_scale</span></code> parameter for the context.</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">get_lambda_schedule()</span></code> - return the
 λ-schedule used to control the morph.</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">set_lambda_schedule()</span></code> - set the
@@ -960,7 +965,7 @@ get the energy during dynamics for different values of λ, e.g.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -999,7 +1004,7 @@ get the energy during dynamics for different values of λ, e.g.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>

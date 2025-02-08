@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Public API - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -705,6 +705,21 @@ specify the temperature.</p>
 <dt>pressure: pressure</dt><dd><p>The pressure at which to run the simulation. A
 microcanonical (NVE) or canonical (NVT) simulation will be
 run if the pressure is not set.</p>
+</dd>
+<dt>rest2_scale: float</dt><dd><p>The scaling factor to apply when running a REST2 simulation
+(Replica Exchange with Solute Tempering). This defaults to 1.0.
+This specifies the ratio of the temperature of the REST2 region
+to the temperature of the rest of the system.</p>
+</dd>
+<dt>rest2_selection: str</dt><dd><p>A selection string for atoms to include in the REST2 region
+in addition to any perturbable molecules. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. If None, then all atoms
+within perturbable molecules will be included in the REST2
+region. When atoms within a perturbable molecule are also
+included in the selection, then only those atoms will be
+considered as part of the REST2 region. This allows REST2 to
+be applied to protein mutations.</p>
 </dd>
 <dt>vacuum: bool</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
 set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
@@ -1324,7 +1339,7 @@ this will be returned for visualisation in a jupyter notebook.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1440,7 +1455,7 @@ this will be returned for visualisation in a jupyter notebook.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

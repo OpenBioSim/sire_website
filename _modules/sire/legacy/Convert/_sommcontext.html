@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>sire.legacy.Convert._sommcontext - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -305,7 +305,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -456,12 +456,12 @@
           <h1>Source code for sire.legacy.Convert._sommcontext</h1><div class="highlight"><pre>
 <span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SOMMContext&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">openmm</span> <span class="kn">import</span> <span class="n">Context</span> <span class="k">as</span> <span class="n">_Context</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">openmm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Context</span> <span class="k">as</span> <span class="n">_Context</span>
 
 
 <div class="viewcode-block" id="SOMMContext">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext">[docs]</a>
-<span class="k">class</span> <span class="nc">SOMMContext</span><span class="p">(</span><span class="n">_Context</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SOMMContext</span><span class="p">(</span><span class="n">_Context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This is a specialised version of an OpenMM Context</span>
 <span class="sd">    class that provides extra information and functions</span>
@@ -475,7 +475,7 @@
 <span class="sd">    set the lambda value of the context</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">integrator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -488,8 +488,8 @@
 <span class="sd">        atom index, and the lambda lever</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">system</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">...base</span> <span class="kn">import</span> <span class="n">create_map</span>
-            <span class="kn">from</span> <span class="nn">._SireOpenMM</span> <span class="kn">import</span> <span class="n">set_openmm_coordinates_and_velocities</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">...base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">._SireOpenMM</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_openmm_coordinates_and_velocities</span>
 
             <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -527,8 +527,30 @@
             <span class="c1"># place the coordinates and velocities into the context</span>
             <span class="n">set_openmm_coordinates_and_velocities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
 
+            <span class="c1"># Check for a REST2 scaling factor.</span>
+            <span class="k">if</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;rest2_scale&quot;</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">rest2_scale</span> <span class="o">=</span> <span class="nb">map</span><span class="p">[</span><span class="s2">&quot;rest2_scale&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span><span class="o">.</span><span class="n">as_double</span><span class="p">()</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;rest2_scale&#39; must be of type &#39;float&#39;&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">rest2_scale</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;rest2_scale&#39; must be &gt;= 1.0&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_rest2_scale</span> <span class="o">=</span> <span class="n">rest2_scale</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_rest2_scale</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+            <span class="c1"># Check for a REST2 selection.</span>
+            <span class="k">if</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;rest2_selection&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_has_rest2_selection</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_has_rest2_selection</span> <span class="o">=</span> <span class="kc">False</span>
+
             <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_lever</span><span class="o">.</span><span class="n">set_lambda</span><span class="p">(</span>
-                <span class="bp">self</span><span class="p">,</span> <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span> <span class="n">update_constraints</span><span class="o">=</span><span class="kc">True</span>
+                <span class="bp">self</span><span class="p">,</span>
+                <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+                <span class="n">rest2_scale</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_rest2_scale</span><span class="p">,</span>
+                <span class="n">update_constraints</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_map</span> <span class="o">=</span> <span class="nb">map</span>
@@ -538,7 +560,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_value</span> <span class="o">=</span> <span class="mf">0.0</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_map</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_non_pert_rest2</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getPlatform</span><span class="p">()</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSystem</span><span class="p">()</span>
         <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getIntegrator</span><span class="p">()</span>
@@ -549,12 +573,12 @@
             <span class="sa">f</span><span class="s2">&quot;platform=</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span><span class="si">}</span><span class="s2"> )&quot;</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
 
 <div class="viewcode-block" id="SOMMContext.get_constraint">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_constraint">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the constraint applied to the system</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -566,7 +590,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_perturbable_constraint">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_perturbable_constraint">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_perturbable_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_perturbable_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the perturbable constraint applied to the system</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -578,7 +602,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_platform">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_platform">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_platform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_platform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the platform used for this simulation</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -587,7 +611,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_integrator">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_integrator">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_integrator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_integrator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the integrator used for the simulation</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -596,7 +620,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_platform_properties">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_platform_properties">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_platform_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_platform_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all of the properties (and their values) of the</span>
 <span class="sd">        platform used to run the simulation.</span>
@@ -613,7 +637,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_platform_property">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_platform_property">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_platform_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_platform_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the value of the specified platform property</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -635,7 +659,7 @@
 
 <div class="viewcode-block" id="SOMMContext.set_platform_property">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.set_platform_property">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_platform_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_platform_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the value of the platform property &#39;key&#39; to &#39;value&#39;</span>
 
@@ -658,14 +682,14 @@
                 <span class="sa">f</span><span class="s2">&quot;are [ </span><span class="si">{</span><span class="n">keys</span><span class="si">}</span><span class="s2"> ]&quot;</span>
             <span class="p">)</span>
 
-        <span class="kn">from</span> <span class="nn">._SireOpenMM</span> <span class="kn">import</span> <span class="n">set_context_platform_property</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">._SireOpenMM</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_context_platform_property</span>
 
         <span class="n">set_context_platform_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SOMMContext.get_atom_index">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_atom_index">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_atom_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_atom_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the index mapping from atom metadata to its index</span>
 <span class="sd">        in the openmm context</span>
@@ -675,7 +699,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_lambda">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_lambda">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_lambda</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_lambda</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the current value of lambda for this context</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -684,7 +708,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_lambda_lever">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_lambda_lever">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_lambda_lever</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_lambda_lever</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the LambdaLever used to change the lambda value</span>
 <span class="sd">        of the parameters</span>
@@ -694,7 +718,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_lambda_schedule">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_lambda_schedule">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_lambda_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_lambda_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the LambdaSchedule used to control how different forcefield</span>
 <span class="sd">        parameters will be changed with lambda</span>
@@ -707,7 +731,7 @@
 
 <div class="viewcode-block" id="SOMMContext.set_lambda_schedule">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.set_lambda_schedule">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_lambda_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schedule</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_lambda_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schedule</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the LambdaSchedule used to control how different forcefield</span>
 <span class="sd">        parameters will be changed with lambda</span>
@@ -720,23 +744,63 @@
 
 <div class="viewcode-block" id="SOMMContext.set_lambda">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.set_lambda">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_lambda</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lambda_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">update_constraints</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_lambda</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">lambda_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rest2_scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">update_constraints</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update the parameters in the context to set the lambda value</span>
-<span class="sd">        to &#39;lamval&#39;. If update_constraints is True then the constraints</span>
-<span class="sd">        will be updated to match the new value of lambda</span>
+<span class="sd">        to &#39;lambda_value&#39;. The &#39;rest2_scale&#39; defines the temperature of</span>
+<span class="sd">        the REST2 region relative to the rest of the system. If</span>
+<span class="sd">        &#39;update_constraints&#39; is True then the constraints will be updated</span>
+<span class="sd">        to match the new value of lambda.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_lever</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_lever</span><span class="o">.</span><span class="n">set_lambda</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span> <span class="n">update_constraints</span><span class="o">=</span><span class="n">update_constraints</span>
-        <span class="p">)</span></div>
+        <span class="c1"># If not provided, use the REST2 scaling factor used to initalise</span>
+        <span class="c1"># the context.</span>
+        <span class="k">if</span> <span class="n">rest2_scale</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rest2_scale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rest2_scale</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rest2_scale</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;rest2_scale&#39; must be &gt;= 1.0&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_lever</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lambda_lever</span><span class="o">.</span><span class="n">set_lambda</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span>
+                <span class="n">lambda_value</span><span class="o">=</span><span class="n">lambda_value</span><span class="p">,</span>
+                <span class="n">rest2_scale</span><span class="o">=</span><span class="n">rest2_scale</span><span class="p">,</span>
+                <span class="n">update_constraints</span><span class="o">=</span><span class="n">update_constraints</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Update any additional parameters in the REST2 region.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_non_pert_rest2</span> <span class="ow">and</span> <span class="n">rest2_scale</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rest2_scale</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update_rest2</span><span class="p">(</span><span class="n">lambda_value</span><span class="p">,</span> <span class="n">rest2_scale</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_rest2_scale</span> <span class="o">=</span> <span class="n">rest2_scale</span></div>
+
+
+<div class="viewcode-block" id="SOMMContext.get_rest2_scale">
+<a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_rest2_scale">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_rest2_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the temperature scale factor for the REST2 region.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rest2_scale</span></div>
+
+
+<div class="viewcode-block" id="SOMMContext.set_rest2_scale">
+<a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.set_rest2_scale">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_rest2_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rest2_scale</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the temperature scale factor for the REST2 region.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_lambda</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lambda_value</span><span class="p">,</span> <span class="n">rest2_scale</span><span class="o">=</span><span class="n">rest2_scale</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SOMMContext.set_temperature">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.set_temperature">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">rescale_velocities</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">rescale_velocities</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the target temperature for the dynamics. If</span>
 <span class="sd">        rescale_velocities is True then the velocities will</span>
@@ -747,7 +811,7 @@
 
 <div class="viewcode-block" id="SOMMContext.set_pressure">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.set_pressure">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_pressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_pressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the target pressure for the dynamics.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -756,7 +820,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_potential_energy">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_potential_energy">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_sire_units</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_sire_units</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate and return the potential energy of the system</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -764,8 +828,8 @@
         <span class="n">nrg</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">getPotentialEnergy</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">to_sire_units</span><span class="p">:</span>
-            <span class="kn">import</span> <span class="nn">openmm</span>
-            <span class="kn">from</span> <span class="nn">...units</span> <span class="kn">import</span> <span class="n">kcal_per_mol</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">openmm</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">...units</span><span class="w"> </span><span class="kn">import</span> <span class="n">kcal_per_mol</span>
 
             <span class="k">return</span> <span class="n">nrg</span><span class="o">.</span><span class="n">value_in_unit</span><span class="p">(</span><span class="n">openmm</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">kilocalorie_per_mole</span><span class="p">)</span> <span class="o">*</span> <span class="n">kcal_per_mol</span>
         <span class="k">else</span><span class="p">:</span>
@@ -774,7 +838,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_energy">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_energy">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_sire_units</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_sire_units</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Synonym for self.get_potential_energy()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -783,7 +847,7 @@
 
 <div class="viewcode-block" id="SOMMContext.get_constraints">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.get_constraints">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all pairs of atoms that are constrained, together with</span>
 <span class="sd">        the constraint distance</span>
@@ -794,8 +858,8 @@
 
         <span class="n">constraints</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="kn">import</span> <span class="nn">openmm</span>
-        <span class="kn">from</span> <span class="nn">...units</span> <span class="kn">import</span> <span class="n">nanometer</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">openmm</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">...units</span><span class="w"> </span><span class="kn">import</span> <span class="n">nanometer</span>
 
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_constraints</span><span class="p">):</span>
             <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">getConstraintParameters</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -812,14 +876,14 @@
 
 <div class="viewcode-block" id="SOMMContext.to_xml">
 <a class="viewcode-back" href="../../../../api/convert.html#sire.convert.openmm.SOMMContext.to_xml">[docs]</a>
-    <span class="k">def</span> <span class="nf">to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save the current state of the dynamics to XML.</span>
 <span class="sd">        This is mostly used for debugging. This will return the</span>
 <span class="sd">        XML string if &#39;f&#39; is None. Otherwise it will write the</span>
 <span class="sd">        XML to &#39;f&#39; (either a filename, or a FILE object)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">openmm.openmm</span> <span class="kn">import</span> <span class="n">XmlSerializer</span> <span class="k">as</span> <span class="n">_XmlSerializer</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">openmm.openmm</span><span class="w"> </span><span class="kn">import</span> <span class="n">XmlSerializer</span> <span class="k">as</span> <span class="n">_XmlSerializer</span>
 
         <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">_XmlSerializer</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getSystem</span><span class="p">())</span>
@@ -828,7 +892,152 @@
                 <span class="n">handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">_XmlSerializer</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getSystem</span><span class="p">()))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">_XmlSerializer</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getSystem</span><span class="p">()))</span></div>
-</div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_prepare_rest2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">atoms</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal method to prepare the REST2 data structures.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Adapted from code in meld: https://github.com/maccallumlab/meld</span>
+
+        <span class="c1"># Flag that REST2 modifications are being applied to non-perturbable atoms.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_non_pert_rest2</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="kn">import</span><span class="w"> </span><span class="nn">openmm</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..Mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">AtomIdx</span><span class="p">,</span> <span class="n">Connectivity</span>
+
+        <span class="c1"># Work out the molecules to which the atoms belong.</span>
+        <span class="n">mols</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">:</span>
+            <span class="n">mol</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+            <span class="c1"># Perturbable molecules are handled separately.</span>
+            <span class="k">if</span> <span class="n">mol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mols</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">mol</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">):</span>
+                <span class="n">mols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+        <span class="c1"># Store the OpenMM system.</span>
+        <span class="n">omm_system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSystem</span><span class="p">()</span>
+
+        <span class="c1"># Get the NonBonded force.</span>
+        <span class="n">nonbonded_force</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">force</span> <span class="ow">in</span> <span class="n">omm_system</span><span class="o">.</span><span class="n">getForces</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="n">openmm</span><span class="o">.</span><span class="n">NonbondedForce</span><span class="p">):</span>
+                <span class="n">nonbonded_force</span> <span class="o">=</span> <span class="n">force</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">nonbonded_force</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No NonbondedForce found in the OpenMM system.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nonbonded_force</span> <span class="o">=</span> <span class="n">nonbonded_force</span>
+
+        <span class="c1"># Get the PeriodicTorsionForce.</span>
+        <span class="n">periodic_torsion_force</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">force</span> <span class="ow">in</span> <span class="n">omm_system</span><span class="o">.</span><span class="n">getForces</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="n">openmm</span><span class="o">.</span><span class="n">PeriodicTorsionForce</span><span class="p">):</span>
+                <span class="n">periodic_torsion_force</span> <span class="o">=</span> <span class="n">force</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">periodic_torsion_force</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No PeriodicTorsionForce found in the OpenMM system.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_periodic_torsion_force</span> <span class="o">=</span> <span class="n">periodic_torsion_force</span>
+
+        <span class="c1"># Initialise the parameter dictionaries.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nonbonded_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_exception_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_torsion_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Store the molecules in the system.</span>
+        <span class="n">system_mols</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span>
+
+        <span class="c1"># Process each of the molecules.</span>
+        <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">:</span>
+            <span class="c1"># Create the connectivity object for the molecule.</span>
+            <span class="n">connectivity</span> <span class="o">=</span> <span class="n">Connectivity</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">info</span><span class="p">())</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+
+            <span class="c1"># Loop over the bonds in the molecule and connect the atoms.</span>
+            <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">bonds</span><span class="p">():</span>
+                <span class="n">connectivity</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">bond</span><span class="o">.</span><span class="n">atom0</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(),</span> <span class="n">bond</span><span class="o">.</span><span class="n">atom1</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+            <span class="n">connectivity</span> <span class="o">=</span> <span class="n">connectivity</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+            <span class="c1"># Find the index of the molecule in the system.</span>
+            <span class="n">mol_idx</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">mol_nums</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">number</span><span class="p">())</span>
+
+            <span class="c1"># Work out the offset to apply to the atom indices to convert to system indices.</span>
+            <span class="n">num_atoms</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mol_idx</span><span class="p">):</span>
+                <span class="n">num_atoms</span> <span class="o">+=</span> <span class="n">system_mols</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span>
+
+            <span class="c1"># Create a list of atom indices.</span>
+            <span class="n">atom_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">+</span> <span class="n">num_atoms</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">]</span>
+
+            <span class="c1"># Gather the nonbonded parameters for the atoms in the selection.</span>
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">atom_idxs</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_nonbonded_params</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">nonbonded_force</span><span class="o">.</span><span class="n">getParticleParameters</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+
+            <span class="c1"># Store the exception parameters.</span>
+            <span class="k">for</span> <span class="n">param_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nonbonded_force</span><span class="o">.</span><span class="n">getNumExceptions</span><span class="p">()):</span>
+                <span class="n">params</span> <span class="o">=</span> <span class="n">nonbonded_force</span><span class="o">.</span><span class="n">getExceptionParameters</span><span class="p">(</span><span class="n">param_index</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">atom_idxs</span> <span class="ow">and</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">atom_idxs</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_exception_params</span><span class="p">[</span><span class="n">param_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span>
+
+            <span class="c1"># Gather the torsion parameters for the atoms in the selection.</span>
+            <span class="k">for</span> <span class="n">param_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">periodic_torsion_force</span><span class="o">.</span><span class="n">getNumTorsions</span><span class="p">()):</span>
+                <span class="n">params</span> <span class="o">=</span> <span class="n">periodic_torsion_force</span><span class="o">.</span><span class="n">getTorsionParameters</span><span class="p">(</span><span class="n">param_index</span><span class="p">)</span>
+                <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">params</span>
+
+                <span class="c1"># Don&#39;t modify non-REST2 torsions.</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">atom_idxs</span>
+                    <span class="ow">or</span> <span class="n">j</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">atom_idxs</span>
+                    <span class="ow">or</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">atom_idxs</span>
+                    <span class="ow">or</span> <span class="n">l</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">atom_idxs</span>
+                <span class="p">):</span>
+                    <span class="k">continue</span>
+
+                <span class="c1"># Convert to AtomIdx objects.</span>
+                <span class="n">idx_i</span> <span class="o">=</span> <span class="n">AtomIdx</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">num_atoms</span><span class="p">)</span>
+                <span class="n">idx_l</span> <span class="o">=</span> <span class="n">AtomIdx</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="n">num_atoms</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">connectivity</span><span class="o">.</span><span class="n">are_dihedraled</span><span class="p">(</span><span class="n">idx_i</span><span class="p">,</span> <span class="n">idx_l</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_torsion_params</span><span class="p">[</span><span class="n">param_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_rest2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lambda_value</span><span class="p">,</span> <span class="n">rest2_scale</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal method to update the REST2 parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+
+        <span class="c1"># This is the temperature scale factor, so we need to invert to get the energy</span>
+        <span class="c1"># scale factor.</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">rest2_scale</span>
+
+        <span class="c1"># Store the REST2 charge scaling factor for non-bonded interactions.</span>
+        <span class="n">sqrt_scale</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span>
+
+        <span class="c1"># Update the non-bonded parameters.</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nonbonded_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">q</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="n">params</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nonbonded_force</span><span class="o">.</span><span class="n">setParticleParameters</span><span class="p">(</span>
+                <span class="n">index</span><span class="p">,</span> <span class="n">q</span> <span class="o">*</span> <span class="n">sqrt_scale</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">*</span> <span class="n">scale</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Update the exception parameters.</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exception_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="n">params</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nonbonded_force</span><span class="o">.</span><span class="n">setExceptionParameters</span><span class="p">(</span>
+                <span class="n">index</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">q</span> <span class="o">*</span> <span class="n">scale</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">*</span> <span class="n">scale</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Update the parameters in the context.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nonbonded_force</span><span class="o">.</span><span class="n">updateParametersInContext</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="c1"># Update the torsion parameters.</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torsion_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">periodicity</span><span class="p">,</span> <span class="n">phase</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="n">params</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_periodic_torsion_force</span><span class="o">.</span><span class="n">setTorsionParameters</span><span class="p">(</span>
+                <span class="n">index</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">periodicity</span><span class="p">,</span> <span class="n">phase</span><span class="p">,</span> <span class="n">fc</span> <span class="o">*</span> <span class="n">scale</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Update the parameters in the context.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_periodic_torsion_force</span><span class="o">.</span><span class="n">updateParametersInContext</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 </pre></div>
         </article>
@@ -844,7 +1053,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -859,7 +1068,7 @@
       
     </aside>
   </div>
-</div><script src="../../../../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../../../../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/scripts/furo.js?v=5fa4622c"></script>

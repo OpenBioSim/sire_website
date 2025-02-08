@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Public API - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -2167,6 +2167,290 @@ equivalent type class.</p>
 <span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Angle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.Angle.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireMM::Angle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.mm.</span></span><span class="sig-name descname"><span class="pre">AngleRestraint</span></span><a class="headerlink" href="#sire.mm.AngleRestraint" title="Link to this definition">¶</a></dt>
+<dd><p>This class represents a single angle restraint between any three
+atoms in a system
+Author: Christopher Woods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraint)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(AngleRestraint)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AngleRestraint</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraint.assign" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::AngleRestraint {lvalue} assign(SireMM::AngleRestraint {lvalue},SireMM::AngleRestraint)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.atoms">
+<span class="sig-name descname"><span class="pre">atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraint.atoms" title="Link to this definition">¶</a></dt>
+<dd><p>Return the atoms involved in the restraint</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;long long&gt; atoms(SireMM::AngleRestraint {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AngleRestraint</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraint.clone" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::AngleRestraint clone(SireMM::AngleRestraint)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraint.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>isNull( (AngleRestraint)arg1) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isNull(SireMM::AngleRestraint {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.ktheta">
+<span class="sig-name descname"><span class="pre">ktheta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraint.ktheta" title="Link to this definition">¶</a></dt>
+<dd><p>Return the force constant for the restraint</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;1, 2, -2, 0, 0, -1, -2&gt; ktheta(SireMM::AngleRestraint {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.theta0">
+<span class="sig-name descname"><span class="pre">theta0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraint.theta0" title="Link to this definition">¶</a></dt>
+<dd><p>Return the equilibrium angle for the restraint</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; theta0(SireMM::AngleRestraint {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraint.to_string" title="Link to this definition">¶</a></dt>
+<dd><p>toString( (AngleRestraint)arg1) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireMM::AngleRestraint {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraint.typename" title="Link to this definition">¶</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraint.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraint.what" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireMM::AngleRestraint {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.mm.</span></span><span class="sig-name descname"><span class="pre">AngleRestraints</span></span><a class="headerlink" href="#sire.mm.AngleRestraints" title="Link to this definition">¶</a></dt>
+<dd><p>This class represents a collection of angle restraints</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(AngleRestraint)restraint</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraints.add" title="Link to this definition">¶</a></dt>
+<dd><p>Add a restraint onto the list</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void add(SireMM::AngleRestraints {lvalue},SireMM::AngleRestraint)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>add( (AngleRestraints)arg1, (AngleRestraints)restraints) -&gt; None :</dt><dd><p>Add a restraint onto the list</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void add(SireMM::AngleRestraints {lvalue},SireMM::AngleRestraints)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AngleRestraints</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraints.assign" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::AngleRestraints {lvalue} assign(SireMM::AngleRestraints {lvalue},SireMM::AngleRestraints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.at">
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AngleRestraint</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraints.at" title="Link to this definition">¶</a></dt>
+<dd><p>Return the ith restraint</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::AngleRestraint at(SireMM::AngleRestraints {lvalue},int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AngleRestraints</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraints.clone" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::AngleRestraints clone(SireMM::AngleRestraints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraints.count" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int count(SireMM::AngleRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.is_empty">
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraints.is_empty" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>isEmpty( (AngleRestraints)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is empty</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isEmpty(SireMM::AngleRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraints.is_null" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>isNull( (AngleRestraints)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is empty</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isNull(SireMM::AngleRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.is_restraints">
+<span class="sig-name descname"><span class="pre">is_restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraints.is_restraints" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>isRestraints( (Restraints)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is a Restraints object (or derived
+from this object)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isRestraints(SireMM::Restraints {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.num_restraints">
+<span class="sig-name descname"><span class="pre">num_restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraints.num_restraints" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>nRestraints( (AngleRestraints)arg1) -&gt; int :</dt><dd><p>Return the number of restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int nRestraints(SireMM::AngleRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.restraints">
+<span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraints.restraints" title="Link to this definition">¶</a></dt>
+<dd><p>Return all of the restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QList&lt;SireMM::AngleRestraint&gt; restraints(SireMM::AngleRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraints.set_name" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>setName( (Restraints)arg1, (object)name) -&gt; None :</dt><dd><p>Set the name for this group of restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setName(SireMM::Restraints {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraints.size" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int size(SireMM::AngleRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraints.to_string" title="Link to this definition">¶</a></dt>
+<dd><p>toString( (AngleRestraints)arg1) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireMM::AngleRestraints {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.AngleRestraints.typename" title="Link to this definition">¶</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.AngleRestraints.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(AngleRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.AngleRestraints.what" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireMM::AngleRestraints {lvalue})</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5215,6 +5499,290 @@ equivalent type class.</p>
 <span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Dihedral)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.Dihedral.what" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>C++ signature :</dt><dd><p>char const* what(SireMM::Dihedral {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.mm.</span></span><span class="sig-name descname"><span class="pre">DihedralRestraint</span></span><a class="headerlink" href="#sire.mm.DihedralRestraint" title="Link to this definition">¶</a></dt>
+<dd><p>This class represents a single angle restraint between any three
+atoms in a system
+Author: Christopher Woods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraint)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(DihedralRestraint)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DihedralRestraint</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraint.assign" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::DihedralRestraint {lvalue} assign(SireMM::DihedralRestraint {lvalue},SireMM::DihedralRestraint)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.atoms">
+<span class="sig-name descname"><span class="pre">atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraint.atoms" title="Link to this definition">¶</a></dt>
+<dd><p>Return the atoms involved in the restraint</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QVector&lt;long long&gt; atoms(SireMM::DihedralRestraint {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DihedralRestraint</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraint.clone" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::DihedralRestraint clone(SireMM::DihedralRestraint)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraint.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>isNull( (DihedralRestraint)arg1) -&gt; bool :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isNull(SireMM::DihedralRestraint {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.kphi">
+<span class="sig-name descname"><span class="pre">kphi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraint.kphi" title="Link to this definition">¶</a></dt>
+<dd><p>Return the force constant for the restraint</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;1, 2, -2, 0, 0, -1, -2&gt; kphi(SireMM::DihedralRestraint {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.phi0">
+<span class="sig-name descname"><span class="pre">phi0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraint.phi0" title="Link to this definition">¶</a></dt>
+<dd><p>Return the equilibrium angle for the restraint</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; phi0(SireMM::DihedralRestraint {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraint.to_string" title="Link to this definition">¶</a></dt>
+<dd><p>toString( (DihedralRestraint)arg1) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireMM::DihedralRestraint {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraint.typename" title="Link to this definition">¶</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraint.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraint)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraint.what" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireMM::DihedralRestraint {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.mm.</span></span><span class="sig-name descname"><span class="pre">DihedralRestraints</span></span><a class="headerlink" href="#sire.mm.DihedralRestraints" title="Link to this definition">¶</a></dt>
+<dd><p>This class represents a collection of angle restraints</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(DihedralRestraint)restraint</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraints.add" title="Link to this definition">¶</a></dt>
+<dd><p>Add a restraints onto the list</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>void add(SireMM::DihedralRestraints {lvalue},SireMM::DihedralRestraint)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>add( (DihedralRestraints)arg1, (DihedralRestraints)restraints) -&gt; None :</dt><dd><p>Add a restraint onto the list</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void add(SireMM::DihedralRestraints {lvalue},SireMM::DihedralRestraints)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DihedralRestraints</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraints.assign" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::DihedralRestraints {lvalue} assign(SireMM::DihedralRestraints {lvalue},SireMM::DihedralRestraints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.at">
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DihedralRestraint</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraints.at" title="Link to this definition">¶</a></dt>
+<dd><p>Return the ith restraint</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::DihedralRestraint at(SireMM::DihedralRestraints {lvalue},int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DihedralRestraints</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraints.clone" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMM::DihedralRestraints clone(SireMM::DihedralRestraints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraints.count" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int count(SireMM::DihedralRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.is_empty">
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraints.is_empty" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>isEmpty( (DihedralRestraints)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is empty</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isEmpty(SireMM::DihedralRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraints.is_null" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>isNull( (DihedralRestraints)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is empty</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isNull(SireMM::DihedralRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.is_restraints">
+<span class="sig-name descname"><span class="pre">is_restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraints.is_restraints" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>isRestraints( (Restraints)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is a Restraints object (or derived
+from this object)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isRestraints(SireMM::Restraints {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.num_restraints">
+<span class="sig-name descname"><span class="pre">num_restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraints.num_restraints" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>nRestraints( (DihedralRestraints)arg1) -&gt; int :</dt><dd><p>Return the number of restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int nRestraints(SireMM::DihedralRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.restraints">
+<span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraints.restraints" title="Link to this definition">¶</a></dt>
+<dd><p>Return all of the restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QList&lt;SireMM::DihedralRestraint&gt; restraints(SireMM::DihedralRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraints.set_name" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>setName( (Restraints)arg1, (object)name) -&gt; None :</dt><dd><p>Set the name for this group of restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setName(SireMM::Restraints {lvalue},QString)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraints.size" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of restraints</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int size(SireMM::DihedralRestraints {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraints.to_string" title="Link to this definition">¶</a></dt>
+<dd><p>toString( (DihedralRestraints)arg1) -&gt; object :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireMM::DihedralRestraints {lvalue})</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.DihedralRestraints.typename" title="Link to this definition">¶</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.mm.DihedralRestraints.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(DihedralRestraints)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.mm.DihedralRestraints.what" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireMM::DihedralRestraints {lvalue})</p>
 </dd>
 </dl>
 </dd></dl>
@@ -12858,10 +13426,10 @@ is operator.add by default.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mm.SelectorMAngle.dynamics">
-<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_coulomb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_reset_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barostat_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qm_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.SelectorMAngle.dynamics" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_coulomb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_reset_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barostat_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qm_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.SelectorMAngle.dynamics" title="Link to this definition">¶</a></dt>
 <dd><p>Return a Dynamics object that can be used to perform
 dynamics of the molecule(s) in this view</p>
-<dl class="simple">
+<dl>
 <dt>cutoff: Length</dt><dd><p>The size of the non-bonded cutoff</p>
 </dd>
 <dt>cutoff_type: str</dt><dd><p>The type of cutoff to use, e.g. “PME”, “RF” etc.
@@ -12943,6 +13511,27 @@ specify the temperature.</p>
 <dt>pressure: pressure</dt><dd><p>The pressure at which to run the simulation. A
 microcanonical (NVE) or canonical (NVT) simulation will be
 run if the pressure is not set.</p>
+</dd>
+<dt>rest2_scale: float</dt><dd><p>The scaling factor to apply when running a REST2 simulation
+(Replica Exchange with Solute Tempering). This defaults to 1.0.
+This specifies the ratio of the temperature of the REST2 region
+to the temperature of the rest of the system.</p>
+</dd>
+<dt>rest2_selection: str</dt><dd><p>A selection string for atoms to include in the REST2 region
+in addition to any perturbable molecules. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. If None, then all atoms
+within perturbable molecules will be included in the REST2
+region. When atoms within a perturbable molecule are also
+included in the selection, then only those atoms will be
+considered as part of the REST2 region. This allows REST2 to
+be applied to protein mutations.</p>
+<p>A selection string for atoms to include in the REST2 region in
+addition to the perturbable molecule. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. Selected atoms should be
+within the same molecule. If None, then only the perturbable
+molecule will be used for the REST2 region.</p>
 </dd>
 <dt>vacuum: bool (optional)</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
 set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
@@ -14074,10 +14663,10 @@ is operator.add by default.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mm.SelectorMBond.dynamics">
-<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_coulomb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_reset_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barostat_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qm_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.SelectorMBond.dynamics" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_coulomb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_reset_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barostat_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qm_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.SelectorMBond.dynamics" title="Link to this definition">¶</a></dt>
 <dd><p>Return a Dynamics object that can be used to perform
 dynamics of the molecule(s) in this view</p>
-<dl class="simple">
+<dl>
 <dt>cutoff: Length</dt><dd><p>The size of the non-bonded cutoff</p>
 </dd>
 <dt>cutoff_type: str</dt><dd><p>The type of cutoff to use, e.g. “PME”, “RF” etc.
@@ -14159,6 +14748,27 @@ specify the temperature.</p>
 <dt>pressure: pressure</dt><dd><p>The pressure at which to run the simulation. A
 microcanonical (NVE) or canonical (NVT) simulation will be
 run if the pressure is not set.</p>
+</dd>
+<dt>rest2_scale: float</dt><dd><p>The scaling factor to apply when running a REST2 simulation
+(Replica Exchange with Solute Tempering). This defaults to 1.0.
+This specifies the ratio of the temperature of the REST2 region
+to the temperature of the rest of the system.</p>
+</dd>
+<dt>rest2_selection: str</dt><dd><p>A selection string for atoms to include in the REST2 region
+in addition to any perturbable molecules. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. If None, then all atoms
+within perturbable molecules will be included in the REST2
+region. When atoms within a perturbable molecule are also
+included in the selection, then only those atoms will be
+considered as part of the REST2 region. This allows REST2 to
+be applied to protein mutations.</p>
+<p>A selection string for atoms to include in the REST2 region in
+addition to the perturbable molecule. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. Selected atoms should be
+within the same molecule. If None, then only the perturbable
+molecule will be used for the REST2 region.</p>
 </dd>
 <dt>vacuum: bool (optional)</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
 set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
@@ -15290,10 +15900,10 @@ is operator.add by default.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mm.SelectorMDihedral.dynamics">
-<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_coulomb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_reset_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barostat_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qm_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.SelectorMDihedral.dynamics" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_coulomb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_reset_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barostat_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qm_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.SelectorMDihedral.dynamics" title="Link to this definition">¶</a></dt>
 <dd><p>Return a Dynamics object that can be used to perform
 dynamics of the molecule(s) in this view</p>
-<dl class="simple">
+<dl>
 <dt>cutoff: Length</dt><dd><p>The size of the non-bonded cutoff</p>
 </dd>
 <dt>cutoff_type: str</dt><dd><p>The type of cutoff to use, e.g. “PME”, “RF” etc.
@@ -15375,6 +15985,27 @@ specify the temperature.</p>
 <dt>pressure: pressure</dt><dd><p>The pressure at which to run the simulation. A
 microcanonical (NVE) or canonical (NVT) simulation will be
 run if the pressure is not set.</p>
+</dd>
+<dt>rest2_scale: float</dt><dd><p>The scaling factor to apply when running a REST2 simulation
+(Replica Exchange with Solute Tempering). This defaults to 1.0.
+This specifies the ratio of the temperature of the REST2 region
+to the temperature of the rest of the system.</p>
+</dd>
+<dt>rest2_selection: str</dt><dd><p>A selection string for atoms to include in the REST2 region
+in addition to any perturbable molecules. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. If None, then all atoms
+within perturbable molecules will be included in the REST2
+region. When atoms within a perturbable molecule are also
+included in the selection, then only those atoms will be
+considered as part of the REST2 region. This allows REST2 to
+be applied to protein mutations.</p>
+<p>A selection string for atoms to include in the REST2 region in
+addition to the perturbable molecule. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. Selected atoms should be
+within the same molecule. If None, then only the perturbable
+molecule will be used for the REST2 region.</p>
 </dd>
 <dt>vacuum: bool (optional)</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
 set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
@@ -16506,10 +17137,10 @@ is operator.add by default.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.mm.SelectorMImproper.dynamics">
-<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_coulomb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_reset_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barostat_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qm_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.SelectorMImproper.dynamics" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbable_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_constrained_energies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_end_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_perturbations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vacuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_coulomb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coulomb_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_reset_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barostat_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qm_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sire.mm.SelectorMImproper.dynamics" title="Link to this definition">¶</a></dt>
 <dd><p>Return a Dynamics object that can be used to perform
 dynamics of the molecule(s) in this view</p>
-<dl class="simple">
+<dl>
 <dt>cutoff: Length</dt><dd><p>The size of the non-bonded cutoff</p>
 </dd>
 <dt>cutoff_type: str</dt><dd><p>The type of cutoff to use, e.g. “PME”, “RF” etc.
@@ -16591,6 +17222,27 @@ specify the temperature.</p>
 <dt>pressure: pressure</dt><dd><p>The pressure at which to run the simulation. A
 microcanonical (NVE) or canonical (NVT) simulation will be
 run if the pressure is not set.</p>
+</dd>
+<dt>rest2_scale: float</dt><dd><p>The scaling factor to apply when running a REST2 simulation
+(Replica Exchange with Solute Tempering). This defaults to 1.0.
+This specifies the ratio of the temperature of the REST2 region
+to the temperature of the rest of the system.</p>
+</dd>
+<dt>rest2_selection: str</dt><dd><p>A selection string for atoms to include in the REST2 region
+in addition to any perturbable molecules. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. If None, then all atoms
+within perturbable molecules will be included in the REST2
+region. When atoms within a perturbable molecule are also
+included in the selection, then only those atoms will be
+considered as part of the REST2 region. This allows REST2 to
+be applied to protein mutations.</p>
+<p>A selection string for atoms to include in the REST2 region in
+addition to the perturbable molecule. For example,
+“molidx 0 and residx 0,1,2” would select atoms from the first
+three residues of the first molecule. Selected atoms should be
+within the same molecule. If None, then only the perturbable
+molecule will be used for the REST2 region.</p>
 </dd>
 <dt>vacuum: bool (optional)</dt><dd><p>Whether or not to run the simulation in vacuum. If this is
 set to <em class="xref py py-obj">True</em>, then the simulation space automatically be
@@ -17507,7 +18159,7 @@ to be viewed.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -17650,6 +18302,36 @@ to be viewed.</p>
 <li><a class="reference internal" href="#sire.mm.Angle.to_string"><code class="docutils literal notranslate"><span class="pre">Angle.to_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mm.Angle.typename"><code class="docutils literal notranslate"><span class="pre">Angle.typename()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mm.Angle.what"><code class="docutils literal notranslate"><span class="pre">Angle.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint"><code class="docutils literal notranslate"><span class="pre">AngleRestraint</span></code></a><ul>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.assign"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.atoms"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.clone"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.is_null"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.ktheta"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.ktheta()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.theta0"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.theta0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.to_string"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.typename"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraint.what"><code class="docutils literal notranslate"><span class="pre">AngleRestraint.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints"><code class="docutils literal notranslate"><span class="pre">AngleRestraints</span></code></a><ul>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.add"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.add()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.assign"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.at"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.at()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.clone"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.count"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.count()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.is_empty"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.is_empty()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.is_null"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.is_restraints"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.is_restraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.num_restraints"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.num_restraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.restraints"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.restraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.set_name"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.set_name()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.size"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.to_string"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.typename"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.AngleRestraints.what"><code class="docutils literal notranslate"><span class="pre">AngleRestraints.what()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#sire.mm.Bond"><code class="docutils literal notranslate"><span class="pre">Bond</span></code></a><ul>
@@ -17836,6 +18518,36 @@ to be viewed.</p>
 <li><a class="reference internal" href="#sire.mm.Dihedral.to_string"><code class="docutils literal notranslate"><span class="pre">Dihedral.to_string()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mm.Dihedral.typename"><code class="docutils literal notranslate"><span class="pre">Dihedral.typename()</span></code></a></li>
 <li><a class="reference internal" href="#sire.mm.Dihedral.what"><code class="docutils literal notranslate"><span class="pre">Dihedral.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint</span></code></a><ul>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.assign"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.atoms"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.atoms()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.clone"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.is_null"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.kphi"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.kphi()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.phi0"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.phi0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.to_string"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.typename"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraint.what"><code class="docutils literal notranslate"><span class="pre">DihedralRestraint.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints</span></code></a><ul>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.add"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.add()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.assign"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.at"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.at()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.clone"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.count"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.count()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.is_empty"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.is_empty()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.is_null"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.is_restraints"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.is_restraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.num_restraints"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.num_restraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.restraints"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.restraints()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.set_name"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.set_name()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.size"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.size()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.to_string"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.typename"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.mm.DihedralRestraints.what"><code class="docutils literal notranslate"><span class="pre">DihedralRestraints.what()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#sire.mm.Improper"><code class="docutils literal notranslate"><span class="pre">Improper</span></code></a><ul>
@@ -18494,7 +19206,7 @@ to be viewed.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

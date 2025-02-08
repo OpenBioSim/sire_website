@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Running Faster Free Energy Simulations - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -483,7 +483,7 @@ bonds with hydrogen atoms, we can make the simulation more stable by
 contraining the bonds that involve hydrogen atoms.</p>
 <p>We can choose the constraint to use via the <code class="docutils literal notranslate"><span class="pre">constraint</span></code> keyword, e.g.
 after loading the molecules and minimising,</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;merged_molecule.s3&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">link_to_reference</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">minimisation</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
@@ -801,7 +801,7 @@ ethane and methanol.</p>
 λ-window.</p>
 <p>We can now calculate the free energy using alchemlyb as before;</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">(</span><span class="s2">&quot;energy_fast_*.s3&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">BAR</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.estimators</span><span class="w"> </span><span class="kn">import</span> <span class="n">BAR</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BAR</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">delta_f_</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">])</span>
@@ -845,7 +845,7 @@ own simulations. Or take a look at
 <a class="reference external" href="https://github.com/openbiosim/somd2">somd2 software</a> if you are
 interested in higher-level interfaces to this functionality that
 automatically run more complex protocols.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 
 <span class="n">timestep</span> <span class="o">=</span> <span class="s2">&quot;4fs&quot;</span>
 <span class="n">energy_frequency</span> <span class="o">=</span> <span class="s2">&quot;0.4ps&quot;</span>
@@ -977,7 +977,7 @@ automatically run more complex protocols.</p>
         <span class="sa">f</span><span class="s2">&quot;energy_vacuum_</span><span class="si">{</span><span class="n">lambda_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.s3&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">BAR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.estimators</span><span class="w"> </span><span class="kn">import</span> <span class="n">BAR</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">morph</span><span class="o">.</span><span class="n">to_alchemlyb</span><span class="p">(</span><span class="s2">&quot;energy_water_*.s3&quot;</span><span class="p">)</span>
 
@@ -1029,10 +1029,10 @@ simulation.</p>
 </div>
 <p>We can check the convergence and get an error estimate as before. First
 the water phase;</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.convergence</span> <span class="kn">import</span> <span class="n">forward_backward_convergence</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alchemlyb.visualisation</span> <span class="kn">import</span> <span class="n">plot_convergence</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.convergence</span><span class="w"> </span><span class="kn">import</span> <span class="n">forward_backward_convergence</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.visualisation</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_convergence</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s3files</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;energy_water*.s3&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s3files</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
@@ -1103,7 +1103,7 @@ which are in the range of -5.99 kcal mol-1 to -6.26 kcal mol-1.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1141,7 +1141,7 @@ which are in the range of -5.99 kcal mol-1 to -6.26 kcal mol-1.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>

@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Trajectories - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -526,7 +526,7 @@ on exact coordinates.</p>
 <h2>Loading trajectories<a class="headerlink" href="#loading-trajectories" title="Link to this heading">¶</a></h2>
 <p>You load trajectories in the same way as loading any other file, e.g.
 using <a class="reference internal" href="../api/sire.html#sire.load" title="sire.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.load()</span></code></a>.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">num_frames</span><span class="p">())</span>
 <span class="go">500</span>
@@ -569,7 +569,7 @@ want the trajectory frames to be placed. Assuming you have trajectory
 files <code class="docutils literal notranslate"><span class="pre">block1.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">block2.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">block3.rst</span></code>, with the topology
 in file <code class="docutils literal notranslate"><span class="pre">topology.prm</span></code>, then you could load
 them as a single trajectory via</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;topology.prm&quot;</span><span class="p">,</span> <span class="s2">&quot;block1.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;block2.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;block3.rst&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -588,7 +588,7 @@ e.g.</p>
 <section id="saving-trajectories">
 <h2>Saving trajectories<a class="headerlink" href="#saving-trajectories" title="Link to this heading">¶</a></h2>
 <p>You can save trajectories using the <a class="reference internal" href="../api/sire.html#sire.save" title="sire.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.save()</span></code></a> function. For example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RST&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -690,7 +690,7 @@ and will also write the topology to a <a class="reference internal" href="../api
 </div>
 <p>This <code class="docutils literal notranslate"><span class="pre">output.pdb</span></code> is actually a directory that contains individual PDB
 files for each frame, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;output.pdb&quot;</span><span class="p">)</span>
 <span class="go">[&#39;frame_049_98.pdb&#39;,</span>
 <span class="go"> &#39;frame_040_80.pdb&#39;,</span>
@@ -717,7 +717,7 @@ directory (together with a topology file), e.g.</p>
 <h2>Visualising trajectories<a class="headerlink" href="#visualising-trajectories" title="Link to this heading">¶</a></h2>
 <p>Viewing trajectories is very simple - just call <code class="docutils literal notranslate"><span class="pre">.view()</span></code> on any
 view of molecules that contains a trajectory.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
 </pre></div>
@@ -748,7 +748,7 @@ re-wrap molecules into periodic boxes, align frames against a selection,
 and also average (smooth) coordinates across multiple frames.</p>
 <p>For example, here we will align all frames against the selection of
 carbon atoms.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;element C&quot;</span><span class="p">)</span>
 </pre></div>
@@ -818,7 +818,7 @@ which to align the trajectory, and also supplying
 an <a class="reference internal" href="../api/mol.html#sire.mol.AtomMapping" title="sire.mol.AtomMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.AtomMapping</span></code></a> object that describes how atoms in
 the reference map to atoms in the trajectory.</p>
 <p>For example, imagine you have loaded the same molecule in two files.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ref_mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">))</span>
 </pre></div>
@@ -850,7 +850,7 @@ e.g.</p>
 A useful type of analysis is calculating the interaction energy between
 molecules. For example, you could use the <code class="docutils literal notranslate"><span class="pre">.energy()</span></code> function to calculate
 total energies of each frame,</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.traj&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">trajectory</span><span class="p">()</span><span class="o">.</span><span class="n">energy</span><span class="p">())</span>
 <span class="go">     frame        time    1-4_LJ  1-4_coulomb          LJ      angle      bond      coulomb   dihedral  improper  intra_LJ  intra_coulomb        total</span>
@@ -912,7 +912,7 @@ root directory in your script.</p>
 <p>You can also use the <a class="reference internal" href="../api/base.html#sire.base.PageCache" title="sire.base.PageCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">PageCache</span></code></a> class directly to
 create caches for your own objects. For example, here we will create a
 cache into which we will place some data.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cache</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">PageCache</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">handle1</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load_test_files</span><span class="p">(</span><span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">)</span>
@@ -966,7 +966,7 @@ picklable.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1011,7 +1011,7 @@ picklable.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

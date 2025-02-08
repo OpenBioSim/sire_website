@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Angle Views and Properties - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -517,7 +517,7 @@ the size of the angle based on the coordinates of the atoms.</p>
 are returned together with their units.</p>
 <p>You can convert to any compatible units you want using the <code class="docutils literal notranslate"><span class="pre">.to()</span></code>
 function, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sire.units</span> <span class="kn">import</span> <span class="n">radians</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">radians</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">radians</span><span class="p">))</span>
 <span class="go">1.8070966851826593</span>
 </pre></div>
@@ -537,7 +537,7 @@ energy of the angle. This is reported in units of kilocalories per mole.</p>
 </pre></div>
 </div>
 <p>This could be converted to kilojoules per mole…</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sire.units</span> <span class="kn">import</span> <span class="n">kJ_per_mol</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">kJ_per_mol</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">kJ_per_mol</span><span class="p">))</span>
 <span class="go">1.5851034416908067</span>
 </pre></div>
@@ -570,7 +570,7 @@ from the file.</p>
 </div>
 <p>Just as for bonds, we can use a loop to find all of the angles that
 have a high energy, e.g.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sire.units</span> <span class="kn">import</span> <span class="n">kcal_per_mol</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">kcal_per_mol</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">mols</span><span class="o">.</span><span class="n">angles</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="k">if</span> <span class="n">angle</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">kcal_per_mol</span><span class="p">:</span>
 <span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">angle</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -656,7 +656,7 @@ of a loop.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -691,7 +691,7 @@ of a loop.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>

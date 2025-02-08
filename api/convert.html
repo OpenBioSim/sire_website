@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Public API - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -781,10 +781,10 @@ a duplicate will cause an error to be raised.</p>
 <dt class="sig sig-object py" id="sire.convert.openmm.LambdaLever.set_lambda">
 <span class="sig-name descname"><span class="pre">set_lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.convert.openmm.LambdaLever.set_lambda" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>setLambda( (LambdaLever)arg1, (object)system, (float)lambda_value [, (bool)update_constraints=True]) -&gt; float :</dt><dd><dl class="simple">
+<dt>setLambda( (LambdaLever)arg1, (object)system, (float)lambda_value [, (float)rest2_scale=1.0 [, (bool)update_constraints=True]]) -&gt; float :</dt><dd><dl class="simple">
 <dt>Set the value of lambda in the passed context. Returns the</dt><dd><p>actual value of lambda set.</p>
 </dd>
-<dt>C++ signature :</dt><dd><p>double setLambda(SireOpenMM::LambdaLever {lvalue},OpenMM::Context {lvalue},double [,bool=True])</p>
+<dt>C++ signature :</dt><dd><p>double setLambda(SireOpenMM::LambdaLever {lvalue},OpenMM::Context {lvalue},double [,double=1.0 [,bool=True]])</p>
 </dd>
 </dl>
 </dd>
@@ -1811,11 +1811,19 @@ platform used to run the simulation.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.get_rest2_scale">
+<span class="sig-name descname"><span class="pre">get_rest2_scale</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.get_rest2_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.get_rest2_scale" title="Link to this definition">¶</a></dt>
+<dd><p>Return the temperature scale factor for the REST2 region.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.set_lambda">
-<span class="sig-name descname"><span class="pre">set_lambda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_lambda"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_lambda" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_lambda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest2_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_lambda"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_lambda" title="Link to this definition">¶</a></dt>
 <dd><p>Update the parameters in the context to set the lambda value
-to ‘lamval’. If update_constraints is True then the constraints
-will be updated to match the new value of lambda</p>
+to ‘lambda_value’. The ‘rest2_scale’ defines the temperature of
+the REST2 region relative to the rest of the system. If
+‘update_constraints’ is True then the constraints will be updated
+to match the new value of lambda.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1838,6 +1846,12 @@ construction. This function may be removed.</p>
 <dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.set_pressure">
 <span class="sig-name descname"><span class="pre">set_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_pressure" title="Link to this definition">¶</a></dt>
 <dd><p>Set the target pressure for the dynamics.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.convert.openmm.SOMMContext.set_rest2_scale">
+<span class="sig-name descname"><span class="pre">set_rest2_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest2_scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/legacy/Convert/_sommcontext.html#SOMMContext.set_rest2_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.convert.openmm.SOMMContext.set_rest2_scale" title="Link to this definition">¶</a></dt>
+<dd><p>Set the temperature scale factor for the REST2 region.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1892,7 +1906,7 @@ XML to ‘f’ (either a filename, or a FILE object)</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -2037,10 +2051,12 @@ XML to ‘f’ (either a filename, or a FILE object)</p>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_platform_properties"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_platform_properties()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_platform_property"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_platform_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_potential_energy"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_potential_energy()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.get_rest2_scale"><code class="docutils literal notranslate"><span class="pre">SOMMContext.get_rest2_scale()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_lambda"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_lambda()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_lambda_schedule"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_lambda_schedule()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_platform_property"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_platform_property()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_pressure"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_pressure()</span></code></a></li>
+<li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_rest2_scale"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_rest2_scale()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.set_temperature"><code class="docutils literal notranslate"><span class="pre">SOMMContext.set_temperature()</span></code></a></li>
 <li><a class="reference internal" href="#sire.convert.openmm.SOMMContext.to_xml"><code class="docutils literal notranslate"><span class="pre">SOMMContext.to_xml()</span></code></a></li>
 </ul>
@@ -2056,7 +2072,7 @@ XML to ‘f’ (either a filename, or a FILE object)</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

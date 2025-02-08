@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>sire.mol - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -305,7 +305,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -500,15 +500,15 @@
 <span class="p">]</span>
 
 
-<span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_Mol</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_Mol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
 
 <span class="c1"># Imported as we need to ensure that Base is pythonized before</span>
 <span class="c1"># loading the rest of this module</span>
-<span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_Base</span>  <span class="c1"># noqa: F401</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_Base</span>  <span class="c1"># noqa: F401</span>
 
 
-<span class="kn">from</span> <span class="nn">..legacy.Mol</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.Mol</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">AtomName</span><span class="p">,</span>
     <span class="n">AtomNum</span><span class="p">,</span>
     <span class="n">AtomIdx</span><span class="p">,</span>
@@ -557,13 +557,13 @@
     <span class="n">AtomMatchM</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">._cursor</span> <span class="kn">import</span> <span class="n">Cursor</span><span class="p">,</span> <span class="n">Cursors</span><span class="p">,</span> <span class="n">CursorsM</span>
-<span class="kn">from</span> <span class="nn">._minimisation</span> <span class="kn">import</span> <span class="n">Minimisation</span>
-<span class="kn">from</span> <span class="nn">._dynamics</span> <span class="kn">import</span> <span class="n">Dynamics</span>
-<span class="kn">from</span> <span class="nn">._trajectory</span> <span class="kn">import</span> <span class="n">TrajectoryIterator</span>
-<span class="kn">from</span> <span class="nn">._element</span> <span class="kn">import</span> <span class="n">Element</span>
-<span class="kn">from</span> <span class="nn">._view</span> <span class="kn">import</span> <span class="n">view</span> <span class="k">as</span> <span class="n">_viewfunc</span>
-<span class="kn">from</span> <span class="nn">._smiles</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._cursor</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cursor</span><span class="p">,</span> <span class="n">Cursors</span><span class="p">,</span> <span class="n">CursorsM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._minimisation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Minimisation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._dynamics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dynamics</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._trajectory</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrajectoryIterator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._element</span><span class="w"> </span><span class="kn">import</span> <span class="n">Element</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._view</span><span class="w"> </span><span class="kn">import</span> <span class="n">view</span> <span class="k">as</span> <span class="n">_viewfunc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._smiles</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">_to_smiles</span><span class="p">,</span>
     <span class="n">_to_smarts</span><span class="p">,</span>
     <span class="n">_view2d</span><span class="p">,</span>
@@ -573,7 +573,7 @@
 <span class="p">)</span>
 
 <span class="c1"># Imported to make sure that Vector has units attached</span>
-<span class="kn">from</span> <span class="nn">..maths</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">_Vector</span>  <span class="c1"># noqa: F401</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..maths</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">_Vector</span>  <span class="c1"># noqa: F401</span>
 
 <span class="n">_use_new_api</span><span class="p">()</span>
 
@@ -586,7 +586,7 @@
 
 <div class="viewcode-block" id="selection_to_atoms">
 <a class="viewcode-back" href="../../api/mol.html#sire.mol.selection_to_atoms">[docs]</a>
-<span class="k">def</span> <span class="nf">selection_to_atoms</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">atoms</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">selection_to_atoms</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">atoms</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert the passed selection to a list of atoms.</span>
 
@@ -654,7 +654,7 @@
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="s2">&quot;atoms&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">atoms</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
 
-    <span class="kn">from</span> <span class="nn">..legacy.Base</span> <span class="kn">import</span> <span class="n">NumberProperty</span><span class="p">,</span> <span class="n">IntegerArrayProperty</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.Base</span><span class="w"> </span><span class="kn">import</span> <span class="n">NumberProperty</span><span class="p">,</span> <span class="n">IntegerArrayProperty</span>
 
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">mols</span><span class="o">.</span><span class="n">atoms</span><span class="p">()[</span><span class="n">atoms</span><span class="p">]</span>
@@ -668,14 +668,14 @@
 
 <div class="viewcode-block" id="is_water">
 <a class="viewcode-back" href="../../api/mol.html#sire.mol.is_water">[docs]</a>
-<span class="k">def</span> <span class="nf">is_water</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_water</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return whether or not the passed molecule (or collection of molecules)</span>
 <span class="sd">    are water. This returns a single True or False if a single molecule</span>
 <span class="sd">    is passed, or a list of True/False values if a molecule collection</span>
 <span class="sd">    is passed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -693,75 +693,75 @@
 
 <span class="c1"># Here I will define some functions that make accessing</span>
 <span class="c1"># things from moleculeviews more convenient</span>
-<span class="k">def</span> <span class="nf">__is_molecule_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_molecule_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">Molecule</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorMol</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_bond_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_bond_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
-    <span class="kn">from</span> <span class="nn">sire.mm</span> <span class="kn">import</span> <span class="n">Bond</span><span class="p">,</span> <span class="n">SelectorBond</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">sire.mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bond</span><span class="p">,</span> <span class="n">SelectorBond</span>
 
     <span class="k">return</span> <span class="n">Bond</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorBond</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_angle_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_angle_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
-    <span class="kn">from</span> <span class="nn">sire.mm</span> <span class="kn">import</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">SelectorAngle</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">sire.mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">SelectorAngle</span>
 
     <span class="k">return</span> <span class="n">Angle</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorAngle</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_dihedral_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_dihedral_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
-    <span class="kn">from</span> <span class="nn">sire.mm</span> <span class="kn">import</span> <span class="n">Dihedral</span><span class="p">,</span> <span class="n">SelectorDihedral</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">sire.mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dihedral</span><span class="p">,</span> <span class="n">SelectorDihedral</span>
 
     <span class="k">return</span> <span class="n">Dihedral</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorDihedral</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_improper_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_improper_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
-    <span class="kn">from</span> <span class="nn">sire.mm</span> <span class="kn">import</span> <span class="n">Improper</span><span class="p">,</span> <span class="n">SelectorImproper</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">sire.mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Improper</span><span class="p">,</span> <span class="n">SelectorImproper</span>
 
     <span class="k">return</span> <span class="n">Improper</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorImproper</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_atom_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_atom_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">Atom</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">Selector_Atom_</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorM_Atom_</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_residue_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_residue_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">Residue</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">Selector_Residue_</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorM_Residue_</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_chain_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_chain_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">Chain</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">Selector_Chain_</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorM_Chain_</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_segment_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_segment_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">Segment</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">Selector_Segment_</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorM_Segment_</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_cutgroup_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_cutgroup_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">CutGroup</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">Selector_CutGroup_</span> <span class="ow">in</span> <span class="n">mro</span> <span class="ow">or</span> <span class="n">SelectorM_CutGroup_</span> <span class="ow">in</span> <span class="n">mro</span>
 
 
-<span class="k">def</span> <span class="nf">__is_selector_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_selector_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">t</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">what</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;SireMol::Selector&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">t</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;SireMM::Selector&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span>
@@ -769,13 +769,13 @@
         <span class="k">return</span> <span class="kc">False</span>
 
 
-<span class="k">def</span> <span class="nf">__is_internal_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">Bond</span><span class="p">,</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">Dihedral</span><span class="p">,</span> <span class="n">Improper</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_internal_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bond</span><span class="p">,</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">Dihedral</span><span class="p">,</span> <span class="n">Improper</span>
 
     <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Bond</span><span class="p">,</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">Dihedral</span><span class="p">,</span> <span class="n">Improper</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">__is_list_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__is_list_class</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
@@ -785,7 +785,7 @@
             <span class="k">return</span> <span class="kc">False</span>
 
 
-<span class="k">def</span> <span class="nf">__fix_obj</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fix_obj</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This is needed because MolViewPtr objects that hold Selector_T_ types</span>
 <span class="sd">    do not convert properly.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -807,7 +807,7 @@
         <span class="k">return</span> <span class="n">obj</span>
 
 
-<span class="k">def</span> <span class="nf">__from_select_result</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__from_select_result</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the passed SelectResult from a search into the</span>
 <span class="sd">    most appropriate MoleculeView-derived class</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -875,29 +875,29 @@
     <span class="k">elif</span> <span class="n">typ</span> <span class="o">==</span> <span class="n">AtomMatch</span><span class="o">.</span><span class="n">typename</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">AtomMatchM</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorBond</span><span class="p">,</span> <span class="n">SelectorMBond</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorBond</span><span class="p">,</span> <span class="n">SelectorMBond</span>
 
         <span class="k">if</span> <span class="n">SelectorBond</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">list_at</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">SelectorMBond</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorAngle</span><span class="p">,</span> <span class="n">SelectorMAngle</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorAngle</span><span class="p">,</span> <span class="n">SelectorMAngle</span>
 
         <span class="k">if</span> <span class="n">SelectorAngle</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">list_at</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">SelectorMAngle</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorDihedral</span><span class="p">,</span> <span class="n">SelectorMDihedral</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorDihedral</span><span class="p">,</span> <span class="n">SelectorMDihedral</span>
 
         <span class="k">if</span> <span class="n">SelectorDihedral</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">list_at</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">SelectorMDihedral</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorImproper</span><span class="p">,</span> <span class="n">SelectorMImproper</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorImproper</span><span class="p">,</span> <span class="n">SelectorMImproper</span>
 
         <span class="k">if</span> <span class="n">SelectorImproper</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">list_at</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">SelectorMImproper</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
         <span class="c1"># We really shouldn&#39;t get here, and if we do, then difficult</span>
         <span class="c1"># to diagnose errors will propogate</span>
-        <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">Console</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">Console</span>
 
         <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;Unrecognised type </span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">. &quot;</span>
@@ -911,16 +911,16 @@
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">__select_call__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">molecules</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__select_call__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">molecules</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for the desired objects in the passed molecules,</span>
 <span class="sd">    optionally passing in a property map to identify the properties</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">System</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
 
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span> <span class="ow">is</span> <span class="n">System</span><span class="p">:</span>
         <span class="n">molecules</span> <span class="o">=</span> <span class="n">molecules</span><span class="o">.</span><span class="n">_system</span>
 
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -932,10 +932,10 @@
     <span class="n">Select</span><span class="o">.</span><span class="fm">__call__</span> <span class="o">=</span> <span class="n">__select_call__</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__getitem__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__getitem__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="nb">map</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
@@ -1048,7 +1048,7 @@
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">__idx_to_atoms</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__idx_to_atoms</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="s2">&quot;atoms&quot;</span><span class="p">):</span>
         <span class="n">atoms</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">atoms</span><span class="p">[</span><span class="n">atoms</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">idx</span><span class="o">.</span><span class="n">atoms</span><span class="p">())]</span>
@@ -1056,10 +1056,10 @@
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__atoms__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__atoms__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">error_on_missing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig__atoms</span><span class="p">()</span>
@@ -1080,7 +1080,7 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__atom__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__atom__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig__atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 
@@ -1096,7 +1096,7 @@
     <span class="k">return</span> <span class="n">atoms</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__bonds__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__bonds__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span>
     <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1108,27 +1108,27 @@
         <span class="n">idx</span> <span class="o">=</span> <span class="n">idx1</span>
         <span class="n">idx1</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">MoleculeView</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeView</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span> <span class="n">MoleculeView</span><span class="p">):</span>
         <span class="c1"># this is a single-molecule view</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorBond</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorBond</span>
 
         <span class="n">C</span> <span class="o">=</span> <span class="n">SelectorBond</span>
 
-        <span class="k">def</span> <span class="nf">_fromBondID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">bondid</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_fromBondID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">bondid</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">SelectorBond</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">bondid</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># this is a multi-molecule container</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorMBond</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMBond</span>
 
         <span class="n">C</span> <span class="o">=</span> <span class="n">SelectorMBond</span>
 
-        <span class="k">def</span> <span class="nf">_fromBondID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">bondid</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_fromBondID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">bondid</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">SelectorMBond</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">to_select_result</span><span class="p">(),</span> <span class="n">bondid</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1156,7 +1156,7 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__angles__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__angles__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span>
     <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1173,27 +1173,27 @@
         <span class="n">idx</span> <span class="o">=</span> <span class="n">idx1</span>
         <span class="n">idx1</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">MoleculeView</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeView</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span> <span class="n">MoleculeView</span><span class="p">):</span>
         <span class="c1"># this is a single-molecule view</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorAngle</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorAngle</span>
 
         <span class="n">C</span> <span class="o">=</span> <span class="n">SelectorAngle</span>
 
-        <span class="k">def</span> <span class="nf">_fromAngleID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">angid</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_fromAngleID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">angid</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">SelectorAngle</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">angid</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># this is a multi-molecule container</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorMAngle</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMAngle</span>
 
         <span class="n">C</span> <span class="o">=</span> <span class="n">SelectorMAngle</span>
 
-        <span class="k">def</span> <span class="nf">_fromAngleID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">angid</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_fromAngleID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">angid</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">SelectorMAngle</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">to_select_result</span><span class="p">(),</span> <span class="n">angid</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1228,7 +1228,7 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__dihedrals__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__dihedrals__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span>
     <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1250,27 +1250,27 @@
         <span class="n">idx</span> <span class="o">=</span> <span class="n">idx1</span>
         <span class="n">idx1</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">MoleculeView</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeView</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span> <span class="n">MoleculeView</span><span class="p">):</span>
         <span class="c1"># this is a single-molecule view</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorDihedral</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorDihedral</span>
 
         <span class="n">C</span> <span class="o">=</span> <span class="n">SelectorDihedral</span>
 
-        <span class="k">def</span> <span class="nf">_fromDihedralID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dihid</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_fromDihedralID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dihid</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">SelectorDihedral</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dihid</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># this is a multi-molecule container</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorMDihedral</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMDihedral</span>
 
         <span class="n">C</span> <span class="o">=</span> <span class="n">SelectorMDihedral</span>
 
-        <span class="k">def</span> <span class="nf">_fromDihedralID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dihid</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_fromDihedralID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dihid</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">SelectorMDihedral</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">to_select_result</span><span class="p">(),</span> <span class="n">dihid</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1313,7 +1313,7 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__impropers__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__impropers__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span>
     <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1335,27 +1335,27 @@
         <span class="n">idx</span> <span class="o">=</span> <span class="n">idx1</span>
         <span class="n">idx1</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">MoleculeView</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeView</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span> <span class="n">MoleculeView</span><span class="p">):</span>
         <span class="c1"># this is a single-molecule view</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorImproper</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorImproper</span>
 
         <span class="n">C</span> <span class="o">=</span> <span class="n">SelectorImproper</span>
 
-        <span class="k">def</span> <span class="nf">_fromImproperID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">impid</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_fromImproperID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">impid</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">SelectorImproper</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">impid</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># this is a multi-molecule container</span>
-        <span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">SelectorMImproper</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMImproper</span>
 
         <span class="n">C</span> <span class="o">=</span> <span class="n">SelectorMImproper</span>
 
-        <span class="k">def</span> <span class="nf">_fromImproperID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">impid</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_fromImproperID</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">impid</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">SelectorMImproper</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">to_select_result</span><span class="p">(),</span> <span class="n">impid</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1398,7 +1398,7 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__bond__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__bond__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">bonds</span> <span class="o">=</span> <span class="n">__fixed__bonds__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bonds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1411,7 +1411,7 @@
     <span class="k">return</span> <span class="n">bonds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__angle__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__angle__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">angles</span> <span class="o">=</span> <span class="n">__fixed__angles__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1424,7 +1424,7 @@
     <span class="k">return</span> <span class="n">angles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__dihedral__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx3</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__dihedral__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx3</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">dihedrals</span> <span class="o">=</span> <span class="n">__fixed__dihedrals__</span><span class="p">(</span>
         <span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span><span class="p">,</span> <span class="n">idx3</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span>
     <span class="p">)</span>
@@ -1439,7 +1439,7 @@
     <span class="k">return</span> <span class="n">dihedrals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__improper__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx3</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__improper__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx3</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">impropers</span> <span class="o">=</span> <span class="n">__fixed__impropers__</span><span class="p">(</span>
         <span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span><span class="p">,</span> <span class="n">idx3</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span>
     <span class="p">)</span>
@@ -1454,10 +1454,10 @@
     <span class="k">return</span> <span class="n">impropers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__residues__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__residues__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">error_on_missing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig__residues</span><span class="p">()</span>
@@ -1478,10 +1478,10 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__chains__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__chains__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">error_on_missing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig__chains</span><span class="p">()</span>
@@ -1502,10 +1502,10 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__segments__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__segments__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">error_on_missing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig__segments</span><span class="p">()</span>
@@ -1516,7 +1516,7 @@
         <span class="n">idxs</span> <span class="o">=</span> <span class="n">segments</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">idx</span><span class="o">.</span><span class="n">segments</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">segments</span><span class="o">.</span><span class="n">__orig__segments</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
         <span class="n">result</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig__segments</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
 
@@ -1528,10 +1528,10 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fixed__molecules__</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fixed__molecules__</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auto_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">error_on_missing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="k">if</span> <span class="n">idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig__molecules</span><span class="p">()</span>
@@ -1552,7 +1552,7 @@
         <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">__fix_getitem</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__fix_getitem</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="s2">&quot;__orig__getitem__&quot;</span><span class="p">):</span>
         <span class="n">C</span><span class="o">.</span><span class="n">__orig__getitem__</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="fm">__getitem__</span>
 
@@ -1637,11 +1637,11 @@
     <span class="n">__fix_getitem</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_atom_coordinates</span><span class="p">(</span><span class="n">atom</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_atom_coordinates</span><span class="p">(</span><span class="n">atom</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
@@ -1657,7 +1657,7 @@
 <span class="n">Atom</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">atom</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">:</span> <span class="n">atom</span><span class="o">.</span><span class="n">coordinates</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">z</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">__atomcoords__str__</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__atomcoords__str__</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1686,8 +1686,8 @@
 <span class="n">AtomCoords</span><span class="o">.</span><span class="fm">__repr__</span> <span class="o">=</span> <span class="n">__atomcoords__str__</span>
 
 
-<span class="k">def</span> <span class="nf">_add_evals</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_add_evals</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="n">obj</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span><span class="o">.</span><span class="n">mass</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
     <span class="n">obj</span><span class="o">.</span><span class="n">charge</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span><span class="o">.</span><span class="n">charge</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
@@ -1700,10 +1700,10 @@
     <span class="n">obj</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">coordinates</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span><span class="o">.</span><span class="n">z</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">_get_container_property</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_container_property</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="n">vals</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">ProgressBar</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProgressBar</span>
 
     <span class="k">with</span> <span class="n">ProgressBar</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;Extract property&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">bar</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
@@ -1719,7 +1719,7 @@
     <span class="k">return</span> <span class="n">vals</span>
 
 
-<span class="k">def</span> <span class="nf">_get_property</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_property</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;__orig__property&quot;</span><span class="p">):</span>
         <span class="c1"># get the property directly</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1740,7 +1740,7 @@
     <span class="n">prop</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
     <span class="c1"># Now extract the bits we want</span>
-    <span class="kn">import</span> <span class="nn">sire</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">sire</span>
 
     <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">prop</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">sire</span><span class="o">.</span><span class="n">legacy</span><span class="o">.</span><span class="n">Mol</span><span class="o">.</span><span class="n">AtomProp</span><span class="p">):</span>
         <span class="n">vals</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1774,7 +1774,7 @@
         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not find property </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_apply</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_apply</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Call the passed function on all views in the container,</span>
 <span class="sd">    appending the result to a list of results, which</span>
@@ -1798,7 +1798,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">ProgressBar</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProgressBar</span>
 
     <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="o">==</span> <span class="n">func</span><span class="p">:</span>
         <span class="c1"># we calling a named function</span>
@@ -1817,7 +1817,7 @@
     <span class="k">return</span> <span class="n">result</span>
 
 
-<span class="k">def</span> <span class="nf">_apply_reduce</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">reduction_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_apply_reduce</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">reduction_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Call the passed function on all views in the container,</span>
 <span class="sd">    reducing the result into a single value via the &#39;reduce&#39; function.</span>
@@ -1850,16 +1850,16 @@
 <span class="sd">        result: The reduced result</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">reduction_func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">add</span>
 
         <span class="n">reduction_func</span> <span class="o">=</span> <span class="n">add</span>
 
-    <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">reduce</span>
 
     <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">reduction_func</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">_add_apply_func</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_add_apply_func</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;apply&quot;</span><span class="p">):</span>
         <span class="k">return</span>
 
@@ -1867,7 +1867,7 @@
     <span class="n">obj</span><span class="o">.</span><span class="n">apply_reduce</span> <span class="o">=</span> <span class="n">_apply_reduce</span>
 
 
-<span class="k">def</span> <span class="nf">_add_property_func</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_add_property_func</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;__orig__property&quot;</span><span class="p">):</span>
         <span class="k">return</span>
 
@@ -1894,7 +1894,7 @@
     <span class="n">_add_property_func</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_molecule</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_molecule</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return the molecule that contains this view. If &#39;id&#39; is specified</span>
 <span class="sd">    then this will check that the ID matches this molecule before</span>
@@ -1908,12 +1908,12 @@
     <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig__molecule</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">SelectorMol</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMol</span>
 
         <span class="k">return</span> <span class="n">SelectorMol</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_molecules</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_molecules</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return the molecule that contains this view as a list of molecules,</span>
 <span class="sd">    containing just a single molecule.</span>
@@ -1928,7 +1928,7 @@
 <span class="sd">    sire.mol.SelectorMol: A collection containing only a single molecule</span>
 <span class="sd">                          that contains this view.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">SelectorMol</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMol</span>
 
     <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">SelectorMol</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span>
@@ -1942,7 +1942,7 @@
     <span class="n">MoleculeView</span><span class="o">.</span><span class="n">molecules</span> <span class="o">=</span> <span class="n">_molecules</span>
 
 
-<span class="k">def</span> <span class="nf">_get_atom_mass</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_atom_mass</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">x</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;element&quot;</span><span class="p">):</span>
@@ -1954,7 +1954,7 @@
 <span class="n">Atom</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">_get_atom_mass</span>
 
 
-<span class="k">def</span> <span class="nf">_get_atom_charge</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_atom_charge</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;charge&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;charge&quot;</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">x</span><span class="o">.</span><span class="n">has_property</span><span class="p">(</span><span class="s2">&quot;formal_charge&quot;</span><span class="p">):</span>
@@ -1968,17 +1968,17 @@
 <span class="n">Molecule</span><span class="o">.</span><span class="n">connectivity</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;connectivity&quot;</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">__molecule__add__</span><span class="p">(</span><span class="n">mol0</span><span class="p">,</span> <span class="n">mol1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">__molecule__add__</span><span class="p">(</span><span class="n">mol0</span><span class="p">,</span> <span class="n">mol1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Combine two molecules together into a system.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">System</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
 
     <span class="n">mols</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
     <span class="n">mols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mol0</span><span class="p">)</span>
     <span class="n">mols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mol1</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..vol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cartesian</span>
 
     <span class="n">mols</span><span class="o">.</span><span class="n">set_space</span><span class="p">(</span><span class="n">Cartesian</span><span class="p">())</span>
     <span class="n">mols</span><span class="o">.</span><span class="n">set_time</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1993,12 +1993,12 @@
 <span class="c1"># public API</span>
 
 
-<span class="k">def</span> <span class="nf">_cursor</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_cursor</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a Cursor that can be used to edit the properties</span>
 <span class="sd">    of this view</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
 
     <span class="k">return</span> <span class="n">Cursor</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">))</span>
 
@@ -2010,7 +2010,7 @@
 <span class="n">Molecule</span><span class="o">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">_cursor</span>
 
 
-<span class="k">def</span> <span class="nf">_dynamics</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_dynamics</span><span class="p">(</span>
     <span class="n">view</span><span class="p">,</span>
     <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">cutoff_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -2029,6 +2029,8 @@
     <span class="n">ignore_perturbations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">rest2_scale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">rest2_selection</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">vacuum</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">shift_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">shift_coulomb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -2148,6 +2150,30 @@
 <span class="sd">        microcanonical (NVE) or canonical (NVT) simulation will be</span>
 <span class="sd">        run if the pressure is not set.</span>
 
+<span class="sd">    rest2_scale: float</span>
+<span class="sd">        The scaling factor to apply when running a REST2 simulation</span>
+<span class="sd">        (Replica Exchange with Solute Tempering). This defaults to 1.0.</span>
+<span class="sd">        This specifies the ratio of the temperature of the REST2 region</span>
+<span class="sd">        to the temperature of the rest of the system.</span>
+
+<span class="sd">    rest2_selection: str</span>
+<span class="sd">        A selection string for atoms to include in the REST2 region</span>
+<span class="sd">        in addition to any perturbable molecules. For example,</span>
+<span class="sd">        &quot;molidx 0 and residx 0,1,2&quot; would select atoms from the first</span>
+<span class="sd">        three residues of the first molecule. If None, then all atoms</span>
+<span class="sd">        within perturbable molecules will be included in the REST2</span>
+<span class="sd">        region. When atoms within a perturbable molecule are also</span>
+<span class="sd">        included in the selection, then only those atoms will be</span>
+<span class="sd">        considered as part of the REST2 region. This allows REST2 to</span>
+<span class="sd">        be applied to protein mutations.</span>
+
+<span class="sd">        A selection string for atoms to include in the REST2 region in</span>
+<span class="sd">        addition to the perturbable molecule. For example,</span>
+<span class="sd">        &quot;molidx 0 and residx 0,1,2&quot; would select atoms from the first</span>
+<span class="sd">        three residues of the first molecule. Selected atoms should be</span>
+<span class="sd">        within the same molecule. If None, then only the perturbable</span>
+<span class="sd">        molecule will be used for the REST2 region.</span>
+
 <span class="sd">    vacuum: bool (optional)</span>
 <span class="sd">        Whether or not to run the simulation in vacuum. If this is</span>
 <span class="sd">        set to `True`, then the simulation space automatically be</span>
@@ -2229,14 +2255,14 @@
 <span class="sd">        the arguments above will be overridden by the argument</span>
 <span class="sd">        value</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
-    <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">System</span>
-    <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">u</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">u</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">vacuum</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..vol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cartesian</span>
 
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
 
@@ -2262,13 +2288,13 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;space&quot;</span><span class="p">]))</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..vol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cartesian</span>
 
             <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
 
     <span class="c1"># Set default values if these have not been set</span>
     <span class="k">if</span> <span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;cutoff&quot;</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..units</span><span class="w"> </span><span class="kn">import</span> <span class="n">angstrom</span>
 
         <span class="n">cutoff</span> <span class="o">=</span> <span class="mf">7.5</span> <span class="o">*</span> <span class="n">angstrom</span>
 
@@ -2276,7 +2302,7 @@
         <span class="n">cutoff_type</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span>
 
     <span class="k">if</span> <span class="n">timestep</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;timestep&quot;</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">femtosecond</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..units</span><span class="w"> </span><span class="kn">import</span> <span class="n">femtosecond</span>
 
         <span class="n">timestep</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">femtosecond</span>
     <span class="k">elif</span> <span class="n">timestep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -2285,7 +2311,7 @@
         <span class="n">timestep</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;timestep&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
 
     <span class="k">if</span> <span class="n">save_frequency</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;save_frequency&quot;</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">picosecond</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..units</span><span class="w"> </span><span class="kn">import</span> <span class="n">picosecond</span>
 
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;save_frequency&quot;</span><span class="p">,</span> <span class="mi">25</span> <span class="o">*</span> <span class="n">picosecond</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">save_frequency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -2313,6 +2339,12 @@
     <span class="k">if</span> <span class="n">pressure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">pressure</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;pressure&quot;</span><span class="p">,</span> <span class="n">pressure</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">rest2_scale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;rest2_scale&quot;</span><span class="p">,</span> <span class="n">rest2_scale</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">rest2_selection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;rest2_selection&quot;</span><span class="p">,</span> <span class="n">rest2_selection</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;device&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
@@ -2409,7 +2441,7 @@
     <span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_minimisation</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_minimisation</span><span class="p">(</span>
     <span class="n">view</span><span class="p">,</span>
     <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">cutoff_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -2549,13 +2581,13 @@
 <span class="sd">        the arguments above will be overridden by the argument</span>
 <span class="sd">        value</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">create_map</span>
-    <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">System</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
 
     <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">vacuum</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..vol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cartesian</span>
 
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
 
@@ -2581,13 +2613,13 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="s2">&quot;space&quot;</span><span class="p">]))</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..vol</span> <span class="kn">import</span> <span class="n">Cartesian</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..vol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cartesian</span>
 
             <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">Cartesian</span><span class="p">())</span>
 
     <span class="c1"># Set default values if these have not been set</span>
     <span class="k">if</span> <span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">map</span><span class="o">.</span><span class="n">specified</span><span class="p">(</span><span class="s2">&quot;cutoff&quot;</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">angstrom</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..units</span><span class="w"> </span><span class="kn">import</span> <span class="n">angstrom</span>
 
         <span class="n">cutoff</span> <span class="o">=</span> <span class="mf">7.5</span> <span class="o">*</span> <span class="n">angstrom</span>
 
@@ -2617,6 +2649,9 @@
 
     <span class="k">if</span> <span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;platform&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">platform</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">include_constrained_energies</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">map</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;include_constrained_energies&quot;</span><span class="p">,</span> <span class="n">include_constrained_energies</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">Minimisation</span><span class="p">(</span>
         <span class="n">view</span><span class="p">,</span>
@@ -2652,7 +2687,7 @@
 <span class="n">SelectorMol</span><span class="o">.</span><span class="n">minimisation</span> <span class="o">=</span> <span class="n">_minimisation</span>
 
 
-<span class="k">def</span> <span class="nf">_cursors</span><span class="p">(</span><span class="n">views</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_cursors</span><span class="p">(</span><span class="n">views</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the Cursors object that contains cursors for all</span>
 <span class="sd">    of the views in this collection. Note that the `parent`</span>
 <span class="sd">    cursor of this list will be the molecule</span>
@@ -2667,7 +2702,7 @@
 <span class="n">Selector_Segment_</span><span class="o">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">_cursors</span>
 
 
-<span class="k">def</span> <span class="nf">_trajectory</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_trajectory</span><span class="p">(</span>
     <span class="n">obj</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2708,7 +2743,7 @@
 <span class="sd">      Whether or not to wrap the coordinates into the periodic box</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">._trajectory</span> <span class="kn">import</span> <span class="n">TrajectoryIterator</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">._trajectory</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrajectoryIterator</span>
 
     <span class="k">return</span> <span class="n">TrajectoryIterator</span><span class="p">(</span>
         <span class="n">obj</span><span class="p">,</span>
@@ -2730,8 +2765,8 @@
 <span class="n">SelectorMol</span><span class="o">.</span><span class="n">trajectory</span> <span class="o">=</span> <span class="n">_trajectory</span>
 
 
-<span class="k">def</span> <span class="nf">_cursorsm</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">._cursor</span> <span class="kn">import</span> <span class="n">CursorsM</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_cursorsm</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">._cursor</span><span class="w"> </span><span class="kn">import</span> <span class="n">CursorsM</span>
 
     <span class="k">return</span> <span class="n">CursorsM</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
@@ -2744,20 +2779,20 @@
 <span class="n">SelectorMol</span><span class="o">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">_cursorsm</span>
 
 
-<span class="k">def</span> <span class="nf">_to_molecules</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_to_molecules</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;to_molecule_group&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_molecule_group</span><span class="p">()</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..legacy.Mol</span> <span class="kn">import</span> <span class="n">Molecules</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.Mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecules</span>
 
         <span class="n">m</span> <span class="o">=</span> <span class="n">Molecules</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">m</span>
 
 
-<span class="k">def</span> <span class="nf">_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the total energy of the molecule view(s) in this</span>
 <span class="sd">    collection.</span>
@@ -2778,7 +2813,7 @@
 <span class="sd">        Returns an energy, with attached components for the</span>
 <span class="sd">        sub-components (if any) for this energy.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">calculate_energy</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">calculate_energy</span>
 
     <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -2791,7 +2826,7 @@
         <span class="k">return</span> <span class="n">calculate_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">_to_molecules</span><span class="p">(</span><span class="n">other</span><span class="p">),</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_energies</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_energies</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the total energy of the molecule view(s) in this</span>
 <span class="sd">    collection.</span>
@@ -2815,7 +2850,7 @@
     <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_atom_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_atom_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the total energy of the molecule view(s) in this</span>
 <span class="sd">    collection.</span>
@@ -2837,20 +2872,20 @@
 <span class="sd">        sub-components (if any) for this energy.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..units</span> <span class="kn">import</span> <span class="n">GeneralUnit</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..units</span><span class="w"> </span><span class="kn">import</span> <span class="n">GeneralUnit</span>
 
         <span class="k">return</span> <span class="n">GeneralUnit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">elif</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">calculate_energy</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">calculate_energy</span>
 
         <span class="k">return</span> <span class="n">calculate_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">_to_molecules</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">calculate_energy</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">calculate_energy</span>
 
         <span class="k">return</span> <span class="n">calculate_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">_to_molecules</span><span class="p">(</span><span class="n">other</span><span class="p">),</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_total_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_total_energy</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the total energy of the molecule view(s) in this</span>
 <span class="sd">    collection.</span>
@@ -2874,12 +2909,12 @@
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;to_molecule_group&quot;</span><span class="p">):</span>
         <span class="n">mols</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_molecule_group</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..legacy.Mol</span> <span class="kn">import</span> <span class="n">MoleculeGroup</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..legacy.Mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeGroup</span>
 
         <span class="n">mols</span> <span class="o">=</span> <span class="n">MoleculeGroup</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
         <span class="n">mols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">calculate_energy</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">calculate_energy</span>
 
     <span class="k">if</span> <span class="nb">map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -2961,7 +2996,7 @@
 
 <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">SelectorMol</span><span class="p">,</span> <span class="s2">&quot;__orig__find__&quot;</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__find__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">views</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__find__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">views</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the index(es) of the passed view(s) in this container.</span>
 <span class="sd">        This returns a single index if a single view is passed,</span>
@@ -2995,7 +3030,7 @@
 
             <span class="k">return</span> <span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">__fix__find</span><span class="p">(</span><span class="n">CLASS</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__fix__find</span><span class="p">(</span><span class="n">CLASS</span><span class="p">):</span>
         <span class="n">CLASS</span><span class="o">.</span><span class="n">__orig__find__</span> <span class="o">=</span> <span class="n">CLASS</span><span class="o">.</span><span class="n">find</span>
         <span class="n">CLASS</span><span class="o">.</span><span class="n">find</span> <span class="o">=</span> <span class="n">__find__</span>
 
@@ -3017,16 +3052,16 @@
 
 <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">AtomMapping</span><span class="p">,</span> <span class="s2">&quot;__orig_find__&quot;</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__mapping_find__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="n">find_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">System</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__mapping_find__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="n">find_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
 
         <span class="k">if</span> <span class="n">System</span><span class="o">.</span><span class="n">is_system</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
             <span class="n">container</span> <span class="o">=</span> <span class="n">container</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">__orig_find__</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="n">find_all</span><span class="o">=</span><span class="n">find_all</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__mapping_map__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="n">match_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">..system</span> <span class="kn">import</span> <span class="n">System</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__mapping_map__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="n">match_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
 
         <span class="k">if</span> <span class="n">System</span><span class="o">.</span><span class="n">is_system</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
             <span class="n">container</span> <span class="o">=</span> <span class="n">container</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
@@ -3042,17 +3077,17 @@
 
 <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">Molecule</span><span class="p">,</span> <span class="s2">&quot;perturbation&quot;</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__molecule_perturbation</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__molecule_perturbation</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an interface to the perturbable properties of</span>
 <span class="sd">        this molecule. Note that the molecule must be</span>
 <span class="sd">        perturbable to call this function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">..morph._perturbation</span> <span class="kn">import</span> <span class="n">Perturbation</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..morph._perturbation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Perturbation</span>
 
         <span class="k">return</span> <span class="n">Perturbation</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__molecule_is_perturbable</span><span class="p">(</span><span class="n">mol</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__molecule_is_perturbable</span><span class="p">(</span><span class="n">mol</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return whether or not this molecule is perturbable</span>
 <span class="sd">        (can be morphed with a lambda coordinate)</span>
@@ -3071,7 +3106,7 @@
 
 <span class="c1"># also initialise sire.mm (it can sometimes be uninitialised if</span>
 <span class="c1"># sire.mol is loaded first)</span>
-<span class="kn">from</span> <span class="nn">..mm</span> <span class="kn">import</span> <span class="n">_fix_siremm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">_fix_siremm</span>
 
 <span class="n">_fix_siremm</span><span class="p">()</span>
 </pre></div>
@@ -3088,7 +3123,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -3103,7 +3138,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>

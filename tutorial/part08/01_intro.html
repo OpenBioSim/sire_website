@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Sire-EMLE" href="02_emle.html" /><link rel="prev" title="Part 08 - QM/MM" href="../index_part08.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Sire-EMLE" href="02_emle.html" /><link rel="prev" title="Part 8 - QM/MM" href="../index_part08.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Introduction - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part08.html">Part 08 - QM/MM</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part08.html">Part 8 - QM/MM</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -475,7 +475,7 @@ is passed as a keyword argument to the <code class="docutils literal notranslate
 perform the QM part of the calculation at each timestep.</p>
 <p>As an example, we will consider the case of running a QM/MM simulation of alanine
 dipeptide in water. First, let us load the molecular system:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load_test_files</span><span class="p">(</span><span class="s2">&quot;ala.crd&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -506,9 +506,9 @@ calculation. The fourth argument is the name of the callback function that will
 be used. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then it assumed that the <code class="docutils literal notranslate"><span class="pre">py_object</span></code> itself is a callable,
 i.e.  it is the callback function. The callback function should have the following
 signature:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
 
-<span class="k">def</span> <span class="nf">callback</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span>
     <span class="n">numbers_qm</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
     <span class="n">charges_mm</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
     <span class="n">xyz_qm</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
@@ -560,8 +560,12 @@ QM engine when creating a dynamics object, for example:</p>
 <span class="gp">... </span><span class="p">)</span>
 </pre></div>
 </div>
-<p>For QM/MM simulations it is recommended to use a 1 femtosecond timestep and no
-constraints. The simulation can then be run as usual:</p>
+<p>Next we will minimise the system ready for simulation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">minimise</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>When runinng QM/MM simulations it is recommended to use a 1 femtosecond timestep
+and no constraints. The simulation can then be run as usual:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;100ps&quot;</span><span class="p">,</span> <span class="n">energy_frequency</span><span class="o">=</span><span class="s2">&quot;1ps&quot;</span><span class="p">,</span> <span class="n">frame_frequency</span><span class="o">=</span><span class="s2">&quot;1ps&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -599,7 +603,7 @@ package as QM engine via a simple specialisation of the interface shown above.</
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Part 08 - QM/MM</div>
+                <div class="title">Part 8 - QM/MM</div>
                 
               </div>
             </a>
@@ -609,7 +613,7 @@ package as QM engine via a simple specialisation of the interface shown above.</
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -644,7 +648,7 @@ package as QM engine via a simple specialisation of the interface shown above.</
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>

@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Alanine-dipeptide conformational landscape - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part08.html">Part 08 - QM/MM</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part08.html">Part 8 - QM/MM</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Alanine-dipeptide conformational landscape</a></li>
@@ -480,12 +480,12 @@ this.</p>
 <p>First we will create an <code class="docutils literal notranslate"><span class="pre">EMLECalculator</span></code> to compute the QM intramolecular
 interaction using <a class="reference external" href="https://aiqm.github.io/torchani">ANI-2x</a> along with
 the electrostatic embedding interaction.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">emle</span> <span class="kn">import</span> <span class="n">EMLECalculator</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">emle</span><span class="w"> </span><span class="kn">import</span> <span class="n">EMLECalculator</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">calculator</span> <span class="o">=</span> <span class="n">EMLECalculator</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Next we will load the alanine-dipeptide system using <code class="docutils literal notranslate"><span class="pre">sire</span></code>:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load_test_files</span><span class="p">(</span><span class="s2">&quot;ala.crd&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.top&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -504,10 +504,10 @@ engine registers a Python callback that uses <code class="docutils literal notra
 calculation.</p>
 <p>We can now create a <code class="docutils literal notranslate"><span class="pre">dynamics</span></code> that will create an <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> context for us
 and can be used to run a simulation:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">qm_mols</span><span class="o">.</span><span class="n">dynamics</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">timestep</span><span class="o">=</span><span class="s2">&quot;1fs&quot;</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">qm_engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">platform</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">,</span>
 <span class="gp">... </span><span class="p">)</span>
 </pre></div>
@@ -522,7 +522,7 @@ alanine-dipeptide system:</p>
 <h2>Setting up umbrella sampling with OpenMM<a class="headerlink" href="#setting-up-umbrella-sampling-with-openmm" title="Link to this heading">¶</a></h2>
 <p>We can now extract the underlying <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> context from the dynamics object,
 then create a copy of the integrator and system.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">context</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">context</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">omm_system</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">getSystem</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">integrator</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">getIntegrator</span><span class="p">())</span>
@@ -531,8 +531,8 @@ then create a copy of the integrator and system.</p>
 <p>In order to perform umbrella sampling we will need to add a biasing potentials
 for the two dihedral angles. Here we will use simple harmonic biasing potentials:</p>
 <p>First the Φ dihedral, which is formed by atom indices 4, 6, 8, and 14:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openmm</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openmm.app</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">openmm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">openmm.app</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bias_torsion_phi</span> <span class="o">=</span> <span class="n">openmm</span><span class="o">.</span><span class="n">CustomTorsionForce</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="s2">&quot;0.5*k_phi*dtheta^2; dtheta = min(tmp, 2*pi-tmp); tmp = abs(theta - phi)&quot;</span>
 <span class="gp">... </span><span class="p">)</span>
@@ -658,7 +658,7 @@ is provided in the <a class="reference external" href="https://fastmbar.readthed
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -695,7 +695,7 @@ is provided in the <a class="reference external" href="https://fastmbar.readthed
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=e4ec30e5"></script>
+</div><script src="../../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>

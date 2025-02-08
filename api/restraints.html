@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Public API - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -460,6 +460,40 @@
 <span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.restraints" title="Link to this heading">¶</a></h1>
 <p><a class="reference internal" href="index_restraints.html"><span class="doc">View Module Index</span></a></p>
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.restraints.angle">
+<span class="sig-prename descclassname"><span class="pre">sire.restraints.</span></span><span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ktheta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/restraints/_restraints.html#angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.restraints.angle" title="Link to this definition">¶</a></dt>
+<dd><p>Create a set of anglel restraints from all of the atoms in ‘atoms’
+where all atoms are contained in the container ‘mols’, using the
+passed values of the force constant ‘ktheta’ and equilibrium
+angle value theta0.</p>
+<p>If theta0 is None, then the current angle for
+provided atoms will be used as the equilibium value.</p>
+<p>If ktheta is None, then a default value of 100 kcal mol-1 rad-2 will be used</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mols</strong> (<a class="reference internal" href="system.html#sire.system.System" title="sire.system._system.System"><em>sire.system._system.System</em></a>) – The system containing the atoms.</p></li>
+<li><p><strong>atoms</strong> (<em>SireMol::Selector&lt;SireMol::Atom&gt;</em>) – The atoms to restrain.</p></li>
+<li><p><strong>ktheta</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit or</em><em>, </em><em>optional</em>) – The force constants for the angle restraints.
+If None, this will default to 100 kcal mol-1 rad-2.
+Default is None.</p></li>
+<li><p><strong>theta0</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em>, </em><em>optional</em>) – The equilibrium angles for the angle restraints. If None, these
+will be measured from the current coordinates of the atoms.
+Default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AnglelRestraints</strong> – A container of angle restraints, where the first restraint is
+the AngleRestraint created. The angle restraint created can be
+extracted with AngleRestraints[0].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SireMM::AngleRestraints</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.restraints.bond">
 <span class="sig-prename descclassname"><span class="pre">sire.restraints.</span></span><span class="sig-name descname"><span class="pre">bond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/restraints/_restraints.html#bond"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.restraints.bond" title="Link to this definition">¶</a></dt>
 <dd><p>Synonym for distance(), as a bond restraint is treated the same
@@ -472,7 +506,9 @@ as a distance restraint</p>
 <dd><p>Create a set of Boresch restraints that will restrain the 6
 external degrees of freedom of the ligand relative to the receptor.
 All of the atoms in both ‘ligand’ and ‘receptor’ must be contained in
-‘mols’.</p>
+‘mols’. Note that restraint energies are defined as k*x**2 (so forces
+are defined as 2*k*x) and hence the ‘kr’, ‘ktheta’ and ‘kphi’ values are
+half the force constants for the distance, angle and torsion restraints.</p>
 <p>The BoreschRestraint will be a set of six restraints between
 three identified ligand atoms, and three identified receptor
 atoms:</p>
@@ -481,11 +517,8 @@ atoms:</p>
 and equilibrium distance (r0) parameters.</p></li>
 <li><p>Two angle restraints, with specified force constants (ktheta)
 and equilibrium angles (theta0) parameters.</p></li>
-<li><dl class="simple">
-<dt>Three torsion restraints, with specified force constants (kphi)</dt><dd><p>and equilibrium angles (phi0) parameters.</p>
-</dd>
-</dl>
-</li>
+<li><p>Three torsion restraints, with specified force constants (kphi)
+and equilibrium angles (phi0) parameters.</p></li>
 </ol>
 <p>This will create a single BoreschRestraint, which will be passed
 back in a BoreschRestraints object.</p>
@@ -495,16 +528,16 @@ back in a BoreschRestraints object.</p>
 <li><p><strong>mols</strong> (<a class="reference internal" href="system.html#sire.system.System" title="sire.system._system.System"><em>sire.system._system.System</em></a>) – The system containing the receptor and ligand.</p></li>
 <li><p><strong>receptor</strong> (<em>SireMol::Selector&lt;SireMol::Atom&gt;</em>) – The receptor atoms to restrain.</p></li>
 <li><p><strong>ligand</strong> (<em>SireMol::Selector&lt;SireMol::Atom&gt;</em>) – The ligand atoms to restrain.</p></li>
-<li><p><strong>kr</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em>, </em><em>optional</em>) – The force constant for the distance restraint. If None, this will
-default to 10 kcal mol-1 A-2. Default is None.</p></li>
-<li><p><strong>ktheta</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em> or </em><em>list</em><em> of </em><em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em>, </em><em>optional</em>) – The force constants for the angle restraints, in the order kthetaA,
-kthetaB If None, this will default to 100 kcal mol-1 rad-2 for
+<li><p><strong>kr</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em>, </em><em>optional</em>) – Half the force constant for the distance restraint. If None, this will
+default to 5 kcal mol-1 A-2. Default is None.</p></li>
+<li><p><strong>ktheta</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em> or </em><em>list</em><em> of </em><em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em>, </em><em>optional</em>) – Half the force constants for the angle restraints, in the order kthetaA,
+kthetaB If None, this will default to 50 kcal mol-1 rad-2 for
 both angle restraints.  If a list, then this should be a list of
 length 2 containing the force constants for the two angle
 restraints. If a single value, then this will be used for both
 angle restraints. Default is None.</p></li>
-<li><p><strong>kphi</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em> or </em><em>list</em><em> of </em><em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em>, </em><em>optional</em>) – The force constants for the torsion restraints, in the order kthetaA,
-kthetaB, kthetaC. If None, this will default to 100 kcal mol-1 rad-2
+<li><p><strong>kphi</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em> or </em><em>list</em><em> of </em><em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em>, </em><em>optional</em>) – Half the force constants for the torsion restraints, in the order kthetaA,
+kthetaB, kthetaC. If None, this will default to 50 kcal mol-1 rad-2
 for all three torsion restraints.  If a list, then this should be a
 list of length 3 containing the force constants for the three
 torsion restraints. If a single value, then this will be used for
@@ -560,13 +593,49 @@ values:</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="sire.restraints.dihedral">
+<span class="sig-prename descclassname"><span class="pre">sire.restraints.</span></span><span class="sig-name descname"><span class="pre">dihedral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kphi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/restraints/_restraints.html#dihedral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.restraints.dihedral" title="Link to this definition">¶</a></dt>
+<dd><p>Create a set of dihedral restraints from all of the atoms in ‘atoms’
+where all atoms are contained in the container ‘mols’, using the
+passed values of the force constant ‘kphi’ and equilibrium
+torsion angle phi0.</p>
+<p>If phi0 is None, then the current torsional angle for
+the provided atoms will be used as the equilibium value.</p>
+<p>If kphi is None, then a default value of 100 kcal mol-1 rad-2 will be used</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mols</strong> (<a class="reference internal" href="system.html#sire.system.System" title="sire.system._system.System"><em>sire.system._system.System</em></a>) – The system containing the atoms.</p></li>
+<li><p><strong>atoms</strong> (<em>SireMol::Selector&lt;SireMol::Atom&gt;</em>) – The atoms to restrain.</p></li>
+<li><p><strong>kphi</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit or</em><em>, </em><em>optional</em>) – The force constants for the torsion restraints.
+If None, this will default to 100 kcal mol-1 rad-2.
+Default is None.</p></li>
+<li><p><strong>phi0</strong> (<em>str</em><em> or </em><em>SireUnits::Dimension::GeneralUnit</em><em>, </em><em>optional</em>) – The equilibrium torsional angle for restraints. If None, these
+will be measured from the current coordinates of the atoms.
+Default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>DihedralRestraints</strong> – A container of Dihedral restraints, where the first restraint is
+the DihedralRestraint created. The Dihedral restraint created can be
+extracted with DihedralRestraints[0].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SireMM::DihedralRestraints</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="sire.restraints.distance">
 <span class="sig-prename descclassname"><span class="pre">sire.restraints.</span></span><span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atoms0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atoms1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/restraints/_restraints.html#distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.restraints.distance" title="Link to this definition">¶</a></dt>
 <dd><p>Create a set of distance restraints from all of the atoms in ‘atoms0’
 to all of the atoms in ‘atoms1’ where all atoms are
 contained in the container ‘mols’, using the
-passed values of the force constant ‘k’ and equilibrium
-bond length r0.</p>
+passed values of ‘k’ and equilibrium bond length r0.
+Note that ‘k’ corresponds to half the force constant, because
+the restraint energy is defined as k*(r - r0)**2 (hence the force is
+defined as 2*k*(r-r0)).</p>
 <p>These restraints will be per atom-atom distance. If a list of k and/or r0
 values are passed, then different values could be used for
 different atom-atom distances (assuming the same number as the number of
@@ -626,8 +695,11 @@ the standard state volume at a given temperature.</p>
 <span class="sig-prename descclassname"><span class="pre">sire.restraints.</span></span><span class="sig-name descname"><span class="pre">positional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/restraints/_restraints.html#positional"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.restraints.positional" title="Link to this definition">¶</a></dt>
 <dd><p>Create a set of position restraints for the atoms specified in
 ‘atoms’ that are contained in the container ‘mols’, using the
-passed values of the force constant ‘k’ and flat-bottom potential
-well-width ‘r0’ for the restraints.</p>
+passed values of ‘k’ and flat-bottom potential
+well-width ‘r0’ for the restraints. Note that ‘k’ values
+correspond to half the force constants for the harmonic
+restraints, because the harmonic restraint energy is defined as
+k*(r - r0)**2 (hence the force is defined as 2*(r - r0)).</p>
 <p>These restraints will be per atom. If a list of k and/or r0
 values are passed, then different values could be used for
 different atoms (assuming the same number as the number of
@@ -671,7 +743,7 @@ will be used.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -693,8 +765,10 @@ will be used.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Public API</a><ul>
+<li><a class="reference internal" href="#sire.restraints.angle"><code class="docutils literal notranslate"><span class="pre">angle()</span></code></a></li>
 <li><a class="reference internal" href="#sire.restraints.bond"><code class="docutils literal notranslate"><span class="pre">bond()</span></code></a></li>
 <li><a class="reference internal" href="#sire.restraints.boresch"><code class="docutils literal notranslate"><span class="pre">boresch()</span></code></a></li>
+<li><a class="reference internal" href="#sire.restraints.dihedral"><code class="docutils literal notranslate"><span class="pre">dihedral()</span></code></a></li>
 <li><a class="reference internal" href="#sire.restraints.distance"><code class="docutils literal notranslate"><span class="pre">distance()</span></code></a></li>
 <li><a class="reference internal" href="#sire.restraints.get_standard_state_correction"><code class="docutils literal notranslate"><span class="pre">get_standard_state_correction()</span></code></a></li>
 <li><a class="reference internal" href="#sire.restraints.positional"><code class="docutils literal notranslate"><span class="pre">positional()</span></code></a></li>
@@ -709,7 +783,7 @@ will be used.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="../_static/documentation_options.js?v=f5768dfe"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

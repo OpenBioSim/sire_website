@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
 
     <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 --><title>Index - openbiosim - sire</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_fonts.css?v=50da5bc0" />
@@ -304,7 +304,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -474,7 +474,11 @@
         <li><a href="api/cas.html#sire.cas.Expression.add">add() (sire.cas.Expression method)</a>
 
         <ul>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.add">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.BondRestraints.add">(sire.mm.BondRestraints method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.add">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.SelectorAngle.add">(sire.mm.SelectorAngle method)</a>
 </li>
@@ -569,9 +573,11 @@
 </li>
         <li><a href="api/mm.html#sire.mm.Angle">Angle (class in sire.mm)</a>
 </li>
-        <li><a href="api/units.html#sire.units.angle">angle() (in module sire.units)</a>
+        <li><a href="api/restraints.html#sire.restraints.angle">angle() (in module sire.restraints)</a>
 
         <ul>
+          <li><a href="api/units.html#sire.units.angle">(in module sire.units)</a>
+</li>
           <li><a href="api/maths.html#sire.maths.Torsion.angle">(sire.maths.Torsion method)</a>
 </li>
           <li><a href="api/maths.html#sire.maths.Triangle.angle">(sire.maths.Triangle method)</a>
@@ -590,6 +596,10 @@
         <li><a href="api/maths.html#sire.maths.Triangle.angle1">angle1() (sire.maths.Triangle method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.Triangle.angle2">angle2() (sire.maths.Triangle method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.AngleRestraint">AngleRestraint (class in sire.mm)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.AngleRestraints">AngleRestraints (class in sire.mm)</a>
 </li>
         <li><a href="api/convert.html#sire.convert.openmm.PerturbableOpenMMMolecule.angles">angles() (sire.convert.openmm.PerturbableOpenMMMolecule method)</a>
 
@@ -876,6 +886,10 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.assign">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraint.assign">(sire.mm.AngleRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.assign">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.assign">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraint.assign">(sire.mm.BondRestraint method)</a>
@@ -883,6 +897,10 @@
           <li><a href="api/mm.html#sire.mm.BondRestraints.assign">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.assign">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraint.assign">(sire.mm.DihedralRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.assign">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.assign">(sire.mm.Improper method)</a>
 </li>
@@ -970,7 +988,11 @@
 </li>
           <li><a href="api/maths.html#sire.maths.Triangle.at">(sire.maths.Triangle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.at">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.BondRestraints.at">(sire.mm.BondRestraints method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.at">(sire.mm.DihedralRestraints method)</a>
 </li>
         </ul></li>
         <li><a href="api/mol.html#sire.mol.Atom">Atom (class in sire.mol)</a>
@@ -1080,9 +1102,13 @@
         <ul>
           <li><a href="api/mm.html#sire.mm.Angle.atoms">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraint.atoms">(sire.mm.AngleRestraint method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.atoms">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.atoms">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraint.atoms">(sire.mm.DihedralRestraint method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.atoms">(sire.mm.Improper method)</a>
 </li>
@@ -1474,6 +1500,10 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.clone">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraint.clone">(sire.mm.AngleRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.clone">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.clone">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraint.clone">(sire.mm.BondRestraint method)</a>
@@ -1481,6 +1511,10 @@
           <li><a href="api/mm.html#sire.mm.BondRestraints.clone">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.clone">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraint.clone">(sire.mm.DihedralRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.clone">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.clone">(sire.mm.Improper method)</a>
 </li>
@@ -1690,11 +1724,15 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.count">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.count">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.count">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraints.count">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.count">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.count">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.count">(sire.mm.Improper method)</a>
 </li>
@@ -2007,9 +2045,11 @@
         </ul></li>
         <li><a href="api/mm.html#sire.mm.Dihedral">Dihedral (class in sire.mm)</a>
 </li>
-        <li><a href="api/mol.html#sire.mol.Cursor.dihedral">dihedral() (sire.mol.Cursor method)</a>
+        <li><a href="api/restraints.html#sire.restraints.dihedral">dihedral() (in module sire.restraints)</a>
 
         <ul>
+          <li><a href="api/mol.html#sire.mol.Cursor.dihedral">(sire.mol.Cursor method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Cursors.dihedral">(sire.mol.Cursors method)</a>
 </li>
           <li><a href="api/mol.html#sire.mol.CursorsM.dihedral">(sire.mol.CursorsM method)</a>
@@ -2017,6 +2057,10 @@
           <li><a href="api/system.html#sire.system.System.dihedral">(sire.system.System method)</a>
 </li>
         </ul></li>
+        <li><a href="api/mm.html#sire.mm.DihedralRestraint">DihedralRestraint (class in sire.mm)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.DihedralRestraints">DihedralRestraints (class in sire.mm)</a>
+</li>
         <li><a href="api/mol.html#sire.mol.Cursor.dihedrals">dihedrals() (sire.mol.Cursor method)</a>
 
         <ul>
@@ -2541,8 +2585,6 @@
         </ul></li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.get_levers">get_levers() (sire.cas.LambdaSchedule method)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/mm.html#sire.mm.Angle.get_link">get_link() (sire.mm.Angle method)</a>
 
         <ul>
@@ -2569,6 +2611,8 @@
           <li><a href="api/mol.html#sire.mol.Molecule.get_link">(sire.mol.Molecule method)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/base.html#sire.base.Properties.get_links">get_links() (sire.base.Properties method)</a>
 
         <ul>
@@ -2647,6 +2691,12 @@
           <li><a href="api/vol.html#sire.vol.PeriodicBox.get_random_point">(sire.vol.PeriodicBox method)</a>
 </li>
           <li><a href="api/vol.html#sire.vol.TriclinicBox.get_random_point">(sire.vol.TriclinicBox method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/convert.html#sire.convert.openmm.SOMMContext.get_rest2_scale">get_rest2_scale() (sire.convert.openmm.SOMMContext method)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.Dynamics.get_rest2_scale">(sire.mol.Dynamics method)</a>
 </li>
         </ul></li>
         <li><a href="api/convert.html#sire.convert.openmm.LambdaLever.get_restraints">get_restraints() (sire.convert.openmm.LambdaLever method)</a>
@@ -3172,11 +3222,15 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.is_empty">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.is_empty">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.is_empty">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraints.is_empty">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.is_empty">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.is_empty">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.is_empty">(sire.mm.Improper method)</a>
 </li>
@@ -3217,8 +3271,6 @@
           <li><a href="api/vol.html#sire.vol.CoordGroup.is_empty">(sire.vol.CoordGroup method)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/io_parser.html#sire.io.parser.DCD.is_frame">is_frame() (sire.io.parser.DCD method)</a>
 
         <ul>
@@ -3231,6 +3283,8 @@
           <li><a href="api/io_parser.html#sire.io.parser.XTC.is_frame">(sire.io.parser.XTC method)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/cas.html#sire.cas.Expression.is_function">is_function() (sire.cas.Expression method)</a>
 
         <ul>
@@ -3296,6 +3350,10 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.is_null">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraint.is_null">(sire.mm.AngleRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.is_null">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.is_null">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraint.is_null">(sire.mm.BondRestraint method)</a>
@@ -3303,6 +3361,10 @@
           <li><a href="api/mm.html#sire.mm.BondRestraints.is_null">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.is_null">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraint.is_null">(sire.mm.DihedralRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.is_null">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.is_null">(sire.mm.Improper method)</a>
 </li>
@@ -3365,8 +3427,14 @@
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.is_residue">is_residue() (sire.mol.Cursor method)</a>
 </li>
-        <li><a href="api/mm.html#sire.mm.BondRestraints.is_restraints">is_restraints() (sire.mm.BondRestraints method)</a>
+        <li><a href="api/mm.html#sire.mm.AngleRestraints.is_restraints">is_restraints() (sire.mm.AngleRestraints method)</a>
+
+        <ul>
+          <li><a href="api/mm.html#sire.mm.BondRestraints.is_restraints">(sire.mm.BondRestraints method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.is_restraints">(sire.mm.DihedralRestraints method)</a>
+</li>
+        </ul></li>
         <li><a href="api/vol.html#sire.vol.TriclinicBox.is_rotated">is_rotated() (sire.vol.TriclinicBox method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Cursor.is_same_editor">is_same_editor() (sire.mol.Cursor method)</a>
@@ -3543,10 +3611,10 @@
           <li><a href="api/mm.html#sire.mm.BondRestraint.k">(sire.mm.BondRestraint method)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/maths.html#sire.maths.kabasch">kabasch() (in module sire.maths)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/maths.html#sire.maths.kabasch_fit">kabasch_fit() (in module sire.maths)</a>
 </li>
         <li><a href="api/base.html#sire.base.Properties.keys">keys() (sire.base.Properties method)</a>
@@ -3555,6 +3623,10 @@
           <li><a href="api/maths.html#sire.maths.EnergyTrajectory.keys">(sire.maths.EnergyTrajectory method)</a>
 </li>
         </ul></li>
+        <li><a href="api/mm.html#sire.mm.DihedralRestraint.kphi">kphi() (sire.mm.DihedralRestraint method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.AngleRestraint.ktheta">ktheta() (sire.mm.AngleRestraint method)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -4392,8 +4464,14 @@
           <li><a href="api/system.html#sire.system.System.num_residues">(sire.system.System method)</a>
 </li>
         </ul></li>
-        <li><a href="api/mm.html#sire.mm.BondRestraints.num_restraints">num_restraints() (sire.mm.BondRestraints method)</a>
+        <li><a href="api/mm.html#sire.mm.AngleRestraints.num_restraints">num_restraints() (sire.mm.AngleRestraints method)</a>
+
+        <ul>
+          <li><a href="api/mm.html#sire.mm.BondRestraints.num_restraints">(sire.mm.BondRestraints method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.num_restraints">(sire.mm.DihedralRestraints method)</a>
+</li>
+        </ul></li>
         <li><a href="api/mm.html#sire.mm.Angle.num_segments">num_segments() (sire.mm.Angle method)</a>
 
         <ul>
@@ -4567,6 +4645,8 @@
         <li><a href="api/mm.html#sire.mm.AmberDihPart.phase">phase() (sire.mm.AmberDihPart method)</a>
 </li>
         <li><a href="api/mm.html#sire.mm.Improper.phi">phi() (sire.mm.Improper method)</a>
+</li>
+        <li><a href="api/mm.html#sire.mm.DihedralRestraint.phi0">phi0() (sire.mm.DihedralRestraint method)</a>
 </li>
         <li><a href="api/maths.html#sire.maths.pi">pi (in module sire.maths)</a>
 </li>
@@ -4932,8 +5012,14 @@
 </li>
         <li><a href="api/io.html#sire.io.resolve_path">resolve_path() (in module sire.io)</a>
 </li>
-        <li><a href="api/mm.html#sire.mm.BondRestraints.restraints">restraints() (sire.mm.BondRestraints method)</a>
+        <li><a href="api/mm.html#sire.mm.AngleRestraints.restraints">restraints() (sire.mm.AngleRestraints method)</a>
+
+        <ul>
+          <li><a href="api/mm.html#sire.mm.BondRestraints.restraints">(sire.mm.BondRestraints method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.restraints">(sire.mm.DihedralRestraints method)</a>
+</li>
+        </ul></li>
         <li><a href="api/maths.html#sire.maths.Transform.reverse">reverse() (sire.maths.Transform method)</a>
 </li>
         <li><a href="api/vol.html#sire.vol.TriclinicBox.rhombic_dodecahedron_hexagon">rhombic_dodecahedron_hexagon() (sire.vol.TriclinicBox method)</a>
@@ -5410,8 +5496,6 @@
         </ul></li>
         <li><a href="api/search.html#sire.search.set_approx_epsilon">set_approx_epsilon() (in module sire.search)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.set_constant">set_constant() (sire.cas.LambdaSchedule method)</a>
 </li>
         <li><a href="api/convert.html#sire.convert.openmm.LambdaLever.set_constraint_indicies">set_constraint_indicies() (sire.convert.openmm.LambdaLever method)</a>
@@ -5420,6 +5504,8 @@
           <li><a href="api/convert.html#sire.convert.openmm.PerturbableOpenMMMolecule.set_constraint_indicies">(sire.convert.openmm.PerturbableOpenMMMolecule method)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/utils.html#sire.utils.Console.set_debugging_enabled">set_debugging_enabled() (sire.utils.Console static method)</a>
 </li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.set_default_equation">set_default_equation() (sire.cas.LambdaSchedule method)</a>
@@ -5494,9 +5580,13 @@
 </li>
         <li><a href="api/cas.html#sire.cas.LambdaSchedule.set_molecule_schedule">set_molecule_schedule() (sire.cas.LambdaSchedule method)</a>
 </li>
-        <li><a href="api/mm.html#sire.mm.BondRestraints.set_name">set_name() (sire.mm.BondRestraints method)</a>
+        <li><a href="api/mm.html#sire.mm.AngleRestraints.set_name">set_name() (sire.mm.AngleRestraints method)</a>
 
         <ul>
+          <li><a href="api/mm.html#sire.mm.BondRestraints.set_name">(sire.mm.BondRestraints method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.set_name">(sire.mm.DihedralRestraints method)</a>
+</li>
           <li><a href="api/mol.html#sire.mol.Cursor.set_name">(sire.mol.Cursor method)</a>
 </li>
         </ul></li>
@@ -5520,6 +5610,12 @@
 </li>
         <li><a href="api/units.html#sire.units.set_quantity_unit">set_quantity_unit() (in module sire.units)</a>
 </li>
+        <li><a href="api/convert.html#sire.convert.openmm.SOMMContext.set_rest2_scale">set_rest2_scale() (sire.convert.openmm.SOMMContext method)</a>
+
+        <ul>
+          <li><a href="api/mol.html#sire.mol.Dynamics.set_rest2_scale">(sire.mol.Dynamics method)</a>
+</li>
+        </ul></li>
         <li><a href="api/base.html#sire.base.PageCache.set_root_directory">set_root_directory() (sire.base.PageCache method)</a>
 </li>
         <li><a href="api/convert.html#sire.convert.openmm.LambdaLever.set_schedule">set_schedule() (sire.convert.openmm.LambdaLever method)</a>
@@ -5727,11 +5823,15 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.size">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.size">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.size">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraints.size">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.size">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.size">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.size">(sire.mm.Improper method)</a>
 </li>
@@ -5903,7 +6003,11 @@
         <li><a href="api/mm.html#sire.mm.Improper.theta">theta() (sire.mm.Improper method)</a>
 </li>
         <li><a href="api/mm.html#sire.mm.AmberAngle.theta0">theta0() (sire.mm.AmberAngle method)</a>
+
+        <ul>
+          <li><a href="api/mm.html#sire.mm.AngleRestraint.theta0">(sire.mm.AngleRestraint method)</a>
 </li>
+        </ul></li>
         <li><a href="api/system.html#sire.system.System.time">time() (sire.system.System method)</a>
 </li>
         <li><a href="api/mol.html#sire.mol.Dynamics.time_speed">time_speed() (sire.mol.Dynamics method)</a>
@@ -6147,6 +6251,10 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.to_string">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraint.to_string">(sire.mm.AngleRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.to_string">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.to_string">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraint.to_string">(sire.mm.BondRestraint method)</a>
@@ -6154,6 +6262,10 @@
           <li><a href="api/mm.html#sire.mm.BondRestraints.to_string">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.to_string">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraint.to_string">(sire.mm.DihedralRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.to_string">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.to_string">(sire.mm.Improper method)</a>
 </li>
@@ -6387,6 +6499,10 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.typename">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraint.typename">(sire.mm.AngleRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.typename">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.typename">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraint.typename">(sire.mm.BondRestraint method)</a>
@@ -6394,6 +6510,10 @@
           <li><a href="api/mm.html#sire.mm.BondRestraints.typename">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.typename">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraint.typename">(sire.mm.DihedralRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.typename">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.typename">(sire.mm.Improper method)</a>
 </li>
@@ -6695,6 +6815,10 @@
 </li>
           <li><a href="api/mm.html#sire.mm.Angle.what">(sire.mm.Angle method)</a>
 </li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraint.what">(sire.mm.AngleRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.AngleRestraints.what">(sire.mm.AngleRestraints method)</a>
+</li>
           <li><a href="api/mm.html#sire.mm.Bond.what">(sire.mm.Bond method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.BondRestraint.what">(sire.mm.BondRestraint method)</a>
@@ -6702,6 +6826,10 @@
           <li><a href="api/mm.html#sire.mm.BondRestraints.what">(sire.mm.BondRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Dihedral.what">(sire.mm.Dihedral method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraint.what">(sire.mm.DihedralRestraint method)</a>
+</li>
+          <li><a href="api/mm.html#sire.mm.DihedralRestraints.what">(sire.mm.DihedralRestraints method)</a>
 </li>
           <li><a href="api/mm.html#sire.mm.Improper.what">(sire.mm.Improper method)</a>
 </li>
@@ -6870,7 +6998,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -6885,7 +7013,7 @@
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="_static/documentation_options.js?v=f5768dfe"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>

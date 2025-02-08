@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Changelog - openbiosim - sire</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_fonts.css?v=50da5bc0" />
@@ -306,7 +306,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part07/07_residue.html">Residue mutations</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/index_part08.html">Part 08 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 08 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/index_part08.html">Part 8 - QM/MM</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Part 8 - QM/MM</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part08/01_intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part08/02_emle.html">Sire-EMLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/part08/03_adp_pmf.html">Alanine-dipeptide conformational landscape</a></li>
@@ -465,6 +465,42 @@ since the project started in 2005.</p>
 <p>Development was migrated into the
 <a class="reference external" href="https://github.com/openbiosim">OpenBioSim</a>
 organisation on <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
+</section>
+<section id="feb-2025">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.3.1...2024.4.0">2024.4.0</a> - Feb 2025<a class="headerlink" href="#feb-2025" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed update of triclinic box vectors in <code class="docutils literal notranslate"><span class="pre">SOMD</span></code> following <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> bug fix.</p></li>
+<li><p>Don’t automatically save energies and frames when <code class="docutils literal notranslate"><span class="pre">dynamics.run()</span></code> returns.</p></li>
+<li><p>Improved handling of <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> NaN errors during dynamics.</p></li>
+<li><p>Restore thread state before raising exceptions in the Sire OpenMM minimiser.</p></li>
+<li><p>Add support for Replica Exchange with Solute Tempering (REST2) simulations.</p></li>
+<li><p>Null SystemTrajectory pointer when all frames are deleted.</p></li>
+<li><p>Handle cis/trans double bond stereochemistry values in SDF bond blocks.</p></li>
+<li><p>Fix handling of positive formal charge when writing SDF files.</p></li>
+<li><p>Fix lambda schedule discussion and plots in the tutorial.</p></li>
+<li><p>Added support for angle and dihedral restraints which can be used in alchemical and standard simulations.</p></li>
+<li><p>Allow user to compute energy trajectory over a subset of the lambda windows for each lambda.</p></li>
+<li><p>Fix the <code class="docutils literal notranslate"><span class="pre">hasForceSpecificEquation</span></code> function in the <code class="docutils literal notranslate"><span class="pre">LambdaLever</span></code> class so that it returns true if
+there is a default equation for the force.</p></li>
+<li><p>Added support for the <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> <code class="docutils literal notranslate"><span class="pre">MonteCarloMembraneBarostat</span></code> to <code class="docutils literal notranslate"><span class="pre">SOMD</span></code>.</p></li>
+</ul>
+</section>
+<section id="december-2024">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.3.0...2024.3.1">2024.3.1</a> - December 2024<a class="headerlink" href="#december-2024" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed instantiaton of <code class="docutils literal notranslate"><span class="pre">QByteArray</span></code> in <code class="docutils literal notranslate"><span class="pre">Sire::Mol::Frame::toByteArray</span></code> and count bytes with <code class="docutils literal notranslate"><span class="pre">QByteArray::size</span></code>.</p></li>
+<li><p>Increase timeout before terminating <code class="docutils literal notranslate"><span class="pre">QThread</span></code> objects during <code class="docutils literal notranslate"><span class="pre">PageCache</span></code> cleanup.</p></li>
+<li><p>Expose missing <code class="docutils literal notranslate"><span class="pre">timeout</span></code> kwarg in <code class="xref py py-meth docutils literal notranslate"><span class="pre">dynamics.minimise()</span></code> method.</p></li>
+<li><p>Expose missing <code class="docutils literal notranslate"><span class="pre">include_constrained_energies</span></code> kwarg in minimisation function.</p></li>
+<li><p>Make minimisation function settings consistent across API.</p></li>
+<li><p>Reload TorchQMForce module if OpenMM platform changes.</p></li>
+<li><p>Fix calculation of non-equilibrium work when starting from QM state.</p></li>
+<li><p>Fix stereochemistry in RDKit molecule conversion.</p></li>
+<li><p>Fixed <a class="reference internal" href="api/restraints.html#sire.restraints.get_standard_state_correction" title="sire.restraints.get_standard_state_correction"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.restraints.get_standard_state_correction()</span></code></a> to be consistent with the definition of
+the “force constanst” as <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">**</span> <span class="pre">k</span> <span class="pre">**</span> <span class="pre">x</span></code> (rather than <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">=</span> <span class="pre">k</span> <span class="pre">**</span> <span class="pre">x</span></code>). Updated docstrings and
+restraints documentation to make it clear how the force constants are defined.</p></li>
+<li><p>Fix thread safety issue in Sire OpenMM minimiser.</p></li>
+</ul>
 </section>
 <section id="october-2024">
 <h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.2.0...2024.3.0">2024.3.0</a> - October 2024<a class="headerlink" href="#october-2024" title="Link to this heading">¶</a></h2>
@@ -1476,7 +1512,7 @@ organisation on <a class="reference external" href="https://github.com/michellab
 <p>Here is the changelog for this stage of development.</p>
 <blockquote>
 <div><dl>
-<dt>[2023.0.3] January 2023: Added the beginnings of a new sphinx-based website</dt><dd><p>(in the <em class="xref py py-obj">doc</em> folder), which includes the sire API documentation.
+<dt>[2023.0.3] January 2023: Added the beginnings of a new sphinx-based website</dt><dd><p>(in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">doc</span></code> folder), which includes the sire API documentation.
 Cleaned up the new sire API via use of <em class="xref py py-obj">__all__</em> in all of the
 new modules. The public API is very limited at the moment, but
 will grow as we port in more classes.  However, the aim is that
@@ -1588,7 +1624,7 @@ and save molecules. These can load from URLs. Tests have been
 updated to pytest and now load input data from the sire website.
 The search system has been overhauled, optimised and updated.
 This is described in the new tutorials that are in the process
-of being written in the <em class="xref py py-obj">doc</em> directory. This also contains
+of being written in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">doc</span></code> directory. This also contains
 the new sphinx website. The <em class="xref py py-obj">CMakeLists.txt</em> files and build
 system have been completely reworked. These now use more
 pythonic <em class="xref py py-obj">setup.py</em> scripts. These have been updated to fully
@@ -1846,7 +1882,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 23, 2024</div>
+              Last updated on Feb 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1869,6 +1905,8 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#github-openbiosim-january-2023-current">GitHub (OpenBioSim): January 2023 - current</a></li>
+<li><a class="reference internal" href="#feb-2025">2024.4.0 - Feb 2025</a></li>
+<li><a class="reference internal" href="#december-2024">2024.3.1 - December 2024</a></li>
 <li><a class="reference internal" href="#october-2024">2024.3.0 - October 2024</a></li>
 <li><a class="reference internal" href="#june-2024">2024.2.0 - June 2024</a></li>
 <li><a class="reference internal" href="#april-2024">2024.1.0 - April 2024</a></li>
@@ -1903,7 +1941,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=7b2d7c30"></script>
+</div><script src="_static/documentation_options.js?v=f5768dfe"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
