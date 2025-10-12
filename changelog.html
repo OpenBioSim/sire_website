@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Acknowledgements" href="acknowledgements.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>Changelog - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
@@ -466,8 +466,65 @@ since the project started in 2005.</p>
 <a class="reference external" href="https://github.com/openbiosim">OpenBioSim</a>
 organisation on <a class="reference external" href="https://github.com/openbiosim/sire">GitHub</a>.</p>
 </section>
+<section id="october-2025">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2025.1.0...2025.2.0">2025.2.0</a> - October 2025<a class="headerlink" href="#october-2025" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Add end-state coordinates properties to decoupled and annihilated molecules.</p></li>
+<li><p>Map the end state coordinates property when constructing an <code class="docutils literal notranslate"><span class="pre">AmberParams</span></code> object when
+creating a molecule from a <code class="docutils literal notranslate"><span class="pre">SOMD</span></code> perturbation file.</p></li>
+<li><p>Fix evaluation of custom force energies from OpenMM XML files by correctly looping over
+interaction groups.</p></li>
+<li><p>Switch to new Boost Conda package naming scheme for host requirements.</p></li>
+<li><p>Use C++20 standard for SireRDKit plugin.</p></li>
+<li><p>Fixed build issues on MacOS with Clang and LTO (incorrectly specified LTO library version).</p></li>
+<li><p>Added a feature for applying RMSD restraints using the OpenMM CustomCVForce/RMSDForce functionality.</p></li>
+<li><p>Added support for reading and writing CRYST1 records in PDB files.</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">save_velocities</span></code> kwarg to <a class="reference internal" href="api/sire.html#sire.save" title="sire.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.save()</span></code></a> to allow a user to control whether
+velocities are saved to the output file. This is useful when the magnitude of the velocities
+overflows the output file format precision, or when the velocities are not needed</p></li>
+<li><p>Use force field bonding when working out connectivity for QM link atoms.</p></li>
+<li><p>Fix handling of 4- and 5-point water models when writing GROMACS topology files.</p></li>
+<li><p>Fix handling of link atoms for non carbon-carbon bonds where there is no bonded
+term in the MM force field.</p></li>
+<li><p>Added alchemical Morse potentials for experimental use in scaffold-hopping transformations.</p></li>
+</ul>
+</section>
+<section id="june-2025">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.4.2...2025.1.0">2025.1.0</a> - June 2025<a class="headerlink" href="#june-2025" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed unbound local variable when simulation lambda value is not in <code class="docutils literal notranslate"><span class="pre">lambda_windows</span></code> array.</p></li>
+<li><p>Allow negative residue numbers.</p></li>
+<li><p>Make sure box vectors are in reduced form before setting via the <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> C++ API.</p></li>
+<li><p>Add isobaric and grand canonical terms to reduced potential.</p></li>
+<li><p>Keep kappa term fixed during decoupling schedules.</p></li>
+<li><p>Added CMAP support when reading / writing AMBER and GROMACS topology files. The parameters
+are in the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> property.</p></li>
+<li><p>Fixed compile issues for MacOS Sequoia.</p></li>
+<li><p>Upgraded minimum <code class="docutils literal notranslate"><span class="pre">CMake</span></code> supported version to 3.5.</p></li>
+<li><p>Reset dynamics step counters and internal clock when a crash occurs so that energies
+and frames are save with the correct time stamp.</p></li>
+<li><p>Add OPC water model template for interconvesion between AMBER and GROMACS formats.</p></li>
+</ul>
+</section>
 <section id="feb-2025">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.3.1...2024.4.0">2024.4.0</a> - Feb 2025<a class="headerlink" href="#feb-2025" title="Link to this heading">¶</a></h2>
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.4.1...2024.4.2">2024.4.2</a> - Feb 2025<a class="headerlink" href="#feb-2025" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Preserve molecule name when reading from SDF format.</p></li>
+<li><p>Handle missing velocity data for <code class="docutils literal notranslate"><span class="pre">AMBER</span></code> RST7 files with only a few atoms.</p></li>
+<li><p>Preserve SDF metadata when converting to <code class="docutils literal notranslate"><span class="pre">RDKIt</span></code> format.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.4.0...2024.4.1">2024.4.1</a> - Feb 2025<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Allow user to force fresh inference of stereochemistry when converting to RDKit format.</p></li>
+<li><p>Fix setting of positive formal charge when reading SDF files.</p></li>
+<li><p>Only use <code class="docutils literal notranslate"><span class="pre">atom-&gt;setNoImplicit(True)</span></code> inside custom RDKit sterochemistry inference function.</p></li>
+<li><p>Fix redistribution of excess QM charge and make it the default behaviour.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2024.3.1...2024.4.0">2024.4.0</a> - Feb 2025<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed update of triclinic box vectors in <code class="docutils literal notranslate"><span class="pre">SOMD</span></code> following <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> bug fix.</p></li>
 <li><p>Don’t automatically save energies and frames when <code class="docutils literal notranslate"><span class="pre">dynamics.run()</span></code> returns.</p></li>
@@ -844,8 +901,8 @@ re-calculate the parameters at each lambda update step. This is a
 significant speed-up for alchemical free energy simulations.</p></li>
 </ul>
 </section>
-<section id="id1">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.1...2023.4.2">2023.4.2</a> - December 2023<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.4.1...2023.4.2">2023.4.2</a> - December 2023<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed use of <code class="docutils literal notranslate"><span class="pre">QString::compare</span></code> when comparing molecular properties during
 a water topology swap.</p></li>
@@ -894,8 +951,8 @@ OpenMM CPU platform, leading to exclusion errors.</p></li>
 had a spurious periodic box added when <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> was called.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.0...2023.4.0">2023.4.0</a> - October 2023<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<section id="id4">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.3.0...2023.4.0">2023.4.0</a> - October 2023<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added <code class="docutils literal notranslate"><span class="pre">closest</span></code> and <code class="docutils literal notranslate"><span class="pre">furthest</span></code> keywords to enable searching for the n closest
 or furthest views. This is very general, and is described in the
@@ -1172,8 +1229,8 @@ upload to the <code class="docutils literal notranslate"><span class="pre">test<
 to the <code class="docutils literal notranslate"><span class="pre">main</span></code> channel)</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.0...2023.2.1">2023.2.1</a> - April 2023<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<section id="id5">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.2.0...2023.2.1">2023.2.1</a> - April 2023<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added in <code class="docutils literal notranslate"><span class="pre">openmmtools</span></code> as a host requirement. This allows it to be installed in the
 same environment as <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>. Note that this changes the dependencies of <a class="reference internal" href="api/sire.html#module-sire" title="sire"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sire</span></code></a>
@@ -1308,8 +1365,8 @@ Chirality, and BondOrder. These are used by the RDKit code and the SDF parser.
 These will be fully exposed in a later release.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.1...2023.1.2">2023.1.2</a> - February 2023<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<section id="id6">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/compare/2023.1.1...2023.1.2">2023.1.2</a> - February 2023<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Used clang-format to autoformat all the C++ files.</p></li>
 <li><p>Fixed SDF pickle bug (molecules read from SDF files could not be pickled / unpickled)</p></li>
@@ -1349,8 +1406,8 @@ to fixing paths on Windows. Now all the integration tests pass on Windows
 not easy).</p></li>
 </ul>
 </section>
-<section id="id5">
-<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<section id="id7">
+<h2><a class="reference external" href="https://github.com/openbiosim/sire/releases/tag/2023.1.0">2023.1.0</a> - January 2023<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Initial release of the OpenBioSim version of sire. The code has been completely
 refurbished using a tutorial-driven development process and has a new
@@ -1453,7 +1510,7 @@ from multiple DCD or traj files). Added a
 lets you easily iterate over and query trajectories. Fully documented this
 in the tutorial. You can now do cool things like measure bonds over
 trajectories, or evaluate energies.</p></li>
-<li><p>Added a <a class="reference internal" href="api/mol.html#sire.mol.SelectorMol.view" title="sire.mol.SelectorMol.view"><code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code></a> function based on
+<li><p>Added a <code class="xref py py-func docutils literal notranslate"><span class="pre">view()</span></code> function based on
 NGLView that lets you easily see any
 molecule view (or collection of molecule views). Added a
 <a class="reference internal" href="api/sire.html#sire.save_to_string" title="sire.save_to_string"><code class="xref py py-func docutils literal notranslate"><span class="pre">save_to_string()</span></code></a> function
@@ -1512,7 +1569,7 @@ organisation on <a class="reference external" href="https://github.com/michellab
 <p>Here is the changelog for this stage of development.</p>
 <blockquote>
 <div><dl>
-<dt>[2023.0.3] January 2023: Added the beginnings of a new sphinx-based website</dt><dd><p>(in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">doc</span></code> folder), which includes the sire API documentation.
+<dt>[2023.0.3] January 2023: Added the beginnings of a new sphinx-based website</dt><dd><p>(in the <em class="xref py py-obj">doc</em> folder), which includes the sire API documentation.
 Cleaned up the new sire API via use of <em class="xref py py-obj">__all__</em> in all of the
 new modules. The public API is very limited at the moment, but
 will grow as we port in more classes.  However, the aim is that
@@ -1624,7 +1681,7 @@ and save molecules. These can load from URLs. Tests have been
 updated to pytest and now load input data from the sire website.
 The search system has been overhauled, optimised and updated.
 This is described in the new tutorials that are in the process
-of being written in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">doc</span></code> directory. This also contains
+of being written in the <em class="xref py py-obj">doc</em> directory. This also contains
 the new sphinx website. The <em class="xref py py-obj">CMakeLists.txt</em> files and build
 system have been completely reworked. These now use more
 pythonic <em class="xref py py-obj">setup.py</em> scripts. These have been updated to fully
@@ -1882,7 +1939,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 08, 2025</div>
+              Last updated on Oct 12, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1905,7 +1962,11 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#github-openbiosim-january-2023-current">GitHub (OpenBioSim): January 2023 - current</a></li>
-<li><a class="reference internal" href="#feb-2025">2024.4.0 - Feb 2025</a></li>
+<li><a class="reference internal" href="#october-2025">2025.2.0 - October 2025</a></li>
+<li><a class="reference internal" href="#june-2025">2025.1.0 - June 2025</a></li>
+<li><a class="reference internal" href="#feb-2025">2024.4.2 - Feb 2025</a></li>
+<li><a class="reference internal" href="#id1">2024.4.1 - Feb 2025</a></li>
+<li><a class="reference internal" href="#id2">2024.4.0 - Feb 2025</a></li>
 <li><a class="reference internal" href="#december-2024">2024.3.1 - December 2024</a></li>
 <li><a class="reference internal" href="#october-2024">2024.3.0 - October 2024</a></li>
 <li><a class="reference internal" href="#june-2024">2024.2.0 - June 2024</a></li>
@@ -1913,20 +1974,20 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
 <li><a class="reference internal" href="#march-2024">2023.5.2 - March 2024</a></li>
 <li><a class="reference internal" href="#january-2024">2023.5.1 - January 2024</a></li>
 <li><a class="reference internal" href="#december-2023">2023.5.0 - December 2023</a></li>
-<li><a class="reference internal" href="#id1">2023.4.2 - December 2023</a></li>
+<li><a class="reference internal" href="#id3">2023.4.2 - December 2023</a></li>
 <li><a class="reference internal" href="#october-2023">2023.4.1 - October 2023</a></li>
-<li><a class="reference internal" href="#id2">2023.4.0 - October 2023</a></li>
+<li><a class="reference internal" href="#id4">2023.4.0 - October 2023</a></li>
 <li><a class="reference internal" href="#september-2023">2023.3.2 - September 2023</a></li>
 <li><a class="reference internal" href="#july-2023">2023.3.1 - July 2023</a></li>
 <li><a class="reference internal" href="#june-2023">2023.3.0 - June 2023</a></li>
 <li><a class="reference internal" href="#may-2023">2023.2.3 - May 2023</a></li>
 <li><a class="reference internal" href="#april-2023">2023.2.2 - April 2023</a></li>
-<li><a class="reference internal" href="#id3">2023.2.1 - April 2023</a></li>
+<li><a class="reference internal" href="#id5">2023.2.1 - April 2023</a></li>
 <li><a class="reference internal" href="#march-2023">2023.2.0 - March 2023</a></li>
 <li><a class="reference internal" href="#february-2023">2023.1.3 - February 2023</a></li>
-<li><a class="reference internal" href="#id4">2023.1.2 - February 2023</a></li>
+<li><a class="reference internal" href="#id6">2023.1.2 - February 2023</a></li>
 <li><a class="reference internal" href="#january-2023">2023.1.1 - January 2023</a></li>
-<li><a class="reference internal" href="#id5">2023.1.0 - January 2023</a></li>
+<li><a class="reference internal" href="#id7">2023.1.0 - January 2023</a></li>
 <li><a class="reference internal" href="#github-michellab-june-22nd-2015-january-2023">GitHub (michellab): June 22nd 2015 - January 2023</a></li>
 <li><a class="reference internal" href="#google-code-august-7th-2006-april-1st-2015">Google Code: August 7th 2006 - April 1st 2015</a></li>
 <li><a class="reference internal" href="#local-subversion-february-5th-2005-july-25th-2006">Local Subversion: February 5th 2005 - July 25th 2006</a></li>
@@ -1941,7 +2002,7 @@ ProtoMS can be <a class="reference external" href="https://www.essexgroup.soton.
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=f5768dfe"></script>
+</div><script src="_static/documentation_options.js?v=f788092f"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>sire.restraints._restraints - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
@@ -460,7 +460,9 @@
     <span class="s2">&quot;bond&quot;</span><span class="p">,</span>
     <span class="s2">&quot;dihedral&quot;</span><span class="p">,</span>
     <span class="s2">&quot;distance&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;morse_potential&quot;</span><span class="p">,</span>
     <span class="s2">&quot;positional&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">u</span>
@@ -480,7 +482,7 @@
 <a class="viewcode-back" href="../../../api/restraints.html#sire.restraints.angle">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">angle</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">theta0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ktheta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Create a set of anglel restraints from all of the atoms in &#39;atoms&#39;</span>
+<span class="sd">    Create a set of angle restraints from all of the atoms in &#39;atoms&#39;</span>
 <span class="sd">    where all atoms are contained in the container &#39;mols&#39;, using the</span>
 <span class="sd">    passed values of the force constant &#39;ktheta&#39; and equilibrium</span>
 <span class="sd">    angle value theta0.</span>
@@ -510,7 +512,7 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    AnglelRestraints : SireMM::AngleRestraints</span>
+<span class="sd">    AngleRestraints : SireMM::AngleRestraints</span>
 <span class="sd">        A container of angle restraints, where the first restraint is</span>
 <span class="sd">        the AngleRestraint created. The angle restraint created can be</span>
 <span class="sd">        extracted with AngleRestraints[0].</span>
@@ -1131,6 +1133,245 @@
 
 
 
+<div class="viewcode-block" id="morse_potential">
+<a class="viewcode-back" href="../../../api/restraints.html#sire.restraints.morse_potential">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">morse_potential</span><span class="p">(</span>
+    <span class="n">mols</span><span class="p">,</span>
+    <span class="n">atoms0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">atoms1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">r0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">de</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">auto_parametrise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a set of Morse restraints from all of the atoms in &#39;atoms&#39;</span>
+<span class="sd">    where all atoms are contained in the container &#39;mols&#39;, using the</span>
+<span class="sd">    passed values of the force constant, &#39;k&#39;, equilibrium</span>
+<span class="sd">    distance value, r0, and well depth, de.</span>
+
+<span class="sd">    If r0 is None, then the current distance for</span>
+<span class="sd">    provided atoms will be used as the equilibium value.</span>
+
+<span class="sd">    The potential energy of the Morse potential is defined as:</span>
+
+<span class="sd">    e_morse=de*(1-exp(-sqrt(k/(2*de))*delta))^2</span>
+<span class="sd">    where, delta=(r-r0). Additionally, if alchemical Morse potential is used,</span>
+<span class="sd">    the potential is scaled as:</span>
+
+<span class="sd">    rho*e_morse</span>
+<span class="sd">    where rho is the lambda scaling parameter.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mols : sire.system._system.System</span>
+<span class="sd">        The system containing the atoms.</span>
+
+<span class="sd">    atoms0 : SireMol::Selector&lt;SireMol::Atom&gt;</span>
+<span class="sd">        The first atom involved in the Morse restraint.</span>
+
+<span class="sd">    atoms1 : SireMol::Selector&lt;SireMol::Atom&gt;</span>
+<span class="sd">        The second atom involved in the Morse restraint.</span>
+
+<span class="sd">    k : str or SireUnits::Dimension::GeneralUnit,</span>
+<span class="sd">        The force constants for the Morse restraints. Optional if</span>
+<span class="sd">        auto_parametrise is True.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    r0 : str or SireUnits::Dimension::GeneralUnit, optional</span>
+<span class="sd">        The equilibrium distance for the Morse restraints. If None, this</span>
+<span class="sd">        will be measured from the current coordinates of the atoms.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    de : str or SireUnits::Dimension::GeneralUnit</span>
+<span class="sd">        The well depth (dissociation energy) for the Morse potential.</span>
+<span class="sd">        Default is 100 kcal mol-1.</span>
+
+<span class="sd">    name : str, optional</span>
+<span class="sd">        The name of the restraint.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    auto_parametrise : bool, optional</span>
+<span class="sd">        If True, will attempt to automatically parametrise the Morse potential</span>
+<span class="sd">        from a perturbation that annihilates a bond. This requires that &#39;mols&#39;</span>
+<span class="sd">        contains exactly one molecule that is perturbable, and that this</span>
+<span class="sd">        molecule contains exactly one bond that is annihilated at lambda=1.</span>
+<span class="sd">        The atoms involved in the annihilated bond will be used as &#39;atoms0&#39;</span>
+<span class="sd">        and &#39;atoms1&#39;, the equilibrium distance r0 will be set to the original</span>
+<span class="sd">        bond length, and the force constant k will be set to the force constant</span>
+<span class="sd">        of the bond in the unperturbed state. Note that &#39;de&#39; must still be provided.</span>
+<span class="sd">        Default is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    MorsePotentialRestraints : SireMM::MorsePotentialRestraints</span>
+<span class="sd">        A container of Morse restraints, where the first restraint is</span>
+<span class="sd">        the MorsePotentialRestraint created. The Morse restraint created can be</span>
+<span class="sd">        extracted with MorsePotentialRestraints[0].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">u</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">MorsePotentialRestraint</span><span class="p">,</span> <span class="n">MorsePotentialRestraints</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..morph</span><span class="w"> </span><span class="kn">import</span> <span class="n">link_to_reference</span>
+
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">auto_parametrise</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">atoms0</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">atoms1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;If auto_parametrise is False, then atoms0 and atoms1 must be provided&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;If auto_parametrise is False, then the force constant k must be provided&quot;</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">molecules</span><span class="p">(</span><span class="s2">&quot;molecule property is_perturbable&quot;</span><span class="p">)</span>
+        <span class="n">ref_mol</span> <span class="o">=</span> <span class="n">link_to_reference</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ref_mol</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;We need exactly one molecule that is perturbable to automatically &quot;</span>
+                <span class="s2">&quot;set up the Morse potential restraints&quot;</span>
+            <span class="p">)</span>
+        <span class="n">perturbable_mol</span> <span class="o">=</span> <span class="n">ref_mol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">pert</span> <span class="o">=</span> <span class="n">perturbable_mol</span><span class="o">.</span><span class="n">perturbation</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">)</span>
+        <span class="n">pert_omm</span> <span class="o">=</span> <span class="n">pert</span><span class="o">.</span><span class="n">to_openmm</span><span class="p">()</span>
+        <span class="n">changed_bonds</span> <span class="o">=</span> <span class="n">pert_omm</span><span class="o">.</span><span class="n">changed_bonds</span><span class="p">(</span><span class="n">to_pandas</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># Attempt to find the bond that is annihilated at lambda=1</span>
+        <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">changed_bonds</span><span class="p">:</span>
+            <span class="n">bond_name</span><span class="p">,</span> <span class="n">length0</span><span class="p">,</span> <span class="n">length1</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="n">bond</span>
+            <span class="k">if</span> <span class="n">k1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+                <span class="n">atom0_idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">bond_name</span><span class="o">.</span><span class="n">atom0</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">atom1_idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">bond_name</span><span class="o">.</span><span class="n">atom1</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()][</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="n">length0</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">length0</span><span class="si">}</span><span class="s2"> nm&quot;</span><span class="p">)</span>
+
+                <span class="c1"># Divide k0 by 2 to convert from force constant to sire half</span>
+                <span class="c1"># force constant k</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">k0</span> <span class="o">=</span> <span class="n">k0</span> <span class="o">/</span> <span class="mf">2.0</span>
+                    <span class="n">k0</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k0</span><span class="si">}</span><span class="s2"> kJ mol-1 nm-2&quot;</span><span class="p">)</span>
+                    <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="n">k0</span><span class="p">]</span>
+
+                <span class="c1"># User can still override the force constant if they want, but</span>
+                <span class="c1"># we need to ensure it&#39;s a list of units</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
+
+                <span class="c1"># Translate the atom numbers to the original system indexes</span>
+                <span class="n">atoms0</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span>
+                    <span class="sa">f</span><span class="s2">&quot;molecule property is_perturbable and atomidx </span><span class="si">{</span><span class="n">atom0_idx</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">]</span>
+                <span class="n">atoms1</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span>
+                    <span class="sa">f</span><span class="s2">&quot;molecule property is_perturbable and atomidx </span><span class="si">{</span><span class="n">atom1_idx</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">]</span>
+                <span class="k">break</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">atoms0</span> <span class="o">=</span> <span class="n">_to_atoms</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">atoms0</span><span class="p">)</span>
+        <span class="n">atoms1</span> <span class="o">=</span> <span class="n">_to_atoms</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">atoms1</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unable to find atoms0 or atoms1 in the provided system&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">atoms0</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span> <span class="ow">or</span> <span class="n">atoms1</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;We need at least one atom in each group&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms0</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms1</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;atoms0 and atoms1 must be the same length&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">auto_parametrise</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Setting up multiple Morse potential restraints at once is not currently supported.&quot;</span>
+                <span class="s2">&quot;Please set up each restraint individually and then combine them into multiple restraints.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">r0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">auto_parametrise</span><span class="p">:</span>
+            <span class="n">r0</span> <span class="o">=</span> <span class="p">[</span><span class="n">length0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># calculate all of the current distances</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">measure</span>
+
+            <span class="n">r0</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">atoms0</span><span class="p">,</span> <span class="n">atoms1</span><span class="p">):</span>
+                <span class="n">r0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">measure</span><span class="p">(</span><span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="n">r0</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">r0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">r0</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">(</span><span class="n">r0</span><span class="p">)]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to parse &#39;r0&#39; as a Sire GeneralUnit: </span><span class="si">{</span><span class="n">r0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">de</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">de</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="s2">&quot;100 kcal mol-1&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">de</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="n">de</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to parse &#39;de&#39; as a Sire GeneralUnit: </span><span class="si">{</span><span class="n">de</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">restraints</span> <span class="o">=</span> <span class="n">MorsePotentialRestraints</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">restraints</span> <span class="o">=</span> <span class="n">MorsePotentialRestraints</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">atom0</span><span class="p">,</span> <span class="n">atom1</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">atoms0</span><span class="p">,</span> <span class="n">atoms1</span><span class="p">)):</span>
+        <span class="n">idxs0</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">atom0</span><span class="p">)</span>
+        <span class="n">idxs1</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">atom1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">idxs0</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">idxs0</span> <span class="o">=</span> <span class="p">[</span><span class="n">idxs0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">idxs1</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">idxs1</span> <span class="o">=</span> <span class="p">[</span><span class="n">idxs1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxs0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Could not find atom </span><span class="si">{</span><span class="n">atom0</span><span class="si">}</span><span class="s2"> in the molecules. Please ensure &quot;</span>
+                <span class="s2">&quot;that &#39;mols&#39; contains all of that atoms, or else we can&#39;t &quot;</span>
+                <span class="s2">&quot;add the morse potential restraints.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxs1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Could not find atom </span><span class="si">{</span><span class="n">atom1</span><span class="si">}</span><span class="s2"> in the molecules. Please ensure &quot;</span>
+                <span class="s2">&quot;that &#39;mols&#39; contains all of that atoms, or else we can&#39;t &quot;</span>
+                <span class="s2">&quot;add the morse potential restraints.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">ik</span> <span class="o">=</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ik</span> <span class="o">=</span> <span class="n">k</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">r0</span><span class="p">):</span>
+            <span class="n">ir0</span> <span class="o">=</span> <span class="n">r0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ir0</span> <span class="o">=</span> <span class="n">r0</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">restraints</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MorsePotentialRestraint</span><span class="p">(</span><span class="n">idxs0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">idxs1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ik</span><span class="p">,</span> <span class="n">ir0</span><span class="p">,</span> <span class="n">de</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">restraints</span></div>
+
+
+
 <div class="viewcode-block" id="bond">
 <a class="viewcode-back" href="../../../api/restraints.html#sire.restraints.bond">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">bond</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1236,6 +1477,100 @@
 
     <span class="k">return</span> <span class="n">restraints</span></div>
 
+
+
+<div class="viewcode-block" id="rmsd">
+<a class="viewcode-back" href="../../../api/restraints.html#sire.restraints.rmsd">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">rmsd</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">r0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a set of RMSD restraints for the atoms specified in</span>
+<span class="sd">    &#39;atoms&#39; that are contained in the container &#39;mols&#39;, using the</span>
+<span class="sd">    passed values of &#39;k&#39; and flat-bottom potential</span>
+<span class="sd">    well-width &#39;r0&#39; for the restraints. Note that &#39;k&#39; values</span>
+<span class="sd">    correspond to half the force constants for the harmonic</span>
+<span class="sd">    restraints, because the harmonic restraint energy is defined as</span>
+<span class="sd">    k*(rmsd - r0)**2 (hence the force is defined as 2*(rmsd - r0)).</span>
+
+<span class="sd">    The RMSD calculation is perfomed by default using the position</span>
+<span class="sd">    of mols. Optionally, a different state of the system can be</span>
+<span class="sd">    supplied as a reference by passing the &#39;ref&#39; argument.</span>
+
+<span class="sd">    If &#39;r0&#39; is not specified, then a simple harmonic restraint</span>
+<span class="sd">    is used.</span>
+
+<span class="sd">    If &#39;k&#39; is not specified, then a default of 150 kcal mol-1 A-2</span>
+<span class="sd">    will be used.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mols : sire.system._system.System</span>
+<span class="sd">        The system containing the atoms.</span>
+
+<span class="sd">    atoms : SireMol::Selector&lt;SireMol::Atom&gt;</span>
+<span class="sd">        The atoms to restrain.</span>
+
+<span class="sd">    ref : sire.system._system.System</span>
+<span class="sd">        The system from which the reference positions for the RMSD calculation</span>
+<span class="sd">        are extracted from. If None, this will default to the current</span>
+<span class="sd">        state of mols.</span>
+
+<span class="sd">    k : str or SireUnits::Dimension::GeneralUnit or, optional</span>
+<span class="sd">        The force constant for the RMSD restraints.</span>
+<span class="sd">        If None, this will default to 150 kcal mol-1 A-2.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    r0 : str or SireUnits::Dimension::GeneralUnit, optional</span>
+<span class="sd">        The width of the flat bottom restraint. If None, this is zero</span>
+<span class="sd">        and a simple harmonic restraint is used.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    RMSDRestraints : SireMM::RMSDRestraints</span>
+<span class="sd">        A container of RMSD restraints, where the first restraint is</span>
+<span class="sd">        the RMSDRestraint created. The RMSD restraint created can be</span>
+<span class="sd">        extracted with RMSDRestraints[0].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">u</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_map</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">RMSDRestraint</span><span class="p">,</span> <span class="n">RMSDRestraints</span>
+
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">create_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="s2">&quot;150 kcal mol-1 A-2&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">r0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">r0</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">r0</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span>
+
+    <span class="n">atoms</span> <span class="o">=</span> <span class="n">_to_atoms</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">atoms</span><span class="p">)</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">restraints</span> <span class="o">=</span> <span class="n">RMSDRestraints</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">restraints</span> <span class="o">=</span> <span class="n">RMSDRestraints</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="c1"># Set default reference positions to mols</span>
+    <span class="k">if</span> <span class="n">ref</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ref</span> <span class="o">=</span> <span class="n">mols</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ref</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The reference state must be a complete system.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Generate list of all positions as reference for RMSD calculation</span>
+    <span class="n">ref_pos</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">)</span>
+
+    <span class="n">restraints</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">RMSDRestraint</span><span class="p">(</span><span class="n">mols</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">atoms</span><span class="p">),</span> <span class="n">ref_pos</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">r0</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">restraints</span></div>
+
 </pre></div>
         </article>
       </div>
@@ -1250,7 +1585,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 08, 2025</div>
+              Last updated on Oct 12, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1265,7 +1600,7 @@
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=f5768dfe"></script>
+</div><script src="../../../_static/documentation_options.js?v=f788092f"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=5fa4622c"></script>

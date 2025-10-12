@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.convert" href="index_convert.html" /><link rel="prev" title="sire.cas" href="index_cas.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>Public API - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
@@ -461,7 +461,7 @@
 <p><a class="reference internal" href="index_cas.html"><span class="doc">View Module Index</span></a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.cas.Expression">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">Expression</span></span><a class="headerlink" href="#sire.cas.Expression" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">Expression</span></span><a class="headerlink" href="#sire.cas.Expression" title="Link to this definition">¶</a></dt>
 <dd><p>An Expression is the base class of all algebraic entities.</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
@@ -980,7 +980,7 @@ been substituted into this expression</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">LambdaSchedule</span></span><a class="headerlink" href="#sire.cas.LambdaSchedule" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">LambdaSchedule</span></span><a class="headerlink" href="#sire.cas.LambdaSchedule" title="Link to this definition">¶</a></dt>
 <dd><p>This is a schedule that specifies how parameters are changed according
 to a global lambda value. The change can be broken up by sub lever,
 and by stage.</p>
@@ -1191,7 +1191,7 @@ a custom lever for this stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.charge_scaled_annihilate">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_annihilate" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_annihilate" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a schedule that can be used for a standard double-annihilation</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_annihilated</em> is true, then
 the perturbed state is annihilated, otherwise the reference state is
@@ -1206,7 +1206,7 @@ are scaled to scale times their original value.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.charge_scaled_decouple">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_decouple" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_decouple" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a schedule that can be used for a standard double-decoupling</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_decoupled</em> is true, then
 the perturbed state is decoupled, otherwise the reference state is
@@ -1221,7 +1221,7 @@ are scaled to scale times their original value.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.charge_scaled_morph">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_morph</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_morph" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge_scaled_morph</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(float)scale=0.2</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.charge_scaled_morph" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a LambdaSchedule that represents a central morph</dt><dd><p>stage that is sandwiched between a charge descaling,
 and a charge rescaling stage. The first stage scales
@@ -1268,7 +1268,7 @@ original values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.final">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.final" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.final" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return the symbol used to represent the final</dt><dd><p>(:lambda:=1) value of the forcefield parameter</p>
 </dd>
@@ -1501,7 +1501,7 @@ for this molecule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.initial">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.initial" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.initial" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return the symbol used to represent the initial</dt><dd><p>(:lambda:=0) value of the forcefield parameter</p>
 </dd>
@@ -1540,7 +1540,7 @@ a custom lever for this stage.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.lam">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.lam" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Symbol</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.lam" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return the symbol used to represent the :lambda: coordinate.</dt><dd><p>This symbol is used to represent the per-stage :lambda:
 variable that goes from 0.0-1.0 within that stage.</p>
@@ -1854,7 +1854,7 @@ and replaces any levers provided by this schedule</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.standard_annihilate">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_annihilate" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_annihilate</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_annihilated=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_annihilate" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a schedule that can be used for a standard double-annihilation</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_annihilated</em> is true, then
 the perturbed state is annihilated, otherwise the reference state is
@@ -1867,7 +1867,7 @@ annihilated.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.standard_decouple">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_decouple" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_decouple</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">(bool)perturbed_is_decoupled=True</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_decouple" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a schedule that can be used for a standard double-decoupling</dt><dd><p>free energy perturbation. If <em class="xref py py-obj">perturbed_is_decoupled</em> is true, then
 the perturbed state is decoupled, otherwise the reference state is
@@ -1880,7 +1880,7 @@ decoupled.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sire.cas.LambdaSchedule.standard_morph">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_morph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_morph" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard_morph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LambdaSchedule</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.cas.LambdaSchedule.standard_morph" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return a LambdaSchedule that represents a standard morph,</dt><dd><p>where every forcefield parameter is scaled by
 (1-:lambda:).initial + :lambda:.final</p>
@@ -1944,7 +1944,7 @@ a copy of this schedule is returned.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sire.cas.Symbol">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><a class="headerlink" href="#sire.cas.Symbol" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.cas.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><a class="headerlink" href="#sire.cas.Symbol" title="Link to this definition">¶</a></dt>
 <dd><p>This class represents an algebraic symbol in the equation (e.g. x or y)</p>
 <p>Author: Christopher Woods</p>
 <dl class="py method">
@@ -2218,7 +2218,7 @@ an expression holding only this symbol if it does no exist in identities</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 08, 2025</div>
+              Last updated on Oct 12, 2025</div>
           </div>
           <div class="right-details">
             
@@ -2377,7 +2377,7 @@ an expression holding only this symbol if it does no exist in identities</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=f5768dfe"></script>
+</div><script src="../_static/documentation_options.js?v=f788092f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

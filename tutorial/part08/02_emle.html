@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Alanine-dipeptide conformational landscape" href="03_adp_pmf.html" /><link rel="prev" title="Introduction" href="01_intro.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>Sire-EMLE - openbiosim - sire</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
@@ -637,6 +637,14 @@ computes the electrostatic embedding:</p>
 <p><code class="docutils literal notranslate"><span class="pre">qm_mols</span></code> is not needed when using <code class="docutils literal notranslate"><span class="pre">OpenMM-ML</span></code>, since it will perform
 its own internal modifications for performing interpolation.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The OpenMM-ML interface shouldn’t be used with QM regions containing link
+atoms, since we require a combined in-vacuo and embedding force to correctly
+project forces along the link atom bonds. In the approach shown here, only
+the embedding force is projected, which will lead to incorrect forces on
+the atoms adjacent to the link atoms.</p>
+</div>
 <p>Rather than using this engine with a <code class="docutils literal notranslate"><span class="pre">sire</span></code> dynamics object, we can instead
 extract the underlying <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> force object and add it to an existing
 <code class="docutils literal notranslate"><span class="pre">OpenMM</span></code> system. The forces can be extracted from the engine as follows:</p>
@@ -701,7 +709,7 @@ the ML model.</p>
 <p>In order to ensure that <code class="docutils literal notranslate"><span class="pre">OpenMM-ML</span></code> doesn’t perform mechanical embedding, we
 next need to zero the charges of the QM atoms in the MM system:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">force</span> <span class="ow">in</span> <span class="n">ml_system</span><span class="o">.</span><span class="n">getForces</span><span class="p">():</span>
-<span class="gp">... </span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="n">mm</span><span class="o">.</span><span class="n">NonbondedForce</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="n">openmm</span><span class="o">.</span><span class="n">NonbondedForce</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ml_atoms</span><span class="p">:</span>
 <span class="gp">... </span>            <span class="n">_</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="n">force</span><span class="o">.</span><span class="n">getParticleParameters</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">... </span>            <span class="n">force</span><span class="o">.</span><span class="n">setParticleParameters</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
@@ -895,7 +903,7 @@ bypassing the need for a Python callback.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 08, 2025</div>
+              Last updated on Oct 12, 2025</div>
           </div>
           <div class="right-details">
             
@@ -933,7 +941,7 @@ bypassing the need for a Python callback.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=f5768dfe"></script>
+</div><script src="../../_static/documentation_options.js?v=f788092f"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
